@@ -1,0 +1,53 @@
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.secret
+*token*
+*credential*
+auth.json
+google_token.json
+client_secret*.json
+*.pem
+*.key
+
+# Hermes runtime state
+state.db
+*.sqlite
+*.sqlite3
+*.db
+sessions/
+logs/
+cache/
+cron/output/
+memories/
+
+# Research corpus and generated artifacts
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+*.numbers
+*.csv
+*.jsonl
+downloads/
+outputs/
+exports/
+backlog/
+runs/
+research-wiki-runs/
+drive_inventory_raw.json
+pdf_triage.csv
+pdf_triage.jsonl
+SUMMARY.md
+
+# Python/cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.DS_Store
