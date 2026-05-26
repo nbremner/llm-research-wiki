@@ -19,8 +19,9 @@ FORBIDDEN_PARTS = {
 
 
 def tracked_files():
+    ignored_parts = {".git", ".pytest_cache", "__pycache__"}
     for path in ROOT.rglob("*"):
-        if path.is_file() and ".git" not in path.parts and "__pycache__" not in path.parts:
+        if path.is_file() and not any(part in ignored_parts for part in path.parts):
             yield path
 
 
