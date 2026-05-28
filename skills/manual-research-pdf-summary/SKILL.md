@@ -75,6 +75,22 @@ If any ID conflicts with Schema or Agent Operating Guide, the live Notion docs w
 
 ## Modes
 
+### Quick mode selection rule
+
+If the user says "summarize" only, default to `manual-dry-run` unless they explicitly ask to integrate, add, apply, file, move, or update the wiki.
+
+If the user says "integrate into Notion/the wiki," "add to the wiki," "process it," or otherwise asks for the summary to become an operational wiki item, treat the request as **apply-mode intent for the whole ingest bundle** unless they explicitly limit scope. The whole ingest bundle is:
+
+1. verify the source and duplicate status;
+2. create/update the Notion Inbox candidate;
+3. create the Notion Log entry;
+4. rename the Drive PDF to the canonical filename;
+5. move the Drive PDF from `_inbox` to `public-literature-wiki` root;
+6. update the Notion Inbox candidate and Log with final Drive filing state;
+7. verify all side effects.
+
+Do not stop after the Notion write when a Drive file exists in `_inbox`. That leaves the workflow half-applied.
+
 ### `manual-dry-run` — default
 
 Perform the full inspection and summarization pipeline but do not mutate Drive or Notion.
@@ -129,6 +145,7 @@ Additional session-derived guidance is kept in:
 - [`references/drive-filename-and-provenance-notes.md`](references/drive-filename-and-provenance-notes.md) — filename source-slug pitfalls, working-paper provenance flags, and Notion consistency checks after filename corrections.
 - [`references/backlog-triage-and-human-review.md`](references/backlog-triage-and-human-review.md) — large `_inbox` backlog indexing, `research-wiki-ops` artifact storage, CSV/Apple Numbers human review, and heuristic pitfalls discovered from the first 101-PDF batch.
 - [`references/pdf-backlog-triage-workflow.md`](references/pdf-backlog-triage-workflow.md) — repeatable dry-run indexing workflow for large Drive `_inbox` PDF backlogs before selecting files for full manual summaries.
+- [`references/ad-hoc-paper-summary-notes.md`](references/ad-hoc-paper-summary-notes.md) — lightweight paper-summary pattern for topic/title-fragment requests that should not trigger the full wiki Candidate Source Summary workflow, plus notes from the Bosco et al. (2015) effect-size benchmarks summary.
 
 ### 1. Read operating docs
 
@@ -239,6 +256,20 @@ Apply:
 - Rename file via Drive metadata update where possible.
 - Move parent from `_inbox` to `public-literature-wiki` root without reuploading.
 - Verify file ID unchanged, parent changed, filename changed, and `_inbox` removed.
+- If the Notion Inbox entry was already created before the Drive move, update the Inbox body/provenance notes with the final filename, final folder, unchanged Drive file ID, and verification result.
+- Create or update a Log entry recording the Drive rename/move. If Notion and Drive actions happen in the same uninterrupted apply run, one Log entry may cover both; if Drive filing happens as a repair/follow-up, create a second Log entry.
+
+Operational order recommendation for apply mode:
+
+1. Read Schema and Agent Operating Guide.
+2. Run duplicate/provenance checks.
+3. Determine canonical filename.
+4. Rename/move Drive file and verify final Drive state.
+5. Create Notion Inbox candidate using the final filename/location.
+6. Create Notion Log entry.
+7. Re-fetch Notion and Drive records to verify the applied bundle.
+
+This order avoids the common failure mode where Notion is updated with a summary but Drive remains in `_inbox` under a noncanonical filename.
 
 ### 8. Generate wiki-ready summary
 
@@ -322,6 +353,8 @@ For each candidate:
 ```
 
 ### 9. Create Notion Inbox entry — apply mode only
+
+Before creating the Inbox row, confirm the Drive filing step has either already succeeded or was explicitly excluded by the user. The Inbox candidate should normally reflect the **final** Drive filename/location, not the staging `_inbox` state.
 
 Create exactly one Inbox row with the structured summary as page body. Suggested values:
 
@@ -433,11 +466,17 @@ For dry-run:
 
 For apply:
 
-- [ ] User approved apply mode after dry-run.
+- [ ] User approved apply mode after dry-run, or user explicitly requested wiki/Notion integration and no ambiguity remains.
+- [ ] Schema and Agent Operating Guide were read in the current run.
+- [ ] Duplicate checks were run against existing Inbox/Sources by DOI/title/Drive file ID where feasible.
+- [ ] Canonical filename was determined before filing.
 - [ ] Drive file was renamed.
 - [ ] Drive file was moved out of `_inbox` to `public-literature-wiki` root.
 - [ ] Drive file ID remained stable.
-- [ ] Notion Inbox row was created with summary body.
+- [ ] Drive verification confirms final filename, final parent, and `_inbox` removed.
+- [ ] Notion Inbox row was created with summary body and final Drive filename/location.
 - [ ] Notion Log row was created.
-- [ ] No canonical Source or Concept rows were created.
+- [ ] If Drive filing happened after the Inbox row, the Inbox body/provenance notes were updated with final Drive state and a repair/follow-up Log row was created.
+- [ ] Notion verification confirms the Inbox body contains the summary and Drive filing note.
+- [ ] No canonical Source or Concept rows were created unless explicitly approved.
 - [ ] Discord completion summary was sent or delivery limitation reported.

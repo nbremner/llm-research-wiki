@@ -44,3 +44,7 @@ If a filed Drive filename is corrected after apply mode:
 3. Update the original Log row's `pages_touched` / `next_action` fields if they contain the stale filename.
 4. Create a new Log row for the correction.
 5. It is acceptable for the old filename to remain only as historical "previous filename" text in correction/audit notes.
+
+## Apply-mode orchestration pitfall
+
+Do not treat "integrate into Notion/the wiki" as only a Notion write when the source PDF lives in Drive `_inbox`. For a Drive-backed PDF, apply mode is a bundled operation: Drive rename/move plus Notion Inbox/Log update plus verification. Prefer filing the Drive file first, then creating the Notion Inbox entry with final Drive state. If Notion was written first, immediately repair by filing Drive, updating the Inbox provenance/body, and logging the follow-up.
