@@ -245,6 +245,14 @@ Examples:
 
 ### 7. Propose or perform Drive rename/move
 
+For apply-mode runs, prefer the durable helper once the summary markdown and typed Notion payloads are prepared:
+
+```bash
+uv run /root/research-wiki-tools/apply_pdf_ingest_bundle.py /path/to/manifest.json --apply
+```
+
+Run the same command without `--apply` first to validate the manifest and planned order without side effects. The helper applies the bundle in a fixed Drive-first sequence: validate manifest → rename/move Drive file → verify Drive state → create Notion Inbox → create Notion Log. It does not generate the summary, read the Schema, or create canonical Sources/Concepts; the agent must do those prerequisite steps before generating the manifest.
+
 Dry-run:
 
 - Report proposed new filename.
@@ -270,6 +278,36 @@ Operational order recommendation for apply mode:
 7. Re-fetch Notion and Drive records to verify the applied bundle.
 
 This order avoids the common failure mode where Notion is updated with a summary but Drive remains in `_inbox` under a noncanonical filename.
+
+### Apply bundle manifest helper
+
+When using `/root/research-wiki-tools/apply_pdf_ingest_bundle.py`, provide a JSON manifest with this shape:
+
+```json
+{
+  "schema_version": "2026-05-24.1",
+  "drive": {
+    "file_id": "DRIVE_FILE_ID",
+    "original_parent_id": "_INBOX_FOLDER_ID",
+    "destination_parent_id": "PUBLIC_LITERATURE_ROOT_ID",
+    "final_filename": "YYYY-MM-DD_source-slug_short-title-slug.pdf"
+  },
+  "notion": {
+    "inbox_database_id": "INBOX_DATABASE_ID",
+    "log_database_id": "LOG_DATABASE_ID",
+    "inbox": {
+      "properties": {"Name": {"title": [{"text": {"content": "..."}}]}},
+      "markdown": "# Candidate Source Summary\n... final Drive filename/location ..."
+    },
+    "log": {
+      "properties": {"Name": {"title": [{"text": {"content": "..."}}]}},
+      "markdown": "Applied Drive rename/move and Notion Inbox integration."
+    }
+  }
+}
+```
+
+The helper expects already-typed Notion property JSON. Do not ask it to infer Schema mappings. Keep manifests in `/tmp` or another runtime location; do not commit them.
 
 ### 8. Generate wiki-ready summary
 

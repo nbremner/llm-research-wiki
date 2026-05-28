@@ -2,7 +2,7 @@
 
 This directory contains durable local tooling for the public research-wiki PDF backlog.
 
-## Current tool
+## Current tools
 
 `pdf_backlog_triage.py` indexes PDFs in the Google Drive `public-literature-wiki/_inbox` folder.
 
@@ -50,6 +50,36 @@ Key artifacts:
 - `drive_inventory_raw.json` — raw Drive metadata.
 - `downloads/` — local PDF cache for that run.
 
+## Apply-mode bundle helper
+
+`apply_pdf_ingest_bundle.py` is the small transaction-like helper for a single approved PDF ingest. It does not summarize or extract text. Instead, it accepts a reviewed manifest containing:
+
+- Drive file ID, `_inbox` parent ID, destination parent ID, and final canonical filename;
+- typed Notion Inbox database properties plus final summary markdown;
+- typed Notion Log database properties plus log markdown.
+
+Default behavior is dry-run validation only:
+
+```bash
+uv run /root/research-wiki-tools/apply_pdf_ingest_bundle.py /path/to/manifest.json
+```
+
+Apply mode mutates Drive first, verifies Drive state, then creates Notion Inbox and Log pages:
+
+```bash
+uv run /root/research-wiki-tools/apply_pdf_ingest_bundle.py /path/to/manifest.json --apply
+```
+
+Fixed apply order:
+
+1. validate manifest;
+2. rename/move Drive file out of `_inbox` into `public-literature-wiki` root;
+3. verify stable file ID, final filename, final parent, and `_inbox` removal;
+4. create Notion Inbox page with final Drive state in the markdown;
+5. create Notion Log page.
+
+The helper intentionally takes typed Notion property JSON rather than inventing schema mappings. The agent remains responsible for reading the live Schema and Agent Guide before generating the manifest.
+
 ## Human review in Apple Numbers
 
 If Nicholas reviews the CSV in Apple Numbers and uploads a `.numbers` file, extract it back to CSV with:
@@ -70,4 +100,6 @@ This also writes a `.review_summary.json` file with rows where `human_review_sta
 
 ## Operating boundary
 
-These tools are intentionally not apply-mode tools. They do not rename/move Drive files or create Notion rows. Promotion into Notion Inbox, Drive canonical filing, and Source/Concept updates should be separate explicit workflows with approval gates.
+`pdf_backlog_triage.py` is intentionally not an apply-mode tool. It does not rename/move Drive files or create Notion rows.
+
+`apply_pdf_ingest_bundle.py` is apply-mode only after approval or explicit wiki-integration intent. It should be used only after the agent has read the live Schema/Agent Guide, resolved duplicates/provenance, prepared final summary markdown, and generated typed Notion payloads. It does not create canonical Sources or Concepts.
