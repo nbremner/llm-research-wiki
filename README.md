@@ -36,6 +36,7 @@ scripts/
 
 docs/
   research-wiki-operating-layer.md
+  sciaiwiki-roadmap.md
 
 config/
   example.env
