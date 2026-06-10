@@ -207,6 +207,59 @@ def slugify(s: str, max_len: int = 70) -> str:
     return s[:max_len].strip("-") or "untitled"
 
 
+def title_from_filename(filename: str) -> str:
+    """Extract a usable title from common backlog filenames."""
+    stem = Path(filename).stem
+    stem = re.sub(r"^\(Non-Academic\)\s*", "", stem, flags=re.I)
+    stem = re.sub(r"^[^-–—]+\((?:(?:19|20)\d{2}|n\.d\.|in press)\)\s*", "", stem, flags=re.I)
+    stem = re.sub(r"^[^-–—]+\s+-\s+", "", stem)
+    stem = stem.replace("_", " ")
+    return re.sub(r"\s+", " ", stem).strip()
+
+
+def filename_author_candidate(filename: str) -> str | None:
+    stem = Path(filename).stem
+    stem = re.sub(r"^\(Non-Academic\)\s*", "", stem, flags=re.I)
+    m = re.match(r"(.+?)\s*\((?:19|20)\d{2}|n\.d\.|in press\)", stem, flags=re.I)
+    if not m:
+        m = re.match(r"(.+?)\s+-\s+", stem)
+    if not m:
+        return None
+    candidate = re.sub(r"\s+", " ", m.group(1).replace("_", " ")).strip(" -–—")
+    if not candidate or candidate.lower() in {"non-academic"}:
+        return None
+    return candidate
+
+
+def looks_like_title_garbage(s: str | None) -> bool:
+    if not s:
+        return True
+    low = re.sub(r"\s+", " ", s.strip().lower())
+    if len(low) < 10:
+        return True
+    garbage_patterns = [
+        r"^pii[:\s]",
+        r"^\d{4},?\s*vol",
+        r"^vol\.?\s*\d+",
+        r"^peps[_\s-]?\d+",
+        r"^principles\.qxd$",
+        r"^powerpoint presentation$",
+        r"^introduction$",
+        r"^journal of ",
+        r"^academy of ",
+        r"^for educatio nal",
+        r"^support the use of$",
+        r"^nal of applied psychology$",
+        r"^organizational behavior and human performance\s+\d+",
+        r"^[a-z][a-z .'-]+\s+and\s+[a-z][a-z .'-]+$",
+    ]
+    if any(re.search(p, low) for p in garbage_patterns):
+        return True
+    letters = sum(ch.isalpha() for ch in low)
+    digits = sum(ch.isdigit() for ch in low)
+    return digits > letters
+
+
 def build_drive_service(token_path: str):
     scopes = ["https://www.googleapis.com/auth/drive"]
     creds = Credentials.from_authorized_user_file(token_path, scopes)
@@ -257,7 +310,7 @@ def likely_title_from_text(text: str, metadata_title: str | None, filename: str)
     candidates = []
     if metadata_title and metadata_title.strip() and len(metadata_title.strip()) > 8:
         mt = re.sub(r"\s+", " ", metadata_title.strip())
-        if not mt.lower().endswith(".pdf") and "microsoft word" not in mt.lower():
+        if not mt.lower().endswith(".pdf") and "microsoft word" not in mt.lower() and not looks_like_title_garbage(mt):
             candidates.append(mt)
     lines = [re.sub(r"\s+", " ", ln.strip()) for ln in text[:6000].splitlines()]
     lines = [ln for ln in lines if 8 <= len(ln) <= 220]
@@ -266,12 +319,12 @@ def likely_title_from_text(text: str, metadata_title: str | None, filename: str)
         low = ln.lower()
         if any(x in low for x in skip):
             continue
-        if len(ln.split()) >= 4:
+        if len(ln.split()) >= 4 and not looks_like_title_garbage(ln):
             candidates.append(ln)
             break
     if candidates:
         return candidates[0]
-    return Path(filename).stem
+    return title_from_filename(filename) or Path(filename).stem
 
 
 def extract_pdf(path: Path, max_pages_text: int = 4) -> dict[str, Any]:
@@ -347,6 +400,16 @@ def infer_domain_clusters(text: str, filename: str) -> list[str]:
 
 def infer_source_type(text: str, filename: str) -> str:
     hay = f"{filename}\n{text[:12000]}".lower()
+    if "powerpoint presentation" in hay or "slide deck" in hay or "program block" in hay:
+        return "slide-deck"
+    if any(k in hay for k in ["policy faq", "frequently asked questions", "policy guide", "legal update"]):
+        return "policy-guide"
+    if "recommendations for the" in hay and any(k in hay for k in ["aedt", "automated employment decision", "assessment validation"]):
+        return "policy-guide"
+    if any(k in hay for k in ["standards for educational and psychological testing", "standards of practice", "test manual"]):
+        return "standards-manual"
+    if any(k in hay for k in ["diagnosing and changing organizational culture", "clinical vs statistical prediction"]):
+        return "book"
     scores = []
     for st, kws in SOURCE_TYPE_KEYWORDS.items():
         scores.append((sum(hay.count(kw) for kw in kws), st))
@@ -356,6 +419,16 @@ def infer_source_type(text: str, filename: str) -> str:
 
 def infer_evidence_type(text: str, filename: str) -> str:
     hay = f"{filename}\n{text[:12000]}".lower()
+    if "powerpoint presentation" in hay or "slide deck" in hay or "program block" in hay:
+        return "slide-deck"
+    if any(k in hay for k in ["policy faq", "frequently asked questions", "policy guide", "legal update"]):
+        return "policy-guide"
+    if "recommendations for the" in hay and any(k in hay for k in ["aedt", "automated employment decision", "assessment validation"]):
+        return "policy-guide"
+    if any(k in hay for k in ["standards for educational and psychological testing", "standards of practice", "test manual"]):
+        return "standards-manual"
+    if any(k in hay for k in ["diagnosing and changing organizational culture", "clinical vs statistical prediction"]):
+        return "book-or-book-chapter"
     if any(k in hay for k in ["meta-analysis", "systematic review", "literature review"]):
         return "review-or-meta-analysis"
     if any(k in hay for k in ["randomized", "experiment", "field experiment", "quasi-experiment"]):
@@ -383,28 +456,61 @@ def detect_flags(text: str, filename: str, extract: dict[str, Any], doi: str | N
     return sorted(set(flags)) or ["none"]
 
 
+def clean_urls(urls: list[str]) -> list[str]:
+    garbage_fragments = [
+        "creativecommons.org/licenses",
+        "www.w3.org",
+        "adobe.com",
+        "microsoft.com",
+    ]
+    cleaned = []
+    seen = set()
+    for u in urls:
+        u = u.rstrip(".,;)]}")
+        low = u.lower()
+        if any(fragment in low for fragment in garbage_fragments):
+            continue
+        if low in {"http://www", "https://www", "http://", "https://"}:
+            continue
+        if u not in seen:
+            cleaned.append(u)
+            seen.add(u)
+    return cleaned
+
+
+def canonical_url_candidate(doi: str | None, urls: list[str]) -> str | None:
+    if doi:
+        return f"https://doi.org/{doi}"
+    return urls[0] if urls else None
+
+
 def extract_biblio_signals(text: str, metadata: dict[str, Any], filename: str) -> dict[str, Any]:
     doi_match = DOI_RE.search(text)
+    doi = doi_match.group(0).rstrip(".,;") if doi_match else None
     urls = URL_RE.findall(text[:20000])
     urls = [u.rstrip(".,;") for u in urls]
-    # Deduplicate keeping order.
-    seen = set(); urls_unique = []
-    for u in urls:
-        if u not in seen:
-            urls_unique.append(u); seen.add(u)
+    urls_unique = clean_urls(urls)
     title = likely_title_from_text(text, metadata.get("title"), filename)
     years = YEAR_RE.findall(text[:5000] + "\n" + filename)
     # YEAR_RE with group returns prefix only; redo simpler.
     years2 = re.findall(r"\b(?:19|20)\d{2}\b", text[:5000] + "\n" + filename)
     pub_year = min(years2) if years2 else None
-    author = metadata.get("author") or None
+    metadata_author = metadata.get("author") or None
+    filename_author = filename_author_candidate(filename)
+    author = metadata_author or filename_author
+    author_confidence = "metadata" if metadata_author else ("filename-only" if filename_author else "missing")
+    canonical_url = canonical_url_candidate(doi, urls_unique)
     return {
         "detected_title": title,
         "normalized_title": normalize_title(title),
         "metadata_author": author,
+        "pdf_metadata_author_raw": metadata_author,
+        "filename_author_candidate": filename_author,
+        "author_confidence": author_confidence,
         "publication_year_candidate": pub_year,
-        "doi": doi_match.group(0).rstrip(".,;") if doi_match else None,
+        "doi": doi,
         "urls": urls_unique[:10],
+        "canonical_url_candidate": canonical_url,
     }
 
 
@@ -458,7 +564,7 @@ def make_row(file_meta: dict[str, Any], local_path: Path | None, do_extract: boo
         "needs_ocr": extract.get("needs_ocr"),
         "extraction_error": extract.get("error"),
         **biblio,
-        "canonical_url_candidate": (biblio.get("urls") or [None])[0],
+        "canonical_url_candidate": biblio.get("canonical_url_candidate"),
         "suggested_topics": ";".join(topics),
         "domain_cluster_candidate": ";".join(domain_clusters),
         "suggested_source_type": source_type,
