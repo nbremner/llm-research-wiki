@@ -36,6 +36,7 @@ scripts/
 
 docs/
   research-wiki-operating-layer.md
+  research-map-template.md
   sciaiwiki-roadmap.md
 
 config/

@@ -10,6 +10,7 @@ Under a parent Notion page such as `research-wiki`, keep the live operational la
 research-wiki
 ├── Schema                         # live agent contract; read first
 ├── Agent Operating Guide           # practical runbook for LC/DC/Hermes
+├── Research Map / Overview         # living intellectual map: scope, questions, frontier/evidence map
 ├── Sources                         # canonical public source DB
 ├── Concepts                        # canonical synthesis DB
 ├── Inbox                           # low-trust capture/staging DB
@@ -24,6 +25,7 @@ The raw-source Google Drive folder should contain only public source artifacts a
 
 - **Schema**: live operating contract. Agents read this first and follow it.
 - **Agent Operating Guide**: practical runbook with IDs, role boundaries, workflows, and run sequence. Link it from Schema.
+- **Research Map / Overview**: living intellectual map for scope, core lenses, active research questions, frontier areas, evidence status, and known gaps.
 - **Architecture Master Reference — frozen**: preserved design rationale; not active operating instructions.
 - **Setup Checklist — completed**: historical build artifact; not active operating instructions.
 - **System Docs / Archive**: admin page linking frozen/completed docs.
@@ -41,11 +43,12 @@ The raw-source Google Drive folder should contain only public source artifacts a
 3. Create full-page databases: `Sources`, `Concepts`, `Log`, `Inbox`.
 4. Add relations only after target data sources exist.
 5. Create `Index` placeholder.
-6. Create `Agent Operating Guide — LC / DC / Hermes` and link it from Schema.
-7. Create `System Docs / Archive`; rename old docs to frozen/completed and link them from the archive.
-8. Create a clearly marked validation Source/Concept/Log row, verify relation/query behavior, then archive the test rows after user review.
-9. Create/verify Drive raw-source folder and `_inbox` child.
-10. Log the setup/reorg action in the Log database.
+6. Create `Research Map / Overview` as the living intellectual map for scope, core lenses, active research questions, frontier areas, evidence status, and known gaps.
+7. Create `Agent Operating Guide — LC / DC / Hermes` and link it from Schema.
+8. Create `System Docs / Archive`; rename old docs to frozen/completed and link them from the archive.
+9. Create a clearly marked validation Source/Concept/Log row, verify relation/query behavior, then archive the test rows after user review.
+10. Create/verify Drive raw-source folder and `_inbox` child.
+11. Log the setup/reorg action in the Log database.
 
 ## Notion API quirks encountered
 
@@ -64,3 +67,4 @@ The raw-source Google Drive folder should contain only public source artifacts a
 - Confirm test rows are archived after user review.
 - Confirm Drive raw-source folder and `_inbox` exist.
 - Confirm Schema links to Agent Operating Guide and System Docs / Archive.
+- Confirm Agent Operating Guide links to Research Map / Overview and states when to update it.

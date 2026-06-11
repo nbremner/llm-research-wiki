@@ -407,14 +407,14 @@ Create approved pathways for safe acceleration.
 
 - [x] Create this roadmap in GitHub.
 - [x] Create a Notion version of this roadmap.
-- [ ] Add this roadmap to the repo README or docs index.
+- [x] Add this roadmap to the repo README or docs index.
 - [ ] Optionally link the Notion page from System Docs / Archive.
 
 ### Phase 2 — Add the living research map
 
-- [ ] Create `docs/research-map-template.md`.
-- [ ] Create Notion Research Map / Overview page.
-- [ ] Update Agent Operating Guide with when to update Research Map.
+- [x] Create `docs/research-map-template.md`.
+- [x] Create Notion Research Map / Overview page.
+- [x] Update Agent Operating Guide with when to update Research Map.
 
 ### Phase 3 — Add review and durable-query workflows
 
