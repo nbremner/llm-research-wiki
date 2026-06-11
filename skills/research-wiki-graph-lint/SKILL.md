@@ -202,6 +202,8 @@ The script:
 
 Implementation notes and false-positive pitfalls are captured in `references/read-only-notion-graph-lint.md`.
 
+For end-of-session verification after graph-lint or workflow-spine changes, use `references/end-of-session-artifact-drift-check.md`. This prevents drift between the portable Git repo, live Hermes skill store, docs/roadmap pointers, tests, and runtime outputs.
+
 Use the report as an LC review queue. Do not apply canonical fixes directly from the script output; route Concept-changing work through Candidate Concept Update Bundles.
 
 ## Output Rules
