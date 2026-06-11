@@ -401,6 +401,67 @@ Create approved pathways for safe acceleration.
 - Each pathway has clear write permissions and verification steps.
 - High-trust automation is introduced only after repeated successful manual runs.
 
+---
+
+### Theme 11 — Add agentic ingestion and review loops
+
+**Problem**
+
+The current workflow is intentionally staged, but it still depends too much on one-off manual prompting. That keeps governance safe, but it also means the wiki only compounds when Nicholas explicitly asks for a run.
+
+**Goal**
+
+Add bounded agentic loops that increase throughput while preserving the key governance boundary: agents may create Inbox and Review/Summary artifacts, but they do **not** directly graduate material into canonical Concepts without approval.
+
+**Loop A: Inbox-to-Review artifact loop**
+
+Regularly process papers already in Drive `_inbox` / Notion Inbox:
+
+1. detect new or unprocessed candidate papers;
+2. extract citation metadata, abstract, and full text where possible;
+3. summarize the paper against the public research-wiki scope;
+4. create a Notion Review or Summary artifact directly, without the older dry-run approval step;
+5. link the artifact back to the Inbox item / Drive file;
+6. propose candidate Concepts, Concept updates, Research Map updates, and follow-up source searches;
+7. mark the artifact as needing approval before any canonical Concept mutation.
+
+**Governance boundary**
+
+- The artifact itself may be created automatically.
+- Canonical Concepts are not updated automatically.
+- Graduation from Review/Summary into Concepts remains an explicit approval workflow.
+- Agent runs must log what was created and which source files were used.
+- Failed extraction, weak evidence, or ambiguous scope should produce a low-confidence artifact or triage note, not silent discard.
+
+**Loop B: Candidate-source discovery loop**
+
+Regularly search public web/scholarly sources for candidate papers relevant to the Research Map:
+
+1. read active Research Map questions and known gaps;
+2. query arXiv, Semantic Scholar / OpenAlex / Crossref, Google Scholar-adjacent sources where available, and targeted web searches;
+3. deduplicate against existing Sources, Inbox, and Drive filenames/DOIs;
+4. add promising candidates to Inbox with metadata and rationale;
+5. download or attach public PDFs only when licensing and access make that appropriate;
+6. tag why the source matters: foundational, recent empirical evidence, methods, construct bridge, contradiction, or weak signal;
+7. log the discovery pass and surface high-priority candidates.
+
+**Scheduling model**
+
+Start as explicit/manual runs, then move to scheduled Hermes jobs once the dry path is stable:
+
+- weekly candidate-source discovery;
+- weekly or twice-weekly Inbox-to-Review processing;
+- optional monthly gap-map refresh for Research Map questions.
+
+**Acceptance criteria**
+
+- Agent Operating Guide defines write permissions for automated Inbox and Review/Summary creation.
+- Review database supports status values for agent-created artifacts awaiting approval.
+- Inbox items can record discovery source, rationale, dedupe key, and processing status.
+- A dry-read validation script can report what would be created before automation is enabled.
+- First scheduled jobs run with conservative limits and clear logs.
+- Concept graduation remains approval-gated.
+
 ## Suggested implementation sequence
 
 ### Phase 1 — Capture the architecture intent
@@ -441,6 +502,16 @@ Create approved pathways for safe acceleration.
 - [ ] Decide whether generated exports are committed, ignored, or stored outside repo.
 - [ ] Add tests/guardrails to prevent corpus/runtime leakage.
 
+### Phase 7 — Agentic ingestion and review loops
+
+- [ ] Define automated Review/Summary artifact statuses and approval gates.
+- [ ] Add Inbox metadata needed for source-discovery provenance, dedupe, and processing state.
+- [ ] Build a conservative Inbox-to-Review runner that creates Notion Review/Summary artifacts from `_inbox` papers.
+- [ ] Build a candidate-source discovery runner that searches public scholarly/web sources and stages promising papers in Inbox.
+- [ ] Add read-only/dry-report modes for both loops before scheduling.
+- [ ] Schedule low-volume Hermes jobs only after manual runs produce clean artifacts and logs.
+- [ ] Keep Concept graduation approval-gated.
+
 ## Open decisions
 
 1. Should the Research Map live as a top-level Notion page, inside System Docs, or both? Current implementation: top-level Notion page with repo template.
@@ -449,14 +520,18 @@ Create approved pathways for safe acceleration.
 4. Which Concept subtype vocabulary should become Schema-approved first?
 5. What threshold makes an Inbox item stale enough to appear in LC lint?
 6. What human approval threshold is required before batch promotion or automated promotion?
+7. Should automatically created paper summaries live in the Reviews database as `summary-review` rows, or should there be a separate lightweight Summaries database later?
+8. Which discovery sources should be allowed in the candidate-source loop: arXiv only at first, or arXiv plus OpenAlex/Crossref/Semantic Scholar/web search?
+9. What weekly volume cap should scheduled loops use so the Inbox and Reviews database do not become a new backlog sink?
 
 ## Non-goals
 
 - Do not store PDFs, generated corpus exports, Notion snapshots, secrets, or runtime state in `llm-research-wiki`.
 - Do not loosen public-only boundaries.
 - Do not let agent-generated synthesis enter canonical Concepts without the approved workflow.
+- Do not let scheduled discovery or review loops create unbounded backlog; they need caps, dedupe, and logs.
 - Do not create a second source of truth accidentally through markdown exports.
 
 ## Bottom line
 
-The next architectural move is not more ingestion volume. It is making the wiki more capable of compounding: a living research map, review synthesis, semantic linting, durable query outputs, and a markdown-readable graph substrate — while keeping the current governance guardrails intact.
+The next architectural move is not more ingestion volume by itself. It is making the wiki more capable of compounding: a living research map, review synthesis, semantic linting, durable query outputs, bounded agentic ingestion/review loops, and a markdown-readable graph substrate — while keeping the current governance guardrails intact.
