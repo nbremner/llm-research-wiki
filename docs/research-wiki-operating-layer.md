@@ -13,6 +13,7 @@ research-wiki
 ├── Research Map / Overview         # living intellectual map: scope, questions, frontier/evidence map
 ├── Sources                         # canonical public source DB
 ├── Concepts                        # canonical synthesis DB
+├── Reviews                         # staged review artifacts: reviews, gap maps, construct bridges
 ├── Inbox                           # low-trust capture/staging DB
 ├── Log                             # append-only audit DB
 ├── Index                           # future public front door
@@ -26,13 +27,14 @@ The raw-source Google Drive folder should contain only public source artifacts a
 - **Schema**: live operating contract. Agents read this first and follow it.
 - **Agent Operating Guide**: practical runbook with IDs, role boundaries, workflows, and run sequence. Link it from Schema.
 - **Research Map / Overview**: living intellectual map for scope, core lenses, active research questions, frontier areas, evidence status, and known gaps.
+- **Reviews**: staged synthesis database for literature reviews, gap maps, construct bridges, implementation reviews, and summary reviews. Reviews propose Concept and Research Map updates; they are not canonical Concepts by default.
 - **Architecture Master Reference — frozen**: preserved design rationale; not active operating instructions.
 - **Setup Checklist — completed**: historical build artifact; not active operating instructions.
 - **System Docs / Archive**: admin page linking frozen/completed docs.
 
 ## Agent role boundaries
 
-- **Hermes / NicholasJunior**: normally writes only Inbox + Log; reads Schema and selected Sources/Concepts for dedupe/classification/routing. Do not write Sources, Concepts, Schema, or Index except during explicit owner-approved setup/maintenance.
+- **Hermes / NicholasJunior**: normally writes Inbox + Log during capture/triage and may create Reviews during owner-requested review workflow runs. Reads Schema, Research Map, and selected Sources/Concepts for dedupe/classification/routing. Do not write Sources, Concepts, Schema, or Index except during explicit owner-approved setup/maintenance.
 - **LC**: linting, provenance, dedupe, promotion recommendations, boundary flags, schema proposals.
 - **DC**: retrieval, user-facing answers, and public-source-backed synthesis. Never write work-derived/confidential synthesis into the public wiki.
 
@@ -40,7 +42,7 @@ The raw-source Google Drive folder should contain only public source artifacts a
 
 1. Read the master reference and setup checklist; treat the master/reference rules as authoritative over checklist details.
 2. Create/verify `Schema`.
-3. Create full-page databases: `Sources`, `Concepts`, `Log`, `Inbox`.
+3. Create full-page databases: `Sources`, `Concepts`, `Reviews`, `Log`, `Inbox`.
 4. Add relations only after target data sources exist.
 5. Create `Index` placeholder.
 6. Create `Research Map / Overview` as the living intellectual map for scope, core lenses, active research questions, frontier areas, evidence status, and known gaps.
@@ -63,6 +65,7 @@ The raw-source Google Drive folder should contain only public source artifacts a
 - Query each data source successfully.
 - Confirm expected property counts/types.
 - Confirm Source ↔ Concept relation works.
+- Confirm Reviews can relate to reviewed Sources and related Concepts.
 - Confirm Log entries can be created.
 - Confirm test rows are archived after user review.
 - Confirm Drive raw-source folder and `_inbox` exist.

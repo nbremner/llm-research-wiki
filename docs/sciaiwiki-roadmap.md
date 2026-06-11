@@ -418,9 +418,9 @@ Create approved pathways for safe acceleration.
 
 ### Phase 3 — Add review and durable-query workflows
 
-- [ ] Create `research-wiki-review` skill.
+- [x] Create `research-wiki-review` skill.
 - [ ] Create durable-query workflow notes or skill section.
-- [ ] Define where review artifacts live in Notion.
+- [x] Define where review artifacts live in Notion.
 
 ### Phase 4 — Tighten ingestion and promotion
 
@@ -443,8 +443,8 @@ Create approved pathways for safe acceleration.
 
 ## Open decisions
 
-1. Should the Research Map live as a top-level Notion page, inside System Docs, or both?
-2. Should review artifacts become their own Notion database, staged Inbox items, or markdown files only?
+1. Should the Research Map live as a top-level Notion page, inside System Docs, or both? Current implementation: top-level Notion page with repo template.
+2. How should durable-query workflow differ from full Reviews?
 3. Should markdown exports be committed to GitHub, generated locally, or stored in a separate private/public repo?
 4. Which Concept subtype vocabulary should become Schema-approved first?
 5. What threshold makes an Inbox item stale enough to appear in LC lint?
