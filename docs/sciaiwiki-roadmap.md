@@ -348,6 +348,12 @@ Create an explicit query workflow for deciding whether an answer should become d
 - Durable query outputs have a staging destination.
 - The workflow distinguishes source-backed claims from interpretation.
 
+**Current implementation**
+
+- Skill: `skills/research-wiki-query/SKILL.md`
+- Artifact routing: none, Log-only, Inbox/source task, Review artifact, Candidate Concept Update Bundle, or Research Map update proposal.
+- Governance: query answers do not directly mutate canonical Concepts; Concept-changing results route through approval bundles.
+
 ---
 
 ### Theme 9 — Build gap-map outputs
@@ -487,7 +493,7 @@ Start as explicit/manual runs, then move to scheduled Hermes jobs once the dry p
 ### Phase 3 — Add review and durable-query workflows
 
 - [x] Create `research-wiki-review` skill.
-- [ ] Create durable-query workflow notes or skill section.
+- [x] Create durable-query workflow notes or skill section.
 - [x] Define where review artifacts live in Notion.
 
 ### Phase 4 — Tighten ingestion and promotion
@@ -499,7 +505,7 @@ Start as explicit/manual runs, then move to scheduled Hermes jobs once the dry p
 ### Phase 5 — Build graph linting
 
 - [x] Draft LC graph-lint checklist.
-- [ ] Implement read-only lint script or Notion query workflow.
+- [x] Implement read-only lint script or Notion query workflow.
 - [ ] Add confidence/contested/contradiction checks.
 
 ### Phase 6 — Markdown mirror/export

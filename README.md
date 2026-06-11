@@ -29,6 +29,7 @@ skills/
   manual-research-pdf-summary/
   research-wiki-graph-lint/
   research-wiki-pdf-backlog-triage/
+  research-wiki-query/
   research-wiki-review/
 
 scripts/

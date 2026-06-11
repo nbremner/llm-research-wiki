@@ -43,6 +43,7 @@ def test_expected_research_wiki_skills_present():
         ROOT / "skills" / "manual-research-pdf-summary" / "SKILL.md",
         ROOT / "skills" / "research-wiki-graph-lint" / "SKILL.md",
         ROOT / "skills" / "research-wiki-pdf-backlog-triage" / "SKILL.md",
+        ROOT / "skills" / "research-wiki-query" / "SKILL.md",
         ROOT / "skills" / "research-wiki-review" / "SKILL.md",
     ]
     missing = [str(p.relative_to(ROOT)) for p in expected if not p.exists()]
