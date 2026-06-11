@@ -491,7 +491,7 @@ Start as explicit/manual runs, then move to scheduled Hermes jobs once the dry p
 
 ### Phase 5 — Build graph linting
 
-- [ ] Draft LC graph-lint checklist.
+- [x] Draft LC graph-lint checklist.
 - [ ] Implement read-only lint script or Notion query workflow.
 - [ ] Add confidence/contested/contradiction checks.
 

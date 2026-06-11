@@ -41,7 +41,9 @@ def test_no_corpus_or_runtime_artifacts_in_repo():
 def test_expected_research_wiki_skills_present():
     expected = [
         ROOT / "skills" / "manual-research-pdf-summary" / "SKILL.md",
+        ROOT / "skills" / "research-wiki-graph-lint" / "SKILL.md",
         ROOT / "skills" / "research-wiki-pdf-backlog-triage" / "SKILL.md",
+        ROOT / "skills" / "research-wiki-review" / "SKILL.md",
     ]
     missing = [str(p.relative_to(ROOT)) for p in expected if not p.exists()]
     assert not missing, "Missing expected skills: " + ", ".join(missing)

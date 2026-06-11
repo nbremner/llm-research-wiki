@@ -27,6 +27,7 @@ The canonical research artifacts live in Notion and Google Drive. This repo trac
 ```text
 skills/
   manual-research-pdf-summary/
+  research-wiki-graph-lint/
   research-wiki-pdf-backlog-triage/
   research-wiki-review/
 
