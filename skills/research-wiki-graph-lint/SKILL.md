@@ -200,6 +200,8 @@ The script:
 - checks current structural orphans, missing provenance, duplicate Source/Concept keys, stale Inbox items, Review traceability, and weak-evidence confidence signals;
 - performs no Notion mutations.
 
+Implementation notes and false-positive pitfalls are captured in `references/read-only-notion-graph-lint.md`.
+
 Use the report as an LC review queue. Do not apply canonical fixes directly from the script output; route Concept-changing work through Candidate Concept Update Bundles.
 
 ## Output Rules
