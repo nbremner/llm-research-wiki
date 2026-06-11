@@ -311,6 +311,17 @@ The helper expects already-typed Notion property JSON. Do not ask it to infer Sc
 
 ### 8. Generate wiki-ready summary
 
+For important, promotion-bound, or review-bound PDFs, include researcher interpretation prompts. In manual dry-runs, these may be left as prompts for Nicholas to answer. In automated or backlog contexts, fill only what is inferable from public source metadata and mark the rest `not captured` rather than inventing intent.
+
+Researcher interpretation prompts:
+
+- Why does this source matter for the wiki?
+- What should the agent pay attention to?
+- Does this source confirm, sharpen, or contradict an existing Concept?
+- Is this a foundational source, supporting source, edge case, contradiction, methods source, or weak signal?
+- Should this source update any Research Map question?
+- Does this source suggest a Candidate Concept Update Bundle, or is `no canonical update recommended` more appropriate?
+
 Produce a summary in this structure:
 
 ```markdown
@@ -349,6 +360,14 @@ Produce a summary in this structure:
 
 ## Relevance to the wiki
 
+## Researcher interpretation prompts
+- Why does this source matter for the wiki?
+- What should the agent pay attention to?
+- Does this source confirm, sharpen, or contradict an existing Concept?
+- Is this a foundational source, supporting source, edge case, contradiction, methods source, or weak signal?
+- Should this source update any Research Map question?
+- Does this source suggest a Candidate Concept Update Bundle, or is `no canonical update recommended` more appropriate?
+
 ## Candidate Concepts affected
 
 For each candidate:
@@ -373,6 +392,8 @@ For each candidate:
 - status:
 - public_verified:
 - confidence:
+- high_value_source_priority:
+- high_value_source_rationale:
 
 ## Suggested Inbox properties
 - captured_date:
@@ -459,6 +480,31 @@ Use only Schema-approved topics. Current known topic set:
 
 If a needed topic is missing, do not invent a tag. Add a promotion note or `taxonomy_candidate` recommendation for LC/human review.
 
+## High-Value Source Criteria
+
+Use these criteria when deciding whether a source should receive deeper summary, Review/Summary artifact creation, Candidate Concept Update Bundle preparation, or priority in future agentic loops.
+
+A high-value source usually has one or more of these properties:
+
+- **Foundational relevance:** defines or strongly anchors a construct, mechanism, framework, method, or debate central to the research wiki.
+- **Direct Research Map fit:** addresses an active Research Map question, frontier question, known gap, or deep-dive queue item.
+- **I-O / AI-workforce bridge value:** connects mature I-O constructs to AI workforce transformation, work redesign, task change, adoption, governance, skills, measurement, or organizational change.
+- **Empirical leverage:** provides credible empirical evidence, especially quantitative relationships, longitudinal data, field evidence, meta-analysis, systematic review, or strong qualitative evidence with clear boundary conditions.
+- **Method / measurement value:** improves how the wiki thinks about operationalization, level of analysis, construct validity, task/job measurement, exposure measurement, or evaluation design.
+- **Contradiction or boundary-condition value:** challenges an existing Concept, qualifies an overbroad claim, identifies mixed evidence, or exposes where a relationship does not generalize.
+- **Practical design value:** has clear implications for job design, workforce planning, human-AI collaboration, governance, adoption, role re-architecting, or people analytics.
+- **Recency / frontier value:** is recent enough to shift understanding of fast-moving AI-work evidence, while still having public provenance and enough quality to justify attention.
+- **Canonical source quality:** has stable public provenance: DOI, publisher page, arXiv/SSRN/NBER/RePEc/OSF/institutional landing page, or clearly public organizational report source.
+
+Priority levels:
+
+- **P1 — promote/review soon:** directly addresses a Research Map priority or materially changes a Concept; likely Review artifact or Candidate Concept Update Bundle.
+- **P2 — summarize and stage:** useful source support or bridge material; good Inbox summary candidate, may later support a Review.
+- **P3 — backlog/watchlist:** plausible relevance but weak evidence, unclear provenance, narrow scope, or duplicate-adjacent.
+- **Reject / defer:** private/non-public, out of scope, extraction too weak, provenance too unstable, or too generic to justify backlog growth.
+
+Do not treat topical relevance alone as high value. The source must either improve the wiki's evidence base, sharpen a Concept, answer a Research Map question, reveal a boundary condition, or support a concrete future review/promotion decision.
+
 ## Failure Modes
 
 ### Multiple PDFs in `_inbox`
@@ -498,7 +544,7 @@ For dry-run:
 - [ ] SHA-256 hash was computed.
 - [ ] Proposed filename follows date/source/title convention.
 - [ ] Proposed move destination is `public-literature-wiki` root.
-- [ ] Summary includes bibliographic, evidence, limitation, relevance, concept-candidate, and property sections.
+- [ ] Summary includes bibliographic, evidence, limitation, relevance, researcher-interpretation, concept-candidate, and property sections.
 - [ ] No Drive or Notion mutations occurred.
 - [ ] User received clear approval request for apply mode.
 
