@@ -33,6 +33,7 @@ skills/
 
 scripts/
   research-wiki-tools/
+    graph_lint.py
     pdf_backlog_triage.py
     numbers_review_extract.py
 
@@ -53,6 +54,7 @@ tests/
 The scripts are designed to run from a configured agent machine with Google Drive OAuth already available. They do not contain credentials.
 
 ```bash
+python scripts/research-wiki-tools/graph_lint.py --max-pages 100
 uv run scripts/research-wiki-tools/pdf_backlog_triage.py --max-files 10
 uv run scripts/research-wiki-tools/pdf_backlog_triage.py --no-download
 uv run scripts/research-wiki-tools/numbers_review_extract.py /path/to/review.numbers --out /path/to/review.csv

@@ -178,6 +178,30 @@ Use these levels in reports:
 ## Recommended next actions
 ```
 
+## Scripted read-only workflow
+
+Preferred script in the portable workflow spine:
+
+```bash
+python scripts/research-wiki-tools/graph_lint.py --max-pages 100
+```
+
+Full run on a configured Hermes machine:
+
+```bash
+python /root/work/llm-research-wiki/scripts/research-wiki-tools/graph_lint.py
+```
+
+The script:
+
+- retrieves Schema, Agent Operating Guide, and Research Map page metadata/block samples first;
+- queries Sources, Concepts, Reviews, and Inbox data sources read-only;
+- writes `REPORT.md` and `graph_lint.json` under `/root/research-wiki-runs/graph-lint-*`;
+- checks current structural orphans, missing provenance, duplicate Source/Concept keys, stale Inbox items, Review traceability, and weak-evidence confidence signals;
+- performs no Notion mutations.
+
+Use the report as an LC review queue. Do not apply canonical fixes directly from the script output; route Concept-changing work through Candidate Concept Update Bundles.
+
 ## Output Rules
 
 - Be specific: include page titles, IDs/URLs when available, relation names, and why the issue matters.

@@ -1,8 +1,18 @@
-# Research Wiki PDF Backlog Workflow
+# Research Wiki Tools
 
-This directory contains durable local tooling for the public research-wiki PDF backlog.
+This directory contains durable local tooling for the public research-wiki operating layer.
 
 ## Current tools
+
+`graph_lint.py` runs a read-only graph-semantic lint against live Notion Sources, Concepts, Reviews, and Inbox records. It reads the canonical Schema, Agent Operating Guide, and Research Map pages before querying databases, then writes a Markdown report and JSON findings under `/root/research-wiki-runs/graph-lint-YYYYMMDDTHHMMSSZ/`.
+
+Smoke test:
+
+```bash
+python scripts/research-wiki-tools/graph_lint.py --max-pages 100
+```
+
+The graph lint currently checks structural orphans, missing provenance signals, duplicate Sources/Concepts, stale/open Inbox items, Reviews without Reviewed Sources, concept-bearing Reviews without Related Concepts, and weak-evidence Concepts lacking obvious confidence/contested signals. It does not mutate Notion.
 
 `pdf_backlog_triage.py` indexes PDFs in the Google Drive `public-literature-wiki/_inbox` folder.
 

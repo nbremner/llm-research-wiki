@@ -208,10 +208,17 @@ Create an LC-style lint workflow for knowledge graph coherence.
 
 **Acceptance criteria**
 
-- Lint workflow exists as a skill and/or script.
-- Lint reports distinguish structural, provenance, semantic, and governance issues.
-- Lint can run read-only by default.
+- [x] Lint workflow exists as a skill and/or script.
+- [x] Lint reports distinguish structural, provenance, semantic, and governance issues.
+- [x] Lint can run read-only by default.
 - Meaningful lint runs are logged.
+
+**Current implementation**
+
+- Skill: `skills/research-wiki-graph-lint/SKILL.md`
+- Script: `scripts/research-wiki-tools/graph_lint.py`
+- Test coverage: `tests/test_graph_lint.py`
+- Output: local `REPORT.md` and `graph_lint.json` under `/root/research-wiki-runs/graph-lint-*`
 
 ---
 
