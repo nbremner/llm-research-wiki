@@ -486,7 +486,7 @@ Start as explicit/manual runs, then move to scheduled Hermes jobs once the dry p
 ### Phase 4 — Tighten ingestion and promotion
 
 - [ ] Patch `manual-research-pdf-summary` with researcher-interpretation prompts.
-- [ ] Add candidate Concept update bundle format.
+- [x] Add candidate Concept update bundle format.
 - [ ] Define high-value source criteria.
 
 ### Phase 5 — Build graph linting

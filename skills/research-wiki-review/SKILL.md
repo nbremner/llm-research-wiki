@@ -137,6 +137,7 @@ Every review should include, scaled to the review type:
 - literature gaps or weak evidence areas;
 - suggested sources/concepts;
 - candidate Concept updates;
+- candidate Concept Update Bundle when the review proposes canonical Concept changes;
 - candidate Research Map updates;
 - confidence / evidence status;
 - next review questions.
@@ -188,6 +189,8 @@ Use this structure in the body of the Notion Reviews row:
 
 ## Candidate Concept updates
 
+Summarize proposed Concept changes. If the review proposes canonical Concept mutation, also prepare a Candidate Concept Update Bundle using `templates/candidate-concept-update-bundle.md`.
+
 ## Candidate Research Map updates
 
 ## Next review questions
@@ -217,11 +220,40 @@ Set these properties when creating a Reviews row:
 - `Related Concepts`: relation links where Concepts exist
 - `Needs source search`: true when the review identifies source candidates that need ingestion/search
 
+## Candidate Concept Update Bundles
+
+Use a Candidate Concept Update Bundle when a Review or Summary artifact produces concrete proposed changes to canonical Concepts. The bundle is the promotion packet between staged synthesis and canonical mutation.
+
+Template: [`templates/candidate-concept-update-bundle.md`](templates/candidate-concept-update-bundle.md)
+
+A good bundle includes:
+
+- Review artifact / source artifact links;
+- affected existing Concepts or proposed new Concepts;
+- proposed update type: new Concept, revise definition, add source support, add contested note, add measurement implication, add practical implication, add method/evidence note, add Concept relation, update Research Map question, or no canonical update recommended;
+- exact proposed canonical language, not just a vague recommendation;
+- evidence basis table with source provenance, evidence role, confidence, and limitations;
+- I-O construct, AI workforce mechanism, level-of-analysis, measurement, and practical-implication mapping;
+- boundary conditions / caveats;
+- concise Research Map update proposal when needed;
+- no-change/watchlist items where the evidence is interesting but not promotion-ready;
+- Nicholas approval decision before canonical Concept mutation.
+
+Bundle rules:
+
+1. Separate source-backed claims from agent synthesis.
+2. Do not bury weak evidence in confident prose; mark thin/mixed/contested evidence explicitly.
+3. Prefer small exact patches to broad Concept rewrites.
+4. If proposing a new Concept, check existing Concepts for overlap first.
+5. If the Review only produced a light summary, create a light bundle or explicitly record `no canonical update recommended`.
+6. A bundle can be created automatically or agentically, but applying it to canonical Concepts requires approval.
+
 ## Governance Rules
 
 - Reviews are staged synthesis artifacts.
 - Reviews may propose Concept updates and Research Map updates.
 - Reviews must not directly mutate canonical Concepts unless Nicholas explicitly approves that step.
+- Candidate Concept Update Bundles are the default approval packet for moving Review/Summary insights into canonical Concepts.
 - Research Map update proposals should stay concise and high-level; do not bloat the overview.
 - Drive `_inbox` PDFs can inform candidate selection but are not canonical Sources until ingested.
 - Web/arXiv findings are candidate sources until ingestion/promotion.
@@ -264,5 +296,6 @@ A good Log summary includes:
 - [ ] Major claims have provenance.
 - [ ] I-O constructs, AI mechanisms, level of analysis, measurement implications, and practical implications included.
 - [ ] Literature gaps / weak evidence areas are distinguished from specific suggested sources/concepts.
+- [ ] Candidate Concept Update Bundle prepared when the review proposes canonical Concept changes.
 - [ ] Candidate Concept updates and concise Research Map updates proposed, not applied.
 - [ ] Log row created for meaningful review artifact.
