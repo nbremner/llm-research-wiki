@@ -42,9 +42,10 @@ scripts/
     numbers_review_extract.py
 
 docs/
-  notion-address-map.md       # Notion page/database ID snapshot
+  wiki-redesign-plan.md        # ACTIVE: markdown-in-git redesign, ready to build
+  notion-address-map.md        # Notion page/database ID snapshot
   research-map-template.md
-  sciaiwiki-roadmap.md         # canonical roadmap home
+  sciaiwiki-roadmap.md         # superseded for direction by wiki-redesign-plan.md
 
 config/
   example.env

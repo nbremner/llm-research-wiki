@@ -1,7 +1,8 @@
 # SciAI Wiki Alignment Roadmap
 
 Created: 2026-05-29
-Status: active roadmap
+Status: **superseded for direction** by `docs/wiki-redesign-plan.md` (2026-06-14), which pivots the
+wiki to markdown-in-git. Kept for history and for the completed Theme details it records.
 Canonical home: **this file** (Git), and the only copy. The former Notion "SciAI Wiki Alignment Roadmap" pointer page was deleted 2026-06-14.
 Scope: public research-wiki architecture, `llm-research-wiki` workflow spine, Notion operating layer, and future markdown/wiki graph layer.
 
