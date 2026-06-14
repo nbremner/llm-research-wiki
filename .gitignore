@@ -51,3 +51,7 @@ __pycache__/
 .venv/
 venv/
 .DS_Store
+
+# Obsidian per-device vault state (shared config like core-plugins.json is tracked)
+wiki/.obsidian/workspace*.json
+wiki/.obsidian/cache
