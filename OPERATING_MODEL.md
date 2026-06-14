@@ -3,192 +3,116 @@
 Status: canonical **architecture** for the research wiki. Read this to change the system.
 Last updated: 2026-06-14.
 
-This document is the build-time architecture: the two-plane model, the role model
-rationale, the operating loop, the cron design, and the Notion setup reference. It is
-**not** the live enforced contract. The contract agents read at action time is the
-**Notion Schema** (`36accc4a-237c-81a9-8de2-c667d2a95796`). Where this document and the
-Schema both touch roles or write-permissions, the **Schema is canonical** and this file
-points to it rather than restating it.
+This is the architecture doc — the substrate, roles, the operating loop, deployment, and cron
+design. The **live contract** agents read at action time is `wiki/schema.md` (conventions, templates,
+the one hard rule, the workflows). Where this doc and `wiki/schema.md` both touch a rule, **schema.md
+is canonical** and this file points to it rather than restating it.
 
-## First principle: two planes, by time-of-use
+## One substrate: git holds machinery *and* content
 
-The system has two sources of truth, separated by *when you read them*, not by
-machinery-vs-content:
+The system has a **single source of truth: the `llm-research-wiki` git repo.** It holds both the
+*machinery* (this doc, skills, scripts, tests) and the *content* (the `wiki/` directory). This
+collapses the former two-plane build-time/run-time split — **Notion is retired** (archived
+2026-06-14), and with it the separation that required reading different stores at build vs run time.
 
-- **Git repo (`llm-research-wiki`) — build-time.** *How the system is built and evolved.*
-  Architecture (this doc), skills, scripts, tests, roadmap, setup references, the Notion
-  address map. Read it to **change the system**.
-- **Notion + Google Drive — run-time.** *What agents enforce and read to act now.*
-  The Schema and Agent Operating Guide (the live operating contract), the Research Map,
-  and the content databases (Sources, Concepts, Reviews, Inbox, Log) + raw public PDFs.
-  Read it to **take action**.
+```text
+llm-research-wiki/
+  wiki/                  # the wiki itself (content + contract)
+    schema.md            # the live contract — read first
+    overview.md          # orientation: topics, open questions, thin areas
+    topics/              # cross-linked synthesis (the compounding core)
+    sources/             # one evidence record per public source
+  skills/  scripts/  tests/  docs/   # the machinery
+  OPERATING_MODEL.md     # this doc
+```
 
-Notion **legitimately holds agent instructions** — the Schema and Agent Operating Guide
-are the runtime contract and belong there, because that is where NicholasJunior reads
-them to act. The Git repo holds the *architecture and machinery* for building/evolving
-the system. Neither plane holds the other's canonical facts.
-
-## Sources of truth: two canonical stores, two mirrors
-
-| Plane | Canonical store | Mirrors (never independent sources) |
+| Store | Role | Mirrors |
 |---|---|---|
-| Build-time | **GitHub origin** (`llm-research-wiki`) | LC local clone, NicholasJunior clone — kept in sync by `git pull`/`push` |
-| Run-time | **Notion** (`research-wiki`) | none — accessed live (LC via MCP, NJ via API / prompt URLs) |
+| **GitHub origin/main** (`llm-research-wiki`) | canonical — machinery **and** content | LC local clone, NicholasJunior VPS clone — synced by git, never independent truths |
+| **Google Drive** (`public-literature-wiki` + `_inbox`) | the one external store: immutable raw-PDF capture | none — accessed live |
 
-The local clone and NJ's clone are working copies of origin, not separate truths.
-Google Drive is the immutable raw-source store under the run-time plane.
+Google Drive holds only raw public source PDFs and the `_inbox` staging subfolder. No agent
+instructions, private notes, or synthesis live there. Everything else is in git.
 
-### Single-source-per-fact discipline
+## Single-source-per-fact discipline
 
-Each fact lives in exactly **one** plane. The other plane **links** to it; it never
-restates it. This is the rule that prevents drift (the DC role inconsistency happened
-because role text was restated in both Schema and this doc).
+Each fact lives in exactly one place; the others **link**, never restate (this is what prevents drift).
 
-- Enforced roles, write-permissions, taxonomy, promotion rules → **Notion Schema** (canonical).
-- Live run steps + current Notion IDs → **Notion Agent Operating Guide** (canonical).
-- Architecture, cron design, parsimony rules → **this doc** (canonical).
-- Roadmap → **`docs/sciaiwiki-roadmap.md`** (canonical, Git-only; the former Notion roadmap page was removed).
-- Skills/scripts/tests → **Git** (canonical); NJ runs them from its synced clone.
-- Research Map / Overview → **Notion** (canonical, content).
+- Conventions, templates, the hard rule, the workflows → **`wiki/schema.md`** (canonical contract).
+- Orientation (what topics exist, open questions, thin areas) → **`wiki/overview.md`**.
+- Synthesis → **`wiki/topics/`**; evidence → **`wiki/sources/`**.
+- Architecture, roles, cron, parsimony → **this doc**.
+- Skills / scripts / tests → **the repo** (NJ runs them from its synced clone).
+- Roadmap / build history → **`docs/wiki-redesign-plan.md`** (`docs/sciaiwiki-roadmap.md` is historical).
 
-## Roles (orientation only — canonical text in Schema)
+## Roles (orientation; the enforced rule is the one hard rule in schema.md)
 
-One sentence each; the **enforced** definitions live in the Notion Schema and Agent
-Operating Guide. Do not treat the lines below as the contract.
+- **LC** (Claude Code, human-directed): architect and overseer. Owns the git spine, approves topic
+  synthesis into canon, runs/reads lint, keeps the model small.
+- **NicholasJunior** (Hermes, VPS, scheduled): operator. Runs ingest / query / lint, **auto-commits
+  source records** (evidence, low-judgment), routes **topic synthesis to owner approval**, and refiles
+  raw PDFs in Drive.
+- **DC** (work AI, Uber environment): quarantined outbound consumer of public artifacts; **no write
+  path back** into the wiki; out of the build/maintain loop.
 
-- **LC** (Claude Code, human-directed): architect and overseer. Owns the Git spine,
-  approves promotions into canon, runs/reads lint, keeps the model small.
-- **NicholasJunior** (Hermes, GPT-5.5, VPS, scheduled): operator. Runs bounded cron
-  loops and answers research queries, writing only to low-trust zones; routes durable
-  synthesis to LC.
-- **DC** (work AI, Uber environment): quarantined outbound analyst. Consumes public
-  artifacts passed into the confidential work environment; **no write path back** into
-  the public wiki; out of the wiki build/maintain loop.
+Trust model: source records are low-judgment and auto-committed; **topic synthesis is approval-gated**
+(it becomes canon only with owner approval); DC has no write path.
 
-The trust model behind the write-permissions (canonical matrix in Schema) is three
-tiers: agents auto-write **low-trust** zones (Inbox, Log, Review/Summary drafts);
-**canon** (Sources, Concepts, Schema, Research Map, Index) is approval-gated through LC;
-**DC** has no write path. Concept graduation is always approval-gated.
+## The loop — three operations
 
-## The loop — four operations only
+1. **Ingest** — a public PDF from Drive `_inbox` → a `sources/` record (auto-commit) + integrated
+   `topics/` synthesis (owner-approved) + refile the raw PDF into `public-literature-wiki`.
+2. **Query** — answer from `topics/` + `sources/`; file durable answers back into pages. Deeper
+   cross-topic reviews (literature review, gap map, construct bridge, …) are on-demand synthesis here,
+   not a separate artifact class.
+3. **Lint** — markdown graph audit (broken wikilinks, orphans, claims-without-source, provenance gaps,
+   stale topics) → report to owner; read-only, no auto-fix.
 
-Everything maps to one of these or is frozen:
+**Git history is the log.** There are no Reviews / Log / Inbox / Index databases — those were cut.
 
-1. **Ingest** — PDFs from Drive `_inbox` → Inbox + Review/Summary drafts.
-2. **Lint** — graph-coherence audit → report surfaced to LC (read-only; no auto-fix).
-3. **Review** — staged synthesis (literature reviews, gap maps) → Review drafts +
-   candidate Concept/Research-Map updates (proposed, not applied).
-4. **Query** — answer from existing material; route durable synthesis to LC.
+Skills in the repo: `research-wiki-ingest`, `research-wiki-pdf-backlog-triage`,
+`research-wiki-graph-lint`, `research-wiki-query`.
 
-Supporting skills in the repo: `manual-research-pdf-summary`,
-`research-wiki-pdf-backlog-triage`, `research-wiki-graph-lint`,
-`research-wiki-review`, `research-wiki-query`.
+## Deployment to NicholasJunior
+
+NJ's gateway loads each research skill via a **per-skill systemd bind mount** from its repo clone
+(`/root/work/llm-research-wiki/skills/<name>` → `/root/.hermes/skills/research/<name>`), with a
+**fail-closed gateway drop-in** (`hermes-gateway.service.d/research-wiki-mounts.conf`) that requires
+those mounts present before the gateway starts. The clone syncs bidirectionally with `origin/main` via
+`/root/bin/sync-research-wiki.sh` on `research-wiki-sync.timer` (daily). So: edit a skill → push to
+origin → NJ pulls → bind mounts reflect it. Renaming/retiring a skill means updating the mount units
+**and** the drop-in's required-mount list (rewrite the list before unmounting, or the running gateway
+stops).
 
 ## Cron schedule (start small)
 
-NicholasJunior runs conservative scheduled jobs. Hermes already auto-alerts job failures
-to Discord. Every loop must be volume-capped, deduped, and logged.
+Conservative scheduled jobs; every loop volume-capped, deduped, and logged (Hermes auto-alerts
+failures to Discord #logs).
 
 | Job | Cadence | Writes | Cap |
 |---|---|---|---|
-| PDF backlog triage + Inbox→Review drafts | Weekly | Inbox, Review drafts | low per-run cap |
-| Candidate-source discovery | Weekly / biweekly | Inbox | low per-run cap |
-| Graph-lint report | Monthly | report only (no canon writes) | n/a |
+| PDF backlog triage | Weekly | none (dry-run index) | low per-run cap |
+| Graph-lint report | Periodic | report only | n/a |
+| Ingest | On demand / small scheduled | sources/ (auto), topics/ (owner-approved) | low per-run cap |
 
-Expand autonomy only after manual runs produce clean artifacts and logs. Concept
-graduation stays approval-gated regardless of cadence.
+Expand autonomy only after manual runs produce clean artifacts. Topic synthesis stays approval-gated
+regardless of cadence.
+
+## Governance (minimal)
+
+- **Public-only sources** — the one hard rule (see `wiki/schema.md`).
+- **Owner approves** before topic synthesis becomes canonical.
+- **Contradictions are surfaced in prose, never auto-resolved** (disagreement carries meaning).
 
 ## Parsimony guardrails
 
-- **Frozen for now:** roadmap Themes 5 (markdown mirror), 6 (Concept subtype expansion),
-  7 (confidence/contested schema fields). Revisit only when the small loop is stable.
-- One Schema is canonical; everything reads it first.
+- One contract (`wiki/schema.md`); everything reads it first.
 - No loop becomes a backlog sink: caps + dedupe + logs on every scheduled job.
 - When in doubt, do less. Complexity is the failure mode this model exists to prevent.
 
-## Notion operating-layer reference
-
-How the run-time plane is structured and built. (Setup machinery; the live rules are in
-the Schema, not here.)
-
-### Target structure
-
-Under the `research-wiki` parent page, keep the live operational layer small:
-
-```text
-research-wiki
-├── Schema                         # live agent contract; read first (canonical)
-├── Agent Operating Guide           # runbook for LC/NicholasJunior; current IDs (canonical)
-├── Research Map / Overview         # living intellectual map: scope, questions, evidence map
-├── Sources                         # canonical public source DB
-├── Concepts                        # canonical synthesis DB
-├── Reviews                         # staged review artifacts
-├── Inbox                           # low-trust capture/staging DB
-├── Log                             # append-only audit DB
-├── Index                           # future public front door
-└── System Docs / Archive           # frozen rationale + completed setup docs + roadmap pointer
-```
-
-The Google Drive raw-source folder holds only public source artifacts plus a single
-`_inbox` staging subfolder. No agent instructions, private notes, or working synthesis
-in the raw-source folder.
-
-### Document roles
-
-- **Schema**: live enforced contract. Agents read it first.
-- **Agent Operating Guide**: runbook with current IDs, role-boundary detail, workflows,
-  and run sequence. Linked from Schema.
-- **Research Map / Overview**: living intellectual map (scope, lenses, active questions,
-  frontier areas, evidence status, gaps).
-- **Reviews**: staged synthesis; proposes Concept/Research-Map updates, not canon by default.
-- **Architecture Master Reference — frozen** / **Setup Checklist — completed**: historical;
-  not active operating instructions.
-- **System Docs / Archive**: links frozen/completed docs and points to the Git roadmap.
-
-### Build / reorg sequence
-
-1. Read the master reference and setup checklist; the master rules win over checklist detail.
-2. Create/verify `Schema`.
-3. Create full-page databases: `Sources`, `Concepts`, `Reviews`, `Log`, `Inbox`.
-4. Add relations only after target data sources exist.
-5. Create `Index` placeholder.
-6. Create `Research Map / Overview`.
-7. Create `Agent Operating Guide` and link it from Schema.
-8. Create `System Docs / Archive`; mark old docs frozen/completed and link them.
-9. Create a marked validation Source/Concept/Log row, verify relation/query behavior, then
-   archive the test rows after review.
-10. Create/verify Drive raw-source folder and `_inbox` child.
-11. Log the setup/reorg action.
-
-### Notion API quirks
-
-- With Notion API `2025-09-03`, a full-page database has a **database ID** and one or more
-  **data source IDs**. `GET /v1/databases/{database_id}` returns `data_sources[]`;
-  schema/query operations use the data source ID.
-- Patch schema properties via `PATCH /v1/data_sources/{data_source_id}`.
-- Relation properties require `single_property` or `dual_property`; `data_source_id` alone
-  fails validation.
-- Creating a relation can auto-create reverse relation labels; this is normal.
-- Patching a page `parent` may report success without visibly moving the page in the tree.
-  Prefer functional archiving: rename (`— frozen`, `— completed`), add status callouts, and
-  link from `System Docs / Archive`. If the visible tree must be perfect, drag/drop in the UI.
-
-### Validation checklist
-
-- Query each data source successfully.
-- Confirm expected property counts/types.
-- Confirm Source ↔ Concept relation works.
-- Confirm Reviews can relate to reviewed Sources and related Concepts.
-- Confirm Log entries can be created.
-- Confirm test rows are archived after review.
-- Confirm Drive raw-source folder and `_inbox` exist.
-- Confirm Schema links to Agent Operating Guide and System Docs / Archive.
-- Confirm Agent Operating Guide links to Research Map / Overview and states when to update it.
-
 ## Maintenance rule
 
-When a workflow file mirrored here changes, update this repo in the same session, run
-`python -m pytest tests/ -q`, and keep `origin/main` in sync with `HEAD` (see `AGENTS.md`).
-If a change alters roles or write-permissions, update the **Notion Schema** (canonical)
-and reconcile this doc's pointer. If it alters architecture, cron design, or the two-plane
-model, update **this** doc.
+When a workflow file changes, update the repo in the same session, run the tests, and keep
+`origin/main` in sync with `HEAD` (see `AGENTS.md`). If a change alters conventions, templates, or the
+hard rule → update **`wiki/schema.md`**. If it alters architecture, roles, deployment, or cron →
+update **this** doc.
