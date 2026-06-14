@@ -25,6 +25,9 @@ The canonical research artifacts live in Notion and Google Drive. This repo trac
 ## Current contents
 
 ```text
+OPERATING_MODEL.md          # canonical build-time architecture — two-plane model, roles, loop, cron
+AGENTS.md                   # repo contribution rules + hard boundary
+
 skills/
   manual-research-pdf-summary/
   research-wiki-graph-lint/
@@ -39,9 +42,9 @@ scripts/
     numbers_review_extract.py
 
 docs/
-  research-wiki-operating-layer.md
+  notion-address-map.md       # Notion page/database ID snapshot
   research-map-template.md
-  sciaiwiki-roadmap.md
+  sciaiwiki-roadmap.md         # canonical roadmap home
 
 config/
   example.env
@@ -68,7 +71,7 @@ To move this spine to another agent:
 1. Clone this repo.
 2. Install/import the skills under `skills/` into that agent's skill mechanism.
 3. Configure credentials locally using `config/example.env` as a guide. Do not commit real credentials.
-4. Read `AGENTS.md` and `docs/research-wiki-operating-layer.md` before running workflows.
+4. Read `OPERATING_MODEL.md` and `AGENTS.md` before running workflows. The live enforced contract is the Notion Schema (see `docs/notion-address-map.md`).
 5. Run the guardrail test before committing any changes.
 
 ```bash
