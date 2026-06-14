@@ -24,7 +24,6 @@ Last verified: 2026-06-14.
 | Research Map / Overview | `37cccc4a-237c-81cc-b455-ff673f15e97c` |
 | Index (public front door placeholder) | `36accc4a-237c-81b2-bce5-e7e9837d8f65` |
 | System Docs / Archive | `36bccc4a-237c-812f-b653-e1038dfd8ea9` |
-| SciAI Wiki Alignment Roadmap | `36fccc4a-237c-81ca-b432-d1292f981842` |
 | Architecture Master Reference — frozen | `369ccc4a-237c-80a7-95dc-cc567e4278a3` |
 | Setup Checklist — completed | `36accc4a-237c-8136-b223-ef319a4d9294` |
 
@@ -37,14 +36,6 @@ Last verified: 2026-06-14.
 | Reviews | `09776168-d11e-4868-ab34-6ebe3b900cee` | `eb454605-2dea-4b8b-a173-407be60184ed` |
 | Inbox | `cb35f9c7-0fd7-41b8-b32a-17784da9160c` | `56bea68b-7a43-4494-bf80-23f15202ef1c` |
 | Log | `aff36f8c-2ce0-4d65-b9cb-fc392a3bf341` | `d1169e63-cf4d-4a9b-b8a8-139c78faab5c` |
-
-## Prompt snippet pages (per-agent boot prompts)
-
-| Page | ID |
-|---|---|
-| Hermes prompt snippet | `368ccc4a-237c-8065-8059-c86cd3db1898` |
-| LC prompt snippet | `368ccc4a-237c-807d-85f4-d93763870786` |
-| DC prompt snippet | `368ccc4a-237c-8094-8af8-db89ffa44d8b` |
 
 ## Write-boundary reminder
 

@@ -2,7 +2,7 @@
 
 Created: 2026-05-29
 Status: active roadmap
-Canonical home: **this file** (Git). The Notion "SciAI Wiki Alignment Roadmap" page is a pointer to this file, not a parallel copy.
+Canonical home: **this file** (Git), and the only copy. The former Notion "SciAI Wiki Alignment Roadmap" pointer page was deleted 2026-06-14.
 Scope: public research-wiki architecture, `llm-research-wiki` workflow spine, Notion operating layer, and future markdown/wiki graph layer.
 
 ## Purpose

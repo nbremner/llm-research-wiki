@@ -47,7 +47,7 @@ because role text was restated in both Schema and this doc).
 - Enforced roles, write-permissions, taxonomy, promotion rules → **Notion Schema** (canonical).
 - Live run steps + current Notion IDs → **Notion Agent Operating Guide** (canonical).
 - Architecture, cron design, parsimony rules → **this doc** (canonical).
-- Roadmap → **`docs/sciaiwiki-roadmap.md`** (canonical); the Notion roadmap page is a pointer.
+- Roadmap → **`docs/sciaiwiki-roadmap.md`** (canonical, Git-only; the former Notion roadmap page was removed).
 - Skills/scripts/tests → **Git** (canonical); NJ runs them from its synced clone.
 - Research Map / Overview → **Notion** (canonical, content).
 
