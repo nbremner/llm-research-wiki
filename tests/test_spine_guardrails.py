@@ -38,13 +38,26 @@ def test_no_corpus_or_runtime_artifacts_in_repo():
     assert not offenders, "Forbidden corpus/runtime artifacts present: " + ", ".join(sorted(offenders))
 
 
+EXPECTED_SKILLS = [
+    "research-wiki-ingest",
+    "research-wiki-graph-lint",
+    "research-wiki-pdf-backlog-triage",
+    "research-wiki-query",
+]
+
+
 def test_expected_research_wiki_skills_present():
-    expected = [
-        ROOT / "skills" / "manual-research-pdf-summary" / "SKILL.md",
-        ROOT / "skills" / "research-wiki-graph-lint" / "SKILL.md",
-        ROOT / "skills" / "research-wiki-pdf-backlog-triage" / "SKILL.md",
-        ROOT / "skills" / "research-wiki-query" / "SKILL.md",
-        ROOT / "skills" / "research-wiki-review" / "SKILL.md",
-    ]
-    missing = [str(p.relative_to(ROOT)) for p in expected if not p.exists()]
+    missing = [s for s in EXPECTED_SKILLS if not (ROOT / "skills" / s / "SKILL.md").exists()]
     assert not missing, "Missing expected skills: " + ", ".join(missing)
+
+
+def test_allowlist_matches_skill_dirs():
+    allowlist = {
+        line.strip().rstrip("/").split("/")[-1]
+        for line in (ROOT / "skills.allowlist").read_text().splitlines()
+        if line.strip()
+    }
+    assert allowlist == set(EXPECTED_SKILLS), f"skills.allowlist out of sync: {allowlist}"
+    # the allowlist must not name a retired skill that still has a dir
+    on_disk = {p.name for p in (ROOT / "skills").iterdir() if p.is_dir()}
+    assert allowlist == on_disk, f"allowlist vs skills/ dirs mismatch: {allowlist} != {on_disk}"

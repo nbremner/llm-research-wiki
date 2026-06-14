@@ -1,3 +1,4 @@
+import datetime as dt
 import importlib.util
 from pathlib import Path
 
@@ -9,125 +10,92 @@ graph_lint = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(graph_lint)
 
 
-def page(title, props=None, page_id=None, created="2026-01-01T00:00:00.000Z"):
-    page_id = page_id or title.lower().replace(" ", "-")
-    return {
-        "id": page_id,
-        "url": f"https://notion.so/{page_id}",
-        "created_time": created,
-        "last_edited_time": created,
-        "properties": {
-            "Name": {"type": "title", "title": [{"plain_text": title}]},
-            **(props or {}),
-        },
-    }
+def source(slug, links=None, url="https://example.org/x", doi="null", file_hash="abc123"):
+    fm = {"source_type": "paper", "url": url, "doi": doi, "file_hash": file_hash}
+    return {"slug": slug, "kind": "source", "path": f"sources/{slug}.md", "frontmatter": fm, "links": links or [], "body": ""}
 
 
-def relation(ids):
-    return {"type": "relation", "relation": [{"id": x} for x in ids]}
+def topic(slug, links=None, status="active", updated="2026-06-14"):
+    fm = {"status": status, "updated": updated}
+    return {"slug": slug, "kind": "topic", "path": f"topics/{slug}.md", "frontmatter": fm, "links": links or [], "body": ""}
 
 
-def rich(text):
-    return {"type": "rich_text", "rich_text": [{"plain_text": text}]}
+def doc(slug, links=None):
+    return {"slug": slug, "kind": "doc", "path": f"{slug}.md", "frontmatter": {}, "links": links or [], "body": ""}
 
 
-def select(text):
-    return {"type": "select", "select": {"name": text}}
+def test_clean_graph_has_no_findings():
+    pages = [
+        doc("overview", links=["ai-adoption"]),
+        topic("ai-adoption", links=["2026-kim"]),
+        source("2026-kim", links=["ai-adoption"]),
+    ]
+    assert graph_lint.build_findings(pages, today=dt.date(2026, 6, 15)) == []
 
 
-def url(text):
-    return {"type": "url", "url": text}
+def test_broken_wikilink_flagged():
+    pages = [topic("ai-adoption", links=["2026-kim", "nonexistent"]), source("2026-kim", links=["ai-adoption"]),
+             doc("overview", links=["ai-adoption"])]
+    findings = graph_lint.build_findings(pages, today=dt.date(2026, 6, 15))
+    broken = [f for f in findings if f["check"] == "Broken wikilink"]
+    assert broken and broken[0]["page"] == "ai-adoption"
+    assert graph_lint.summarize_counts(findings)["High"] >= 1
 
 
-def test_build_findings_flags_orphans_and_missing_provenance():
-    records = {
-        "Concepts": [page("Unsupported concept")],
-        "Sources": [page("Disconnected source")],
-        "Reviews": [],
-        "Inbox": [],
-    }
+def test_orphan_and_feeds_no_topic():
+    # source links to nothing, and nothing links to it
+    pages = [source("2026-orphan", links=[]), topic("ai-adoption", links=["2026-other"]),
+             source("2026-other", links=["ai-adoption"]), doc("overview", links=["ai-adoption"])]
+    findings = graph_lint.build_findings(pages, today=dt.date(2026, 6, 15))
+    checks = {(f["check"], f["page"]) for f in findings}
+    assert ("Orphan source", "2026-orphan") in checks
+    assert ("Source feeds no topic", "2026-orphan") in checks
 
-    findings = graph_lint.build_findings(records, stale_days=30)
+
+def test_topic_cites_no_source():
+    pages = [topic("lonely-topic", links=[]), doc("overview", links=["lonely-topic"])]
+    findings = graph_lint.build_findings(pages, today=dt.date(2026, 6, 15))
+    assert any(f["check"] == "Topic cites no source" for f in findings)
+
+
+def test_stub_topic_not_flagged_for_no_source():
+    pages = [topic("stub-topic", links=[], status="stub"), doc("overview", links=["stub-topic"])]
+    findings = graph_lint.build_findings(pages, today=dt.date(2026, 6, 15))
+    assert not any(f["check"] == "Topic cites no source" for f in findings)
+
+
+def test_missing_provenance_and_hash():
+    pages = [source("2026-noprov", links=["ai-adoption"], url="", doi="null", file_hash=""),
+             topic("ai-adoption", links=["2026-noprov"]), doc("overview", links=["ai-adoption"])]
+    findings = graph_lint.build_findings(pages, today=dt.date(2026, 6, 15))
     checks = {f["check"] for f in findings}
-
-    assert "Concept has no linked Sources" in checks
-    assert "Source has no linked Concepts" in checks
-    assert "Source lacks DOI/canonical URL signal" in checks
-    assert graph_lint.summarize_counts(findings)["High"] == 2
+    assert "Source missing public url/doi" in checks
+    assert "Source missing file_hash" in checks
 
 
-def test_build_findings_ignores_connected_source_with_provenance():
-    records = {
-        "Concepts": [page("Supported concept", {"Sources": relation(["source-1"])})],
-        "Sources": [page("Connected source", {"Concepts": relation(["concept-1"]), "DOI": rich("10.1234/example")})],
-        "Reviews": [],
-        "Inbox": [],
-    }
-
-    findings = graph_lint.build_findings(records, stale_days=30)
-
-    assert not findings
+def test_stale_topic_flagged():
+    pages = [topic("old-topic", links=["2026-kim"], updated="2025-01-01"), source("2026-kim", links=["old-topic"]),
+             doc("overview", links=["old-topic"])]
+    findings = graph_lint.build_findings(pages, stale_days=180, today=dt.date(2026, 6, 15))
+    assert any(f["check"].startswith("Topic stale") for f in findings)
 
 
-def test_duplicate_sources_by_doi_and_concepts_by_title():
-    records = {
-        "Concepts": [page("Job autonomy"), page("Job Autonomy")],
-        "Sources": [
-            page("Study A", {"DOI": rich("10.1234/example"), "Concepts": relation(["c1"])}),
-            page("Study B", {"DOI": rich("10.1234/example"), "Concepts": relation(["c1"])}),
-        ],
-        "Reviews": [],
-        "Inbox": [],
-    }
-
-    findings = graph_lint.build_findings(records, stale_days=30)
-    checks = [f["check"] for f in findings]
-
-    assert "Duplicate Sources by DOI" in checks
-    assert "Duplicate Concepts by title" in checks
-
-
-def test_review_and_stale_inbox_checks():
-    records = {
-        "Concepts": [],
-        "Sources": [],
-        "Reviews": [page("AI adoption review", {"Notes": rich("This review proposes candidate concept updates.")})],
-        "Inbox": [page("Old inbox item", {"Status": select("Needs review")}, created="2025-01-01T00:00:00.000Z")],
-    }
-
-    findings = graph_lint.build_findings(records, stale_days=30)
-    checks = {f["check"] for f in findings}
-
-    assert "Review has no Reviewed Sources" in checks
-    assert "Review appears concept-bearing but has no Related Concepts" in checks
-    assert any(check.startswith("Inbox item older than 30 days") for check in checks)
-
-
-def test_archived_review_is_not_active_lint_work():
-    records = {
-        "Concepts": [],
-        "Sources": [],
-        "Reviews": [page("Validation Review Setup Row — archived")],
-        "Inbox": [],
-    }
-
-    findings = graph_lint.build_findings(records, stale_days=30)
-
-    assert findings == []
+def test_doi_satisfies_provenance():
+    pages = [source("2026-kim", links=["ai-adoption"], url="", doi="10.1234/x"),
+             topic("ai-adoption", links=["2026-kim"]), doc("overview", links=["ai-adoption"])]
+    findings = graph_lint.build_findings(pages, today=dt.date(2026, 6, 15))
+    assert not any(f["check"] == "Source missing public url/doi" for f in findings)
 
 
 def test_render_markdown_has_required_sections():
     run = {
-        "run_date": "2026-06-11T00:00:00+00:00",
-        "scope": "test",
-        "databases_checked": ["Sources", "Concepts"],
-        "canonical_pages_checked": ["Schema", "Agent Operating Guide", "Research Map / Overview"],
+        "run_date": "2026-06-15T00:00:00",
+        "wiki_dir": "/tmp/wiki",
+        "pages_checked": 3,
         "summary": {"Critical": 0, "High": 0, "Medium": 0, "Low": 0},
         "findings": [],
     }
-
     md = graph_lint.render_markdown(run)
-
     assert "# Research Wiki Graph-Lint Report" in md
-    assert "## Candidate Concept Update Bundle queue" in md
-    assert "## Automation readiness notes" in md
+    assert "## Summary" in md
+    assert "clean" in md

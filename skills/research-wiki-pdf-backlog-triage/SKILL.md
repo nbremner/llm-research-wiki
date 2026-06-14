@@ -1,13 +1,13 @@
 ---
 name: research-wiki-pdf-backlog-triage
-description: Use for recurring research-wiki PDF backlog indexing from Google Drive _inbox, human review CSV/Numbers handling, domain-cluster triage, and selecting candidates for Manual Research PDF Summary.
-version: 1.0.0
+description: Use for recurring research-wiki PDF backlog indexing from Google Drive _inbox, human review CSV/Numbers handling, domain-cluster triage, and selecting candidates for ingest into the markdown wiki.
+version: 1.1.0
 author: Hermes Agent
 license: MIT
 metadata:
   hermes:
     tags: [research-wiki, pdf, google-drive, triage, backlog, literature-review]
-    related_skills: [manual-research-pdf-summary, google-workspace, ocr-and-documents]
+    related_skills: [research-wiki-ingest, google-workspace, ocr-and-documents]
 ---
 
 # Research Wiki PDF Backlog Triage
@@ -45,11 +45,12 @@ Drive folders:
 ## Boundaries
 
 - Default mode is dry-run indexing only.
-- Do not rename, move, or delete Drive PDFs during indexing.
-- Do not write Notion rows during indexing.
+- Do not rename, move, or delete Drive PDFs during indexing (that happens during ingest).
+- Do not write wiki pages during indexing.
 - Use `research-wiki-ops` for generated CSV/Numbers/review artifacts.
-- Do not place generated review artifacts in `_inbox` or `public-literature-wiki` unless the Notion Schema and Agent Operating Guide have first been updated to define that artifact class and storage rule.
-- Canonical Source/Concept promotion remains human/LC review.
+- Do not place generated review artifacts in `_inbox` or `public-literature-wiki`.
+- Ingesting a selected PDF into the wiki (and refiling its raw PDF) is done by `research-wiki-ingest`,
+  with topic synthesis owner-approved before commit.
 
 ## Rerun indexing
 
@@ -105,7 +106,7 @@ Review status semantics:
 
 ## Domain cluster field
 
-`pdf_backlog_triage.py` adds `domain_cluster_candidate` as an ops-layer field. These are not Schema-approved topics. Use them to discover possible future taxonomy expansion candidates.
+`pdf_backlog_triage.py` adds `domain_cluster_candidate` as an ops-layer field. These are not wiki topics (in the markdown wiki, topics are pages, not tags). Use them to spot recurring clusters that may deserve their own `wiki/topics/` page.
 
 Current cluster set:
 
@@ -179,4 +180,4 @@ The first reviewed-row heuristic pass has been implemented. Current durable beha
 2. Add filename-derived author candidates and `author_confidence` when PDF metadata is missing.
 3. Filter garbage URLs and prefer DOI-derived `https://doi.org/<doi>` as the canonical URL candidate.
 4. Improve source/evidence type categories for policy guide, standards manual, slide deck, practice guide, methods paper, empirical study, review/meta-analysis, and book/book chapter.
-5. Select full Manual Research PDF Summary candidates from clean rows: no boundary flags, high extraction confidence, DOI/canonical URL present, non-slide evidence type, and central wiki-relevant domain clusters.
+5. Select full `research-wiki-ingest` candidates from clean rows: no boundary flags, high extraction confidence, DOI/canonical URL present, non-slide evidence type, and central wiki-relevant domain clusters.

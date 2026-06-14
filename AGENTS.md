@@ -18,13 +18,16 @@ The repo tracks workflow machinery only: skills, scripts, templates, schemas, te
 
 When changing any workflow file mirrored here, update this repo in the same work session. This includes self-improvement edits to research-wiki-related Hermes skills, especially:
 
-- `skills/manual-research-pdf-summary/`
+- `skills/research-wiki-ingest/`
 - `skills/research-wiki-pdf-backlog-triage/`
 - local source copies under `/root/.hermes/skills/research/...`
 - local workflow tooling under `/root/research-wiki-tools/`
 - repo docs, config examples, tests, and guardrails
 
 After changing mirrored files: copy the updated version into this repo, run tests, commit, push, and verify `origin/main` matches local `HEAD`.
+
+When renaming or retiring a mirrored skill, update `skills.allowlist`, this file, and
+NicholasJunior's live Hermes skill store in the same session so the mirror stays consistent.
 
 ## Before committing
 

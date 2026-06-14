@@ -647,7 +647,7 @@ def write_outputs(rows: list[dict[str, Any]], run_dir: Path, files: list[dict[st
 - Schema version: `{SCHEMA_VERSION}`
 - Processed by: {PROCESSED_BY}
 - Inbox folder ID: `{args.folder_id}`
-- Drive/Notion mutations: none
+- Drive/wiki mutations: none
 - PDFs found in inbox query: {len(files)}
 - PDFs indexed this run: {len(rows)}
 - Downloads: {'enabled' if not args.no_download else 'disabled'}
@@ -674,7 +674,7 @@ def write_outputs(rows: list[dict[str, Any]], run_dir: Path, files: list[dict[st
 
 ## Ops-layer domain cluster candidate counts
 
-These are not Schema-approved topics. Treat them as backlog triage signals and possible future Schema taxonomy candidates.
+These are not wiki topics (topics are pages, not tags). Treat them as backlog triage signals and possible future `wiki/topics/` pages.
 
 {chr(10).join(f'- {k}: {v}' for k, v in domain_cluster_counts.most_common()) or '- none detected'}
 
@@ -684,7 +684,7 @@ These are not Schema-approved topics. Treat them as backlog triage signals and p
 
 ## Recommended next action
 
-Review `pdf_triage.csv`, especially rows with `private-boundary-risk`, `possible-duplicate`, `extraction-low-confidence`, or `provenance-missing`. After that, run full Manual Research PDF Summary only on selected high/medium-priority candidates. Do not promote to Sources/Concepts from this dry-run index alone.
+Review `pdf_triage.csv`, especially rows with `private-boundary-risk`, `possible-duplicate`, `extraction-low-confidence`, or `provenance-missing`. After that, run `research-wiki-ingest` only on selected high/medium-priority candidates. Do not ingest into the wiki from this dry-run index alone.
 """.strip() + "\n"
     (run_dir / "SUMMARY.md").write_text(md, encoding="utf-8")
 
