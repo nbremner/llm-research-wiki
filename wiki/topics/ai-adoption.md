@@ -25,6 +25,13 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 as reorganized internal work) and to [[automation-and-substitution]] (output rose while labor demand
 held flat and capital demand fell).
 
+[[2026-ermakov-designing-post-role-enterprise]] pushes the adoption constraint from discovery into
+architecture. Where [[2026-kim-mapping-ai-into-production]] shows that firms need help discovering
+where AI creates value, Ermakov argues that discovery is still insufficient if work remains bundled
+into static job descriptions. The failure mode is "pilot purgatory": broad experimentation with AI
+tools but little durable operating-model change because workflows, accountability, skills
+intelligence, and governance remain organized around pre-agentic roles.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and
@@ -43,3 +50,8 @@ held flat and capital demand fell).
   is untested.
 - **Does it generalize past young firms?** Early-stage, low-inertia, self-selected accelerator
   startups may relieve the mapping problem far more cheaply than incumbents with entrenched processes.
+- **Discovery vs. architecture.** [[2026-kim-mapping-ai-into-production]] provides causal evidence
+  that exposing firms to AI use-case patterns improves performance; [[2026-ermakov-designing-post-role-enterprise]]
+  argues conceptually that the deeper bottleneck is role architecture. These may be sequential
+  mechanisms — first discover use cases, then redesign the work system — but that relationship is not
+  yet empirically established.

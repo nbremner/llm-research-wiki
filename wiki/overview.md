@@ -26,7 +26,7 @@ The central question:
 ## Topics
 
 - [[ai-adoption]] — what binds AI adoption once tools are available (the "mapping problem")
-- [[work-redesign]] — _stub_
+- [[work-redesign]] — how AI shifts work architecture from fixed roles toward redesigned human-agent workflows
 - [[automation-and-substitution]] — _stub_
 
 ## Open questions
