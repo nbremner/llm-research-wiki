@@ -105,10 +105,11 @@ Two slugs:
 
 ### 6. Refile the raw PDF in Drive — apply only
 
-Via the Google Drive MCP: rename the file to the canonical filename and move it from `_inbox` to
-`public-literature-wiki` root. Verify the file ID is unchanged, the parent changed, the filename
-changed, and `_inbox` is removed. (Hermes has Drive write permission scoped to the public-research-wiki
-folder.) Dry-run: report the proposed filename + destination only; do not modify Drive.
+Via the Google Drive MCP or Google Workspace API: rename the file to the canonical filename and move
+it from `_inbox` to `public-literature-wiki` root. If the local CLI has no `rename`/`move` command, use
+Drive API `files().update(body={"name": new_name}, addParents=<public-root-id>, removeParents=<inbox-id>)`.
+Verify the file ID is unchanged, the parent changed, the filename changed, and `_inbox` is removed.
+Dry-run: report the proposed filename + destination only; do not modify Drive.
 
 ### 7. Write the source record — apply only
 
