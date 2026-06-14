@@ -11,6 +11,7 @@ When the user refers to a paper by topic/title fragment and there is prior resea
 3. Do not force the full Candidate Source Summary structure unless the user asked to process it into the wiki.
 4. Give a substantive research summary: thesis, method, key numeric findings, implications, limitations, and why it matters for Nicholas's work.
 5. If the PDF/text is available locally, extract/read enough text to ground key claims. If extraction dependencies are missing, use an available lightweight extractor or install a small Python parser as needed; capture the successful extraction path only if it generalizes.
+6. Keep the answer anchored to the paper the user asked about. If the session also contains a full Drive/Notion ingest for another PDF, do not let that operational thread displace the requested ad-hoc paper summary in the final answer. Mention the other ingest only if the user asked for its status or it is necessary context.
 
 ## Source note: Bosco et al. (2015), Correlational Effect Size Benchmarks
 

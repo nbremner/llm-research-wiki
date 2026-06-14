@@ -146,6 +146,8 @@ Additional session-derived guidance is kept in:
 - [`references/backlog-triage-and-human-review.md`](references/backlog-triage-and-human-review.md) — large `_inbox` backlog indexing, `research-wiki-ops` artifact storage, CSV/Apple Numbers human review, and heuristic pitfalls discovered from the first 101-PDF batch.
 - [`references/pdf-backlog-triage-workflow.md`](references/pdf-backlog-triage-workflow.md) — repeatable dry-run indexing workflow for large Drive `_inbox` PDF backlogs before selecting files for full manual summaries.
 - [`references/ad-hoc-paper-summary-notes.md`](references/ad-hoc-paper-summary-notes.md) — lightweight paper-summary pattern for topic/title-fragment requests that should not trigger the full wiki Candidate Source Summary workflow, plus notes from the Bosco et al. (2015) effect-size benchmarks summary.
+- [`references/apply-mode-verification-notes.md`](references/apply-mode-verification-notes.md) — apply-mode manifest hygiene, duplicate checks, independent Drive/Notion verification, and Notion markdown quirks discovered while applying a Drive + Notion ingest bundle.
+- [`references/discretionary-selection-and-extraction-notes.md`](references/discretionary-selection-and-extraction-notes.md) — handling “pick any one” selection requests, lightweight extraction fallback, and dry-run verification patterns.
 
 ### 1. Read operating docs
 
@@ -157,8 +159,9 @@ Search Drive `_inbox` for PDFs.
 
 - If user provided a filename or file ID, match it exactly.
 - If user provided a deterministic selection rule such as "most recent" or "latest", apply it without asking. For most-recent/latest, sort candidate PDFs by Drive `modifiedTime` descending, select the first, and report the other candidates in the completion note.
+- If the user explicitly grants discretion with language like "pick any one," treat that as a deterministic selection rule: select the most recently modified PDF in `_inbox`, then report that selection rule and whether other PDFs were present.
 - If user said "the uploaded PDF" and exactly one PDF is present/recent, use it.
-- If multiple plausible PDFs exist and the user did not provide a deterministic selection rule, ask the user which one to process before downloading or acting.
+- If multiple plausible PDFs exist and the user did not provide a deterministic selection rule or explicit discretion, ask the user which one to process before downloading or acting.
 
 Capture:
 

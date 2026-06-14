@@ -161,12 +161,22 @@ Also uploaded a domain-cluster-only index CSV:
 pdf_triage_domain_clusters_2026-05-25.csv
 ```
 
+## Portable workflow spine repo
+
+When Nicholas asks to version or migrate the research-wiki operating machinery, keep the Git repo narrow: commit skills, scripts, operating docs, config examples, and guardrail tests — not the corpus, Notion exports, Drive inventories, ops logs, run outputs, PDFs, caches, Hermes state, or credentials.
+
+Maintenance rule: when changing mirrored research-wiki skills, `/root/research-wiki-tools/`, or the portable workflow repo's docs/config/tests/guardrails, update the `llm-research-wiki` Git mirror in the same work session, run guardrail tests, commit, push, and verify `origin/main` when credentials permit.
+
+Session-specific detail, a known-good repo layout, and the sync-maintenance checklist live in `references/portable-workflow-spine-repo.md`.
+
+Heuristic-maintenance notes and regression-test patterns from Nicholas's reviewed-row feedback live in `references/heuristic-maintenance-notes.md`.
+
 ## Recommended next step
 
-Use the 20 reviewed rows to tighten heuristics before full summarization:
+The first reviewed-row heuristic pass has been implemented. Current durable behaviors to preserve with regression tests:
 
-1. Improve title detection to reject PDF metadata/layout garbage.
-2. Add filename-derived author candidates and author confidence.
-3. Filter garbage URLs and use DOI-derived `https://doi.org/<doi>` as canonical URL candidate.
+1. Reject PDF metadata/layout garbage during title detection and fall back to filename-derived titles when needed.
+2. Add filename-derived author candidates and `author_confidence` when PDF metadata is missing.
+3. Filter garbage URLs and prefer DOI-derived `https://doi.org/<doi>` as the canonical URL candidate.
 4. Improve source/evidence type categories for policy guide, standards manual, slide deck, practice guide, methods paper, empirical study, review/meta-analysis, and book/book chapter.
-5. Then select `looks-good` / `ok-to-summarize` / high-priority rows for full Manual Research PDF Summary.
+5. Select full Manual Research PDF Summary candidates from clean rows: no boundary flags, high extraction confidence, DOI/canonical URL present, non-slide evidence type, and central wiki-relevant domain clusters.
