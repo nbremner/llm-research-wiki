@@ -6,7 +6,7 @@ updated: 2026-06-14
 # Overview
 
 The single living orientation page for this wiki. What it's about, what exists, where it's thin.
-Keep it short — when a section here grows past a few lines, it wants to become a `[[topic]]` page.
+Keep it short — when a section here grows past a few lines, it wants to become its own topic page.
 
 ## What this wiki is
 
@@ -25,8 +25,9 @@ The central question:
 
 ## Topics
 
-_None yet — the wiki starts clean (2026-06-14). New topic pages land in `topics/` and get linked here
-as they're created._
+- [[ai-adoption]] — what binds AI adoption once tools are available (the "mapping problem")
+- [[work-redesign]] — _stub_
+- [[automation-and-substitution]] — _stub_
 
 ## Open questions
 
