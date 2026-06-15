@@ -28,6 +28,7 @@ The central question:
 - [[ai-adoption]] — what binds AI adoption once tools are available (the "mapping problem")
 - [[work-redesign]] — how AI shifts work architecture from fixed roles toward redesigned human-agent workflows
 - [[automation-and-substitution]] — _stub_
+- [[algorithmic-assessment]] — algorithmic hiring/assessment as a measurement chain from signal to construct to decision
 - [[employee-engagement]] — engagement as a cautionary I-O construct for measurement and evidence claims
 - [[construct-validity]] — whether named constructs are conceptually bounded and measured coherently
 - [[evidence-based-management]] — matching organizational claims to the quality and relevance of evidence

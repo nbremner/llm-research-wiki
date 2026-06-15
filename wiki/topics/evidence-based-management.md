@@ -20,6 +20,16 @@ well-being, skill atrophy, or human-AI collaboration need evidence matched to th
 usage data can show uptake, but not causal impact; correlations can suggest associations, but not prove
 intervention effects.
 
+[[algorithmic-assessment]] is a useful stress test for evidence-based management because several kinds
+of evidence travel under the same “AI assessment” label. [[2016-chamorro-premuzic-new-talent-signals]]
+cautions that novelty, speed, and vendor enthusiasm are not evidence; new talent signals still need
+construct, validity, and utility standards. [[2023-landers-machine-learning-psychometric-assessment]]
+is a strong example of matching method to claim: simulation evidence can test design and scoring
+contingencies, but it should not be read as observed organizational adoption or applicant outcome
+evidence. [[2023-nyc-automated-employment-decision-tools-faq]] shows a different evidence category:
+compliance can require a bias audit even though the audit does not by itself establish construct
+validity, job relatedness, or practical utility.
+
 [[2026-tomei-what-jobs-can-ai-learn]] shows why evidence-based AI workforce planning needs to match
 the metric to the decision. A forward-looking RL Feasibility Index may be useful for scanning where
 future automation pressure could emerge, but it should not be read as observed displacement or as a
@@ -35,6 +45,8 @@ for task learnability.
   access, discovery, workflow redesign, and performance effects.
 - Relates to [[automation-and-substitution]] because exposure measures can inform planning, but only if
   leaders keep exposure, adoption, productivity, and employment effects analytically separate.
+- Relates to [[algorithmic-assessment]] because the evidence ladder must distinguish validity evidence,
+  adverse-impact evidence, compliance evidence, implementation evidence, and decision utility.
 
 ## Contradictions & open questions
 
@@ -46,3 +58,6 @@ for task learnability.
   observed tool deployment, productivity changes, job-posting shifts, and actual employment or wage
   effects. [[2026-tomei-what-jobs-can-ai-learn]] mostly sits at the index-plus-suggestive-validation
   stage.
+- For algorithmic hiring claims, the open question is often not whether evidence exists, but what kind:
+  predictive validity, construct validity, bias-audit metrics, applicant reactions, legal compliance,
+  implementation fidelity, and business utility answer different questions.

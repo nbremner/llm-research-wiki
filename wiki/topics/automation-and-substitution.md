@@ -31,6 +31,15 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
   not only what current LLMs can already do. Its RL Feasibility Index finds that some monitoring and
   control occupations score higher on future automation feasibility than text-centered exposure indices
   suggest, because the relevant tasks have verifiable outcomes and simulable environments.
+- [[2023-nyc-automated-employment-decision-tools-faq]] brings the substitution question into employment
+  decisions. Covered AEDTs are defined around tools that substantially assist or replace discretionary
+  decision-making, and screening counts as an employment decision. [[algorithmic-assessment]] can
+  therefore substitute for parts of human judgment before the final hiring or promotion decision is
+  made.
+- [[2023-landers-machine-learning-psychometric-assessment]] implies that algorithmic substitution should
+  be evaluated at the level of assessment-design components: combining scale composites, scoring item
+  responses, dropping predictors, or handling novel data formats. Replacing OLS with machine learning is
+  not the same thing as improving the selection system.
 
 ## Contradictions & open questions
 
@@ -47,3 +56,6 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 - **Exposure vs. realized substitution.** [[2026-tomei-what-jobs-can-ai-learn]] is a forward-looking
   exposure index, not evidence that listed occupations have already been automated. Its job-posting
   analysis is suggestive; the stronger contribution is measurement of task learnability.
+- **Support vs. substitution in hiring.** Employers may describe algorithmic assessment as decision
+  support, while regulatory language treats some uses of simplified outputs, rankings, or classifications
+  as substantial assistance or replacement of discretion. The boundary is practical, not merely semantic.

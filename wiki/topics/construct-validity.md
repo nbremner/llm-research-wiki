@@ -19,6 +19,15 @@ For AI-mediated work, construct validity is not academic housekeeping. It determ
 like “AI adoption,” “AI readiness,” “human-AI collaboration,” or “trust in AI” can support decisions
 about work redesign, intervention, and evaluation.
 
+The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premuzic-new-talent-signals]]
+warns that new data sources and technology-mediated talent signals often move faster than theory and
+validation, especially when vendors emphasize novelty, speed, or proprietary prediction. [[2023-landers-machine-learning-psychometric-assessment]]
+shows why method choice and measurement design have to be separated: machine learning does not
+automatically improve prediction from validated scale composites, and the more interesting item-level
+or novel-signal uses are exactly where construct interpretation becomes harder. [[2023-nyc-automated-employment-decision-tools-faq]]
+adds a regulatory vocabulary for AEDTs and bias audits, but those categories do not replace the I-O
+question of what construct is being inferred and whether it is job-relevant.
+
 [[2026-tomei-what-jobs-can-ai-learn]] is a useful positive case of construct sharpening. Instead of
 treating "AI exposure" as generic overlap between occupational task descriptions and current LLM
 capabilities, the paper defines a narrower construct: feasibility of improving task performance through
@@ -34,6 +43,8 @@ low on RL feasibility, or the reverse.
   usage, capability, managerial search, and workflow redesign at once.
 - Relates to [[automation-and-substitution]] because exposure indices only guide decisions if the
   measured construct matches the mechanism of automation being claimed.
+- Relates to [[algorithmic-assessment]] because algorithmic hiring tools are only defensible when their
+  signals, model outputs, and employment decisions are tied back to coherent job-relevant constructs.
 
 ## Contradictions & open questions
 
