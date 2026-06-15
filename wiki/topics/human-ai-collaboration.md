@@ -35,6 +35,11 @@ point is not the labels; it is that collaboration quality depends on calibration
 When the task is outside current AI capability, close collaboration can amplify wrong output rather than
 improve human performance.
 
+[[2025-brynjolfsson-generative-ai-at-work]] gives a different collaboration design: AI generated
+suggested responses and technical recommendations, but the human support agent retained discretion over
+whether to use them. Productivity gains were larger when agents adhered to recommendations, yet the most
+skilled agents saw small quality declines, which keeps calibration and final authority central.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify,
@@ -60,3 +65,6 @@ improve human performance.
 - [[2023-dellacqua-jagged-technological-frontier]] suggests collaboration form is not enough. Centaur
   and Cyborg patterns can be productive inside the frontier, but the same broad AI access can harm
   accuracy outside it; the open question is how workers learn the boundary in real time.
+- [[2025-brynjolfsson-generative-ai-at-work]] suggests AI can transmit high-performer practices to less
+  experienced workers, but it also raises a long-run collaboration question: if top workers increasingly
+  follow AI recommendations, the stream of novel expert behavior that trains future systems may thin.

@@ -33,6 +33,11 @@ another that appeared comparably complex. This makes redesign less like a binary
 more like frontier mapping: identify which subtasks can be delegated, which require human verification,
 and where AI output should be blocked or constrained.
 
+[[2025-brynjolfsson-generative-ai-at-work]] shows a narrower but cleaner redesign pattern: AI assistance
+was inserted into live customer-support chats as recommendations that agents could accept or ignore.
+The work did not disappear; the agent role shifted toward using machine-supplied language and technical
+suggestions while retaining final authority over the customer interaction.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool
@@ -56,3 +61,6 @@ and where AI output should be blocked or constrained.
 - [[2023-dellacqua-jagged-technological-frontier]] complicates redesign optimism: even skilled
   consultants with access to GPT-4 performed worse when the task sat outside the model's capability
   frontier. Redesign needs guardrails for where not to use AI, not just patterns for where to insert it.
+- [[2025-brynjolfsson-generative-ai-at-work]] is evidence for augmentation inside a structured support
+  workflow, not a general result for open-ended knowledge work. Its strongest design lesson may be that
+  AI worked because suggestions were embedded, optional, and withheld when training data were thin.

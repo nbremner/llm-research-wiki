@@ -52,6 +52,12 @@ tasks inside the AI capability frontier, but made consultants 19 percentage poin
 a task selected to be outside it. Adoption quality therefore depends on whether workers and managers can
 map where AI helps versus harms inside a workflow, not merely whether the tool is available or used.
 
+[[2025-brynjolfsson-generative-ai-at-work]] adds a production-rollout case where adoption was embedded
+directly into the workflow. In a staggered deployment across 5,172 customer-support agents, GenAI access
+raised issues resolved per hour by 15% on average, with the largest gains for less experienced and
+lower-skilled workers. This suggests adoption can succeed when the tool distributes situated best
+practices at the point of work, not just when workers receive generic access or training.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and
@@ -84,6 +90,10 @@ map where AI helps versus harms inside a workflow, not merely whether the tool i
 - **Use vs. task fit.** [[2023-dellacqua-jagged-technological-frontier]] shows the same AI tool can
   raise or lower performance depending on task location relative to the frontier. Adoption metrics that
   only count usage can therefore hide misdeployment.
+- **Floor vs. ceiling.** [[2025-brynjolfsson-generative-ai-at-work]] finds the largest productivity and
+  quality gains for lower-skilled and less experienced workers, while [[2026-kim-mapping-ai-into-production]]
+  finds firm-level gains concentrated in the upper tail. Individual skill diffusion and firm-level
+  production discovery may be different mechanisms.
 - **Discovery vs. worker fit.** [[2026-kim-mapping-ai-into-production]] suggests firms can improve
   adoption by seeing more AI use-case patterns; [[2026-lee-making-invisible-visible]] suggests adoption
   can still fail when identified use cases violate worker autonomy, task meaning, communication norms,

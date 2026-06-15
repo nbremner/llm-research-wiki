@@ -23,6 +23,10 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
   frontier but reduced correctness on a task outside it. The substitution question is therefore not
   "can AI do consulting work?" but which task components are currently inside the model's capability
   frontier and how that frontier is detected.
+- [[2025-brynjolfsson-generative-ai-at-work]]: GenAI augmented customer-support agents rather than
+  replacing them in the observed rollout. Productivity rose 15% on average, especially for lower-skill
+  and less experienced workers, but the paper cannot observe wages, overall labor demand, or hiring
+  composition. It is evidence for within-job task augmentation, not direct labor substitution.
 
 ## Contradictions & open questions
 
@@ -33,3 +37,6 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
   not averaged away.
 - [[2023-dellacqua-jagged-technological-frontier]] is task-performance evidence, not labor-demand
   evidence. It supports selective task delegation, but not claims about headcount substitution.
+- **Short-run augmentation vs. equilibrium substitution.** [[2025-brynjolfsson-generative-ai-at-work]]
+  shows higher output per hour inside an existing job, but explicitly cannot answer whether firms later
+  hire fewer agents, hire different agents, change wages, or automate the role more fully.
