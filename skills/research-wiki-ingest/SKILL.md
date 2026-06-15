@@ -63,13 +63,19 @@ three workflows. Skim `wiki/overview.md` for what topics already exist.
 
 Search `_inbox` for PDFs (Google Drive MCP). Selection rules:
 
-- If the user gave a filename/ID, match it exactly.
+- If the user gave a Drive share URL or raw file ID, extract the file ID and fetch that exact file first;
+  verify it is a PDF and currently has `_inbox` as a parent. Do not enumerate candidates unless the
+  direct lookup fails or the request is non-specific.
+- If the user gave a filename, match it exactly.
 - "most recent"/"latest"/"pick any one" → select the most recently modified PDF; report the rule and
   any other candidates in the completion note.
 - "the uploaded PDF" with exactly one present → use it.
 - Multiple plausible PDFs and no deterministic rule → ask which one. Do not guess.
 
 Capture: Drive file ID, original filename, MIME type, modified time, size, parent, web link.
+
+See `references/drive-api-file-id-ingest.md` for a concise Google Drive API fallback pattern for
+file-ID lookup, download, hash/extract, rename/move, and verification.
 
 ### 3. Preflight: boundary + dedup
 
@@ -110,6 +116,10 @@ it from `_inbox` to `public-literature-wiki` root. If the local CLI has no `rena
 Drive API `files().update(body={"name": new_name}, addParents=<public-root-id>, removeParents=<inbox-id>)`.
 Verify the file ID is unchanged, the parent changed, the filename changed, and `_inbox` is removed.
 Dry-run: report the proposed filename + destination only; do not modify Drive.
+
+For a **refile-only repair** of an already-ingested source, read the existing `wiki/sources/<slug>.md`
+first, verify the Drive `file_id` and downloaded SHA-256 match its frontmatter, then rename/move the PDF
+only. Do not edit or commit the source record unless the stored provenance is actually wrong.
 
 ### 7. Write the source record — apply only
 
@@ -163,24 +173,40 @@ Write synthesis in the owner's framing — state what the evidence says, cite so
 resolves to a real topic file (create a short stub if needed so links don't dangle). Add new topics to
 `wiki/overview.md`'s Topics list.
 
-Show the topic diff and get owner approval, then commit:
+Show the topic diff and get owner approval, then commit. In attended chat runs, do **not** end with only "I can show the diff if you want" after drafting synthesis; display the proposed topic diff in the same completion turn (or immediately after lint) so the owner can approve without an extra prompt.
+
+For Discord delivery, make the approval diff easy to review:
+
+- Prefer a compact per-file summary with fenced `diff` blocks containing the added/changed text, not a huge raw `git diff` dump when the diff is long.
+- Group by topic file with bold filenames.
+- Include lint status and a short "my read" on whether the synthesis is commit-ready.
+- Leave the topic files uncommitted until the owner explicitly approves.
 
 ```bash
+git diff -- wiki/topics/ wiki/overview.md
 git add wiki/topics/ wiki/overview.md
 git commit -m "wiki: synthesize <slug> into topics (<topic>, ...)"
 ```
 
-### 10. Lint
+### 10. Lint and push
 
 Run the markdown lint (`research-wiki-graph-lint` /
 `scripts/research-wiki-tools/graph_lint.py`) to confirm no broken wikilinks, orphans, or
-claims-without-source were introduced.
+claims-without-source were introduced. If topic synthesis is drafted but not yet owner-approved, run
+lint against the working tree before asking for approval; a clean proposal is easier to review and avoids
+presenting broken links as if they were ready.
+
+Push the auto-committed source record even when topic synthesis is still awaiting owner approval, then
+verify `origin/main` matches local `HEAD`. After any approved topic-synthesis commit, push again and
+verify the same way. If the remote moved, use `git pull --rebase --autostash`, rerun graph lint after
+the rebase, then push again. Stage only the intended wiki files/source record; leave unrelated local
+modifications (especially skill-maintenance edits) unstaged and call them out in the completion note.
 
 ### 11. Completion note
 
 Summarize: selected PDF + selection rule, boundary/injection flags, final Drive filename/location,
-source slug, topics touched, commits made, lint result, and any follow-up. Optionally send to the logs
-channel (`hermes send` to #logs).
+source slug, topics touched, commits made/pushed, lint result, and any follow-up. Optionally send to the
+logs channel (`hermes send` to #logs).
 
 ## Failure modes
 
@@ -211,13 +237,25 @@ Apply:
 - [ ] Source record committed.
 - [ ] Topic synthesis written, contradictions surfaced in prose, all wikilinks resolve.
 - [ ] Topic diff approved by owner before commit (attended) OR left as flagged proposal (unattended).
-- [ ] Lint clean.
+- [ ] Lint clean after the final committed state (and rerun after any rebase).
+- [ ] Intended wiki commits pushed; `origin/main` verified against local `HEAD`.
+- [ ] Unrelated local changes were not staged and are noted if still present.
 - [ ] Completion note produced.
+
+## Skill maintenance
+
+Keep this skill class-level and lean. Prefer compact additions to `SKILL.md` for durable workflow rules
+(e.g., a Drive API fallback command shape). Add `references/` files only when session-specific detail
+will clearly be reused; do not preserve one-off transcripts, verbose provenance narratives, or narrow
+case notes that would slow future runs.
 
 ## Historical references
 
-Supplementary session notes live in `references/`. The Drive-side notes
-(`drive-filename-and-provenance-notes.md`, `selection-and-dedupe-notes.md`,
-`discretionary-selection-and-extraction-notes.md`, `ad-hoc-paper-summary-notes.md`) remain useful.
+Supplementary session notes live in `references/`. `drive-api-file-id-ingest.md` contains the current
+Google Drive API fallback pattern for exact Drive URL/file-ID ingests: direct lookup, download,
+PyMuPDF extraction, SHA-256 hashing, rename/move with `addParents`/`removeParents`, and parent
+verification. The Drive-side notes (`drive-filename-and-provenance-notes.md`,
+`selection-and-dedupe-notes.md`, `discretionary-selection-and-extraction-notes.md`,
+`ad-hoc-paper-summary-notes.md`) remain useful.
 Notes that describe the retired Notion Inbox/Log apply-bundle are historical only — the markdown flow
 above supersedes them.
