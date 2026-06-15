@@ -38,12 +38,23 @@ thinking needed to verify, integrate, and steward AI output. In their survey, hi
 GenAI was associated with less critical thinking, while higher self-confidence was associated with
 more critical thinking.
 
+[[2026-lee-making-invisible-visible]] adds a worker-centered implementation constraint. In interviews
+and workplace demonstrations with 16 workers using decision-support AI in healthcare, finance, and
+management, adoption failures showed up less as generic resistance and more as misalignment between
+organizational goals and the actual work system: poor interoperability, hierarchy-level disagreement,
+AI placed on tasks workers valued or needed control over, weak explanations, and limited mechanisms
+for worker correction or verification. This makes adoption a sociotechnical fit problem, not just a
+search problem.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and
   organizational-cognition lens on adoption, not just an IT-diffusion one.
 - If discovery is the bottleneck, interventions that spread *patterns of use* (case libraries,
   cross-firm examples) may matter more than tool provisioning or generic training.
+- If worker-centered fit is the bottleneck, adoption interventions have to make workers visible before
+  full deployment: pilot testing, feedback sessions, task-fit diagnosis, explanation design, and
+  worker control over outputs that affect accountable decisions.
 
 ## Contradictions & open questions
 
@@ -64,3 +75,8 @@ more critical thinking.
 - **Use vs. stewardship.** [[2025-lee-generative-ai-critical-thinking]] suggests that more confident
   GenAI use may mean less critical thinking, not better adoption. The wiki should separate adoption
   volume from adoption quality.
+- **Discovery vs. worker fit.** [[2026-kim-mapping-ai-into-production]] suggests firms can improve
+  adoption by seeing more AI use-case patterns; [[2026-lee-making-invisible-visible]] suggests adoption
+  can still fail when identified use cases violate worker autonomy, task meaning, communication norms,
+  or accountability. These are complementary constraints, but the sequencing is open: discover use
+  cases first, or diagnose worker-centered fit first?

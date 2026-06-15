@@ -22,6 +22,12 @@ critical thinking; higher self-confidence was associated with more critical thin
 perceived effort. Good human-AI collaboration therefore cannot just minimize effort. It has to preserve
 conditions for competent human review.
 
+[[2026-lee-making-invisible-visible]] shifts the collaboration question from metaphor to work setting.
+Workers using decision-support AI did not simply want the AI to decide or recommend; they wanted
+control points where they could verify outputs, adjust sensitivity or assumptions, simulate alternatives,
+and incorporate contextual expertise before accountable decisions. Collaboration here is a design of
+control rights, explanation, feedback, and final authority.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify,
@@ -30,6 +36,9 @@ conditions for competent human review.
   perform.
 - Relates to [[ai-adoption]] because adoption metrics that count tool use without stewardship quality
   can hide overreliance.
+- Relates to [[employee-engagement]] because workers in decision-support settings described autonomy,
+  motivation, learning, and valued task ownership as part of whether AI-supported work remained worth
+  engaging in.
 
 ## Contradictions & open questions
 
@@ -38,3 +47,6 @@ conditions for competent human review.
   work-design frames than with teammate metaphors.
 - The wiki needs evidence beyond self-report on whether stewardship behaviors actually improve output
   quality, learning, or long-run capability.
+- [[2026-lee-making-invisible-visible]] uses worker expectations from decision-support settings; it
+  supports the importance of control and verification, but not yet which collaboration designs produce
+  better decisions, adoption, or worker outcomes.
