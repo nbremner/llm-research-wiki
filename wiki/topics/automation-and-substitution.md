@@ -27,6 +27,10 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
   replacing them in the observed rollout. Productivity rose 15% on average, especially for lower-skill
   and less experienced workers, but the paper cannot observe wages, overall labor demand, or hiring
   composition. It is evidence for within-job task augmentation, not direct labor substitution.
+- [[2026-tomei-what-jobs-can-ai-learn]] reframes exposure around what AI systems may be able to learn,
+  not only what current LLMs can already do. Its RL Feasibility Index finds that some monitoring and
+  control occupations score higher on future automation feasibility than text-centered exposure indices
+  suggest, because the relevant tasks have verifiable outcomes and simulable environments.
 
 ## Contradictions & open questions
 
@@ -40,3 +44,6 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 - **Short-run augmentation vs. equilibrium substitution.** [[2025-brynjolfsson-generative-ai-at-work]]
   shows higher output per hour inside an existing job, but explicitly cannot answer whether firms later
   hire fewer agents, hire different agents, change wages, or automate the role more fully.
+- **Exposure vs. realized substitution.** [[2026-tomei-what-jobs-can-ai-learn]] is a forward-looking
+  exposure index, not evidence that listed occupations have already been automated. Its job-posting
+  analysis is suggestive; the stronger contribution is measurement of task learnability.

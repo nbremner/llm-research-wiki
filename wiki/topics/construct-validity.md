@@ -19,6 +19,12 @@ For AI-mediated work, construct validity is not academic housekeeping. It determ
 like “AI adoption,” “AI readiness,” “human-AI collaboration,” or “trust in AI” can support decisions
 about work redesign, intervention, and evaluation.
 
+[[2026-tomei-what-jobs-can-ai-learn]] is a useful positive case of construct sharpening. Instead of
+treating "AI exposure" as generic overlap between occupational task descriptions and current LLM
+capabilities, the paper defines a narrower construct: feasibility of improving task performance through
+RL-based post-training. The distinction matters because occupations can rank high on LLM exposure but
+low on RL feasibility, or the reverse.
+
 ## Connections
 
 - Relates to [[employee-engagement]] as a cautionary case of loose construct boundaries.
@@ -26,6 +32,8 @@ about work redesign, intervention, and evaluation.
   between an intervention, a measured mediator, and an organizational outcome.
 - Relates to [[ai-adoption]] because adoption should not become a catch-all label for attitudes,
   usage, capability, managerial search, and workflow redesign at once.
+- Relates to [[automation-and-substitution]] because exposure indices only guide decisions if the
+  measured construct matches the mechanism of automation being claimed.
 
 ## Contradictions & open questions
 
@@ -33,3 +41,6 @@ about work redesign, intervention, and evaluation.
   usefulness justifies action, and when loose measurement starts producing false certainty.
 - The wiki needs positive examples of strong construct validation in AI workforce transformation, not
   only cautionary cases from older I-O constructs.
+- [[2026-tomei-what-jobs-can-ai-learn]] improves the exposure construct but still relies on LLM-based
+  annotations. The next validation question is whether RL feasibility predicts observed deployment and
+  labor-market change better than existing exposure measures.

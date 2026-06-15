@@ -38,6 +38,12 @@ was inserted into live customer-support chats as recommendations that agents cou
 The work did not disappear; the agent role shifted toward using machine-supplied language and technical
 suggestions while retaining final authority over the customer interaction.
 
+[[2026-tomei-what-jobs-can-ai-learn]] adds a measurement lens for redesign: tasks are more learnable by
+RL-style post-training when they have clear verification, simulable environments, observable state,
+dense feedback, accessible tools, and tangible outputs. That makes the redesign question more precise:
+which workflow components can be turned into learnable task environments, and which resist because the
+state, feedback, or judgment criteria are not clean enough.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool
@@ -64,3 +70,6 @@ suggestions while retaining final authority over the customer interaction.
 - [[2025-brynjolfsson-generative-ai-at-work]] is evidence for augmentation inside a structured support
   workflow, not a general result for open-ended knowledge work. Its strongest design lesson may be that
   AI worked because suggestions were embedded, optional, and withheld when training data were thin.
+- [[2026-tomei-what-jobs-can-ai-learn]] may over-weight what can be represented as a learnable task
+  environment. Work redesign still has to handle accountability, meaning, relationship work, and
+  organizational context that are not captured by RL feasibility alone.
