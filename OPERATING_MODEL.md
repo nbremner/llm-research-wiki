@@ -27,7 +27,7 @@ llm-research-wiki/
 ```
 
 | Store | Role | Mirrors |
-|---|---|---|
+| --- | --- | --- |
 | **GitHub origin/main** (`llm-research-wiki`) | canonical — machinery **and** content | LC local clone, NicholasJunior VPS clone — synced by git, never independent truths |
 | **Google Drive** (`public-literature-wiki` + `_inbox`) | the one external store: immutable raw-PDF capture | none — accessed live |
 
