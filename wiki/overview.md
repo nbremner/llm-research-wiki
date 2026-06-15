@@ -31,6 +31,8 @@ The central question:
 - [[employee-engagement]] — engagement as a cautionary I-O construct for measurement and evidence claims
 - [[construct-validity]] — whether named constructs are conceptually bounded and measured coherently
 - [[evidence-based-management]] — matching organizational claims to the quality and relevance of evidence
+- [[critical-thinking]] — how GenAI shifts judgment, verification, and stewardship in knowledge work
+- [[human-ai-collaboration]] — how human accountability and AI capability are arranged in tasks
 
 ## Open questions
 

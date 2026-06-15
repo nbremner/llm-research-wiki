@@ -1,7 +1,7 @@
 ---
 title: AI adoption
 status: active
-updated: 2026-06-14
+updated: 2026-06-15
 ---
 
 # AI adoption
@@ -32,6 +32,12 @@ into static job descriptions. The failure mode is "pilot purgatory": broad exper
 tools but little durable operating-model change because workflows, accountability, skills
 intelligence, and governance remain organized around pre-agentic roles.
 
+[[2025-lee-generative-ai-critical-thinking]] adds a user-level quality constraint: adoption is not just
+whether knowledge workers use GenAI, but whether confidence in the tool suppresses the critical
+thinking needed to verify, integrate, and steward AI output. In their survey, higher confidence in
+GenAI was associated with less critical thinking, while higher self-confidence was associated with
+more critical thinking.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and
@@ -55,3 +61,6 @@ intelligence, and governance remain organized around pre-agentic roles.
   argues conceptually that the deeper bottleneck is role architecture. These may be sequential
   mechanisms — first discover use cases, then redesign the work system — but that relationship is not
   yet empirically established.
+- **Use vs. stewardship.** [[2025-lee-generative-ai-critical-thinking]] suggests that more confident
+  GenAI use may mean less critical thinking, not better adoption. The wiki should separate adoption
+  volume from adoption quality.
