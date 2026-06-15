@@ -27,6 +27,12 @@ backstage work, reducing autonomy and learning, and disrupting collaboration and
 unit is therefore not “add AI to a task”; it is the whole sociotechnical workflow — task allocation,
 control rights, communication, feedback, and accountability.
 
+[[2023-dellacqua-jagged-technological-frontier]] adds the capability-boundary version of work redesign.
+In the same consulting domain, GPT-4 assistance improved performance on some tasks and degraded it on
+another that appeared comparably complex. This makes redesign less like a binary automation decision and
+more like frontier mapping: identify which subtasks can be delegated, which require human verification,
+and where AI output should be blocked or constrained.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool
@@ -47,3 +53,6 @@ control rights, communication, feedback, and accountability.
   to AI taking work, but they cared which work. Some wanted AI to absorb tedious, repetitive, or
   lower-stakes work while preserving human control over expert, meaningful, accountable, or
   relationship-facing tasks.
+- [[2023-dellacqua-jagged-technological-frontier]] complicates redesign optimism: even skilled
+  consultants with access to GPT-4 performed worse when the task sat outside the model's capability
+  frontier. Redesign needs guardrails for where not to use AI, not just patterns for where to insert it.

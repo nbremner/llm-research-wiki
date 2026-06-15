@@ -46,6 +46,12 @@ AI placed on tasks workers valued or needed control over, weak explanations, and
 for worker correction or verification. This makes adoption a sociotechnical fit problem, not just a
 search problem.
 
+[[2023-dellacqua-jagged-technological-frontier]] makes the mapping problem task-level and empirical.
+In a randomized field experiment with 758 BCG consultants, GPT-4 improved speed, volume, and quality on
+tasks inside the AI capability frontier, but made consultants 19 percentage points less likely to solve
+a task selected to be outside it. Adoption quality therefore depends on whether workers and managers can
+map where AI helps versus harms inside a workflow, not merely whether the tool is available or used.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and
@@ -75,6 +81,9 @@ search problem.
 - **Use vs. stewardship.** [[2025-lee-generative-ai-critical-thinking]] suggests that more confident
   GenAI use may mean less critical thinking, not better adoption. The wiki should separate adoption
   volume from adoption quality.
+- **Use vs. task fit.** [[2023-dellacqua-jagged-technological-frontier]] shows the same AI tool can
+  raise or lower performance depending on task location relative to the frontier. Adoption metrics that
+  only count usage can therefore hide misdeployment.
 - **Discovery vs. worker fit.** [[2026-kim-mapping-ai-into-production]] suggests firms can improve
   adoption by seeing more AI use-case patterns; [[2026-lee-making-invisible-visible]] suggests adoption
   can still fail when identified use cases violate worker autonomy, task meaning, communication norms,
