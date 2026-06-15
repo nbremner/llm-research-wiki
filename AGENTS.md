@@ -19,6 +19,7 @@ The repo tracks workflow machinery only: skills, scripts, templates, schemas, te
 When changing any workflow file mirrored here, update this repo in the same work session. This includes self-improvement edits to research-wiki-related Hermes skills, especially:
 
 - `skills/research-wiki-ingest/`
+- `skills/research-wiki-batch-ingest/`
 - `skills/research-wiki-pdf-backlog-triage/`
 - local source copies under `/root/.hermes/skills/research/...`
 - local workflow tooling under `/root/research-wiki-tools/`
