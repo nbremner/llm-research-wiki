@@ -70,8 +70,9 @@ Trust model: source records are low-judgment and auto-committed; **topic synthes
 
 **Git history is the log.** There are no Reviews / Log / Inbox / Index databases — those were cut.
 
-Skills in the repo: `research-wiki-ingest`, `research-wiki-pdf-backlog-triage`,
-`research-wiki-graph-lint`, `research-wiki-query`.
+Skills in the repo: `research-wiki-ingest` (manual, one paper), `research-wiki-batch-ingest`
+(bulk, cluster-batched — evidence auto-commits, synthesis owner-approved once per cluster),
+`research-wiki-pdf-backlog-triage`, `research-wiki-graph-lint`, `research-wiki-query`.
 
 ## Deployment to NicholasJunior
 
