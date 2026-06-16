@@ -1,7 +1,7 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-06-15
+updated: 2026-06-16
 ---
 
 # Human-AI collaboration
@@ -40,6 +40,12 @@ suggested responses and technical recommendations, but the human support agent r
 whether to use them. Productivity gains were larger when agents adhered to recommendations, yet the most
 skilled agents saw small quality declines, which keeps calibration and final authority central.
 
+[[2025-mazeika-remote-labor-index]] shows the negative case for removing collaboration too early. When
+agents were evaluated on autonomous end-to-end freelance projects, the best automation rate was only
+2.5%, with failures often appearing as unusable files, incomplete deliverables, poor professional
+quality, or inconsistent artifacts. That makes human collaboration less like optional polish and more
+like the current control layer for scoping, decomposition, tool use, verification, and final acceptance.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify,
@@ -68,3 +74,6 @@ skilled agents saw small quality declines, which keeps calibration and final aut
 - [[2025-brynjolfsson-generative-ai-at-work]] suggests AI can transmit high-performer practices to less
   experienced workers, but it also raises a long-run collaboration question: if top workers increasingly
   follow AI recommendations, the stream of novel expert behavior that trains future systems may thin.
+- [[2025-mazeika-remote-labor-index]] evaluates autonomous completion rather than collaborative
+  workflows. Its failures strengthen the case for human control layers, but the benchmark does not tell
+  us which human-agent collaboration design would recover the largest share of value.

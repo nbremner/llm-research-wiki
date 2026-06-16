@@ -1,7 +1,7 @@
 ---
 title: Automation and substitution
-status: stub
-updated: 2026-06-14
+status: active
+updated: 2026-06-16
 ---
 
 # Automation and substitution
@@ -40,6 +40,12 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
   be evaluated at the level of assessment-design components: combining scale composites, scoring item
   responses, dropping predictors, or handling novel data formats. Replacing OLS with machine learning is
   not the same thing as improving the selection system.
+- [[2025-mazeika-remote-labor-index]] adds a direct end-to-end automation benchmark for remote
+  freelance work. Across 240 real commissioned projects, current agents completed at most 2.5% of tasks
+  at a reasonable-client acceptance standard, despite the same models often looking strong on narrower
+  knowledge, coding, or computer-use evaluations. This is evidence against treating benchmark progress
+  as realized labor substitution without checking whether the whole deliverable can actually be
+  completed.
 
 ## Contradictions & open questions
 
@@ -59,3 +65,7 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 - **Support vs. substitution in hiring.** Employers may describe algorithmic assessment as decision
   support, while regulatory language treats some uses of simplified outputs, rankings, or classifications
   as substantial assistance or replacement of discretion. The boundary is practical, not merely semantic.
+- **Task exposure vs. end-to-end deliverables.** [[2025-mazeika-remote-labor-index]] cuts against simple
+  exposure narratives: a task can be computer-based, remote, and economically valuable while still
+  resisting autonomous completion because quality, file integrity, multimodal artifacts, and project
+  integration fail at the deliverable level.

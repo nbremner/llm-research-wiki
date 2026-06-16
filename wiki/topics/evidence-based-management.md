@@ -1,7 +1,7 @@
 ---
 title: Evidence-based management
 status: active
-updated: 2026-06-15
+updated: 2026-06-16
 ---
 
 # Evidence-based management
@@ -36,6 +36,11 @@ future automation pressure could emerge, but it should not be read as observed d
 complete labor-market forecast. Its job-posting analysis is suggestive; the index itself is a diagnostic
 for task learnability.
 
+[[2025-mazeika-remote-labor-index]] is useful because it moves the evidence unit from model capability
+to economically accepted work output. The RLI automation rate asks whether an AI deliverable would be
+accepted by a reasonable client compared with a human gold-standard deliverable, which is closer to a
+management claim about substituting for real work than scores on narrower benchmark tasks.
+
 ## Connections
 
 - Relates to [[construct-validity]] because evidence quality depends on whether the measured construct
@@ -58,6 +63,10 @@ for task learnability.
   observed tool deployment, productivity changes, job-posting shifts, and actual employment or wage
   effects. [[2026-tomei-what-jobs-can-ai-learn]] mostly sits at the index-plus-suggestive-validation
   stage.
+- [[2025-mazeika-remote-labor-index]] strengthens the evidence base for autonomous remote-work
+  completion, but it still should not be read as evidence about assisted productivity, within-job
+  augmentation, labor demand, wages, or adoption. Those are different outcomes requiring different
+  designs.
 - For algorithmic hiring claims, the open question is often not whether evidence exists, but what kind:
   predictive validity, construct validity, bias-audit metrics, applicant reactions, legal compliance,
   implementation fidelity, and business utility answer different questions.

@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-06-15
+updated: 2026-06-16
 ---
 
 # Work redesign
@@ -44,6 +44,12 @@ dense feedback, accessible tools, and tangible outputs. That makes the redesign 
 which workflow components can be turned into learnable task environments, and which resist because the
 state, feedback, or judgment criteria are not clean enough.
 
+[[2025-mazeika-remote-labor-index]] adds a deliverable-level constraint on redesign. Its RLI benchmark
+tests whole freelance projects rather than isolated subtasks and finds current agents near the floor,
+with the best automation rate at 2.5%. For work redesign, the implication is that delegation boundaries
+cannot be drawn from tool capability demos alone; the redesigned workflow has to cover file handling,
+artifact quality, integration across project components, and acceptance by a reasonable client.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool
@@ -73,3 +79,7 @@ state, feedback, or judgment criteria are not clean enough.
 - [[2026-tomei-what-jobs-can-ai-learn]] may over-weight what can be represented as a learnable task
   environment. Work redesign still has to handle accountability, meaning, relationship work, and
   organizational context that are not captured by RL feasibility alone.
+- [[2025-mazeika-remote-labor-index]] is a benchmark of autonomous project completion, not an
+  organizational redesign study. Its low automation rates argue for caution about full delegation, but
+  they do not rule out large gains from human-guided decomposition, review, or tool-specific workflow
+  changes.
