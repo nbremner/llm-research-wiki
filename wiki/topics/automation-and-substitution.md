@@ -46,6 +46,10 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
   knowledge, coding, or computer-use evaluations. This is evidence against treating benchmark progress
   as realized labor substitution without checking whether the whole deliverable can actually be
   completed.
+- [[2025-shukla-ai-assisted-design-ironies]] brings in the substitution myth from human-automation
+  research. The paper argues that assigning UX tasks to AI based on a simple “machines are better at”
+  logic misses how automation changes the human role: designers may do less direct drafting but more
+  monitoring, validation, troubleshooting, and accountability work.
 
 ## Contradictions & open questions
 
@@ -69,3 +73,6 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
   exposure narratives: a task can be computer-based, remote, and economically valuable while still
   resisting autonomous completion because quality, file integrity, multimodal artifacts, and project
   integration fail at the deliverable level.
+- **Substitution vs. transformed responsibility.** [[2025-shukla-ai-assisted-design-ironies]] suggests
+  that even when AI substitutes for visible task execution, the human may inherit harder-to-see
+  responsibilities for interpretation, correction, rationale, and consequences.

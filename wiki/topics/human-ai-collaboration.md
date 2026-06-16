@@ -46,6 +46,12 @@ agents were evaluated on autonomous end-to-end freelance projects, the best auto
 quality, or inconsistent artifacts. That makes human collaboration less like optional polish and more
 like the current control layer for scoping, decomposition, tool use, verification, and final acceptance.
 
+[[2025-shukla-ai-assisted-design-ironies]] shows a similar pattern in UX design discourse. Practitioners
+described AI as a brainstorming partner, junior designer, or second brain, but still located responsibility
+in human judgment: empathy, context, rationale, hallucination checking, bias control, and final design
+defense. Collaboration here is not equal partnership; it is human responsibility under partial cognitive
+offloading.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify,
@@ -77,3 +83,6 @@ like the current control layer for scoping, decomposition, tool use, verificatio
 - [[2025-mazeika-remote-labor-index]] evaluates autonomous completion rather than collaborative
   workflows. Its failures strengthen the case for human control layers, but the benchmark does not tell
   us which human-agent collaboration design would recover the largest share of value.
+- [[2025-shukla-ai-assisted-design-ironies]] complicates the “AI teammate” frame: treating AI as a junior
+  designer may be pragmatically useful, but it can hide the asymmetry that humans remain accountable for
+  rationale, bias, context, and errors.

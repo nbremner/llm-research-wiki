@@ -50,6 +50,13 @@ with the best automation rate at 2.5%. For work redesign, the implication is tha
 cannot be drawn from tool capability demos alone; the redesigned workflow has to cover file handling,
 artifact quality, integration across project components, and acceptance by a reasonable client.
 
+[[2025-shukla-ai-assisted-design-ironies]] adds the automation-history version of work redesign. In UX
+practice, designers expected GenAI to remove repetitive design meta-work and support ideation, but the
+paper warns that automation can shift work into monitoring, validation, troubleshooting, and defending
+outputs. The redesign question is therefore not just which design tasks AI can perform, but how AI
+changes designers' visibility into rationale, skill practice, accountability, and the flow of creative
+judgment.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool
@@ -83,3 +90,6 @@ artifact quality, integration across project components, and acceptance by a rea
   organizational redesign study. Its low automation rates argue for caution about full delegation, but
   they do not rule out large gains from human-guided decomposition, review, or tool-specific workflow
   changes.
+- [[2025-shukla-ai-assisted-design-ironies]] is practitioner-discourse evidence, not observed workflow
+  performance. It is useful for surfacing likely redesign failure modes, but it does not show whether
+  GenAI actually causes de-skilling or worse design outcomes over time.

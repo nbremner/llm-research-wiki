@@ -1,7 +1,7 @@
 ---
 title: Critical thinking
 status: active
-updated: 2026-06-15
+updated: 2026-06-16
 ---
 
 # Critical thinking
@@ -21,6 +21,13 @@ thinking: from information gathering to information verification, from problem-s
 integration, and from task execution to task stewardship. That makes critical thinking a design problem
 inside [[human-ai-collaboration]], not just an individual trait or training module.
 
+[[2025-shukla-ai-assisted-design-ironies]] gives the design-practice version of the same shift. UX
+practitioners saw AI as useful for drafts, user flows, research scripts, and ideation, but they also
+emphasized the need to check hallucinations, detect bias, preserve design rationale, and defend choices.
+The paper's sharper warning is about cognitive offloading: if AI bypasses sketching, problem framing,
+incubation, and exploratory iteration, critical thinking may be displaced from creative formation into
+after-the-fact supervision.
+
 ## Connections
 
 - Relates to [[ai-adoption]] because adoption quality depends on whether users retain enough judgment
@@ -37,3 +44,6 @@ inside [[human-ai-collaboration]], not just an individual trait or training modu
   shifts in effort and judgment, not causal evidence that GenAI degrades critical thinking over time.
 - Less effort is ambiguous. It may indicate productive cognitive offloading, underinvestment in
   judgment, or both depending on task stakes and user expertise.
+- [[2025-shukla-ai-assisted-design-ironies]] is not longitudinal evidence of skill loss. It identifies a
+  plausible de-skilling mechanism from practitioner discourse and automation theory, but the causal
+  claim still needs behavioral and longitudinal evidence.
