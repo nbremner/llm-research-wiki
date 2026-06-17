@@ -175,6 +175,8 @@ resolves to a real topic file (create a short stub if needed so links don't dang
 
 Show the topic diff and get owner approval, then commit. In attended chat runs, do **not** end with only "I can show the diff if you want" after drafting synthesis; display the proposed topic diff in the same completion turn (or immediately after lint) so the owner can approve without an extra prompt.
 
+When multiple ingests or maintenance steps happen in the same session, keep the commit boundaries explicit: source records may be committed/pushed, but unapproved topic edits must remain unstaged unless the owner has approved that exact diff. Before staging a source record or approved topic synthesis, check the working tree conceptually and stage only the intended files so a pending proposal, skill-maintenance edit, or previous ingest draft does not ride along accidentally. Completion notes should name any intentionally-uncommitted proposal files.
+
 For Discord delivery, make the approval diff easy to review:
 
 - Prefer a compact per-file summary with fenced `diff` blocks containing the added/changed text, not a huge raw `git diff` dump when the diff is long.
@@ -192,9 +194,18 @@ git commit -m "wiki: synthesize <slug> into topics (<topic>, ...)"
 
 Run the markdown lint (`research-wiki-graph-lint` /
 `scripts/research-wiki-tools/graph_lint.py`) to confirm no broken wikilinks, orphans, or
-claims-without-source were introduced. If topic synthesis is drafted but not yet owner-approved, run
-lint against the working tree before asking for approval; a clean proposal is easier to review and avoids
-presenting broken links as if they were ready.
+claims-without-source were introduced. Preferred repo command:
+
+```bash
+cd /root/work/llm-research-wiki
+python scripts/research-wiki-tools/graph_lint.py --wiki-dir wiki --fail-on Medium
+```
+
+Do **not** pass `wiki` as a positional argument; the script expects `--wiki-dir wiki`. A source-only
+commit may temporarily lint as an orphan source until the topic proposal exists. Treat that as an
+expected governance artifact, not as a reason to auto-commit topic synthesis. Once topic edits are
+drafted in the working tree, rerun lint against the working tree before asking for approval; a clean
+proposal is easier to review and avoids presenting broken links as if they were ready.
 
 Push the auto-committed source record even when topic synthesis is still awaiting owner approval, then
 verify `origin/main` matches local `HEAD`. After any approved topic-synthesis commit, push again and
