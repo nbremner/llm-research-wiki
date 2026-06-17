@@ -52,6 +52,11 @@ in human judgment: empathy, context, rationale, hallucination checking, bias con
 defense. Collaboration here is not equal partnership; it is human responsibility under partial cognitive
 offloading.
 
+[[2025-handa-economic-tasks-ai]] gives collaboration a descriptive baseline at scale. In more than four
+million Claude.ai conversations, the authors classify 57% of usage as augmentation-like and 43% as
+automation-like. The split is useful because it keeps collaboration from becoming a purely normative
+label: current use already spans learning, iteration, and more direct task fulfillment.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify,
@@ -86,3 +91,6 @@ offloading.
 - [[2025-shukla-ai-assisted-design-ironies]] complicates the “AI teammate” frame: treating AI as a junior
   designer may be pragmatically useful, but it can hide the asymmetry that humans remain accountable for
   rationale, bias, context, and errors.
+- [[2025-handa-economic-tasks-ai]] classifies usage from conversation traces, not from full work systems.
+  The same interaction can look like automation inside the chat window and still depend on human
+  scoping, verification, and accountability outside it.

@@ -57,6 +57,12 @@ outputs. The redesign question is therefore not just which design tasks AI can p
 changes designers' visibility into rationale, skill practice, accountability, and the flow of creative
 judgment.
 
+[[2025-handa-economic-tasks-ai]] gives a task-demand map for redesign. By mapping Claude.ai
+conversations to O*NET tasks, it shows where workers are already pulling AI into task execution: heavily
+in software development and writing, with broader but uneven spread across occupations. For redesign,
+this is not proof that those jobs should be automated; it is evidence about where task-level pressure and
+experimentation are already concentrated.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool
@@ -93,3 +99,6 @@ judgment.
 - [[2025-shukla-ai-assisted-design-ironies]] is practitioner-discourse evidence, not observed workflow
   performance. It is useful for surfacing likely redesign failure modes, but it does not show whether
   GenAI actually causes de-skilling or worse design outcomes over time.
+- [[2025-handa-economic-tasks-ai]] observes AI use, not organizational redesign. Conversation-level use
+  can identify where work is being attempted with AI, but it cannot show whether task allocation,
+  accountability, coordination, or job architecture changed around that use.

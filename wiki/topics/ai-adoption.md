@@ -1,7 +1,7 @@
 ---
 title: AI adoption
 status: active
-updated: 2026-06-15
+updated: 2026-06-16
 ---
 
 # AI adoption
@@ -58,6 +58,13 @@ raised issues resolved per hour by 15% on average, with the largest gains for le
 lower-skilled workers. This suggests adoption can succeed when the tool distributes situated best
 practices at the point of work, not just when workers receive generic access or training.
 
+[[2025-handa-economic-tasks-ai]] adds an observed-use baseline for the adoption map. Instead of asking
+which jobs are exposed to AI or which workers report using it, the paper maps more than four million
+Claude.ai conversations to O*NET tasks and occupations. Usage was concentrated in software development
+and writing, but not confined there: about 36% of occupations showed AI use for at least a quarter of
+their associated tasks. This makes adoption visible as uneven task-level diffusion, not simply tool
+availability.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and
@@ -99,3 +106,7 @@ practices at the point of work, not just when workers receive generic access or 
   can still fail when identified use cases violate worker autonomy, task meaning, communication norms,
   or accountability. These are complementary constraints, but the sequencing is open: discover use
   cases first, or diagnose worker-centered fit first?
+- **Observed use vs. organizational adoption.** [[2025-handa-economic-tasks-ai]] measures actual Claude.ai
+  conversations, which is stronger than pure exposure modeling but still not the same as durable
+  adoption inside an accountable work system. A task can appear in AI usage data without being formally
+  redesigned, governed, or tied to performance outcomes.

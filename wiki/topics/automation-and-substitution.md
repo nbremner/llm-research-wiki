@@ -50,6 +50,10 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
   research. The paper argues that assigning UX tasks to AI based on a simple “machines are better at”
   logic misses how automation changes the human role: designers may do less direct drafting but more
   monitoring, validation, troubleshooting, and accountability work.
+- [[2025-handa-economic-tasks-ai]] estimates that 43% of observed Claude.ai usage looked automation-like
+  and 57% looked augmentation-like. That makes automation and augmentation empirical usage patterns
+  rather than mutually exclusive futures: both appear in current task-level AI use, often before there is
+  evidence about employment, wages, or durable substitution.
 
 ## Contradictions & open questions
 
@@ -76,3 +80,7 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 - **Substitution vs. transformed responsibility.** [[2025-shukla-ai-assisted-design-ironies]] suggests
   that even when AI substitutes for visible task execution, the human may inherit harder-to-see
   responsibilities for interpretation, correction, rationale, and consequences.
+- **Conversation automation vs. labor substitution.** [[2025-handa-economic-tasks-ai]] can classify some
+  AI conversations as automation-like, but that does not establish job-level substitution. The human may
+  still be selecting the task, evaluating the output, integrating it into a larger workflow, and bearing
+  accountability.
