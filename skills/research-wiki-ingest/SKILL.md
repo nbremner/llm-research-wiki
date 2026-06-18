@@ -59,18 +59,28 @@ an explicit topic-map review: compare the source's central constructs, mechanism
 against `wiki/overview.md` and existing `wiki/topics/`. If the source's main contribution lacks a natural
 home, propose a new topic rather than forcing it into a broad existing page.
 
-Use three buckets in the topic assessment:
+Use four checks in the topic assessment:
 
 1. **Create now** — the source's core construct is absent, likely reusable, and would become distorted if
    buried inside an existing topic.
-2. **Update existing** — the source genuinely strengthens or complicates an existing synthesis page.
-3. **Defer** — the construct appears in the source but is too narrow, one-off, or better treated as a
-   submechanism until more sources accumulate.
+2. **Update existing** — only when the source adds a *distinct* claim, mechanism, or contradiction to that
+   page. "Related to" is not enough: if the addition would merely restate or pad an already-large focal
+   page, prefer Defer or a new precise topic. Do not let every source flow into the same few familiar pages
+   — that accretion is the fixation failure mode this principle exists to prevent.
+3. **Split** — if a focal topic you would otherwise update has already grown into a catch-all (many
+   accreted edits, several distinct constructs on one page), propose extracting the distinct construct into
+   its own topic instead of appending again. Treat a heavily-edited page as a split candidate, not a
+   default destination.
+4. **Defer** — the construct appears but is too narrow, one-off, or better treated as a submechanism for
+   now. Record it on the overview's **candidate-topics watchlist** with the source slug, so accumulation
+   can later promote it. Check that watchlist on every ingest: a construct deferred across several sources
+   has earned its own page — promote it rather than deferring a third time.
 
-New topic pages still require owner approval before commit. In attended runs, show the topic assessment
-before final synthesis: proposed new topics, why each deserves its own page, candidates deferred, and the
-existing topics that will still be updated. For source-record auto-commits, avoid creating dangling `Feeds`
-links to unapproved new topics; add those feeds in the approved topic-synthesis commit.
+New topic pages (and splits) still require owner approval before commit. In attended runs, show the topic
+assessment before final synthesis: proposed new topics, why each deserves its own page, any split
+proposals, candidates deferred (with their watchlist tally), and the existing topics that will still be
+updated. For source-record auto-commits, avoid creating dangling `Feeds` links to unapproved new topics;
+add those feeds in the approved topic-synthesis commit.
 
 ## Workflow
 
@@ -192,20 +202,31 @@ current topic list. Identify:
 
 - **Create now:** new topic pages that should exist because the source's central contribution has no
   natural home in the current map.
-- **Update existing:** existing topic pages the source genuinely strengthens, complicates, or contradicts.
-- **Defer:** plausible topic candidates that are too narrow, too speculative, or not yet supported enough
-  to deserve their own page.
+- **Update existing:** existing pages the source adds a *distinct* claim, mechanism, or contradiction to —
+  not pages it is merely "related to." Padding a large focal page with restated relevance is the fixation
+  failure mode; do not do it.
+- **Split:** a focal page that has already accreted many edits and several distinct constructs is a
+  candidate to split, not a default home — propose extracting the distinct construct into its own topic.
+- **Defer:** plausible candidates too narrow or unsupported for their own page. Add them to the overview
+  candidate-topics watchlist (with the source slug) and check that list each ingest so accumulated
+  candidates get promoted rather than deferred indefinitely.
 
 For each proposed new topic, give the owner a short justification, a proposed slug, and the overview-line
 summary. Prefer creating a precise topic when the alternative is blurring a distinct construct into a broad
 catch-all page. Prefer deferring when the candidate is only a submechanism, method detail, or one-off
-example. Owner approval is required before new topics become canonical.
+example. Owner approval is required before new topics (and splits) become canonical.
 
 For each approved topic the source feeds: create or update `wiki/topics/<topic>.md` (schema.md topic
 template). Write synthesis in the owner's framing — state what the evidence says, cite sources inline with
 `[[source-slug]]`, strengthen links, and **surface contradictions in prose** under a
 "Contradictions & open questions" heading. Make sure every `[[link]]` the source's `## Feeds` lists
 resolves to a real topic file. Add approved new topics to `wiki/overview.md`'s Topics list.
+
+Keep `wiki/overview.md` a **living orientation page**, not a static index: as part of each synthesis,
+update its **Thin / missing areas**, **Open questions**, and **Candidate topics (watchlist)** so the map
+reflects the current corpus and the next ingest has accurate signals for where new topics are actually
+needed. A decayed overview (e.g. "thin areas" that no longer match the corpus) silently re-creates topic
+fixation, because the agent loses the map that tells it where coverage is missing.
 
 Show the topic assessment and then the topic diff for owner approval before committing. In attended chat runs, do **not** end with only "I can show the diff if you want" after drafting synthesis; display the proposed topic diff in the same completion turn (or immediately after lint) so the owner can approve without an extra prompt.
 
