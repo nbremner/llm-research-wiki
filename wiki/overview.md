@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-06-14
+updated: 2026-06-17
 ---
 
 # Overview
@@ -27,7 +27,7 @@ The central question:
 
 - [[ai-adoption]] — what binds AI adoption once tools are available (the "mapping problem")
 - [[work-redesign]] — how AI shifts work architecture from fixed roles toward redesigned human-agent workflows
-- [[automation-and-substitution]] — _stub_
+- [[automation-and-substitution]] — whether AI substitutes for or augments labor and capital: what scales, what shrinks, and at what time horizon
 - [[algorithmic-assessment]] — algorithmic hiring/assessment as a measurement chain from signal to construct to decision
 - [[job-analysis]] — how work, tasks, KSAOs, and performance domains are defined before HR systems are built
 - [[inclusive-hr-systems]] — how HR practices are designed so work definitions, criteria, and decisions include diverse employee experiences
@@ -46,7 +46,30 @@ Seed questions to grow topics around. Edit freely.
 - What does good measurement of AI workforce impact look like beyond productivity anecdotes?
 - How does AI-mediated work affect autonomy, competence, relatedness, trust, and motivation?
 - What does construct validity require in AI-mediated assessment and people analytics?
+- How does AI reshape job analysis and the definition of work itself, before HR systems are built on it?
+- When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement —
+  construct validity and job-relatedness?
 
 ## Thin / missing areas
 
-- Everything — the wiki is empty. First ingests will define where the real gaps are.
+- **Equilibrium labor demand.** Most sources show short-run, within-job augmentation; the wiki is thin on
+  whether firms later hire fewer or different workers, change wages, or automate roles more fully.
+- **Worker experience & motivation under AI-mediated work** (autonomy, competence, relatedness, trust) —
+  raised in the open questions but not yet its own topic.
+- **Foundational I-O constructs** (selection validity, psychometrics, teams, leadership, motivation, CSR)
+  are deliberately deferred to the triage-index shelf ("AI-relevant first, foundation later"), so the wiki
+  currently leans toward the AI side of the AI×I-O intersection.
+- **Measurement of AI workforce impact** beyond productivity anecdotes — a recurring concern with no home topic.
+
+## Candidate topics (watchlist)
+
+Constructs that have surfaced across sources but don't yet warrant their own page. Ingests append here
+(with the source slug); promote a candidate once enough sources accumulate rather than deferring it again.
+Edit freely.
+
+- **people-analytics / big-data methods** — the deferred "Batch 2" cluster (Kosinski, Kern, Chapman, Miller,
+  Chen & Wojcik, Guzzo); promote if/when ingested.
+- **skill atrophy / deskilling** — recurs in [[critical-thinking]] and AI-assisted-design ironies; promote
+  if more sources accumulate.
+- **applicant reactions & perceived fairness** of algorithmic assessment — appears under
+  [[algorithmic-assessment]]; candidate for its own page.
