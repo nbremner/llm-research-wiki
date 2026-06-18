@@ -31,6 +31,8 @@ file_hash: ab48c6c8bbd24feef34aeea8bed9dbf20656aee3d9b2eb800d283e9fdcfe3a60
 - The paper is especially useful for construct validity because it moves fairness concerns upstream: the problem may not only be biased predictors or biased models, but an incomplete definition of the job and criterion domain.
 
 ## Feeds
+- [[job-analysis]]
 - [[construct-validity]]
+- [[inclusive-hr-systems]]
 - [[algorithmic-assessment]]
 - [[evidence-based-management]]

@@ -29,6 +29,8 @@ The central question:
 - [[work-redesign]] — how AI shifts work architecture from fixed roles toward redesigned human-agent workflows
 - [[automation-and-substitution]] — _stub_
 - [[algorithmic-assessment]] — algorithmic hiring/assessment as a measurement chain from signal to construct to decision
+- [[job-analysis]] — how work, tasks, KSAOs, and performance domains are defined before HR systems are built
+- [[inclusive-hr-systems]] — how HR practices are designed so work definitions, criteria, and decisions include diverse employee experiences
 - [[employee-engagement]] — engagement as a cautionary I-O construct for measurement and evidence claims
 - [[construct-validity]] — whether named constructs are conceptually bounded and measured coherently
 - [[evidence-based-management]] — matching organizational claims to the quality and relevance of evidence

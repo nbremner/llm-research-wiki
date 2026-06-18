@@ -1,7 +1,7 @@
 ---
 title: Construct validity
 status: active
-updated: 2026-06-15
+updated: 2026-06-18
 ---
 
 # Construct validity
@@ -34,6 +34,12 @@ capabilities, the paper defines a narrower construct: feasibility of improving t
 RL-based post-training. The distinction matters because occupations can rank high on LLM exposure but
 low on RL feasibility, or the reverse.
 
+[[2022-strah-diversity-issues-job-analysis]] moves construct validity upstream into job analysis itself.
+If the performance domain is built from majority-group norms, biased archival language, unequal SME
+voice, or averaged ratings that wash out subgroup differences, then later validation work may be
+anchored to an incomplete construct. The issue is not only whether a predictor measures the intended
+KSAO; it is whether the job and criterion domain were inclusively specified in the first place.
+
 ## Connections
 
 - Relates to [[employee-engagement]] as a cautionary case of loose construct boundaries.
@@ -45,6 +51,8 @@ low on RL feasibility, or the reverse.
   measured construct matches the mechanism of automation being claimed.
 - Relates to [[algorithmic-assessment]] because algorithmic hiring tools are only defensible when their
   signals, model outputs, and employment decisions are tied back to coherent job-relevant constructs.
+- Relates to [[job-analysis]] because construct validity begins before measurement: the construct has to be
+  defined from work as actually performed and experienced, including perspectives that are easy to miss.
 
 ## Contradictions & open questions
 
@@ -55,3 +63,6 @@ low on RL feasibility, or the reverse.
 - [[2026-tomei-what-jobs-can-ai-learn]] improves the exposure construct but still relies on LLM-based
   annotations. The next validation question is whether RL feasibility predicts observed deployment and
   labor-market change better than existing exposure measures.
+- [[2022-strah-diversity-issues-job-analysis]] complicates the usual “job-relatedness” safeguard: a
+  procedure can be tied to a documented job analysis and still be unfairly narrow if the job analysis
+  failed to capture diverse ways of performing the work.

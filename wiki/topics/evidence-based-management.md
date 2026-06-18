@@ -1,7 +1,7 @@
 ---
 title: Evidence-based management
 status: active
-updated: 2026-06-16
+updated: 2026-06-18
 ---
 
 # Evidence-based management
@@ -41,6 +41,13 @@ to economically accepted work output. The RLI automation rate asks whether an AI
 accepted by a reasonable client compared with a human gold-standard deliverable, which is closer to a
 management claim about substituting for real work than scores on narrower benchmark tasks.
 
+[[2022-strah-diversity-issues-job-analysis]] is a reminder that evidence quality depends on the upstream
+definition of the thing being evidenced. A selection system, performance tool, or compensation structure
+can be evidence-based in a narrow procedural sense while inheriting a job analysis that failed to capture
+diverse work experiences. For management claims about fairness, legal defensibility, or inclusion, the
+evidence chain has to include how the job domain was defined, who had voice in that definition, and
+whether aggregation erased meaningful subgroup differences.
+
 ## Connections
 
 - Relates to [[construct-validity]] because evidence quality depends on whether the measured construct
@@ -52,6 +59,8 @@ management claim about substituting for real work than scores on narrower benchm
   leaders keep exposure, adoption, productivity, and employment effects analytically separate.
 - Relates to [[algorithmic-assessment]] because the evidence ladder must distinguish validity evidence,
   adverse-impact evidence, compliance evidence, implementation evidence, and decision utility.
+- Relates to [[job-analysis]] because many HR evidence claims begin with a documented job domain; that
+  documentation is itself evidence that can be inclusive, incomplete, or biased.
 
 ## Contradictions & open questions
 
@@ -70,3 +79,6 @@ management claim about substituting for real work than scores on narrower benchm
 - For algorithmic hiring claims, the open question is often not whether evidence exists, but what kind:
   predictive validity, construct validity, bias-audit metrics, applicant reactions, legal compliance,
   implementation fidelity, and business utility answer different questions.
+- [[2022-strah-diversity-issues-job-analysis]] raises an evidence paradox: job analysis is often used as
+  the fairness foundation for HR systems, but the inclusiveness of the job analysis may itself be an
+  untested assumption rather than established evidence.
