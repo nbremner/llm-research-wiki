@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-06-17
+updated: 2026-06-18
 ---
 
 # Overview
@@ -26,6 +26,7 @@ The central question:
 ## Topics
 
 - [[ai-adoption]] — what binds AI adoption once tools are available (the "mapping problem")
+- [[ai-readiness]] — whether organizational capabilities, data, culture, and strategic fit are ready for a specific AI adoption purpose
 - [[work-redesign]] — how AI shifts work architecture from fixed roles toward redesigned human-agent workflows
 - [[automation-and-substitution]] — whether AI substitutes for or augments labor and capital: what scales, what shrinks, and at what time horizon
 - [[algorithmic-assessment]] — algorithmic hiring/assessment as a measurement chain from signal to construct to decision
@@ -43,6 +44,7 @@ Seed questions to grow topics around. Edit freely.
 
 - Which tasks are candidates for automation vs. augmentation vs. human protection, and how is that decided?
 - What I-O constructs best explain sustained adoption of AI tools at work?
+- What would make AI readiness a valid organizational assessment construct rather than a loose maturity checklist?
 - What does good measurement of AI workforce impact look like beyond productivity anecdotes?
 - How does AI-mediated work affect autonomy, competence, relatedness, trust, and motivation?
 - What does construct validity require in AI-mediated assessment and people analytics?

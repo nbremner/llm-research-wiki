@@ -8,7 +8,9 @@ updated: 2026-06-16
 
 The question this topic tracks: **what actually binds AI adoption inside organizations once the tools
 are available?** The early evidence points away from access and toward *discovery* — knowing where
-and how AI creates value in a specific production process.
+and how AI creates value in a specific production process. A second layer is [[ai-readiness]]: whether
+the organization has the strategic alignment, resources, knowledge, culture, and data conditions needed
+for the specific AI adoption purpose it is pursuing.
 
 ## The mapping problem
 
@@ -65,6 +67,13 @@ and writing, but not confined there: about 36% of occupations showed AI use for 
 their associated tasks. This makes adoption visible as uneven task-level diffusion, not simply tool
 availability.
 
+[[2021-johnk-ready-or-not-ai-comes]] gives adoption a readiness frame. In interviews with 25 AI experts,
+the paper identifies five organizational readiness categories — strategic alignment, resources,
+knowledge, culture, and data — and argues that AI readiness must be assessed against the particular AI
+adoption purpose. This complements the mapping-problem evidence: even when a firm knows possible use
+cases, adoption still depends on whether processes, data, skills, culture, governance, and resources can
+support the intended deployment.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and
@@ -110,3 +119,9 @@ availability.
   conversations, which is stronger than pure exposure modeling but still not the same as durable
   adoption inside an accountable work system. A task can appear in AI usage data without being formally
   redesigned, governed, or tied to performance outcomes.
+- **Readiness breadth vs. intervention focus.** [[2021-johnk-ready-or-not-ai-comes]] defines readiness
+  broadly across strategic alignment, resources, knowledge, culture, and data; [[2026-kim-mapping-ai-into-production]]
+  identifies a narrower causal intervention that improves firms' discovery of AI use cases. The open
+  question is whether broad readiness assessments predict adoption success beyond targeted mapping
+  support, or whether they mainly name the organizational conditions that make mapping interventions
+  stick.

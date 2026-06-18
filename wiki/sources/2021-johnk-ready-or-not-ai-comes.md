@@ -29,3 +29,4 @@ file_hash: e499a0d493c17b5cfd097076597cf5a4f0d4a971bb9d6ea0bef6d22212afe75d
 
 ## Feeds
 - [[ai-adoption]]
+- [[ai-readiness]]
