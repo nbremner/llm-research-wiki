@@ -222,6 +222,13 @@ template). Write synthesis in the owner's framing — state what the evidence sa
 "Contradictions & open questions" heading. Make sure every `[[link]]` the source's `## Feeds` lists
 resolves to a real topic file. Add approved new topics to `wiki/overview.md`'s Topics list.
 
+If a source record was already auto-committed with only existing-topic feeds and the topic-map assessment
+then proposes a new topic, treat the additional source `## Feeds` link as part of the owner-approved topic
+synthesis proposal. Leave that source-file feed patch uncommitted alongside the new/updated topic pages
+and `overview.md`, include it in the approval diff, and commit it only after the owner approves the
+corresponding topic synthesis. This avoids dangling links in the source commit while still keeping source
+feeds complete after the new topic is approved.
+
 Keep `wiki/overview.md` a **living orientation page**, not a static index: as part of each synthesis,
 update its **Thin / missing areas**, **Open questions**, and **Candidate topics (watchlist)** so the map
 reflects the current corpus and the next ingest has accurate signals for where new topics are actually
