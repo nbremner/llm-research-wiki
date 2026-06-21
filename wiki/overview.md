@@ -5,23 +5,17 @@ updated: 2026-06-18
 
 # Overview
 
-The single living orientation page for this wiki. What it's about, what exists, where it's thin.
-Keep it short — when a section here grows past a few lines, it wants to become its own topic page.
+The single living orientation page for this wiki. What it's about, what exists, where it's thin. Keep it short — when a section here grows past a few lines, it wants to become its own topic page.
 
 ## What this wiki is
 
-A queryable, cross-linked knowledge base at the intersection of **AI workforce transformation** and
-**industrial–organizational psychology**. It exists to feed the owner's writing and thinking and to
-support synthesis across sources — *not* as a public resource for others.
+A queryable, cross-linked knowledge base at the intersection of **AI workforce transformation** and **industrial–organizational psychology**. It exists to feed the owner's writing and thinking and to support synthesis across sources — *not* as a public resource for others.
 
-The product is **synthesis**: topic pages that connect and contradict sources in the owner's own
-framing. Sources are the evidence layer beneath them. See `schema.md` for conventions and the one
-hard rule (public-only sources).
+The product is **synthesis**: topic pages that connect and contradict sources in the owner's own framing. Sources are the evidence layer beneath them. See `schema.md` for conventions and the one hard rule (public-only sources).
 
 The central question:
 
-> How does AI change work, workers, jobs, organizations, and measurement — and what does I-O
-> psychology help us understand, evaluate, and design better?
+> How does AI change work, workers, jobs, organizations, and measurement — and what does I-O psychology help us understand, evaluate, and design better?
 
 ## Topics
 
@@ -51,29 +45,19 @@ Seed questions to grow topics around. Edit freely.
 - When does improving AI quality reduce human effort enough that system performance, learning, or oversight suffers?
 - What does construct validity require in AI-mediated assessment and people analytics?
 - How does AI reshape job analysis and the definition of work itself, before HR systems are built on it?
-- When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement —
-  construct validity and job-relatedness?
+- When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement — construct validity and job-relatedness?
 
 ## Thin / missing areas
 
-- **Equilibrium labor demand.** Most sources show short-run, within-job augmentation; the wiki is thin on
-  whether firms later hire fewer or different workers, change wages, or automate roles more fully.
-- **Worker experience & motivation under AI-mediated work** (autonomy, competence, relatedness, trust) —
-  raised in the open questions but not yet its own topic.
-- **Foundational I-O constructs** (selection validity, psychometrics, teams, leadership, motivation, CSR)
-  are deliberately deferred to the triage-index shelf ("AI-relevant first, foundation later"), so the wiki
-  currently leans toward the AI side of the AI×I-O intersection.
+- **Equilibrium labor demand.** Most sources show short-run, within-job augmentation; the wiki is thin on whether firms later hire fewer or different workers, change wages, or automate roles more fully.
+- **Worker experience & motivation under AI-mediated work** (autonomy, competence, relatedness, trust) — raised in the open questions but not yet its own topic.
+- **Foundational I-O constructs** (selection validity, psychometrics, teams, leadership, motivation, CSR) are deliberately deferred to the triage-index shelf ("AI-relevant first, foundation later"), so the wiki currently leans toward the AI side of the AI×I-O intersection.
 - **Measurement of AI workforce impact** beyond productivity anecdotes — a recurring concern with no home topic.
 
 ## Candidate topics (watchlist)
 
-Constructs that have surfaced across sources but don't yet warrant their own page. Ingests append here
-(with the source slug); promote a candidate once enough sources accumulate rather than deferring it again.
-Edit freely.
+Constructs that have surfaced across sources but don't yet warrant their own page. Ingests append here (with the source slug); promote a candidate once enough sources accumulate rather than deferring it again. Edit freely.
 
-- **people-analytics / big-data methods** — the deferred "Batch 2" cluster (Kosinski, Kern, Chapman, Miller,
-  Chen & Wojcik, Guzzo); promote if/when ingested.
-- **skill atrophy / deskilling** — recurs in [[critical-thinking]] and AI-assisted-design ironies; promote
-  if more sources accumulate.
-- **applicant reactions & perceived fairness** of algorithmic assessment — appears under
-  [[algorithmic-assessment]]; candidate for its own page.
+- **people-analytics / big-data methods** — the deferred "Batch 2" cluster (Kosinski, Kern, Chapman, Miller, Chen & Wojcik, Guzzo); promote if/when ingested.
+- **skill atrophy / deskilling** — recurs in [[critical-thinking]] and AI-assisted-design ironies; promote if more sources accumulate.
+- **applicant reactions & perceived fairness** of algorithmic assessment — appears under [[algorithmic-assessment]]; candidate for its own page.

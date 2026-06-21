@@ -12,18 +12,9 @@ Algorithmic assessment is not just selection with newer software. It is a measur
 
 The topic sits at the intersection of [[construct-validity]], [[evidence-based-management]], and [[automation-and-substitution]]. Construct validity asks whether the tool is measuring a coherent job-relevant attribute rather than a convenient proxy. Evidence-based management asks whether the validity, utility, audit, or compliance claim is supported by evidence matched to the decision. Automation and substitution asks whether the tool supports human judgment, substantially assists it, or replaces discretionary decision-making in screening, ranking, or selection.
 
-[[2022-strah-diversity-issues-job-analysis]] adds a deeper foundation problem for algorithmic assessment.
-Even before signals are modeled or audited, the job analysis that defines the criterion domain may miss
-underrepresented workers' tasks, constraints, voice, or successful performance strategies. That matters
-for algorithmic tools because a model can be technically validated against a criterion that already encodes
-an incomplete or majority-normed account of the job.
+[[2022-strah-diversity-issues-job-analysis]] adds a deeper foundation problem for algorithmic assessment. Even before signals are modeled or audited, the job analysis that defines the criterion domain may miss underrepresented workers' tasks, constraints, voice, or successful performance strategies. That matters for algorithmic tools because a model can be technically validated against a criterion that already encodes an incomplete or majority-normed account of the job.
 
-[[2022-dellacqua-falling-asleep-at-wheel]] adds the human-oversight problem inside algorithmic hiring.
-In a field experiment with professional recruiters, algorithmic recommendations improved accuracy overall,
-but higher-stated AI quality made recruiters more likely to follow recommendations and lower-quality AI
-induced more effort and time spent reviewing resumes. For assessment, this means the validity of a
-human-AI selection system depends not only on model accuracy, but on how recommendations reshape human
-attention, discretion, and willingness to override.
+[[2022-dellacqua-falling-asleep-at-wheel]] adds the human-oversight problem inside algorithmic hiring. In a field experiment with professional recruiters, algorithmic recommendations improved accuracy overall, but higher-stated AI quality made recruiters more likely to follow recommendations and lower-quality AI induced more effort and time spent reviewing resumes. For assessment, this means the validity of a human-AI selection system depends not only on model accuracy, but on how recommendations reshape human attention, discretion, and willingness to override.
 
 ## Connections
 - Relates to [[construct-validity]] because algorithmic assessment only matters if the inferred construct is coherent, job-relevant, and defensible in a nomological network.
