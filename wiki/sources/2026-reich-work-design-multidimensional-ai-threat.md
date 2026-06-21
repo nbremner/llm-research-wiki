@@ -32,4 +32,5 @@ file_hash: 6ae6c6dd7144353fd6e1d5cb81e6d9ac2c80ed57113f1e75793f10f78105cc69
 ## Feeds
 - [[ai-adoption]]
 - [[work-redesign]]
+- [[ai-mediated-work-experience]]
 - [[employee-engagement]]

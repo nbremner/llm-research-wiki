@@ -32,6 +32,7 @@ The central question:
 - [[critical-thinking]] — how GenAI shifts judgment, verification, and stewardship in knowledge work
 - [[human-ai-collaboration]] — how human accountability and AI capability are arranged in tasks
 - [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
+- [[ai-mediated-work-experience]] — how AI changes autonomy, skill use, identity, workload, and felt job quality
 
 ## Open questions
 
@@ -50,7 +51,7 @@ Seed questions to grow topics around. Edit freely.
 ## Thin / missing areas
 
 - **Equilibrium labor demand.** Most sources show short-run, within-job augmentation; the wiki is thin on whether firms later hire fewer or different workers, change wages, or automate roles more fully.
-- **Worker experience & motivation under AI-mediated work** (autonomy, competence, relatedness, trust) — raised in the open questions but not yet its own topic.
+- **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], but remains thin on longitudinal and behavioral evidence.
 - **Foundational I-O constructs** (selection validity, psychometrics, teams, leadership, motivation, CSR) are deliberately deferred to the triage-index shelf ("AI-relevant first, foundation later"), so the wiki currently leans toward the AI side of the AI×I-O intersection.
 - **Measurement of AI workforce impact** beyond productivity anecdotes — a recurring concern with no home topic.
 

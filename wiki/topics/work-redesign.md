@@ -28,9 +28,12 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2025-handa-economic-tasks-ai]] gives a task-demand map for redesign. By mapping Claude.ai conversations to O*NET tasks, it shows where workers are already pulling AI into task execution: heavily in software development and writing, with broader but uneven spread across occupations. For redesign, this is not proof that those jobs should be automated; it is evidence about where task-level pressure and experimentation are already concentrated.
 
+[[2026-reich-work-design-multidimensional-ai-threat]] brings classic work-design variables directly into AI adoption. Skill variety and autonomy predicted adoption, while task significance predicted shorter AI-use duration. Redesign therefore has to preserve the job resources that let workers experiment and learn, while recognizing that highly consequential work may invite more selective or bounded AI use.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
+- Connects to [[ai-mediated-work-experience]] because redesign changes autonomy, skill use, feedback, task significance, workload, and identity threat.
 - Connects to [[automation-and-substitution]] because the key design question is not simply which tasks AI replaces, but which workflow nodes require human judgment, care, trust, or visible accountability.
 - Connects to [[human-ai-collaboration]] because control and verification are work-design choices, not merely interface features.
 - Connects to [[automation-complacency]] because redesign can either preserve meaningful oversight or quietly convert human review into rubber-stamping.
@@ -47,3 +50,4 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2025-mazeika-remote-labor-index]] is a benchmark of autonomous project completion, not an organizational redesign study. Its low automation rates argue for caution about full delegation, but they do not rule out large gains from human-guided decomposition, review, or tool-specific workflow changes.
 - [[2025-shukla-ai-assisted-design-ironies]] is practitioner-discourse evidence, not observed workflow performance. It is useful for surfacing likely redesign failure modes, but it does not show whether GenAI actually causes de-skilling or worse design outcomes over time.
 - [[2025-handa-economic-tasks-ai]] observes AI use, not organizational redesign. Conversation-level use can identify where work is being attempted with AI, but it cannot show whether task allocation, accountability, coordination, or job architecture changed around that use.
+- [[2026-reich-work-design-multidimensional-ai-threat]] is correlational, so it cannot establish whether good work design causes AI adoption or whether AI adopters are in roles they already experience as more autonomous and varied.

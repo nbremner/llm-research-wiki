@@ -1,7 +1,7 @@
 ---
 title: AI adoption
 status: active
-updated: 2026-06-16
+updated: 2026-06-21
 ---
 
 # AI adoption
@@ -28,11 +28,14 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 
 [[2021-johnk-ready-or-not-ai-comes]] gives adoption a readiness frame. In interviews with 25 AI experts, the paper identifies five organizational readiness categories — strategic alignment, resources, knowledge, culture, and data — and argues that AI readiness must be assessed against the particular AI adoption purpose. This complements the mapping-problem evidence: even when a firm knows possible use cases, adoption still depends on whether processes, data, skills, culture, governance, and resources can support the intended deployment.
 
+[[2026-reich-work-design-multidimensional-ai-threat]] adds the work-design predictor layer. In a cross-sectional survey of 2,257 employees, skill variety and autonomy were the most consistent positive predictors of AI adoption, while AI-threat dimensions showed mixed and differentiated associations with frequency and duration. This turns adoption from a simple attitude or access problem into a job-characteristics problem: roles with more discretion and varied cognitive work may create more opportunity to experiment with and embed AI.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and organizational-cognition lens on adoption, not just an IT-diffusion one.
 - If discovery is the bottleneck, interventions that spread *patterns of use* (case libraries, cross-firm examples) may matter more than tool provisioning or generic training.
 - If worker-centered fit is the bottleneck, adoption interventions have to make workers visible before full deployment: pilot testing, feedback sessions, task-fit diagnosis, explanation design, and worker control over outputs that affect accountable decisions.
+- If job design is the bottleneck, adoption work has to change the opportunity structure of jobs — autonomy, skill variety, feedback, and workload — not just raise awareness or reduce anxiety.
 
 ## Contradictions & open questions
 
@@ -46,3 +49,4 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 - **Discovery vs. worker fit.** [[2026-kim-mapping-ai-into-production]] suggests firms can improve adoption by seeing more AI use-case patterns; [[2026-lee-making-invisible-visible]] suggests adoption can still fail when identified use cases violate worker autonomy, task meaning, communication norms, or accountability. These are complementary constraints, but the sequencing is open: discover use cases first, or diagnose worker-centered fit first?
 - **Observed use vs. organizational adoption.** [[2025-handa-economic-tasks-ai]] measures actual Claude.ai conversations, which is stronger than pure exposure modeling but still not the same as durable adoption inside an accountable work system. A task can appear in AI usage data without being formally redesigned, governed, or tied to performance outcomes.
 - **Readiness breadth vs. intervention focus.** [[2021-johnk-ready-or-not-ai-comes]] defines readiness broadly across strategic alignment, resources, knowledge, culture, and data; [[2026-kim-mapping-ai-into-production]] identifies a narrower causal intervention that improves firms' discovery of AI use cases. The open question is whether broad readiness assessments predict adoption success beyond targeted mapping support, or whether they mainly name the organizational conditions that make mapping interventions stick.
+- **Attitude vs. opportunity structure.** [[2026-reich-work-design-multidimensional-ai-threat]] suggests AI adoption may depend more on skill variety and autonomy than on undifferentiated AI threat. That complicates adoption programs built mainly around persuasion, communication, or training.

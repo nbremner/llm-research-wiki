@@ -1,7 +1,7 @@
 ---
 title: Employee engagement
 status: active
-updated: 2026-06-15
+updated: 2026-06-21
 ---
 
 # Employee engagement
@@ -14,11 +14,14 @@ For AI workforce transformation, this matters as a warning. If organizations sta
 
 [[2025-brynjolfsson-generative-ai-at-work]] gives a concrete AI-era worker-outcome case adjacent to engagement but not reducible to it. In a customer-support rollout, AI assistance increased productivity and also improved parts of the interaction climate: customers were more polite and less likely to ask to speak to a manager. The source is useful because it keeps worker experience tied to observable work events rather than a broad, loosely bounded engagement label.
 
+[[2026-reich-work-design-multidimensional-ai-threat]] extends the warning to AI adoption constructs. Its use of autonomy, skill variety, task significance, feedback, and differentiated AI-threat dimensions is useful precisely because it avoids treating “AI engagement” or “AI mindset” as a single broad attitude. The construct lesson is to decompose AI-mediated worker experience into job resources, identity threats, perceived work changes, and actual use behaviors.
+
 ## Connections
 
 - Relates to [[construct-validity]] because engagement illustrates what happens when a construct’s definition, measures, and claimed outcomes drift apart.
 - Relates to [[evidence-based-management]] because Briner’s critique is fundamentally about matching practical claims to the quality and relevance of available evidence.
 - Relates indirectly to [[ai-adoption]]: adoption constructs will need sharper definition than engagement often had if they are to guide interventions rather than decorate dashboards.
+- Relates to [[ai-mediated-work-experience]] because AI-era worker outcomes should be separated into autonomy, competence, identity, workload, learning, and relational experience rather than collapsed into engagement.
 - Relates to [[human-ai-collaboration]] because AI-assisted support changed the emotional and communicative texture of the work, not just the volume of completed cases.
 
 ## Contradictions & open questions
@@ -26,3 +29,4 @@ For AI workforce transformation, this matters as a warning. If organizations sta
 - Briner’s critique targets the popular HR practitioner concept of employee engagement, not the more specific academic construct of work engagement. The wiki should keep those separated rather than treating all engagement evidence as interchangeable.
 - The source is from 2014. Later evidence reviews may strengthen, weaken, or refine the critique; this page should not freeze the engagement evidence base at Briner’s assessment.
 - [[2025-brynjolfsson-generative-ai-at-work]] measures specific interaction outcomes, not engagement as a construct. It should inform worker-experience claims without being treated as evidence that AI improves engagement broadly.
+- [[2026-reich-work-design-multidimensional-ai-threat]] measures adoption and depth of use, not engagement or well-being. It supports construct decomposition, not a claim that AI adoption improves employee experience.
