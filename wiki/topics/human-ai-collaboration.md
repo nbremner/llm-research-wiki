@@ -28,7 +28,7 @@ control points where they could verify outputs, adjust sensitivity or assumption
 and incorporate contextual expertise before accountable decisions. Collaboration here is a design of
 control rights, explanation, feedback, and final authority.
 
-[[2023-dellacqua-jagged-technological-frontier]] gives a behavioral pattern for collaboration under
+[[2026-dellacqua-jagged-technological-frontier]] gives a behavioral pattern for collaboration under
 task uncertainty. Successful consultants either acted as "Centaurs," dividing and delegating work
 between themselves and AI, or as "Cyborgs," tightly integrating AI through the task flow. The important
 point is not the labels; it is that collaboration quality depends on calibration to the task frontier.
@@ -79,7 +79,7 @@ label: current use already spans learning, iteration, and more direct task fulfi
 - [[2026-lee-making-invisible-visible]] uses worker expectations from decision-support settings; it
   supports the importance of control and verification, but not yet which collaboration designs produce
   better decisions, adoption, or worker outcomes.
-- [[2023-dellacqua-jagged-technological-frontier]] suggests collaboration form is not enough. Centaur
+- [[2026-dellacqua-jagged-technological-frontier]] suggests collaboration form is not enough. Centaur
   and Cyborg patterns can be productive inside the frontier, but the same broad AI access can harm
   accuracy outside it; the open question is how workers learn the boundary in real time.
 - [[2025-brynjolfsson-generative-ai-at-work]] suggests AI can transmit high-performer practices to less

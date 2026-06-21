@@ -18,7 +18,7 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
   visible accountability require human presence. The design problem is which workflow parts can be
   delegated to digital labor, which require human authority, and how accountability is assigned before
   failure.
-- [[2023-dellacqua-jagged-technological-frontier]]: task substitution is jagged, not linear. In a BCG
+- [[2026-dellacqua-jagged-technological-frontier]]: task substitution is jagged, not linear. In a BCG
   consultant experiment, GPT-4 assistance improved productivity and quality for tasks inside the
   frontier but reduced correctness on a task outside it. The substitution question is therefore not
   "can AI do consulting work?" but which task components are currently inside the model's capability
@@ -62,7 +62,7 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
   empirical sources on whether organizations can actually identify and govern these nodes reliably.
 - The labor-demand question is still thin. Disagreement on labor substitution should be surfaced here,
   not averaged away.
-- [[2023-dellacqua-jagged-technological-frontier]] is task-performance evidence, not labor-demand
+- [[2026-dellacqua-jagged-technological-frontier]] is task-performance evidence, not labor-demand
   evidence. It supports selective task delegation, but not claims about headcount substitution.
 - **Short-run augmentation vs. equilibrium substitution.** [[2025-brynjolfsson-generative-ai-at-work]]
   shows higher output per hour inside an existing job, but explicitly cannot answer whether firms later
