@@ -29,6 +29,10 @@ wiki/
 - Link liberally. A `[[link]]` to a page that doesn't exist yet is fine — it marks a page worth writing.
 - Source filename convention: `YYYY-firstauthor-shorttitle` (year first, so sources sort chronologically).
 
+## Formatting
+
+Write each paragraph, list item, and blockquote as a **single logical line** — do not hard-wrap prose at a fixed column. Let the editor/reader soft-wrap. Manual line breaks inside a paragraph or bullet render as awkward mid-sentence breaks in markdown readers that treat a single newline as a line break. Separate blocks with blank lines; reserve actual newlines for new paragraphs, list items, and headings.
+
 ## Topic page template
 
 ```markdown
@@ -40,15 +44,13 @@ updated: 2026-06-14
 
 # Human–AI collaboration
 
-[Synthesis in prose. State what the evidence says, in your own framing. Cite sources inline
-with wikilinks: "[[2026-noy-zhang-chatgpt-productivity]] found a 40% time reduction…".]
+[Synthesis in prose. State what the evidence says, in your own framing. Cite sources inline with wikilinks: "[[2026-noy-zhang-chatgpt-productivity]] found a 40% time reduction…".]
 
 ## Connections
 - Relates to [[work-redesign]] via task reallocation.
 
 ## Contradictions & open questions
-- [[source-a]] and [[source-b]] disagree on whether augmentation raises or lowers skill demand —
-  surfaced, not resolved. Disagreement carries meaning.
+- [[source-a]] and [[source-b]] disagree on whether augmentation raises or lowers skill demand — surfaced, not resolved. Disagreement carries meaning.
 ```
 
 ## Source page template

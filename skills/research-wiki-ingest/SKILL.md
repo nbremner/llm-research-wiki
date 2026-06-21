@@ -192,7 +192,9 @@ file_hash: <sha256>
 - [[topic-slug]]   # topic pages this source informs
 ```
 
-Keep provenance in frontmatter, not in prose. No evidence-type/confidence/boundary fields — those live
+Keep provenance in frontmatter, not in prose. Write the summary and each claim as a single unwrapped
+line — do not hard-wrap prose at a fixed column (see schema.md **Formatting**).
+No evidence-type/confidence/boundary fields — those live
 in the commit note or topic prose, not the durable record. Prefer a stable public DOI, publisher, SSRN,
 arXiv, OSF, or author/institution landing page for `url`. If no stable canonical page is found but the
 PDF is publicly findable through a document mirror or index page, use that public landing page rather
@@ -231,8 +233,10 @@ example. Owner approval is required before new topics (and splits) become canoni
 For each approved topic the source feeds: create or update `wiki/topics/<topic>.md` (schema.md topic
 template). Write synthesis in the owner's framing — state what the evidence says, cite sources inline with
 `[[source-slug]]`, strengthen links, and **surface contradictions in prose** under a
-"Contradictions & open questions" heading. Make sure every `[[link]]` the source's `## Feeds` lists
-resolves to a real topic file. Add approved new topics to `wiki/overview.md`'s Topics list.
+"Contradictions & open questions" heading. Write each paragraph and bullet as a single unwrapped line
+(no hard-wrapping at a fixed column; see schema.md **Formatting**). Make sure every `[[link]]` the
+source's `## Feeds` lists resolves to a real topic file. Add approved new topics to `wiki/overview.md`'s
+Topics list.
 
 If a source record was already auto-committed with only existing-topic feeds and the topic-map assessment
 then proposes a new topic, treat the additional source `## Feeds` link as part of the owner-approved topic
