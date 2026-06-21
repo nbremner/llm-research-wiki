@@ -123,7 +123,8 @@ Boundary flags to use in the completion note: `none`, `provenance-missing`,
 
 ### 4. Download + extract + hash
 
-Download the PDF to a temp path (outside the repo). Extract text with PyMuPDF (`fitz`). Collect: page
+Download the PDF to a temp path (outside the repo). Extract text with PyMuPDF (`fitz`); if `fitz` is
+unavailable in the runtime, fall back to `pypdf` before escalating to OCR. Collect: page
 count, embedded PDF metadata, text length, extraction confidence, DOI/URLs/title/authors/year/abstract
 candidates. Compute SHA-256 of the file (for the record + dedup). If extraction is mostly empty, flag
 `extraction-low-confidence` and recommend OCR rather than inventing a summary.
@@ -327,8 +328,6 @@ case notes that would slow future runs.
 Supplementary session notes live in `references/`. `drive-api-file-id-ingest.md` contains the current
 Google Drive API fallback pattern for exact Drive URL/file-ID ingests: direct lookup, download,
 PyMuPDF extraction, SHA-256 hashing, rename/move with `addParents`/`removeParents`, and parent
-verification. The Drive-side notes (`drive-filename-and-provenance-notes.md`,
-`selection-and-dedupe-notes.md`, `discretionary-selection-and-extraction-notes.md`,
-`ad-hoc-paper-summary-notes.md`) remain useful.
-Notes that describe the retired Notion Inbox/Log apply-bundle are historical only — the markdown flow
-above supersedes them.
+verification. `drive-filename-and-provenance-notes.md` (filename convention, working-paper provenance)
+and `ad-hoc-paper-summary-notes.md` (quick-summary example) remain useful. For large-backlog indexing,
+use the `research-wiki-pdf-backlog-triage` skill rather than duplicating its workflow here.

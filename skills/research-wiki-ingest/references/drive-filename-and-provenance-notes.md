@@ -35,16 +35,6 @@ If a PDF is a job market paper or working paper and contains only a Google Drive
 
 Do not block dry-run summarization solely because a working paper lacks a DOI, but do not claim full public verification without a stable public landing page.
 
-## Notion artifact consistency after filename corrections
+## Filename consistency after corrections
 
-If a filed Drive filename is corrected after apply mode:
-
-1. Rename the Drive file in place so the file ID remains stable.
-2. Update the Inbox page markdown so the final filename references the corrected name.
-3. Update the original Log row's `pages_touched` / `next_action` fields if they contain the stale filename.
-4. Create a new Log row for the correction.
-5. It is acceptable for the old filename to remain only as historical "previous filename" text in correction/audit notes.
-
-## Apply-mode orchestration pitfall
-
-Do not treat "integrate into Notion/the wiki" as only a Notion write when the source PDF lives in Drive `_inbox`. For a Drive-backed PDF, apply mode is a bundled operation: Drive rename/move plus Notion Inbox/Log update plus verification. Prefer filing the Drive file first, then creating the Notion Inbox entry with final Drive state. If Notion was written first, immediately repair by filing Drive, updating the Inbox provenance/body, and logging the follow-up.
+If a filed Drive filename is corrected after apply mode, rename the Drive file in place so the file ID remains stable. It is acceptable for the old filename to remain only as historical "previous filename" text in correction/audit notes.

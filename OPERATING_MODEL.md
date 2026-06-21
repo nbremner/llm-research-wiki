@@ -43,7 +43,7 @@ Each fact lives in exactly one place; the others **link**, never restate (this i
 - Synthesis → **`wiki/topics/`**; evidence → **`wiki/sources/`**.
 - Architecture, roles, cron, parsimony → **this doc**.
 - Skills / scripts / tests → **the repo** (NJ runs them from its synced clone).
-- Roadmap / build history → **`docs/wiki-redesign-plan.md`** (`docs/sciaiwiki-roadmap.md` is historical).
+- Roadmap / build history → **`docs/wiki-redesign-plan.md`**.
 
 ## Roles (orientation; the enforced rule is the one hard rule in schema.md)
 

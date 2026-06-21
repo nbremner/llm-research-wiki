@@ -45,8 +45,6 @@ scripts/
 
 docs/
   wiki-redesign-plan.md        # the build plan for the markdown-in-git wiki
-  notion-content-inventory.md  # step-1 inventory + the start-clean decision
-  sciaiwiki-roadmap.md         # historical; superseded by wiki-redesign-plan.md
 
 config/
   example.env

@@ -1,7 +1,7 @@
 # Wiki Redesign — Build Plan (markdown-in-git, Karpathy-aligned)
 
 Status: **approved plan, ready to build.** Created 2026-06-14.
-This supersedes the Notion-database approach in `docs/sciaiwiki-roadmap.md` (kept for history).
+This superseded the earlier Notion-database approach.
 Read `OPERATING_MODEL.md` first for the operating context.
 
 ## Why (decision record)
