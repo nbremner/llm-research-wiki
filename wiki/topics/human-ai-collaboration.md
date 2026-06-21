@@ -1,7 +1,7 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-06-16
+updated: 2026-06-21
 ---
 
 # Human-AI collaboration
@@ -21,6 +21,11 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 critical thinking; higher self-confidence was associated with more critical thinking but also more
 perceived effort. Good human-AI collaboration therefore cannot just minimize effort. It has to preserve
 conditions for competent human review.
+
+[[2022-dellacqua-falling-asleep-at-wheel]] gives behavioral field-experimental evidence for the same
+point. In HR screening, recruiters followed AI advice more as stated AI quality rose; lower-quality AI
+made them spend more time and effort reviewing resumes. Collaboration quality is therefore endogenous:
+the tool changes what the human partner contributes.
 
 [[2026-lee-making-invisible-visible]] shifts the collaboration question from metaphor to work setting.
 Workers using decision-support AI did not simply want the AI to decide or recommend; they wanted
@@ -65,6 +70,7 @@ label: current use already spans learning, iteration, and more direct task fulfi
   perform.
 - Relates to [[ai-adoption]] because adoption metrics that count tool use without stewardship quality
   can hide overreliance.
+- Relates to [[automation-complacency]] because high-confidence AI advice can reduce the very human effort that makes collaboration valuable.
 - Relates to [[employee-engagement]] because workers in decision-support settings described autonomy,
   motivation, learning, and valued task ownership as part of whether AI-supported work remained worth
   engaging in.
@@ -75,7 +81,7 @@ label: current use already spans learning, iteration, and more direct task fulfi
   accountability with the human user, which may fit better with [[automation-and-substitution]] and
   work-design frames than with teammate metaphors.
 - The wiki needs evidence beyond self-report on whether stewardship behaviors actually improve output
-  quality, learning, or long-run capability.
+  quality, learning, or long-run capability. [[2022-dellacqua-falling-asleep-at-wheel]] is useful because it observes behavior, but it is still one HR-screening task rather than broad evidence across work systems.
 - [[2026-lee-making-invisible-visible]] uses worker expectations from decision-support settings; it
   supports the importance of control and verification, but not yet which collaboration designs produce
   better decisions, adoption, or worker outcomes.

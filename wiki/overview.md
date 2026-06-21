@@ -37,6 +37,7 @@ The central question:
 - [[evidence-based-management]] — matching organizational claims to the quality and relevance of evidence
 - [[critical-thinking]] — how GenAI shifts judgment, verification, and stewardship in knowledge work
 - [[human-ai-collaboration]] — how human accountability and AI capability are arranged in tasks
+- [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
 
 ## Open questions
 
@@ -47,6 +48,7 @@ Seed questions to grow topics around. Edit freely.
 - What would make AI readiness a valid organizational assessment construct rather than a loose maturity checklist?
 - What does good measurement of AI workforce impact look like beyond productivity anecdotes?
 - How does AI-mediated work affect autonomy, competence, relatedness, trust, and motivation?
+- When does improving AI quality reduce human effort enough that system performance, learning, or oversight suffers?
 - What does construct validity require in AI-mediated assessment and people analytics?
 - How does AI reshape job analysis and the definition of work itself, before HR systems are built on it?
 - When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement —

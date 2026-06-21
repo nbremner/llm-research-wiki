@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-06-16
+updated: 2026-06-21
 ---
 
 # Work redesign
@@ -38,6 +38,11 @@ was inserted into live customer-support chats as recommendations that agents cou
 The work did not disappear; the agent role shifted toward using machine-supplied language and technical
 suggestions while retaining final authority over the customer interaction.
 
+[[2022-dellacqua-falling-asleep-at-wheel]] adds a friction-design warning. In AI-supported HR screening,
+the nominal human role stayed intact, but AI quality changed how much effort recruiters invested. Redesign
+therefore has to specify not only who has final authority, but what interface, feedback, and escalation
+conditions keep the human sufficiently awake for that authority to matter.
+
 [[2026-tomei-what-jobs-can-ai-learn]] adds a measurement lens for redesign: tasks are more learnable by
 RL-style post-training when they have clear verification, simulable environments, observable state,
 dense feedback, accessible tools, and tangible outputs. That makes the redesign question more precise:
@@ -72,6 +77,7 @@ experimentation are already concentrated.
   accountability.
 - Connects to [[human-ai-collaboration]] because control and verification are work-design choices, not
   merely interface features.
+- Connects to [[automation-complacency]] because redesign can either preserve meaningful oversight or quietly convert human review into rubber-stamping.
 
 ## Contradictions & open questions
 
@@ -89,6 +95,7 @@ experimentation are already concentrated.
 - [[2025-brynjolfsson-generative-ai-at-work]] is evidence for augmentation inside a structured support
   workflow, not a general result for open-ended knowledge work. Its strongest design lesson may be that
   AI worked because suggestions were embedded, optional, and withheld when training data were thin.
+- [[2022-dellacqua-falling-asleep-at-wheel]] complicates the default "better tool plus human oversight" redesign story: making advice more reliable can also make humans less effortful. The design target is calibrated effort, not maximum automation or maximum friction.
 - [[2026-tomei-what-jobs-can-ai-learn]] may over-weight what can be represented as a learnable task
   environment. Work redesign still has to handle accountability, meaning, relationship work, and
   organizational context that are not captured by RL feasibility alone.

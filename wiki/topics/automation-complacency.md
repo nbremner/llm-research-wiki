@@ -1,0 +1,26 @@
+---
+title: Automation complacency
+status: active
+updated: 2026-06-21
+---
+
+# Automation complacency
+
+Automation complacency is the failure mode where better machine advice reduces human attention, effort, or learning enough that the combined human-AI system underperforms what the model's standalone accuracy would imply. It is not simply algorithm aversion's opposite. The problem is not that workers distrust the tool; it is that they trust or defer to it in a way that changes the work they still do.
+
+[[2022-dellacqua-falling-asleep-at-wheel]] makes this mechanism concrete in HR screening. In a field experiment with professional recruiters, AI assistance improved accuracy overall, but recruiters followed advice more often as stated AI quality rose and lower-quality AI induced more time and effort. The useful design lesson is uncomfortable: maximizing model accuracy is not the same as maximizing system performance when human effort is endogenous.
+
+[[2025-lee-generative-ai-critical-thinking]] gives the GenAI knowledge-work analogue. Higher confidence in GenAI was associated with less critical thinking, while higher self-confidence and confidence evaluating AI were associated with more critical thinking. That suggests complacency can arise through confidence calibration, not just through formal delegation.
+
+[[2026-dellacqua-jagged-technological-frontier]] adds the task-boundary version. Fluent AI-supported work can improve performance inside the frontier while harming correctness outside it, especially if users cannot tell which kind of task they are in. Complacency is most dangerous when subjective coherence rises faster than actual correctness.
+
+## Connections
+- Relates to [[human-ai-collaboration]] because collaboration quality depends on preserving competent human review, not merely keeping a human nominally in the loop.
+- Relates to [[critical-thinking]] because attention, verification, and stewardship are effortful behaviors that can decay when AI confidence is high.
+- Relates to [[algorithmic-assessment]] because hiring tools often frame humans as final decision-makers while simplified recommendations can still reshape discretion.
+- Relates to [[work-redesign]] because interface design, feedback, task sequencing, and escalation rules can either preserve or erode human oversight.
+
+## Contradictions & open questions
+- Better AI can still improve average performance, as [[2022-dellacqua-falling-asleep-at-wheel]] shows when pooling AI conditions and in the perfectly predictive benchmark. The claim is not "worse AI is better"; it is that human behavioral response can make the model-quality optimum differ from the system-performance optimum.
+- The strongest evidence here is short-run task behavior. The wiki still needs longitudinal evidence on whether complacency becomes skill atrophy, whether feedback restores calibration, and which design interventions preserve attention without wasting human effort.
+- There is a design tension between reducing unnecessary cognitive load and preserving enough friction for meaningful review. Removing all friction can be efficient when the model is right and dangerous when the model is wrong.

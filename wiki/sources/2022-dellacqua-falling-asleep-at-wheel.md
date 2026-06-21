@@ -31,6 +31,7 @@ file_hash: 25cb8ccbda15da5fa6932fad196f22ea3e33d57b0631ad01963a6d08d99839ae
 
 ## Feeds
 - [[algorithmic-assessment]]
+- [[automation-complacency]]
 - [[human-ai-collaboration]]
 - [[critical-thinking]]
 - [[automation-and-substitution]]

@@ -1,7 +1,7 @@
 ---
 title: Automation and substitution
 status: active
-updated: 2026-06-16
+updated: 2026-06-21
 ---
 
 # Automation and substitution
@@ -36,6 +36,11 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
   decision-making, and screening counts as an employment decision. [[algorithmic-assessment]] can
   therefore substitute for parts of human judgment before the final hiring or promotion decision is
   made.
+- [[2022-dellacqua-falling-asleep-at-wheel]] shows substitution can happen behaviorally before it is
+  formalized. Recruiters remained the decision-makers, but higher-quality AI advice made them more
+  likely to follow recommendations and lower-quality AI induced more effort. The substitution boundary is
+  therefore partly psychological and workflow-shaped, not only a question of whether the human is still
+  "in the loop."
 - [[2023-landers-machine-learning-psychometric-assessment]] implies that algorithmic substitution should
   be evaluated at the level of assessment-design components: combining scale composites, scoring item
   responses, dropping predictors, or handling novel data formats. Replacing OLS with machine learning is
@@ -73,6 +78,7 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 - **Support vs. substitution in hiring.** Employers may describe algorithmic assessment as decision
   support, while regulatory language treats some uses of simplified outputs, rankings, or classifications
   as substantial assistance or replacement of discretion. The boundary is practical, not merely semantic.
+- **Formal human-in-the-loop vs. behavioral delegation.** [[2022-dellacqua-falling-asleep-at-wheel]] suggests humans can remain formally responsible while attention and effort migrate to the model. That is substitution through reliance, not job removal.
 - **Task exposure vs. end-to-end deliverables.** [[2025-mazeika-remote-labor-index]] cuts against simple
   exposure narratives: a task can be computer-based, remote, and economically valuable while still
   resisting autonomous completion because quality, file integrity, multimodal artifacts, and project

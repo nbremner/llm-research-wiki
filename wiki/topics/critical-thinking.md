@@ -1,7 +1,7 @@
 ---
 title: Critical thinking
 status: active
-updated: 2026-06-16
+updated: 2026-06-21
 ---
 
 # Critical thinking
@@ -21,6 +21,12 @@ thinking: from information gathering to information verification, from problem-s
 integration, and from task execution to task stewardship. That makes critical thinking a design problem
 inside [[human-ai-collaboration]], not just an individual trait or training module.
 
+[[2022-dellacqua-falling-asleep-at-wheel]] adds causal behavioral evidence for the effort channel. In an
+HR-recruiter field experiment, higher-quality AI advice increased reliance, while lower-quality AI induced
+more time and effort. This supports the concern that confidence in AI can suppress scrutiny, but it also
+keeps the claim precise: the issue is not less thinking in general, but less task-relevant verification
+when the system appears competent.
+
 [[2025-shukla-ai-assisted-design-ironies]] gives the design-practice version of the same shift. UX
 practitioners saw AI as useful for drafts, user flows, research scripts, and ideation, but they also
 emphasized the need to check hallucinations, detect bias, preserve design rationale, and defend choices.
@@ -32,6 +38,7 @@ after-the-fact supervision.
 
 - Relates to [[ai-adoption]] because adoption quality depends on whether users retain enough judgment
   to evaluate, adapt, and steward AI outputs rather than merely use the tool more often.
+- Relates to [[automation-complacency]] because reduced critical thinking can be a system-induced response to apparently reliable AI advice, not simply an individual deficit.
 - Relates to [[evidence-based-management]] because self-reported reductions in cognitive effort should
   not be treated as direct evidence of long-term skill atrophy without stronger longitudinal or
   behavioral measures.
@@ -43,7 +50,7 @@ after-the-fact supervision.
 - [[2025-lee-generative-ai-critical-thinking]] is cross-sectional and self-reported. It shows perceived
   shifts in effort and judgment, not causal evidence that GenAI degrades critical thinking over time.
 - Less effort is ambiguous. It may indicate productive cognitive offloading, underinvestment in
-  judgment, or both depending on task stakes and user expertise.
+  judgment, or both depending on task stakes and user expertise. [[2022-dellacqua-falling-asleep-at-wheel]] sharpens that ambiguity: less effort can improve performance when AI is truly perfect, but harm learning or oversight when AI is merely good.
 - [[2025-shukla-ai-assisted-design-ironies]] is not longitudinal evidence of skill loss. It identifies a
   plausible de-skilling mechanism from practitioner discourse and automation theory, but the causal
   claim still needs behavioral and longitudinal evidence.
