@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-06-18
+updated: 2026-06-21
 ---
 
 # Overview
@@ -25,6 +25,7 @@ The central question:
 - [[automation-and-substitution]] — whether AI substitutes for or augments labor and capital: what scales, what shrinks, and at what time horizon
 - [[algorithmic-assessment]] — algorithmic hiring/assessment as a measurement chain from signal to construct to decision
 - [[job-analysis]] — how work, tasks, KSAOs, and performance domains are defined before HR systems are built
+- [[competency-modeling]] — how HR defines reusable KSAO/behavior/capability models across jobs, roles, and strategy
 - [[inclusive-hr-systems]] — how HR practices are designed so work definitions, criteria, and decisions include diverse employee experiences
 - [[employee-engagement]] — engagement as a cautionary I-O construct for measurement and evidence claims
 - [[construct-validity]] — whether named constructs are conceptually bounded and measured coherently
@@ -52,7 +53,7 @@ Seed questions to grow topics around. Edit freely.
 
 - **Equilibrium labor demand.** Most sources show short-run, within-job augmentation; the wiki is thin on whether firms later hire fewer or different workers, change wages, or automate roles more fully.
 - **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], but remains thin on longitudinal and behavioral evidence.
-- **Foundational I-O constructs** (selection validity, psychometrics, teams, leadership, motivation, CSR) are deliberately deferred to the triage-index shelf ("AI-relevant first, foundation later"), so the wiki currently leans toward the AI side of the AI×I-O intersection.
+- **Foundational I-O constructs** remain mostly deferred to the triage-index shelf ("AI-relevant first, foundation later"), but [[competency-modeling]] has been promoted because it is directly adjacent to job analysis, skills architecture, and AI-era work redesign.
 - **Measurement of AI workforce impact** beyond productivity anecdotes — a recurring concern with no home topic.
 
 ## Candidate topics (watchlist)

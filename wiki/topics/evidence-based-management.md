@@ -1,7 +1,7 @@
 ---
 title: Evidence-based management
 status: active
-updated: 2026-06-18
+updated: 2026-06-21
 ---
 
 # Evidence-based management
@@ -20,6 +20,8 @@ This is directly relevant to AI workforce transformation. Claims about AI adopti
 
 [[2022-strah-diversity-issues-job-analysis]] is a reminder that evidence quality depends on the upstream definition of the thing being evidenced. A selection system, performance tool, or compensation structure can be evidence-based in a narrow procedural sense while inheriting a job analysis that failed to capture diverse work experiences. For management claims about fairness, legal defensibility, or inclusion, the evidence chain has to include how the job domain was defined, who had voice in that definition, and whether aggregation erased meaningful subgroup differences.
 
+[[2008-icf-competency-modeling-job-analysis]] adds a method-fit warning: job analysis, strategic job analysis, cognitive task analysis, personality-oriented job analysis, and competency modeling answer different evidence needs. Evidence-based HR should not ask which method is best in general; it should ask whether the method fits the decision, specificity level, legal risk, time horizon, and unit of analysis.
+
 ## Connections
 
 - Relates to [[construct-validity]] because evidence quality depends on whether the measured construct is coherent enough to interpret.
@@ -28,6 +30,7 @@ This is directly relevant to AI workforce transformation. Claims about AI adopti
 - Relates to [[automation-and-substitution]] because exposure measures can inform planning, but only if leaders keep exposure, adoption, productivity, and employment effects analytically separate.
 - Relates to [[algorithmic-assessment]] because the evidence ladder must distinguish validity evidence, adverse-impact evidence, compliance evidence, implementation evidence, and decision utility.
 - Relates to [[job-analysis]] because many HR evidence claims begin with a documented job domain; that documentation is itself evidence that can be inclusive, incomplete, or biased.
+- Relates to [[competency-modeling]] because competency models often become evidence artifacts for HR decisions, even when their intended use and validation standard are underspecified.
 
 ## Contradictions & open questions
 
@@ -37,3 +40,4 @@ This is directly relevant to AI workforce transformation. Claims about AI adopti
 - [[2025-mazeika-remote-labor-index]] strengthens the evidence base for autonomous remote-work completion, but it still should not be read as evidence about assisted productivity, within-job augmentation, labor demand, wages, or adoption. Those are different outcomes requiring different designs.
 - For algorithmic hiring claims, the open question is often not whether evidence exists, but what kind: predictive validity, construct validity, bias-audit metrics, applicant reactions, legal compliance, implementation fidelity, and business utility answer different questions.
 - [[2022-strah-diversity-issues-job-analysis]] raises an evidence paradox: job analysis is often used as the fairness foundation for HR systems, but the inclusiveness of the job analysis may itself be an untested assumption rather than established evidence.
+- [[2008-icf-competency-modeling-job-analysis]] suggests that strategic flexibility and evidentiary rigor can pull in different directions: broad competency models travel across jobs, but job-specific decisions often require more specific and reliable evidence.

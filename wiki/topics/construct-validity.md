@@ -1,7 +1,7 @@
 ---
 title: Construct validity
 status: active
-updated: 2026-06-18
+updated: 2026-06-21
 ---
 
 # Construct validity
@@ -18,6 +18,8 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 
 [[2022-strah-diversity-issues-job-analysis]] moves construct validity upstream into job analysis itself. If the performance domain is built from majority-group norms, biased archival language, unequal SME voice, or averaged ratings that wash out subgroup differences, then later validation work may be anchored to an incomplete construct. The issue is not only whether a predictor measures the intended KSAO; it is whether the job and criterion domain were inclusively specified in the first place.
 
+[[2008-icf-competency-modeling-job-analysis]] adds a label-boundary problem. “Competency” can mean job-level KSAO, observable behavior, personality-like attribute, motive, cultural value, or organization-level capability. That flexibility is part of why competency modeling travels well in HR practice, but it also creates construct-validity risk when competency labels are used for selection, assessment, or performance decisions without enough task evidence, rater reliability, and job-relevance logic.
+
 ## Connections
 
 - Relates to [[employee-engagement]] as a cautionary case of loose construct boundaries.
@@ -26,6 +28,7 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - Relates to [[automation-and-substitution]] because exposure indices only guide decisions if the measured construct matches the mechanism of automation being claimed.
 - Relates to [[algorithmic-assessment]] because algorithmic hiring tools are only defensible when their signals, model outputs, and employment decisions are tied back to coherent job-relevant constructs.
 - Relates to [[job-analysis]] because construct validity begins before measurement: the construct has to be defined from work as actually performed and experienced, including perspectives that are easy to miss.
+- Relates to [[competency-modeling]] because competency labels need boundaries before they can support assessment, training, succession, or strategic HR decisions.
 
 ## Contradictions & open questions
 
@@ -33,3 +36,4 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - The wiki needs positive examples of strong construct validation in AI workforce transformation, not only cautionary cases from older I-O constructs.
 - [[2026-tomei-what-jobs-can-ai-learn]] improves the exposure construct but still relies on LLM-based annotations. The next validation question is whether RL feasibility predicts observed deployment and labor-market change better than existing exposure measures.
 - [[2022-strah-diversity-issues-job-analysis]] complicates the usual “job-relatedness” safeguard: a procedure can be tied to a documented job analysis and still be unfairly narrow if the job analysis failed to capture diverse ways of performing the work.
+- [[2008-icf-competency-modeling-job-analysis]] shows that competency modeling can improve strategic fit while weakening construct precision if broad organizational competencies are treated as if they were job-specific KSAOs.

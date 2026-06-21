@@ -32,6 +32,7 @@ file_hash: 86a9fe3278940bf1283887f49cb29c2627207f0dd9d4d48db64dcaa2df4b3f59
 - Several claims summarize cited research rather than reporting new data; the report's value is synthesis and practitioner framing, not original causal or validation evidence.
 
 ## Feeds
+- [[competency-modeling]]
 - [[job-analysis]]
 - [[construct-validity]]
 - [[evidence-based-management]]
