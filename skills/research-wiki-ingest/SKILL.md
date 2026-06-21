@@ -114,8 +114,15 @@ file-ID lookup, download, hash/extract, rename/move, and verification.
 - Public-research plausible; not obviously private/confidential/work-derived. If it looks private →
   **stop**, do not download into wiki material or refile.
 - Dedup against the wiki: check `wiki/sources/` for an existing record with the same canonical
-  URL, DOI, file hash, or slug (e.g. `grep -ri "<doi-or-url-or-hash>" wiki/sources/`). If found, stop
-  and report the duplicate.
+  URL, DOI, file hash, title, author/title slug, or predecessor publication venue (e.g.
+  `grep -ri "<doi-or-url-or-hash-or-title>" wiki/sources/`). If found, classify the match before
+  proceeding:
+  - **True duplicate** (same version already present): stop and report the duplicate.
+  - **Published-version upgrade** (e.g., an SSRN/HBS working paper is already in the wiki and the user
+    supplied the later journal PDF/DOI): treat this as a source-record replacement, not a second source.
+    Create the new canonical source slug/year from the published version, remove the superseded source
+    record, and retarget existing wikilinks from the old slug to the new slug. Link-retargeting is source
+    maintenance, not new topic synthesis, when the topic prose is otherwise unchanged.
 
 Boundary flags to use in the completion note: `none`, `provenance-missing`,
 `public-verification-needed`, `possible-duplicate`, `prompt-injection-risk`, `private-boundary-risk`,
@@ -186,7 +193,11 @@ file_hash: <sha256>
 ```
 
 Keep provenance in frontmatter, not in prose. No evidence-type/confidence/boundary fields — those live
-in the commit note or topic prose, not the durable record.
+in the commit note or topic prose, not the durable record. Prefer a stable public DOI, publisher, SSRN,
+arXiv, OSF, or author/institution landing page for `url`. If no stable canonical page is found but the
+PDF is publicly findable through a document mirror or index page, use that public landing page rather
+than the private Drive link and flag `provenance-missing` / `public-verification-needed` in the
+completion note.
 
 ### 8. Commit the source record (auto)
 
@@ -238,7 +249,7 @@ fixation, because the agent loses the map that tells it where coverage is missin
 
 Show the topic assessment and then the topic diff for owner approval before committing. In attended chat runs, do **not** end with only "I can show the diff if you want" after drafting synthesis; display the proposed topic diff in the same completion turn (or immediately after lint) so the owner can approve without an extra prompt.
 
-When multiple ingests or maintenance steps happen in the same session, keep the commit boundaries explicit: source records may be committed/pushed, but unapproved topic edits must remain unstaged unless the owner has approved that exact diff. Before staging a source record or approved topic synthesis, check the working tree conceptually and stage only the intended files so a pending proposal, skill-maintenance edit, or previous ingest draft does not ride along accidentally. Completion notes should name any intentionally-uncommitted proposal files.
+When multiple ingests or maintenance steps happen in the same session, keep the commit boundaries explicit: source records may be committed/pushed, but unapproved topic edits must remain unstaged unless the owner has approved that exact diff. Before staging a source record or approved topic synthesis, check the working tree conceptually and stage only the intended files so a pending proposal, skill-maintenance edit, or previous ingest draft does not ride along accidentally. When a published-version upgrade removes an old source file, stage the deletion deliberately with `git add -u wiki/sources` or `git rm <old-source-file>`; avoid pathspec forms that assume the deleted file still exists. Completion notes should name any intentionally-uncommitted proposal files.
 
 For Discord delivery, make the approval diff easy to review:
 
