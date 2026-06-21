@@ -105,8 +105,10 @@ Search `_inbox` for PDFs (Google Drive MCP). Selection rules:
 
 Capture: Drive file ID, original filename, MIME type, modified time, size, parent, web link.
 
+If the Drive filename or PDF text exposes an arXiv identifier (e.g., `2602.23278v1.pdf`), query `https://export.arxiv.org/api/query?id_list=<id>` during preflight and use the arXiv record as canonical public provenance: title, authors, published/updated dates, abstract, categories, and `https://arxiv.org/abs/<id>` URL. Prefer arXiv metadata over the Drive filename or PDF title metadata when they differ.
+
 See `references/drive-api-file-id-ingest.md` for a concise Google Drive API fallback pattern for
-file-ID lookup, download, hash/extract, rename/move, and verification.
+file-ID lookup, download, PyMuPDF extraction, SHA-256 hashing, rename/move, and verification.
 
 ### 3. Preflight: boundary + dedup
 
@@ -248,7 +250,7 @@ feeds complete after the new topic is approved.
 Keep `wiki/overview.md` a **living orientation page**, not a static index: as part of each synthesis,
 update its **Thin / missing areas**, **Open questions**, and **Candidate topics (watchlist)** so the map
 reflects the current corpus and the next ingest has accurate signals for where new topics are actually
-needed. A decayed overview (e.g. "thin areas" that no longer match the corpus) silently re-creates topic
+needed. When a new source directly supplies evidence for a listed thin/missing area, treat that as a strong signal to propose promoting the thin area into a real topic page rather than merely appending to nearby broad topics; update the thin-area line to say it was promoted and what evidence gap remains. A decayed overview (e.g. "thin areas" that no longer match the corpus) silently re-creates topic
 fixation, because the agent loses the map that tells it where coverage is missing.
 
 Show the topic assessment and then the topic diff for owner approval before committing. In attended chat runs, do **not** end with only "I can show the diff if you want" after drafting synthesis; display the proposed topic diff in the same completion turn (or immediately after lint) so the owner can approve without an extra prompt.
