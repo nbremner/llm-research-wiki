@@ -32,3 +32,5 @@ file_hash: dfdedfba2c90e127b99a2f6631e805f489bd6fae889e7009a2c1b0ddf1b7a39f
 
 ## Feeds
 - [[ai-adoption]]
+- [[ai-literacy]]
+- [[ai-receptivity]]

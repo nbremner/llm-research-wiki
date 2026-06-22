@@ -39,6 +39,8 @@ The central question:
 - [[ai-mediated-work-experience]] — how AI changes autonomy, skill use, identity, workload, and felt job quality
 - [[ai-induced-skill-erosion]] — when AI-enabled productivity hides slower erosion of expertise, judgment, and professional identity
 - [[ai-supported-knowledge-synthesis]] — how AI helps or distorts evidence navigation, sensemaking, verification, and context-preserving decision work
+- [[ai-literacy]] — what people understand about AI systems, their limits, and the conditions for calibrated use
+- [[ai-receptivity]] — willingness, preference, or readiness to use AI, separated from whether that willingness is well-calibrated
 
 ## Open questions
 
@@ -51,6 +53,7 @@ Seed questions to grow topics around. Edit freely.
 - What would make AI readiness a valid organizational assessment construct rather than a loose maturity checklist?
 - What does good measurement of AI workforce impact look like beyond productivity anecdotes?
 - How does AI-mediated work affect autonomy, competence, relatedness, trust, and motivation?
+- When does AI literacy improve calibrated use without simply increasing or decreasing AI receptivity?
 - When does improving AI quality reduce human effort enough that system performance, learning, or oversight suffers?
 - When does proactive AI assistance reduce task burden versus adding extraneous cognitive load through task switching, information sprawl, or repair work?
 - What does construct validity require in AI-mediated assessment and people analytics?
