@@ -26,6 +26,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2025-handa-economic-tasks-ai]] gives collaboration a descriptive baseline at scale. In more than four million Claude.ai conversations, the authors classify 57% of usage as augmentation-like and 43% as automation-like. The split is useful because it keeps collaboration from becoming a purely normative label: current use already spans learning, iteration, and more direct task fulfillment.
 
+[[2025-agarwal-what-work-ai-doing]] adds that collaboration demand is uneven across task types. The highest observed usage was in dynamic problem-solving work with high cognitive demand, creativity, complexity, and decision making. That makes collaboration quality especially important: the tasks most likely to attract AI use are also tasks where scoping, verification, judgment, and contextual accountability are hard to outsource cleanly.
+
 [[2026-ehsan-future-workers]] adds a dignity constraint to collaboration design. A human can remain formally “in the loop” while the work no longer preserves agency, expertise, or self-worth; dignified Human-AI interaction therefore requires mechanisms that keep workers able to detect, contest, and recover from AI-induced erosion.
 
 ## Connections
@@ -47,3 +49,4 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 - [[2025-mazeika-remote-labor-index]] evaluates autonomous completion rather than collaborative workflows. Its failures strengthen the case for human control layers, but the benchmark does not tell us which human-agent collaboration design would recover the largest share of value.
 - [[2025-shukla-ai-assisted-design-ironies]] complicates the “AI teammate” frame: treating AI as a junior designer may be pragmatically useful, but it can hide the asymmetry that humans remain accountable for rationale, bias, context, and errors.
 - [[2025-handa-economic-tasks-ai]] classifies usage from conversation traces, not from full work systems. The same interaction can look like automation inside the chat window and still depend on human scoping, verification, and accountability outside it.
+- [[2025-agarwal-what-work-ai-doing]] explains where people use AI, not how well they collaborate with it. The concentration of use in dynamic problem-solving tasks could indicate valuable cognitive offloading, but it could also mark places where humans are delegating the most consequential early framing work.

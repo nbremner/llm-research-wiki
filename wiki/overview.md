@@ -20,6 +20,7 @@ The central question:
 ## Topics
 
 - [[ai-adoption]] — what binds AI adoption once tools are available (the "mapping problem")
+- [[task-level-ai-adoption]] — where workers actually bring AI into tasks, before roles or organizations have necessarily redesigned around it
 - [[ai-readiness]] — whether organizational capabilities, data, culture, and strategic fit are ready for a specific AI adoption purpose
 - [[work-redesign]] — how AI shifts work architecture from fixed roles toward redesigned human-agent workflows
 - [[automation-and-substitution]] — whether AI substitutes for or augments labor and capital: what scales, what shrinks, and at what time horizon
@@ -42,6 +43,7 @@ Seed questions to grow topics around. Edit freely.
 
 - Which tasks are candidates for automation vs. augmentation vs. human protection, and how is that decided?
 - What I-O constructs best explain sustained adoption of AI tools at work?
+- Which task characteristics predict observed GenAI use, and when does observed use become durable organizational adoption rather than individual experimentation?
 - What would make AI readiness a valid organizational assessment construct rather than a loose maturity checklist?
 - What does good measurement of AI workforce impact look like beyond productivity anecdotes?
 - How does AI-mediated work affect autonomy, competence, relatedness, trust, and motivation?
@@ -55,7 +57,7 @@ Seed questions to grow topics around. Edit freely.
 - **Equilibrium labor demand.** Most sources show short-run, within-job augmentation; the wiki is thin on whether firms later hire fewer or different workers, change wages, or automate roles more fully.
 - **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], and [[ai-induced-skill-erosion]] now gives the wiki a more precise home for longitudinal evidence about expertise, identity, and skill atrophy.
 - **Foundational I-O constructs** remain mostly deferred to the triage-index shelf ("AI-relevant first, foundation later"), but [[competency-modeling]] has been promoted because it is directly adjacent to job analysis, skills architecture, and AI-era work redesign.
-- **Measurement of AI workforce impact** beyond productivity anecdotes — a recurring concern with no home topic.
+- **Measurement of AI workforce impact** beyond productivity anecdotes — still thin, but [[task-level-ai-adoption]] now gives the wiki a home for observed-use maps that sit between exposure indices and organizational outcome evidence.
 
 ## Candidate topics (watchlist)
 

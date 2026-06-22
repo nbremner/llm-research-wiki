@@ -30,6 +30,7 @@ file_hash: 19631dae7403670f9ff9a7d623774580ea0f4772538fde6c6a0d623e552e5c9e
 - Conversation-level use should not be read as formal organizational adoption: a task may attract AI interactions without being redesigned, governed, or tied to accountable work outcomes.
 
 ## Feeds
+- [[task-level-ai-adoption]]
 - [[ai-adoption]]
 - [[work-redesign]]
 - [[automation-and-substitution]]
