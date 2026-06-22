@@ -18,6 +18,8 @@ Automation complacency is the failure mode where better machine advice reduces h
 
 [[2025-yun-generative-ai-knowledge-work]] adds a synthesis-specific complacency pathway. Product managers valued AI summaries, clusters, and Q&A, but they also worried about hallucinations, confirmation bias, and missing business context; one participant warned that an agreeable tool could lead them down the wrong path. In knowledge synthesis, complacency can appear when generated structure makes messy evidence feel settled before the user has checked sources, compared interpretations, or added context outside the model's reach.
 
+[[2025-kosmyna-brain-chatgpt-cognitive-debt]] adds an effort-and-ownership signal from repeated LLM-assisted writing. The LLM condition showed weaker neural connectivity and lower ability to quote recently written essays, while search-engine and brain-only conditions preserved more engagement. This is not the same as workplace automation complacency, but it shows how apparently useful assistance can change the human's contribution to the task before the output itself obviously fails.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because collaboration quality depends on preserving competent human review, not merely keeping a human nominally in the loop.
 - Relates to [[critical-thinking]] because attention, verification, and stewardship are effortful behaviors that can decay when AI confidence is high.
@@ -30,4 +32,5 @@ Automation complacency is the failure mode where better machine advice reduces h
 - Better AI can still improve average performance, as [[2022-dellacqua-falling-asleep-at-wheel]] shows when pooling AI conditions and in the perfectly predictive benchmark. The claim is not "worse AI is better"; it is that human behavioral response can make the model-quality optimum differ from the system-performance optimum.
 - The strongest evidence here is short-run task behavior. The wiki still needs longitudinal evidence on whether complacency becomes skill atrophy, whether feedback restores calibration, and which design interventions preserve attention without wasting human effort.
 - There is a design tension between reducing unnecessary cognitive load and preserving enough friction for meaningful review. Removing all friction can be efficient when the model is right and dangerous when the model is wrong.
+- There is a parallel learning tension: reducing cognitive load can be the point of assistance, but [[2025-kosmyna-brain-chatgpt-cognitive-debt]] suggests that repeated reduction in effort may also reduce ownership, recall, or practice when the task is supposed to build capability.
 - [[2025-yun-generative-ai-knowledge-work]] suggests design countermeasures — citations, audit trails, comparative outputs, and access to raw data — but it does not test which of these actually prevents complacency in live organizational decisions.

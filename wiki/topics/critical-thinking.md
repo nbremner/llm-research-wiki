@@ -20,6 +20,8 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 
 [[2025-yun-generative-ai-knowledge-work]] sharpens the verification side of critical thinking in AI-supported synthesis. Product managers in the Yodeai study wanted AI to cluster, summarize, and prioritize unstructured evidence, but they also returned to raw interviews, reviews, citations, company context, and stakeholder judgment because they did not treat AI output as decision authority. Critical thinking here is not an abstract disposition; it is designed into source visibility, cross-verification, audit trails, and the ability to compare AI outputs against the underlying data.
 
+[[2025-kosmyna-brain-chatgpt-cognitive-debt]] gives a more physiological and behavioral warning from essay writing: LLM users appeared to engage less deeply with the writing task, produced more homogeneous language, reported lower ownership, and recalled less of their own text. For this page, the useful point is not “ChatGPT makes people stupid.” It is that critical thinking can be displaced from generating, selecting, and remembering ideas into accepting or lightly editing machine output, which changes both the task process and what the user practices.
+
 ## Connections
 
 - Relates to [[ai-adoption]] because adoption quality depends on whether users retain enough judgment to evaluate, adapt, and steward AI outputs rather than merely use the tool more often.
@@ -35,3 +37,4 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 - Less effort is ambiguous. It may indicate productive cognitive offloading, underinvestment in judgment, or both depending on task stakes and user expertise. [[2022-dellacqua-falling-asleep-at-wheel]] sharpens that ambiguity: less effort can improve performance when AI is truly perfect, but harm learning or oversight when AI is merely good.
 - [[2025-shukla-ai-assisted-design-ironies]] is not longitudinal evidence of skill loss. It identifies a plausible de-skilling mechanism from practitioner discourse and automation theory, but the causal claim still needs behavioral and longitudinal evidence.
 - [[2025-yun-generative-ai-knowledge-work]] makes verification needs vivid, but it does not measure whether audit trails, citations, or multiple visualizations actually increase critical-thinking behavior or merely make users feel safer.
+- [[2025-kosmyna-brain-chatgpt-cognitive-debt]] is stronger than self-report on engagement because it includes EEG and recall measures, but it is still a preprint in an educational essay-writing context; workplace critical-thinking claims need designs closer to real decisions, expertise, and consequences.

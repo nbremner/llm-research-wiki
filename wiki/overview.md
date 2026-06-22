@@ -55,6 +55,7 @@ Seed questions to grow topics around. Edit freely.
 - How does AI reshape job analysis and the definition of work itself, before HR systems are built on it?
 - When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement — construct validity and job-relatedness?
 - What design features make AI-supported knowledge synthesis improve judgment rather than simply making scattered evidence feel organized?
+- When does AI assistance reduce productive cognitive load versus reducing the practice, ownership, and recall needed for learning or expertise maintenance?
 
 ## Thin / missing areas
 
@@ -64,6 +65,7 @@ Seed questions to grow topics around. Edit freely.
 - **Measurement of AI workforce impact** beyond productivity anecdotes — still thin, but [[task-level-ai-adoption]] now gives the wiki a home for observed-use maps that sit between exposure indices and organizational outcome evidence.
 - **Worker-desired agency in AI-agent work** is now represented through [[2025-shao-future-work-ai-agents]], but still needs live implementation evidence on whether agency matching improves adoption, performance, motivation, or trust.
 - **AI-supported knowledge synthesis** has been promoted into [[ai-supported-knowledge-synthesis]] through [[2025-yun-generative-ai-knowledge-work]], but the wiki still needs field evidence on whether synthesis interfaces improve decision quality, learning, and team alignment over time.
+- **AI-mediated learning and cognitive debt** is now represented through [[2025-kosmyna-brain-chatgpt-cognitive-debt]] under [[ai-induced-skill-erosion]], [[automation-complacency]], and [[critical-thinking]], but the wiki is thin on whether educational cognitive-debt findings generalize to workplace expertise, onboarding, and professional development.
 
 ## Candidate topics (watchlist)
 
@@ -72,3 +74,4 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **people-analytics / big-data methods** — the deferred "Batch 2" cluster (Kosinski, Kern, Chapman, Miller, Chen & Wojcik, Guzzo); promote if/when ingested.
 - **applicant reactions & perceived fairness** of algorithmic assessment — appears under [[algorithmic-assessment]]; candidate for its own page.
 - **human-agency-scale / worker-desired agency** — appears in [[2025-shao-future-work-ai-agents]]; candidate if more sources use agency levels as an audit or design construct rather than only a preference measure.
+- **ai-mediated-learning / cognitive-debt** — appears in [[2025-kosmyna-brain-chatgpt-cognitive-debt]]; candidate if more sources study how AI assistance affects learning, memory, practice, and expertise development rather than only immediate task performance.
