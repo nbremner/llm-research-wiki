@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # Work redesign
@@ -30,6 +30,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2026-reich-work-design-multidimensional-ai-threat]] brings classic work-design variables directly into AI adoption. Skill variety and autonomy predicted adoption, while task significance predicted shorter AI-use duration. Redesign therefore has to preserve the job resources that let workers experiment and learn, while recognizing that highly consequential work may invite more selective or bounded AI use.
 
+[[2026-ehsan-future-workers]] makes preservation of expertise a redesign requirement. Its sociotechnical-immunity frame says AI workflows need early-warning signals, containment actions, and recovery routines so workers can detect and reverse skill erosion rather than only deliver faster outputs.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -37,6 +39,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[automation-and-substitution]] because the key design question is not simply which tasks AI replaces, but which workflow nodes require human judgment, care, trust, or visible accountability.
 - Connects to [[human-ai-collaboration]] because control and verification are work-design choices, not merely interface features.
 - Connects to [[automation-complacency]] because redesign can either preserve meaningful oversight or quietly convert human review into rubber-stamping.
+- Connects to [[ai-induced-skill-erosion]] because redesigned workflows can either maintain deliberate practice and feedback or strip out the conditions that sustain expertise.
 
 ## Contradictions & open questions
 

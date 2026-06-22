@@ -1,7 +1,7 @@
 ---
 title: Automation complacency
 status: active
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # Automation complacency
@@ -14,11 +14,14 @@ Automation complacency is the failure mode where better machine advice reduces h
 
 [[2026-dellacqua-jagged-technological-frontier]] adds the task-boundary version. Fluent AI-supported work can improve performance inside the frontier while harming correctness outside it, especially if users cannot tell which kind of task they are in. Complacency is most dangerous when subjective coherence rises faster than actual correctness.
 
+[[2026-ehsan-future-workers]] extends complacency from a short-run effort problem into a longitudinal expertise problem. Its “intuition rust” finding suggests that faster approval and reduced hands-on practice can look like efficiency before they become visible as skill atrophy or identity loss.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because collaboration quality depends on preserving competent human review, not merely keeping a human nominally in the loop.
 - Relates to [[critical-thinking]] because attention, verification, and stewardship are effortful behaviors that can decay when AI confidence is high.
 - Relates to [[algorithmic-assessment]] because hiring tools often frame humans as final decision-makers while simplified recommendations can still reshape discretion.
 - Relates to [[work-redesign]] because interface design, feedback, task sequencing, and escalation rules can either preserve or erode human oversight.
+- Relates to [[ai-induced-skill-erosion]] because repeated complacency can become capability loss when workers no longer practice the judgment they are expected to retain.
 
 ## Contradictions & open questions
 - Better AI can still improve average performance, as [[2022-dellacqua-falling-asleep-at-wheel]] shows when pooling AI conditions and in the perfectly predictive benchmark. The claim is not "worse AI is better"; it is that human behavioral response can make the model-quality optimum differ from the system-performance optimum.

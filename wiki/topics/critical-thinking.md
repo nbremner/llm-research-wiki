@@ -1,7 +1,7 @@
 ---
 title: Critical thinking
 status: active
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # Critical thinking
@@ -16,10 +16,13 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 
 [[2025-shukla-ai-assisted-design-ironies]] gives the design-practice version of the same shift. UX practitioners saw AI as useful for drafts, user flows, research scripts, and ideation, but they also emphasized the need to check hallucinations, detect bias, preserve design rationale, and defend choices. The paper's sharper warning is about cognitive offloading: if AI bypasses sketching, problem framing, incubation, and exploratory iteration, critical thinking may be displaced from creative formation into after-the-fact supervision.
 
+[[2026-ehsan-future-workers]] adds a longitudinal expert-work version: if AI-supported workflows reduce the need to exercise intuition and manual judgment, critical thinking may not just shift location but atrophy through non-use.
+
 ## Connections
 
 - Relates to [[ai-adoption]] because adoption quality depends on whether users retain enough judgment to evaluate, adapt, and steward AI outputs rather than merely use the tool more often.
 - Relates to [[automation-complacency]] because reduced critical thinking can be a system-induced response to apparently reliable AI advice, not simply an individual deficit.
+- Relates to [[ai-induced-skill-erosion]] because judgment exercised less often may become judgment held less securely.
 - Relates to [[evidence-based-management]] because self-reported reductions in cognitive effort should not be treated as direct evidence of long-term skill atrophy without stronger longitudinal or behavioral measures.
 - Relates to [[construct-validity]] because “critical thinking” is itself hard to observe; output diversity, self-report, and task performance capture different parts of the construct.
 

@@ -34,3 +34,4 @@ file_hash: 876dd516944bfa60e59e5e83fe825866da2ccd190a31ceb3bc96174d2451d24f
 - [[human-ai-collaboration]]
 - [[work-redesign]]
 - [[critical-thinking]]
+- [[ai-induced-skill-erosion]]

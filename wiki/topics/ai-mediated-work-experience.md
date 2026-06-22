@@ -1,7 +1,7 @@
 ---
 title: AI-mediated work experience
 status: active
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # AI-mediated work experience
@@ -14,13 +14,16 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 
 [[2025-brynjolfsson-generative-ai-at-work]] adds an observable work-events lens. In customer support, GenAI assistance increased productivity and improved parts of the interaction climate, including more polite customers and fewer requests to escalate to a manager. That is not broad evidence of engagement, but it shows AI can alter the affective and relational texture of work, not just output volume.
 
+[[2026-ehsan-future-workers]] supplies the longitudinal worker-experience evidence this page was missing. In radiation oncology, AI-supported efficiency gains coexisted with “intuition rust,” reduced manual practice, and anxiety about becoming a bystander in one's own professional work. That makes competence and identity observable design outcomes, not downstream sentiment.
+
 ## Connections
 - Relates to [[employee-engagement]] because AI-mediated work experience could easily become another broad dashboard construct unless its components and evidence claims stay sharp.
 - Relates to [[work-redesign]] because redesign choices determine whether AI preserves autonomy, skill use, feedback, learning, and meaningful control.
+- Relates to [[ai-induced-skill-erosion]] because longitudinal AI-mediated work can erode the capabilities and identity that initially made expert oversight valuable.
 - Relates to [[ai-adoption]] because sustained adoption depends on the structure and meaning of work, not only access, training, or encouragement.
 - Relates to [[ai-readiness]] because readiness includes knowledge, culture, upskilling, collaborative work, and change management — all partly experienced by workers as job resources or threats.
 
 ## Contradictions & open questions
 - [[2026-reich-work-design-multidimensional-ai-threat]] is cross-sectional and self-reported. It is useful for construct mapping, but it cannot show whether autonomy and skill variety cause AI adoption or whether AI adopters perceive their jobs differently.
 - Deeper AI use is ambiguous. It may mean productive integration, work intensification, pressure to keep up, or loss of status depending on the threat dimension and job context.
-- The wiki still needs stronger longitudinal and behavioral evidence on whether AI-mediated work improves or erodes autonomy, competence, relatedness, identity, workload, and learning over time.
+- The wiki now has stronger qualitative longitudinal evidence through [[2026-ehsan-future-workers]], but still needs behavioral and causal evidence on whether AI-mediated work improves or erodes autonomy, competence, relatedness, identity, workload, and learning over time.

@@ -1,7 +1,7 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # Human-AI collaboration
@@ -26,12 +26,15 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2025-handa-economic-tasks-ai]] gives collaboration a descriptive baseline at scale. In more than four million Claude.ai conversations, the authors classify 57% of usage as augmentation-like and 43% as automation-like. The split is useful because it keeps collaboration from becoming a purely normative label: current use already spans learning, iteration, and more direct task fulfillment.
 
+[[2026-ehsan-future-workers]] adds a dignity constraint to collaboration design. A human can remain formally “in the loop” while the work no longer preserves agency, expertise, or self-worth; dignified Human-AI interaction therefore requires mechanisms that keep workers able to detect, contest, and recover from AI-induced erosion.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify, integrate, and steward AI output rather than merely accept it.
 - Relates to [[work-redesign]] because task allocation changes the cognitive work humans still need to perform.
 - Relates to [[ai-adoption]] because adoption metrics that count tool use without stewardship quality can hide overreliance.
 - Relates to [[automation-complacency]] because high-confidence AI advice can reduce the very human effort that makes collaboration valuable.
+- Relates to [[ai-induced-skill-erosion]] because collaboration that removes practice while preserving nominal accountability can quietly weaken the human side of the system.
 - Relates to [[employee-engagement]] because workers in decision-support settings described autonomy, motivation, learning, and valued task ownership as part of whether AI-supported work remained worth engaging in.
 
 ## Contradictions & open questions

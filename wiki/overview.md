@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # Overview
@@ -34,6 +34,7 @@ The central question:
 - [[human-ai-collaboration]] — how human accountability and AI capability are arranged in tasks
 - [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
 - [[ai-mediated-work-experience]] — how AI changes autonomy, skill use, identity, workload, and felt job quality
+- [[ai-induced-skill-erosion]] — when AI-enabled productivity hides slower erosion of expertise, judgment, and professional identity
 
 ## Open questions
 
@@ -52,7 +53,7 @@ Seed questions to grow topics around. Edit freely.
 ## Thin / missing areas
 
 - **Equilibrium labor demand.** Most sources show short-run, within-job augmentation; the wiki is thin on whether firms later hire fewer or different workers, change wages, or automate roles more fully.
-- **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], but remains thin on longitudinal and behavioral evidence.
+- **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], and [[ai-induced-skill-erosion]] now gives the wiki a more precise home for longitudinal evidence about expertise, identity, and skill atrophy.
 - **Foundational I-O constructs** remain mostly deferred to the triage-index shelf ("AI-relevant first, foundation later"), but [[competency-modeling]] has been promoted because it is directly adjacent to job analysis, skills architecture, and AI-era work redesign.
 - **Measurement of AI workforce impact** beyond productivity anecdotes — a recurring concern with no home topic.
 
@@ -61,5 +62,4 @@ Seed questions to grow topics around. Edit freely.
 Constructs that have surfaced across sources but don't yet warrant their own page. Ingests append here (with the source slug); promote a candidate once enough sources accumulate rather than deferring it again. Edit freely.
 
 - **people-analytics / big-data methods** — the deferred "Batch 2" cluster (Kosinski, Kern, Chapman, Miller, Chen & Wojcik, Guzzo); promote if/when ingested.
-- **skill atrophy / deskilling** — recurs in [[critical-thinking]] and AI-assisted-design ironies; promote if more sources accumulate.
 - **applicant reactions & perceived fairness** of algorithmic assessment — appears under [[algorithmic-assessment]]; candidate for its own page.
