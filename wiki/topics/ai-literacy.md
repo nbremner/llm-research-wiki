@@ -12,13 +12,17 @@ AI literacy is the knowledge and skill side of AI use: what people understand ab
 
 For work and training, the construct implication is sharp: raising AI literacy may improve calibration, verification, and stewardship even if it reduces some awe-driven willingness to use AI. That makes AI literacy closer to a capability and judgment construct than a persuasion or adoption metric.
 
+[[2025-kellogg-novice-risk-work]] adds an organizational-learning boundary: novice users can be willing to teach seniors about GenAI while still lacking enough understanding to diagnose where risk mitigation belongs. AI literacy here is not generic familiarity or use confidence; it includes knowing when a risk is caused by model capability, interface design, deployer governance, ecosystem behavior, or local human routines.
+
 ## Connections
 - Relates to [[critical-thinking]] because literacy should support verification, boundary-setting, and skepticism toward AI outputs.
 - Relates to [[human-ai-collaboration]] because calibrated collaboration requires knowing what the AI is doing well enough to scope, review, and contest it.
 - Relates to [[construct-validity]] because AI literacy measures can mix knowledge, skill, exposure, confidence, and self-reported familiarity unless the construct is bounded carefully.
 - Relates to [[ai-adoption]] because literacy can shape adoption quality even when it does not increase adoption volume.
+- Relates to [[novice-risk-work]] because novice enthusiasm can spread AI use faster than calibrated risk understanding.
 
 ## Contradictions & open questions
 - [[2025-tully-ai-literacy-receptivity]] suggests AI literacy can reduce some forms of AI receptivity, which conflicts with simple training narratives that assume education always increases adoption willingness.
 - The workplace question is still open: does higher AI literacy reduce usage, or does it shift usage toward better-calibrated tasks, stronger verification, and less anthropomorphic overreach?
+- [[2025-kellogg-novice-risk-work]] suggests AI literacy may need a risk-level component: users must distinguish what can be handled by individual checking, project routines, deployer controls, or ecosystem governance.
 - AI literacy may operate differently by task type. For tasks not framed as requiring distinctly human attributes, [[2025-tully-ai-literacy-receptivity]] found that higher literacy could predict greater receptivity.

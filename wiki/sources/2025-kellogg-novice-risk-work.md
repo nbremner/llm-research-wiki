@@ -29,6 +29,7 @@ file_hash: 1bc46397c2c9e7eddd3639a39254d78b5be9d98e753ebc1053c99ec29042db43
 - **Limitations:** single professional-services context, junior consultants only, early GPT-4 period, and evidence about recommended tactics rather than observed long-term coaching, adoption, or organizational learning outcomes. The Drive PDF is an HBS working-paper version under the earlier title; Crossref shows the later published article title and DOI used here as canonical provenance.
 
 ## Feeds
+- [[novice-risk-work]]
 - [[ai-adoption]]
 - [[ai-literacy]]
 - [[human-ai-collaboration]]

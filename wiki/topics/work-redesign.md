@@ -40,6 +40,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2026-doshi-human-ai-task-tensor]] adds an upstream classification layer for redesign. Its Human–AI Task Tensor says a redesign decision should specify task definition, AI contribution, interaction modality, audit requirement, output definition, decision-making authority, AI structure, and human persona before claiming that a task is augmented, automated, or collaboratively performed. That makes the design unit more precise than “add GenAI”: the workflow has to define authority, auditability, output criteria, and the human role.
 
+[[2025-kellogg-novice-risk-work]] adds a risk-mitigation design layer. Junior consultants often recommended human-routine or project-level fixes for GenAI risks, while expert recommendations included system design, deployer controls, and ecosystem interventions. For redesign, that means local training and checking routines may be necessary but insufficient when the risk source sits in model behavior, interface design, deployment governance, or data/ecosystem conditions.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -50,6 +52,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[ai-induced-skill-erosion]] because redesigned workflows can either maintain deliberate practice and feedback or strip out the conditions that sustain expertise.
 - Connects to [[ai-supported-knowledge-synthesis]] because knowledge-synthesis tools redesign how raw evidence, AI-generated summaries, stakeholder context, and final decisions move through the workflow.
 - Connects to [[human-ai-task-taxonomy]] because redesign needs a task-classification language before tasks can be delegated, protected, audited, or recombined.
+- Connects to [[novice-risk-work]] because novice users may misplace redesign responsibility at the individual or project level when system-level intervention is needed.
 
 ## Contradictions & open questions
 
@@ -67,3 +70,4 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2026-reich-work-design-multidimensional-ai-threat]] is correlational, so it cannot establish whether good work design causes AI adoption or whether AI adopters are in roles they already experience as more autonomous and varied.
 - [[2025-shao-future-work-ai-agents]] is an audit of preferences and expert capability, not an implementation study. It helps identify where redesign friction is likely, but it does not prove that matching worker-desired agency levels produces better adoption, performance, or experience.
 - [[2025-yun-generative-ai-knowledge-work]] studies short-term prototype interaction in product-management tasks. Its redesign lessons are strong for interface and workflow requirements, but weak as evidence about durable organizational redesign or productivity gains.
+- [[2025-kellogg-novice-risk-work]] is interview-based and compares novice recommendations to expert literature, not implemented redesign interventions. It is strongest as a warning about misplaced mitigation levels, not as direct evidence that any specific deployer-level control improves outcomes.

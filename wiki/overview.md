@@ -41,6 +41,7 @@ The central question:
 - [[ai-supported-knowledge-synthesis]] — how AI helps or distorts evidence navigation, sensemaking, verification, and context-preserving decision work
 - [[ai-literacy]] — what people understand about AI systems, their limits, and the conditions for calibrated use
 - [[ai-receptivity]] — willingness, preference, or readiness to use AI, separated from whether that willingness is well-calibrated
+- [[novice-risk-work]] — when novice AI users try to mitigate risks for senior/accountable actors without yet having enough technical or governance understanding
 
 ## Open questions
 
@@ -54,6 +55,7 @@ Seed questions to grow topics around. Edit freely.
 - What does good measurement of AI workforce impact look like beyond productivity anecdotes?
 - How does AI-mediated work affect autonomy, competence, relatedness, trust, and motivation?
 - When does AI literacy improve calibrated use without simply increasing or decreasing AI receptivity?
+- When can junior or novice AI users safely teach senior professionals, and when does bottom-up adoption energy produce underpowered risk mitigation?
 - When does improving AI quality reduce human effort enough that system performance, learning, or oversight suffers?
 - When does proactive AI assistance reduce task burden versus adding extraneous cognitive load through task switching, information sprawl, or repair work?
 - What does construct validity require in AI-mediated assessment and people analytics?
@@ -72,6 +74,7 @@ Seed questions to grow topics around. Edit freely.
 - **AI-supported knowledge synthesis** has been promoted into [[ai-supported-knowledge-synthesis]] through [[2025-yun-generative-ai-knowledge-work]], but the wiki still needs field evidence on whether synthesis interfaces improve decision quality, learning, and team alignment over time.
 - **AI-mediated learning and cognitive debt** is now represented through [[2025-kosmyna-brain-chatgpt-cognitive-debt]] under [[ai-induced-skill-erosion]], [[automation-complacency]], and [[critical-thinking]], but the wiki is thin on whether educational cognitive-debt findings generalize to workplace expertise, onboarding, and professional development.
 - **Cognitive load in AI-assisted work** has been promoted into [[cognitive-load-in-ai-assisted-work]] through [[2026-lepine-precision-proactivity]], but the wiki still needs validated load measures across other domains and evidence on which interface interventions reduce extraneous load without suppressing useful AI help.
+- **Novice risk work / reverse mentoring for AI** has been promoted into [[novice-risk-work]] through [[2025-kellogg-novice-risk-work]], but the wiki still needs evidence on which literacy, governance, and deployer-level supports let novice users teach seniors without over-relying on project-level routine changes.
 
 ## Candidate topics (watchlist)
 
