@@ -22,6 +22,8 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 
 [[2025-kosmyna-brain-chatgpt-cognitive-debt]] gives a more physiological and behavioral warning from essay writing: LLM users appeared to engage less deeply with the writing task, produced more homogeneous language, reported lower ownership, and recalled less of their own text. For this page, the useful point is not “ChatGPT makes people stupid.” It is that critical thinking can be displaced from generating, selecting, and remembering ideas into accepting or lightly editing machine output, which changes both the task process and what the user practices.
 
+[[2026-lepine-precision-proactivity]] adds the overload side of the same problem. In complex AI-assisted valuation work, extraneous load from conversational misalignment was strongly negative for quality, even while AI-generated content helped. Critical thinking requires capacity; when the interaction itself creates task switching, information sprawl, or repair work, stewardship may fail because the user is overloaded rather than because they are complacent.
+
 ## Connections
 
 - Relates to [[ai-adoption]] because adoption quality depends on whether users retain enough judgment to evaluate, adapt, and steward AI outputs rather than merely use the tool more often.
@@ -30,6 +32,7 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 - Relates to [[evidence-based-management]] because self-reported reductions in cognitive effort should not be treated as direct evidence of long-term skill atrophy without stronger longitudinal or behavioral measures.
 - Relates to [[construct-validity]] because “critical thinking” is itself hard to observe; output diversity, self-report, and task performance capture different parts of the construct.
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis tools can either scaffold verification and comparison or make generated structure feel more authoritative than the evidence warrants.
+- Relates to [[cognitive-load-in-ai-assisted-work]] because verification and stewardship depend on whether the AI interface preserves enough cognitive bandwidth for judgment.
 
 ## Contradictions & open questions
 
@@ -38,3 +41,4 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 - [[2025-shukla-ai-assisted-design-ironies]] is not longitudinal evidence of skill loss. It identifies a plausible de-skilling mechanism from practitioner discourse and automation theory, but the causal claim still needs behavioral and longitudinal evidence.
 - [[2025-yun-generative-ai-knowledge-work]] makes verification needs vivid, but it does not measure whether audit trails, citations, or multiple visualizations actually increase critical-thinking behavior or merely make users feel safer.
 - [[2025-kosmyna-brain-chatgpt-cognitive-debt]] is stronger than self-report on engagement because it includes EEG and recall measures, but it is still a preprint in an educational essay-writing context; workplace critical-thinking claims need designs closer to real decisions, expertise, and consequences.
+- [[2026-lepine-precision-proactivity]] uses transcript-derived cognitive-load proxies rather than direct measures of critical thinking, so its contribution is a plausible capacity mechanism rather than direct evidence about judgment quality.

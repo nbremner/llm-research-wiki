@@ -20,6 +20,8 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 
 [[2025-yun-generative-ai-knowledge-work]] adds an information-work experience case. Product managers wanted AI help because scattered documents, repeated searching, stakeholder translation, and manual synthesis created friction, but they also needed autonomy over AI influence, confidence in source traces, and ways to preserve collaboration rather than becoming isolated with an agreeable tool. The worker experience is therefore shaped by whether AI reduces coordination burden while keeping users connected to evidence, peers, and accountable context.
 
+[[2026-lepine-precision-proactivity]] adds cognitive load as a measurable work-experience channel. In a financial-valuation task with professionals, AI-generated content was associated with higher quality, but extraneous load from interaction structure was strongly negative for quality and could persist across turns. That makes workload more specific than “AI made the task easier or harder”: the same system can provide useful content while imposing coordination, repair, or coherence burdens on the worker.
+
 ## Connections
 - Relates to [[employee-engagement]] because AI-mediated work experience could easily become another broad dashboard construct unless its components and evidence claims stay sharp.
 - Relates to [[work-redesign]] because redesign choices determine whether AI preserves autonomy, skill use, feedback, learning, and meaningful control.
@@ -27,6 +29,7 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 - Relates to [[ai-adoption]] because sustained adoption depends on the structure and meaning of work, not only access, training, or encouragement.
 - Relates to [[ai-readiness]] because readiness includes knowledge, culture, upskilling, collaborative work, and change management — all partly experienced by workers as job resources or threats.
 - Relates to [[ai-supported-knowledge-synthesis]] because the experience of knowledge work depends on whether synthesis tools preserve agency, context, collaboration, and source contact.
+- Relates to [[cognitive-load-in-ai-assisted-work]] because AI-mediated work experience includes the mental burden of coordinating with the model, not only autonomy, identity, or affect.
 
 ## Contradictions & open questions
 - [[2026-reich-work-design-multidimensional-ai-threat]] is cross-sectional and self-reported. It is useful for construct mapping, but it cannot show whether autonomy and skill variety cause AI adoption or whether AI adopters perceive their jobs differently.
@@ -34,3 +37,4 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 - The wiki now has stronger qualitative longitudinal evidence through [[2026-ehsan-future-workers]], but still needs behavioral and causal evidence on whether AI-mediated work improves or erodes autonomy, competence, relatedness, identity, workload, and learning over time.
 - [[2025-shao-future-work-ai-agents]] helps locate where agency mismatch may appear, but it does not observe downstream motivation, identity, learning, or well-being after agents enter real workflows.
 - [[2025-yun-generative-ai-knowledge-work]] is not a worker-outcomes study, so its evidence for experience is indirect: needs, worries, and interaction patterns around synthesis work rather than measured autonomy, competence, relatedness, workload, or well-being.
+- [[2026-lepine-precision-proactivity]] measures load from transcripts rather than from felt experience, so it strengthens the workload side of this topic but does not directly measure motivation, well-being, or identity.

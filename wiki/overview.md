@@ -35,6 +35,7 @@ The central question:
 - [[human-ai-collaboration]] — how human accountability and AI capability are arranged in tasks
 - [[human-ai-task-taxonomy]] — dimensions for classifying AI-enabled tasks before drawing redesign, collaboration, or substitution conclusions
 - [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
+- [[cognitive-load-in-ai-assisted-work]] — how AI assistance creates or reduces intrinsic and extraneous mental burden during real work
 - [[ai-mediated-work-experience]] — how AI changes autonomy, skill use, identity, workload, and felt job quality
 - [[ai-induced-skill-erosion]] — when AI-enabled productivity hides slower erosion of expertise, judgment, and professional identity
 - [[ai-supported-knowledge-synthesis]] — how AI helps or distorts evidence navigation, sensemaking, verification, and context-preserving decision work
@@ -51,6 +52,7 @@ Seed questions to grow topics around. Edit freely.
 - What does good measurement of AI workforce impact look like beyond productivity anecdotes?
 - How does AI-mediated work affect autonomy, competence, relatedness, trust, and motivation?
 - When does improving AI quality reduce human effort enough that system performance, learning, or oversight suffers?
+- When does proactive AI assistance reduce task burden versus adding extraneous cognitive load through task switching, information sprawl, or repair work?
 - What does construct validity require in AI-mediated assessment and people analytics?
 - How does AI reshape job analysis and the definition of work itself, before HR systems are built on it?
 - When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement — construct validity and job-relatedness?
@@ -66,6 +68,7 @@ Seed questions to grow topics around. Edit freely.
 - **Worker-desired agency in AI-agent work** is now represented through [[2025-shao-future-work-ai-agents]], but still needs live implementation evidence on whether agency matching improves adoption, performance, motivation, or trust.
 - **AI-supported knowledge synthesis** has been promoted into [[ai-supported-knowledge-synthesis]] through [[2025-yun-generative-ai-knowledge-work]], but the wiki still needs field evidence on whether synthesis interfaces improve decision quality, learning, and team alignment over time.
 - **AI-mediated learning and cognitive debt** is now represented through [[2025-kosmyna-brain-chatgpt-cognitive-debt]] under [[ai-induced-skill-erosion]], [[automation-complacency]], and [[critical-thinking]], but the wiki is thin on whether educational cognitive-debt findings generalize to workplace expertise, onboarding, and professional development.
+- **Cognitive load in AI-assisted work** has been promoted into [[cognitive-load-in-ai-assisted-work]] through [[2026-lepine-precision-proactivity]], but the wiki still needs validated load measures across other domains and evidence on which interface interventions reduce extraneous load without suppressing useful AI help.
 
 ## Candidate topics (watchlist)
 

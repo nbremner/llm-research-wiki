@@ -36,6 +36,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2026-doshi-human-ai-task-tensor]] gives collaboration a stronger task vocabulary. The chapter’s tensor separates AI contribution, audit requirement, output definition, decision-making authority, AI structure, and human persona, which keeps “collaboration” from collapsing into the fact that a human and AI are both involved. A human-AI arrangement can look collaborative while differing sharply in who decides, what can be audited, whether the output is defined, and what kind of human expertise or preference the design assumes.
 
+[[2026-lepine-precision-proactivity]] adds a load-sensitive collaboration mechanism. In financial professionals' GPT-4o-assisted valuation work, AI-generated content helped quality, but model-initiated task switching and information sprawl increased extraneous load and undermined performance. Good collaboration therefore is not simply more AI initiative; it is initiative timed and structured so the human does not spend scarce cognitive capacity repairing the interaction.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify, integrate, and steward AI output rather than merely accept it.
@@ -46,6 +48,7 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 - Relates to [[employee-engagement]] because workers in decision-support settings described autonomy, motivation, learning, and valued task ownership as part of whether AI-supported work remained worth engaging in.
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis work makes collaboration visible as source navigation, verification, auditability, and stakeholder translation rather than only answer generation.
 - Relates to [[human-ai-task-taxonomy]] because collaboration claims need dimensional task detail: authority, auditability, output definition, AI structure, and the relevant human persona.
+- Relates to [[cognitive-load-in-ai-assisted-work]] because collaboration quality depends on the cognitive cost of keeping the human and AI aligned across turns.
 
 ## Contradictions & open questions
 
@@ -60,3 +63,4 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 - [[2025-agarwal-what-work-ai-doing]] explains where people use AI, not how well they collaborate with it. The concentration of use in dynamic problem-solving tasks could indicate valuable cognitive offloading, but it could also mark places where humans are delegating the most consequential early framing work.
 - [[2025-shao-future-work-ai-agents]] measures desired agency, not actual collaboration quality. H3 dominance is evidence that equal partnership is attractive in many occupations, but it does not tell us which interfaces, feedback loops, or governance routines make partnership real rather than rhetorical.
 - [[2025-yun-generative-ai-knowledge-work]] is prototype-centered and qualitative. It shows what product managers valued in AI-mediated synthesis, but not whether these collaboration mechanisms improve long-run decision quality or team learning.
+- [[2026-lepine-precision-proactivity]] is correlational and task-specific, so it does not prove that reducing task switching or information sprawl causally improves collaboration, but it gives concrete design targets for load-sensitive AI initiative.
