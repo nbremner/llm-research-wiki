@@ -34,6 +34,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2025-yun-generative-ai-knowledge-work]] adds a knowledge-synthesis interface case. In Yodeai, collaboration was not just chat with an AI; it was a set of widgets, citations, visual summaries, pain-point clusters, source returns, and shareable outputs that let product managers move between AI-generated structure and accountable human judgment. The useful collaboration unit is therefore the evidence-navigation loop: how the user controls AI influence, checks source material, repurposes outputs for teammates, and brings external business context back into the decision.
 
+[[2026-doshi-human-ai-task-tensor]] gives collaboration a stronger task vocabulary. The chapter’s tensor separates AI contribution, audit requirement, output definition, decision-making authority, AI structure, and human persona, which keeps “collaboration” from collapsing into the fact that a human and AI are both involved. A human-AI arrangement can look collaborative while differing sharply in who decides, what can be audited, whether the output is defined, and what kind of human expertise or preference the design assumes.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify, integrate, and steward AI output rather than merely accept it.
@@ -43,6 +45,7 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 - Relates to [[ai-induced-skill-erosion]] because collaboration that removes practice while preserving nominal accountability can quietly weaken the human side of the system.
 - Relates to [[employee-engagement]] because workers in decision-support settings described autonomy, motivation, learning, and valued task ownership as part of whether AI-supported work remained worth engaging in.
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis work makes collaboration visible as source navigation, verification, auditability, and stakeholder translation rather than only answer generation.
+- Relates to [[human-ai-task-taxonomy]] because collaboration claims need dimensional task detail: authority, auditability, output definition, AI structure, and the relevant human persona.
 
 ## Contradictions & open questions
 

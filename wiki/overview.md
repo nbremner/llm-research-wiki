@@ -33,6 +33,7 @@ The central question:
 - [[evidence-based-management]] — matching organizational claims to the quality and relevance of evidence
 - [[critical-thinking]] — how GenAI shifts judgment, verification, and stewardship in knowledge work
 - [[human-ai-collaboration]] — how human accountability and AI capability are arranged in tasks
+- [[human-ai-task-taxonomy]] — dimensions for classifying AI-enabled tasks before drawing redesign, collaboration, or substitution conclusions
 - [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
 - [[ai-mediated-work-experience]] — how AI changes autonomy, skill use, identity, workload, and felt job quality
 - [[ai-induced-skill-erosion]] — when AI-enabled productivity hides slower erosion of expertise, judgment, and professional identity

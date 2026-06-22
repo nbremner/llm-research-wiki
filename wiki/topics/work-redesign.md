@@ -38,6 +38,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2025-yun-generative-ai-knowledge-work]] gives a concrete redesign pattern for information-heavy product work. The source shows AI being inserted not as a single assistant but as a workbench for Q&A, pain-point tracking, user-insight visualization, source citation, export, and reuse across stakeholders. That makes redesign less about replacing a product-manager task and more about re-architecting the flow from raw user evidence to clustered interpretation, team communication, and accountable prioritization.
 
+[[2026-doshi-human-ai-task-tensor]] adds an upstream classification layer for redesign. Its Human–AI Task Tensor says a redesign decision should specify task definition, AI contribution, interaction modality, audit requirement, output definition, decision-making authority, AI structure, and human persona before claiming that a task is augmented, automated, or collaboratively performed. That makes the design unit more precise than “add GenAI”: the workflow has to define authority, auditability, output criteria, and the human role.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -47,6 +49,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[automation-complacency]] because redesign can either preserve meaningful oversight or quietly convert human review into rubber-stamping.
 - Connects to [[ai-induced-skill-erosion]] because redesigned workflows can either maintain deliberate practice and feedback or strip out the conditions that sustain expertise.
 - Connects to [[ai-supported-knowledge-synthesis]] because knowledge-synthesis tools redesign how raw evidence, AI-generated summaries, stakeholder context, and final decisions move through the workflow.
+- Connects to [[human-ai-task-taxonomy]] because redesign needs a task-classification language before tasks can be delegated, protected, audited, or recombined.
 
 ## Contradictions & open questions
 

@@ -31,6 +31,7 @@ file_hash: 3f3f46e5f62c09f6b2b67ba96fa2b91703647a382563edab2d45dc6579d04f69
 - The Drive PDF text extracted cleanly during ingest; the file hash is recorded in frontmatter.
 
 ## Feeds
+- [[human-ai-task-taxonomy]]
 - [[work-redesign]]
 - [[human-ai-collaboration]]
 - [[automation-and-substitution]]
