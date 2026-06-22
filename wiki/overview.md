@@ -44,6 +44,7 @@ Seed questions to grow topics around. Edit freely.
 - Which tasks are candidates for automation vs. augmentation vs. human protection, and how is that decided?
 - What I-O constructs best explain sustained adoption of AI tools at work?
 - Which task characteristics predict observed GenAI use, and when does observed use become durable organizational adoption rather than individual experimentation?
+- Where do worker preferences for automation, augmentation, and sustained human agency diverge from technical AI-agent capability?
 - What would make AI readiness a valid organizational assessment construct rather than a loose maturity checklist?
 - What does good measurement of AI workforce impact look like beyond productivity anecdotes?
 - How does AI-mediated work affect autonomy, competence, relatedness, trust, and motivation?
@@ -58,6 +59,7 @@ Seed questions to grow topics around. Edit freely.
 - **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], and [[ai-induced-skill-erosion]] now gives the wiki a more precise home for longitudinal evidence about expertise, identity, and skill atrophy.
 - **Foundational I-O constructs** remain mostly deferred to the triage-index shelf ("AI-relevant first, foundation later"), but [[competency-modeling]] has been promoted because it is directly adjacent to job analysis, skills architecture, and AI-era work redesign.
 - **Measurement of AI workforce impact** beyond productivity anecdotes — still thin, but [[task-level-ai-adoption]] now gives the wiki a home for observed-use maps that sit between exposure indices and organizational outcome evidence.
+- **Worker-desired agency in AI-agent work** is now represented through [[2025-shao-future-work-ai-agents]], but still needs live implementation evidence on whether agency matching improves adoption, performance, motivation, or trust.
 
 ## Candidate topics (watchlist)
 
@@ -65,3 +67,4 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 
 - **people-analytics / big-data methods** — the deferred "Batch 2" cluster (Kosinski, Kern, Chapman, Miller, Chen & Wojcik, Guzzo); promote if/when ingested.
 - **applicant reactions & perceived fairness** of algorithmic assessment — appears under [[algorithmic-assessment]]; candidate for its own page.
+- **human-agency-scale / worker-desired agency** — appears in [[2025-shao-future-work-ai-agents]]; candidate if more sources use agency levels as an audit or design construct rather than only a preference measure.

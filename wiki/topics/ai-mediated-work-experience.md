@@ -16,6 +16,8 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 
 [[2026-ehsan-future-workers]] supplies the longitudinal worker-experience evidence this page was missing. In radiation oncology, AI-supported efficiency gains coexisted with “intuition rust,” reduced manual practice, and anxiety about becoming a bystander in one's own professional work. That makes competence and identity observable design outcomes, not downstream sentiment.
 
+[[2025-shao-future-work-ai-agents]] adds a preference-map for agency as a work-experience variable. Workers often wanted automation for low-value repetitive tasks, but many occupations preferred equal partnership or higher human involvement on the Human Agency Scale. That matters because AI-mediated work experience depends not only on whether a task is automated, but whether the worker sees the remaining human role as meaningful, controlled, and worth preserving.
+
 ## Connections
 - Relates to [[employee-engagement]] because AI-mediated work experience could easily become another broad dashboard construct unless its components and evidence claims stay sharp.
 - Relates to [[work-redesign]] because redesign choices determine whether AI preserves autonomy, skill use, feedback, learning, and meaningful control.
@@ -27,3 +29,4 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 - [[2026-reich-work-design-multidimensional-ai-threat]] is cross-sectional and self-reported. It is useful for construct mapping, but it cannot show whether autonomy and skill variety cause AI adoption or whether AI adopters perceive their jobs differently.
 - Deeper AI use is ambiguous. It may mean productive integration, work intensification, pressure to keep up, or loss of status depending on the threat dimension and job context.
 - The wiki now has stronger qualitative longitudinal evidence through [[2026-ehsan-future-workers]], but still needs behavioral and causal evidence on whether AI-mediated work improves or erodes autonomy, competence, relatedness, identity, workload, and learning over time.
+- [[2025-shao-future-work-ai-agents]] helps locate where agency mismatch may appear, but it does not observe downstream motivation, identity, learning, or well-being after agents enter real workflows.

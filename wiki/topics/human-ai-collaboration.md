@@ -30,6 +30,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2026-ehsan-future-workers]] adds a dignity constraint to collaboration design. A human can remain formally “in the loop” while the work no longer preserves agency, expertise, or self-worth; dignified Human-AI interaction therefore requires mechanisms that keep workers able to detect, contest, and recover from AI-induced erosion.
 
+[[2025-shao-future-work-ai-agents]] operationalizes collaboration as a preferred level of human agency. Its Human Agency Scale runs from H1, where an AI agent handles the task entirely, to H5, where continuous human involvement is essential; H3 equal partnership was the dominant worker-desired level in 45.2% of occupations. This gives the collaboration page a task-audit instrument: the same technical capability can imply different designs depending on whether workers want delegation, partnership, validation, or continuous involvement.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify, integrate, and steward AI output rather than merely accept it.
@@ -50,3 +52,4 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 - [[2025-shukla-ai-assisted-design-ironies]] complicates the “AI teammate” frame: treating AI as a junior designer may be pragmatically useful, but it can hide the asymmetry that humans remain accountable for rationale, bias, context, and errors.
 - [[2025-handa-economic-tasks-ai]] classifies usage from conversation traces, not from full work systems. The same interaction can look like automation inside the chat window and still depend on human scoping, verification, and accountability outside it.
 - [[2025-agarwal-what-work-ai-doing]] explains where people use AI, not how well they collaborate with it. The concentration of use in dynamic problem-solving tasks could indicate valuable cognitive offloading, but it could also mark places where humans are delegating the most consequential early framing work.
+- [[2025-shao-future-work-ai-agents]] measures desired agency, not actual collaboration quality. H3 dominance is evidence that equal partnership is attractive in many occupations, but it does not tell us which interfaces, feedback loops, or governance routines make partnership real rather than rhetorical.

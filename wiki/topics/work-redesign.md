@@ -34,6 +34,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2026-ehsan-future-workers]] makes preservation of expertise a redesign requirement. Its sociotechnical-immunity frame says AI workflows need early-warning signals, containment actions, and recovery routines so workers can detect and reverse skill erosion rather than only deliver faster outputs.
 
+[[2025-shao-future-work-ai-agents]] makes worker-desired agency a redesign input rather than an afterthought. Its Human Agency Scale separates full automation from equal partnership and high-touch human involvement; 45.2% of occupations had H3 equal partnership as the dominant worker-desired level. That makes redesign a matching problem among task capability, worker desire, control rights, and the level of human involvement the work should preserve.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -57,3 +59,4 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2025-handa-economic-tasks-ai]] observes AI use, not organizational redesign. Conversation-level use can identify where work is being attempted with AI, but it cannot show whether task allocation, accountability, coordination, or job architecture changed around that use.
 - [[2025-agarwal-what-work-ai-doing]] has the same observed-use limitation, plus measurement dependence on LLM-scored task characteristics. It is useful for identifying likely redesign pressure points, not for deciding which task clusters should be delegated without human review.
 - [[2026-reich-work-design-multidimensional-ai-threat]] is correlational, so it cannot establish whether good work design causes AI adoption or whether AI adopters are in roles they already experience as more autonomous and varied.
+- [[2025-shao-future-work-ai-agents]] is an audit of preferences and expert capability, not an implementation study. It helps identify where redesign friction is likely, but it does not prove that matching worker-desired agency levels produces better adoption, performance, or experience.
