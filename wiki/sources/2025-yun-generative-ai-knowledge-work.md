@@ -31,7 +31,9 @@ file_hash: cad6a1bf32669f45a5f0f9cab9e9328ea15722996a62a30e9471dfacc5ba9df7
 - The source is a CHI 2025 paper with public DOI and arXiv provenance; the Drive PDF hash was computed during ingest.
 
 ## Feeds
+- [[ai-supported-knowledge-synthesis]]
 - [[human-ai-collaboration]]
 - [[critical-thinking]]
 - [[work-redesign]]
 - [[automation-complacency]]
+- [[ai-mediated-work-experience]]

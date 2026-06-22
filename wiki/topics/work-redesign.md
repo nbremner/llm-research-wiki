@@ -36,6 +36,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2025-shao-future-work-ai-agents]] makes worker-desired agency a redesign input rather than an afterthought. Its Human Agency Scale separates full automation from equal partnership and high-touch human involvement; 45.2% of occupations had H3 equal partnership as the dominant worker-desired level. That makes redesign a matching problem among task capability, worker desire, control rights, and the level of human involvement the work should preserve.
 
+[[2025-yun-generative-ai-knowledge-work]] gives a concrete redesign pattern for information-heavy product work. The source shows AI being inserted not as a single assistant but as a workbench for Q&A, pain-point tracking, user-insight visualization, source citation, export, and reuse across stakeholders. That makes redesign less about replacing a product-manager task and more about re-architecting the flow from raw user evidence to clustered interpretation, team communication, and accountable prioritization.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -44,6 +46,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[human-ai-collaboration]] because control and verification are work-design choices, not merely interface features.
 - Connects to [[automation-complacency]] because redesign can either preserve meaningful oversight or quietly convert human review into rubber-stamping.
 - Connects to [[ai-induced-skill-erosion]] because redesigned workflows can either maintain deliberate practice and feedback or strip out the conditions that sustain expertise.
+- Connects to [[ai-supported-knowledge-synthesis]] because knowledge-synthesis tools redesign how raw evidence, AI-generated summaries, stakeholder context, and final decisions move through the workflow.
 
 ## Contradictions & open questions
 
@@ -60,3 +63,4 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2025-agarwal-what-work-ai-doing]] has the same observed-use limitation, plus measurement dependence on LLM-scored task characteristics. It is useful for identifying likely redesign pressure points, not for deciding which task clusters should be delegated without human review.
 - [[2026-reich-work-design-multidimensional-ai-threat]] is correlational, so it cannot establish whether good work design causes AI adoption or whether AI adopters are in roles they already experience as more autonomous and varied.
 - [[2025-shao-future-work-ai-agents]] is an audit of preferences and expert capability, not an implementation study. It helps identify where redesign friction is likely, but it does not prove that matching worker-desired agency levels produces better adoption, performance, or experience.
+- [[2025-yun-generative-ai-knowledge-work]] studies short-term prototype interaction in product-management tasks. Its redesign lessons are strong for interface and workflow requirements, but weak as evidence about durable organizational redesign or productivity gains.

@@ -32,6 +32,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2025-shao-future-work-ai-agents]] operationalizes collaboration as a preferred level of human agency. Its Human Agency Scale runs from H1, where an AI agent handles the task entirely, to H5, where continuous human involvement is essential; H3 equal partnership was the dominant worker-desired level in 45.2% of occupations. This gives the collaboration page a task-audit instrument: the same technical capability can imply different designs depending on whether workers want delegation, partnership, validation, or continuous involvement.
 
+[[2025-yun-generative-ai-knowledge-work]] adds a knowledge-synthesis interface case. In Yodeai, collaboration was not just chat with an AI; it was a set of widgets, citations, visual summaries, pain-point clusters, source returns, and shareable outputs that let product managers move between AI-generated structure and accountable human judgment. The useful collaboration unit is therefore the evidence-navigation loop: how the user controls AI influence, checks source material, repurposes outputs for teammates, and brings external business context back into the decision.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify, integrate, and steward AI output rather than merely accept it.
@@ -40,6 +42,7 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 - Relates to [[automation-complacency]] because high-confidence AI advice can reduce the very human effort that makes collaboration valuable.
 - Relates to [[ai-induced-skill-erosion]] because collaboration that removes practice while preserving nominal accountability can quietly weaken the human side of the system.
 - Relates to [[employee-engagement]] because workers in decision-support settings described autonomy, motivation, learning, and valued task ownership as part of whether AI-supported work remained worth engaging in.
+- Relates to [[ai-supported-knowledge-synthesis]] because synthesis work makes collaboration visible as source navigation, verification, auditability, and stakeholder translation rather than only answer generation.
 
 ## Contradictions & open questions
 
@@ -53,3 +56,4 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 - [[2025-handa-economic-tasks-ai]] classifies usage from conversation traces, not from full work systems. The same interaction can look like automation inside the chat window and still depend on human scoping, verification, and accountability outside it.
 - [[2025-agarwal-what-work-ai-doing]] explains where people use AI, not how well they collaborate with it. The concentration of use in dynamic problem-solving tasks could indicate valuable cognitive offloading, but it could also mark places where humans are delegating the most consequential early framing work.
 - [[2025-shao-future-work-ai-agents]] measures desired agency, not actual collaboration quality. H3 dominance is evidence that equal partnership is attractive in many occupations, but it does not tell us which interfaces, feedback loops, or governance routines make partnership real rather than rhetorical.
+- [[2025-yun-generative-ai-knowledge-work]] is prototype-centered and qualitative. It shows what product managers valued in AI-mediated synthesis, but not whether these collaboration mechanisms improve long-run decision quality or team learning.

@@ -18,15 +18,19 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 
 [[2025-shao-future-work-ai-agents]] adds a preference-map for agency as a work-experience variable. Workers often wanted automation for low-value repetitive tasks, but many occupations preferred equal partnership or higher human involvement on the Human Agency Scale. That matters because AI-mediated work experience depends not only on whether a task is automated, but whether the worker sees the remaining human role as meaningful, controlled, and worth preserving.
 
+[[2025-yun-generative-ai-knowledge-work]] adds an information-work experience case. Product managers wanted AI help because scattered documents, repeated searching, stakeholder translation, and manual synthesis created friction, but they also needed autonomy over AI influence, confidence in source traces, and ways to preserve collaboration rather than becoming isolated with an agreeable tool. The worker experience is therefore shaped by whether AI reduces coordination burden while keeping users connected to evidence, peers, and accountable context.
+
 ## Connections
 - Relates to [[employee-engagement]] because AI-mediated work experience could easily become another broad dashboard construct unless its components and evidence claims stay sharp.
 - Relates to [[work-redesign]] because redesign choices determine whether AI preserves autonomy, skill use, feedback, learning, and meaningful control.
 - Relates to [[ai-induced-skill-erosion]] because longitudinal AI-mediated work can erode the capabilities and identity that initially made expert oversight valuable.
 - Relates to [[ai-adoption]] because sustained adoption depends on the structure and meaning of work, not only access, training, or encouragement.
 - Relates to [[ai-readiness]] because readiness includes knowledge, culture, upskilling, collaborative work, and change management — all partly experienced by workers as job resources or threats.
+- Relates to [[ai-supported-knowledge-synthesis]] because the experience of knowledge work depends on whether synthesis tools preserve agency, context, collaboration, and source contact.
 
 ## Contradictions & open questions
 - [[2026-reich-work-design-multidimensional-ai-threat]] is cross-sectional and self-reported. It is useful for construct mapping, but it cannot show whether autonomy and skill variety cause AI adoption or whether AI adopters perceive their jobs differently.
 - Deeper AI use is ambiguous. It may mean productive integration, work intensification, pressure to keep up, or loss of status depending on the threat dimension and job context.
 - The wiki now has stronger qualitative longitudinal evidence through [[2026-ehsan-future-workers]], but still needs behavioral and causal evidence on whether AI-mediated work improves or erodes autonomy, competence, relatedness, identity, workload, and learning over time.
 - [[2025-shao-future-work-ai-agents]] helps locate where agency mismatch may appear, but it does not observe downstream motivation, identity, learning, or well-being after agents enter real workflows.
+- [[2025-yun-generative-ai-knowledge-work]] is not a worker-outcomes study, so its evidence for experience is indirect: needs, worries, and interaction patterns around synthesis work rather than measured autonomy, competence, relatedness, workload, or well-being.

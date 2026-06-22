@@ -36,6 +36,7 @@ The central question:
 - [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
 - [[ai-mediated-work-experience]] — how AI changes autonomy, skill use, identity, workload, and felt job quality
 - [[ai-induced-skill-erosion]] — when AI-enabled productivity hides slower erosion of expertise, judgment, and professional identity
+- [[ai-supported-knowledge-synthesis]] — how AI helps or distorts evidence navigation, sensemaking, verification, and context-preserving decision work
 
 ## Open questions
 
@@ -52,6 +53,7 @@ Seed questions to grow topics around. Edit freely.
 - What does construct validity require in AI-mediated assessment and people analytics?
 - How does AI reshape job analysis and the definition of work itself, before HR systems are built on it?
 - When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement — construct validity and job-relatedness?
+- What design features make AI-supported knowledge synthesis improve judgment rather than simply making scattered evidence feel organized?
 
 ## Thin / missing areas
 
@@ -60,6 +62,7 @@ Seed questions to grow topics around. Edit freely.
 - **Foundational I-O constructs** remain mostly deferred to the triage-index shelf ("AI-relevant first, foundation later"), but [[competency-modeling]] has been promoted because it is directly adjacent to job analysis, skills architecture, and AI-era work redesign.
 - **Measurement of AI workforce impact** beyond productivity anecdotes — still thin, but [[task-level-ai-adoption]] now gives the wiki a home for observed-use maps that sit between exposure indices and organizational outcome evidence.
 - **Worker-desired agency in AI-agent work** is now represented through [[2025-shao-future-work-ai-agents]], but still needs live implementation evidence on whether agency matching improves adoption, performance, motivation, or trust.
+- **AI-supported knowledge synthesis** has been promoted into [[ai-supported-knowledge-synthesis]] through [[2025-yun-generative-ai-knowledge-work]], but the wiki still needs field evidence on whether synthesis interfaces improve decision quality, learning, and team alignment over time.
 
 ## Candidate topics (watchlist)
 

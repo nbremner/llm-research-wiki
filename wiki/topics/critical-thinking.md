@@ -18,6 +18,8 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 
 [[2026-ehsan-future-workers]] adds a longitudinal expert-work version: if AI-supported workflows reduce the need to exercise intuition and manual judgment, critical thinking may not just shift location but atrophy through non-use.
 
+[[2025-yun-generative-ai-knowledge-work]] sharpens the verification side of critical thinking in AI-supported synthesis. Product managers in the Yodeai study wanted AI to cluster, summarize, and prioritize unstructured evidence, but they also returned to raw interviews, reviews, citations, company context, and stakeholder judgment because they did not treat AI output as decision authority. Critical thinking here is not an abstract disposition; it is designed into source visibility, cross-verification, audit trails, and the ability to compare AI outputs against the underlying data.
+
 ## Connections
 
 - Relates to [[ai-adoption]] because adoption quality depends on whether users retain enough judgment to evaluate, adapt, and steward AI outputs rather than merely use the tool more often.
@@ -25,9 +27,11 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 - Relates to [[ai-induced-skill-erosion]] because judgment exercised less often may become judgment held less securely.
 - Relates to [[evidence-based-management]] because self-reported reductions in cognitive effort should not be treated as direct evidence of long-term skill atrophy without stronger longitudinal or behavioral measures.
 - Relates to [[construct-validity]] because “critical thinking” is itself hard to observe; output diversity, self-report, and task performance capture different parts of the construct.
+- Relates to [[ai-supported-knowledge-synthesis]] because synthesis tools can either scaffold verification and comparison or make generated structure feel more authoritative than the evidence warrants.
 
 ## Contradictions & open questions
 
 - [[2025-lee-generative-ai-critical-thinking]] is cross-sectional and self-reported. It shows perceived shifts in effort and judgment, not causal evidence that GenAI degrades critical thinking over time.
 - Less effort is ambiguous. It may indicate productive cognitive offloading, underinvestment in judgment, or both depending on task stakes and user expertise. [[2022-dellacqua-falling-asleep-at-wheel]] sharpens that ambiguity: less effort can improve performance when AI is truly perfect, but harm learning or oversight when AI is merely good.
 - [[2025-shukla-ai-assisted-design-ironies]] is not longitudinal evidence of skill loss. It identifies a plausible de-skilling mechanism from practitioner discourse and automation theory, but the causal claim still needs behavioral and longitudinal evidence.
+- [[2025-yun-generative-ai-knowledge-work]] makes verification needs vivid, but it does not measure whether audit trails, citations, or multiple visualizations actually increase critical-thinking behavior or merely make users feel safer.
