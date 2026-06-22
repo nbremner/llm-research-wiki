@@ -1,7 +1,7 @@
 ---
 title: Evidence-based management
 status: active
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # Evidence-based management
@@ -22,6 +22,8 @@ This is directly relevant to AI workforce transformation. Claims about AI adopti
 
 [[2008-icf-competency-modeling-job-analysis]] adds a method-fit warning: job analysis, strategic job analysis, cognitive task analysis, personality-oriented job analysis, and competency modeling answer different evidence needs. Evidence-based HR should not ask which method is best in general; it should ask whether the method fits the decision, specificity level, legal risk, time horizon, and unit of analysis.
 
+[[2009-sanchez-levine-competency-modeling-job-analysis]] adds a use-case warning: the same competency model can be evidence-relevant for strategy communication and weak evidence for selection or assessment. Evidence-based management has to ask what decision the model is supporting before deciding what rigor, specificity, and validation evidence are required.
+
 ## Connections
 
 - Relates to [[construct-validity]] because evidence quality depends on whether the measured construct is coherent enough to interpret.
@@ -41,3 +43,4 @@ This is directly relevant to AI workforce transformation. Claims about AI adopti
 - For algorithmic hiring claims, the open question is often not whether evidence exists, but what kind: predictive validity, construct validity, bias-audit metrics, applicant reactions, legal compliance, implementation fidelity, and business utility answer different questions.
 - [[2022-strah-diversity-issues-job-analysis]] raises an evidence paradox: job analysis is often used as the fairness foundation for HR systems, but the inclusiveness of the job analysis may itself be an untested assumption rather than established evidence.
 - [[2008-icf-competency-modeling-job-analysis]] suggests that strategic flexibility and evidentiary rigor can pull in different directions: broad competency models travel across jobs, but job-specific decisions often require more specific and reliable evidence.
+- [[2009-sanchez-levine-competency-modeling-job-analysis]] offers a bridge but not a full solution: use competency modeling to signal strategic behavior, then use job-analysis methods to derive behavioral indicators in specific jobs or job families. The open question is how much evidence is enough when the competency is partly strategic, partly behavioral, and partly measurement-facing.

@@ -1,7 +1,7 @@
 ---
 title: Job analysis
 status: active
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # Job analysis
@@ -16,10 +16,13 @@ For AI workforce transformation, job analysis matters because claims about autom
 
 [[2008-icf-competency-modeling-job-analysis]] adds the competency-modeling boundary. It distinguishes task-oriented job analysis, worker-oriented job analysis, bottom-up competency modeling, and top-down organizational competency models. The useful distinction is not “job analysis versus competencies” in the abstract; it is whether the method is defining current tasks, future tasks, job-level KSAOs, cross-job competencies, or organization-level strategic capabilities.
 
+[[2009-sanchez-levine-competency-modeling-job-analysis]] adds a purpose boundary. Traditional job analysis is strongest when the task is to describe current or past work, document job-relevant KSAOs, and support defensible HR decisions. It becomes weaker when leaders need to signal future-oriented strategic behavior across roles; that is where competency modeling can supplement job analysis, provided the broad themes are later translated into job-family behavioral indicators.
+
 ## Connections
 
 - Relates to [[construct-validity]] because construct validity begins before measurement: the job and criterion domain have to be defined coherently and inclusively before predictors can be validated against them.
 - Relates to [[competency-modeling]] because competency models can either be rigorous job-level KSAO maps or broader strategic/cultural models that require different evidence standards.
+- Relates to [[competency-modeling]] because competency modeling can supply strategic direction that job analysis does not, while job analysis supplies the behavioral specificity and job-relatedness logic that broad competencies often lack.
 - Relates to [[algorithmic-assessment]] because algorithmic hiring and assessment tools inherit their target definitions from upstream work analysis; model validity cannot repair a deficient job definition.
 - Relates to [[work-redesign]] because AI-mediated roles require renewed analysis of tasks, KSAOs, work contexts, and human-agent workflow boundaries.
 - Relates to [[inclusive-hr-systems]] because job analysis is one mechanism by which inclusion either enters or fails to enter recruitment, selection, performance management, promotion, and compensation.
@@ -31,3 +34,4 @@ For AI workforce transformation, job analysis matters because claims about autom
 - The field has long treated SME disagreement as possible error or unreliability. A central open question is when disagreement reflects noise versus real subgroup differences in task exposure, expectations, constraints, or ways of performing the work.
 - AI-era work redesign raises a timing problem: job analysis can document current work, but agentic workflows may change tasks faster than traditional job-analysis cycles can update them.
 - [[2008-icf-competency-modeling-job-analysis]] complicates the legal-defensibility instinct: strategic job analysis and competency modeling may be better suited to future work, but they may also be less empirically settled or less specific than traditional task analysis.
+- [[2009-sanchez-levine-competency-modeling-job-analysis]] complicates the incumbent-data default: if future role enactment is the target, incumbents may not be the right primary source, but leader-defined strategic competencies still need work-analysis methods before they become assessment or selection criteria.

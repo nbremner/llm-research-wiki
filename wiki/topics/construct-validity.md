@@ -1,7 +1,7 @@
 ---
 title: Construct validity
 status: active
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # Construct validity
@@ -20,6 +20,8 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 
 [[2008-icf-competency-modeling-job-analysis]] adds a label-boundary problem. “Competency” can mean job-level KSAO, observable behavior, personality-like attribute, motive, cultural value, or organization-level capability. That flexibility is part of why competency modeling travels well in HR practice, but it also creates construct-validity risk when competency labels are used for selection, assessment, or performance decisions without enough task evidence, rater reliability, and job-relevance logic.
 
+[[2009-sanchez-levine-competency-modeling-job-analysis]] gives a partial defense of loose competency language: if the goal is strategic signaling and behavior influence, a competency label may be intentionally broader than a clean latent trait. Construct-validity trouble begins when that strategic signal is treated as if it were already a bounded psychological attribute or job-specific KSAO.
+
 ## Connections
 
 - Relates to [[employee-engagement]] as a cautionary case of loose construct boundaries.
@@ -37,3 +39,4 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - [[2026-tomei-what-jobs-can-ai-learn]] improves the exposure construct but still relies on LLM-based annotations. The next validation question is whether RL feasibility predicts observed deployment and labor-market change better than existing exposure measures.
 - [[2022-strah-diversity-issues-job-analysis]] complicates the usual “job-relatedness” safeguard: a procedure can be tied to a documented job analysis and still be unfairly narrow if the job analysis failed to capture diverse ways of performing the work.
 - [[2008-icf-competency-modeling-job-analysis]] shows that competency modeling can improve strategic fit while weakening construct precision if broad organizational competencies are treated as if they were job-specific KSAOs.
+- [[2009-sanchez-levine-competency-modeling-job-analysis]] suggests a two-standard problem: the construct can be rhetorically useful for strategy communication while still inadequate for measurement-heavy HR decisions unless translated into observable, job-family-specific behavioral indicators.

@@ -42,6 +42,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2025-kellogg-novice-risk-work]] adds a risk-mitigation design layer. Junior consultants often recommended human-routine or project-level fixes for GenAI risks, while expert recommendations included system design, deployer controls, and ecosystem interventions. For redesign, that means local training and checking routines may be necessary but insufficient when the risk source sits in model behavior, interface design, deployment governance, or data/ecosystem conditions.
 
+[[2009-sanchez-levine-competency-modeling-job-analysis]] is a pre-AI reminder that redesign is not only task description. Its distinction between a job as an object to be described and a role to be enacted matters for AI-era work: new workflows need task evidence, but they also need signals about how people should interpret discretion, strategy, accountability, and contextual performance inside redesigned roles.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -53,6 +55,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[ai-supported-knowledge-synthesis]] because knowledge-synthesis tools redesign how raw evidence, AI-generated summaries, stakeholder context, and final decisions move through the workflow.
 - Connects to [[human-ai-task-taxonomy]] because redesign needs a task-classification language before tasks can be delegated, protected, audited, or recombined.
 - Connects to [[novice-risk-work]] because novice users may misplace redesign responsibility at the individual or project level when system-level intervention is needed.
+- Connects to [[competency-modeling]] because role-redesign claims often need a language for desired behavior, not only a decomposition of existing tasks.
 
 ## Contradictions & open questions
 
@@ -71,3 +74,4 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2025-shao-future-work-ai-agents]] is an audit of preferences and expert capability, not an implementation study. It helps identify where redesign friction is likely, but it does not prove that matching worker-desired agency levels produces better adoption, performance, or experience.
 - [[2025-yun-generative-ai-knowledge-work]] studies short-term prototype interaction in product-management tasks. Its redesign lessons are strong for interface and workflow requirements, but weak as evidence about durable organizational redesign or productivity gains.
 - [[2025-kellogg-novice-risk-work]] is interview-based and compares novice recommendations to expert literature, not implemented redesign interventions. It is strongest as a warning about misplaced mitigation levels, not as direct evidence that any specific deployer-level control improves outcomes.
+- [[2009-sanchez-levine-competency-modeling-job-analysis]] predates AI and should not be treated as evidence about agentic workflows. Its value is conceptual: it warns that redesign grounded only in current task description may miss the strategic and behavioral signals needed for role enactment.
