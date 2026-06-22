@@ -1,7 +1,7 @@
 ---
 title: AI adoption
 status: active
-updated: 2026-06-21
+updated: 2026-06-22
 ---
 
 # AI adoption
@@ -36,6 +36,8 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 
 [[2025-kellogg-novice-risk-work]] adds a reverse-mentoring failure mode. In interviews with 78 junior consultants after GPT-4 task use, juniors expected to educate seniors but often proposed risk mitigations grounded in limited GenAI understanding, human-routine changes, and project-level interventions. That makes adoption quality depend not only on bottom-up energy or tool exposure, but on whether early users know which risks require system design, deployer controls, or ecosystem-level governance.
 
+[[2026-almog-barriers-ai-adoption]] adds an evaluative-visibility constraint. In a field experiment with 450 U.S.-based online labor-market workers, making AI reliance visible to an HR evaluator reduced AI recommendation following and lowered final accuracy, even when evaluators were instructed to assess expected accuracy on the same AI-assisted task. Adoption can therefore fail because workers fear what AI use signals about their judgment, not because they lack access, use cases, literacy, or evidence that the AI helps.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and organizational-cognition lens on adoption, not just an IT-diffusion one.
@@ -43,6 +45,7 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 - If worker-centered fit is the bottleneck, adoption interventions have to make workers visible before full deployment: pilot testing, feedback sessions, task-fit diagnosis, explanation design, and worker control over outputs that affect accountable decisions.
 - If job design is the bottleneck, adoption work has to change the opportunity structure of jobs — autonomy, skill variety, feedback, and workload — not just raise awareness or reduce anxiety.
 - If novice risk work is the bottleneck, adoption programs need to support bottom-up learning without mistaking novice fluency for calibrated governance expertise.
+- If image concerns are the bottleneck, adoption programs need to change evaluation norms and visibility structures, not just persuade workers that AI is useful.
 - [[task-level-ai-adoption]] should stay analytically separate from organizational adoption: conversation traces reveal where AI is being tried, but not whether the work has been redesigned, governed, or connected to outcomes.
 
 ## Contradictions & open questions
@@ -61,3 +64,4 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 - **Attitude vs. opportunity structure.** [[2026-reich-work-design-multidimensional-ai-threat]] suggests AI adoption may depend more on skill variety and autonomy than on undifferentiated AI threat. That complicates adoption programs built mainly around persuasion, communication, or training.
 - **Literacy vs. receptivity.** [[2025-tully-ai-literacy-receptivity]] suggests [[ai-literacy]] and [[ai-receptivity]] should be modeled as separate constructs: knowing more about AI can reduce some forms of willingness to use it when lower literacy makes AI feel magical or awe-inspiring. That creates a tension between adoption programs that want more AI use and governance programs that want better-calibrated use.
 - **Reverse mentoring vs. risk governance.** [[2025-kellogg-novice-risk-work]] suggests junior or novice AI users may help seniors experiment while still recommending underpowered mitigation tactics. Adoption systems need evidence on when peer teaching is enough and when deployer-level scaffolding is required.
+- **Private usefulness vs. public signal.** [[2026-almog-barriers-ai-adoption]] shows workers may privately benefit from AI recommendations but publicly avoid them when reliance is visible to evaluators. That creates a design tension between making AI use transparent for accountability and making it safe enough that workers do not hide useful reliance.

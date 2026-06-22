@@ -16,6 +16,8 @@ Task-level AI adoption asks where workers actually bring AI into the work, befor
 
 The useful design implication is that adoption is not simply moving from routine work upward into knowledge work. Current conversational GenAI use appears especially attractive for high-friction cognitive starts: idea generation, information processing, originality, synthesis, and dynamic problem solving. Standardized operational tasks show less conversational use, which may mean they are already automated elsewhere, better suited to API/workflow automation than chat interaction, or less compelling for current LLMs.
 
+[[2026-almog-barriers-ai-adoption]] adds a live-task behavioral counterpoint to large-scale conversation traces. In an AI-assisted image-categorization task, workers used AI less when reliance was visible to an evaluator, despite lower final accuracy. Task-level adoption is therefore not only a function of task characteristics or technical fit; it can be suppressed by whether the use event is socially visible and evaluatively meaningful.
+
 ## Connections
 - Connects to [[ai-adoption]] because task-level usage is an input to the mapping problem: organizations need to know which task patterns actually invite AI use before they can turn experimentation into durable adoption.
 - Connects to [[work-redesign]] because observed use identifies pressure points, not finished designs. The redesign question is how those task clusters get reallocated, governed, verified, and recombined.
@@ -27,3 +29,4 @@ The useful design implication is that adoption is not simply moving from routine
 - Observed use is not organizational adoption. Both sources see what people do in Claude conversations, not whether the work system changed around those conversations or whether output quality, accountability, learning, and downstream performance improved.
 - Worker desire is not realized adoption either. [[2025-shao-future-work-ai-agents]] adds a needed demand-side measure, but preferences from structured interviews do not show whether workers would use agents in live workflow conditions, whether quality improves, or whether organizations redesign work around those preferences.
 - Social intelligence is a live boundary condition. [[2025-agarwal-what-work-ai-doing]] finds it statistically decoupled from usage, but that may reflect what users currently ask chat-based tools to do rather than what AI can or should do in relational work.
+- Visibility changes the adoption map. [[2026-almog-barriers-ai-adoption]] suggests the same AI-assisted task can show different use rates depending on whether reliance is private or attached to evaluation, so observed-use data may understate latent usefulness where workers expect reputational penalties.

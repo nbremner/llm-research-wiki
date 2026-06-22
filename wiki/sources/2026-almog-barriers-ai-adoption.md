@@ -33,3 +33,4 @@ file_hash: 26aec22f6783ce1255356efb0b5e4f727bc24313ce3dc60dd811977842e400b1
 - [[task-level-ai-adoption]]
 - [[human-ai-collaboration]]
 - [[ai-receptivity]]
+- [[ai-use-image-concerns]]

@@ -38,6 +38,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2026-lepine-precision-proactivity]] adds a load-sensitive collaboration mechanism. In financial professionals' GPT-4o-assisted valuation work, AI-generated content helped quality, but model-initiated task switching and information sprawl increased extraneous load and undermined performance. Good collaboration therefore is not simply more AI initiative; it is initiative timed and structured so the human does not spend scarce cognitive capacity repairing the interaction.
 
+[[2026-almog-barriers-ai-adoption]] adds a social-evaluative collaboration constraint. In image-categorization work, workers followed useful AI recommendations less when reliance was visible to an HR evaluator, and performance fell. Human-AI collaboration can therefore fail not because the human cannot calibrate to the AI, but because following the AI threatens the worker's image as someone with confident independent judgment.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify, integrate, and steward AI output rather than merely accept it.
@@ -49,6 +51,7 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis work makes collaboration visible as source navigation, verification, auditability, and stakeholder translation rather than only answer generation.
 - Relates to [[human-ai-task-taxonomy]] because collaboration claims need dimensional task detail: authority, auditability, output definition, AI structure, and the relevant human persona.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because collaboration quality depends on the cognitive cost of keeping the human and AI aligned across turns.
+- Relates to [[ai-use-image-concerns]] because useful delegation can be behaviorally suppressed when visible reliance on AI threatens professional image or evaluator judgments.
 
 ## Contradictions & open questions
 

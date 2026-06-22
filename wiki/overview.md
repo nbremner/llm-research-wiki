@@ -41,6 +41,7 @@ The central question:
 - [[ai-supported-knowledge-synthesis]] — how AI helps or distorts evidence navigation, sensemaking, verification, and context-preserving decision work
 - [[ai-literacy]] — what people understand about AI systems, their limits, and the conditions for calibrated use
 - [[ai-receptivity]] — willingness, preference, or readiness to use AI, separated from whether that willingness is well-calibrated
+- [[ai-use-image-concerns]] — when visible AI reliance changes how workers expect to be judged, suppressing useful adoption even when AI improves task performance
 - [[novice-risk-work]] — when novice AI users try to mitigate risks for senior/accountable actors without yet having enough technical or governance understanding
 
 ## Open questions
@@ -59,6 +60,7 @@ Seed questions to grow topics around. Edit freely.
 - When does improving AI quality reduce human effort enough that system performance, learning, or oversight suffers?
 - When does proactive AI assistance reduce task burden versus adding extraneous cognitive load through task switching, information sprawl, or repair work?
 - What does construct validity require in AI-mediated assessment and people analytics?
+- When does visible AI reliance signal weak judgment, adaptability, compliance, or professionalism — and how should organizations design evaluation systems around that signal?
 - How does AI reshape job analysis and the definition of work itself, before HR systems are built on it?
 - When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement — construct validity and job-relatedness?
 - What design features make AI-supported knowledge synthesis improve judgment rather than simply making scattered evidence feel organized?
@@ -74,6 +76,7 @@ Seed questions to grow topics around. Edit freely.
 - **AI-supported knowledge synthesis** has been promoted into [[ai-supported-knowledge-synthesis]] through [[2025-yun-generative-ai-knowledge-work]], but the wiki still needs field evidence on whether synthesis interfaces improve decision quality, learning, and team alignment over time.
 - **AI-mediated learning and cognitive debt** is now represented through [[2025-kosmyna-brain-chatgpt-cognitive-debt]] under [[ai-induced-skill-erosion]], [[automation-complacency]], and [[critical-thinking]], but the wiki is thin on whether educational cognitive-debt findings generalize to workplace expertise, onboarding, and professional development.
 - **Cognitive load in AI-assisted work** has been promoted into [[cognitive-load-in-ai-assisted-work]] through [[2026-lepine-precision-proactivity]], but the wiki still needs validated load measures across other domains and evidence on which interface interventions reduce extraneous load without suppressing useful AI help.
+- **AI-use image concerns** has been promoted into [[ai-use-image-concerns]] through [[2026-almog-barriers-ai-adoption]], but the wiki still needs field evidence from richer professional work and organizational designs that change whether AI use is read as good judgment, weak judgment, or compliance.
 - **Novice risk work / reverse mentoring for AI** has been promoted into [[novice-risk-work]] through [[2025-kellogg-novice-risk-work]], but the wiki still needs evidence on which literacy, governance, and deployer-level supports let novice users teach seniors without over-relying on project-level routine changes.
 
 ## Candidate topics (watchlist)
