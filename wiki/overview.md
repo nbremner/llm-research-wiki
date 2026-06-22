@@ -43,6 +43,7 @@ The central question:
 - [[ai-receptivity]] — willingness, preference, or readiness to use AI, separated from whether that willingness is well-calibrated
 - [[ai-use-image-concerns]] — when visible AI reliance changes how workers expect to be judged, suppressing useful adoption even when AI improves task performance
 - [[novice-risk-work]] — when novice AI users try to mitigate risks for senior/accountable actors without yet having enough technical or governance understanding
+- [[agentic-delegation]] — when people hand execution authority to AI agents rather than only receiving advice, and how that changes adoption, accountability, and interdependent outcomes
 
 ## Open questions
 
@@ -61,6 +62,7 @@ Seed questions to grow topics around. Edit freely.
 - When does proactive AI assistance reduce task burden versus adding extraneous cognitive load through task switching, information sprawl, or repair work?
 - What does construct validity require in AI-mediated assessment and people analytics?
 - When does visible AI reliance signal weak judgment, adaptability, compliance, or professionalism — and how should organizations design evaluation systems around that signal?
+- When should humans delegate execution authority to an AI agent rather than seek advice or coaching, and how does one actor's delegation change the incentives and outcomes of others in the same work system?
 - How does AI reshape job analysis and the definition of work itself, before HR systems are built on it?
 - When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement — construct validity and job-relatedness?
 - What design features make AI-supported knowledge synthesis improve judgment rather than simply making scattered evidence feel organized?
@@ -78,6 +80,7 @@ Seed questions to grow topics around. Edit freely.
 - **Cognitive load in AI-assisted work** has been promoted into [[cognitive-load-in-ai-assisted-work]] through [[2026-lepine-precision-proactivity]], but the wiki still needs validated load measures across other domains and evidence on which interface interventions reduce extraneous load without suppressing useful AI help.
 - **AI-use image concerns** has been promoted into [[ai-use-image-concerns]] through [[2026-almog-barriers-ai-adoption]], but the wiki still needs field evidence from richer professional work and organizational designs that change whether AI use is read as good judgment, weak judgment, or compliance.
 - **Novice risk work / reverse mentoring for AI** has been promoted into [[novice-risk-work]] through [[2025-kellogg-novice-risk-work]], but the wiki still needs evidence on which literacy, governance, and deployer-level supports let novice users teach seniors without over-relying on project-level routine changes.
+- **Agentic delegation** has been promoted into [[agentic-delegation]] through [[2026-zhu-choose-your-agent]], but the wiki still needs field evidence on when autonomous execution improves team or organizational outcomes once delegation is visible, governed, and tied to real accountability.
 
 ## Candidate topics (watchlist)
 
@@ -87,3 +90,7 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **applicant reactions & perceived fairness** of algorithmic assessment — appears under [[algorithmic-assessment]]; candidate for its own page.
 - **human-agency-scale / worker-desired agency** — appears in [[2025-shao-future-work-ai-agents]]; candidate if more sources use agency levels as an audit or design construct rather than only a preference measure.
 - **ai-mediated-learning / cognitive-debt** — appears in [[2025-kosmyna-brain-chatgpt-cognitive-debt]]; candidate if more sources study how AI assistance affects learning, memory, practice, and expertise development rather than only immediate task performance.
+- **ai-advice-taking / recommendation-following** — appears across decision-support and adoption sources, including [[2022-dellacqua-falling-asleep-at-wheel]], [[2025-brynjolfsson-generative-ai-at-work]], [[2026-almog-barriers-ai-adoption]], and the Advisor condition in [[2026-zhu-choose-your-agent]]; promote if the wiki needs a peer topic for recommendation acceptance, revision, rejection, and reliance.
+- **ai-stewardship / human verification** — appears in [[2025-lee-generative-ai-critical-thinking]], [[2026-lee-making-invisible-visible]], [[2025-yun-generative-ai-knowledge-work]], and [[2025-mazeika-remote-labor-index]]; promote if stewardship becomes a recurring account of the human role after AI produces or acts.
+- **ai-coaching-and-feedback** — appears in the Coach condition in [[2026-zhu-choose-your-agent]] and may connect to critique, learning, and cognitive-forcing designs; defer until there is another clean source beyond Zhu.
+- **ai-proactivity** — appears in [[2026-lepine-precision-proactivity]] and the proactive Advisor design in [[2026-zhu-choose-your-agent]]; promote if future sources distinguish initiative timing from execution authority.

@@ -14,6 +14,8 @@ AI receptivity is the willingness, preference, or readiness to use AI products, 
 
 That distinction matters for AI adoption. High receptivity is not automatically good, and low visible use is not automatically technical resistance. Receptivity may indicate openness to useful experimentation, anthropomorphic over-trust, poor calibration, consumer-facing appeal built on mystification, or fear that AI use will be read as weak judgment. Adoption work therefore needs to ask not only whether people are receptive, but why and under whose gaze.
 
+[[2026-zhu-choose-your-agent]] adds a control-preference case. Participants preferred the Advisor modality even though Delegate access produced stronger welfare results in the bargaining game. Receptivity can therefore favor interfaces that preserve agency, veto power, or a felt sense of authorship, even when a more autonomous mode produces better objective outcomes in the studied environment.
+
 ## Connections
 - Relates to [[ai-adoption]] because receptivity can precede trial, usage, and organizational adoption, but does not by itself show durable work-system change.
 - Relates to [[human-ai-collaboration]] because willingness to involve AI does not guarantee calibrated delegation, verification, or accountability.

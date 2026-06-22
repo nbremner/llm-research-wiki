@@ -14,6 +14,8 @@ The chapter’s derived frameworks make the taxonomy more usable. The AI Functio
 
 The useful move for this wiki is not to adopt the tensor as final truth. It is to use it as a diagnostic checklist when evaluating AI-work evidence: what task is being studied, what output is being judged, where authority sits, what kind of audit is possible, and whether the human role is defined by expertise, preference, vulnerability, or some other relevant persona.
 
+[[2026-zhu-choose-your-agent]] gives an empirical reason to keep authority and interaction modality separate. Advisor, Coach, and Delegate all used the same underlying model capability, but changed whether humans received recommendations, received feedback after proposing an action, or ceded execution authority. Those distinctions produced different adoption, preference, and welfare patterns, so they should not be collapsed into a single "AI assistance" condition.
+
 ## Connections
 - Connects to [[work-redesign]] because task taxonomy is the upstream language for deciding which workflow nodes can be delegated, constrained, audited, or protected.
 - Connects to [[human-ai-collaboration]] because collaboration quality depends on authority, auditability, output definition, and the human persona in the task, not just whether a human and AI are both present.

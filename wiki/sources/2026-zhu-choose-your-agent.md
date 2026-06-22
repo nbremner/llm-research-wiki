@@ -31,6 +31,7 @@ file_hash: ee6db8988626a16a06570d2b36d0ece7b043bc1b4209b110c94d5dfcad43f8ea
 - The placeholder ACM DOI in the PDF is not real provenance; the durable public record is the stable arXiv page and arXiv DOI.
 
 ## Feeds
+- [[agentic-delegation]]
 - [[human-ai-collaboration]]
 - [[ai-adoption]]
 - [[ai-receptivity]]

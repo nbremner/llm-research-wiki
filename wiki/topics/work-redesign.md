@@ -42,6 +42,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2025-kellogg-novice-risk-work]] adds a risk-mitigation design layer. Junior consultants often recommended human-routine or project-level fixes for GenAI risks, while expert recommendations included system design, deployer controls, and ecosystem interventions. For redesign, that means local training and checking routines may be necessary but insufficient when the risk source sits in model behavior, interface design, deployment governance, or data/ecosystem conditions.
 
+[[2026-zhu-choose-your-agent]] adds an interdependence constraint to redesign. In the bargaining experiment, Delegate access changed not only the user's action but the trading environment faced by others, creating possible spillovers for non-users. In redesigned work, agentic delegation should therefore be treated as a mechanism design problem: who can delegate, what the agent can execute, who bears accountability, and how one person's delegation changes everyone else's workflow.
+
 [[2009-sanchez-levine-competency-modeling-job-analysis]] is a pre-AI reminder that redesign is not only task description. Its distinction between a job as an object to be described and a role to be enacted matters for AI-era work: new workflows need task evidence, but they also need signals about how people should interpret discretion, strategy, accountability, and contextual performance inside redesigned roles.
 
 ## Connections

@@ -40,6 +40,10 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2026-almog-barriers-ai-adoption]] adds a social-evaluative collaboration constraint. In image-categorization work, workers followed useful AI recommendations less when reliance was visible to an HR evaluator, and performance fell. Human-AI collaboration can therefore fail not because the human cannot calibrate to the AI, but because following the AI threatens the worker's image as someone with confident independent judgment.
 
+[[2026-zhu-choose-your-agent]] moves collaboration from advice-following into authority allocation. In three-person bargaining games, participants preferred the Advisor interface because it preserved control, but groups achieved the strongest welfare gains under Delegate access, where the AI autonomously executed actions. Collaboration quality therefore depends not only on explanation, review, or final human authority; in interdependent settings, letting an agent act can change the whole offer environment and create spillovers for non-users.
+
+A collaboration typology is starting to emerge across the corpus. The broad page should not treat "human-AI collaboration" as one condition: advice-taking, coaching/feedback, stewardship, co-production, AI proactivity, and [[agentic-delegation]] differ by initiative, execution authority, review burden, and accountability. The current wiki has enough evidence to break out delegation now and enough signal to watch advice-taking, stewardship, coaching, and proactivity as possible future peer topics.
+
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify, integrate, and steward AI output rather than merely accept it.

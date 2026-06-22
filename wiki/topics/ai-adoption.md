@@ -38,6 +38,8 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 
 [[2026-almog-barriers-ai-adoption]] adds an evaluative-visibility constraint. In a field experiment with 450 U.S.-based online labor-market workers, making AI reliance visible to an HR evaluator reduced AI recommendation following and lowered final accuracy, even when evaluators were instructed to assess expected accuracy on the same AI-assisted task. Adoption can therefore fail because workers fear what AI use signals about their judgment, not because they lack access, use cases, literacy, or evidence that the AI helps.
 
+[[2026-zhu-choose-your-agent]] adds an agentic-delegation version of the adoption problem. Participants preferred the more controllable Advisor mode, while Delegate access produced the strongest group-welfare gains and possible spillovers to non-users. Adoption quality therefore depends on whether the interaction mode is adoption-compatible: a technically superior delegate can fail to improve outcomes if users avoid it, distrust it, or prefer low-effort agency over autonomous execution.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and organizational-cognition lens on adoption, not just an IT-diffusion one.
