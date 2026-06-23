@@ -46,6 +46,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2009-sanchez-levine-competency-modeling-job-analysis]] is a pre-AI reminder that redesign is not only task description. Its distinction between a job as an object to be described and a role to be enacted matters for AI-era work: new workflows need task evidence, but they also need signals about how people should interpret discretion, strategy, accountability, and contextual performance inside redesigned roles.
 
+[[2026-wang-agent-development-real-world-work]] adds a benchmark-validity constraint to redesign. If agent evaluations are concentrated in programming-heavy, easily verified domains, then benchmark progress should not be treated as evidence that agents are ready for management, legal, interpersonal, or other work where objectives, verification, and accountability are less clean. Redesign has to ask whether the evaluation sample resembles the work node being delegated.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -58,6 +60,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[human-ai-task-taxonomy]] because redesign needs a task-classification language before tasks can be delegated, protected, audited, or recombined.
 - Connects to [[novice-risk-work]] because novice users may misplace redesign responsibility at the individual or project level when system-level intervention is needed.
 - Connects to [[competency-modeling]] because role-redesign claims often need a language for desired behavior, not only a decomposition of existing tasks.
+- Connects to [[ai-agent-benchmark-validity]] because redesign decisions built from agent scores need evidence that the benchmark actually represents the targeted work.
 
 ## Contradictions & open questions
 
@@ -77,3 +80,4 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2025-yun-generative-ai-knowledge-work]] studies short-term prototype interaction in product-management tasks. Its redesign lessons are strong for interface and workflow requirements, but weak as evidence about durable organizational redesign or productivity gains.
 - [[2025-kellogg-novice-risk-work]] is interview-based and compares novice recommendations to expert literature, not implemented redesign interventions. It is strongest as a warning about misplaced mitigation levels, not as direct evidence that any specific deployer-level control improves outcomes.
 - [[2009-sanchez-levine-competency-modeling-job-analysis]] predates AI and should not be treated as evidence about agentic workflows. Its value is conceptual: it warns that redesign grounded only in current task description may miss the strategic and behavioral signals needed for role enactment.
+- [[2026-wang-agent-development-real-world-work]] is benchmark evidence, not implementation evidence. It can say where evaluations are misaligned with work, but not whether a redesigned workflow will produce better performance, motivation, learning, or accountability.

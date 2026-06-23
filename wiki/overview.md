@@ -45,6 +45,7 @@ The central question:
 - [[ai-use-image-concerns]] — when visible AI reliance changes how workers expect to be judged, suppressing useful adoption even when AI improves task performance
 - [[novice-risk-work]] — when novice AI users try to mitigate risks for senior/accountable actors without yet having enough technical or governance understanding
 - [[agentic-delegation]] — when people hand execution authority to AI agents rather than only receiving advice, and how that changes adoption, accountability, and interdependent outcomes
+- [[ai-agent-benchmark-validity]] — whether agent benchmarks measure work-relevant capability rather than convenient task performance
 
 ## Open questions
 
@@ -83,6 +84,7 @@ Seed questions to grow topics around. Edit freely.
 - **Novice risk work / reverse mentoring for AI** has been promoted into [[novice-risk-work]] through [[2025-kellogg-novice-risk-work]], but the wiki still needs evidence on which literacy, governance, and deployer-level supports let novice users teach seniors without over-relying on project-level routine changes.
 - **Agentic delegation** has been promoted into [[agentic-delegation]] through [[2026-zhu-choose-your-agent]], but the wiki still needs field evidence on when autonomous execution improves team or organizational outcomes once delegation is visible, governed, and tied to real accountability.
 - **Human-AI task allocation** is proposed for promotion through [[2026-zhang-fatigue-aware-learning-defer]], but the wiki still needs field evidence on allocation policies that use real human-state signals such as fatigue, workload, skill, confidence, or accountability rather than simulated benchmark states.
+- **Agent benchmark validity** has been promoted into [[ai-agent-benchmark-validity]] through [[2026-wang-agent-development-real-world-work]], but the wiki still needs field evidence that more representative benchmarks lead to better deployment, redesign, or governance decisions.
 
 ## Candidate topics (watchlist)
 

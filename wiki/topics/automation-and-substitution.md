@@ -27,6 +27,8 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 
 [[2026-zhang-fatigue-aware-learning-defer]] adds a fatigue-aware routing case. In learning-to-defer, substitution is not a fixed property of the task: a system may route a hard case to a human when the expert is fresh and to AI later when accumulated workload predicts degraded human performance. That makes substitution contingent on human state and task sequence, not just AI capability.
 
+[[2026-wang-agent-development-real-world-work]] adds a benchmark-representativeness warning. If agent benchmarks overrepresent programming-heavy, easily specified, and easily verified tasks, then rising benchmark performance is weak evidence for broad labor substitution until the evaluated tasks resemble the domains, skills, complexity, and verification conditions of real work.
+
 ## Contradictions & open questions
 
 - **Replacement vs. protected human judgment.** Automation can reduce dependence on some human task execution while increasing the importance of human accountability at specific nodes. The wiki needs empirical sources on whether organizations can actually identify and govern these nodes reliably.
@@ -43,3 +45,4 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 - **Capability vs. consent-to-automate.** [[2025-shao-future-work-ai-agents]] separates tasks that AI experts believe agents can automate from tasks workers want agents to automate. The Automation Red Light zone matters because labor substitution can be technically plausible while still violating worker preferences, agency, trust, or the meaning of the task.
 - **Taxonomy vs. evidence.** [[2026-doshi-human-ai-task-tensor]] helps describe augmentation and automation arrangements, but classification is not outcome evidence. The wiki still needs studies showing when particular authority/audit/output configurations actually change performance, effort, learning, accountability, or labor demand.
 - **Static vs. state-contingent substitution.** [[2026-zhang-fatigue-aware-learning-defer]] suggests the automation boundary may move within a single work episode as human fatigue accumulates. That is useful for system performance, but it also raises work-design questions about whether organizations should optimize around fatigue, redesign workload upstream, or preserve human agency over routing decisions.
+- **Benchmark success vs. real-work substitution.** [[2026-wang-agent-development-real-world-work]] implies that substitution claims need a validity check: the benchmark may measure convenient agent tasks rather than the job domains, interpersonal work, ambiguity, and end-to-end accountability that determine whether labor can actually be replaced.

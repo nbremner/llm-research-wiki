@@ -30,6 +30,7 @@ file_hash: 1405022de950e68cda2ab32df8296f6462ae65f7f3d5b990b4bf1f369b5b3705
 - The study evaluates benchmark representativeness and capability measurement, not realized organizational adoption, job redesign, employment change, or worker experience after agent deployment.
 
 ## Feeds
+- [[ai-agent-benchmark-validity]]
 - [[human-ai-task-taxonomy]]
 - [[work-redesign]]
 - [[automation-and-substitution]]
