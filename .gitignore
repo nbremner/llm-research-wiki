@@ -54,4 +54,9 @@ venv/
 
 # Obsidian per-device vault state (shared config like core-plugins.json is tracked)
 wiki/.obsidian/workspace*.json
+wiki/.obsidian/graph.json
+wiki/.obsidian/bookmarks.json
 wiki/.obsidian/cache
+
+# Local Claude Code config
+.claude/
