@@ -22,6 +22,8 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 
 [[2026-lepine-precision-proactivity]] adds cognitive load as a measurable work-experience channel. In a financial-valuation task with professionals, AI-generated content was associated with higher quality, but extraneous load from interaction structure was strongly negative for quality and could persist across turns. That makes workload more specific than “AI made the task easier or harder”: the same system can provide useful content while imposing coordination, repair, or coherence burdens on the worker.
 
+[[2026-vuong-genai-job-performance]] adds a JD-R worker-outcomes model for GenAI in SMEs. In a cross-sectional survey of 758 Vietnamese employees, GenAI usage related positively to job crafting, work engagement, and job performance, with job crafting and work engagement partially mediating the performance relationship. That makes AI-mediated work experience more than sentiment: the hypothesized mechanism is that GenAI becomes a job resource workers use to reshape tasks and sustain motivational energy.
+
 ## Connections
 - Relates to [[employee-engagement]] because AI-mediated work experience could easily become another broad dashboard construct unless its components and evidence claims stay sharp.
 - Relates to [[work-redesign]] because redesign choices determine whether AI preserves autonomy, skill use, feedback, learning, and meaningful control.
@@ -30,6 +32,7 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 - Relates to [[ai-readiness]] because readiness includes knowledge, culture, upskilling, collaborative work, and change management — all partly experienced by workers as job resources or threats.
 - Relates to [[ai-supported-knowledge-synthesis]] because the experience of knowledge work depends on whether synthesis tools preserve agency, context, collaboration, and source contact.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because AI-mediated work experience includes the mental burden of coordinating with the model, not only autonomy, identity, or affect.
+- Relates to [[ai-enabled-job-crafting]] because bottom-up reshaping of AI-mediated work is one observable pathway from tool access to changed autonomy, competence, engagement, and performance.
 
 ## Contradictions & open questions
 - [[2026-reich-work-design-multidimensional-ai-threat]] is cross-sectional and self-reported. It is useful for construct mapping, but it cannot show whether autonomy and skill variety cause AI adoption or whether AI adopters perceive their jobs differently.
@@ -38,3 +41,4 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 - [[2025-shao-future-work-ai-agents]] helps locate where agency mismatch may appear, but it does not observe downstream motivation, identity, learning, or well-being after agents enter real workflows.
 - [[2025-yun-generative-ai-knowledge-work]] is not a worker-outcomes study, so its evidence for experience is indirect: needs, worries, and interaction patterns around synthesis work rather than measured autonomy, competence, relatedness, workload, or well-being.
 - [[2026-lepine-precision-proactivity]] measures load from transcripts rather than from felt experience, so it strengthens the workload side of this topic but does not directly measure motivation, well-being, or identity.
+- [[2026-vuong-genai-job-performance]] is self-report and cross-sectional, so it supports a plausible nomological network around GenAI usage, job crafting, engagement, and performance, but not a causal claim that GenAI improves worker experience.

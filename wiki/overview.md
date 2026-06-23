@@ -38,6 +38,7 @@ The central question:
 - [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
 - [[cognitive-load-in-ai-assisted-work]] — how AI assistance creates or reduces intrinsic and extraneous mental burden during real work
 - [[ai-mediated-work-experience]] — how AI changes autonomy, skill use, identity, workload, and felt job quality
+- [[ai-enabled-job-crafting]] — when workers use AI as a job resource to reshape tasks, effort, and work meaning from the bottom up
 - [[ai-induced-skill-erosion]] — when AI-enabled productivity hides slower erosion of expertise, judgment, and professional identity
 - [[ai-supported-knowledge-synthesis]] — how AI helps or distorts evidence navigation, sensemaking, verification, and context-preserving decision work
 - [[ai-literacy]] — what people understand about AI systems, their limits, and the conditions for calibrated use
@@ -57,7 +58,8 @@ Seed questions to grow topics around. Edit freely.
 - Where do worker preferences for automation, augmentation, and sustained human agency diverge from technical AI-agent capability?
 - What would make AI readiness a valid organizational assessment construct rather than a loose maturity checklist?
 - What does good measurement of AI workforce impact look like beyond productivity anecdotes?
-- How does AI-mediated work affect autonomy, competence, relatedness, trust, and motivation?
+- When does AI-mediated work affect autonomy, competence, relatedness, trust, and motivation?
+- When does GenAI access become bottom-up job crafting rather than mere tool use, and when should organizations formalize that local redesign into roles, workflows, or governance?
 - When does AI literacy improve calibrated use without simply increasing or decreasing AI receptivity?
 - When can junior or novice AI users safely teach senior professionals, and when does bottom-up adoption energy produce underpowered risk mitigation?
 - When does improving AI quality reduce human effort enough that system performance, learning, or oversight suffers?
@@ -79,6 +81,7 @@ Seed questions to grow topics around. Edit freely.
 - **Worker-desired agency in AI-agent work** is now represented through [[2025-shao-future-work-ai-agents]], but still needs live implementation evidence on whether agency matching improves adoption, performance, motivation, or trust.
 - **AI-supported knowledge synthesis** has been promoted into [[ai-supported-knowledge-synthesis]] through [[2025-yun-generative-ai-knowledge-work]], but the wiki still needs field evidence on whether synthesis interfaces improve decision quality, learning, and team alignment over time.
 - **AI-mediated learning and cognitive debt** is now represented through [[2025-kosmyna-brain-chatgpt-cognitive-debt]] under [[ai-induced-skill-erosion]], [[automation-complacency]], and [[critical-thinking]], but the wiki is thin on whether educational cognitive-debt findings generalize to workplace expertise, onboarding, and professional development.
+- **AI-enabled job crafting** has been promoted into [[ai-enabled-job-crafting]] through [[2026-vuong-genai-job-performance]], but the wiki still needs behavioral or field evidence on what workers actually change in tasks, collaboration, and performance criteria when they use GenAI to craft their jobs.
 - **Cognitive load in AI-assisted work** has been promoted into [[cognitive-load-in-ai-assisted-work]] through [[2026-lepine-precision-proactivity]], but the wiki still needs validated load measures across other domains and evidence on which interface interventions reduce extraneous load without suppressing useful AI help.
 - **AI-use image concerns** has been promoted into [[ai-use-image-concerns]] through [[2026-almog-barriers-ai-adoption]], but the wiki still needs field evidence from richer professional work and organizational designs that change whether AI use is read as good judgment, weak judgment, or compliance.
 - **Novice risk work / reverse mentoring for AI** has been promoted into [[novice-risk-work]] through [[2025-kellogg-novice-risk-work]], but the wiki still needs evidence on which literacy, governance, and deployer-level supports let novice users teach seniors without over-relying on project-level routine changes.
@@ -98,3 +101,4 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **ai-stewardship / human verification** — appears in [[2025-lee-generative-ai-critical-thinking]], [[2026-lee-making-invisible-visible]], [[2025-yun-generative-ai-knowledge-work]], and [[2025-mazeika-remote-labor-index]]; promote if stewardship becomes a recurring account of the human role after AI produces or acts.
 - **ai-coaching-and-feedback** — appears in the Coach condition in [[2026-zhu-choose-your-agent]] and may connect to critique, learning, and cognitive-forcing designs; defer until there is another clean source beyond Zhu.
 - **ai-proactivity** — appears in [[2026-lepine-precision-proactivity]] and the proactive Advisor design in [[2026-zhu-choose-your-agent]]; promote if future sources distinguish initiative timing from execution authority.
+- **digital-competence-as-ai-resource** — appears in [[2026-vuong-genai-job-performance]] as a moderator of GenAI usage → job crafting and GenAI usage → work engagement; promote if future sources distinguish digital competence from AI literacy, readiness, or general self-efficacy.

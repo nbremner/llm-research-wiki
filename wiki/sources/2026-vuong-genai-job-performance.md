@@ -32,6 +32,7 @@ file_hash: b1771e7982629aaa06bb30276fa2844875245931501ffd516c80a1d7f54808bf
 - The Drive PDF includes a copyright notice and was treated as a source copy for scholarship; canonical provenance is the public DOI rather than the private Drive link.
 
 ## Feeds
+- [[ai-enabled-job-crafting]]
 - [[ai-mediated-work-experience]]
 - [[work-redesign]]
 - [[employee-engagement]]

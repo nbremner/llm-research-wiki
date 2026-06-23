@@ -16,6 +16,8 @@ For AI workforce transformation, this matters as a warning. If organizations sta
 
 [[2026-reich-work-design-multidimensional-ai-threat]] extends the warning to AI adoption constructs. Its use of autonomy, skill variety, task significance, feedback, and differentiated AI-threat dimensions is useful precisely because it avoids treating “AI engagement” or “AI mindset” as a single broad attitude. The construct lesson is to decompose AI-mediated worker experience into job resources, identity threats, perceived work changes, and actual use behaviors.
 
+[[2026-vuong-genai-job-performance]] is useful because it studies academic work engagement as a JD-R mediator rather than treating engagement as a loose practitioner label. GenAI usage predicted work engagement (β = 0.478, p = 0.000), and work engagement partially mediated the GenAI usage–job performance relationship (indirect β = 0.176, p = 0.000), while job crafting operated as a separate mediator. The construct-validity lesson is to keep motivational state, proactive work redesign, tool usage, and performance distinct even when the empirical model links them.
+
 ## Connections
 
 - Relates to [[construct-validity]] because engagement illustrates what happens when a construct’s definition, measures, and claimed outcomes drift apart.
@@ -23,6 +25,7 @@ For AI workforce transformation, this matters as a warning. If organizations sta
 - Relates indirectly to [[ai-adoption]]: adoption constructs will need sharper definition than engagement often had if they are to guide interventions rather than decorate dashboards.
 - Relates to [[ai-mediated-work-experience]] because AI-era worker outcomes should be separated into autonomy, competence, identity, workload, learning, and relational experience rather than collapsed into engagement.
 - Relates to [[human-ai-collaboration]] because AI-assisted support changed the emotional and communicative texture of the work, not just the volume of completed cases.
+- Relates to [[ai-enabled-job-crafting]] because proactive work reshaping and work engagement may both mediate AI-performance claims, but they are different constructs with different intervention implications.
 
 ## Contradictions & open questions
 
@@ -30,3 +33,4 @@ For AI workforce transformation, this matters as a warning. If organizations sta
 - The source is from 2014. Later evidence reviews may strengthen, weaken, or refine the critique; this page should not freeze the engagement evidence base at Briner’s assessment.
 - [[2025-brynjolfsson-generative-ai-at-work]] measures specific interaction outcomes, not engagement as a construct. It should inform worker-experience claims without being treated as evidence that AI improves engagement broadly.
 - [[2026-reich-work-design-multidimensional-ai-threat]] measures adoption and depth of use, not engagement or well-being. It supports construct decomposition, not a claim that AI adoption improves employee experience.
+- [[2026-vuong-genai-job-performance]] strengthens the academic work-engagement side of the page, but its cross-sectional self-report design should not be read as causal evidence that GenAI increases engagement or performance.

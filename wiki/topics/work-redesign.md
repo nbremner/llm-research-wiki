@@ -48,6 +48,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2026-wang-agent-development-real-world-work]] adds a benchmark-validity constraint to redesign. If agent evaluations are concentrated in programming-heavy, easily verified domains, then benchmark progress should not be treated as evidence that agents are ready for management, legal, interpersonal, or other work where objectives, verification, and accountability are less clean. Redesign has to ask whether the evaluation sample resembles the work node being delegated.
 
+[[2026-vuong-genai-job-performance]] adds a bottom-up redesign mechanism: employees may use GenAI as a job resource for job crafting before formal role architecture changes. In Vietnamese SMEs, GenAI usage was associated with job crafting and work engagement, which partially mediated job performance. For redesign, the important signal is that local worker-led restructuring can be part of the value pathway, but it also means redesigned work may be happening informally before governance, measurement, or role expectations catch up.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -61,6 +63,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[novice-risk-work]] because novice users may misplace redesign responsibility at the individual or project level when system-level intervention is needed.
 - Connects to [[competency-modeling]] because role-redesign claims often need a language for desired behavior, not only a decomposition of existing tasks.
 - Connects to [[ai-agent-benchmark-validity]] because redesign decisions built from agent scores need evidence that the benchmark actually represents the targeted work.
+- Connects to [[ai-enabled-job-crafting]] because worker-led redesign can reveal where GenAI is becoming a job resource, not only where leaders have formally reallocated tasks.
 
 ## Contradictions & open questions
 
@@ -81,3 +84,4 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2025-kellogg-novice-risk-work]] is interview-based and compares novice recommendations to expert literature, not implemented redesign interventions. It is strongest as a warning about misplaced mitigation levels, not as direct evidence that any specific deployer-level control improves outcomes.
 - [[2009-sanchez-levine-competency-modeling-job-analysis]] predates AI and should not be treated as evidence about agentic workflows. Its value is conceptual: it warns that redesign grounded only in current task description may miss the strategic and behavioral signals needed for role enactment.
 - [[2026-wang-agent-development-real-world-work]] is benchmark evidence, not implementation evidence. It can say where evaluations are misaligned with work, but not whether a redesigned workflow will produce better performance, motivation, learning, or accountability.
+- [[2026-vuong-genai-job-performance]] treats job crafting as a positive mediator, but informal AI-enabled crafting can also create unmanaged variance in process quality, compliance, and performance criteria if it remains invisible to the organization.
