@@ -44,6 +44,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2026-zhang-fatigue-aware-learning-defer]] adds a dynamic allocation case: collaboration quality can depend on the human expert's changing workload state, not only on static expertise or model confidence. In FALCON, the same hard task may appropriately route to a fresh human expert early in a sequence and to AI later if accumulated fatigue makes human error more likely, which means collaboration needs stateful routing rules rather than one-time role assignments.
 
+[[2026-shen-ai-impacts-skill-formation]] adds a learning constraint to collaboration design. In a software-learning task, human-AI collaboration that looked efficient through delegation produced weak post-task understanding, while conceptual inquiry and explanation-oriented interaction preserved more skill. A collaboration design is therefore not adequate just because the human remains nominally accountable; it also has to decide whether the episode is meant to produce a deliverable, build competence, or both.
+
 A collaboration typology is starting to emerge across the corpus. The broad page should not treat "human-AI collaboration" as one condition: advice-taking, coaching/feedback, stewardship, co-production, AI proactivity, and [[agentic-delegation]] differ by initiative, execution authority, review burden, and accountability. The current wiki has enough evidence to break out delegation now and enough signal to watch advice-taking, stewardship, coaching, and proactivity as possible future peer topics.
 
 ## Connections

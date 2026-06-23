@@ -32,6 +32,7 @@ file_hash: 769399c218d2471cea9b348aa6d9b16c052652fa1e832d32a32e5825fc03b535
 - The paper is an arXiv preprint; the Drive PDF matched arXiv version 2 metadata and no publisher DOI was found in the arXiv record.
 
 ## Feeds
+- [[ai-mediated-learning]]
 - [[ai-induced-skill-erosion]]
 - [[automation-complacency]]
 - [[critical-thinking]]

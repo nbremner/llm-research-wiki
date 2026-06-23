@@ -12,6 +12,8 @@ AI-induced skill erosion is the slow loss of practiced judgment, craft, confiden
 
 [[2025-kosmyna-brain-chatgpt-cognitive-debt]] adds adjacent early evidence from educational writing rather than workplace expertise. In repeated essay-writing sessions, LLM users showed weaker EEG connectivity, more homogeneous language, lower ownership, and poorer recall of text they had just written than brain-only writers. That does not prove professional skill erosion, but it sharpens the possible accumulation mechanism: repeated offloading may reduce task engagement and memory before any durable capability loss is visible.
 
+[[2026-shen-ai-impacts-skill-formation]] supplies a more direct short-horizon causal test of skill formation. In a randomized programming task, AI assistance reduced post-task skill evaluation scores by 17% without significantly improving completion time; the largest gaps appeared in debugging, which is exactly the capability workers need if they are expected to supervise AI-written code. This does not show long-run erosion by itself, but it gives the topic a plausible immediate precursor: AI-mediated work can produce the artifact while weakening the learning episode that would otherwise maintain future oversight capacity.
+
 The paper's response frame is also useful. “Dignified Human-AI interaction” treats agency, expertise, and self-worth as design requirements, not soft afterthoughts. “Sociotechnical immunity” names the protective system: early-warning signals, containment actions, and recovery routines that help workers detect, interrupt, and recover from AI-induced erosion while still serving quality goals.
 
 ## Connections
@@ -27,3 +29,4 @@ The paper's response frame is also useful. “Dignified Human-AI interaction” 
 - Skill erosion and productive offloading can look similar in the short run. The open measurement problem is how to distinguish healthy delegation from loss of capability before failure becomes visible.
 - The wiki needs evidence on which design interventions actually preserve expertise without imposing wasteful friction or romanticizing manual work that can safely be automated.
 - [[2025-kosmyna-brain-chatgpt-cognitive-debt]] uses an educational writing task and a small fourth-session crossover sample, so its strongest contribution is mechanism generation rather than direct evidence about AI-mediated professional skill decay.
+- [[2026-shen-ai-impacts-skill-formation]] is causal but short-horizon and task-specific; it shows impaired skill formation after one AI-supported programming task, not yet durable workplace skill erosion over months or years.

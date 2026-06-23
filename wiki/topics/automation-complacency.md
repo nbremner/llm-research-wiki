@@ -20,6 +20,8 @@ Automation complacency is the failure mode where better machine advice reduces h
 
 [[2025-kosmyna-brain-chatgpt-cognitive-debt]] adds an effort-and-ownership signal from repeated LLM-assisted writing. The LLM condition showed weaker neural connectivity and lower ability to quote recently written essays, while search-engine and brain-only conditions preserved more engagement. This is not the same as workplace automation complacency, but it shows how apparently useful assistance can change the human's contribution to the task before the output itself obviously fails.
 
+[[2026-shen-ai-impacts-skill-formation]] adds a learning-centered version of the same failure. In a randomized coding task, participants who used AI scored lower on conceptual understanding, code reading, and debugging even though completion time was not significantly faster; the lowest-scoring AI patterns were full delegation, progressive reliance, and iterative AI debugging. Complacency here is not just insufficient review of a recommendation. It is the bypassing of errors, struggle, and explanation work that normally produces the competence needed for later review.
+
 [[2026-lepine-precision-proactivity]] complicates the complacency frame by showing the opposite burden can also matter. In AI-assisted financial valuation, AI-generated content use was associated with better quality, but extraneous cognitive load from task switching and information sprawl was strongly harmful. Some AI failures reduce human effort too much; others consume attention in repair work and leave too little capacity for judgment.
 
 ## Connections

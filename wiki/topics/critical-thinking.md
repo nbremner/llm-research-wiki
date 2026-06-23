@@ -24,6 +24,8 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 
 [[2026-lepine-precision-proactivity]] adds the overload side of the same problem. In complex AI-assisted valuation work, extraneous load from conversational misalignment was strongly negative for quality, even while AI-generated content helped. Critical thinking requires capacity; when the interaction itself creates task switching, information sprawl, or repair work, stewardship may fail because the user is overloaded rather than because they are complacent.
 
+[[2026-shen-ai-impacts-skill-formation]] adds that critical thinking can be a learning mechanism, not only an output-control mechanism. Participants who asked conceptual questions, requested explanations, or checked their understanding after code generation preserved more skill formation than participants who delegated code writing or debugging to AI. The implication for AI-supported work is concrete: verification routines should be designed to build comprehension and transfer, not merely catch defects in the current artifact.
+
 ## Connections
 
 - Relates to [[ai-adoption]] because adoption quality depends on whether users retain enough judgment to evaluate, adapt, and steward AI outputs rather than merely use the tool more often.

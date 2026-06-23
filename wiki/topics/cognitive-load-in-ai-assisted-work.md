@@ -14,6 +14,8 @@ The paper also makes cognitive load observable in human-AI traces. Lepine et al.
 
 [[2026-zhang-fatigue-aware-learning-defer]] adds a sequential allocation mechanism. Its fatigue-aware learning-to-defer framework treats cumulative human workload as part of the system state, so the value of human involvement changes over time as prior deferrals accumulate. That makes cognitive load more than a subjective experience variable: in some human-AI systems, load becomes an input to task routing and cooperation-budget decisions.
 
+[[2026-shen-ai-impacts-skill-formation]] adds a learning-effort distinction. Some AI interaction patterns looked cognitively light because users delegated code generation or debugging, but those patterns produced poor learning outcomes; other patterns required explanation-seeking, conceptual questioning, or comprehension checks and preserved more skill formation. For this page, the important distinction is productive cognitive effort versus extraneous burden: reducing all effort may improve immediate ease while removing the friction that builds competence.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because collaboration quality depends on whether model initiative reduces burden or creates coordination work the human must absorb.
 - Relates to [[automation-complacency]] because low effort and high load are different failure modes: some AI systems suppress scrutiny, while others overwhelm the user with extraneous coordination demands.
