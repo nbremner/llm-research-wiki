@@ -16,14 +16,18 @@ The useful move for this wiki is not to adopt the tensor as final truth. It is t
 
 [[2026-zhu-choose-your-agent]] gives an empirical reason to keep authority and interaction modality separate. Advisor, Coach, and Delegate all used the same underlying model capability, but changed whether humans received recommendations, received feedback after proposing an action, or ceded execution authority. Those distinctions produced different adoption, preference, and welfare patterns, so they should not be collapsed into a single "AI assistance" condition.
 
+[[2026-zhang-fatigue-aware-learning-defer]] adds a temporal and human-state dimension to the taxonomy problem. In learning-to-defer under fatigue, the relevant task description includes not only task difficulty and AI confidence, but also where the task occurs in a sequence and how prior allocations have changed the human expert's workload state.
+
 ## Connections
 - Connects to [[work-redesign]] because task taxonomy is the upstream language for deciding which workflow nodes can be delegated, constrained, audited, or protected.
 - Connects to [[human-ai-collaboration]] because collaboration quality depends on authority, auditability, output definition, and the human persona in the task, not just whether a human and AI are both present.
 - Connects to [[automation-and-substitution]] because augmentation/substitution claims need task-level dimensional detail before they can imply labor substitution or protected human judgment.
 - Connects to [[task-level-ai-adoption]] because observed-use maps describe where AI is used, while task taxonomy describes what kind of use that is.
 - Connects to [[job-analysis]] because AI-era task taxonomy is adjacent to classic work analysis: both define the work before redesign, assessment, or governance is built on top.
+- Connects to [[human-ai-task-allocation]] because a taxonomy becomes operational when it informs routing rules for which actor should handle a specific task instance under current human and system conditions.
 
 ## Contradictions & open questions
 - [[2026-doshi-human-ai-task-tensor]] is a conceptual framework and book chapter, not validation evidence. The wiki still needs empirical work testing whether tensor-based task classification predicts adoption, performance, trust, motivation, skill erosion, or governance quality.
 - The tensor is broad enough to be useful, but broad taxonomies can become naming systems rather than measurement systems. The construct-validity question is whether the dimensions are bounded, reliably coded, and linked to outcomes that matter.
 - The human persona dimension is promising but underdeveloped for I-O use. It could connect to expertise, skill level, motivation, identity, vulnerability, or worker-desired agency; those are not interchangeable constructs.
+- [[2026-zhang-fatigue-aware-learning-defer]] highlights that persona and state should not be collapsed. A worker's expertise level, current fatigue, cumulative workload, motivation, and accountability position may all affect allocation differently.

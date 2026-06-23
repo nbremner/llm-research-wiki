@@ -42,6 +42,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2026-zhu-choose-your-agent]] moves collaboration from advice-following into authority allocation. In three-person bargaining games, participants preferred the Advisor interface because it preserved control, but groups achieved the strongest welfare gains under Delegate access, where the AI autonomously executed actions. Collaboration quality therefore depends not only on explanation, review, or final human authority; in interdependent settings, letting an agent act can change the whole offer environment and create spillovers for non-users.
 
+[[2026-zhang-fatigue-aware-learning-defer]] adds a dynamic allocation case: collaboration quality can depend on the human expert's changing workload state, not only on static expertise or model confidence. In FALCON, the same hard task may appropriately route to a fresh human expert early in a sequence and to AI later if accumulated fatigue makes human error more likely, which means collaboration needs stateful routing rules rather than one-time role assignments.
+
 A collaboration typology is starting to emerge across the corpus. The broad page should not treat "human-AI collaboration" as one condition: advice-taking, coaching/feedback, stewardship, co-production, AI proactivity, and [[agentic-delegation]] differ by initiative, execution authority, review burden, and accountability. The current wiki has enough evidence to break out delegation now and enough signal to watch advice-taking, stewardship, coaching, and proactivity as possible future peer topics.
 
 ## Connections
@@ -54,6 +56,7 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 - Relates to [[employee-engagement]] because workers in decision-support settings described autonomy, motivation, learning, and valued task ownership as part of whether AI-supported work remained worth engaging in.
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis work makes collaboration visible as source navigation, verification, auditability, and stakeholder translation rather than only answer generation.
 - Relates to [[human-ai-task-taxonomy]] because collaboration claims need dimensional task detail: authority, auditability, output definition, AI structure, and the relevant human persona.
+- Relates to [[human-ai-task-allocation]] because collaboration must sometimes be decided at the task-instance level as human workload, fatigue, capability, and accountability conditions change.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because collaboration quality depends on the cognitive cost of keeping the human and AI aligned across turns.
 - Relates to [[ai-use-image-concerns]] because useful delegation can be behaviorally suppressed when visible reliance on AI threatens professional image or evaluator judgments.
 
@@ -71,3 +74,4 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 - [[2025-shao-future-work-ai-agents]] measures desired agency, not actual collaboration quality. H3 dominance is evidence that equal partnership is attractive in many occupations, but it does not tell us which interfaces, feedback loops, or governance routines make partnership real rather than rhetorical.
 - [[2025-yun-generative-ai-knowledge-work]] is prototype-centered and qualitative. It shows what product managers valued in AI-mediated synthesis, but not whether these collaboration mechanisms improve long-run decision quality or team learning.
 - [[2026-lepine-precision-proactivity]] is correlational and task-specific, so it does not prove that reducing task switching or information sprawl causally improves collaboration, but it gives concrete design targets for load-sensitive AI initiative.
+- [[2026-zhang-fatigue-aware-learning-defer]] is benchmark and simulation evidence, not a deployed work-system study. It strengthens the case for stateful task routing, but it does not settle how fatigue should be measured, disclosed, governed, or balanced against worker agency in real organizations.

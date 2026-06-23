@@ -12,15 +12,19 @@ Cognitive load in AI-assisted work tracks the mental burden created by the task 
 
 The paper also makes cognitive load observable in human-AI traces. Lepine et al. estimate load from transcript features grounded in task decomposition, semantic coherence, dependency structure, and knowledge-graph representations. That gives the wiki a measurement bridge between broad claims about AI-mediated effort and concrete interaction diagnostics: when the model initiates task switches, spreads information across too many directions, or truncates needed structure, load becomes a design signal rather than a vague complaint.
 
+[[2026-zhang-fatigue-aware-learning-defer]] adds a sequential allocation mechanism. Its fatigue-aware learning-to-defer framework treats cumulative human workload as part of the system state, so the value of human involvement changes over time as prior deferrals accumulate. That makes cognitive load more than a subjective experience variable: in some human-AI systems, load becomes an input to task routing and cooperation-budget decisions.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because collaboration quality depends on whether model initiative reduces burden or creates coordination work the human must absorb.
 - Relates to [[automation-complacency]] because low effort and high load are different failure modes: some AI systems suppress scrutiny, while others overwhelm the user with extraneous coordination demands.
 - Relates to [[critical-thinking]] because verification and stewardship require enough cognitive capacity to evaluate AI output rather than merely cope with conversational disorder.
 - Relates to [[ai-mediated-work-experience]] because cognitive load is one channel through which AI changes workload, competence, control, and felt job quality.
 - Relates to [[work-redesign]] because task sequencing, escalation rules, and interface defaults can either suppress extraneous load or push it onto workers.
+- Relates to [[human-ai-task-allocation]] because workload and fatigue can change which actor should handle the next task instance.
 
 ## Contradictions & open questions
 - [[2026-lepine-precision-proactivity]] is observational and domain-specific. Its framework is promising because it uses real transcripts from professionals, but its load measures are computational proxies that still need validation against established cognitive-load assessments.
 - AI-generated content can improve quality while extraneous load harms it. That means “AI makes the task easier” is too coarse: assistance can reduce one burden while creating another.
 - The open design question is when proactivity should be suppressed, delayed, or transformed into repair. More initiative is not automatically better; proactivity needs to be state-dependent and load-sensitive.
 - The framework depends on domain-specific task decompositions and knowledge graphs, so portability to software engineering, healthcare, HR, or strategy work remains an empirical problem rather than an assumption.
+- [[2026-zhang-fatigue-aware-learning-defer]] uses simulated fatigue curves and image-classification benchmarks, so the open measurement question is whether live workplace fatigue or cognitive-load signals can be measured validly enough to drive allocation without creating surveillance, fairness, or agency problems.

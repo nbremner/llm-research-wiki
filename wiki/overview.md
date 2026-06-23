@@ -34,6 +34,7 @@ The central question:
 - [[critical-thinking]] — how GenAI shifts judgment, verification, and stewardship in knowledge work
 - [[human-ai-collaboration]] — how human accountability and AI capability are arranged in tasks
 - [[human-ai-task-taxonomy]] — dimensions for classifying AI-enabled tasks before drawing redesign, collaboration, or substitution conclusions
+- [[human-ai-task-allocation]] — when a specific task instance should be routed to a human, AI system, or hybrid arrangement as capability, workload, fatigue, and accountability change
 - [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
 - [[cognitive-load-in-ai-assisted-work]] — how AI assistance creates or reduces intrinsic and extraneous mental burden during real work
 - [[ai-mediated-work-experience]] — how AI changes autonomy, skill use, identity, workload, and felt job quality
@@ -81,6 +82,7 @@ Seed questions to grow topics around. Edit freely.
 - **AI-use image concerns** has been promoted into [[ai-use-image-concerns]] through [[2026-almog-barriers-ai-adoption]], but the wiki still needs field evidence from richer professional work and organizational designs that change whether AI use is read as good judgment, weak judgment, or compliance.
 - **Novice risk work / reverse mentoring for AI** has been promoted into [[novice-risk-work]] through [[2025-kellogg-novice-risk-work]], but the wiki still needs evidence on which literacy, governance, and deployer-level supports let novice users teach seniors without over-relying on project-level routine changes.
 - **Agentic delegation** has been promoted into [[agentic-delegation]] through [[2026-zhu-choose-your-agent]], but the wiki still needs field evidence on when autonomous execution improves team or organizational outcomes once delegation is visible, governed, and tied to real accountability.
+- **Human-AI task allocation** is proposed for promotion through [[2026-zhang-fatigue-aware-learning-defer]], but the wiki still needs field evidence on allocation policies that use real human-state signals such as fatigue, workload, skill, confidence, or accountability rather than simulated benchmark states.
 
 ## Candidate topics (watchlist)
 

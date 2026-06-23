@@ -32,6 +32,7 @@ file_hash: b062cec07b7ff953537a88a8ba0a3f4f23a4bcce9527b1b500cf706d653efd1d
 - The framework treats fatigue-aware allocation as an accuracy-and-coverage optimization problem, so it says less about construct validity of workload measures, worker agency, acceptability, trust, or accountability under real organizational governance.
 
 ## Feeds
+- [[human-ai-task-allocation]]
 - [[human-ai-collaboration]]
 - [[human-ai-task-taxonomy]]
 - [[cognitive-load-in-ai-assisted-work]]
