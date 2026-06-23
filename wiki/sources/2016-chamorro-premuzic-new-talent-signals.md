@@ -5,6 +5,7 @@ year: 2016
 url: https://doi.org/10.1017/iop.2016.6
 doi: 10.1017/iop.2016.6
 source_type: paper
+publication_status: peer-reviewed
 retrieved: 2026-06-15
 drive_file_id: 1NjE7A708AOhpFe7aGy1iZ3n-qVeotcge
 file_hash: d3971ddabecf0eb2f1e842dbd00a70f70430637b64fb8bfa9b7a63a8e06f4f26

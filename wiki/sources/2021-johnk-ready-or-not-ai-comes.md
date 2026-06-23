@@ -5,6 +5,7 @@ year: 2021
 url: https://doi.org/10.1007/s12599-020-00676-7
 doi: 10.1007/s12599-020-00676-7
 source_type: paper
+publication_status: peer-reviewed
 retrieved: 2026-06-18
 drive_file_id: 1lhGVrm9EbX-iTLHOnibQcPdAbPDosIgm
 file_hash: e499a0d493c17b5cfd097076597cf5a4f0d4a971bb9d6ea0bef6d22212afe75d

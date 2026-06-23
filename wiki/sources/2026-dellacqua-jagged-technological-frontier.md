@@ -5,6 +5,7 @@ year: 2026
 url: https://doi.org/10.1287/orsc.2025.21838
 doi: 10.1287/orsc.2025.21838
 source_type: paper
+publication_status: peer-reviewed
 retrieved: 2026-06-21
 drive_file_id: 1ASdVZ78FX1rJrCwvIsFdpB3Av5yEYpO5
 file_hash: f02057988f6ee5ea70fac3621263d3ba6ea6fac534ff26283fd6e537743fcf53

@@ -5,6 +5,7 @@ year: 2009
 url: https://doi.org/10.1016/j.hrmr.2008.10.002
 doi: 10.1016/j.hrmr.2008.10.002
 source_type: paper
+publication_status: peer-reviewed
 retrieved: 2026-06-22
 drive_file_id: 1_v2Z0uoSPJ98I83KogWFJELj5Dr57Uiv
 file_hash: 7b8a45f607dce57b31e61925ff32c02ba45f5a12ad49435d3def412f965b98fd

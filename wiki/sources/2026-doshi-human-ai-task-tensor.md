@@ -4,7 +4,8 @@ authors: Doshi, Moore
 year: 2026
 url: https://doi.org/10.4337/9781035345885.00014
 doi: 10.4337/9781035345885.00014
-source_type: book
+source_type: book-chapter
+publication_status: other
 retrieved: 2026-06-22
 drive_file_id: 1sGnqpHRvXF1Oiu8qBuOp_8dhAcB0CV58
 file_hash: 3f3f46e5f62c09f6b2b67ba96fa2b91703647a382563edab2d45dc6579d04f69

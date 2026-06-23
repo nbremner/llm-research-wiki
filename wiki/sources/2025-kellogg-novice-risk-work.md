@@ -5,6 +5,7 @@ year: 2025
 url: https://doi.org/10.1016/j.infoandorg.2025.100559
 doi: 10.1016/j.infoandorg.2025.100559
 source_type: paper
+publication_status: peer-reviewed
 retrieved: 2026-06-22
 drive_file_id: 1z02spIz_rQC7ESQf2fDVcawXEKPDoShY
 file_hash: 1bc46397c2c9e7eddd3639a39254d78b5be9d98e753ebc1053c99ec29042db43

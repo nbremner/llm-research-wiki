@@ -5,6 +5,7 @@ year: 2008
 url: https://home.ubalt.edu/tmitch/651/competency%20modeling%20trends.pdf
 doi: null
 source_type: report
+publication_status: other
 retrieved: 2026-06-21
 drive_file_id: 1eYP-KuPtqQj-mBIhv7ELLPzXDv1z7aT1
 file_hash: 86a9fe3278940bf1283887f49cb29c2627207f0dd9d4d48db64dcaa2df4b3f59

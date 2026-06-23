@@ -5,6 +5,7 @@ year: 2026
 url: https://arxiv.org/abs/2601.21920v1
 doi: 10.1145/3772318.3791081
 source_type: paper
+publication_status: peer-reviewed
 retrieved: 2026-06-22
 drive_file_id: 1j3-sXE7NKTw390Im5Oa7A0VPsDJhYely
 file_hash: 876dd516944bfa60e59e5e83fe825866da2ccd190a31ceb3bc96174d2451d24f

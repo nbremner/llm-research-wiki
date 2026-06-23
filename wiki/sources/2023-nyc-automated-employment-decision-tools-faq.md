@@ -5,6 +5,7 @@ year: 2023
 url: https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page
 doi: null
 source_type: policy
+publication_status: other
 retrieved: 2026-06-15
 drive_file_id: 1w7miUROQJeYOKXrntvAq2VD14pH4Sd4t
 file_hash: 1f05401d275099d04b82f0d0070b110bc6d8fa1871ae98185139794d26db60a9

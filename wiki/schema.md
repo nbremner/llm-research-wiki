@@ -61,7 +61,8 @@ title: ChatGPT and the productivity of professional writers
 authors: Noy, Zhang
 year: 2023
 url: https://www.science.org/doi/10.1126/science.adh2586
-source_type: paper      # paper | report | article | book | dataset | policy | other
+source_type: paper      # paper | report | article | book | book-chapter | dataset | policy | other
+publication_status: peer-reviewed   # peer-reviewed | preprint | working-paper | other
 retrieved: 2026-06-14
 ---
 
@@ -81,6 +82,8 @@ retrieved: 2026-06-14
 ```
 
 Frontmatter is minimal on purpose. No confidence/contested/boundary fields — contradictions live in topic prose, not in metadata.
+
+`source_type` is the medium (`paper`, `report`, `article`, `book`, `book-chapter`, `dataset`, `policy`, `other`); a chapter in an edited volume is `book-chapter`, not `book`. `publication_status` is the review/publication stage, orthogonal to medium: `peer-reviewed` (published in a peer-reviewed journal or refereed conference proceedings), `preprint` (publicly posted — e.g. arXiv — but not yet through peer review), `working-paper` (SSRN/NBER/job-market or otherwise circulated for feedback, not peer-reviewed), or `other` (practitioner reports, policy/regulatory guidance, book chapters, and anything outside that spectrum). Being on arXiv does not by itself mean `preprint` — if the work is published in refereed proceedings (a real DOI like `10.1145/…`, `10.1287/…`), it is `peer-reviewed`.
 
 ## The three workflows
 

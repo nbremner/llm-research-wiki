@@ -5,6 +5,7 @@ year: 2025
 url: https://doi.org/10.1093/qje/qjae044
 doi: 10.1093/qje/qjae044
 source_type: paper
+publication_status: peer-reviewed
 retrieved: 2026-06-15
 drive_file_id: 1uR-ReK13qp6auPhLOBTPVU767rApB61x
 file_hash: 9b642a2f935d5f6dc1eb8645aa4a49cb1c68c407dc36219a99f211d4ab1fcc6b

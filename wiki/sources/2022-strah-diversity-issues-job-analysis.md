@@ -5,6 +5,7 @@ year: 2022
 url: https://doi.org/10.1037/apl0000989
 doi: 10.1037/apl0000989
 source_type: paper
+publication_status: peer-reviewed
 retrieved: 2026-06-18
 drive_file_id: 1fycAXqvUeSvLtxV-BvRc5ksYahf8v1Ld
 file_hash: ab48c6c8bbd24feef34aeea8bed9dbf20656aee3d9b2eb800d283e9fdcfe3a60

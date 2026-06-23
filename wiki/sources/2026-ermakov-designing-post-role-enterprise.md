@@ -5,6 +5,7 @@ year: 2026
 url: https://ssrn.com/abstract=6438102
 doi: null
 source_type: paper
+publication_status: working-paper
 retrieved: 2026-06-14
 drive_file_id: 1Xr-pszeCM5H3wPT3fRF3BIJpiNERxkaH
 file_hash: 18323807af080aff8e6b3dc9ffdea05151f0acb6f3049ff9cb6ccef387c6b4a9

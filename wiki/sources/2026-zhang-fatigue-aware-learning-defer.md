@@ -5,6 +5,7 @@ year: 2026
 url: https://arxiv.org/abs/2604.00904
 doi: 10.48550/arXiv.2604.00904
 source_type: paper
+publication_status: preprint
 retrieved: 2026-06-23
 drive_file_id: 1XnBANj0Xq0Gp5yx6zM9Iu8EUAbDGzuS2
 file_hash: b062cec07b7ff953537a88a8ba0a3f4f23a4bcce9527b1b500cf706d653efd1d

@@ -183,7 +183,8 @@ authors: <First, Second>
 year: <YYYY>
 url: <public canonical — SSRN/arXiv/DOI/publisher>
 doi: <or null>
-source_type: paper        # paper | report | article | book | dataset | policy | other
+source_type: paper        # paper | report | article | book | book-chapter | dataset | policy | other
+publication_status: peer-reviewed   # peer-reviewed | preprint | working-paper | other (see schema.md)
 retrieved: <YYYY-MM-DD>
 drive_file_id: <final Drive file ID>
 file_hash: <sha256>

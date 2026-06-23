@@ -5,6 +5,7 @@ year: 2025
 url: https://doi.org/10.1145/3706598.3713337
 doi: 10.1145/3706598.3713337
 source_type: paper
+publication_status: peer-reviewed
 retrieved: 2026-06-22
 drive_file_id: 1flvxvo-GILqGnpkV3b_fFxlvy8fZ9nsF
 file_hash: cad6a1bf32669f45a5f0f9cab9e9328ea15722996a62a30e9471dfacc5ba9df7
