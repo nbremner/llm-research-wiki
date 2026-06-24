@@ -1,7 +1,7 @@
 ---
 title: AI adoption
 status: active
-updated: 2026-06-22
+updated: 2026-06-24
 ---
 
 # AI adoption
@@ -40,6 +40,8 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 
 [[2026-zhu-choose-your-agent]] adds an agentic-delegation version of the adoption problem. Participants preferred the more controllable Advisor mode, while Delegate access produced the strongest group-welfare gains and possible spillovers to non-users. Adoption quality therefore depends on whether the interaction mode is adoption-compatible: a technically superior delegate can fail to improve outcomes if users avoid it, distrust it, or prefer low-effort agency over autonomous execution.
 
+[[2025-friis-performance-principle]] adds a principle-based adoption constraint at the occupation level. Better AI performance can convert much resistance to automation, but not where AI replacement violates the perceived moral meaning of the role. That makes [[moral-boundaries-of-ai-automation]] a distinct adoption barrier from access, discovery, readiness, literacy, image concerns, or task fit.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and organizational-cognition lens on adoption, not just an IT-diffusion one.
@@ -67,3 +69,4 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 - **Literacy vs. receptivity.** [[2025-tully-ai-literacy-receptivity]] suggests [[ai-literacy]] and [[ai-receptivity]] should be modeled as separate constructs: knowing more about AI can reduce some forms of willingness to use it when lower literacy makes AI feel magical or awe-inspiring. That creates a tension between adoption programs that want more AI use and governance programs that want better-calibrated use.
 - **Reverse mentoring vs. risk governance.** [[2025-kellogg-novice-risk-work]] suggests junior or novice AI users may help seniors experiment while still recommending underpowered mitigation tactics. Adoption systems need evidence on when peer teaching is enough and when deployer-level scaffolding is required.
 - **Private usefulness vs. public signal.** [[2026-almog-barriers-ai-adoption]] shows workers may privately benefit from AI recommendations but publicly avoid them when reliance is visible to evaluators. That creates a design tension between making AI use transparent for accountability and making it safe enough that workers do not hide useful reliance.
+- **Capability vs. moral permission.** [[2025-friis-performance-principle]] suggests adoption can remain blocked even after performance concerns are removed. That is a different mechanism from poor mapping, low readiness, low literacy, or image concerns, and it may require redesigning the human role rather than merely improving the AI.

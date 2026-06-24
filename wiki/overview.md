@@ -24,6 +24,7 @@ The central question:
 - [[ai-readiness]] — whether organizational capabilities, data, culture, and strategic fit are ready for a specific AI adoption purpose
 - [[work-redesign]] — how AI shifts work architecture from fixed roles toward redesigned human-agent workflows
 - [[automation-and-substitution]] — whether AI substitutes for or augments labor and capital: what scales, what shrinks, and at what time horizon
+- [[moral-boundaries-of-ai-automation]] — where AI replacement is socially or morally resisted even when capability and cost would otherwise support automation
 - [[algorithmic-assessment]] — algorithmic hiring/assessment as a measurement chain from signal to construct to decision
 - [[job-analysis]] — how work, tasks, KSAOs, and performance domains are defined before HR systems are built
 - [[competency-modeling]] — how HR defines reusable KSAO/behavior/capability models across jobs, roles, and strategy
@@ -77,6 +78,7 @@ Seed questions to grow topics around. Edit freely.
 - When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement — construct validity and job-relatedness?
 - What design features make AI-supported knowledge synthesis improve judgment rather than simply making scattered evidence feel organized?
 - When does AI assistance reduce productive cognitive load versus reducing the practice, ownership, and recall needed for learning or expertise maintenance?
+- Where do moral boundaries make AI replacement socially unacceptable even when AI is technically capable and cheaper, and which kinds of human presence should be protected by design rather than treated as temporary resistance?
 
 ## Thin / missing areas
 
@@ -93,6 +95,7 @@ Seed questions to grow topics around. Edit freely.
 - **AI-use image concerns** has been promoted into [[ai-use-image-concerns]] through [[2026-almog-barriers-ai-adoption]], but the wiki still needs field evidence from richer professional work and organizational designs that change whether AI use is read as good judgment, weak judgment, or compliance.
 - **Novice risk work / reverse mentoring for AI** has been promoted into [[novice-risk-work]] through [[2025-kellogg-novice-risk-work]], but the wiki still needs evidence on which literacy, governance, and deployer-level supports let novice users teach seniors without over-relying on project-level routine changes.
 - **Agentic delegation** has been promoted into [[agentic-delegation]] through [[2026-zhu-choose-your-agent]], but the wiki still needs field evidence on when autonomous execution improves team or organizational outcomes once delegation is visible, governed, and tied to real accountability.
+- **Moral boundaries of AI automation** has been promoted into [[moral-boundaries-of-ai-automation]] through [[2025-friis-performance-principle]], but the wiki still needs field evidence on whether public moral repugnance translates into employer behavior, customer acceptance, professional norms, regulation, or durable protection from substitution.
 - **Human-AI task allocation** is proposed for promotion through [[2026-zhang-fatigue-aware-learning-defer]], but the wiki still needs field evidence on allocation policies that use real human-state signals such as fatigue, workload, skill, confidence, or accountability rather than simulated benchmark states.
 - **Agent benchmark validity** has been promoted into [[ai-agent-benchmark-validity]] through [[2026-wang-agent-development-real-world-work]], but the wiki still needs field evidence that more representative benchmarks lead to better deployment, redesign, or governance decisions.
 

@@ -33,6 +33,7 @@ file_hash: c8086d9659e2caffb3ccc1547577594ec33dd8160afafd94de32d0b4af1780c7
 - Extraction was high confidence from a 79-page PDF; no source-manipulation or model-directed prompt-injection language was found.
 
 ## Feeds
+- [[moral-boundaries-of-ai-automation]]
 - [[automation-and-substitution]]
 - [[ai-adoption]]
 - [[ai-workforce-impact-measurement]]
