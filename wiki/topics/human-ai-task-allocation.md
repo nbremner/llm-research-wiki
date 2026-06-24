@@ -10,6 +10,8 @@ Human-AI task allocation is the design problem of deciding, at the level of a sp
 
 [[2026-zhang-fatigue-aware-learning-defer]] gives the topic its first direct algorithmic source. In fatigue-aware learning to defer, each deferral to a human expert changes cumulative workload and therefore future human performance. The allocation policy should therefore be stateful: a difficult case may belong with a fresh expert, while a later difficult case may belong with AI if accumulated fatigue makes human error more likely.
 
+[[2025-bastani-human-ai-contracting-paradox]] adds a contracting constraint to allocation. Even when a human-AI arrangement is first-best for total system value, a principal may route away from collaboration if the human's inspection and correction effort is too costly to incentivize under rare AI failures. Allocation therefore depends not only on who is more accurate on this case, but on whether the organization can economically sustain the human effort required for the hybrid mode.
+
 The important I-O bridge is that allocation quality depends on a human-state model, not only a model-capability estimate. Zhang et al. optimize accuracy under a human-AI cooperation budget, but the same architecture points toward richer work-design questions: what human states matter, how they are measured, when worker agency overrides algorithmic routing, and how organizations prevent allocation systems from treating fatigue as merely a resource constraint to optimize around.
 
 ## Connections

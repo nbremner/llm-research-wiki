@@ -14,6 +14,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2022-dellacqua-falling-asleep-at-wheel]] gives behavioral field-experimental evidence for the same point. In HR screening, recruiters followed AI advice more as stated AI quality rose; lower-quality AI made them spend more time and effort reviewing resumes. Collaboration quality is therefore endogenous: the tool changes what the human partner contributes.
 
+[[2025-bastani-human-ai-contracting-paradox]] gives the economic version of the same problem. In a principal-agent model, human-AI collaboration can be system-optimal while still unattractive to the principal because rare, unpredictable AI failures make human vigilance expensive to incentivize; as AI reliability rises, the wage needed to keep a human inspecting and correcting low-probability errors can rise rather than fall. Collaboration design therefore has to solve incentive compatibility for oversight, not only capability complementarity or interface fit.
+
 [[2026-lee-making-invisible-visible]] shifts the collaboration question from metaphor to work setting. Workers using decision-support AI did not simply want the AI to decide or recommend; they wanted control points where they could verify outputs, adjust sensitivity or assumptions, simulate alternatives, and incorporate contextual expertise before accountable decisions. Collaboration here is a design of control rights, explanation, feedback, and final authority.
 
 [[2026-dellacqua-jagged-technological-frontier]] gives a behavioral pattern for collaboration under task uncertainty. Successful consultants either acted as "Centaurs," dividing and delegating work between themselves and AI, or as "Cyborgs," tightly integrating AI through the task flow. The important point is not the labels; it is that collaboration quality depends on calibration to the task frontier. When the task is outside current AI capability, close collaboration can amplify wrong output rather than improve human performance.
@@ -61,6 +63,7 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 - Relates to [[human-ai-task-allocation]] because collaboration must sometimes be decided at the task-instance level as human workload, fatigue, capability, and accountability conditions change.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because collaboration quality depends on the cognitive cost of keeping the human and AI aligned across turns.
 - Relates to [[ai-use-image-concerns]] because useful delegation can be behaviorally suppressed when visible reliance on AI threatens professional image or evaluator judgments.
+- Relates to [[evidence-based-management]] because collaboration claims need to distinguish system-level value from the principal's incentive to fund the human effort that makes oversight real.
 
 ## Contradictions & open questions
 

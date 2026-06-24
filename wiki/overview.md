@@ -65,6 +65,7 @@ Seed questions to grow topics around. Edit freely.
 - When can junior or novice AI users safely teach senior professionals, and when does bottom-up adoption energy produce underpowered risk mitigation?
 - When does improving AI quality reduce human effort enough that system performance, learning, or oversight suffers?
 - When does proactive AI assistance reduce task burden versus adding extraneous cognitive load through task switching, information sprawl, or repair work?
+- When does human-AI collaboration fail because the human contribution is valuable but too difficult to incentivize, monitor, or contract for under rare AI failures?
 - What does construct validity require in AI-mediated assessment and people analytics?
 - When does visible AI reliance signal weak judgment, adaptability, compliance, or professionalism — and how should organizations design evaluation systems around that signal?
 - When should humans delegate execution authority to an AI agent rather than seek advice or coaching, and how does one actor's delegation change the incentives and outcomes of others in the same work system?
@@ -101,4 +102,5 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **ai-stewardship / human verification** — appears in [[2025-lee-generative-ai-critical-thinking]], [[2026-lee-making-invisible-visible]], [[2025-yun-generative-ai-knowledge-work]], and [[2025-mazeika-remote-labor-index]]; promote if stewardship becomes a recurring account of the human role after AI produces or acts.
 - **ai-coaching-and-feedback** — appears in the Coach condition in [[2026-zhu-choose-your-agent]] and may connect to critique, learning, and cognitive-forcing designs; defer until there is another clean source beyond Zhu.
 - **ai-proactivity** — appears in [[2026-lepine-precision-proactivity]] and the proactive Advisor design in [[2026-zhu-choose-your-agent]]; promote if future sources distinguish initiative timing from execution authority.
+- **ai-oversight-incentives / human-AI contracting** — appears in [[2025-bastani-human-ai-contracting-paradox]] as the economic problem of paying for human vigilance when AI failures are rare and effort is hard to observe; promote if future sources add empirical or governance evidence on compensation, monitoring, liability, or incentive design for oversight.
 - **digital-competence-as-ai-resource** — appears in [[2026-vuong-genai-job-performance]] as a moderator of GenAI usage → job crafting and GenAI usage → work engagement; promote if future sources distinguish digital competence from AI literacy, readiness, or general self-efficacy.

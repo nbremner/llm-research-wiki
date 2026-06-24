@@ -10,6 +10,8 @@ Automation complacency is the failure mode where better machine advice reduces h
 
 [[2022-dellacqua-falling-asleep-at-wheel]] makes this mechanism concrete in HR screening. In a field experiment with professional recruiters, AI assistance improved accuracy overall, but recruiters followed advice more often as stated AI quality rose and lower-quality AI induced more time and effort. The useful design lesson is uncomfortable: maximizing model accuracy is not the same as maximizing system performance when human effort is endogenous.
 
+[[2025-bastani-human-ai-contracting-paradox]] sharpens that lesson into an incentive problem. In their principal-agent model, rarer AI errors make human vigilance harder to contract for because the human must be paid enough to inspect and correct failures that may almost never occur; a more reliable model can therefore increase the cost of preserving meaningful oversight. This is not complacency as laziness or trust alone — it is the economic difficulty of buying sustained attention to low-probability failures.
+
 [[2025-lee-generative-ai-critical-thinking]] gives the GenAI knowledge-work analogue. Higher confidence in GenAI was associated with less critical thinking, while higher self-confidence and confidence evaluating AI were associated with more critical thinking. That suggests complacency can arise through confidence calibration, not just through formal delegation.
 
 [[2026-dellacqua-jagged-technological-frontier]] adds the task-boundary version. Fluent AI-supported work can improve performance inside the frontier while harming correctness outside it, especially if users cannot tell which kind of task they are in. Complacency is most dangerous when subjective coherence rises faster than actual correctness.
