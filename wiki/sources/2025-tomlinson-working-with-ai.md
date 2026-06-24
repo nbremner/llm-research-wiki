@@ -34,6 +34,7 @@ file_hash: 41050083ba4450baa1800df0912e0f77c63b49db0f786d095daca4e04c6f2673
 - O*NET decomposition is useful for cross-occupation aggregation but may miss how tasks are actually connected inside jobs, how work has already changed, and how non-U.S. or unpaid work should be represented.
 
 ## Feeds
+- [[ai-workforce-impact-measurement]]
 - [[task-level-ai-adoption]]
 - [[human-ai-task-taxonomy]]
 - [[automation-and-substitution]]

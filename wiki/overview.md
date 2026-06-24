@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-06-22
+updated: 2026-06-24
 ---
 
 # Overview
@@ -48,6 +48,7 @@ The central question:
 - [[novice-risk-work]] — when novice AI users try to mitigate risks for senior/accountable actors without yet having enough technical or governance understanding
 - [[agentic-delegation]] — when people hand execution authority to AI agents rather than only receiving advice, and how that changes adoption, accountability, and interdependent outcomes
 - [[ai-agent-benchmark-validity]] — whether agent benchmarks measure work-relevant capability rather than convenient task performance
+- [[ai-workforce-impact-measurement]] — how AI capability, observed use, task applicability, and organizational outcomes become valid evidence about workforce change
 
 ## Open questions
 
@@ -79,7 +80,7 @@ Seed questions to grow topics around. Edit freely.
 - **Equilibrium labor demand.** Most sources show short-run, within-job augmentation; the wiki is thin on whether firms later hire fewer or different workers, change wages, or automate roles more fully.
 - **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], and [[ai-induced-skill-erosion]] now gives the wiki a more precise home for longitudinal evidence about expertise, identity, and skill atrophy.
 - **Foundational I-O constructs** remain mostly deferred to the triage-index shelf ("AI-relevant first, foundation later"), but [[competency-modeling]] has been promoted because it is directly adjacent to job analysis, skills architecture, AI-era work redesign, and the boundary between describing work and signaling future role enactment.
-- **Measurement of AI workforce impact** beyond productivity anecdotes — still thin, but [[task-level-ai-adoption]] now gives the wiki a home for observed-use maps that sit between exposure indices and organizational outcome evidence.
+- **Measurement of AI workforce impact** has been promoted into [[ai-workforce-impact-measurement]] through [[2025-tomlinson-working-with-ai]], but the wiki still needs field evidence linking applicability scores to realized productivity, quality, job redesign, wages, hiring, skill development, and worker experience.
 - **Worker-desired agency in AI-agent work** is now represented through [[2025-shao-future-work-ai-agents]], but still needs live implementation evidence on whether agency matching improves adoption, performance, motivation, or trust.
 - **AI-supported knowledge synthesis** has been promoted into [[ai-supported-knowledge-synthesis]] through [[2025-yun-generative-ai-knowledge-work]], but the wiki still needs field evidence on whether synthesis interfaces improve decision quality, learning, and team alignment over time.
 - **AI-mediated learning and cognitive debt** has been promoted into [[ai-mediated-learning]] through [[2026-shen-ai-impacts-skill-formation]] and [[2025-kosmyna-brain-chatgpt-cognitive-debt]], but the wiki still needs workplace-longitudinal evidence on whether AI-supported learning designs preserve transfer, debugging skill, professional judgment, and expertise maintenance over time.

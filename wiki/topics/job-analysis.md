@@ -1,7 +1,7 @@
 ---
 title: Job analysis
 status: active
-updated: 2026-06-22
+updated: 2026-06-24
 ---
 
 # Job analysis
@@ -13,6 +13,8 @@ Job analysis is the upstream work-definition process behind many HR systems: sel
 The paper also reframes job analysis as a diagnostic tool, not just a documentation tool. Done inclusively, job analysis can reveal whether different demographic groups are assigned objectively different tasks, face different expectations, use different successful performance strategies, or experience work constraints that the majority definition of the job misses.
 
 For AI workforce transformation, job analysis matters because claims about automation, augmentation, and role redesign depend on knowing what work actually is. AI adoption and work-redesign arguments become weak when they rely on stale occupational descriptions or task lists that do not capture how people actually perform, adapt, and coordinate work.
+
+[[2025-tomlinson-working-with-ai]] shows one AI-era update to that problem: use observed AI conversations to map user goals and AI actions back to O*NET intermediate work activities, then aggregate those activities to occupations. The method keeps the job-analysis lineage visible, but it also shows the limit of static taxonomies: O*NET enables cross-occupation comparison while potentially missing current task change, non-U.S. work, and the connective tissue between listed activities.
 
 [[2008-icf-competency-modeling-job-analysis]] adds the competency-modeling boundary. It distinguishes task-oriented job analysis, worker-oriented job analysis, bottom-up competency modeling, and top-down organizational competency models. The useful distinction is not “job analysis versus competencies” in the abstract; it is whether the method is defining current tasks, future tasks, job-level KSAOs, cross-job competencies, or organization-level strategic capabilities.
 
@@ -33,5 +35,6 @@ For AI workforce transformation, job analysis matters because claims about autom
 - Job analysis is often treated as the safeguard that makes personnel systems fair and legally defensible. [[2022-strah-diversity-issues-job-analysis]] complicates that assumption: the safeguard can transmit bias if it defines the job from majority-group experience.
 - The field has long treated SME disagreement as possible error or unreliability. A central open question is when disagreement reflects noise versus real subgroup differences in task exposure, expectations, constraints, or ways of performing the work.
 - AI-era work redesign raises a timing problem: job analysis can document current work, but agentic workflows may change tasks faster than traditional job-analysis cycles can update them.
+- [[2025-tomlinson-working-with-ai]] sharpens the timing problem: AI-use traces can update the map of work activities faster than traditional job analysis, but they may overrepresent what people ask chat tools to do and underrepresent embedded workflow changes, avoided uses, and accountable job context.
 - [[2008-icf-competency-modeling-job-analysis]] complicates the legal-defensibility instinct: strategic job analysis and competency modeling may be better suited to future work, but they may also be less empirically settled or less specific than traditional task analysis.
 - [[2009-sanchez-levine-competency-modeling-job-analysis]] complicates the incumbent-data default: if future role enactment is the target, incumbents may not be the right primary source, but leader-defined strategic competencies still need work-analysis methods before they become assessment or selection criteria.

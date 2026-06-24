@@ -1,7 +1,7 @@
 ---
 title: Human-AI task taxonomy
 status: active
-updated: 2026-06-22
+updated: 2026-06-24
 ---
 
 # Human-AI task taxonomy
@@ -20,11 +20,14 @@ The useful move for this wiki is not to adopt the tensor as final truth. It is t
 
 [[2026-wang-agent-development-real-world-work]] pushes the taxonomy problem upstream into benchmark design. Its O*NET-based mapping shows that agent benchmarks can appear broad at the generic skill level while remaining narrow in occupational domain coverage, so a useful human-AI task taxonomy has to preserve both cross-occupational work activities and domain-specific context before benchmark performance is interpreted as work capability.
 
+[[2025-tomlinson-working-with-ai]] adds an observed-use reason to distinguish the human-side task from the AI-side task. In Copilot conversations, the user goal and the AI action can map to different O*NET work activities, and the paper reports disjoint user-goal and AI-action activity sets in 40% of conversations. That means a taxonomy that only labels the user's requested task can miss what the AI actually did, while a taxonomy that only labels the AI output can miss the worker's underlying goal.
+
 ## Connections
 - Connects to [[work-redesign]] because task taxonomy is the upstream language for deciding which workflow nodes can be delegated, constrained, audited, or protected.
 - Connects to [[human-ai-collaboration]] because collaboration quality depends on authority, auditability, output definition, and the human persona in the task, not just whether a human and AI are both present.
 - Connects to [[automation-and-substitution]] because augmentation/substitution claims need task-level dimensional detail before they can imply labor substitution or protected human judgment.
 - Connects to [[task-level-ai-adoption]] because observed-use maps describe where AI is used, while task taxonomy describes what kind of use that is.
+- Connects to [[ai-workforce-impact-measurement]] because the validity of an applicability or exposure measure depends on whether the task labels preserve human goals, AI actions, scope, authority, and audit requirements.
 - Connects to [[job-analysis]] because AI-era task taxonomy is adjacent to classic work analysis: both define the work before redesign, assessment, or governance is built on top.
 - Connects to [[human-ai-task-allocation]] because a taxonomy becomes operational when it informs routing rules for which actor should handle a specific task instance under current human and system conditions.
 - Connects to [[ai-agent-benchmark-validity]] because benchmark scores only become interpretable when the benchmark task is located in a defensible task taxonomy.
@@ -35,3 +38,4 @@ The useful move for this wiki is not to adopt the tensor as final truth. It is t
 - The human persona dimension is promising but underdeveloped for I-O use. It could connect to expertise, skill level, motivation, identity, vulnerability, or worker-desired agency; those are not interchangeable constructs.
 - [[2026-zhang-fatigue-aware-learning-defer]] highlights that persona and state should not be collapsed. A worker's expertise level, current fatigue, cumulative workload, motivation, and accountability position may all affect allocation differently.
 - [[2026-wang-agent-development-real-world-work]] suggests that task taxonomies used for agent evaluation inherit the limits of benchmark task descriptions. If a task prompt omits context, purpose, stakeholders, or verification conditions, taxonomy labels can become cleaner than the work they claim to represent.
+- [[2025-tomlinson-working-with-ai]] shows the value of O*NET intermediate work activities for cross-occupation measurement, but also repeats the taxonomy risk: work activities are not the whole job, and the connective tissue between activities may carry much of the value that AI impact measures miss.
