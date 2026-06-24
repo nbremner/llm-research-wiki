@@ -22,6 +22,8 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 
 [[2009-sanchez-levine-competency-modeling-job-analysis]] gives a partial defense of loose competency language: if the goal is strategic signaling and behavior influence, a competency label may be intentionally broader than a clean latent trait. Construct-validity trouble begins when that strategic signal is treated as if it were already a bounded psychological attribute or job-specific KSAO.
 
+[[2023-zhang-human-capital-resources]] gives a more direct measurement case in human capital resources. In their review, only 23.6% of HCR measures focused solely on HCR, while many were partially or fully contaminated by antecedents, HR practices, attitudes, expenses, or outcomes. The important construct-validity lesson is that a measure can become more predictive by absorbing adjacent performance-relevant content while becoming less valid as evidence about the focal construct.
+
 [[2026-wang-agent-development-real-world-work]] extends the construct-validity problem to AI-agent benchmarks. A benchmark score can be valid evidence for performance on a sampled task distribution while invalid evidence for "real-world work capability" if the task distribution overrepresents programming-heavy, easily specified, easily verified work and underrepresents management, legal, interpersonal, or long-horizon work.
 
 ## Connections
@@ -33,6 +35,7 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - Relates to [[algorithmic-assessment]] because algorithmic hiring tools are only defensible when their signals, model outputs, and employment decisions are tied back to coherent job-relevant constructs.
 - Relates to [[job-analysis]] because construct validity begins before measurement: the construct has to be defined from work as actually performed and experienced, including perspectives that are easy to miss.
 - Relates to [[competency-modeling]] because competency labels need boundaries before they can support assessment, training, succession, or strategic HR decisions.
+- Relates to [[human-capital-resource-measurement]] because HCR shows how collective capability measures can be deficient, contaminated, or predictively useful for the wrong construct.
 - Relates to [[ai-agent-benchmark-validity]] because benchmark validity is construct validity applied to agent evaluation: what exactly is being measured, and what claims does that measure license?
 
 ## Contradictions & open questions
@@ -43,4 +46,5 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - [[2022-strah-diversity-issues-job-analysis]] complicates the usual “job-relatedness” safeguard: a procedure can be tied to a documented job analysis and still be unfairly narrow if the job analysis failed to capture diverse ways of performing the work.
 - [[2008-icf-competency-modeling-job-analysis]] shows that competency modeling can improve strategic fit while weakening construct precision if broad organizational competencies are treated as if they were job-specific KSAOs.
 - [[2009-sanchez-levine-competency-modeling-job-analysis]] suggests a two-standard problem: the construct can be rhetorically useful for strategy communication while still inadequate for measurement-heavy HR decisions unless translated into observable, job-family-specific behavioral indicators.
+- [[2023-zhang-human-capital-resources]] adds a prediction-versus-explanation problem: contaminated HCR measures can correlate more strongly with performance, but that strength may come from mixing HCR with other constructs rather than from cleaner measurement of human capital resources.
 - [[2026-wang-agent-development-real-world-work]] sharpens the validation target but still relies on benchmark-task descriptions and LLM-assisted taxonomy mapping. The next question is whether benchmark coverage and autonomy metrics predict real deployment outcomes better than raw agent scores.

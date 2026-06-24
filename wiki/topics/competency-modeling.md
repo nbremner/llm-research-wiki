@@ -14,9 +14,12 @@ Competency modeling is the practice of identifying, defining, and measuring the 
 
 The construct-validity risk is that “competency” can mean too many things at once: a KSAO, a behavior, a motive, a personality-like trait, a cultural value, or an organizational capability. That looseness can be useful for HR strategy but dangerous for measurement and selection if the model is not tied back to observable work, job-relevant behavior, and evidence about performance differentiation.
 
+[[2023-zhang-human-capital-resources]] is adjacent because HCR measurement faces the same translation problem at the collective level. The paper treats HCR as emerging from employees' KSAOs and compound KSAOs, but shows that many measures drift into education, experience, HPWPs, attitudes, labor expenses, or performance. Competency systems face a similar risk when broad capability language is operationalized with indicators that are easier to collect than they are construct-valid.
+
 ## Connections
 - Relates to [[job-analysis]] because bottom-up competency models often restate worker-oriented job analysis, while top-down competency models move toward organizational strategy and culture.
 - Relates to [[construct-validity]] because competency labels need clear boundaries and evidence that they refer to job-relevant attributes rather than broad aspirational language.
+- Relates to [[human-capital-resource-measurement]] because both competency models and HCR measures translate KSAOs into organizational capability claims, often under pressure to be strategic, predictive, and easy to operationalize.
 - Relates to [[evidence-based-management]] because competency models are often used to support selection, training, performance management, succession planning, and strategic HR claims that require different kinds of evidence.
 - Relates to [[work-redesign]] because AI-era skills architectures and role redesign can easily reinvent competency modeling under newer language unless the unit of analysis is kept clear.
 - Relates to [[work-redesign]] because Sanchez and Levine's role-enactment framing treats jobs as interpreted and performed, not only documented — a useful bridge to AI-era redesign debates about changing tasks, roles, and strategic behavior.

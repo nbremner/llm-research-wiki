@@ -32,6 +32,7 @@ file_hash: f308cb25da4e56926236af677a5660bee8618058524e660b627bc82a7af9cc4f
 - The finding that partially contaminated measures predict performance more strongly should not be read as permission to use contaminated measures when the inference target is HCR; it shows that mixed constructs can improve prediction while obscuring what is actually producing the relationship.
 
 ## Feeds
+- [[human-capital-resource-measurement]]
 - [[construct-validity]]
 - [[competency-modeling]]
 - [[ai-workforce-impact-measurement]]

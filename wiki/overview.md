@@ -27,6 +27,7 @@ The central question:
 - [[algorithmic-assessment]] — algorithmic hiring/assessment as a measurement chain from signal to construct to decision
 - [[job-analysis]] — how work, tasks, KSAOs, and performance domains are defined before HR systems are built
 - [[competency-modeling]] — how HR defines reusable KSAO/behavior/capability models across jobs, roles, and strategy
+- [[human-capital-resource-measurement]] — how collective worker capability is defined and measured without confusing KSAOs with antecedents, HR practices, attitudes, costs, or outcomes
 - [[inclusive-hr-systems]] — how HR practices are designed so work definitions, criteria, and decisions include diverse employee experiences
 - [[employee-engagement]] — engagement as a cautionary I-O construct for measurement and evidence claims
 - [[construct-validity]] — whether named constructs are conceptually bounded and measured coherently
@@ -60,6 +61,7 @@ Seed questions to grow topics around. Edit freely.
 - Where do worker preferences for automation, augmentation, and sustained human agency diverge from technical AI-agent capability?
 - What would make AI readiness a valid organizational assessment construct rather than a loose maturity checklist?
 - What does good measurement of AI workforce impact look like beyond productivity anecdotes?
+- How should organizations measure human capital, AI capital, and combined human-AI capability without collapsing distinct constructs into one performance-relevant but uninterpretable index?
 - When does AI-mediated work affect autonomy, competence, relatedness, trust, and motivation?
 - When does GenAI access become bottom-up job crafting rather than mere tool use, and when should organizations formalize that local redesign into roles, workflows, or governance?
 - When does AI literacy improve calibrated use without simply increasing or decreasing AI receptivity?
@@ -80,6 +82,7 @@ Seed questions to grow topics around. Edit freely.
 - **Equilibrium labor demand.** Most sources show short-run, within-job augmentation; the wiki is thin on whether firms later hire fewer or different workers, change wages, or automate roles more fully.
 - **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], and [[ai-induced-skill-erosion]] now gives the wiki a more precise home for longitudinal evidence about expertise, identity, and skill atrophy.
 - **Foundational I-O constructs** remain mostly deferred to the triage-index shelf ("AI-relevant first, foundation later"), but [[competency-modeling]] has been promoted because it is directly adjacent to job analysis, skills architecture, AI-era work redesign, and the boundary between describing work and signaling future role enactment.
+- **Human capital resource measurement** has been promoted into [[human-capital-resource-measurement]] through [[2023-zhang-human-capital-resources]], but the wiki still needs evidence on how organizations should measure human capability, AI capability, and combined workflow capability as domain coverage converges.
 - **Measurement of AI workforce impact** has been promoted into [[ai-workforce-impact-measurement]] through [[2025-tomlinson-working-with-ai]], but the wiki still needs field evidence linking applicability scores to realized productivity, quality, job redesign, wages, hiring, skill development, and worker experience.
 - **Worker-desired agency in AI-agent work** is now represented through [[2025-shao-future-work-ai-agents]], but still needs live implementation evidence on whether agency matching improves adoption, performance, motivation, or trust.
 - **AI-supported knowledge synthesis** has been promoted into [[ai-supported-knowledge-synthesis]] through [[2025-yun-generative-ai-knowledge-work]], but the wiki still needs field evidence on whether synthesis interfaces improve decision quality, learning, and team alignment over time.
