@@ -30,6 +30,7 @@ file_hash: 32f0a6110f93d142b1cb440768d2d9bd93adb5fca70b0e2223e01a42c7cc86a9
 - The paper is useful for construct framing and assessment-design logic, but any use in selection, training, leadership assessment, or workforce planning would still require job-relevance evidence, criterion validation, and context-specific implementation checks.
 
 ## Feeds
+- [[complex-collaborative-problem-solving]]
 - [[job-analysis]]
 - [[competency-modeling]]
 - [[construct-validity]]

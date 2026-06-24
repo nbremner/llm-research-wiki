@@ -26,6 +26,8 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 
 [[2026-wang-agent-development-real-world-work]] extends the construct-validity problem to AI-agent benchmarks. A benchmark score can be valid evidence for performance on a sampled task distribution while invalid evidence for "real-world work capability" if the task distribution overrepresents programming-heavy, easily specified, easily verified work and underrepresents management, legal, interpersonal, or long-horizon work.
 
+[[2015-neubert-assessment-21st-century-skills]] gives a positive-but-unfinished construct-validity case. CPS and ColPS are more bounded than loose future-skills labels because they specify active knowledge acquisition, knowledge application, dynamic problem features, and collaborative interaction; the unresolved validation question is whether simulated microworld performance supports the same inferences organizations want to make about real jobs and redesigned work.
+
 ## Connections
 
 - Relates to [[employee-engagement]] as a cautionary case of loose construct boundaries.
@@ -36,6 +38,7 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - Relates to [[job-analysis]] because construct validity begins before measurement: the construct has to be defined from work as actually performed and experienced, including perspectives that are easy to miss.
 - Relates to [[competency-modeling]] because competency labels need boundaries before they can support assessment, training, succession, or strategic HR decisions.
 - Relates to [[human-capital-resource-measurement]] because HCR shows how collective capability measures can be deficient, contaminated, or predictively useful for the wrong construct.
+- Relates to [[complex-collaborative-problem-solving]] because CPS and ColPS show how a broad capability label can become more construct-valid when problem features, process data, and assessment tasks are explicitly modeled.
 - Relates to [[ai-agent-benchmark-validity]] because benchmark validity is construct validity applied to agent evaluation: what exactly is being measured, and what claims does that measure license?
 
 ## Contradictions & open questions
@@ -48,3 +51,4 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - [[2009-sanchez-levine-competency-modeling-job-analysis]] suggests a two-standard problem: the construct can be rhetorically useful for strategy communication while still inadequate for measurement-heavy HR decisions unless translated into observable, job-family-specific behavioral indicators.
 - [[2023-zhang-human-capital-resources]] adds a prediction-versus-explanation problem: contaminated HCR measures can correlate more strongly with performance, but that strength may come from mixing HCR with other constructs rather than from cleaner measurement of human capital resources.
 - [[2026-wang-agent-development-real-world-work]] sharpens the validation target but still relies on benchmark-task descriptions and LLM-assisted taxonomy mapping. The next question is whether benchmark coverage and autonomy metrics predict real deployment outcomes better than raw agent scores.
+- [[2015-neubert-assessment-21st-century-skills]] improves on generic 21st-century-skills rhetoric by narrowing the construct, but it raises the familiar simulation-validity question: when does performance in a controlled microworld become valid evidence about workplace problem solving rather than only evidence about the microworld?
