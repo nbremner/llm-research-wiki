@@ -1,7 +1,7 @@
 ---
 title: Algorithmic assessment
 status: active
-updated: 2026-06-21
+updated: 2026-06-25
 ---
 
 # Algorithmic assessment
@@ -16,6 +16,8 @@ The topic sits at the intersection of [[construct-validity]], [[evidence-based-m
 
 [[2022-dellacqua-falling-asleep-at-wheel]] adds the human-oversight problem inside algorithmic hiring. In a field experiment with professional recruiters, algorithmic recommendations improved accuracy overall, but higher-stated AI quality made recruiters more likely to follow recommendations and lower-quality AI induced more effort and time spent reviewing resumes. For assessment, this means the validity of a human-AI selection system depends not only on model accuracy, but on how recommendations reshape human attention, discretion, and willingness to override.
 
+[[2025-landers-ethical-use-ai-iop]] adds the professional-ethics frame around AI selection. AI-scored or AI-delivered interviews are not only technical prediction problems: they require disclosure, evidence about how new data formats are collected and interpreted, attention to avatar or delivery-system effects, consistency across applicants, and scrutiny of foundational models and customization processes. This links algorithmic assessment to [[responsible-ai-deployment]] because selection AI can satisfy an efficiency demand while still failing disclosure, job-relatedness, fairness, accountability, applicant-experience, or domain-specific validation standards.
+
 ## Connections
 - Relates to [[construct-validity]] because algorithmic assessment only matters if the inferred construct is coherent, job-relevant, and defensible in a nomological network.
 - Relates to [[evidence-based-management]] because prediction, validity, adverse impact, compliance, and utility are different evidence claims and should not be collapsed into “the tool works.”
@@ -23,6 +25,7 @@ The topic sits at the intersection of [[construct-validity]], [[evidence-based-m
 - Relates lightly to [[human-ai-collaboration]] when algorithmic outputs are used as decision support; the NYC AEDT language is a reminder that some “support” tools cross into substantial assistance or replacement.
 - Relates to [[automation-complacency]] because assessment systems can preserve formal human discretion while still making workers inattentive followers of model advice.
 - Relates to [[job-analysis]] because algorithmic assessment inherits its target definition from upstream work analysis; bad job analysis can make later model validation look cleaner than it is.
+- Relates to [[responsible-ai-deployment]] because selection AI turns deployment ethics into concrete questions about disclosure, validation, fairness, applicant experience, appealability, and accountability.
 
 ## Contradictions & open questions
 - The cluster separates prediction from explanation. [[2016-chamorro-premuzic-new-talent-signals]] argues that understanding constructs matters, while some big-data assessment practices prioritize predictive relationships without enough theory.

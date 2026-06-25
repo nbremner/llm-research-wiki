@@ -1,7 +1,7 @@
 ---
 title: Evidence-based management
 status: active
-updated: 2026-06-22
+updated: 2026-06-25
 ---
 
 # Evidence-based management
@@ -38,6 +38,7 @@ This is directly relevant to AI workforce transformation. Claims about AI adopti
 
 - Evidence-based management should discipline claims without becoming paralysis. The wiki should track where imperfect evidence is still decision-relevant and where claims are too weak to operationalize.
 - AI transformation evidence will often be fast-moving and proprietary; the public-only boundary means the wiki may underrepresent some internal organizational evidence even when such evidence exists.
+- [[2025-landers-ethical-use-ai-iop]] adds a practical tension: by the time evidence on a new AI system is peer-reviewed, the technology may already be obsolete, yet organizations still make worker-facing decisions. Evidence-based management should not become an excuse for either paralysis or reckless adoption; it should specify what evidence is available, what remains uncertain, which ethical principles govern the gap, what scope limits are warranted, and what monitoring, safeguards, or rollback mechanisms are required before scale.
 - For occupational exposure claims, the evidence ladder should distinguish annotation-based indices, observed tool deployment, productivity changes, job-posting shifts, and actual employment or wage effects. [[2026-tomei-what-jobs-can-ai-learn]] mostly sits at the index-plus-suggestive-validation stage.
 - [[2025-mazeika-remote-labor-index]] strengthens the evidence base for autonomous remote-work completion, but it still should not be read as evidence about assisted productivity, within-job augmentation, labor demand, wages, or adoption. Those are different outcomes requiring different designs.
 - For algorithmic hiring claims, the open question is often not whether evidence exists, but what kind: predictive validity, construct validity, bias-audit metrics, applicant reactions, legal compliance, implementation fidelity, and business utility answer different questions.

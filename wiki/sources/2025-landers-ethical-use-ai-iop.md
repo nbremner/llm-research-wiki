@@ -35,6 +35,7 @@ file_hash: 52881d01cc593280b3569f17d28a82f6053faddfb6017f408dd23e00636408f4
 - Because the article is broad across I-O domains, topic synthesis should avoid treating it as evidence for performance gains and instead use it as a boundary-setting source on validation, accountability, worker dignity, and governance.
 
 ## Feeds
+- [[responsible-ai-deployment]]
 - [[algorithmic-assessment]]
 - [[ai-mediated-learning]]
 - [[automation-and-substitution]]

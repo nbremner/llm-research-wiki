@@ -1,7 +1,7 @@
 ---
 title: Automation and substitution
 status: active
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # Automation and substitution
@@ -32,6 +32,8 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 [[2026-wang-agent-development-real-world-work]] adds a benchmark-representativeness warning. If agent benchmarks overrepresent programming-heavy, easily specified, and easily verified tasks, then rising benchmark performance is weak evidence for broad labor substitution until the evaluated tasks resemble the domains, skills, complexity, and verification conditions of real work.
 
 [[2025-friis-performance-principle]] adds a social-feasibility boundary to substitution claims. In a U.S. survey across 940 occupations, support for full automation nearly doubled when AI was described as outperforming humans at lower cost, but roughly 12% of occupations remained morally repugnant for AI use. Substitution forecasts therefore need [[moral-boundaries-of-ai-automation]] alongside capability, cost, worker desire, and realized adoption evidence.
+
+[[2025-landers-ethical-use-ai-iop]] adds an ethical deployment boundary to replacement claims. Worker replacement is not settled by technical feasibility, cost, or owner rights under capitalism: deployment decisions still need to consider worker dignity, rights, reskilling, reactions, and the organizational duty to monitor harms when AI changes or eliminates roles. This makes [[responsible-ai-deployment]] a governance layer for substitution decisions rather than an after-the-fact sentiment check.
 
 ## Contradictions & open questions
 

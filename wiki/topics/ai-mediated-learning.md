@@ -1,7 +1,7 @@
 ---
 title: AI-mediated learning
 status: stub
-updated: 2026-06-23
+updated: 2026-06-25
 ---
 
 # AI-mediated learning
@@ -12,12 +12,15 @@ AI-mediated learning asks when AI assistance helps workers acquire durable compe
 
 [[2025-kosmyna-brain-chatgpt-cognitive-debt]] provides an adjacent education-domain warning. Repeated LLM-assisted essay writing was associated with weaker neural connectivity, lower ownership, more homogeneous text, and poorer recall, suggesting that learning risk can appear before a workplace skill has visibly eroded. Together, these sources make a sharper claim than “AI reduces thinking”: AI can support learning when it creates explanation, comparison, and error-resolution work, and can undermine learning when it lets the user bypass those operations.
 
+[[2025-landers-ethical-use-ai-iop]] adds the workplace accountability layer for training chatbots. If an organization presents a conversational agent as an authoritative adviser, then worker errors based on that advice implicate the system and organization; if workers are explicitly trained to vet chatbot output, accountability shifts differently. AI-mediated learning therefore needs more than learning-outcome evidence: it needs clear role design around what the AI is, what the worker is expected to verify, and who bears the cost when the system teaches or advises badly.
+
 ## Connections
 - Relates to [[ai-induced-skill-erosion]] because repeated poor learning episodes can become durable capability loss.
 - Relates to [[automation-complacency]] because accepting AI output without effortful inspection can suppress the practice and feedback loops needed for learning.
 - Relates to [[critical-thinking]] because explanation-seeking, debugging, and comprehension checks are stewardship behaviors that also build capability.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because productive learning requires enough cognitive effort to process structure and errors, but not so much extraneous interaction burden that attention is consumed by managing the tool.
 - Relates to [[human-ai-collaboration]] because collaboration designs differ in whether they position the human as learner, reviewer, delegator, or accountable steward.
+- Relates to [[responsible-ai-deployment]] because workplace learning agents need explicit scope, evidence, worker-training, and accountability boundaries before errors are blamed on workers or hidden inside vendor claims.
 
 ## Contradictions & open questions
 - [[2026-shen-ai-impacts-skill-formation]] is causal but short-horizon: it measures learning from a one-hour software task, not longitudinal professional development or transfer to live work.

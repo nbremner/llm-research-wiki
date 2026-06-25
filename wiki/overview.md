@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-06-24
+updated: 2026-06-25
 ---
 
 # Overview
@@ -22,6 +22,7 @@ The central question:
 - [[ai-adoption]] — what binds AI adoption once tools are available (the "mapping problem")
 - [[task-level-ai-adoption]] — where workers actually bring AI into tasks, before roles or organizations have necessarily redesigned around it
 - [[ai-readiness]] — whether organizational capabilities, data, culture, and strategic fit are ready for a specific AI adoption purpose
+- [[responsible-ai-deployment]] — how workforce-facing AI systems are governed, evidenced, scoped, monitored, and held accountable so deployment protects worker dignity, fairness, privacy, autonomy, and well-being
 - [[work-redesign]] — how AI shifts work architecture from fixed roles toward redesigned human-agent workflows
 - [[automation-and-substitution]] — whether AI substitutes for or augments labor and capital: what scales, what shrinks, and at what time horizon
 - [[moral-boundaries-of-ai-automation]] — where AI replacement is socially or morally resisted even when capability and cost would otherwise support automation
@@ -76,6 +77,7 @@ Seed questions to grow topics around. Edit freely.
 - When should humans delegate execution authority to an AI agent rather than seek advice or coaching, and how does one actor's delegation change the incentives and outcomes of others in the same work system?
 - How does AI reshape job analysis and the definition of work itself, before HR systems are built on it?
 - When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement — construct validity and job-relatedness?
+- What evidence, governance, stakeholder voice, and reversal mechanisms make workforce-facing AI deployment responsible when complete validation evidence is unavailable but deployment pressure is real?
 - What design features make AI-supported knowledge synthesis improve judgment rather than simply making scattered evidence feel organized?
 - When does AI assistance reduce productive cognitive load versus reducing the practice, ownership, and recall needed for learning or expertise maintenance?
 - Where do moral boundaries make AI replacement socially unacceptable even when AI is technically capable and cheaper, and which kinds of human presence should be protected by design rather than treated as temporary resistance?
@@ -97,6 +99,7 @@ Seed questions to grow topics around. Edit freely.
 - **Agentic delegation** has been promoted into [[agentic-delegation]] through [[2026-zhu-choose-your-agent]], but the wiki still needs field evidence on when autonomous execution improves team or organizational outcomes once delegation is visible, governed, and tied to real accountability.
 - **Moral boundaries of AI automation** has been promoted into [[moral-boundaries-of-ai-automation]] through [[2025-friis-performance-principle]], but the wiki still needs field evidence on whether public moral repugnance translates into employer behavior, customer acceptance, professional norms, regulation, or durable protection from substitution.
 - **Human-AI task allocation** is proposed for promotion through [[2026-zhang-fatigue-aware-learning-defer]], but the wiki still needs field evidence on allocation policies that use real human-state signals such as fatigue, workload, skill, confidence, or accountability rather than simulated benchmark states.
+- **Responsible AI deployment** has been promoted into [[responsible-ai-deployment]] through [[2025-landers-ethical-use-ai-iop]], but the wiki still needs empirical evidence on governance arrangements, stakeholder participation, monitoring routines, and reversal mechanisms that prevent worker-facing AI from becoming unchecked efficiency infrastructure.
 - **Agent benchmark validity** has been promoted into [[ai-agent-benchmark-validity]] through [[2026-wang-agent-development-real-world-work]], but the wiki still needs field evidence that more representative benchmarks lead to better deployment, redesign, or governance decisions.
 
 ## Candidate topics (watchlist)
