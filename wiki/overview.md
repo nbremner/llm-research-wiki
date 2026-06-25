@@ -38,6 +38,7 @@ The central question:
 - [[critical-thinking]] — how GenAI changes the exercise of judgment, verification, and stewardship in knowledge work
 - [[human-ai-collaboration]] — how human accountability and AI capability are arranged in tasks
 - [[ai-mediated-teamwork]] — how AI changes the performance, expertise-sharing, coordination, and social functions that human teams traditionally provide
+- [[ai-mediated-organizational-networks]] — how AI changes the human-human collaboration and knowledge-sharing networks through which organizations coordinate work
 - [[human-ai-task-taxonomy]] — dimensions for classifying AI-enabled tasks before drawing redesign, collaboration, or substitution conclusions
 - [[human-ai-task-allocation]] — when a specific task instance should be routed to a human, AI system, or hybrid arrangement as capability, workload, fatigue, and accountability change
 - [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
@@ -72,6 +73,7 @@ Seed questions to grow topics around. Edit freely.
 - When can junior or novice AI users safely teach senior professionals, and when does bottom-up adoption energy produce underpowered risk mitigation?
 - When does improving AI quality reduce human effort enough that system performance, learning, or oversight suffers?
 - When does proactive AI assistance reduce task burden versus adding extraneous cognitive load through task switching, information sprawl, or repair work?
+- When does grounded GenAI expand human-human collaboration and knowledge-sharing networks, and when does increased centrality become overload, interruption, or coordination fatigue?
 - When does human-AI collaboration fail because the human contribution is valuable but too difficult to incentivize, monitor, or contract for under rare AI failures?
 - What does construct validity require in AI-mediated assessment and people analytics?
 - When does visible AI reliance signal weak judgment, adaptability, compliance, or professionalism — and how should organizations design evaluation systems around that signal?
@@ -103,6 +105,7 @@ Seed questions to grow topics around. Edit freely.
 - **Responsible AI deployment** has been promoted into [[responsible-ai-deployment]] through [[2025-landers-ethical-use-ai-iop]], but the wiki still needs empirical evidence on governance arrangements, stakeholder participation, monitoring routines, and reversal mechanisms that prevent worker-facing AI from becoming unchecked efficiency infrastructure.
 - **Agent benchmark validity** has been promoted into [[ai-agent-benchmark-validity]] through [[2026-wang-agent-development-real-world-work]], but the wiki still needs field evidence that more representative benchmarks lead to better deployment, redesign, or governance decisions.
 - **AI-mediated teamwork** has been promoted into [[ai-mediated-teamwork]] through [[2025-dellacqua-cybernetic-teammate]], but the wiki still needs evidence on coordination, trust, conflict, mentoring, implementation, and whether organizations actually redesign team boundaries after AI can reproduce some bounded team benefits.
+- **AI-mediated organizational networks** has been promoted into [[ai-mediated-organizational-networks]] through [[2026-buechsenschuss-genai-organizational-networks]], but the wiki still needs digital-trace, multi-organization, and longer-term evidence on whether GenAI-driven centrality persists, overloads key actors, or changes mentoring and informal knowledge flow.
 
 ## Candidate topics (watchlist)
 

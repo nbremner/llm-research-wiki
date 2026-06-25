@@ -54,6 +54,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2026-vuong-genai-job-performance]] adds a bottom-up redesign mechanism: employees may use GenAI as a job resource for job crafting before formal role architecture changes. In Vietnamese SMEs, GenAI usage was associated with job crafting and work engagement, which partially mediated job performance. For redesign, the important signal is that local worker-led restructuring can be part of the value pathway, but it also means redesigned work may be happening informally before governance, measurement, or role expectations catch up.
 
+[[2026-buechsenschuss-genai-organizational-networks]] adds a network-architecture mechanism. In a randomized field experiment, a grounded GenAI assistant increased collaboration and knowledge-sharing centrality, with specialists gaining more knowledge in-degree and generalists gaining more project output. Redesign therefore has to look beyond task allocation inside a role: AI may change who needs whom, who becomes easier to work with, and where knowledge requests concentrate in the organization.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -68,6 +70,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[competency-modeling]] because role-redesign claims often need a language for desired behavior, not only a decomposition of existing tasks.
 - Connects to [[ai-agent-benchmark-validity]] because redesign decisions built from agent scores need evidence that the benchmark actually represents the targeted work.
 - Connects to [[ai-enabled-job-crafting]] because worker-led redesign can reveal where GenAI is becoming a job resource, not only where leaders have formally reallocated tasks.
+- Connects to [[ai-mediated-organizational-networks]] because redesigned work can emerge as changed collaboration and knowledge-flow patterns before formal role architecture catches up.
 
 ## Contradictions & open questions
 
@@ -89,3 +92,4 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2009-sanchez-levine-competency-modeling-job-analysis]] predates AI and should not be treated as evidence about agentic workflows. Its value is conceptual: it warns that redesign grounded only in current task description may miss the strategic and behavioral signals needed for role enactment.
 - [[2026-wang-agent-development-real-world-work]] is benchmark evidence, not implementation evidence. It can say where evaluations are misaligned with work, but not whether a redesigned workflow will produce better performance, motivation, learning, or accountability.
 - [[2026-vuong-genai-job-performance]] treats job crafting as a positive mediator, but informal AI-enabled crafting can also create unmanaged variance in process quality, compliance, and performance criteria if it remains invisible to the organization.
+- [[2026-buechsenschuss-genai-organizational-networks]] is strong field-experimental evidence that grounded GenAI can shift network centrality, but the self-reported network measures and single-firm design mean it should not yet be treated as proof that AI generally improves organizational coordination.

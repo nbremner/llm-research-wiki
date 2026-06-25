@@ -30,6 +30,7 @@ file_hash: 087e746a9a518daa1d70860789f63743cf1ccba624d69ae4db5f21f0a6901569
 - The single-organization setting, short post-treatment window, and survey-based network measures limit generalization; longer-term and digital-trace evidence is needed to test whether the network changes persist, overload key actors, or reduce other forms of direct mentoring and communication.
 
 ## Feeds
+- [[ai-mediated-organizational-networks]]
 - [[ai-mediated-teamwork]]
 - [[work-redesign]]
 - [[human-ai-collaboration]]
