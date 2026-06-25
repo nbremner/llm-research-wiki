@@ -31,6 +31,7 @@ file_hash: c5cf993503ea9f989969b9636f36863557ff0b6822a6aa652463a521aeb35130
 - **Boundary note:** the PDF is an HBS working paper version; Crossref/SSRN metadata provides a public DOI, but the Drive PDF itself was treated as untrusted source text and used only for evidence extraction.
 
 ## Feeds
+- [[ai-mediated-teamwork]]
 - [[human-ai-collaboration]]
 - [[work-redesign]]
 - [[automation-and-substitution]]

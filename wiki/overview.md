@@ -37,6 +37,7 @@ The central question:
 - [[evidence-based-management]] — matching organizational claims to the quality and relevance of evidence
 - [[critical-thinking]] — how GenAI changes the exercise of judgment, verification, and stewardship in knowledge work
 - [[human-ai-collaboration]] — how human accountability and AI capability are arranged in tasks
+- [[ai-mediated-teamwork]] — how AI changes the performance, expertise-sharing, coordination, and social functions that human teams traditionally provide
 - [[human-ai-task-taxonomy]] — dimensions for classifying AI-enabled tasks before drawing redesign, collaboration, or substitution conclusions
 - [[human-ai-task-allocation]] — when a specific task instance should be routed to a human, AI system, or hybrid arrangement as capability, workload, fatigue, and accountability change
 - [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
@@ -101,6 +102,7 @@ Seed questions to grow topics around. Edit freely.
 - **Human-AI task allocation** is proposed for promotion through [[2026-zhang-fatigue-aware-learning-defer]], but the wiki still needs field evidence on allocation policies that use real human-state signals such as fatigue, workload, skill, confidence, or accountability rather than simulated benchmark states.
 - **Responsible AI deployment** has been promoted into [[responsible-ai-deployment]] through [[2025-landers-ethical-use-ai-iop]], but the wiki still needs empirical evidence on governance arrangements, stakeholder participation, monitoring routines, and reversal mechanisms that prevent worker-facing AI from becoming unchecked efficiency infrastructure.
 - **Agent benchmark validity** has been promoted into [[ai-agent-benchmark-validity]] through [[2026-wang-agent-development-real-world-work]], but the wiki still needs field evidence that more representative benchmarks lead to better deployment, redesign, or governance decisions.
+- **AI-mediated teamwork** has been promoted into [[ai-mediated-teamwork]] through [[2025-dellacqua-cybernetic-teammate]], but the wiki still needs evidence on coordination, trust, conflict, mentoring, implementation, and whether organizations actually redesign team boundaries after AI can reproduce some bounded team benefits.
 
 ## Candidate topics (watchlist)
 
