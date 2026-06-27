@@ -1,7 +1,7 @@
 ---
 title: AI workforce impact measurement
 status: active
-updated: 2026-06-24
+updated: 2026-06-27
 ---
 
 # AI workforce impact measurement
@@ -18,6 +18,8 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 
 [[2025-friis-performance-principle]] adds social acceptability as a workforce-impact measure. Its performance-principle decomposition shows that AI capability and cost are insufficient for predicting substitution: public support for automation changes sharply under an advanced-AI scenario, while moral repugnance remains concentrated in a smaller set of occupations. Workforce-impact measurement therefore needs to distinguish technical exposure from [[moral-boundaries-of-ai-automation]] rather than treating capability as realized adoption.
 
+[[2025-marguerit-augmenting-automating-labor]] adds an exposure-to-outcomes measurement design. Instead of treating AI exposure as a single construct, it builds separate Stack Overflow-based measures for automation AI and augmentation AI, then estimates their associations with new job-title emergence, employment, and wages. The measurement lesson is clean: workforce-impact claims change depending on whether the AI construct is task substitution, output enhancement, new-work creation, employment size, or wage movement, and those outcomes vary by occupational skill group.
+
 ## Connections
 - Connects to [[task-level-ai-adoption]] because observed use is one input to workforce impact measurement, especially when the data preserve task or work-activity grain rather than only tool-level adoption.
 - Connects to [[human-ai-task-taxonomy]] because measurement depends on correctly distinguishing user goals, AI actions, authority, scope, auditability, and output definition.
@@ -31,5 +33,6 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 - Applicability can be high where information work is common, but the value of that applicability depends on whether workers can evaluate outputs, integrate them into accountable workflows, and preserve the connective tissue between tasks.
 - O*NET-based aggregation makes cross-occupation measurement possible while also importing U.S.-centric, lagging, and task-list assumptions; AI-era work may change faster than the taxonomy used to measure it.
 - The wiki still needs field evidence linking applicability measures to realized productivity, quality, skill development, work redesign, hiring, wages, and worker experience over time.
+- [[2025-marguerit-augmenting-automating-labor]] helps fill the wages/employment side of that gap, but it also exposes a different validity problem: developer-community traces can distinguish automation and augmentation development, yet still need evidence that the measured exposure corresponds to actual organizational deployment and task recomposition.
 - Future human-AI capital measures may face the same validity temptation as HCR: contaminated indexes can become attractive if they predict performance, even when they cannot say which part of the human-machine work system is doing the explanatory work.
 - Social acceptability measures are not outcome evidence. [[2025-friis-performance-principle]] tells us where the public draws moral lines around AI automation, but the wiki still needs evidence linking those attitudes to customer behavior, firm adoption, labor demand, professional governance, and regulation.

@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-06-25
+updated: 2026-06-27
 ---
 
 # Overview
@@ -87,7 +87,7 @@ Seed questions to grow topics around. Edit freely.
 
 ## Thin / missing areas
 
-- **Equilibrium labor demand.** Most sources show short-run, within-job augmentation; the wiki is thin on whether firms later hire fewer or different workers, change wages, or automate roles more fully.
+- **Equilibrium labor demand.** [[2025-marguerit-augmenting-automating-labor]] now gives the wiki outcome evidence on new work, employment, and wages by automation versus augmentation exposure, but the wiki is still thin on firm-level mechanisms showing how organizations translate exposure into hiring, role redesign, skill demand, and substitution decisions.
 - **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], and [[ai-induced-skill-erosion]] now gives the wiki a more precise home for longitudinal evidence about expertise, identity, and skill atrophy.
 - **Foundational I-O constructs** remain mostly deferred to the triage-index shelf ("AI-relevant first, foundation later"), but [[competency-modeling]] and [[complex-collaborative-problem-solving]] have been promoted because they are directly adjacent to job analysis, skills architecture, AI-era work redesign, and the boundary between describing current work and assessing future-relevant capability.
 - **Human capital resource measurement** has been promoted into [[human-capital-resource-measurement]] through [[2023-zhang-human-capital-resources]], but the wiki still needs evidence on how organizations should measure human capability, AI capability, and combined workflow capability as domain coverage converges.

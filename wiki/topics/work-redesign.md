@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-06-22
+updated: 2026-06-27
 ---
 
 # Work redesign
@@ -31,6 +31,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 [[2025-shukla-ai-assisted-design-ironies]] adds the automation-history version of work redesign. In UX practice, designers expected GenAI to remove repetitive design meta-work and support ideation, but the paper warns that automation can shift work into monitoring, validation, troubleshooting, and defending outputs. The redesign question is therefore not just which design tasks AI can perform, but how AI changes designers' visibility into rationale, skill practice, accountability, and the flow of creative judgment.
 
 [[2025-handa-economic-tasks-ai]] gives a task-demand map for redesign. By mapping Claude.ai conversations to O*NET tasks, it shows where workers are already pulling AI into task execution: heavily in software development and writing, with broader but uneven spread across occupations. For redesign, this is not proof that those jobs should be automated; it is evidence about where task-level pressure and experimentation are already concentrated.
+
+[[2025-marguerit-augmenting-automating-labor]] gives redesign a labor-market outcome frame: augmentation AI is associated with new work creation and, for higher-skilled occupations, higher wages, while automation AI is associated with weaker low-skilled outcomes. That suggests redesign is not only about reallocating existing tasks inside a role; it also changes whether new job titles emerge, which skill groups capture the upside, and where organizations may redesign toward substitution rather than capability expansion.
 
 [[2025-agarwal-what-work-ai-doing]] adds a more granular task-characteristics map. Observed Claude use was highest for tasks with high creativity, cognitive demand, complexity, and low routineness, and clustered especially in a "Dynamic Problem Solving" archetype. For redesign, this suggests conversational GenAI is being pulled toward high-friction cognitive starts and synthesis work, not only toward routine task removal.
 
@@ -84,6 +86,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2025-mazeika-remote-labor-index]] is a benchmark of autonomous project completion, not an organizational redesign study. Its low automation rates argue for caution about full delegation, but they do not rule out large gains from human-guided decomposition, review, or tool-specific workflow changes.
 - [[2025-shukla-ai-assisted-design-ironies]] is practitioner-discourse evidence, not observed workflow performance. It is useful for surfacing likely redesign failure modes, but it does not show whether GenAI actually causes de-skilling or worse design outcomes over time.
 - [[2025-handa-economic-tasks-ai]] observes AI use, not organizational redesign. Conversation-level use can identify where work is being attempted with AI, but it cannot show whether task allocation, accountability, coordination, or job architecture changed around that use.
+- [[2025-marguerit-augmenting-automating-labor]] observes labor-market outcomes, not implemented redesign decisions. It supports the claim that automation and augmentation exposure have different consequences for new work, employment, and wages, but it cannot show which organizational design choices converted exposure into those outcomes.
 - [[2025-agarwal-what-work-ai-doing]] has the same observed-use limitation, plus measurement dependence on LLM-scored task characteristics. It is useful for identifying likely redesign pressure points, not for deciding which task clusters should be delegated without human review.
 - [[2026-reich-work-design-multidimensional-ai-threat]] is correlational, so it cannot establish whether good work design causes AI adoption or whether AI adopters are in roles they already experience as more autonomous and varied.
 - [[2025-shao-future-work-ai-agents]] is an audit of preferences and expert capability, not an implementation study. It helps identify where redesign friction is likely, but it does not prove that matching worker-desired agency levels produces better adoption, performance, or experience.
