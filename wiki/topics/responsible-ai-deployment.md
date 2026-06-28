@@ -1,7 +1,7 @@
 ---
 title: Responsible AI deployment
 status: stub
-updated: 2026-06-25
+updated: 2026-06-28
 ---
 
 # Responsible AI deployment
@@ -14,6 +14,8 @@ The practical stance is layered. First principles such as beneficence, nonmalefi
 
 The strongest deployment claim for the wiki is proactive: responsible AI cannot wait until after harms are observed at scale. It requires pre-deployment scrutiny of evidence, data provenance, affected groups, human authority, monitoring plans, appeal paths, accountability boundaries, and worker experience. It also requires humility about incomplete evidence: when validation is unavailable or fast-moving, the right answer is not blind adoption or indefinite paralysis, but narrower scope, safeguards, transparent uncertainty, ongoing monitoring, and willingness to stop or redesign the system.
 
+[[2025-tona-deployment-ai-infer-employee-skills]] adds an implementation case where responsible deployment is neither abstract ethics nor only model evaluation. J&J's skills-inference platform required privacy review, HR compliance, HR data governance, local-regulatory negotiation, workers' council engagement, employee communication, and correction channels for AI blind spots. The case is especially useful because the governance burden appears before the system is used for high-stakes individual decisions: making employee skills visible at scale is already a responsible-deployment problem because it changes what the organization can infer, aggregate, and act on.
+
 ## Connections
 - Relates to [[algorithmic-assessment]] because hiring and assessment AI require disclosure, job-related validity evidence, fairness evaluation, auditability, applicant experience safeguards, and governance of how automated recommendations reshape human discretion.
 - Relates to [[evidence-based-management]] because responsible deployment claims require evidence matched to the decision: a tool can be efficient, compliant, valid, fair, usable, and trusted in different ways, and those are not interchangeable claims.
@@ -22,9 +24,11 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 - Relates to [[ai-mediated-work-experience]] because responsible deployment has to account for autonomy, competence, privacy, psychological safety, identity, workload, and felt control, not only productivity or adoption.
 - Relates to [[ai-mediated-learning]] because workplace learning agents need clear accountability boundaries before bad advice is blamed on workers or hidden inside vendor claims.
 - Relates to [[automation-and-substitution]] because replacing or recomposing work raises ethical questions that are not answered by capability or cost alone; worker rights, dignity, reskilling, agency, and reactions matter.
+- Relates to [[competency-modeling]] because AI-enabled skills architectures turn competency definitions into data systems that require privacy, correction, governance, and evidence about appropriate use.
 
 ## Contradictions & open questions
 - Responsible AI deployment can become a real constraint on harmful systems, but it can also become a legitimizing ritual once a framework, audit, or checklist has been completed. The wiki should keep first-principles judgment, worker consequences, and evidence quality visible rather than treating framework use as proof of ethics.
 - There is a speed mismatch: public research and regulation lag new AI systems, while organizations still make worker-facing decisions. The open practice question is what evidence threshold, scope limitation, monitoring plan, and reversal mechanism are defensible when complete validation is unavailable but deployment pressure is real.
 - Responsibility is distributed but can become diffuse. Vendors, HR, legal, technical teams, managers, executives, and domain experts may each control part of the system, so the wiki needs evidence on governance arrangements that keep accountability from evaporating across the deployment chain.
 - Worker voice is an unresolved design requirement. Many ethical frameworks mention affected stakeholders, but the wiki still needs evidence on when worker participation changes AI deployment decisions, not just communication or acceptance after the decision has already been made.
+- [[2025-tona-deployment-ai-infer-employee-skills]] shows worker councils and employee correction loops affecting deployment pace and model calibration, but it is still a management-facing case; the wiki needs evidence from employee perspectives on whether such systems feel developmental, surveillant, fair, or useful.

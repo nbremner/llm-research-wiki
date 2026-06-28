@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Overview
@@ -91,6 +91,7 @@ Seed questions to grow topics around. Edit freely.
 - **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], and [[ai-induced-skill-erosion]] now gives the wiki a more precise home for longitudinal evidence about expertise, identity, and skill atrophy.
 - **Foundational I-O constructs** remain mostly deferred to the triage-index shelf ("AI-relevant first, foundation later"), but [[competency-modeling]] and [[complex-collaborative-problem-solving]] have been promoted because they are directly adjacent to job analysis, skills architecture, AI-era work redesign, and the boundary between describing current work and assessing future-relevant capability.
 - **Human capital resource measurement** has been promoted into [[human-capital-resource-measurement]] through [[2023-zhang-human-capital-resources]], but the wiki still needs evidence on how organizations should measure human capability, AI capability, and combined workflow capability as domain coverage converges.
+- **AI-enabled skills inference and skills architecture** now has a first implementation case in [[2025-tona-deployment-ai-infer-employee-skills]], but the wiki still needs independent validation evidence on inferred skills, employee reactions, fairness, downstream reskilling and mobility outcomes, and whether these systems improve workforce planning beyond making skills data more visible.
 - **Measurement of AI workforce impact** has been promoted into [[ai-workforce-impact-measurement]] through [[2025-tomlinson-working-with-ai]], but the wiki still needs field evidence linking applicability scores to realized productivity, quality, job redesign, wages, hiring, skill development, and worker experience.
 - **Worker-desired agency in AI-agent work** is now represented through [[2025-shao-future-work-ai-agents]], but still needs live implementation evidence on whether agency matching improves adoption, performance, motivation, or trust.
 - **AI-supported knowledge synthesis** has been promoted into [[ai-supported-knowledge-synthesis]] through [[2025-yun-generative-ai-knowledge-work]], but the wiki still needs field evidence on whether synthesis interfaces improve decision quality, learning, and team alignment over time.
@@ -120,3 +121,4 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **ai-proactivity** — appears in [[2026-lepine-precision-proactivity]] and the proactive Advisor design in [[2026-zhu-choose-your-agent]]; promote if future sources distinguish initiative timing from execution authority.
 - **ai-oversight-incentives / human-AI contracting** — appears in [[2025-bastani-human-ai-contracting-paradox]] as the economic problem of paying for human vigilance when AI failures are rare and effort is hard to observe; promote if future sources add empirical or governance evidence on compensation, monitoring, liability, or incentive design for oversight.
 - **digital-competence-as-ai-resource** — appears in [[2026-vuong-genai-job-performance]] as a moderator of GenAI usage → job crafting and GenAI usage → work engagement; promote if future sources distinguish digital competence from AI literacy, readiness, or general self-efficacy.
+- **ai-enabled-skills-inference / skills architecture** — appears in [[2025-tona-deployment-ai-infer-employee-skills]] as a large-firm implementation of AI-inferred employee skills for digital-transformation workforce planning; promote if future sources add validation, fairness, employee-experience, or outcome evidence beyond one management-facing case.
