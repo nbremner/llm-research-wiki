@@ -63,6 +63,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2026-buechsenschuss-genai-organizational-networks]] adds a network-architecture mechanism. In a randomized field experiment, a grounded GenAI assistant increased collaboration and knowledge-sharing centrality, with specialists gaining more knowledge in-degree and generalists gaining more project output. Redesign therefore has to look beyond task allocation inside a role: AI may change who needs whom, who becomes easier to work with, and where knowledge requests concentrate in the organization.
 
+[[2025-randazzo-cyborgs-centaurs-self-automators]] adds a workflow-mode layer to redesign. In the same nominal GenAI-enabled consulting task, professionals enacted different architectures: Fused/Cyborg users integrated GenAI across the workflow, Directed/Centaur users selectively preserved human control over analytical logic, and Abdicated/Self-Automators handed over much of the problem-solving and evaluative work. Redesign therefore has to specify not only which tasks AI supports, but which co-creation mode the organization wants to cultivate for accuracy, productivity, AI fluency, domain upskilling, or expertise preservation.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -78,6 +80,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[ai-agent-benchmark-validity]] because redesign decisions built from agent scores need evidence that the benchmark actually represents the targeted work.
 - Connects to [[ai-enabled-job-crafting]] because worker-led redesign can reveal where GenAI is becoming a job resource, not only where leaders have formally reallocated tasks.
 - Connects to [[ai-mediated-organizational-networks]] because redesigned work can emerge as changed collaboration and knowledge-flow patterns before formal role architecture catches up.
+- Connects to [[human-ai-co-creation-modes]] because redesign decisions become enacted as recurring patterns of who steers, who executes, who evaluates, and who learns.
 
 ## Contradictions & open questions
 
@@ -103,3 +106,4 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2026-vuong-genai-job-performance]] treats job crafting as a positive mediator, but informal AI-enabled crafting can also create unmanaged variance in process quality, compliance, and performance criteria if it remains invisible to the organization.
 - [[2026-buechsenschuss-genai-organizational-networks]] is strong field-experimental evidence that grounded GenAI can shift network centrality, but the self-reported network measures and single-firm design mean it should not yet be treated as proof that AI generally improves organizational coordination.
 - [[2025-dellacqua-super-mario-ai]] shows why redesign should not equate individual AI capability with system improvement. The automated agent was individually strong, but the redesigned human-AI team initially performed worse because coordination routines and motivation changed.
+- [[2025-randazzo-cyborgs-centaurs-self-automators]] is useful for redesign vocabulary but limited by its single-session consultant task and April 2023 GPT-4 context; organizations should not assume its mode/outcome pattern transfers unchanged to other jobs, tools, or capability frontiers.

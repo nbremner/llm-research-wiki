@@ -14,6 +14,8 @@ AI-induced skill erosion is the slow loss of practiced judgment, craft, confiden
 
 [[2026-shen-ai-impacts-skill-formation]] supplies a more direct short-horizon causal test of skill formation. In a randomized programming task, AI assistance reduced post-task skill evaluation scores by 17% without significantly improving completion time; the largest gaps appeared in debugging, which is exactly the capability workers need if they are expected to supervise AI-written code. This does not show long-run erosion by itself, but it gives the topic a plausible immediate precursor: AI-mediated work can produce the artifact while weakening the learning episode that would otherwise maintain future oversight capacity.
 
+[[2025-randazzo-cyborgs-centaurs-self-automators]] adds a workflow-mode precursor to skill erosion. Abdicated/Self-Automator consultants produced fast, polished work by handing over much of the problem-solving and evaluative work to GenAI, but they did not develop either task/domain expertise or GenAI-related expertise during the episode. The warning is not that delegation is always bad; it is that output quality can hide whether the human side of the workflow is still practicing the capabilities future oversight depends on.
+
 The paper's response frame is also useful. “Dignified Human-AI interaction” treats agency, expertise, and self-worth as design requirements, not soft afterthoughts. “Sociotechnical immunity” names the protective system: early-warning signals, containment actions, and recovery routines that help workers detect, interrupt, and recover from AI-induced erosion while still serving quality goals.
 
 ## Connections
@@ -22,6 +24,7 @@ The paper's response frame is also useful. “Dignified Human-AI interaction” 
 - Relates to [[human-ai-collaboration]] because collaboration designs that keep humans nominally accountable but remove meaningful practice may weaken the human capacity they rely on.
 - Relates to [[work-redesign]] because workflows need deliberate practice, feedback, escalation, and recovery routines if they are supposed to preserve expertise rather than merely route work through humans.
 - Relates to [[critical-thinking]] because stewardship and verification are not just output-quality behaviors; they are also ways workers continue to exercise judgment.
+- Relates to [[human-ai-co-creation-modes]] because some co-creation modes preserve practice and skill-building while others let the human bypass both.
 - Relates to [[automation-complacency]] because cognitive debt may begin as reduced effort or ownership in the immediate task before it becomes measurable skill erosion.
 
 ## Contradictions & open questions
@@ -30,3 +33,4 @@ The paper's response frame is also useful. “Dignified Human-AI interaction” 
 - The wiki needs evidence on which design interventions actually preserve expertise without imposing wasteful friction or romanticizing manual work that can safely be automated.
 - [[2025-kosmyna-brain-chatgpt-cognitive-debt]] uses an educational writing task and a small fourth-session crossover sample, so its strongest contribution is mechanism generation rather than direct evidence about AI-mediated professional skill decay.
 - [[2026-shen-ai-impacts-skill-formation]] is causal but short-horizon and task-specific; it shows impaired skill formation after one AI-supported programming task, not yet durable workplace skill erosion over months or years.
+- [[2025-randazzo-cyborgs-centaurs-self-automators]] does not show long-term erosion; it shows that one mode of GenAI use can fail to build expertise during the task, which is a plausible but not sufficient precursor to erosion.

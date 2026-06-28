@@ -34,6 +34,7 @@ file_hash: f64a8865a83dcb93ec8fc03d2f149f8b106955ca1aba7f5be0f3bae8b03df55b
 - The authors argue that abdication is not inherently problematic; whether it is efficient delegation or harmful deskilling depends on task routineness, time pressure, and whether the work sits inside or outside the model's capability frontier.
 
 ## Feeds
+- [[human-ai-co-creation-modes]]
 - [[human-ai-collaboration]]
 - [[work-redesign]]
 - [[ai-mediated-learning]]

@@ -37,6 +37,7 @@ The central question:
 - [[evidence-based-management]] — matching organizational claims to the quality and relevance of evidence
 - [[critical-thinking]] — how GenAI changes the exercise of judgment, verification, and stewardship in knowledge work
 - [[human-ai-collaboration]] — how human accountability and AI capability are arranged in tasks
+- [[human-ai-co-creation-modes]] — how people and GenAI jointly steer workflows over time, with different implications for output, agency, and skilling
 - [[ai-mediated-teamwork]] — how AI changes the performance, expertise-sharing, coordination, and social functions that human teams traditionally provide
 - [[ai-mediated-organizational-networks]] — how AI changes the human-human collaboration and knowledge-sharing networks through which organizations coordinate work
 - [[human-ai-task-taxonomy]] — dimensions for classifying AI-enabled tasks before drawing redesign, collaboration, or substitution conclusions
@@ -75,6 +76,7 @@ Seed questions to grow topics around. Edit freely.
 - When does proactive AI assistance reduce task burden versus adding extraneous cognitive load through task switching, information sprawl, or repair work?
 - When does grounded GenAI expand human-human collaboration and knowledge-sharing networks, and when does increased centrality become overload, interruption, or coordination fatigue?
 - When does human-AI collaboration fail because the human contribution is valuable but too difficult to incentivize, monitor, or contract for under rare AI failures?
+- When should workers use Fused/Cyborg, Directed/Centaur, or Abdicated/Self-Automator co-creation modes, and how do those choices affect accuracy, AI fluency, domain expertise, and future oversight capacity?
 - What does construct validity require in AI-mediated assessment and people analytics?
 - When does visible AI reliance signal weak judgment, adaptability, compliance, or professionalism — and how should organizations design evaluation systems around that signal?
 - When should humans delegate execution authority to an AI agent rather than seek advice or coaching, and how does one actor's delegation change the incentives and outcomes of others in the same work system?
@@ -96,6 +98,7 @@ Seed questions to grow topics around. Edit freely.
 - **Worker-desired agency in AI-agent work** is now represented through [[2025-shao-future-work-ai-agents]], but still needs live implementation evidence on whether agency matching improves adoption, performance, motivation, or trust.
 - **AI-supported knowledge synthesis** has been promoted into [[ai-supported-knowledge-synthesis]] through [[2025-yun-generative-ai-knowledge-work]], but the wiki still needs field evidence on whether synthesis interfaces improve decision quality, learning, and team alignment over time.
 - **AI-mediated learning and cognitive debt** has been promoted into [[ai-mediated-learning]] through [[2026-shen-ai-impacts-skill-formation]] and [[2025-kosmyna-brain-chatgpt-cognitive-debt]], but the wiki still needs workplace-longitudinal evidence on whether AI-supported learning designs preserve transfer, debugging skill, professional judgment, and expertise maintenance over time.
+- **Human-AI co-creation modes** has been promoted into [[human-ai-co-creation-modes]] through [[2025-randazzo-cyborgs-centaurs-self-automators]], but the wiki still needs longitudinal field evidence on whether Cyborg/Centaur/Self-Automator patterns persist across tasks, can be deliberately designed, and predict durable productivity, AI fluency, domain expertise, or skill erosion.
 - **AI-enabled job crafting** has been promoted into [[ai-enabled-job-crafting]] through [[2026-vuong-genai-job-performance]], but the wiki still needs behavioral or field evidence on what workers actually change in tasks, collaboration, and performance criteria when they use GenAI to craft their jobs.
 - **Cognitive load in AI-assisted work** has been promoted into [[cognitive-load-in-ai-assisted-work]] through [[2026-lepine-precision-proactivity]], but the wiki still needs validated load measures across other domains and evidence on which interface interventions reduce extraneous load without suppressing useful AI help.
 - **AI-use image concerns** has been promoted into [[ai-use-image-concerns]] through [[2026-almog-barriers-ai-adoption]], but the wiki still needs field evidence from richer professional work and organizational designs that change whether AI use is read as good judgment, weak judgment, or compliance.

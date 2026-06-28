@@ -14,15 +14,19 @@ AI-mediated learning asks when AI assistance helps workers acquire durable compe
 
 [[2025-landers-ethical-use-ai-iop]] adds the workplace accountability layer for training chatbots. If an organization presents a conversational agent as an authoritative adviser, then worker errors based on that advice implicate the system and organization; if workers are explicitly trained to vet chatbot output, accountability shifts differently. AI-mediated learning therefore needs more than learning-outcome evidence: it needs clear role design around what the AI is, what the worker is expected to verify, and who bears the cost when the system teaches or advises badly.
 
+[[2025-randazzo-cyborgs-centaurs-self-automators]] adds field-experimental evidence that interaction mode shapes what professionals learn while using GenAI. Fused/Cyborg users developed GenAI-related expertise while maintaining task expertise, Directed/Centaur users developed task/domain expertise, and Abdicated/Self-Automators developed neither. The learning question is therefore not only whether AI is available, but whether the co-creation pattern keeps the human doing the kind of framing, method selection, evaluation, or iterative questioning that builds competence.
+
 ## Connections
 - Relates to [[ai-induced-skill-erosion]] because repeated poor learning episodes can become durable capability loss.
 - Relates to [[automation-complacency]] because accepting AI output without effortful inspection can suppress the practice and feedback loops needed for learning.
 - Relates to [[critical-thinking]] because explanation-seeking, debugging, and comprehension checks are stewardship behaviors that also build capability.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because productive learning requires enough cognitive effort to process structure and errors, but not so much extraneous interaction burden that attention is consumed by managing the tool.
 - Relates to [[human-ai-collaboration]] because collaboration designs differ in whether they position the human as learner, reviewer, delegator, or accountable steward.
+- Relates to [[human-ai-co-creation-modes]] because workflow-level interaction patterns determine whether AI-supported work functions as newskilling, upskilling, or bypass.
 - Relates to [[responsible-ai-deployment]] because workplace learning agents need explicit scope, evidence, worker-training, and accountability boundaries before errors are blamed on workers or hidden inside vendor claims.
 
 ## Contradictions & open questions
 - [[2026-shen-ai-impacts-skill-formation]] is causal but short-horizon: it measures learning from a one-hour software task, not longitudinal professional development or transfer to live work.
 - [[2025-kosmyna-brain-chatgpt-cognitive-debt]] uses educational essay writing rather than organizational work, so it supports mechanism generation more than direct workplace generalization.
 - Productive offloading and harmful bypass can look similar from output quality alone. The open design problem is how to instrument interaction patterns, comprehension checks, and transfer tasks so organizations can tell whether AI assistance is building or hollowing out competence.
+- [[2025-randazzo-cyborgs-centaurs-self-automators]] is short-horizon and consultant-specific, so it shows immediate skilling differences inside one problem-solving task rather than durable expertise development across repeated work.
