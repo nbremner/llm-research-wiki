@@ -31,6 +31,8 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 
 [[2026-buechsenschuss-genai-organizational-networks]] adds a social-position channel to work experience. Employees with access to a grounded GenAI assistant reported greater satisfaction with knowledge access and became more central in collaboration and knowledge-sharing networks. That is plausibly empowering, but it also makes centrality itself a work-experience variable: more requests, broader ties, and easier knowledge flow may produce satisfaction, overload, or coordination fatigue depending on how the workflow is managed.
 
+[[2025-klonek-ai-work-stress]] adds stress as a direct AI-mediated work-experience outcome. In 2,704 ChatGPT-related teamwork tweets, higher AI control was associated with higher stress, while human–AI transition and action processes were associated with lower stress. The useful work-design point is that AI control and human–AI teamwork are not opposite ends of one continuum: a workflow can increase AI control while also offering team-process resources that partially buffer stress.
+
 ## Connections
 - Relates to [[employee-engagement]] because AI-mediated work experience could easily become another broad dashboard construct unless its components and evidence claims stay sharp.
 - Relates to [[work-redesign]] because redesign choices determine whether AI preserves autonomy, skill use, feedback, learning, and meaningful control.
@@ -41,6 +43,7 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 - Relates to [[cognitive-load-in-ai-assisted-work]] because AI-mediated work experience includes the mental burden of coordinating with the model, not only autonomy, identity, or affect.
 - Relates to [[ai-enabled-job-crafting]] because bottom-up reshaping of AI-mediated work is one observable pathway from tool access to changed autonomy, competence, engagement, and performance.
 - Relates to [[ai-mediated-organizational-networks]] because worker experience changes when AI alters social position, knowledge access, and the volume or direction of collaboration ties.
+- Relates to [[ai-mediated-teamwork]] because team processes can act as social or goal-progress resources that change stress, not only performance or coordination.
 
 ## Contradictions & open questions
 - [[2026-reich-work-design-multidimensional-ai-threat]] is cross-sectional and self-reported. It is useful for construct mapping, but it cannot show whether autonomy and skill variety cause AI adoption or whether AI adopters perceive their jobs differently.
@@ -51,3 +54,4 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 - [[2026-lepine-precision-proactivity]] measures load from transcripts rather than from felt experience, so it strengthens the workload side of this topic but does not directly measure motivation, well-being, or identity.
 - [[2026-vuong-genai-job-performance]] is self-report and cross-sectional, so it supports a plausible nomological network around GenAI usage, job crafting, engagement, and performance, but not a causal claim that GenAI improves worker experience.
 - [[2026-buechsenschuss-genai-organizational-networks]] measures satisfaction with knowledge access but not broader well-being, identity, autonomy, or overload, so the positive network effects should not be overread as evidence that AI-mediated work experience improved overall.
+- [[2025-klonek-ai-work-stress]] is stronger on construct framing than causal identification: tweet-level, cross-sectional text mining can show that AI-control language, team-process language, and stress language covary, but it cannot establish whether AI control caused stress or whether stressed users described AI work differently.
