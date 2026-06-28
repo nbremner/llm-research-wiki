@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-06-27
+updated: 2026-06-28
 ---
 
 # Work redesign
@@ -15,6 +15,9 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 [[2026-lee-making-invisible-visible]] gives the worker-experience version of the same redesign problem. Its interview evidence shows that AI can be technically present in the workflow while badly positioned: workers reported AI taking over tasks they preferred or needed to own, leaving them with tedious backstage work, reducing autonomy and learning, and disrupting collaboration and mentoring. The design unit is therefore not “add AI to a task”; it is the whole sociotechnical workflow — task allocation, control rights, communication, feedback, and accountability.
 
 [[2026-dellacqua-jagged-technological-frontier]] adds the capability-boundary version of work redesign. In the same consulting domain, GPT-4 assistance improved performance on some tasks and degraded it on another that appeared comparably complex. This makes redesign less like a binary automation decision and more like frontier mapping: identify which subtasks can be delegated, which require human verification, and where AI output should be blocked or constrained.
+
+
+[[2025-dellacqua-super-mario-ai]] adds causal evidence that work redesign can fail when it treats automation as a plug-in replacement for one team member. In a laboratory coordination task, teams had already built routines over repeated rounds; replacing a human with a high-performing automated agent reduced output, increased bumps/coordination failures, and lowered trust and effort among the human teammate. Redesign therefore has to account for tacit routines, mutual predictability, and motivation, not only the replaced actor's individual task performance.
 
 [[2025-dellacqua-cybernetic-teammate]] adds a team-architecture version of work redesign. In P&G product-innovation tasks, individuals with AI matched non-AI teams on solution quality, while AI also helped R&D and Commercial professionals produce more balanced ideas across functional boundaries. Redesign therefore has to ask when a workflow needs a human team, when a solo worker with AI can reproduce some team benefits, and where human teaming remains necessary for coordination, commitment, accountability, or implementation.
 
@@ -96,3 +99,4 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2026-wang-agent-development-real-world-work]] is benchmark evidence, not implementation evidence. It can say where evaluations are misaligned with work, but not whether a redesigned workflow will produce better performance, motivation, learning, or accountability.
 - [[2026-vuong-genai-job-performance]] treats job crafting as a positive mediator, but informal AI-enabled crafting can also create unmanaged variance in process quality, compliance, and performance criteria if it remains invisible to the organization.
 - [[2026-buechsenschuss-genai-organizational-networks]] is strong field-experimental evidence that grounded GenAI can shift network centrality, but the self-reported network measures and single-firm design mean it should not yet be treated as proof that AI generally improves organizational coordination.
+- [[2025-dellacqua-super-mario-ai]] shows why redesign should not equate individual AI capability with system improvement. The automated agent was individually strong, but the redesigned human-AI team initially performed worse because coordination routines and motivation changed.

@@ -1,7 +1,7 @@
 ---
 title: AI-mediated work experience
 status: active
-updated: 2026-06-22
+updated: 2026-06-28
 ---
 
 # AI-mediated work experience
@@ -13,6 +13,9 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 [[2026-lee-making-invisible-visible]] gives the qualitative counterpart. Workers using decision-support AI cared not only whether the system improved efficiency, but whether it preserved meaningful control, learning, autonomy, collaboration, and accountability in the workflow. AI that takes the wrong work can degrade the experience even when it technically “helps.”
 
 [[2025-brynjolfsson-generative-ai-at-work]] adds an observable work-events lens. In customer support, GenAI assistance increased productivity and improved parts of the interaction climate, including more polite customers and fewer requests to escalate to a manager. That is not broad evidence of engagement, but it shows AI can alter the affective and relational texture of work, not just output volume.
+
+
+[[2025-dellacqua-super-mario-ai]] adds experimental evidence that automation can change the social and motivational experience of work even when the machine performs well. Participants directly paired with an automated agent reported substantially lower trust and effort, while general attitudes toward AI did not significantly change. That distinction matters: resistance or lower motivation may come from the work arrangement and loss of human sociality, not from broad anti-AI sentiment.
 
 [[2025-dellacqua-cybernetic-teammate]] adds causal short-run evidence that AI can change workers' emotional experience during knowledge work. In a P&G product-innovation experiment, AI-supported individuals and teams reported higher positive emotions and lower negative emotions after the task. The result matters because AI-mediated work may supply some social or motivational cues normally associated with teammates, but it should not be mistaken for durable relatedness, trust, or team climate.
 
@@ -42,7 +45,7 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 ## Contradictions & open questions
 - [[2026-reich-work-design-multidimensional-ai-threat]] is cross-sectional and self-reported. It is useful for construct mapping, but it cannot show whether autonomy and skill variety cause AI adoption or whether AI adopters perceive their jobs differently.
 - Deeper AI use is ambiguous. It may mean productive integration, work intensification, pressure to keep up, or loss of status depending on the threat dimension and job context.
-- The wiki now has stronger qualitative longitudinal evidence through [[2026-ehsan-future-workers]], but still needs behavioral and causal evidence on whether AI-mediated work improves or erodes autonomy, competence, relatedness, identity, workload, and learning over time.
+- The wiki now has stronger qualitative longitudinal evidence through [[2026-ehsan-future-workers]] and causal short-run evidence through [[2025-dellacqua-super-mario-ai]], but still needs workplace evidence on whether AI-mediated work improves or erodes autonomy, competence, relatedness, identity, workload, and learning over time.
 - [[2025-shao-future-work-ai-agents]] helps locate where agency mismatch may appear, but it does not observe downstream motivation, identity, learning, or well-being after agents enter real workflows.
 - [[2025-yun-generative-ai-knowledge-work]] is not a worker-outcomes study, so its evidence for experience is indirect: needs, worries, and interaction patterns around synthesis work rather than measured autonomy, competence, relatedness, workload, or well-being.
 - [[2026-lepine-precision-proactivity]] measures load from transcripts rather than from felt experience, so it strengthens the workload side of this topic but does not directly measure motivation, well-being, or identity.

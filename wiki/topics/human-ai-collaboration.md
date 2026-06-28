@@ -1,7 +1,7 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-06-22
+updated: 2026-06-28
 ---
 
 # Human-AI collaboration
@@ -11,6 +11,9 @@ Human-AI collaboration is the working relationship between human judgment and AI
 [[2025-lee-generative-ai-critical-thinking]] gives a useful caution about the collaboration metaphor. The study finds that, in GenAI-assisted knowledge work, humans often shift from producing material outputs to verifying, integrating, and stewarding AI outputs. The authors explicitly argue that “stewardship” is a better metaphor than teammate, collaborator, or supervisor because responsibility and accountability remain with the human user even when material production is delegated to the GenAI tool.
 
 [[2025-dellacqua-cybernetic-teammate]] complicates that caution without overturning it. In a P&G field experiment, AI-supported individuals matched the quality of non-AI teams and produced more cross-functionally balanced product ideas, so the teammate metaphor captures real performance and expertise-integration functions. The design risk is treating those functions as proof of equal partnership; AI can reproduce some benefits of a teammate while humans still carry responsibility for framing, evaluation, implementation, and consequences.
+
+
+[[2025-dellacqua-super-mario-ai]] adds a team-coordination warning to that metaphor. In a coordination game, the AI was a strong individual performer, but human-AI teams performed worse than stable human teams because coordination failures increased and directly affected players reported lower trust and effort. Collaboration quality therefore cannot be inferred from AI capability alone; it depends on whether humans can predict, trust, coordinate with, and stay motivated around the AI actor.
 
 This connects collaboration to confidence calibration. Higher confidence in AI was associated with less critical thinking; higher self-confidence was associated with more critical thinking but also more perceived effort. Good human-AI collaboration therefore cannot just minimize effort. It has to preserve conditions for competent human review.
 
@@ -55,7 +58,7 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 ## Connections
 
 - Relates to [[critical-thinking]] because collaboration quality depends on whether users verify, integrate, and steward AI output rather than merely accept it.
-- Relates to [[work-redesign]] because task allocation changes the cognitive work humans still need to perform.
+- Relates to [[work-redesign]] because task allocation changes the cognitive, motivational, and coordination work humans still need to perform.
 - Relates to [[ai-adoption]] because adoption metrics that count tool use without stewardship quality can hide overreliance.
 - Relates to [[automation-complacency]] because high-confidence AI advice can reduce the very human effort that makes collaboration valuable.
 - Relates to [[ai-induced-skill-erosion]] because collaboration that removes practice while preserving nominal accountability can quietly weaken the human side of the system.
@@ -69,7 +72,7 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 
 ## Contradictions & open questions
 
-- “Collaboration” may over-humanize the AI system. [[2025-lee-generative-ai-critical-thinking]] keeps accountability with the human user, which may fit better with [[automation-and-substitution]] and work-design frames than with teammate metaphors.
+- “Collaboration” may over-humanize the AI system. [[2025-lee-generative-ai-critical-thinking]] keeps accountability with the human user, while [[2025-dellacqua-super-mario-ai]] shows that even a capable automated partner may be a poor teammate when coordination, trust, and motivation are part of the work system. Both fit better with [[automation-and-substitution]] and work-design frames than with a simple teammate metaphor.
 - The wiki needs evidence beyond self-report on whether stewardship behaviors actually improve output quality, learning, or long-run capability. [[2022-dellacqua-falling-asleep-at-wheel]] is useful because it observes behavior, but it is still one HR-screening task rather than broad evidence across work systems.
 - [[2026-lee-making-invisible-visible]] uses worker expectations from decision-support settings; it supports the importance of control and verification, but not yet which collaboration designs produce better decisions, adoption, or worker outcomes.
 - [[2026-dellacqua-jagged-technological-frontier]] suggests collaboration form is not enough. Centaur and Cyborg patterns can be productive inside the frontier, but the same broad AI access can harm accuracy outside it; the open question is how workers learn the boundary in real time.
