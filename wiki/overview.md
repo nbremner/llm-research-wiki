@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-06-28
+updated: 2026-06-29
 ---
 
 # Overview
@@ -45,6 +45,7 @@ The central question:
 - [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
 - [[cognitive-load-in-ai-assisted-work]] — how AI assistance creates or reduces intrinsic and extraneous mental burden during real work
 - [[ai-mediated-work-experience]] — how AI changes autonomy, skill use, identity, workload, and felt job quality
+- [[ai-mediated-choice-and-identity]] — how AI recommendation or delegation changes preference distinctiveness, exploration, self-expression, and identity-relevant choice
 - [[ai-enabled-job-crafting]] — when workers use AI as a job resource to reshape tasks, effort, and work meaning from the bottom up
 - [[ai-induced-skill-erosion]] — when AI-enabled productivity hides slower erosion of expertise, judgment, and professional identity
 - [[ai-mediated-learning]] — when AI assistance builds durable competence versus bypassing the practice, error resolution, and comprehension work that learning requires
@@ -75,6 +76,7 @@ Seed questions to grow topics around. Edit freely.
 - When does improving AI quality reduce human effort enough that system performance, learning, or oversight suffers?
 - When does proactive AI assistance reduce task burden versus adding extraneous cognitive load through task switching, information sprawl, or repair work?
 - When does grounded GenAI expand human-human collaboration and knowledge-sharing networks, and when does increased centrality become overload, interruption, or coordination fatigue?
+- When should identity-relevant or preference-forming choices remain human-made even if an AI agent can choose plausible options efficiently?
 - When does human-AI collaboration fail because the human contribution is valuable but too difficult to incentivize, monitor, or contract for under rare AI failures?
 - When should workers use Fused/Cyborg, Directed/Centaur, or Abdicated/Self-Automator co-creation modes, and how do those choices affect accuracy, AI fluency, domain expertise, and future oversight capacity?
 - What does construct validity require in AI-mediated assessment and people analytics?
@@ -104,6 +106,7 @@ Seed questions to grow topics around. Edit freely.
 - **AI-use image concerns** has been promoted into [[ai-use-image-concerns]] through [[2026-almog-barriers-ai-adoption]], but the wiki still needs field evidence from richer professional work and organizational designs that change whether AI use is read as good judgment, weak judgment, or compliance.
 - **Novice risk work / reverse mentoring for AI** has been promoted into [[novice-risk-work]] through [[2025-kellogg-novice-risk-work]], but the wiki still needs evidence on which literacy, governance, and deployer-level supports let novice users teach seniors without over-relying on project-level routine changes.
 - **Agentic delegation** has been promoted into [[agentic-delegation]] through [[2026-zhu-choose-your-agent]], but the wiki still needs field evidence on when autonomous execution improves team or organizational outcomes once delegation is visible, governed, and tied to real accountability.
+- **AI-mediated choice and identity** has been promoted into [[ai-mediated-choice-and-identity]] through [[2025-matz-basic-effect]], but the wiki still needs workplace evidence on whether delegated AI choices narrow exploration, identity expression, developmental variety, or role agency in real workflows.
 - **Moral boundaries of AI automation** has been promoted into [[moral-boundaries-of-ai-automation]] through [[2025-friis-performance-principle]], but the wiki still needs field evidence on whether public moral repugnance translates into employer behavior, customer acceptance, professional norms, regulation, or durable protection from substitution.
 - **Human-AI task allocation** is proposed for promotion through [[2026-zhang-fatigue-aware-learning-defer]], but the wiki still needs field evidence on allocation policies that use real human-state signals such as fatigue, workload, skill, confidence, or accountability rather than simulated benchmark states.
 - **Responsible AI deployment** has been promoted into [[responsible-ai-deployment]] through [[2025-landers-ethical-use-ai-iop]], but the wiki still needs empirical evidence on governance arrangements, stakeholder participation, monitoring routines, and reversal mechanisms that prevent worker-facing AI from becoming unchecked efficiency infrastructure.
