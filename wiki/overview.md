@@ -50,6 +50,7 @@ The central question:
 - [[ai-induced-skill-erosion]] — when AI-enabled productivity hides slower erosion of expertise, judgment, and professional identity
 - [[ai-mediated-learning]] — when AI assistance builds durable competence versus bypassing the practice, error resolution, and comprehension work that learning requires
 - [[ai-supported-knowledge-synthesis]] — how AI helps or distorts evidence navigation, sensemaking, verification, and context-preserving decision work
+- [[ai-output-diversity]] — whether AI systems preserve meaningful variation, pluralism, and idiosyncratic preference in open-ended outputs rather than converging on homogeneous acceptable answers
 - [[ai-literacy]] — what people understand about AI systems, their limits, and the conditions for calibrated use
 - [[ai-receptivity]] — willingness, preference, or readiness to use AI, separated from whether that willingness is well-calibrated
 - [[ai-use-image-concerns]] — when visible AI reliance changes how workers expect to be judged, suppressing useful adoption even when AI improves task performance
@@ -86,6 +87,7 @@ Seed questions to grow topics around. Edit freely.
 - When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement — construct validity and job-relatedness?
 - What evidence, governance, stakeholder voice, and reversal mechanisms make workforce-facing AI deployment responsible when complete validation evidence is unavailable but deployment pressure is real?
 - What design features make AI-supported knowledge synthesis improve judgment rather than simply making scattered evidence feel organized?
+- When is diversity of AI-generated options, language, hypotheses, or frames part of task quality rather than avoidable noise, and how should that diversity be measured?
 - When does AI assistance reduce productive cognitive load versus reducing the practice, ownership, and recall needed for learning or expertise maintenance?
 - Which managerial capabilities turn AI access into durable team and organizational knowledge processes rather than isolated tool use?
 - Where do moral boundaries make AI replacement socially unacceptable even when AI is technically capable and cheaper, and which kinds of human presence should be protected by design rather than treated as temporary resistance?

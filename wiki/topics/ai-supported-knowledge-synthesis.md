@@ -1,7 +1,7 @@
 ---
 title: AI-supported knowledge synthesis
 status: active
-updated: 2026-06-22
+updated: 2026-07-01
 ---
 
 # AI-supported knowledge synthesis
@@ -11,6 +11,8 @@ AI-supported knowledge synthesis is the use of AI to help workers gather, organi
 [[2025-yun-generative-ai-knowledge-work]] gives this topic its clearest seed. Across interviews and a Yodeai prototype study with product managers, the paper shows that knowledge workers wanted AI to help with structure, semantic search, clustering, source visibility, stakeholder translation, and prioritization across messy work artifacts. The design implication is that synthesis tools need adaptable user control, transparent collaboration and verification mechanisms, and interoperability with the organizational systems where context and priorities actually live.
 
 The page should not collapse into “AI search” or “AI summarization.” Yun et al. show the synthesis problem as a work-system problem: workers needed to move between raw evidence, generated widgets, team communication, business priorities, and final judgment. That makes source traceability, audit trails, exportable context, and data-pipeline boundaries part of the synthesis design, not extra governance after the fact.
+
+[[2025-jiang-artificial-hivemind]] adds a diversity failure mode for synthesis work. INFINITY-CHAT shows that language models can converge on similar open-ended responses within and across model families, and that LM/reward-model/judge evaluations are less calibrated to human ratings when responses evoke idiosyncratic preferences. For knowledge synthesis, that means a tool can make the evidence space feel clean while silently narrowing the user's frame; preserving alternative interpretations, minority hypotheses, and divergent language may need to be designed as part of synthesis quality rather than treated as optional creativity.
 
 ## Connections
 - Relates to [[human-ai-collaboration]] because synthesis quality depends on how humans control, inspect, share, and revise AI-mediated interpretations.

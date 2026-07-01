@@ -32,5 +32,6 @@ file_hash: 2bccd95fd2e679b1d087568420729280336a9a6ca666eda9d3f18695543bb7ff
 - Prompt-injection scan found no model-directed instructions to the ingesting agent; hits for “system prompt,” “AI assistant,” and “language model” were ordinary paper content, methods language, or references.
 
 ## Feeds
+- [[ai-output-diversity]]
 - [[ai-supported-knowledge-synthesis]]
 - [[ai-mediated-choice-and-identity]]

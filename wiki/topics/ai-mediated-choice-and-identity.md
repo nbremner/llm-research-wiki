@@ -1,7 +1,7 @@
 ---
 title: AI-mediated choice and identity
 status: stub
-updated: 2026-06-29
+updated: 2026-07-01
 ---
 
 # AI-mediated choice and identity
@@ -13,6 +13,8 @@ AI-mediated choice and identity tracks how AI systems shape the preferences, cho
 The most useful contribution is the distinctiveness-diversity trade-off. Generic agents exerted the larger pull toward population-popular options, while personalized agents better preserved between-person distinctiveness but more strongly compressed within-person topical and psychological diversity. Personalization therefore does not simply solve agency loss; it may optimize toward the person's most typical self and reduce exploration of less central but still real preferences.
 
 For I-O purposes, this topic is a warning against treating agentic delegation as a neutral convenience layer. If AI agents increasingly schedule, purchase, communicate, triage, or choose on behalf of workers, then identity, agency, and behavioral variety become design outcomes alongside efficiency and accuracy.
+
+[[2025-jiang-artificial-hivemind]] extends the concern from delegated choice to generated expression. The Artificial Hivemind effect suggests that open-ended AI outputs can become homogeneous across models even when no single answer is correct, and the paper's human-annotation results show that aggregate quality measures can miss idiosyncratic human preferences. For identity-relevant choices and expression, the risk is not only that AI chooses popular options for people, but that it repeatedly supplies a narrow menu of acceptable ways to think, speak, imagine, or prefer.
 
 ## Connections
 - Relates to [[agentic-delegation]] because the effect appears when an AI system chooses on a person's behalf rather than merely advising them.
