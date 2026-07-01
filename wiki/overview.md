@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-06-29
+updated: 2026-07-01
 ---
 
 # Overview
@@ -87,6 +87,7 @@ Seed questions to grow topics around. Edit freely.
 - What evidence, governance, stakeholder voice, and reversal mechanisms make workforce-facing AI deployment responsible when complete validation evidence is unavailable but deployment pressure is real?
 - What design features make AI-supported knowledge synthesis improve judgment rather than simply making scattered evidence feel organized?
 - When does AI assistance reduce productive cognitive load versus reducing the practice, ownership, and recall needed for learning or expertise maintenance?
+- Which managerial capabilities turn AI access into durable team and organizational knowledge processes rather than isolated tool use?
 - Where do moral boundaries make AI replacement socially unacceptable even when AI is technically capable and cheaper, and which kinds of human presence should be protected by design rather than treated as temporary resistance?
 
 ## Thin / missing areas
@@ -112,7 +113,7 @@ Seed questions to grow topics around. Edit freely.
 - **Responsible AI deployment** has been promoted into [[responsible-ai-deployment]] through [[2025-landers-ethical-use-ai-iop]], but the wiki still needs empirical evidence on governance arrangements, stakeholder participation, monitoring routines, and reversal mechanisms that prevent worker-facing AI from becoming unchecked efficiency infrastructure.
 - **Agent benchmark validity** has been promoted into [[ai-agent-benchmark-validity]] through [[2026-wang-agent-development-real-world-work]], but the wiki still needs field evidence that more representative benchmarks lead to better deployment, redesign, or governance decisions.
 - **AI-mediated teamwork** has been promoted into [[ai-mediated-teamwork]] through [[2025-dellacqua-cybernetic-teammate]], but the wiki still needs evidence on coordination, trust, conflict, mentoring, implementation, and whether organizations actually redesign team boundaries after AI can reproduce some bounded team benefits.
-- **AI-mediated organizational networks** has been promoted into [[ai-mediated-organizational-networks]] through [[2026-buechsenschuss-genai-organizational-networks]], but the wiki still needs digital-trace, multi-organization, and longer-term evidence on whether GenAI-driven centrality persists, overloads key actors, or changes mentoring and informal knowledge flow.
+- **AI-mediated organizational networks** has been promoted into [[ai-mediated-organizational-networks]] through [[2026-buechsenschuss-genai-organizational-networks]], and [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] now adds qualitative managerial mechanisms for cross-functional AI knowledge transfer, but the wiki still needs digital-trace, multi-organization, and longer-term evidence on whether GenAI-driven centrality persists, overloads key actors, or changes mentoring and informal knowledge flow.
 
 ## Candidate topics (watchlist)
 
@@ -129,3 +130,4 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **digital-competence-as-ai-resource** — appears in [[2026-vuong-genai-job-performance]] as a moderator of GenAI usage → job crafting and GenAI usage → work engagement; promote if future sources distinguish digital competence from AI literacy, readiness, or general self-efficacy.
 - **ai-enabled-skills-inference / skills architecture** — appears in [[2025-tona-deployment-ai-infer-employee-skills]] as a large-firm implementation of AI-inferred employee skills for digital-transformation workforce planning; promote if future sources add validation, fairness, employee-experience, or outcome evidence beyond one management-facing case.
 - **ai-control-as-work-stressor** — appears in [[2025-klonek-ai-work-stress]] as a separable work-design dimension from human–AI team processes; promote if future sources add field, longitudinal, experimental, or governance evidence on control rights, autonomy need thwarting, stress, and mental-health outcomes.
+- **ai-managerial-capabilities / AI exploitation management** — appears in [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] as sales managers' data-based human capital, social capital for knowledge-sharing culture, and transformative AI-positive mindset; promote if future sources show managerial capabilities as a recurring adoption/readiness mechanism beyond B2B sales.

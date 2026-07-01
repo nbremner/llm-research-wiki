@@ -14,14 +14,18 @@ The source’s mechanism is useful for work design: grounded GenAI can act as a 
 
 Role differences matter. [[2026-buechsenschuss-genai-organizational-networks]] found specialists gained more in knowledge-network in-degree than generalists, while generalists gained more in satisfaction and project output. In I-O terms, the same AI resource may change different roles through different pathways: for specialists, by making deep expertise more accessible and sought after; for generalists, by improving coordination and throughput across a broader project portfolio.
 
+[[2025-hautamaki-fully-leveraging-ai-b2b-sales]] adds qualitative evidence on the managerial work behind AI-mediated knowledge flow. In B2B sales organizations, managers used social capital to make data a common language, frame AI as an analytical collaborator, surface use cases in team routines, and connect sales with IT, data, HR, finance, and subject-matter experts. That is not network measurement evidence, but it explains a plausible management mechanism by which AI changes who needs to collaborate with whom.
+
 ## Connections
 - Connects to [[ai-mediated-teamwork]] because team benefits and network benefits are adjacent but not identical: teams are bounded units, while organizational networks capture emergent ties across roles, groups, and expertise boundaries.
 - Connects to [[work-redesign]] because AI can reorganize collaboration and knowledge-flow architecture without formally changing job descriptions first.
 - Connects to [[human-ai-collaboration]] because the human-AI interface can change the value and frequency of subsequent human-human collaboration.
 - Connects to [[ai-mediated-work-experience]] because becoming more central can bring satisfaction, empowerment, overload, coordination fatigue, or pressure to be constantly available as a knowledge source.
 - Connects to [[ai-workforce-impact-measurement]] because productivity-only impact measures can miss changes in network centrality, knowledge access, and interaction structure.
+- Connects to [[ai-adoption]] and [[ai-readiness]] because cross-functional knowledge transfer is both an adoption mechanism and a readiness capability when AI use depends on domain data, IT infrastructure, and shared use-case learning.
 
 ## Contradictions & open questions
 - [[2026-buechsenschuss-genai-organizational-networks]] supports network expansion after grounded GenAI introduction, but its network outcomes are self-reported and observed in one firm over three months; digital-trace and longer-term evidence are needed before treating network rewiring as a general adoption effect.
 - Increased centrality is not automatically good. The same mechanism that improves knowledge flow can concentrate requests on key people, create coordination fatigue, or make specialists more interruptible.
 - The source’s role comparison is theoretically useful but not causal because employees were not randomly assigned to specialist versus generalist roles; role-based redesign claims should stay tentative until tested across organizations and task structures.
+- [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] gives manager-reported mechanisms for cross-functional AI knowledge transfer, but not observed network data. It should be read as a qualitative mechanism source, not as evidence that AI actually increased network centrality, tie strength, or collaboration volume.
