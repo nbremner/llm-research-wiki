@@ -22,6 +22,8 @@ For AI workforce transformation, job analysis matters because claims about autom
 
 [[2015-neubert-assessment-21st-century-skills]] adds another boundary: job and work analysis can define current tasks and occupational requirements, but it may under-serve skills that matter precisely because work is becoming more nonroutine, dynamic, and collaborative. CPS and ColPS do not replace job analysis; they point to the kind of problem features, interaction demands, and adaptive knowledge use that job analysis has to represent before assessment can be job-relevant for changing work.
 
+[[2025-teyssier-roberge-21st-century-skills-overlap]] adds a warning for AI-era job analysis and skills taxonomies: evergreen skill labels are attractive when work is changing quickly, but broad labels such as adaptability, collaboration, critical thinking, and self-management can overlap semantically and psychometrically unless the analysis specifies the work behaviors, problem contexts, and assessment evidence that make each skill job-relevant.
+
 ## Connections
 
 - Relates to [[construct-validity]] because construct validity begins before measurement: the job and criterion domain have to be defined coherently and inclusively before predictors can be validated against them.
@@ -32,6 +34,7 @@ For AI workforce transformation, job analysis matters because claims about autom
 - Relates to [[work-redesign]] because AI-mediated roles require renewed analysis of tasks, KSAOs, work contexts, and human-agent workflow boundaries.
 - Relates to [[inclusive-hr-systems]] because job analysis is one mechanism by which inclusion either enters or fails to enter recruitment, selection, performance management, promotion, and compensation.
 - Relates to [[evidence-based-management]] because HR evidence claims often rest on documented job relevance; the quality of that documentation is itself an evidence question.
+- Relates to [[human-capital-resource-measurement]] because job analysis helps decide which skill evidence can be aggregated into workforce capability claims rather than merely counted as generic future-skill inventory.
 
 ## Contradictions & open questions
 
@@ -42,3 +45,4 @@ For AI workforce transformation, job analysis matters because claims about autom
 - [[2008-icf-competency-modeling-job-analysis]] complicates the legal-defensibility instinct: strategic job analysis and competency modeling may be better suited to future work, but they may also be less empirically settled or less specific than traditional task analysis.
 - [[2009-sanchez-levine-competency-modeling-job-analysis]] complicates the incumbent-data default: if future role enactment is the target, incumbents may not be the right primary source, but leader-defined strategic competencies still need work-analysis methods before they become assessment or selection criteria.
 - [[2015-neubert-assessment-21st-century-skills]] complicates the current-task default: CPS and ColPS are attractive because they model dynamic problem interaction, but workplace use still needs evidence that the simulated problem features match the focal job, role, or redesigned workflow.
+- [[2025-teyssier-roberge-21st-century-skills-overlap]] complicates the evergreen-skills impulse: future-oriented skill taxonomies can become more durable than current task lists, but only if job analysis keeps them tied to observable behavior and avoids treating overlapping labels as distinct job requirements.

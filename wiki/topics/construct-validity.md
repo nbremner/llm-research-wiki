@@ -30,6 +30,8 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 
 [[2015-neubert-assessment-21st-century-skills]] gives a positive-but-unfinished construct-validity case. CPS and ColPS are more bounded than loose future-skills labels because they specify active knowledge acquisition, knowledge application, dynamic problem features, and collaborative interaction; the unresolved validation question is whether simulated microworld performance supports the same inferences organizations want to make about real jobs and redesigned work.
 
+[[2025-teyssier-roberge-21st-century-skills-overlap]] turns the broader 21st-century-skills field into a direct construct-validity caution. Across 40 identified skills, 446 definitions, and 457 assessment measures, the authors find enough semantic and psychometric overlap to make label proliferation itself the measurement problem: different skill names can create an appearance of precision while the definitions and instruments are still tapping shared higher-order competencies.
+
 ## Connections
 
 - Relates to [[employee-engagement]] as a cautionary case of loose construct boundaries.
@@ -38,11 +40,12 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - Relates to [[automation-and-substitution]] because exposure indices only guide decisions if the measured construct matches the mechanism of automation being claimed.
 - Relates to [[algorithmic-assessment]] because algorithmic hiring tools are only defensible when their signals, model outputs, and employment decisions are tied back to coherent job-relevant constructs.
 - Relates to [[job-analysis]] because construct validity begins before measurement: the construct has to be defined from work as actually performed and experienced, including perspectives that are easy to miss.
-- Relates to [[competency-modeling]] because competency labels need boundaries before they can support assessment, training, succession, or strategic HR decisions.
+- Relates to [[competency-modeling]] because competency labels need boundaries before they can support assessment, training, succession, or strategic HR decisions, and 21st-century-skills labels show how competency language can proliferate faster than discriminant-validity evidence when organizations want evergreen skills for future work.
 - Relates to [[human-capital-resource-measurement]] because HCR shows how collective capability measures can be deficient, contaminated, or predictively useful for the wrong construct.
 - Relates to [[complex-collaborative-problem-solving]] because CPS and ColPS show how a broad capability label can become more construct-valid when problem features, process data, and assessment tasks are explicitly modeled.
 - Relates to [[ai-agent-benchmark-validity]] because benchmark validity is construct validity applied to agent evaluation: what exactly is being measured, and what claims does that measure license?
 - Relates to [[organizational-learning-capability]] because learning capability must be separated from adjacent constructs such as satisfaction, culture, formalization, innovation, and performance before it can support AI transformation claims.
+
 
 ## Contradictions & open questions
 
@@ -55,4 +58,5 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - [[2023-zhang-human-capital-resources]] adds a prediction-versus-explanation problem: contaminated HCR measures can correlate more strongly with performance, but that strength may come from mixing HCR with other constructs rather than from cleaner measurement of human capital resources.
 - [[2026-wang-agent-development-real-world-work]] sharpens the validation target but still relies on benchmark-task descriptions and LLM-assisted taxonomy mapping. The next question is whether benchmark coverage and autonomy metrics predict real deployment outcomes better than raw agent scores.
 - [[2015-neubert-assessment-21st-century-skills]] improves on generic 21st-century-skills rhetoric by narrowing the construct, but it raises the familiar simulation-validity question: when does performance in a controlled microworld become valid evidence about workplace problem solving rather than only evidence about the microworld?
+- [[2025-teyssier-roberge-21st-century-skills-overlap]] strengthens the jangle-fallacy concern but leaves the positive taxonomy problem unfinished: if many skills are overlapping manifestations of broader competencies, the field still needs evidence about where to draw the higher-order boundaries and which behavior-based assessments support selection, training, or workforce-planning inferences.
 - [[1997-goh-benchmarking-learning-capability]] shows the value and limit of bounding a broad organizational construct: the OLS may diagnose learning-enabling conditions, but the next validation question is whether those scores predict actual knowledge transfer, behavior change, and AI-related work redesign over time.

@@ -14,15 +14,19 @@ For AI workforce transformation, CPS and ColPS are a reminder that “future ski
 
 CPS and ColPS are capability constructs; [[critical-thinking]] is currently an AI-impact topic. The bridge is that AI-mediated work may shift which parts of complex and collaborative problem solving humans still perform: problem framing, information search, verification, coordination, exception handling, and adaptive control. The construct page asks how those skills should be defined and assessed; the critical-thinking page asks whether GenAI use preserves, relocates, overloads, or erodes judgment during those tasks.
 
+[[2025-teyssier-roberge-21st-century-skills-overlap]] reinforces why CPS and ColPS should not be treated as just two more labels in a long future-skills inventory. The paper's overlap analysis suggests that useful AI-era skill constructs need to be consolidated around separable higher-order competencies and then assessed through behavior-rich tasks, which is the reason CPS/ColPS remain promising only if their task features map to actual work demands.
+
 ## Connections
 - Relates to [[job-analysis]] because CPS and ColPS respond to the limits of task descriptions anchored in existing occupations when work becomes more nonroutine, dynamic, and collaborative.
 - Relates to [[competency-modeling]] because broad skill labels become safer when they are translated into observable problem-solving behavior and assessment tasks rather than left as aspirational capability language.
-- Relates to [[construct-validity]] because CPS and ColPS need clear nomological placement, systematic task-feature variation, and evidence that assessment scores support the intended workplace inferences.
+- Relates to [[construct-validity]] because CPS and ColPS need clear nomological placement, systematic task-feature variation, evidence that assessment scores support the intended workplace inferences, and protection against the same semantic and psychometric overlap that weakens broad 21st-century-skills frameworks.
 - Relates to [[human-capital-resource-measurement]] because collective capability claims depend partly on whether individual and collaborative problem-solving skills are measured as actual resources rather than credentials, experiences, or outcomes.
 - Relates to [[work-redesign]] because AI-mediated roles may increase the relative importance of human problem framing, coordination, exception handling, and adaptive control even as routine task execution changes.
 - Relates to [[critical-thinking]] because critical thinking is one judgment process that may be exercised within CPS/ColPS tasks, especially during verification, problem framing, and adaptive control under AI assistance.
+
 
 ## Contradictions & open questions
 - [[2015-neubert-assessment-21st-century-skills]] treats CPS and ColPS as promising bridges between theory and practice, but most of the article's assessment evidence comes from education and large-scale testing rather than direct organizational validation.
 - A microworld can improve construct representation compared with questionnaires, but it can still miss accountable workplace context, incentives, professional norms, and the messy coordination costs of real work.
 - The AI-era version of this problem is still open: which human problem-solving and collaboration demands become more important when AI systems handle more routine analysis, and which demands are reduced, delegated, or transformed?
+- [[2025-teyssier-roberge-21st-century-skills-overlap]] shows why “future skills” need pruning, but pruning alone does not solve the work-design problem: AI may change which problem features, collaboration demands, and adaptive-control behaviors are actually criterion-relevant.
