@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-07-01
+updated: 2026-07-02
 ---
 
 # Work redesign
@@ -60,6 +60,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 [[2026-wang-agent-development-real-world-work]] adds a benchmark-validity constraint to redesign. If agent evaluations are concentrated in programming-heavy, easily verified domains, then benchmark progress should not be treated as evidence that agents are ready for management, legal, interpersonal, or other work where objectives, verification, and accountability are less clean. Redesign has to ask whether the evaluation sample resembles the work node being delegated.
 
 [[2026-vuong-genai-job-performance]] adds a bottom-up redesign mechanism: employees may use GenAI as a job resource for job crafting before formal role architecture changes. In Vietnamese SMEs, GenAI usage was associated with job crafting and work engagement, which partially mediated job performance. For redesign, the important signal is that local worker-led restructuring can be part of the value pathway, but it also means redesigned work may be happening informally before governance, measurement, or role expectations catch up.
+
+[[2007-serenko-organizational-size-knowledge-flow]] adds a pre-AI unit-design constraint: knowledge flow can degrade as organizational units grow because formal structure, weaker trust, reduced connective efficacy, and less frequent communication make it harder for knowledge to reach the right people. For AI-era redesign, that baseline matters because AI knowledge tools may change the effective scale of a unit or the cost of cross-unit exchange, but they do not automatically solve the trust, routing, overload, and communication problems that made size consequential in the first place.
 
 [[2026-buechsenschuss-genai-organizational-networks]] adds a network-architecture mechanism. In a randomized field experiment, a grounded GenAI assistant increased collaboration and knowledge-sharing centrality, with specialists gaining more knowledge in-degree and generalists gaining more project output. Redesign therefore has to look beyond task allocation inside a role: AI may change who needs whom, who becomes easier to work with, and where knowledge requests concentrate in the organization.
 
