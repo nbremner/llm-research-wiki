@@ -24,6 +24,8 @@ This is directly relevant to AI workforce transformation. Claims about AI adopti
 
 [[2009-sanchez-levine-competency-modeling-job-analysis]] adds a use-case warning: the same competency model can be evidence-relevant for strategy communication and weak evidence for selection or assessment. Evidence-based management has to ask what decision the model is supporting before deciding what rigor, specificity, and validation evidence are required.
 
+[[1997-goh-benchmarking-learning-capability]] adds a classic survey-feedback case. The OLS can help managers diagnose learning-enabling conditions and target organizational-development interventions, but the evidence claim should stay bounded: reliability and cross-sectional differentiation do not by themselves show that learning capability causes performance or that OLS-guided interventions improve outcomes. That distinction is directly relevant to AI transformation, where organizations may want diagnostics for learning from AI experimentation before they have outcome evidence.
+
 ## Connections
 
 - Relates to [[construct-validity]] because evidence quality depends on whether the measured construct is coherent enough to interpret.
@@ -33,6 +35,7 @@ This is directly relevant to AI workforce transformation. Claims about AI adopti
 - Relates to [[algorithmic-assessment]] because the evidence ladder must distinguish validity evidence, adverse-impact evidence, compliance evidence, implementation evidence, and decision utility.
 - Relates to [[job-analysis]] because many HR evidence claims begin with a documented job domain; that documentation is itself evidence that can be inclusive, incomplete, or biased.
 - Relates to [[competency-modeling]] because competency models often become evidence artifacts for HR decisions, even when their intended use and validation standard are underspecified.
+- Relates to [[organizational-learning-capability]] because learning surveys can guide intervention only if leaders distinguish diagnostic evidence from causal evidence about changed routines and performance.
 
 ## Contradictions & open questions
 
@@ -45,3 +48,4 @@ This is directly relevant to AI workforce transformation. Claims about AI adopti
 - [[2022-strah-diversity-issues-job-analysis]] raises an evidence paradox: job analysis is often used as the fairness foundation for HR systems, but the inclusiveness of the job analysis may itself be an untested assumption rather than established evidence.
 - [[2008-icf-competency-modeling-job-analysis]] suggests that strategic flexibility and evidentiary rigor can pull in different directions: broad competency models travel across jobs, but job-specific decisions often require more specific and reliable evidence.
 - [[2009-sanchez-levine-competency-modeling-job-analysis]] offers a bridge but not a full solution: use competency modeling to signal strategic behavior, then use job-analysis methods to derive behavioral indicators in specific jobs or job families. The open question is how much evidence is enough when the competency is partly strategic, partly behavioral, and partly measurement-facing.
+- [[1997-goh-benchmarking-learning-capability]] raises the same evidence ladder problem for learning organizations: a reliable climate/capability diagnostic may be useful for survey feedback, but claims about AI integration or organizational performance still require longitudinal intervention and outcome evidence.

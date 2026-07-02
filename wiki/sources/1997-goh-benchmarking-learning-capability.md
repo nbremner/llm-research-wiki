@@ -33,6 +33,7 @@ file_hash: c16b994e6ec07096d3835031b814b2ac5553662a59cda871bd6dde8377d9cbc5
 - The Drive PDF is a ResearchGate-uploaded copy of a peer-reviewed Elsevier article; canonical provenance is the Crossref DOI record rather than the private Drive link.
 
 ## Feeds
+- [[organizational-learning-capability]]
 - [[ai-readiness]]
 - [[ai-adoption]]
 - [[evidence-based-management]]

@@ -20,6 +20,8 @@ The important move for this wiki is that readiness and adoption are mutually rei
 
 [[2025-schweitzer-leading-ai-adoption]] adds a behavioral-change-management layer to readiness. If leaders treat AI implementation as an engineering handoff, readiness claims are incomplete even when strategy, resources, knowledge, culture, and data look adequate. Organizations also need the behavioral capability to anticipate designer bias, employee resistance, algorithm aversion, autonomy threat, leader overconfidence, and escalation of commitment across design, adoption, and management stages.
 
+[[1997-goh-benchmarking-learning-capability]] adds a pre-AI organizational-learning layer to readiness. Its five learning-capability conditions — shared purpose, leadership commitment and empowerment, experimentation and rewards, knowledge transfer, and teamwork/group problem solving — name the infrastructure organizations need if AI pilots are going to become changed routines rather than isolated experiments. Readiness therefore includes whether the organization can learn from AI experimentation, failures, external examples, and local practice variation.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because readiness is one way of naming what binds adoption after tools become available: not access, but organizational capability, commitment, data, and fit for the intended adoption purpose.
@@ -30,6 +32,7 @@ The important move for this wiki is that readiness and adoption are mutually rei
 - Connects to [[competency-modeling]] because readiness for digital transformation may require a future-oriented skills architecture before upskilling, mobility, or AI deployment can be targeted coherently.
 - Connects to [[ai-mediated-organizational-networks]] because readiness depends on whether managers can build the cross-functional ties through which AI use cases, data knowledge, and domain expertise move across teams.
 - Connects to [[behavioral-human-centered-ai]] because readiness includes the capacity to design adoption around real human behavior rather than rational-user assumptions.
+- Connects to [[organizational-learning-capability]] because AI readiness depends on whether experimentation, knowledge transfer, and team problem solving can turn local AI use into shared organizational practice.
 
 ## Contradictions & open questions
 
@@ -40,3 +43,4 @@ The important move for this wiki is that readiness and adoption are mutually rei
 - [[2025-tona-deployment-ai-infer-employee-skills]] raises a measurement-governance tension: AI skills inference can make readiness more visible, but readiness claims become fragile if inferred skills are treated as more accurate, complete, or employee-accepted than the evidence supports.
 - [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] raises a level-of-analysis tension: readiness can be present at the enterprise level while AI exploitation still depends on sales managers' local capabilities and team knowledge routines. The framework needs quantitative and field-performance evidence before those capabilities can be treated as readiness dimensions rather than promising qualitative categories.
 - [[2025-schweitzer-leading-ai-adoption]] raises a construct-boundary tension: behavioral change-management capability could be part of AI readiness, a method for producing readiness, or a post-adoption capability built through experience. The wiki should not collapse those timing differences until empirical measures clarify them.
+- [[1997-goh-benchmarking-learning-capability]] raises a timing problem for readiness: learning capability may be an antecedent to AI adoption, an outcome of repeated AI experimentation, or both. Cross-sectional readiness surveys need to avoid treating learned implementation capacity as if it were purely pre-existing maturity.

@@ -46,6 +46,8 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 
 [[2025-schweitzer-leading-ai-adoption]] adds a behavioral change-management layer. The article argues that AI adoption fails when leaders treat implementation as an engineering exercise and ignore how employees, designers, and managers react to AI through bounded rationality, distrust, autonomy concerns, loss aversion, vivid failure narratives, overconfidence, and escalation of commitment. This makes [[behavioral-human-centered-ai]] a peer topic to adoption rather than a footnote: adoption quality depends on whether implementation actively designs for human behavior across design, adoption, and management stages.
 
+[[1997-goh-benchmarking-learning-capability]] adds the organizational-learning version of the adoption problem. If AI adoption is partly a search over use cases and workflow changes, organizations need routines for experimentation, knowledge transfer, and team problem solving so local AI discoveries can become shared practice. Without that learning capability, adoption can remain a portfolio of disconnected pilots even when tools, training, and managerial interest are present.
+
 ## Connections
 
 - The search framing is information-processing / bounded-rationality flavored — an I-O and organizational-cognition lens on adoption, not just an IT-diffusion one.
@@ -56,6 +58,7 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 - If image concerns are the bottleneck, adoption programs need to change evaluation norms and visibility structures, not just persuade workers that AI is useful.
 - If managerial capabilities are the bottleneck, adoption programs need to develop local context-sensing, data literacy, use-case sharing routines, and cross-functional relationship-building — not just give frontline employees tools.
 - If behavioral human-centeredness is the bottleneck, adoption programs need to diagnose predictable reactions to AI — distrust, loss aversion, image concerns, autonomy threat, overconfidence, and escalation — rather than assuming technically better systems will be accepted.
+- If organizational learning capability is the bottleneck, adoption programs need survey-feedback, knowledge-transfer, and remeasurement loops that convert experimentation into durable changes in routines, not just more tool trials.
 - [[task-level-ai-adoption]] should stay analytically separate from organizational adoption: conversation traces reveal where AI is being tried, but not whether the work has been redesigned, governed, or connected to outcomes.
 
 ## Contradictions & open questions
@@ -78,3 +81,4 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 - **Capability vs. moral permission.** [[2025-friis-performance-principle]] suggests adoption can remain blocked even after performance concerns are removed. That is a different mechanism from poor mapping, low readiness, low literacy, or image concerns, and it may require redesigning the human role rather than merely improving the AI.
 - **Tool access vs. managerial knowledge process.** [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] suggests wide AI accessibility in B2B sales is not sufficient when managers lack the capability to connect data, context, experimentation, use-case sharing, and cross-functional knowledge transfer. The open question is whether these managerial capabilities predict realized adoption and performance beyond broader [[ai-readiness]] factors.
 - **Technical improvement vs. behavioral adoption.** [[2025-schweitzer-leading-ai-adoption]] argues that better technical capability and principled HCAI design are insufficient if designers, employees, and leaders behave predictably around AI mistakes, threats, sunk costs, and uncertainty. The open question is which behavioral interventions improve adoption quality without becoming mere persuasion to accept systems that should be redesigned or rejected.
+- **Pilots vs. learning systems.** [[1997-goh-benchmarking-learning-capability]] implies that AI experimentation only compounds when organizations can transfer knowledge, discuss failures, and remeasure progress. The open question is whether learning-capability measures predict which AI pilots scale into work redesign and which remain local anecdotes.

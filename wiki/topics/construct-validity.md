@@ -24,6 +24,8 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 
 [[2023-zhang-human-capital-resources]] gives a more direct measurement case in human capital resources. In their review, only 23.6% of HCR measures focused solely on HCR, while many were partially or fully contaminated by antecedents, HR practices, attitudes, expenses, or outcomes. The important construct-validity lesson is that a measure can become more predictive by absorbing adjacent performance-relevant content while becoming less valid as evidence about the focal construct.
 
+[[1997-goh-benchmarking-learning-capability]] gives a useful positive-but-limited measurement case for a broad organizational capability. The OLS bounds learning capability around five conditions — purpose, leadership, experimentation, knowledge transfer, and teamwork — and reports reliability and preliminary validity evidence, while explicitly not measuring performance or learning outcomes directly. That boundary discipline matters for AI-era constructs such as readiness, adoption quality, and organizational learning from AI experimentation.
+
 [[2026-wang-agent-development-real-world-work]] extends the construct-validity problem to AI-agent benchmarks. A benchmark score can be valid evidence for performance on a sampled task distribution while invalid evidence for "real-world work capability" if the task distribution overrepresents programming-heavy, easily specified, easily verified work and underrepresents management, legal, interpersonal, or long-horizon work.
 
 [[2015-neubert-assessment-21st-century-skills]] gives a positive-but-unfinished construct-validity case. CPS and ColPS are more bounded than loose future-skills labels because they specify active knowledge acquisition, knowledge application, dynamic problem features, and collaborative interaction; the unresolved validation question is whether simulated microworld performance supports the same inferences organizations want to make about real jobs and redesigned work.
@@ -40,6 +42,7 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - Relates to [[human-capital-resource-measurement]] because HCR shows how collective capability measures can be deficient, contaminated, or predictively useful for the wrong construct.
 - Relates to [[complex-collaborative-problem-solving]] because CPS and ColPS show how a broad capability label can become more construct-valid when problem features, process data, and assessment tasks are explicitly modeled.
 - Relates to [[ai-agent-benchmark-validity]] because benchmark validity is construct validity applied to agent evaluation: what exactly is being measured, and what claims does that measure license?
+- Relates to [[organizational-learning-capability]] because learning capability must be separated from adjacent constructs such as satisfaction, culture, formalization, innovation, and performance before it can support AI transformation claims.
 
 ## Contradictions & open questions
 
@@ -52,3 +55,4 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - [[2023-zhang-human-capital-resources]] adds a prediction-versus-explanation problem: contaminated HCR measures can correlate more strongly with performance, but that strength may come from mixing HCR with other constructs rather than from cleaner measurement of human capital resources.
 - [[2026-wang-agent-development-real-world-work]] sharpens the validation target but still relies on benchmark-task descriptions and LLM-assisted taxonomy mapping. The next question is whether benchmark coverage and autonomy metrics predict real deployment outcomes better than raw agent scores.
 - [[2015-neubert-assessment-21st-century-skills]] improves on generic 21st-century-skills rhetoric by narrowing the construct, but it raises the familiar simulation-validity question: when does performance in a controlled microworld become valid evidence about workplace problem solving rather than only evidence about the microworld?
+- [[1997-goh-benchmarking-learning-capability]] shows the value and limit of bounding a broad organizational construct: the OLS may diagnose learning-enabling conditions, but the next validation question is whether those scores predict actual knowledge transfer, behavior change, and AI-related work redesign over time.

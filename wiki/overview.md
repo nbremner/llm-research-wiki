@@ -23,6 +23,7 @@ The central question:
 - [[behavioral-human-centered-ai]] — how AI implementation has to account for boundedly rational designers, adopters, and leaders rather than assuming technically better systems will be accepted
 - [[task-level-ai-adoption]] — where workers actually bring AI into tasks, before roles or organizations have necessarily redesigned around it
 - [[ai-readiness]] — whether organizational capabilities, data, culture, and strategic fit are ready for a specific AI adoption purpose
+- [[organizational-learning-capability]] — whether organizations can turn experimentation, failures, external knowledge, and local problem solving into changed routines
 - [[responsible-ai-deployment]] — how workforce-facing AI systems are governed, evidenced, scoped, monitored, and held accountable so deployment protects worker dignity, fairness, privacy, autonomy, and well-being
 - [[work-redesign]] — how AI shifts work architecture from fixed roles toward redesigned human-agent workflows
 - [[automation-and-substitution]] — whether AI substitutes for or augments labor and capital: what scales, what shrinks, and at what time horizon
@@ -96,6 +97,7 @@ Seed questions to grow topics around. Edit freely.
 - When is diversity of AI-generated options, language, hypotheses, or frames part of task quality rather than avoidable noise, and how should that diversity be measured?
 - When does AI assistance reduce productive cognitive load versus reducing the practice, ownership, and recall needed for learning or expertise maintenance?
 - Which managerial capabilities turn AI access into durable team and organizational knowledge processes rather than isolated tool use?
+- Which organizational-learning capabilities let companies learn from AI experimentation and integrate lessons into everyday work rather than accumulating disconnected pilots?
 - Where do moral boundaries make AI replacement socially unacceptable even when AI is technically capable and cheaper, and which kinds of human presence should be protected by design rather than treated as temporary resistance?
 
 ## Thin / missing areas
@@ -123,6 +125,7 @@ Seed questions to grow topics around. Edit freely.
 - **AI-mediated teamwork** has been promoted into [[ai-mediated-teamwork]] through [[2025-dellacqua-cybernetic-teammate]], but the wiki still needs evidence on coordination, trust, conflict, mentoring, implementation, and whether organizations actually redesign team boundaries after AI can reproduce some bounded team benefits.
 - **AI-mediated organizational networks** has been promoted into [[ai-mediated-organizational-networks]] through [[2026-buechsenschuss-genai-organizational-networks]], [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] adds qualitative managerial mechanisms for cross-functional AI knowledge transfer, and [[2007-serenko-organizational-size-knowledge-flow]] now gives a pre-AI baseline for why size should degrade knowledge flow. The wiki still needs digital-trace, multi-organization, and longer-term evidence on whether GenAI weakens organizational-size penalties, whether centrality persists, and when improved reach becomes overload for key actors.
 - **Behavioral human-centered AI** has been promoted into [[behavioral-human-centered-ai]] through [[2025-schweitzer-leading-ai-adoption]], but the wiki still needs field evidence on whether behaviorally informed design, adoption, and management interventions improve trust calibration, worker outcomes, governance quality, or realized AI value.
+- **Organizational learning capability** has been promoted into [[organizational-learning-capability]] through [[1997-goh-benchmarking-learning-capability]], but the wiki still needs AI-specific longitudinal evidence on whether learning-capability conditions predict which experiments become redesigned workflows, shared practices, and measurable organizational outcomes.
 - **Cognitive surrender** is proposed for promotion through [[2026-shaw-thinking-fast-slow-artificial]], but the wiki still needs workplace evidence on whether AI answer adoption undercuts judgment in richer expert tasks with accountability, domain context, and independent verification channels.
 
 ## Candidate topics (watchlist)
