@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-06-28
+updated: 2026-07-01
 ---
 
 # Work redesign
@@ -65,6 +65,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2025-randazzo-cyborgs-centaurs-self-automators]] adds a workflow-mode layer to redesign. In the same nominal GenAI-enabled consulting task, professionals enacted different architectures: Fused/Cyborg users integrated GenAI across the workflow, Directed/Centaur users selectively preserved human control over analytical logic, and Abdicated/Self-Automators handed over much of the problem-solving and evaluative work. Redesign therefore has to specify not only which tasks AI supports, but which co-creation mode the organization wants to cultivate for accuracy, productivity, AI fluency, domain upskilling, or expertise preservation.
 
+[[2026-johnston-shift-agentic-ai-codex]] gives early behavioral evidence for redesign around delegated agent work. The paper's useful redesign signal is not simply that Codex adoption grew; it is that intensive users organize work through parallel agents, long-running turns, reusable skills/plugins, and larger task requests. That pattern makes agentic AI closer to workflow re-architecture than tool substitution: workers may shift from executing task components to assigning work, monitoring progress, reviewing outputs, maintaining reusable procedural context, and integrating artifacts across multiple simultaneous workstreams.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -81,6 +83,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[ai-enabled-job-crafting]] because worker-led redesign can reveal where GenAI is becoming a job resource, not only where leaders have formally reallocated tasks.
 - Connects to [[ai-mediated-organizational-networks]] because redesigned work can emerge as changed collaboration and knowledge-flow patterns before formal role architecture catches up.
 - Connects to [[human-ai-co-creation-modes]] because redesign decisions become enacted as recurring patterns of who steers, who executes, who evaluates, and who learns.
+- Connects to [[agentic-delegation]] because agentic redesign turns delegation, review, concurrency, and reusable workflow infrastructure into core work-design variables rather than optional tool-use style.
 
 ## Contradictions & open questions
 
@@ -107,3 +110,4 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2026-buechsenschuss-genai-organizational-networks]] is strong field-experimental evidence that grounded GenAI can shift network centrality, but the self-reported network measures and single-firm design mean it should not yet be treated as proof that AI generally improves organizational coordination.
 - [[2025-dellacqua-super-mario-ai]] shows why redesign should not equate individual AI capability with system improvement. The automated agent was individually strong, but the redesigned human-AI team initially performed worse because coordination routines and motivation changed.
 - [[2025-randazzo-cyborgs-centaurs-self-automators]] is useful for redesign vocabulary but limited by its single-session consultant task and April 2023 GPT-4 context; organizations should not assume its mode/outcome pattern transfers unchanged to other jobs, tools, or capability frontiers.
+- [[2026-johnston-shift-agentic-ai-codex]] is strong process evidence for frontier agentic work practices, but it is not a field experiment showing that those practices improve productivity, quality, coordination, learning, or worker well-being. OpenAI-internal results are best read as a low-friction frontier case, not as the current baseline for ordinary organizations.

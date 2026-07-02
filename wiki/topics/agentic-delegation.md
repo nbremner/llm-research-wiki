@@ -1,7 +1,7 @@
 ---
 title: Agentic delegation
 status: active
-updated: 2026-06-29
+updated: 2026-07-01
 ---
 
 # Agentic delegation
@@ -16,6 +16,8 @@ The source also shows why delegation is a system-level design problem. Delegate 
 
 [[2025-matz-basic-effect]] extends the delegation problem from performance and welfare into identity-relevant choice. When GPT-4o agents chose between Facebook pages users had actually followed, both generic and personalized agents reduced the distinctiveness of choices relative to a human baseline, while personalized agents especially compressed within-person choice diversity. This makes delegation more than a control-preference question: an agent can act efficiently on someone's behalf while gradually narrowing the behavioral variety through which agency is expressed.
 
+[[2026-johnston-shift-agentic-ai-codex]] adds large-scale platform evidence that agentic delegation is becoming a distinct work practice, not only an experimental interface condition. Codex users increasingly ask the system to carry out production work, and intensive users show delegation-specific behaviors: more than 10% of users manage three or more concurrent Codex agents at some point each week, 26.6% of active users invoked at least one skill by June 11, 2026, and inside OpenAI 28.6% of users managed five or more concurrent agents during the observed week. The strongest signal is role shift: the human becomes a delegator, reviewer, workflow designer, and integrator of multiple agent workstreams rather than only a prompt writer.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because delegation is one authority arrangement among advice-taking, coaching, stewardship, co-production, proactivity, and autonomous execution.
 - Relates to [[work-redesign]] because delegation changes the workflow node at which human judgment enters: before execution, after execution, or only through rule-setting and accountability.
@@ -24,6 +26,7 @@ The source also shows why delegation is a system-level design problem. Delegate 
 - Relates to [[automation-and-substitution]] because autonomous delegation can substitute for human action at the task turn while still leaving humans responsible for choosing, constraining, monitoring, or accepting the delegation regime.
 - Relates to [[human-ai-task-taxonomy]] because delegation claims need explicit authority, auditability, output definition, and human-persona assumptions before they can be interpreted as augmentation or automation.
 - Relates to [[ai-mediated-choice-and-identity]] because delegating preference-relevant choices can preserve convenience while changing distinctiveness, exploration, and self-expression.
+- Relates to [[ai-workforce-impact-measurement]] because agentic delegation requires measures beyond active users or message volume: delegated task complexity, runtime, concurrency, workflow reuse, and output volume become part of the evidence chain.
 
 ## Contradictions & open questions
 - [[2026-zhu-choose-your-agent]] suggests delegation can improve group welfare in a stylized bargaining market, but this does not settle whether workers should delegate in high-accountability professional settings where errors, responsibility, and legitimacy matter differently.
@@ -31,3 +34,4 @@ The source also shows why delegation is a system-level design problem. Delegate 
 - The wiki needs field evidence on whether agentic delegation improves real team outcomes once delegation is visible, governed, and socially evaluated, rather than tested inside short experimental games.
 - The market-making mechanism in [[2026-zhu-choose-your-agent]] may become its own topic if future sources show AI systems reshaping coordination environments, incentives, or interaction norms beyond the focal user who delegates.
 - [[2025-matz-basic-effect]] is not workplace evidence, but it raises a transferable design question: when should identity-relevant or preference-forming choices remain human-made even if an agent can choose plausible options from inside the person's own preference history?
+- [[2026-johnston-shift-agentic-ai-codex]] shows frontier adoption and delegation practice at scale, but it does not directly validate productivity, output quality, downstream accountability, or worker experience; token output, concurrency, and skill use are closer to behavioral process measures than to impact measures.

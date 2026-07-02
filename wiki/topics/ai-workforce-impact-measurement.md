@@ -1,7 +1,7 @@
 ---
 title: AI workforce impact measurement
 status: active
-updated: 2026-06-27
+updated: 2026-07-01
 ---
 
 # AI workforce impact measurement
@@ -20,6 +20,8 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 
 [[2025-marguerit-augmenting-automating-labor]] adds an exposure-to-outcomes measurement design. Instead of treating AI exposure as a single construct, it builds separate Stack Overflow-based measures for automation AI and augmentation AI, then estimates their associations with new job-title emergence, employment, and wages. The measurement lesson is clean: workforce-impact claims change depending on whether the AI construct is task substitution, output enhancement, new-work creation, employment size, or wage movement, and those outcomes vary by occupational skill group.
 
+[[2026-johnston-shift-agentic-ai-codex]] adds an agentic-use measurement layer. For agentic systems, active users, chats, and message volume become weak proxies because one request can delegate a multi-step workflow and one worker can manage several agents at once. The paper proposes and observes more work-relevant process measures: delegated task complexity, runtime, concurrency, reusable skills/plugins, output-token volume, and the share of AI-mediated work happening through agentic rather than conversational interfaces.
+
 ## Connections
 - Connects to [[task-level-ai-adoption]] because observed use is one input to workforce impact measurement, especially when the data preserve task or work-activity grain rather than only tool-level adoption.
 - Connects to [[human-ai-task-taxonomy]] because measurement depends on correctly distinguishing user goals, AI actions, authority, scope, auditability, and output definition.
@@ -27,6 +29,7 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 - Connects to [[job-analysis]] because occupational impact measures often inherit O*NET or other work-analysis taxonomies, with all the benefits and limits of those upstream definitions.
 - Connects to [[construct-validity]] because “AI impact,” “applicability,” “exposure,” “augmentation,” and “automation” are not the same construct and should not be treated as interchangeable dependent variables.
 - Connects to [[human-capital-resource-measurement]] because AI workforce impact measures will increasingly have to distinguish human capability, AI capability, and combined workflow capability rather than treating all performance-relevant capacity as one undifferentiated capital stock.
+- Connects to [[agentic-delegation]] because once AI acts on behalf of workers, impact measurement has to track delegated execution and review structures rather than only advice exposure or conversational use.
 
 ## Contradictions & open questions
 - Observed conversational use improves on speculative exposure scores, but it still misses embedded automation, enterprise copilots, non-chat workflows, and tasks workers avoid asking AI to do because of risk, policy, visibility, or evaluation pressure.
@@ -36,3 +39,4 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 - [[2025-marguerit-augmenting-automating-labor]] helps fill the wages/employment side of that gap, but it also exposes a different validity problem: developer-community traces can distinguish automation and augmentation development, yet still need evidence that the measured exposure corresponds to actual organizational deployment and task recomposition.
 - Future human-AI capital measures may face the same validity temptation as HCR: contaminated indexes can become attractive if they predict performance, even when they cannot say which part of the human-machine work system is doing the explanatory work.
 - Social acceptability measures are not outcome evidence. [[2025-friis-performance-principle]] tells us where the public draws moral lines around AI automation, but the wiki still needs evidence linking those attitudes to customer behavior, firm adoption, labor demand, professional governance, and regulation.
+- [[2026-johnston-shift-agentic-ai-codex]] shows why richer process measures are necessary but also why they are not enough. Output tokens, concurrency, runtime, and skill use can show that work is being reorganized around agents; they still need links to quality, productivity, wages, hiring, learning, accountability, and worker experience before they become workforce-impact evidence.
