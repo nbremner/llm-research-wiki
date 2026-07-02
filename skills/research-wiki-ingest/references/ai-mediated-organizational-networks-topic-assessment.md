@@ -13,6 +13,7 @@ Do **not** flatten these sources into `[[ai-mediated-teamwork]]` by default. Tea
 - Treat network rewiring as a work-design and workforce-impact mechanism, not merely an adoption outcome.
 - Preserve the distinction between increased ties/centrality and improved coordination. More connectivity can mean better knowledge flow, but it can also mean overload, interruption, coordination fatigue, or concentration of requests on specialists.
 - Track role-differentiated mechanisms: specialists may become more sought-after knowledge sources; generalists may use AI to improve coordination or throughput.
+- For pre-AI knowledge-flow or organization-size sources, use them as baseline theory for the mechanisms AI may challenge rather than forcing them into generic knowledge-management or work-redesign pages. The useful synthesis move is to ask whether AI changes the size penalty by altering trust, routing, communication frequency, connective efficacy, search/translation costs, and cross-unit reach.
 - Connect to `[[work-redesign]]`, `[[ai-mediated-work-experience]]`, `[[ai-mediated-teamwork]]`, and `[[ai-workforce-impact-measurement]]` when the evidence supports those links.
 
 ## Evidence cautions
