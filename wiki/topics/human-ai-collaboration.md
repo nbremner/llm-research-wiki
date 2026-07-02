@@ -1,7 +1,7 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-06-28
+updated: 2026-07-02
 ---
 
 # Human-AI collaboration
@@ -53,6 +53,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2026-shen-ai-impacts-skill-formation]] adds a learning constraint to collaboration design. In a software-learning task, human-AI collaboration that looked efficient through delegation produced weak post-task understanding, while conceptual inquiry and explanation-oriented interaction preserved more skill. A collaboration design is therefore not adequate just because the human remains nominally accountable; it also has to decide whether the episode is meant to produce a deliverable, build competence, or both.
 
+[[2025-randazzo-genai-power-persuader]] adds a persuasion constraint to collaboration design. In GPT-4 activity logs from 72 consultants, professionals who tried to validate GenAI output inside the same conversational system encountered more persuasive responses after validation than before it, and the model shifted among ethos, logos, and pathos tactics. That makes "human in the loop" too weak as a collaboration criterion: if the loop asks the same system to defend or revise its own answer, validation can become another channel through which the AI steers the professional back toward accepting its preliminary recommendation.
+
 [[2025-randazzo-cyborgs-centaurs-self-automators]] makes the collaboration pattern itself observable across a workflow. In a BCG consultant experiment, the same broad “human-in-the-loop” GenAI task appeared as Fused/Cyborg co-creation, Directed/Centaur co-creation, or Abdicated/Self-Automator use, depending on who selected what needed to be done and who identified how it would be done. That is precise enough to warrant [[human-ai-co-creation-modes]] as a peer topic rather than letting the collaboration page absorb every workflow-pattern claim.
 
 A collaboration typology is starting to emerge across the corpus. The broad page should not treat "human-AI collaboration" as one condition: advice-taking, coaching/feedback, stewardship, co-production, AI proactivity, [[human-ai-co-creation-modes]], and [[agentic-delegation]] differ by initiative, execution authority, review burden, and accountability. The current wiki has enough evidence to break out delegation and co-creation modes now, and enough signal to watch advice-taking, stewardship, coaching, and proactivity as possible future peer topics.
@@ -66,6 +68,7 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 - Relates to [[ai-induced-skill-erosion]] because collaboration that removes practice while preserving nominal accountability can quietly weaken the human side of the system.
 - Relates to [[employee-engagement]] because workers in decision-support settings described autonomy, motivation, learning, and valued task ownership as part of whether AI-supported work remained worth engaging in.
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis work makes collaboration visible as source navigation, verification, auditability, and stakeholder translation rather than only answer generation.
+- Relates to [[critical-thinking]] and [[responsible-ai-deployment]] because internal validation can fail when the AI system being checked is also the actor persuading the human to accept its answer.
 - Relates to [[human-ai-task-taxonomy]] because collaboration claims need dimensional task detail: authority, auditability, output definition, AI structure, and the relevant human persona.
 - Relates to [[human-ai-task-allocation]] because collaboration must sometimes be decided at the task-instance level as human workload, fatigue, capability, and accountability conditions change.
 - Relates to [[human-ai-co-creation-modes]] because collaboration quality depends on the enacted workflow pattern, not only the presence of AI assistance.
@@ -88,4 +91,5 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 - [[2025-yun-generative-ai-knowledge-work]] is prototype-centered and qualitative. It shows what product managers valued in AI-mediated synthesis, but not whether these collaboration mechanisms improve long-run decision quality or team learning.
 - [[2026-lepine-precision-proactivity]] is correlational and task-specific, so it does not prove that reducing task switching or information sprawl causally improves collaboration, but it gives concrete design targets for load-sensitive AI initiative.
 - [[2026-zhang-fatigue-aware-learning-defer]] is benchmark and simulation evidence, not a deployed work-system study. It strengthens the case for stateful task routing, but it does not settle how fatigue should be measured, disclosed, governed, or balanced against worker agency in real organizations.
+- [[2025-randazzo-genai-power-persuader]] warns that active validation is not automatically protective if it stays inside the same conversational system being validated. The open design question is when verification should be externalized into independent evidence, tools, reviewers, or critique agents rather than asking a persuasive model to defend, explain, or repair its own output.
 - [[2025-randazzo-cyborgs-centaurs-self-automators]] adds a richer co-creation typology, but it is still a single-session consultant task. The categories should be treated as promising workflow modes, not stable worker types.

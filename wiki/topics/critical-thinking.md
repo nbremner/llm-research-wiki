@@ -1,7 +1,7 @@
 ---
 title: Critical thinking in AI-assisted work
 status: active
-updated: 2026-06-24
+updated: 2026-07-02
 ---
 
 # Critical thinking in AI-assisted work
@@ -28,6 +28,8 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 
 [[2026-shen-ai-impacts-skill-formation]] adds that critical thinking can be a learning mechanism, not only an output-control mechanism. Participants who asked conceptual questions, requested explanations, or checked their understanding after code generation preserved more skill formation than participants who delegated code writing or debugging to AI. The implication for AI-supported work is concrete: verification routines should be designed to build comprehension and transfer, not merely catch defects in the current artifact.
 
+[[2025-randazzo-genai-power-persuader]] adds a sharper boundary around verification: critical thinking can be attempted and still be captured by the AI interaction if the user validates the model by debating with the model itself. In the consultants' GPT-4 logs, validation episodes were followed by more persuasive responses, so the relevant design problem is not only whether workers think critically, but whether the verification channel gives them independent leverage against model-generated ethos, logos, and pathos.
+
 This page differs from [[complex-collaborative-problem-solving]] in topic type. CPS and ColPS are transversal skills and assessment targets; this page tracks how GenAI changes the exercise of judgment inside work. Critical thinking may be one process inside complex problem solving, but the focal question here is not how to assess CPS/ColPS generally. It is how AI shifts critical thinking from generation to verification, from solving to stewardship, and from independent cognition to human-AI coordination.
 
 ## Connections
@@ -38,6 +40,7 @@ This page differs from [[complex-collaborative-problem-solving]] in topic type. 
 - Relates to [[evidence-based-management]] because self-reported reductions in cognitive effort should not be treated as direct evidence of long-term skill atrophy without stronger longitudinal or behavioral measures.
 - Relates to [[construct-validity]] because “critical thinking” is itself hard to observe; output diversity, self-report, and task performance capture different parts of the construct.
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis tools can either scaffold verification and comparison or make generated structure feel more authoritative than the evidence warrants.
+- Relates to [[responsible-ai-deployment]] because critical-thinking safeguards should be built into the system and work process rather than assigned solely to users facing a persuasive model.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because verification and stewardship depend on whether the AI interface preserves enough cognitive bandwidth for judgment.
 - Relates to [[complex-collaborative-problem-solving]] because AI may change which parts of complex and collaborative problem solving require human critical thinking, especially problem framing, verification, coordination, and adaptive control.
 
@@ -49,3 +52,5 @@ This page differs from [[complex-collaborative-problem-solving]] in topic type. 
 - [[2025-yun-generative-ai-knowledge-work]] makes verification needs vivid, but it does not measure whether audit trails, citations, or multiple visualizations actually increase critical-thinking behavior or merely make users feel safer.
 - [[2025-kosmyna-brain-chatgpt-cognitive-debt]] is stronger than self-report on engagement because it includes EEG and recall measures, but it is still a preprint in an educational essay-writing context; workplace critical-thinking claims need designs closer to real decisions, expertise, and consequences.
 - [[2026-lepine-precision-proactivity]] uses transcript-derived cognitive-load proxies rather than direct measures of critical thinking, so its contribution is a plausible capacity mechanism rather than direct evidence about judgment quality.
+- [[2026-shen-ai-impacts-skill-formation]] implies that explanation and checking can preserve learning, but it also shows why current-artifact correctness is too narrow as a verification target; users can get a working answer while losing the comprehension needed for future critical thinking.
+- [[2025-randazzo-genai-power-persuader]] shows a different failure mode from complacency: professionals may scrutinize the output, but the conversational validation process itself can become persuasive. The unresolved question is which verification designs give users independent traction rather than simply more fluent model self-defense.

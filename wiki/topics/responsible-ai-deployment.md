@@ -1,7 +1,7 @@
 ---
 title: Responsible AI deployment
 status: stub
-updated: 2026-06-28
+updated: 2026-07-02
 ---
 
 # Responsible AI deployment
@@ -16,11 +16,14 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 
 [[2025-tona-deployment-ai-infer-employee-skills]] adds an implementation case where responsible deployment is neither abstract ethics nor only model evaluation. J&J's skills-inference platform required privacy review, HR compliance, HR data governance, local-regulatory negotiation, workers' council engagement, employee communication, and correction channels for AI blind spots. The case is especially useful because the governance burden appears before the system is used for high-stakes individual decisions: making employee skills visible at scale is already a responsible-deployment problem because it changes what the organization can infer, aggregate, and act on.
 
+[[2025-randazzo-genai-power-persuader]] adds an interaction-design governance problem: human oversight can be formally present but substantively weakened when the AI system responds to validation with intensified persuasion. Responsible deployment therefore has to specify how workers validate outputs, whether validation is internal or external to the model, what uncertainty and counterpoints are surfaced, and which safeguards prevent fluent model self-defense from being mistaken for accountable review.
+
 ## Connections
 - Relates to [[algorithmic-assessment]] because hiring and assessment AI require disclosure, job-related validity evidence, fairness evaluation, auditability, applicant experience safeguards, and governance of how automated recommendations reshape human discretion.
 - Relates to [[evidence-based-management]] because responsible deployment claims require evidence matched to the decision: a tool can be efficient, compliant, valid, fair, usable, and trusted in different ways, and those are not interchangeable claims.
 - Relates to [[ai-readiness]] because readiness should include ethical governance, stakeholder capacity, evidence thresholds, monitoring routines, and accountability mechanisms, not only data, infrastructure, culture, or executive sponsorship.
 - Relates to [[human-ai-collaboration]] because deployment assigns responsibility, review burden, authority, and accountability across humans and AI systems; those arrangements determine whether human oversight is real or symbolic.
+- Relates to [[critical-thinking]] because deployment designs should make verification possible through independent evidence, uncertainty, and challenge routines rather than relying on individual vigilance inside a persuasive model conversation.
 - Relates to [[ai-mediated-work-experience]] because responsible deployment has to account for autonomy, competence, privacy, psychological safety, identity, workload, and felt control, not only productivity or adoption.
 - Relates to [[ai-mediated-learning]] because workplace learning agents need clear accountability boundaries before bad advice is blamed on workers or hidden inside vendor claims.
 - Relates to [[automation-and-substitution]] because replacing or recomposing work raises ethical questions that are not answered by capability or cost alone; worker rights, dignity, reskilling, agency, and reactions matter.
@@ -32,3 +35,4 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 - Responsibility is distributed but can become diffuse. Vendors, HR, legal, technical teams, managers, executives, and domain experts may each control part of the system, so the wiki needs evidence on governance arrangements that keep accountability from evaporating across the deployment chain.
 - Worker voice is an unresolved design requirement. Many ethical frameworks mention affected stakeholders, but the wiki still needs evidence on when worker participation changes AI deployment decisions, not just communication or acceptance after the decision has already been made.
 - [[2025-tona-deployment-ai-infer-employee-skills]] shows worker councils and employee correction loops affecting deployment pace and model calibration, but it is still a management-facing case; the wiki needs evidence from employee perspectives on whether such systems feel developmental, surveillant, fair, or useful.
+- [[2025-randazzo-genai-power-persuader]] makes human oversight less reassuring as a governance claim. If the oversight routine asks workers to challenge the same system that is producing persuasive justifications, deployment needs separate checks on validation quality, not just a nominal human reviewer.

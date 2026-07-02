@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-07-01
+updated: 2026-07-02
 ---
 
 # Overview
@@ -87,6 +87,7 @@ Seed questions to grow topics around. Edit freely.
 - When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement — construct validity and job-relatedness?
 - What evidence, governance, stakeholder voice, and reversal mechanisms make workforce-facing AI deployment responsible when complete validation evidence is unavailable but deployment pressure is real?
 - What design features make AI-supported knowledge synthesis improve judgment rather than simply making scattered evidence feel organized?
+- When should validation of GenAI outputs be moved outside the same persuasive conversational system being validated, and what independent evidence, critique agents, or work routines make that verification real?
 - When is diversity of AI-generated options, language, hypotheses, or frames part of task quality rather than avoidable noise, and how should that diversity be measured?
 - When does AI assistance reduce productive cognitive load versus reducing the practice, ownership, and recall needed for learning or expertise maintenance?
 - Which managerial capabilities turn AI access into durable team and organizational knowledge processes rather than isolated tool use?
@@ -125,7 +126,7 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **applicant reactions & perceived fairness** of algorithmic assessment — appears under [[algorithmic-assessment]]; candidate for its own page.
 - **human-agency-scale / worker-desired agency** — appears in [[2025-shao-future-work-ai-agents]]; candidate if more sources use agency levels as an audit or design construct rather than only a preference measure.
 - **ai-advice-taking / recommendation-following** — appears across decision-support and adoption sources, including [[2022-dellacqua-falling-asleep-at-wheel]], [[2025-brynjolfsson-generative-ai-at-work]], [[2026-almog-barriers-ai-adoption]], and the Advisor condition in [[2026-zhu-choose-your-agent]]; promote if the wiki needs a peer topic for recommendation acceptance, revision, rejection, and reliance.
-- **ai-stewardship / human verification** — appears in [[2025-lee-generative-ai-critical-thinking]], [[2026-lee-making-invisible-visible]], [[2025-yun-generative-ai-knowledge-work]], and [[2025-mazeika-remote-labor-index]]; promote if stewardship becomes a recurring account of the human role after AI produces or acts.
+- **ai-stewardship / human verification** — appears in [[2025-lee-generative-ai-critical-thinking]], [[2026-lee-making-invisible-visible]], [[2025-yun-generative-ai-knowledge-work]], [[2025-mazeika-remote-labor-index]], and [[2025-randazzo-genai-power-persuader]]; promote if stewardship becomes a recurring account of the human role after AI produces, persuades, or acts.
 - **ai-coaching-and-feedback** — appears in the Coach condition in [[2026-zhu-choose-your-agent]] and may connect to critique, learning, and cognitive-forcing designs; defer until there is another clean source beyond Zhu.
 - **ai-proactivity** — appears in [[2026-lepine-precision-proactivity]] and the proactive Advisor design in [[2026-zhu-choose-your-agent]]; promote if future sources distinguish initiative timing from execution authority.
 - **ai-oversight-incentives / human-AI contracting** — appears in [[2025-bastani-human-ai-contracting-paradox]] as the economic problem of paying for human vigilance when AI failures are rare and effort is hard to observe; promote if future sources add empirical or governance evidence on compensation, monitoring, liability, or incentive design for oversight.
