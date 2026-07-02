@@ -22,6 +22,8 @@ The useful move for this wiki is not to adopt the tensor as final truth. It is t
 
 [[2025-tomlinson-working-with-ai]] adds an observed-use reason to distinguish the human-side task from the AI-side task. In Copilot conversations, the user goal and the AI action can map to different O*NET work activities, and the paper reports disjoint user-goal and AI-action activity sets in 40% of conversations. That means a taxonomy that only labels the user's requested task can miss what the AI actually did, while a taxonomy that only labels the AI output can miss the worker's underlying goal.
 
+[[2026-richmond-ai-jobs-transition-framework]] adds a taxonomy use case at the occupation-archetype level. Its framework is not a task taxonomy in the Doshi sense, but it shows why task labels need adjacent dimensions for human necessity and demand response before they can support automation, reorganization, or growth claims.
+
 ## Connections
 - Connects to [[work-redesign]] because task taxonomy is the upstream language for deciding which workflow nodes can be delegated, constrained, audited, or protected.
 - Connects to [[human-ai-collaboration]] because collaboration quality depends on authority, auditability, output definition, and the human persona in the task, not just whether a human and AI are both present.
@@ -39,3 +41,4 @@ The useful move for this wiki is not to adopt the tensor as final truth. It is t
 - [[2026-zhang-fatigue-aware-learning-defer]] highlights that persona and state should not be collapsed. A worker's expertise level, current fatigue, cumulative workload, motivation, and accountability position may all affect allocation differently.
 - [[2026-wang-agent-development-real-world-work]] suggests that task taxonomies used for agent evaluation inherit the limits of benchmark task descriptions. If a task prompt omits context, purpose, stakeholders, or verification conditions, taxonomy labels can become cleaner than the work they claim to represent.
 - [[2025-tomlinson-working-with-ai]] shows the value of O*NET intermediate work activities for cross-occupation measurement, but also repeats the taxonomy risk: work activities are not the whole job, and the connective tissue between activities may carry much of the value that AI impact measures miss.
+- [[2026-richmond-ai-jobs-transition-framework]] is useful because it refuses to stop at exposure, but it also shows the next taxonomy problem: physical, relational, and regulatory/accountability forms of human necessity need clearer coding rules if they are going to become stable measurement dimensions rather than policy-facing archetype labels.

@@ -24,6 +24,8 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 
 [[2026-massenkoff-labor-market-impacts-ai]] adds a displacement-risk measure that explicitly combines theoretical capability, observed work-related use, and automation-like usage before aggregating to occupations. Its “observed exposure” construct matters because it narrows the gap between what LLMs could theoretically speed up and what is actually showing up in Claude usage, then tests that measure against BLS occupational projections, CPS unemployment, and young-worker job starts. The early outcome evidence is deliberately limited: higher observed exposure correlates with slightly lower BLS growth projections, but not with a clear unemployment increase through the available window.
 
+[[2026-richmond-ai-jobs-transition-framework]] adds a policy-facing measurement framework that separates technical exposure from human necessity, demand elasticity, and observed ChatGPT usage. Its contribution is a composite transition map rather than a realized-outcomes estimate: the Drive version classifies 921 occupations into high automation risk, reorganizing, AI-growth, and less-immediate-change archetypes, but it explicitly treats those categories as near-term pressure signals rather than job-loss forecasts.
+
 ## Connections
 - Connects to [[task-level-ai-adoption]] because observed use is one input to workforce impact measurement, especially when the data preserve task or work-activity grain rather than only tool-level adoption.
 - Connects to [[human-ai-task-taxonomy]] because measurement depends on correctly distinguishing user goals, AI actions, authority, scope, auditability, and output definition.
@@ -36,6 +38,7 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 
 ## Contradictions & open questions
 - Observed conversational use improves on speculative exposure scores, but it still misses embedded automation, enterprise copilots, non-chat workflows, and tasks workers avoid asking AI to do because of risk, policy, visibility, or evaluation pressure.
+- [[2026-richmond-ai-jobs-transition-framework]] makes the exposure-to-impact measurement chain more explicit by adding human necessity and demand elasticity, but it also introduces model-estimated elasticity and platform-bounded ChatGPT use as additional construct-validity burdens.
 - Applicability can be high where information work is common, but the value of that applicability depends on whether workers can evaluate outputs, integrate them into accountable workflows, and preserve the connective tissue between tasks.
 - O*NET-based aggregation makes cross-occupation measurement possible while also importing U.S.-centric, lagging, and task-list assumptions; AI-era work may change faster than the taxonomy used to measure it.
 - The wiki still needs field evidence linking applicability measures to realized productivity, quality, skill development, work redesign, hiring, wages, and worker experience over time.
