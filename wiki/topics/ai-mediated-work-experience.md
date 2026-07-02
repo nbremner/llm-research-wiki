@@ -1,7 +1,7 @@
 ---
 title: AI-mediated work experience
 status: active
-updated: 2026-06-29
+updated: 2026-07-02
 ---
 
 # AI-mediated work experience
@@ -33,6 +33,8 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 
 [[2025-klonek-ai-work-stress]] adds stress as a direct AI-mediated work-experience outcome. In 2,704 ChatGPT-related teamwork tweets, higher AI control was associated with higher stress, while human–AI transition and action processes were associated with lower stress. The useful work-design point is that AI control and human–AI teamwork are not opposite ends of one continuum: a workflow can increase AI control while also offering team-process resources that partially buffer stress.
 
+[[2026-mansuroglu-technostress-employee-well-being]] broadens the stress evidence beyond AI-specific social-media traces. In a systematic review of 201 empirical studies, techno-overload and techno-invasion were the most frequent technostressors tied to burnout, emotional exhaustion, lower job satisfaction, impaired detachment, and work-home conflict. For this topic, the important move is to treat stress and well-being as part of the lived architecture of digital work: workload, boundary invasion, support, autonomy, competence, and recovery conditions are design variables, not downstream wellness noise.
+
 [[2025-matz-basic-effect]] is not a workplace study, but it adds a mechanism worth carrying into worker-experience design: delegated AI choice can flatten distinctiveness and narrow exploration even when the options are already compatible with the person's revealed preferences. In work settings, that implies identity and autonomy risks may appear not only when AI replaces disliked work, but when agents repeatedly choose the safe, typical, or statistically likely version of a worker's own preferences, communications, priorities, or development paths.
 
 ## Connections
@@ -47,6 +49,7 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 - Relates to [[ai-mediated-organizational-networks]] because worker experience changes when AI alters social position, knowledge access, and the volume or direction of collaboration ties.
 - Relates to [[ai-mediated-teamwork]] because team processes can act as social or goal-progress resources that change stress, not only performance or coordination.
 - Relates to [[ai-mediated-choice-and-identity]] because delegated AI choices can affect identity, exploration, and self-expression, not only output quality or workload.
+- Relates to [[digital-work-strain]] because AI-mediated work experience includes stress, recovery, overload, boundary invasion, and occupational-health risk.
 
 ## Contradictions & open questions
 - [[2026-reich-work-design-multidimensional-ai-threat]] is cross-sectional and self-reported. It is useful for construct mapping, but it cannot show whether autonomy and skill variety cause AI adoption or whether AI adopters perceive their jobs differently.
@@ -58,4 +61,5 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 - [[2026-vuong-genai-job-performance]] is self-report and cross-sectional, so it supports a plausible nomological network around GenAI usage, job crafting, engagement, and performance, but not a causal claim that GenAI improves worker experience.
 - [[2026-buechsenschuss-genai-organizational-networks]] measures satisfaction with knowledge access but not broader well-being, identity, autonomy, or overload, so the positive network effects should not be overread as evidence that AI-mediated work experience improved overall.
 - [[2025-klonek-ai-work-stress]] is stronger on construct framing than causal identification: tweet-level, cross-sectional text mining can show that AI-control language, team-process language, and stress language covary, but it cannot establish whether AI control caused stress or whether stressed users described AI work differently.
+- [[2026-mansuroglu-technostress-employee-well-being]] is a systematic review rather than AI-specific field evidence. It gives the wiki a strong technostress map, but organizations still need longitudinal and intervention evidence showing whether AI workflow redesign actually improves well-being over time.
 - [[2025-matz-basic-effect]] supports a plausible identity mechanism for AI-mediated experience, but it uses Facebook preference choices rather than work tasks, so the workplace claim remains a transfer hypothesis until field evidence observes delegated agents shaping role identity, autonomy, exploration, or career behavior.

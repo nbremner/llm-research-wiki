@@ -32,6 +32,7 @@ file_hash: 96c928e989fb48ecc86b4ec8ffcb29b315fb875fa5242adfd28b19b5a744ba40
 - The authors note that the search strategy may have missed newer or adjacent constructs such as telepressure, technosuffering, and technostrain when they did not appear in titles or keywords.
 
 ## Feeds
+- [[digital-work-strain]]
 - [[ai-mediated-work-experience]]
 - [[cognitive-load-in-ai-assisted-work]]
 - [[work-redesign]]
