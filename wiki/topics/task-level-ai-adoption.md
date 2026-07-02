@@ -1,7 +1,7 @@
 ---
 title: Task-level AI adoption
 status: active
-updated: 2026-07-01
+updated: 2026-07-02
 ---
 
 # Task-level AI adoption
@@ -22,11 +22,13 @@ The useful design implication is that adoption is not simply moving from routine
 
 [[2026-johnston-shift-agentic-ai-codex]] shifts the observed-use evidence from conversational traces to agentic task delegation. Codex usage remains anchored in software production — engineering operations, code implementation, code understanding, application management, and validation — but in deeper-adoption contexts it spreads into research, planning, communication, data analysis, product work, recruiting, sales, and other knowledge-work categories. The adoption unit also changes: the relevant event is no longer only a conversation about a task, but a delegated work thread with estimated human-time complexity, runtime, outputs, and possible follow-up review.
 
+[[2026-massenkoff-labor-market-impacts-ai]] uses Claude task traces differently: not only to map where AI is used, but to decide which theoretically exposed O*NET tasks are observed often enough in work-related contexts to count toward occupational exposure. Its key adoption contribution is the red-area/blue-area gap: observed Claude coverage is still far below theoretical LLM capability, even in occupational groups where capability scores imply large feasible scope.
+
 ## Connections
 - Connects to [[ai-adoption]] because task-level usage is an input to the mapping problem: organizations need to know which task patterns actually invite AI use before they can turn experimentation into durable adoption.
 - Connects to [[work-redesign]] because observed use identifies pressure points, not finished designs. The redesign question is how those task clusters get reallocated, governed, verified, and recombined.
 - Connects to [[automation-and-substitution]] because conversation-level automation-like behavior is not the same as labor substitution. Task use can be high while jobs, accountability, and integration remain human-held.
-- Connects to [[ai-workforce-impact-measurement]] because task-level traces become stronger evidence when they are linked to completion, scope, work-activity taxonomies, and explicit limits on what can be inferred.
+- Connects to [[ai-workforce-impact-measurement]] because task-level traces become stronger evidence when they are linked to completion, scope, work-activity taxonomies, work context, automation versus augmentation, occupational time weights, and explicit limits on what can be inferred.
 - Connects to [[human-ai-collaboration]] because the same task can involve learning, iteration, partial delegation, or direct fulfillment depending on how the human scopes and uses the AI output.
 
 ## Contradictions & open questions
@@ -37,3 +39,4 @@ The useful design implication is that adoption is not simply moving from routine
 - Social intelligence is a live boundary condition. [[2025-agarwal-what-work-ai-doing]] finds it statistically decoupled from usage, but that may reflect what users currently ask chat-based tools to do rather than what AI can or should do in relational work.
 - Visibility changes the adoption map. [[2026-almog-barriers-ai-adoption]] suggests the same AI-assisted task can show different use rates depending on whether reliance is private or attached to evaluation, so observed-use data may understate latent usefulness where workers expect reputational penalties.
 - [[2026-johnston-shift-agentic-ai-codex]] improves task-level measurement for agentic tools, but its strongest adoption evidence comes from a product and company context with unusually low frictions. The gap between OpenAI-internal usage and external organizational usage is itself part of the finding: task fit does not automatically become broad organizational adoption.
+- [[2026-massenkoff-labor-market-impacts-ai]] shows why theoretical exposure cannot be read as realized adoption. Tasks may be feasible for LLMs but absent from observed work use because of model limits, legal constraints, missing software integration, verification burden, risk, policy, or diffusion friction.
