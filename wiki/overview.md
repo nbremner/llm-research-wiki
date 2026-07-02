@@ -20,6 +20,7 @@ The central question:
 ## Topics
 
 - [[ai-adoption]] — what binds AI adoption once tools are available (the "mapping problem")
+- [[behavioral-human-centered-ai]] — how AI implementation has to account for boundedly rational designers, adopters, and leaders rather than assuming technically better systems will be accepted
 - [[task-level-ai-adoption]] — where workers actually bring AI into tasks, before roles or organizations have necessarily redesigned around it
 - [[ai-readiness]] — whether organizational capabilities, data, culture, and strategic fit are ready for a specific AI adoption purpose
 - [[responsible-ai-deployment]] — how workforce-facing AI systems are governed, evidenced, scoped, monitored, and held accountable so deployment protects worker dignity, fairness, privacy, autonomy, and well-being
@@ -65,6 +66,7 @@ Seed questions to grow topics around. Edit freely.
 
 - Which tasks are candidates for automation vs. augmentation vs. human protection, and how is that decided?
 - What I-O constructs best explain sustained adoption of AI tools at work?
+- Which behavioral change-management mechanisms make AI adoption durable without turning human-centered design into persuasion to accept poor systems?
 - Which task characteristics predict observed GenAI use, and when does observed use become durable organizational adoption rather than individual experimentation?
 - Where do worker preferences for automation, augmentation, and sustained human agency diverge from technical AI-agent capability?
 - What would make AI readiness a valid organizational assessment construct rather than a loose maturity checklist?
@@ -117,6 +119,7 @@ Seed questions to grow topics around. Edit freely.
 - **Agent benchmark validity** has been promoted into [[ai-agent-benchmark-validity]] through [[2026-wang-agent-development-real-world-work]], but the wiki still needs field evidence that more representative benchmarks lead to better deployment, redesign, or governance decisions.
 - **AI-mediated teamwork** has been promoted into [[ai-mediated-teamwork]] through [[2025-dellacqua-cybernetic-teammate]], but the wiki still needs evidence on coordination, trust, conflict, mentoring, implementation, and whether organizations actually redesign team boundaries after AI can reproduce some bounded team benefits.
 - **AI-mediated organizational networks** has been promoted into [[ai-mediated-organizational-networks]] through [[2026-buechsenschuss-genai-organizational-networks]], and [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] now adds qualitative managerial mechanisms for cross-functional AI knowledge transfer, but the wiki still needs digital-trace, multi-organization, and longer-term evidence on whether GenAI-driven centrality persists, overloads key actors, or changes mentoring and informal knowledge flow.
+- **Behavioral human-centered AI** has been promoted into [[behavioral-human-centered-ai]] through [[2025-schweitzer-leading-ai-adoption]], but the wiki still needs field evidence on whether behaviorally informed design, adoption, and management interventions improve trust calibration, worker outcomes, governance quality, or realized AI value.
 
 ## Candidate topics (watchlist)
 

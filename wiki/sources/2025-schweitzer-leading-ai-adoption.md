@@ -34,3 +34,4 @@ file_hash: c623b690919b48742b5e2fe8e0e811ee1128bc543adbe837261f6f048a09b6df
 - [[ai-adoption]]
 - [[ai-readiness]]
 - [[responsible-ai-deployment]]
+- [[behavioral-human-centered-ai]]

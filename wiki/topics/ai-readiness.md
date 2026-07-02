@@ -1,7 +1,7 @@
 ---
 title: AI readiness
 status: active
-updated: 2026-06-28
+updated: 2026-07-02
 ---
 
 # AI readiness
@@ -18,6 +18,8 @@ The important move for this wiki is that readiness and adoption are mutually rei
 
 [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] adds a managerial-capability layer to readiness. Its grounded-theory framework says B2B sales managers need data-based human capital, social capital for knowledge-sharing culture, and a transformative AI-positive mindset to convert available AI tools into individual knowledge creation, team knowledge transfer, and organizational knowledge-asset reconfiguration. Readiness therefore includes whether middle and frontline managers can translate AI into domain-specific knowledge processes, not only whether the organization has strategy, data, infrastructure, or top-management support.
 
+[[2025-schweitzer-leading-ai-adoption]] adds a behavioral-change-management layer to readiness. If leaders treat AI implementation as an engineering handoff, readiness claims are incomplete even when strategy, resources, knowledge, culture, and data look adequate. Organizations also need the behavioral capability to anticipate designer bias, employee resistance, algorithm aversion, autonomy threat, leader overconfidence, and escalation of commitment across design, adoption, and management stages.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because readiness is one way of naming what binds adoption after tools become available: not access, but organizational capability, commitment, data, and fit for the intended adoption purpose.
@@ -27,6 +29,7 @@ The important move for this wiki is that readiness and adoption are mutually rei
 - Connects to [[human-ai-collaboration]] through customer/user readiness, upskilling, AI awareness, and AI ethics — adoption quality depends on humans understanding, accepting, and governing AI-enabled work.
 - Connects to [[competency-modeling]] because readiness for digital transformation may require a future-oriented skills architecture before upskilling, mobility, or AI deployment can be targeted coherently.
 - Connects to [[ai-mediated-organizational-networks]] because readiness depends on whether managers can build the cross-functional ties through which AI use cases, data knowledge, and domain expertise move across teams.
+- Connects to [[behavioral-human-centered-ai]] because readiness includes the capacity to design adoption around real human behavior rather than rational-user assumptions.
 
 ## Contradictions & open questions
 
@@ -36,3 +39,4 @@ The important move for this wiki is that readiness and adoption are mutually rei
 - [[2026-reich-work-design-multidimensional-ai-threat]] raises the same timing problem at the job level: autonomy and skill variety may enable AI adoption, be perceived differently by adopters, or both.
 - [[2025-tona-deployment-ai-infer-employee-skills]] raises a measurement-governance tension: AI skills inference can make readiness more visible, but readiness claims become fragile if inferred skills are treated as more accurate, complete, or employee-accepted than the evidence supports.
 - [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] raises a level-of-analysis tension: readiness can be present at the enterprise level while AI exploitation still depends on sales managers' local capabilities and team knowledge routines. The framework needs quantitative and field-performance evidence before those capabilities can be treated as readiness dimensions rather than promising qualitative categories.
+- [[2025-schweitzer-leading-ai-adoption]] raises a construct-boundary tension: behavioral change-management capability could be part of AI readiness, a method for producing readiness, or a post-adoption capability built through experience. The wiki should not collapse those timing differences until empirical measures clarify them.
