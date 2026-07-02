@@ -44,6 +44,7 @@ The central question:
 - [[human-ai-task-taxonomy]] — dimensions for classifying AI-enabled tasks before drawing redesign, collaboration, or substitution conclusions
 - [[human-ai-task-allocation]] — when a specific task instance should be routed to a human, AI system, or hybrid arrangement as capability, workload, fatigue, and accountability change
 - [[automation-complacency]] — when AI advice reduces human effort, attention, learning, or oversight
+- [[cognitive-surrender]] — when people adopt AI-generated answers as their own judgment with minimal scrutiny, bypassing intuition and deliberation
 - [[cognitive-load-in-ai-assisted-work]] — how AI assistance creates or reduces intrinsic and extraneous mental burden during real work
 - [[ai-mediated-work-experience]] — how AI changes autonomy, skill use, identity, workload, and felt job quality
 - [[ai-mediated-choice-and-identity]] — how AI recommendation or delegation changes preference distinctiveness, exploration, self-expression, and identity-relevant choice
@@ -77,6 +78,7 @@ Seed questions to grow topics around. Edit freely.
 - When does AI literacy improve calibrated use without simply increasing or decreasing AI receptivity?
 - When can junior or novice AI users safely teach senior professionals, and when does bottom-up adoption energy produce underpowered risk mitigation?
 - When does improving AI quality reduce human effort enough that system performance, learning, or oversight suffers?
+- When does AI assistance become cognitive surrender rather than calibrated offloading, and which feedback, incentive, interface, or accountability designs restore human judgment without wasting effort?
 - When does proactive AI assistance reduce task burden versus adding extraneous cognitive load through task switching, information sprawl, or repair work?
 - When does grounded GenAI expand human-human collaboration and knowledge-sharing networks, and when does increased centrality become overload, interruption, or coordination fatigue?
 - When should identity-relevant or preference-forming choices remain human-made even if an AI agent can choose plausible options efficiently?
@@ -120,6 +122,7 @@ Seed questions to grow topics around. Edit freely.
 - **AI-mediated teamwork** has been promoted into [[ai-mediated-teamwork]] through [[2025-dellacqua-cybernetic-teammate]], but the wiki still needs evidence on coordination, trust, conflict, mentoring, implementation, and whether organizations actually redesign team boundaries after AI can reproduce some bounded team benefits.
 - **AI-mediated organizational networks** has been promoted into [[ai-mediated-organizational-networks]] through [[2026-buechsenschuss-genai-organizational-networks]], and [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] now adds qualitative managerial mechanisms for cross-functional AI knowledge transfer, but the wiki still needs digital-trace, multi-organization, and longer-term evidence on whether GenAI-driven centrality persists, overloads key actors, or changes mentoring and informal knowledge flow.
 - **Behavioral human-centered AI** has been promoted into [[behavioral-human-centered-ai]] through [[2025-schweitzer-leading-ai-adoption]], but the wiki still needs field evidence on whether behaviorally informed design, adoption, and management interventions improve trust calibration, worker outcomes, governance quality, or realized AI value.
+- **Cognitive surrender** is proposed for promotion through [[2026-shaw-thinking-fast-slow-artificial]], but the wiki still needs workplace evidence on whether AI answer adoption undercuts judgment in richer expert tasks with accountability, domain context, and independent verification channels.
 
 ## Candidate topics (watchlist)
 

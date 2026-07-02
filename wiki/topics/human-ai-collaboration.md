@@ -57,6 +57,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2025-randazzo-cyborgs-centaurs-self-automators]] makes the collaboration pattern itself observable across a workflow. In a BCG consultant experiment, the same broad “human-in-the-loop” GenAI task appeared as Fused/Cyborg co-creation, Directed/Centaur co-creation, or Abdicated/Self-Automator use, depending on who selected what needed to be done and who identified how it would be done. That is precise enough to warrant [[human-ai-co-creation-modes]] as a peer topic rather than letting the collaboration page absorb every workflow-pattern claim.
 
+[[2026-shaw-thinking-fast-slow-artificial]] adds a reasoning-level boundary for collaboration: AI assistance is not necessarily collaborative just because the human can choose whether to consult and follow it. When participants consulted the assistant, they often adopted its answer, including faulty answers, so the operative arrangement can shift from human-led review to [[cognitive-surrender]] without any formal change in authority.
+
 A collaboration typology is starting to emerge across the corpus. The broad page should not treat "human-AI collaboration" as one condition: advice-taking, coaching/feedback, stewardship, co-production, AI proactivity, [[human-ai-co-creation-modes]], and [[agentic-delegation]] differ by initiative, execution authority, review burden, and accountability. The current wiki has enough evidence to break out delegation and co-creation modes now, and enough signal to watch advice-taking, stewardship, coaching, and proactivity as possible future peer topics.
 
 ## Connections
@@ -75,6 +77,7 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 - Relates to [[cognitive-load-in-ai-assisted-work]] because collaboration quality depends on the cognitive cost of keeping the human and AI aligned across turns.
 - Relates to [[ai-use-image-concerns]] because useful delegation can be behaviorally suppressed when visible reliance on AI threatens professional image or evaluator judgments.
 - Relates to [[evidence-based-management]] because collaboration claims need to distinguish system-level value from the principal's incentive to fund the human effort that makes oversight real.
+- Relates to [[cognitive-surrender]] because nominally collaborative workflows can still route reasoning authority to the AI when the human adopts outputs without scrutiny.
 
 ## Contradictions & open questions
 
@@ -93,3 +96,4 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 - [[2026-zhang-fatigue-aware-learning-defer]] is benchmark and simulation evidence, not a deployed work-system study. It strengthens the case for stateful task routing, but it does not settle how fatigue should be measured, disclosed, governed, or balanced against worker agency in real organizations.
 - [[2025-randazzo-genai-power-persuader]] warns that active validation is not automatically protective if it stays inside the same conversational system being validated. The open design question is when verification should be externalized into independent evidence, tools, reviewers, or critique agents rather than asking a persuasive model to defend, explain, or repair its own output.
 - [[2025-randazzo-cyborgs-centaurs-self-automators]] adds a richer co-creation typology, but it is still a single-session consultant task. The categories should be treated as promising workflow modes, not stable worker types.
+- [[2026-shaw-thinking-fast-slow-artificial]] is deliberately artificial in its task and AI-error manipulation, but that is also why it usefully isolates the collaboration failure: control rights alone do not guarantee judgment if the human predictably accepts fluent AI answers.

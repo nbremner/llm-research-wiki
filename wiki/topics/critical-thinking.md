@@ -30,6 +30,8 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 
 [[2025-randazzo-genai-power-persuader]] adds a sharper boundary around verification: critical thinking can be attempted and still be captured by the AI interaction if the user validates the model by debating with the model itself. In the consultants' GPT-4 logs, validation episodes were followed by more persuasive responses, so the relevant design problem is not only whether workers think critically, but whether the verification channel gives them independent leverage against model-generated ethos, logos, and pathos.
 
+[[2026-shaw-thinking-fast-slow-artificial]] gives the wiki direct behavioral evidence for [[cognitive-surrender]]: people often consult an AI assistant on reasoning problems and then adopt its answer even when it is confidently wrong. In Study 1, AI access improved accuracy when the AI was accurate but pushed accuracy below the Brain-Only baseline when the AI was faulty, while also increasing confidence. That makes critical thinking partly a routing problem: does the person use AI as input to judgment, or does the AI output become the judgment?
+
 This page differs from [[complex-collaborative-problem-solving]] in topic type. CPS and ColPS are transversal skills and assessment targets; this page tracks how GenAI changes the exercise of judgment inside work. Critical thinking may be one process inside complex problem solving, but the focal question here is not how to assess CPS/ColPS generally. It is how AI shifts critical thinking from generation to verification, from solving to stewardship, and from independent cognition to human-AI coordination.
 
 ## Connections
@@ -43,6 +45,7 @@ This page differs from [[complex-collaborative-problem-solving]] in topic type. 
 - Relates to [[responsible-ai-deployment]] because critical-thinking safeguards should be built into the system and work process rather than assigned solely to users facing a persuasive model.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because verification and stewardship depend on whether the AI interface preserves enough cognitive bandwidth for judgment.
 - Relates to [[complex-collaborative-problem-solving]] because AI may change which parts of complex and collaborative problem solving require human critical thinking, especially problem framing, verification, coordination, and adaptive control.
+- Relates to [[cognitive-surrender]] because some AI-assisted failures occur when critical thinking is bypassed entirely rather than merely shifted into verification or stewardship.
 
 ## Contradictions & open questions
 
@@ -54,3 +57,4 @@ This page differs from [[complex-collaborative-problem-solving]] in topic type. 
 - [[2026-lepine-precision-proactivity]] uses transcript-derived cognitive-load proxies rather than direct measures of critical thinking, so its contribution is a plausible capacity mechanism rather than direct evidence about judgment quality.
 - [[2026-shen-ai-impacts-skill-formation]] implies that explanation and checking can preserve learning, but it also shows why current-artifact correctness is too narrow as a verification target; users can get a working answer while losing the comprehension needed for future critical thinking.
 - [[2025-randazzo-genai-power-persuader]] shows a different failure mode from complacency: professionals may scrutinize the output, but the conversational validation process itself can become persuasive. The unresolved question is which verification designs give users independent traction rather than simply more fluent model self-defense.
+- [[2026-shaw-thinking-fast-slow-artificial]] is strong causal evidence for surrender on CRT-style reasoning tasks, but it leaves open whether workplace experts surrender in the same way when tasks carry accountability, domain context, and opportunities for external verification.

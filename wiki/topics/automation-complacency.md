@@ -1,7 +1,7 @@
 ---
 title: Automation complacency
 status: active
-updated: 2026-06-22
+updated: 2026-07-02
 ---
 
 # Automation complacency
@@ -26,6 +26,8 @@ Automation complacency is the failure mode where better machine advice reduces h
 
 [[2026-lepine-precision-proactivity]] complicates the complacency frame by showing the opposite burden can also matter. In AI-assisted financial valuation, AI-generated content use was associated with better quality, but extraneous cognitive load from task switching and information sprawl was strongly harmful. Some AI failures reduce human effort too much; others consume attention in repair work and leave too little capacity for judgment.
 
+[[2026-shaw-thinking-fast-slow-artificial]] gives complacency a sharper behavioral micro-mechanism: [[cognitive-surrender]], where the user adopts a System 3 answer with minimal scrutiny. In Study 1, participants followed faulty AI advice on 79.8% of chat-engaged trials and were more confident with AI access despite substantial AI error. The source matters here because it distinguishes reduced vigilance from direct answer adoption; the human contribution is not merely lighter, it can be displaced.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because collaboration quality depends on preserving competent human review, not merely keeping a human nominally in the loop.
 - Relates to [[critical-thinking]] because attention, verification, and stewardship are effortful behaviors that can decay when AI confidence is high.
@@ -34,6 +36,7 @@ Automation complacency is the failure mode where better machine advice reduces h
 - Relates to [[ai-induced-skill-erosion]] because repeated complacency can become capability loss when workers no longer practice the judgment they are expected to retain.
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis tools are especially prone to making partial or contextual evidence look clean, ranked, and complete.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because overload and complacency are distinct ways AI can weaken human contribution to system performance.
+- Relates to [[cognitive-surrender]] because surrender is a specific acceptance-and-adoption pattern inside the broader complacency family.
 
 ## Contradictions & open questions
 - Better AI can still improve average performance, as [[2022-dellacqua-falling-asleep-at-wheel]] shows when pooling AI conditions and in the perfectly predictive benchmark. The claim is not "worse AI is better"; it is that human behavioral response can make the model-quality optimum differ from the system-performance optimum.
@@ -42,3 +45,4 @@ Automation complacency is the failure mode where better machine advice reduces h
 - There is a parallel learning tension: reducing cognitive load can be the point of assistance, but [[2025-kosmyna-brain-chatgpt-cognitive-debt]] suggests that repeated reduction in effort may also reduce ownership, recall, or practice when the task is supposed to build capability.
 - [[2025-yun-generative-ai-knowledge-work]] suggests design countermeasures — citations, audit trails, comparative outputs, and access to raw data — but it does not test which of these actually prevents complacency in live organizational decisions.
 - [[2026-lepine-precision-proactivity]] suggests that proactivity should be load-sensitive rather than maximal. The unresolved question is how systems detect when help should become repair, simplification, or silence.
+- [[2026-shaw-thinking-fast-slow-artificial]] shows that incentives and immediate feedback improve faulty-advice override behavior, but they do not eliminate surrender; the unresolved design question is how much friction, feedback, or independent evidence is needed before oversight becomes real rather than nominal.

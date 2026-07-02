@@ -33,6 +33,7 @@ file_hash: 159e3f4f2fe2b90fa0f1ec8bc75b93a05562254e53a7254ce31b7cbf6e87abba
 - **Provenance:** Crossref identifies both an SSRN DOI and a PsyArXiv/OSF DOI for the same title and author team. The Drive PDF is text-equivalent to the public OSF PDF at https://osf.io/yk25n/download with the same page count and text length, but the binary SHA-256 hashes differ, so the Drive hash above records the ingested file rather than a public checksum match.
 
 ## Feeds
+- [[cognitive-surrender]]
 - [[critical-thinking]]
 - [[automation-complacency]]
 - [[human-ai-collaboration]]
