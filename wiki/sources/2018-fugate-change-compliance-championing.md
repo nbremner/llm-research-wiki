@@ -31,6 +31,7 @@ file_hash: 393d42a55107f4c2a1aed95ffc3e78bd3454e36bfa1a778bfd627fc936a6498b
 - Public provenance is verified through the Wiley DOI/Crossref record; the Drive PDF hash is recorded for version control.
 
 ## Feeds
+- [[employee-change-support]]
 - [[ai-adoption]]
 - [[behavioral-human-centered-ai]]
 - [[ai-readiness]]

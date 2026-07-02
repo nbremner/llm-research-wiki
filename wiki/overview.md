@@ -21,6 +21,7 @@ The central question:
 
 - [[ai-adoption]] — what binds AI adoption once tools are available (the "mapping problem")
 - [[behavioral-human-centered-ai]] — how AI implementation has to account for boundedly rational designers, adopters, and leaders rather than assuming technically better systems will be accepted
+- [[employee-change-support]] — when employees minimally comply with change versus actively champion it, and how appraisal, trust, and management support shape that difference
 - [[task-level-ai-adoption]] — where workers actually bring AI into tasks, before roles or organizations have necessarily redesigned around it
 - [[ai-readiness]] — whether organizational capabilities, data, culture, and strategic fit are ready for a specific AI adoption purpose
 - [[organizational-learning-capability]] — whether organizations can turn experimentation, failures, external knowledge, and local problem solving into changed routines
@@ -70,6 +71,7 @@ Seed questions to grow topics around. Edit freely.
 - Which tasks are candidates for automation vs. augmentation vs. human protection, and how is that decided?
 - What I-O constructs best explain sustained adoption of AI tools at work?
 - Which behavioral change-management mechanisms make AI adoption durable without turning human-centered design into persuasion to accept poor systems?
+- What makes employees champion AI-enabled change rather than merely comply with rollout instructions, and when is championing itself unsafe or misdirected?
 - Which task characteristics predict observed GenAI use, and when does observed use become durable organizational adoption rather than individual experimentation?
 - Where do worker preferences for automation, augmentation, and sustained human agency diverge from technical AI-agent capability?
 - What would make AI readiness a valid organizational assessment construct rather than a loose maturity checklist?
@@ -124,7 +126,7 @@ Seed questions to grow topics around. Edit freely.
 - **Agent benchmark validity** has been promoted into [[ai-agent-benchmark-validity]] through [[2026-wang-agent-development-real-world-work]], but the wiki still needs field evidence that more representative benchmarks lead to better deployment, redesign, or governance decisions.
 - **AI-mediated teamwork** has been promoted into [[ai-mediated-teamwork]] through [[2025-dellacqua-cybernetic-teammate]], but the wiki still needs evidence on coordination, trust, conflict, mentoring, implementation, and whether organizations actually redesign team boundaries after AI can reproduce some bounded team benefits.
 - **AI-mediated organizational networks** has been promoted into [[ai-mediated-organizational-networks]] through [[2026-buechsenschuss-genai-organizational-networks]], [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] adds qualitative managerial mechanisms for cross-functional AI knowledge transfer, and [[2007-serenko-organizational-size-knowledge-flow]] now gives a pre-AI baseline for why size should degrade knowledge flow. The wiki still needs digital-trace, multi-organization, and longer-term evidence on whether GenAI weakens organizational-size penalties, whether centrality persists, and when improved reach becomes overload for key actors.
-- **Behavioral human-centered AI** has been promoted into [[behavioral-human-centered-ai]] through [[2025-schweitzer-leading-ai-adoption]], but the wiki still needs field evidence on whether behaviorally informed design, adoption, and management interventions improve trust calibration, worker outcomes, governance quality, or realized AI value.
+- **Behavioral human-centered AI** has been promoted into [[behavioral-human-centered-ai]] through [[2025-schweitzer-leading-ai-adoption]], and [[employee-change-support]] now gives the wiki a foundational change-support mechanism through [[2018-fugate-change-compliance-championing]], but the wiki still needs AI-specific field evidence on whether behaviorally informed change management improves trust calibration, worker outcomes, governance quality, championing, or realized AI value.
 - **Organizational learning capability** has been promoted into [[organizational-learning-capability]] through [[1997-goh-benchmarking-learning-capability]], but the wiki still needs AI-specific longitudinal evidence on whether learning-capability conditions predict which experiments become redesigned workflows, shared practices, and measurable organizational outcomes.
 - **Cognitive surrender** is proposed for promotion through [[2026-shaw-thinking-fast-slow-artificial]], but the wiki still needs workplace evidence on whether AI answer adoption undercuts judgment in richer expert tasks with accountability, domain context, and independent verification channels.
 
