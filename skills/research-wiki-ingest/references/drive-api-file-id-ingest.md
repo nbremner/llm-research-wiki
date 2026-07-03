@@ -19,6 +19,12 @@ Still verify:
 
 These are enough for selection reporting, preflight, download, and post-move verification.
 
+## Drive auth preflight / recovery
+
+Before direct API lookup, run the Google Workspace setup check if Drive calls fail with `invalid_grant`, `TOKEN_REVOKED`, or an expired/revoked token. For Drive-only research-wiki ingest, a partial Google token that grants `https://www.googleapis.com/auth/drive` is sufficient even if Gmail/Calendar/Docs/Sheets scopes are missing.
+
+If the installed Google Workspace setup script does not support `--services drive --format json`, generate a Drive-only OAuth URL manually with `google_auth_oauthlib.flow.Flow`, using scope `https://www.googleapis.com/auth/drive`, redirect URI `http://localhost:1`, and `autogenerate_code_verifier=True`; write `~/.hermes/google_oauth_pending.json` with `state`, `code_verifier`, and `redirect_uri`, then exchange the user's pasted localhost redirect with `setup.py --auth-code '<full-url>'`. After `setup.py --check` reports `AUTHENTICATED (partial)` and includes Drive scope, proceed with the targeted Drive metadata/download call rather than blocking on unrelated missing scopes.
+
 ## Download/extract/hash pattern
 
 With `googleapiclient` and `/root/.hermes/google_token.json` credentials:
