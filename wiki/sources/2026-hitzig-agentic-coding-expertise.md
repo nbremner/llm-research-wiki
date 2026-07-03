@@ -32,6 +32,7 @@ file_hash: 644d0e3fe30c350d10217f4db0051f4e36bc4cceaa3e5d27cd3efdcee2e444f0
 - The Drive PDF exactly matches the public Anthropic PDF at `https://cdn.sanity.io/files/4zrzovbb/website/433472e34b60db1a52ebf0b8c6600f057b6908c5.pdf` by SHA-256; the public landing page also links to a separate appendix PDF that does not match the ingested report file.
 
 ## Feeds
+- [[domain-expertise-in-agentic-work]]
 - [[agentic-delegation]]
 - [[human-ai-task-allocation]]
 - [[ai-workforce-impact-measurement]]

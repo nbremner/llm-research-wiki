@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-07-02
+updated: 2026-07-03
 ---
 
 # Work redesign
@@ -69,6 +69,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2026-johnston-shift-agentic-ai-codex]] gives early behavioral evidence for redesign around delegated agent work. The paper's useful redesign signal is not simply that Codex adoption grew; it is that intensive users organize work through parallel agents, long-running turns, reusable skills/plugins, and larger task requests. That pattern makes agentic AI closer to workflow re-architecture than tool substitution: workers may shift from executing task components to assigning work, monitoring progress, reviewing outputs, maintaining reusable procedural context, and integrating artifacts across multiple simultaneous workstreams.
 
+[[2026-hitzig-agentic-coding-expertise]] complements the Codex evidence by showing the internal work split in Claude Code sessions: humans typically decide what to do, while Claude decides how to execute it. The redesign implication is that agentic coding may weaken the boundary around who can produce technical artifacts, but it does not eliminate the need for domain expertise; work may shift toward problem framing, acceptance criteria, verification, and recovery when the agent runs into trouble.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -86,6 +88,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[ai-mediated-organizational-networks]] because redesigned work can emerge as changed collaboration and knowledge-flow patterns before formal role architecture catches up.
 - Connects to [[human-ai-co-creation-modes]] because redesign decisions become enacted as recurring patterns of who steers, who executes, who evaluates, and who learns.
 - Connects to [[agentic-delegation]] because agentic redesign turns delegation, review, concurrency, and reusable workflow infrastructure into core work-design variables rather than optional tool-use style.
+- Connects to [[domain-expertise-in-agentic-work]] because redesign around agents changes which human capabilities matter: less direct execution in some cases, more problem framing, review, and contextual judgment.
 
 ## Contradictions & open questions
 
@@ -113,3 +116,6 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2025-dellacqua-super-mario-ai]] shows why redesign should not equate individual AI capability with system improvement. The automated agent was individually strong, but the redesigned human-AI team initially performed worse because coordination routines and motivation changed.
 - [[2025-randazzo-cyborgs-centaurs-self-automators]] is useful for redesign vocabulary but limited by its single-session consultant task and April 2023 GPT-4 context; organizations should not assume its mode/outcome pattern transfers unchanged to other jobs, tools, or capability frontiers.
 - [[2026-johnston-shift-agentic-ai-codex]] is strong process evidence for frontier agentic work practices, but it is not a field experiment showing that those practices improve productivity, quality, coordination, learning, or worker well-being. OpenAI-internal results are best read as a low-friction frontier case, not as the current baseline for ordinary organizations.
+
+- [[2026-hitzig-agentic-coding-expertise]] suggests coding occupation may matter less than task-specific expertise for agentic coding success, but it does not show how organizations should redesign roles, training, review rights, or accountability when non-coders can direct technical work.
+

@@ -1,7 +1,7 @@
 ---
 title: Agentic delegation
 status: active
-updated: 2026-07-01
+updated: 2026-07-03
 ---
 
 # Agentic delegation
@@ -18,6 +18,8 @@ The source also shows why delegation is a system-level design problem. Delegate 
 
 [[2026-johnston-shift-agentic-ai-codex]] adds large-scale platform evidence that agentic delegation is becoming a distinct work practice, not only an experimental interface condition. Codex users increasingly ask the system to carry out production work, and intensive users show delegation-specific behaviors: more than 10% of users manage three or more concurrent Codex agents at some point each week, 26.6% of active users invoked at least one skill by June 11, 2026, and inside OpenAI 28.6% of users managed five or more concurrent agents during the observed week. The strongest signal is role shift: the human becomes a delegator, reviewer, workflow designer, and integrator of multiple agent workstreams rather than only a prompt writer.
 
+[[2026-hitzig-agentic-coding-expertise]] adds a within-session authority map for agentic coding. Across roughly 400,000 Claude Code sessions, users made about 70% of planning decisions while Claude made about 80% of execution decisions, and each user prompt triggered about 10 Claude actions on average. This makes delegation visible at a finer grain than adoption or active-use counts: the human often retains goal framing and acceptance criteria while delegating implementation choices and action chains to the agent.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because delegation is one authority arrangement among advice-taking, coaching, stewardship, co-production, proactivity, and autonomous execution.
 - Relates to [[work-redesign]] because delegation changes the workflow node at which human judgment enters: before execution, after execution, or only through rule-setting and accountability.
@@ -27,6 +29,7 @@ The source also shows why delegation is a system-level design problem. Delegate 
 - Relates to [[human-ai-task-taxonomy]] because delegation claims need explicit authority, auditability, output definition, and human-persona assumptions before they can be interpreted as augmentation or automation.
 - Relates to [[ai-mediated-choice-and-identity]] because delegating preference-relevant choices can preserve convenience while changing distinctiveness, exploration, and self-expression.
 - Relates to [[ai-workforce-impact-measurement]] because agentic delegation requires measures beyond active users or message volume: delegated task complexity, runtime, concurrency, workflow reuse, and output volume become part of the evidence chain.
+- Relates to [[domain-expertise-in-agentic-work]] because delegation quality depends on whether the human can frame the problem, specify constraints, and recover from agent errors rather than only invoke autonomous execution.
 
 ## Contradictions & open questions
 - [[2026-zhu-choose-your-agent]] suggests delegation can improve group welfare in a stylized bargaining market, but this does not settle whether workers should delegate in high-accountability professional settings where errors, responsibility, and legitimacy matter differently.
@@ -35,3 +38,6 @@ The source also shows why delegation is a system-level design problem. Delegate 
 - The market-making mechanism in [[2026-zhu-choose-your-agent]] may become its own topic if future sources show AI systems reshaping coordination environments, incentives, or interaction norms beyond the focal user who delegates.
 - [[2025-matz-basic-effect]] is not workplace evidence, but it raises a transferable design question: when should identity-relevant or preference-forming choices remain human-made even if an agent can choose plausible options from inside the person's own preference history?
 - [[2026-johnston-shift-agentic-ai-codex]] shows frontier adoption and delegation practice at scale, but it does not directly validate productivity, output quality, downstream accountability, or worker experience; token output, concurrency, and skill use are closer to behavioral process measures than to impact measures.
+
+- [[2026-hitzig-agentic-coding-expertise]] complicates the idea that delegation democratizes technical work without remainder: non-software occupations can succeed at coding tasks, but the returns appear to flow through task-specific expertise rather than through delegation alone.
+

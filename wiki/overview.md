@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-07-02
+updated: 2026-07-03
 ---
 
 # Overview
@@ -61,6 +61,7 @@ The central question:
 - [[ai-use-image-concerns]] — when visible AI reliance changes how workers expect to be judged, suppressing useful adoption even when AI improves task performance
 - [[novice-risk-work]] — when novice AI users try to mitigate risks for senior/accountable actors without yet having enough technical or governance understanding
 - [[agentic-delegation]] — when people hand execution authority to AI agents rather than only receiving advice, and how that changes adoption, accountability, and interdependent outcomes
+- [[domain-expertise-in-agentic-work]] — how task-specific domain command lets humans frame, steer, verify, and recover agentic AI work even when AI executes technical steps
 - [[ai-agent-benchmark-validity]] — whether agent benchmarks measure work-relevant capability rather than convenient task performance
 - [[ai-workforce-impact-measurement]] — how AI capability, observed use, task applicability, and organizational outcomes become valid evidence about workforce change
 
@@ -91,6 +92,7 @@ Seed questions to grow topics around. Edit freely.
 - What does construct validity require in AI-mediated assessment and people analytics?
 - When does visible AI reliance signal weak judgment, adaptability, compliance, or professionalism — and how should organizations design evaluation systems around that signal?
 - When should humans delegate execution authority to an AI agent rather than seek advice or coaching, and how does one actor's delegation change the incentives and outcomes of others in the same work system?
+- When does domain expertise become the scarce human contribution in agentic workflows, and how should organizations develop novices if AI removes some of the practice that used to build that expertise?
 - How does AI reshape job analysis and the definition of work itself, before HR systems are built on it?
 - When does algorithmic-assessment governance (audits, compliance) substitute for — versus complement — construct validity and job-relatedness?
 - What evidence, governance, stakeholder voice, and reversal mechanisms make workforce-facing AI deployment responsible when complete validation evidence is unavailable but deployment pressure is real?
@@ -119,6 +121,7 @@ Seed questions to grow topics around. Edit freely.
 - **AI-use image concerns** has been promoted into [[ai-use-image-concerns]] through [[2026-almog-barriers-ai-adoption]], but the wiki still needs field evidence from richer professional work and organizational designs that change whether AI use is read as good judgment, weak judgment, or compliance.
 - **Novice risk work / reverse mentoring for AI** has been promoted into [[novice-risk-work]] through [[2025-kellogg-novice-risk-work]], but the wiki still needs evidence on which literacy, governance, and deployer-level supports let novice users teach seniors without over-relying on project-level routine changes.
 - **Agentic delegation** has been promoted into [[agentic-delegation]] through [[2026-zhu-choose-your-agent]], and [[2026-johnston-shift-agentic-ai-codex]] now adds large-scale observed-use evidence on delegated Codex work, concurrency, runtime, and reusable skills, but the wiki still needs outcome evidence on when autonomous execution improves team or organizational productivity, quality, learning, and accountability.
+- **Domain expertise in agentic work** has been promoted into [[domain-expertise-in-agentic-work]] through [[2026-hitzig-agentic-coding-expertise]], but the wiki still needs field evidence on whether transcript-coded expertise predicts durable output quality, whether novices can develop expertise while delegating implementation, and how organizations should credential domain experts who now direct technical agent work.
 - **AI-mediated choice and identity** has been promoted into [[ai-mediated-choice-and-identity]] through [[2025-matz-basic-effect]], but the wiki still needs workplace evidence on whether delegated AI choices narrow exploration, identity expression, developmental variety, or role agency in real workflows.
 - **Moral boundaries of AI automation** has been promoted into [[moral-boundaries-of-ai-automation]] through [[2025-friis-performance-principle]], but the wiki still needs field evidence on whether public moral repugnance translates into employer behavior, customer acceptance, professional norms, regulation, or durable protection from substitution.
 - **Human-AI task allocation** is proposed for promotion through [[2026-zhang-fatigue-aware-learning-defer]], but the wiki still needs field evidence on allocation policies that use real human-state signals such as fatigue, workload, skill, confidence, or accountability rather than simulated benchmark states.
