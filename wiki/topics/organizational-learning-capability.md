@@ -1,7 +1,7 @@
 ---
 title: Organizational learning capability
 status: active
-updated: 2026-07-02
+updated: 2026-07-03
 ---
 
 # Organizational learning capability
@@ -9,6 +9,8 @@ updated: 2026-07-02
 Organizational learning capability is the set of conditions that lets an organization turn experience, experimentation, failures, external knowledge, and local problem solving into changed behavior. [[1997-goh-benchmarking-learning-capability]] is useful for AI workforce transformation because it treats learning as a measurable organizational capability rather than as a vague cultural aspiration: the question is whether the organization has shared purpose, leadership support, experimentation norms, knowledge-transfer systems, and teamwork routines strong enough for learning to move from individual trials into collective ways of working.
 
 The AI-specific implication is direct: AI experimentation does not become transformation just because workers try tools. It becomes transformation when organizations can surface what was learned, compare practices, move knowledge across teams, support safe experimentation, and change routines. That makes organizational learning capability a pre-AI construct that can discipline AI adoption claims: if an organization cannot learn from pilots, failures, and local discoveries, it is likely to accumulate AI anecdotes rather than redesign work.
+
+[[2026-guilbeault-simple-threshold]] adds a cognitive/social-learning mechanism underneath that organizational claim. If people stabilize around conventions after threshold-like evidence rather than by globally optimizing from all available information, then organizational learning depends partly on how interaction networks expose workers to enough credible, structured evidence for a new practice to become a convention. That makes “more information” a weak design principle by itself; the better question is what evidence, peers, examples, and dissenting critical masses change the threshold at which a practice becomes learnable and stable.
 
 [[1997-goh-benchmarking-learning-capability]] also gives the wiki a measurement caution. The OLS has preliminary reliability and known-groups/convergent evidence, but it is still an aggregate self-report measure of learning-enabling conditions, not direct evidence of knowledge creation, AI-use quality, work redesign, or performance improvement. For AI transformation, that distinction matters: a learning-capability survey could diagnose whether the organization is ready to learn from AI experimentation, but outcome claims still need longitudinal evidence showing that learning routines change work and improve performance.
 

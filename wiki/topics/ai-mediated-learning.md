@@ -1,7 +1,7 @@
 ---
 title: AI-mediated learning
 status: stub
-updated: 2026-06-25
+updated: 2026-07-03
 ---
 
 # AI-mediated learning
@@ -15,6 +15,8 @@ AI-mediated learning asks when AI assistance helps workers acquire durable compe
 [[2025-landers-ethical-use-ai-iop]] adds the workplace accountability layer for training chatbots. If an organization presents a conversational agent as an authoritative adviser, then worker errors based on that advice implicate the system and organization; if workers are explicitly trained to vet chatbot output, accountability shifts differently. AI-mediated learning therefore needs more than learning-outcome evidence: it needs clear role design around what the AI is, what the worker is expected to verify, and who bears the cost when the system teaches or advises badly.
 
 [[2025-randazzo-cyborgs-centaurs-self-automators]] adds field-experimental evidence that interaction mode shapes what professionals learn while using GenAI. Fused/Cyborg users developed GenAI-related expertise while maintaining task expertise, Directed/Centaur users developed task/domain expertise, and Abdicated/Self-Automators developed neither. The learning question is therefore not only whether AI is available, but whether the co-creation pattern keeps the human doing the kind of framing, method selection, evaluation, or iterative questioning that builds competence.
+
+[[2026-guilbeault-simple-threshold]] gives this topic a useful non-AI boundary condition. In social-convention and nonlinguistic pattern-learning experiments, human learners were better modeled as threshold-based satisficers than as imitators or optimizing predictors, and the authors explicitly contrast this sparse, categorical learning process with LLM-style data-intensive prediction. The implication for AI-mediated skill acquisition is not that every work skill uses the same tolerance-principle threshold; it is that learning designs should not assume human competence forms by absorbing more examples or optimizing predictions in the way an LLM simulator might. Humans may need the right amount and structure of evidence to trigger stable rule formation, followed by practice that tests whether the rule transfers.
 
 ## Connections
 - Relates to [[ai-induced-skill-erosion]] because repeated poor learning episodes can become durable capability loss.
