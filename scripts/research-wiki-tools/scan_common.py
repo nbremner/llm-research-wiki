@@ -7,8 +7,7 @@ so it is unit-testable without network or the heavy deps. Network / Drive / PDF
 helpers lazily import their heavy dependencies (httpx, google-api-python-client,
 pymupdf) inside the function body, so importing this module for tests is cheap.
 
-Reuses conventions from pdf_backlog_triage.py (Drive auth, DOI/URL/title utils,
-PyMuPDF text-layer detection, boundary flags). See docs/research-scrape-plan.md.
+See docs/research-scrape-plan.md.
 """
 
 from __future__ import annotations
@@ -259,7 +258,7 @@ def unpaywall_pdf_url(data: dict[str, Any]) -> str | None:
 
 
 # ---------------------------------------------------------------------------
-# Boundary flags (pure) -- reused from pdf_backlog_triage
+# Boundary flags (pure)
 # ---------------------------------------------------------------------------
 
 PROMPT_INJECTION_PATTERNS = [

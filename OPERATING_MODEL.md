@@ -70,11 +70,11 @@ Trust model: source records are low-judgment and auto-committed; **topic synthes
 
 **Git history is the log.** There are no Reviews / Log / Inbox / Index databases — those were cut.
 
-Skills in the repo: `research-wiki-ingest` (manual, one paper), `research-wiki-batch-ingest`
-(bulk, cluster-batched — evidence auto-commits, synthesis owner-approved once per cluster),
+Skills in the repo: `research-wiki-ingest` (one paper at a time — the only ingest path),
 `research-scan-triage` (dispositions surfaced scan candidates {wiki | read-once | discard} with
-hybrid autonomy; subsumes the retired `research-wiki-pdf-backlog-triage`), `research-wiki-graph-lint`,
-`research-wiki-query`.
+hybrid autonomy), `research-wiki-graph-lint`, `research-wiki-query`. Batch/cluster ingest and the
+PDF-backlog triage workflow were retired 2026-07-04 (backlog cleared manually by the owner; sources
+are ingested one at a time).
 
 Upstream of ingest sits the **research-scan front end** (`docs/research-scrape-plan.md`): the
 deterministic harness `research_scan.py` (discovery → dedup → acquisition ladder → pre-rank) fills the

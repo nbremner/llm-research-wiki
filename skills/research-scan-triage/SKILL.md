@@ -1,13 +1,13 @@
 ---
 name: research-scan-triage
-description: Use when triaging surfaced candidates from the daily research scan (the _triage store manifest) into dispositions — wiki-candidate, read-once, or discard — with hybrid autonomy: auto-queue clear wiki candidates into the Drive _inbox, auto-discard duplicates and off-mission noise, and surface the ambiguous middle plus a read-once digest to Nicholas. Also covers occasional manual _inbox PDF backlog indexing (subsumes the retired research-wiki-pdf-backlog-triage skill).
+description: Use when triaging surfaced candidates from the daily research scan (the _triage store manifest) into dispositions — wiki-candidate, read-once, or discard — with hybrid autonomy: auto-queue clear wiki candidates into the Drive _inbox, auto-discard duplicates and off-mission noise, and surface the ambiguous middle plus a read-once digest to Nicholas.
 version: 1.0.0
 author: Hermes Agent
 license: MIT
 metadata:
   hermes:
     tags: [research-wiki, triage, scan, google-drive, digest, literature-review]
-    related_skills: [research-wiki-ingest, research-wiki-batch-ingest, research-wiki-query, research-wiki-graph-lint]
+    related_skills: [research-wiki-ingest, research-wiki-query, research-wiki-graph-lint]
 ---
 
 # Research Scan Triage
@@ -22,8 +22,8 @@ is the judgment half**: read the manifest, assign each record a disposition, let
 applier (`scan_triage_apply.py`) do every mechanical action, and deliver the owner digest.
 
 Trust model: this skill routes *candidates*. Nothing becomes wiki canon here — wiki-bound PDFs go to
-the Drive `_inbox`, where `research-wiki-ingest` / `research-wiki-batch-ingest` process them with
-owner-approved synthesis, unchanged.
+the Drive `_inbox`, where `research-wiki-ingest` processes them **one at a time** with owner-approved
+synthesis, unchanged.
 
 ## Locations
 
@@ -118,20 +118,3 @@ anywhere; never buy access.
   (confidential, internal-use, NDA) gets flagged in the digest, never queued.
 - Respect the caps; when a cap binds, surface rather than act.
 - The applier fails loudly on ids it does not recognize — fix the dispositions file, do not force.
-
-## Legacy: manual `_inbox` PDF backlog indexing
-
-The retired `research-wiki-pdf-backlog-triage` skill's occasional job — indexing PDFs that Nicholas
-drops directly into the Drive `_inbox`, clustering them, and selecting ingest candidates — lives on via
-the durable tool it wrapped:
-
-```bash
-uv run /root/research-wiki-tools/pdf_backlog_triage.py --max-files 10   # smoke
-uv run /root/research-wiki-tools/pdf_backlog_triage.py                  # full dry-run index
-```
-
-It writes `SUMMARY.md` / `pdf_triage.csv` / `pdf_triage.jsonl` to `/root/research-wiki-runs/<run-id>/`;
-generated review artifacts go to the Drive `research-wiki-ops` folder (`1YYsH8wb4yGwoDzaeKR1NyizracPHVdL-`),
-never into `_inbox` or `public-literature-wiki`. Numbers-file review extraction:
-`uv run /root/research-wiki-tools/numbers_review_extract.py <file.numbers> --out <review.csv>`.
-Ingest selection still goes through `research-wiki-ingest` / `research-wiki-batch-ingest`.

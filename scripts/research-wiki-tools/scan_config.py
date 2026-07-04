@@ -21,7 +21,7 @@ TRIAGE_LEDGER_FOLDER_ID = "1Fw7J30oerCSCYSLcEB5k0mbbdfOGwyx1"
 # Promotion target: the wiki's existing PDF front door (unchanged).
 WIKI_INBOX_FOLDER_ID = "1qVcWuLSudOtjN4J_r8ILEA8-zGJrE6o1"
 
-# Reuse the Drive OAuth token the backlog-triage tool already uses.
+# Drive OAuth token used by NJ's research tooling (authorized-user JSON).
 DEFAULT_TOKEN_PATH = "/root/.hermes/google_token.json"
 DEFAULT_OUT_ROOT = "/root/research-wiki-runs"
 

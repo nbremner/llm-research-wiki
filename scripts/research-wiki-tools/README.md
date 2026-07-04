@@ -1,7 +1,8 @@
 # Research Wiki Tools
 
 Durable local tooling for the markdown research-wiki operating layer. The wiki is plain markdown in
-git (`wiki/`); these scripts support ingest, lint, and Drive backlog triage. There is no Notion.
+git (`wiki/`); these scripts support the daily research scan, its triage, and the graph lint. There
+is no Notion.
 
 ## graph_lint.py — markdown graph lint
 
@@ -18,41 +19,38 @@ python scripts/research-wiki-tools/graph_lint.py --fail-on High  # non-zero exit
 
 `--wiki-dir` defaults to the repo's `wiki/`. See `skills/research-wiki-graph-lint/`.
 
-## pdf_backlog_triage.py — Drive `_inbox` backlog indexer
+## research_scan.py — deterministic scan harness
 
-Indexes PDFs in the Google Drive `public-literature-wiki/_inbox` folder to pick candidates for full
-ingest (`research-wiki-ingest`). Dry-run only — it reads Drive metadata, downloads PDFs to a local run
-dir, computes SHA-256 hashes, extracts sample text + metadata with PyMuPDF, detects
-DOI/URL/title/year/source-type, adds a `domain_cluster_candidate` ops signal, and flags
-duplicates/provenance gaps/OCR needs/prompt-injection/boundary risk. It does **not** rename, move, or
-delete Drive files and does not write wiki pages.
+Discovery (OpenAlex / arXiv / Crossref, seeded from `scan_config.py`) → dedup vs the coverage ledger →
+acquisition ladder (OA-resolve → direct PDF → Jina reader) → pre-rank → ranked manifest + acquired
+files to the Drive `_triage` store. No LLM anywhere in this path. Runs daily on the VPS via
+`research-scan.timer` (08:00 America/Los_Angeles, failure alert to #logs).
 
 ```bash
-uv run /root/research-wiki-tools/pdf_backlog_triage.py                # full run
-uv run /root/research-wiki-tools/pdf_backlog_triage.py --max-files 10 # smoke test
-uv run /root/research-wiki-tools/pdf_backlog_triage.py --no-download  # metadata-only inventory
+uv run scripts/research-wiki-tools/research_scan.py --queries 3 --no-acquire  # local discovery smoke
+uv run scripts/research-wiki-tools/research_scan.py --drive                   # full run to Drive
 ```
 
-Outputs under `/root/research-wiki-runs/pdf-triage-YYYYMMDDTHHMMSSZ/`: `SUMMARY.md`, `pdf_triage.csv`,
-`pdf_triage.jsonl`, `drive_inventory_raw.json`, `downloads/`.
+## scan_triage_apply.py — triage disposition applier
 
-`domain_cluster_candidate` is an ops-layer classification signal (not a wiki taxonomy — topics are
-pages, not tags). Use it to spot recurring clusters worth a dedicated topic page.
-
-## numbers_review_extract.py — Apple Numbers review extractor
-
-If the owner reviews the triage CSV in Apple Numbers and uploads a `.numbers` file, extract it back to
-CSV plus a `.review_summary.json` of reviewed/commented rows:
+Deterministic applier for the `research-scan-triage` skill's judgments: validates the dispositions
+JSON (fails loud on unknown/already-disposed ids), enforces caps, moves auto-queued artifacts
+`_triage/files` → `_inbox`, stamps the manifest (local + Drive), and renders the owner digest.
+Dry-run by default; `--execute` performs the Drive changes.
 
 ```bash
-uv run /root/research-wiki-tools/numbers_review_extract.py /path/to/review.numbers --out /path/to/out.csv
+uv run scripts/research-wiki-tools/scan_triage_apply.py --latest --dispositions d.json            # dry run
+uv run scripts/research-wiki-tools/scan_triage_apply.py --manifest m.json --dispositions d.json --execute
 ```
 
-Review status semantics: `looks-good` = ok-to-ingest; `Exclude` = do not ingest; "need to expand
-topic catalog…" = source looks acceptable but a topic page may be missing.
+`scan_common.py` holds the shared machinery (id/dedup, ranking, OA-URL selection, ledger, Drive
+helpers); `scan_config.py` is the editable rubric (seed queries, concept vocabulary, authority/rank
+weights, caps). Edit `scan_config.py` to retune the scan — no code change needed.
 
 ## Operating boundary
 
-These scripts are read-only with respect to the wiki and Drive. Ingest (writing `sources/`, editing
-`topics/`, committing, and refiling the Drive PDF) is done by the `research-wiki-ingest` skill, with
-topic synthesis owner-approved before commit.
+`graph_lint.py` is read-only. `research_scan.py` writes only to the Drive `_triage` store and its
+ledger. `scan_triage_apply.py` moves files into the wiki `_inbox` only when executing clear
+dispositions, within caps, and never deletes. Writing the wiki itself (`sources/`, `topics/`,
+commits, Drive refiling) is done solely by the `research-wiki-ingest` skill, one source at a time,
+with topic synthesis owner-approved before commit.

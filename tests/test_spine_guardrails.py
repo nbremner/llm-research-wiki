@@ -40,7 +40,6 @@ def test_no_corpus_or_runtime_artifacts_in_repo():
 
 EXPECTED_SKILLS = [
     "research-wiki-ingest",
-    "research-wiki-batch-ingest",
     "research-wiki-graph-lint",
     "research-scan-triage",
     "research-wiki-query",
