@@ -48,8 +48,11 @@ jobs, organizations, and measurement (`wiki/overview.md` is the live topic list)
   keeps frameworks (e.g. ORCHESTRA) and position papers (e.g. a time-saved benchmark) as wiki material.
 - **read-once** — AI×work-*adjacent* but centered in a domain the wiki does not track: automation of a
   different profession's work product (e.g. financial audit / accounting IS), a different industrial
-  context (e.g. manufacturing / Industry 5.0 human-machine collaboration), or on-topic news/commentary
-  with no durable evidence. Worth a summary line in the digest, not wiki-durable.
+  context (e.g. manufacturing / Industry 5.0 human-machine collaboration), **student-sample
+  learning/cognition studies with no genuine work or labor setting** (owner ruling 2026-07-04:
+  construct overlap with tracked topics like [[ai-mediated-learning]] or cognitive offloading does
+  NOT overcome a missing work context), or on-topic news/commentary with no durable evidence. Worth a
+  summary line in the digest, not wiki-durable.
 - **discard** — duplicates (same normalized title under a different DOI/URL) and off-mission items
   (no genuine work/labor angle — e.g. a pure computer-vision or LLM-methods paper). This bucket is
   small; when in doubt it is not a discard.
@@ -73,6 +76,7 @@ Auto-actions happen only on `clear`.
 | ORCHESTRA human-agent leadership framework | wiki | practitioner framework counts |
 | Automated audit tools & audit quality (accounting IS) | read-once | other profession's domain |
 | Industry 5.0 human-machine collaboration review | read-once | manufacturing context |
+| University-student cognitive-offloading study, no work setting | read-once | student sample; construct match alone insufficient (owner-ratified 2026-07-04) |
 | Same paper under a second SSRN DOI | discard | duplicate |
 
 ## Hybrid autonomy — what acts alone vs. surfaces
