@@ -343,22 +343,32 @@ class Ledger:
         self.search_log_path = self.dir / "search_log.jsonl"
         self.seen: dict[str, dict[str, Any]] = {}
         self.failures: dict[str, dict[str, Any]] = {}
+        self.seen_ntitles: set[str] = set()  # normalized titles, for near-duplicate dedup
 
     def load(self) -> "Ledger":
         if self.seen_path.exists():
             self.seen = json.loads(self.seen_path.read_text(encoding="utf-8") or "{}")
         if self.failures_path.exists():
             self.failures = json.loads(self.failures_path.read_text(encoding="utf-8") or "{}")
+        self.seen_ntitles = {e["ntitle"] for e in self.seen.values() if e.get("ntitle")}
         return self
 
     def is_seen(self, cid: str | None) -> bool:
         return bool(cid) and cid in self.seen
 
+    def is_title_seen(self, ntitle: str) -> bool:
+        """Near-duplicate check: a substantial normalized title already surfaced."""
+        return len(ntitle or "") >= 20 and ntitle in self.seen_ntitles
+
     def mark_seen(self, cid: str, meta: dict[str, Any] | None = None) -> None:
-        if not cid:
+        if not cid or cid in self.seen:
             return
-        if cid not in self.seen:
-            self.seen[cid] = {"first_seen": utc_now_iso(), **(meta or {})}
+        entry = {"first_seen": utc_now_iso(), **(meta or {})}
+        nt = normalize_title((meta or {}).get("title"))
+        if len(nt) >= 20:
+            entry["ntitle"] = nt
+            self.seen_ntitles.add(nt)
+        self.seen[cid] = entry
 
     def warm_start(self, ids: Iterable[str], note: str = "warm-start") -> int:
         n = 0

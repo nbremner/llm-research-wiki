@@ -144,6 +144,42 @@ def test_orchestrator_dedup_rank_manifest():
             rs.DISCOVERY["openalex"] = orig
 
 
+def test_ledger_title_dedup():
+    d = tempfile.mkdtemp()
+    L = c.Ledger(d).load()
+    L.mark_seen("doi:10.2139/ssrn.6582143",
+                {"title": "Integrating Quality, Sustainability, and Task Allocation in Industry 5.0"})
+    nt = c.normalize_title("Integrating Quality Sustainability and Task Allocation in Industry 5.0")
+    assert L.is_title_seen(nt)
+    assert not L.is_title_seen(c.normalize_title("short"))  # too short to dedup on
+    L.save()
+    assert c.Ledger(d).load().is_title_seen(nt)  # persists across reload
+
+
+def test_orchestrator_title_dedup():
+    base = dict(title="Integrating Quality Sustainability and Task Allocation in Industry Five",
+                abstract="ai automation manufacturing task allocation workforce",
+                source="crossref", year="2026", source_type="preprint")
+
+    def fake(q, n):
+        return [
+            c.ScanRecord(id="doi:10.2139/ssrn.6582143", url="https://doi.org/10.2139/ssrn.6582143",
+                         doi="10.2139/ssrn.6582143", **base),
+            c.ScanRecord(id="doi:10.2139/ssrn.6582145", url="https://doi.org/10.2139/ssrn.6582145",
+                         doi="10.2139/ssrn.6582145", **base),  # same title, different DOI (the #7/#8 case)
+        ]
+    orig = rs.DISCOVERY.get("openalex")
+    rs.DISCOVERY["openalex"] = fake
+    try:
+        wd = tempfile.mkdtemp()
+        rs.main(["--sources", "openalex", "--queries", "1", "--no-acquire", "--work-dir", wd])
+        man = json.loads(next(Path(wd).glob("manifest-*.json")).read_text())
+        assert man["discovered"] == 1, man  # near-duplicate title collapsed to one
+    finally:
+        if orig:
+            rs.DISCOVERY["openalex"] = orig
+
+
 def _run_standalone() -> int:
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_") and callable(v)]
     failed = 0

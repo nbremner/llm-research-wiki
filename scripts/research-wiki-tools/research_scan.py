@@ -311,6 +311,7 @@ def main(argv: list[str]) -> int:
 
     # --- Discovery + dedup ---------------------------------------------------
     fresh: dict[str, c.ScanRecord] = {}
+    seen_titles: set[str] = set()  # run-local near-duplicate guard (same title, different id)
     for q in queries:
         for src in sources:
             try:
@@ -325,6 +326,11 @@ def main(argv: list[str]) -> int:
                     continue
                 if not c.is_on_mission(f"{rec.title}\n{rec.abstract}", cfg.AI_TERMS, cfg.WORK_TERMS):
                     continue
+                nt = c.normalize_title(rec.title)
+                if ledger.is_title_seen(nt) or (len(nt) >= 20 and nt in seen_titles):
+                    continue
+                if len(nt) >= 20:
+                    seen_titles.add(nt)
                 fresh[rec.id] = rec
                 new += 1
             ledger.log_search(q, src, len(found), new)
