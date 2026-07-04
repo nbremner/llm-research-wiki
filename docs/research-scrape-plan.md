@@ -1,6 +1,7 @@
 # Research Scrape Harness — Build Plan (comprehensive scan → triage → wiki)
 
-Status: **approved plan, ready to build.** Created 2026-07-03.
+Status: **deployed 2026-07-04** — Phases 0–3 live (harness on `research-scan.timer` 08:00 PT, triage
+via hermes cron 08:30 PT → Discord #research-digest); Phase 4 calibration ongoing. Created 2026-07-03.
 Read `OPERATING_MODEL.md` first for the operating context, and `docs/wiki-redesign-plan.md` for the
 wiki this feeds. This plan builds the *front end* that fills the pipeline; the synthesis engine
 (`skills/research-wiki-ingest`, `research-wiki-batch-ingest`, the `sources/`→`topics/` split) is
@@ -152,9 +153,11 @@ approval gate, surface the ambiguous middle + read-once for the owner):
 
 ## Open / deferred
 
-- **Delivery mechanism** finalized last (Discord digest + Drive store is the working shape).
+- ~~Delivery mechanism~~ **Decided 2026-07-04:** digest → Discord **#research-digest** via the triage
+  cron; Drive `_triage` is the system of record.
 - **Scanned-PDF OCR** (rung 5) deferred — flag, don't OCR, in v1.
-- **Seed-list bootstrap** — whether to prime the first runs from the historical scan URLs (optional).
+- **Seed-list bootstrap** (Phase 4) — optionally re-acquire the high-relevance URLs the old Co-Work
+  scans left blocked (regenerable from the Notion scan pages).
 - **Future applied lens** — a second rubric/seed profile if a project like the old U4B work recurs.
 
 ## Don't break

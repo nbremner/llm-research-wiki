@@ -1,6 +1,7 @@
 # Wiki Redesign — Build Plan (markdown-in-git, Karpathy-aligned)
 
-Status: **approved plan, ready to build.** Created 2026-06-14.
+Status: **built — historical decision record.** The migration completed June 2026 (Notion retired,
+wiki live in `wiki/`); kept for the why and the build history. Created 2026-06-14.
 This superseded the earlier Notion-database approach.
 Read `OPERATING_MODEL.md` first for the operating context.
 
