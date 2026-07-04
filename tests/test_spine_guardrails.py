@@ -42,7 +42,7 @@ EXPECTED_SKILLS = [
     "research-wiki-ingest",
     "research-wiki-batch-ingest",
     "research-wiki-graph-lint",
-    "research-wiki-pdf-backlog-triage",
+    "research-scan-triage",
     "research-wiki-query",
 ]
 

@@ -20,7 +20,7 @@ When changing any workflow file mirrored here, update this repo in the same work
 
 - `skills/research-wiki-ingest/`
 - `skills/research-wiki-batch-ingest/`
-- `skills/research-wiki-pdf-backlog-triage/`
+- `skills/research-scan-triage/`
 - local source copies under `/root/.hermes/skills/research/...`
 - local workflow tooling under `/root/research-wiki-tools/`
 - repo docs, config examples, tests, and guardrails

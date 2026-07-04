@@ -522,6 +522,15 @@ def drive_upload_text(service, folder_id: str, name: str, text: str,
     return drive_upload_bytes(service, folder_id, name, text.encode("utf-8"), mime_type)
 
 
+def drive_update_bytes(service, file_id: str, data: bytes, mime_type: str) -> None:
+    """Replace an existing Drive file's content in place (same id, same name)."""
+    import io
+    from googleapiclient.http import MediaIoBaseUpload
+    media = MediaIoBaseUpload(io.BytesIO(data), mimetype=mime_type, resumable=False)
+    service.files().update(fileId=file_id, media_body=media,
+                           supportsAllDrives=True).execute()
+
+
 def drive_find(service, folder_id: str, name: str) -> str | None:
     safe = name.replace("'", "\\'")
     q = f"'{folder_id}' in parents and name='{safe}' and trashed=false"

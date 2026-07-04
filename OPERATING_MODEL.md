@@ -72,7 +72,13 @@ Trust model: source records are low-judgment and auto-committed; **topic synthes
 
 Skills in the repo: `research-wiki-ingest` (manual, one paper), `research-wiki-batch-ingest`
 (bulk, cluster-batched — evidence auto-commits, synthesis owner-approved once per cluster),
-`research-wiki-pdf-backlog-triage`, `research-wiki-graph-lint`, `research-wiki-query`.
+`research-scan-triage` (dispositions surfaced scan candidates {wiki | read-once | discard} with
+hybrid autonomy; subsumes the retired `research-wiki-pdf-backlog-triage`), `research-wiki-graph-lint`,
+`research-wiki-query`.
+
+Upstream of ingest sits the **research-scan front end** (`docs/research-scrape-plan.md`): the
+deterministic harness `research_scan.py` (discovery → dedup → acquisition ladder → pre-rank) fills the
+Drive `_triage` store; `research-scan-triage` routes candidates; only wiki-candidates reach `_inbox`.
 
 ## Deployment to NicholasJunior
 
@@ -92,9 +98,13 @@ failures to Discord #logs).
 
 | Job | Cadence | Writes | Cap |
 |---|---|---|---|
-| PDF backlog triage | Weekly | none (dry-run index) | low per-run cap |
+| Research scan (deterministic harness, systemd timer) | Daily | Drive `_triage` only | ≤12 surfaced/run |
+| Scan triage (`research-scan-triage`, hermes cron) | Daily | `_triage` → `_inbox` moves + digest | ≤10 auto-moves/run; ambiguous → owner |
 | Graph-lint report | Periodic | report only | n/a |
 | Ingest | On demand / small scheduled | sources/ (auto), topics/ (owner-approved) | low per-run cap |
+
+(Scan-pipeline scheduling lands per `docs/research-scrape-plan.md` Phase 3; until then both scan jobs
+run manually.)
 
 Expand autonomy only after manual runs produce clean artifacts. Topic synthesis stays approval-gated
 regardless of cadence.

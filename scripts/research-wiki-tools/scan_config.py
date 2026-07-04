@@ -178,6 +178,10 @@ MAX_DISCOVERY_PER_QUERY = 40  # results pulled per seed query per source, pre-de
 MAX_ACQUIRE_PER_RUN = 25      # cap on full (rung 1-3) acquisitions per run
 MAX_SURFACED_PER_RUN = 12     # top-N pre-ranked records handed to triage per day
 
+# Triage-stage caps (enforced by scan_triage_apply.py / the triage skill).
+MAX_AUTO_WIKI_PER_RUN = 10    # auto-moves _triage/files -> wiki _inbox per run; overflow surfaces
+MAX_RUNG4_BROWSER_PER_RUN = 3 # bounded browser-acquisition attempts per triage run
+
 # --- Feeds for later phases (RSS/Atom, polled by feedparser) ----------------
 ARXIV_CATEGORIES = ["cs.AI", "cs.CL", "cs.HC", "econ.GN"]
 FEED_SOURCES = [

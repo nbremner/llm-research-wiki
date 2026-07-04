@@ -1,0 +1,137 @@
+---
+name: research-scan-triage
+description: Use when triaging surfaced candidates from the daily research scan (the _triage store manifest) into dispositions — wiki-candidate, read-once, or discard — with hybrid autonomy: auto-queue clear wiki candidates into the Drive _inbox, auto-discard duplicates and off-mission noise, and surface the ambiguous middle plus a read-once digest to Nicholas. Also covers occasional manual _inbox PDF backlog indexing (subsumes the retired research-wiki-pdf-backlog-triage skill).
+version: 1.0.0
+author: Hermes Agent
+license: MIT
+metadata:
+  hermes:
+    tags: [research-wiki, triage, scan, google-drive, digest, literature-review]
+    related_skills: [research-wiki-ingest, research-wiki-batch-ingest, research-wiki-query, research-wiki-graph-lint]
+---
+
+# Research Scan Triage
+
+## Overview
+
+The research pipeline is split by determinism (see `docs/research-scrape-plan.md`): a deterministic
+harness (`research_scan.py`, run on a schedule) discovers candidates via APIs, acquires what it can
+(OA PDF → direct download → Jina reader), pre-ranks against the wiki's concept vocabulary, and writes
+a **manifest** of surfaced records plus acquired artifacts to the Drive `_triage` store. **This skill
+is the judgment half**: read the manifest, assign each record a disposition, let the deterministic
+applier (`scan_triage_apply.py`) do every mechanical action, and deliver the owner digest.
+
+Trust model: this skill routes *candidates*. Nothing becomes wiki canon here — wiki-bound PDFs go to
+the Drive `_inbox`, where `research-wiki-ingest` / `research-wiki-batch-ingest` process them with
+owner-approved synthesis, unchanged.
+
+## Locations
+
+| Thing | Where |
+|---|---|
+| Harness + applier | `/root/research-wiki-tools/research_scan.py`, `scan_triage_apply.py` |
+| Local run dirs (manifests) | `/root/research-wiki-runs/scan-*/manifest-*.json` |
+| Drive `_triage` store | folder `1tXLfXs2z8LkbAurlrw8G7IYfQu1mCXh8` (under `public-literature-wiki`) |
+| `_triage/files` (acquired artifacts) | `1_9TRp4H1Qqm0M4QI8hGiMkWNs9hc_GXg` |
+| `_triage/ledger` (seen-index, failures, search log) | `1Fw7J30oerCSCYSLcEB5k0mbbdfOGwyx1` |
+| Wiki `_inbox` (promotion target) | `1qVcWuLSudOtjN4J_r8ILEA8-zGJrE6o1` |
+| Rubric config (edit to retune the scan) | `/root/research-wiki-tools/scan_config.py` |
+
+## The disposition rubric (owner-calibrated 2026-07-04, batch 1)
+
+The wiki's mission: **AI workforce transformation × I-O psychology** — how AI changes work, workers,
+jobs, organizations, and measurement (`wiki/overview.md` is the live topic list).
+
+- **wiki** — contributes evidence *or* a framework to an AI×work topic the wiki tracks. **Inclusive**:
+  empirical studies and RCTs, evidence syntheses / meta-analyses, theory papers, benchmark/measurement
+  proposals, AND practitioner frameworks or position papers that organize a tracked topic. The owner
+  keeps frameworks (e.g. ORCHESTRA) and position papers (e.g. a time-saved benchmark) as wiki material.
+- **read-once** — AI×work-*adjacent* but centered in a domain the wiki does not track: automation of a
+  different profession's work product (e.g. financial audit / accounting IS), a different industrial
+  context (e.g. manufacturing / Industry 5.0 human-machine collaboration), or on-topic news/commentary
+  with no durable evidence. Worth a summary line in the digest, not wiki-durable.
+- **discard** — duplicates (same normalized title under a different DOI/URL) and off-mission items
+  (no genuine work/labor angle — e.g. a pure computer-vision or LLM-methods paper). This bucket is
+  small; when in doubt it is not a discard.
+
+**Ambiguity rule: never guess.** `confidence: clear` only when the rubric decides cleanly; anything
+else is `ambiguous`, which the applier surfaces as "needs your call" with your proposed disposition.
+Auto-actions happen only on `clear`.
+
+### Worked examples (owner labels, batch 1)
+
+| Paper | Disposition | Why |
+|---|---|---|
+| Human vs AI-agent workflows across 5 skill domains | wiki | comparative evidence, human-ai-collaboration |
+| Auditing fairness interventions in algorithmic hiring (AAAI) | wiki | algorithmic-assessment evidence |
+| GenAI narrows education-based productivity gaps (RCT) | wiki | strong causal evidence |
+| GenAI productivity systematic review (269k) | wiki | evidence synthesis |
+| Deskilling pressure in human-AI task allocation (simulation) | wiki | ai-induced-skill-erosion, simulation OK |
+| Algorithm aversion as rational optimization (experiment) | wiki | ai-receptivity/task-allocation evidence |
+| Time-Saved Benchmark position paper | wiki | benchmark-validity framework counts |
+| Context engineering principal-agent theory | wiki | theory on a tracked topic counts |
+| ORCHESTRA human-agent leadership framework | wiki | practitioner framework counts |
+| Automated audit tools & audit quality (accounting IS) | read-once | other profession's domain |
+| Industry 5.0 human-machine collaboration review | read-once | manufacturing context |
+| Same paper under a second SSRN DOI | discard | duplicate |
+
+## Hybrid autonomy — what acts alone vs. surfaces
+
+| Judgment | Action (by the applier, not by you) |
+|---|---|
+| `wiki` + clear + artifact in `_triage/files` | auto-move → `_inbox` (cap: `MAX_AUTO_WIKI_PER_RUN` = 10/run; overflow surfaces) |
+| `wiki` + clear + no artifact | bounded rung-4 acquisition attempt (below); else "needs manual acquisition" in digest |
+| `read-once` + clear | digest summary only (1–2 sentences, yours) |
+| `discard` + clear | logged + counted in digest; file (if any) stays in `_triage/files` — never deleted |
+| anything `ambiguous` | surfaced as "needs your call" with your proposed disposition |
+
+## Rung-4 acquisition (bounded)
+
+For at most `MAX_RUNG4_BROWSER_PER_RUN` (3) clear wiki-candidates with `acq_state: abstract-only|link-only`:
+use the **browser** toolset to open the landing page and locate the real PDF link (SSRN "Download This
+Paper", journal OA button), then download it with `curl` in terminal to the manifest's run `files/` dir.
+Verify it is a real PDF (`file` says PDF, has text). If it works, put the local path in the entry's
+`acquired_path` — the applier uploads it to `_inbox`. If it fails, just record the disposition; the
+applier lists it under "needs manual acquisition". Do not fight hard paywalls or CAPTCHAs; do not log in
+anywhere; never buy access.
+
+## Workflow
+
+1. **Find the manifest**: newest local `manifest-*.json` with un-triaged records —
+   `uv run /root/research-wiki-tools/scan_triage_apply.py --latest --dispositions /dev/null` will name
+   it (or glob `/root/research-wiki-runs/*/manifest-*.json` yourself).
+2. **Judge every record** with `disposition: null` against the rubric. Read title + abstract +
+   matched_topics; check the acquired artifact if the abstract is thin. One line of `reason` each,
+   citing the rubric category.
+3. **Rung-4 attempts** for up to 3 clear wiki-candidates lacking artifacts (optional, skip freely).
+4. **Write the dispositions JSON** (schema in the applier's docstring) to the run dir.
+5. **Dry-run the applier**, review its plan, then run with `--execute`:
+   `uv run /root/research-wiki-tools/scan_triage_apply.py --manifest <path> --dispositions <path> --execute`
+6. **Deliver the digest** (the applier prints it) as your response — the cron job's delivery target
+   posts it to Discord. Do not editorialize beyond the digest; append at most 2 lines of run notes.
+
+## Boundaries
+
+- **Never write wiki pages** — ingest skills own that, with owner-approved synthesis.
+- **Never delete Drive files**; discards keep their artifacts in `_triage/files`.
+- **Public-only sources** — the one hard rule (`wiki/schema.md`). Anything smelling non-public
+  (confidential, internal-use, NDA) gets flagged in the digest, never queued.
+- Respect the caps; when a cap binds, surface rather than act.
+- The applier fails loudly on ids it does not recognize — fix the dispositions file, do not force.
+
+## Legacy: manual `_inbox` PDF backlog indexing
+
+The retired `research-wiki-pdf-backlog-triage` skill's occasional job — indexing PDFs that Nicholas
+drops directly into the Drive `_inbox`, clustering them, and selecting ingest candidates — lives on via
+the durable tool it wrapped:
+
+```bash
+uv run /root/research-wiki-tools/pdf_backlog_triage.py --max-files 10   # smoke
+uv run /root/research-wiki-tools/pdf_backlog_triage.py                  # full dry-run index
+```
+
+It writes `SUMMARY.md` / `pdf_triage.csv` / `pdf_triage.jsonl` to `/root/research-wiki-runs/<run-id>/`;
+generated review artifacts go to the Drive `research-wiki-ops` folder (`1YYsH8wb4yGwoDzaeKR1NyizracPHVdL-`),
+never into `_inbox` or `public-literature-wiki`. Numbers-file review extraction:
+`uv run /root/research-wiki-tools/numbers_review_extract.py <file.numbers> --out <review.csv>`.
+Ingest selection still goes through `research-wiki-ingest` / `research-wiki-batch-ingest`.

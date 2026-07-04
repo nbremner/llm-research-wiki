@@ -33,18 +33,24 @@ AGENTS.md                   # repo contribution rules + hard boundary
 
 skills/
   research-wiki-ingest/
+  research-wiki-batch-ingest/
   research-wiki-graph-lint/
-  research-wiki-pdf-backlog-triage/
+  research-scan-triage/
   research-wiki-query/
 
 scripts/
   research-wiki-tools/
     graph_lint.py
+    research_scan.py           # deterministic scan harness (discovery -> acquisition -> rank)
+    scan_triage_apply.py       # applies triage dispositions (Drive moves, manifest, digest)
+    scan_common.py             # shared scan machinery
+    scan_config.py             # editable scan rubric/config
     pdf_backlog_triage.py
     numbers_review_extract.py
 
 docs/
   wiki-redesign-plan.md        # the build plan for the markdown-in-git wiki
+  research-scrape-plan.md      # the build plan for the research-scan front end
 
 config/
   example.env
@@ -61,6 +67,9 @@ The scripts run from a configured agent machine with Google Drive OAuth already 
 
 ```bash
 python scripts/research-wiki-tools/graph_lint.py                       # lint the wiki graph
+uv run scripts/research-wiki-tools/research_scan.py --queries 3 --no-acquire   # scan smoke (local)
+uv run scripts/research-wiki-tools/research_scan.py --drive                    # full scan to Drive _triage
+uv run scripts/research-wiki-tools/scan_triage_apply.py --latest --dispositions d.json  # triage dry run
 uv run scripts/research-wiki-tools/pdf_backlog_triage.py --max-files 10
 uv run scripts/research-wiki-tools/pdf_backlog_triage.py --no-download
 uv run scripts/research-wiki-tools/numbers_review_extract.py /path/to/review.numbers --out /path/to/review.csv
