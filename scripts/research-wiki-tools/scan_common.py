@@ -542,6 +542,23 @@ def drive_upload_text(service, folder_id: str, name: str, text: str,
     return drive_upload_bytes(service, folder_id, name, text.encode("utf-8"), mime_type)
 
 
+def pick_latest_dated(names: Iterable[str], prefix: str, suffix: str = ".json") -> str | None:
+    """Newest 'prefix-<UTCSTAMP>suffix' name — UTC stamps sort lexicographically,
+    so max() is chronological. Undated exact-name files are ignored."""
+    cands = [n for n in names if n.startswith(prefix + "-") and n.endswith(suffix)]
+    return max(cands) if cands else None
+
+
+def drive_list_names(service, folder_id: str, contains: str) -> dict[str, str]:
+    """name -> id for non-trashed files in a folder whose name contains `contains`."""
+    safe = contains.replace("'", "\\'")
+    q = f"'{folder_id}' in parents and name contains '{safe}' and trashed=false"
+    res = service.files().list(
+        q=q, fields="files(id,name)", pageSize=100,
+        supportsAllDrives=True, includeItemsFromAllDrives=True).execute()
+    return {f["name"]: f["id"] for f in res.get("files", [])}
+
+
 def drive_update_bytes(service, file_id: str, data: bytes, mime_type: str) -> None:
     """Replace an existing Drive file's content in place (same id, same name)."""
     import io

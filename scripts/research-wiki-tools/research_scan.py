@@ -294,12 +294,17 @@ def main(argv: list[str]) -> int:
     drive = None
     if args.drive:
         drive = c.build_drive_service(args.token_path)
-        # Pull the current ledger from Drive so dedup persists across runs.
+        # Pull the NEWEST dated ledger snapshot from Drive so dedup persists across
+        # runs (snapshots are 'seen_index-<UTCSTAMP>.json'; legacy undated names are
+        # a read-only fallback from before the 2026-07-04 migration).
         ledger_dir.mkdir(parents=True, exist_ok=True)
         for fname in ("seen_index.json", "failure_catalog.json"):
-            fid = c.drive_find(drive, cfg.TRIAGE_LEDGER_FOLDER_ID, fname)
-            if fid:
-                (ledger_dir / fname).write_text(c.drive_download_text(drive, fid), encoding="utf-8")
+            stem = fname[:-5]
+            names = c.drive_list_names(drive, cfg.TRIAGE_LEDGER_FOLDER_ID, stem)
+            latest = c.pick_latest_dated(names, stem) or (fname if fname in names else None)
+            if latest:
+                (ledger_dir / fname).write_text(
+                    c.drive_download_text(drive, names[latest]), encoding="utf-8")
 
     ledger = c.Ledger(ledger_dir).load()
     if args.wiki_sources:
@@ -376,15 +381,19 @@ def main(argv: list[str]) -> int:
         "acquired": sum(1 for r in to_acquire if r.acq_state in ("full-pdf", "full-text")),
         "records": [r.to_dict() for r in surfaced],
     }
-    manifest_name = f"manifest-{c.utc_now_stamp()}.json"
+    stamp = c.utc_now_stamp()
+    manifest_name = f"manifest-{stamp}.json"
     manifest_text = json.dumps(manifest, indent=2, ensure_ascii=False)
     (work_dir / manifest_name).write_text(manifest_text, encoding="utf-8")
     ledger.save()
 
     if args.drive:
         c.drive_upload_text(drive, cfg.TRIAGE_FOLDER_ID, manifest_name, manifest_text)
+        # Dated snapshots, stamp-matched to the manifest — chronological in Drive,
+        # and the next run loads the newest one (no same-name duplicates).
         for fname in ("seen_index.json", "failure_catalog.json"):
-            c.drive_upload_text(drive, cfg.TRIAGE_LEDGER_FOLDER_ID, fname,
+            c.drive_upload_text(drive, cfg.TRIAGE_LEDGER_FOLDER_ID,
+                                f"{fname[:-5]}-{stamp}.json",
                                 (ledger_dir / fname).read_text(encoding="utf-8"))
 
     print(f"\nWrote {work_dir / manifest_name}")

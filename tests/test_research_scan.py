@@ -130,6 +130,15 @@ def test_wiki_source_titles_block_resurfacing():
     assert L.is_title_seen(nt)
 
 
+def test_pick_latest_dated():
+    names = ["seen_index-20260704T195010Z.json", "seen_index-20260704T213020Z.json",
+             "seen_index.json", "failure_catalog-20260705T150000Z.json"]
+    assert c.pick_latest_dated(names, "seen_index") == "seen_index-20260704T213020Z.json"
+    assert c.pick_latest_dated(names, "failure_catalog") == "failure_catalog-20260705T150000Z.json"
+    assert c.pick_latest_dated(["seen_index.json"], "seen_index") is None  # undated ignored
+    assert c.pick_latest_dated([], "seen_index") is None
+
+
 def test_orchestrator_dedup_rank_manifest():
     def fake(q, n):
         return [
