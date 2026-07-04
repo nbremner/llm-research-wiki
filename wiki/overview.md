@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-07-03
+updated: 2026-07-04
 ---
 
 # Overview
@@ -137,7 +137,6 @@ Seed questions to grow topics around. Edit freely.
 
 Constructs that have surfaced across sources but don't yet warrant their own page. Ingests append here (with the source slug); promote a candidate once enough sources accumulate rather than deferring it again. Edit freely.
 
-- **people-analytics / big-data methods** — the deferred "Batch 2" cluster (Kosinski, Kern, Chapman, Miller, Chen & Wojcik, Guzzo); promote if/when ingested.
 - **applicant reactions & perceived fairness** of algorithmic assessment — appears under [[algorithmic-assessment]]; candidate for its own page.
 - **human-agency-scale / worker-desired agency** — appears in [[2025-shao-future-work-ai-agents]]; candidate if more sources use agency levels as an audit or design construct rather than only a preference measure.
 - **ai-advice-taking / recommendation-following** — appears across decision-support and adoption sources, including [[2022-dellacqua-falling-asleep-at-wheel]], [[2025-brynjolfsson-generative-ai-at-work]], [[2026-almog-barriers-ai-adoption]], and the Advisor condition in [[2026-zhu-choose-your-agent]]; promote if the wiki needs a peer topic for recommendation acceptance, revision, rejection, and reliance.
