@@ -112,6 +112,24 @@ def test_load_wiki_source_ids():
     assert "arxiv:2503.16774" in ids
 
 
+def test_wiki_source_titles_block_resurfacing():
+    # The Cybernetic Teammate leak: a wiki paper rediscovered under a different DOI
+    # must be caught by the title index warm-started from sources/ frontmatter.
+    d = Path(tempfile.mkdtemp())
+    (d / "2025-dellacqua-cybernetic-teammate.md").write_text(
+        "---\ntitle: The Cybernetic Teammate: A Field Experiment on Generative AI and Teamwork\n"
+        "url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5188231\n---\n# X\n",
+        encoding="utf-8")
+    pairs = c.load_wiki_source_titles(d)
+    assert pairs and pairs[0][0] == "2025-dellacqua-cybernetic-teammate"
+    L = c.Ledger(tempfile.mkdtemp()).load()
+    for slug, title in pairs:
+        L.mark_seen(f"wikisrc:{slug}", {"title": title, "origin": "wiki-source-title"})
+    # same paper, different id, slightly different punctuation -> still caught
+    nt = c.normalize_title("The Cybernetic Teammate — A Field Experiment on Generative AI and Teamwork")
+    assert L.is_title_seen(nt)
+
+
 def test_orchestrator_dedup_rank_manifest():
     def fake(q, n):
         return [

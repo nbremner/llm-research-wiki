@@ -304,7 +304,13 @@ def main(argv: list[str]) -> int:
     ledger = c.Ledger(ledger_dir).load()
     if args.wiki_sources:
         n = ledger.warm_start(c.load_wiki_source_ids(args.wiki_sources), note="wiki-source")
-        print(f"warm-started seen-index with {n} existing wiki source ids", flush=True)
+        t = 0
+        for slug, title in c.load_wiki_source_titles(args.wiki_sources):
+            cid = f"wikisrc:{slug}"
+            if not ledger.is_seen(cid):
+                ledger.mark_seen(cid, {"title": title, "origin": "wiki-source-title"})
+                t += 1
+        print(f"warm-started seen-index with {n} wiki source ids + {t} titles", flush=True)
 
     queries = cfg.SEED_QUERIES[: args.queries] if args.queries else cfg.SEED_QUERIES
     sources = [s.strip() for s in args.sources.split(",") if s.strip() in DISCOVERY]

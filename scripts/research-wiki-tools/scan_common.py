@@ -408,6 +408,27 @@ class Ledger:
         self.failures_path.write_text(json.dumps(self.failures, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
+def load_wiki_source_titles(sources_dir: str | Path) -> list[tuple[str, str]]:
+    """(slug, title) pairs from wiki/sources frontmatter. Warm-starting these into
+    the ledger's title index stops an already-ingested paper from resurfacing when
+    discovery returns it under a different DOI/URL (e.g. published vs working-paper
+    version — the Cybernetic Teammate leak, 2026-07-04)."""
+    out: list[tuple[str, str]] = []
+    d = Path(sources_dir)
+    if not d.is_dir():
+        return out
+    title_re = re.compile(r"^title:\s*(.+)$", re.I | re.M)
+    for md in d.glob("*.md"):
+        try:
+            head = md.read_text(encoding="utf-8")[:1200]
+        except OSError:
+            continue
+        m = title_re.search(head)
+        if m:
+            out.append((md.stem, m.group(1).strip().strip('"').strip("'")))
+    return out
+
+
 def load_wiki_source_ids(sources_dir: str | Path) -> set[str]:
     """Warm-start ids from existing wiki/sources/*.md frontmatter (url/doi) +
     filename-year. Lets the harness skip papers already in the wiki."""
