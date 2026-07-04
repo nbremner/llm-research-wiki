@@ -46,8 +46,10 @@ def test_concept_match_and_on_mission():
     score, topics = c.concept_match("automation and augmentation reshape labor demand; deskilling", cfg.WIKI_CONCEPTS)
     assert score > 0
     assert "automation-and-substitution" in topics
-    assert c.is_on_mission("A study of generative AI in the workplace", cfg.ON_MISSION_TERMS)
-    assert not c.is_on_mission("A treatise on medieval pottery glazes", cfg.ON_MISSION_TERMS)
+    assert c.is_on_mission("A study of generative AI in the workplace", cfg.AI_TERMS, cfg.WORK_TERMS)
+    assert not c.is_on_mission("A treatise on medieval pottery glazes", cfg.AI_TERMS, cfg.WORK_TERMS)
+    # AI method with no labor angle (the CV false-positive from the 2026-07-04 smoke) is dropped
+    assert not c.is_on_mission("panoramic referring segmentation via machine learning", cfg.AI_TERMS, cfg.WORK_TERMS)
 
 
 def test_ranking_orders_recent_authoritative_first():

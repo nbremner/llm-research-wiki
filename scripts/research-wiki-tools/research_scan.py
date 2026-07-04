@@ -323,7 +323,7 @@ def main(argv: list[str]) -> int:
             for rec in found:
                 if ledger.is_seen(rec.id) or rec.id in fresh:
                     continue
-                if not c.is_on_mission(f"{rec.title}\n{rec.abstract}", cfg.ON_MISSION_TERMS):
+                if not c.is_on_mission(f"{rec.title}\n{rec.abstract}", cfg.AI_TERMS, cfg.WORK_TERMS):
                     continue
                 fresh[rec.id] = rec
                 new += 1

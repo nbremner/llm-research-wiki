@@ -113,14 +113,20 @@ WIKI_CONCEPTS = {
     "complex-collaborative-problem-solving": ["collaborative problem solving", "complex problem", "21st century skills"],
 }
 
-# Broad topical gate: a candidate must hit at least one of these to be on-mission
-# at all (else it is off-topic noise). Kept wide; precision comes from ranking.
-ON_MISSION_TERMS = [
+# On-mission gate: a candidate must touch BOTH an AI/tech term AND a work/labor
+# term. The wiki is AI x work, so a paper with no labor angle (e.g. a computer-
+# vision method that merely says "task"/"model") is off-mission and dropped.
+# Tightened after the 2026-07-04 smoke test surfaced a CV preprint into the top 5.
+AI_TERMS = [
     "artificial intelligence", "generative ai", "genai", "large language model", "llm",
-    "machine learning", "ai agent", "algorithmic", "automation", "chatgpt", "copilot",
-    "future of work", "workforce", "worker", "employee", "labor", "labour", "job",
-    "occupation", "skill", "task", "productivity", "human capital", "hiring",
-    "organization", "workplace",
+    "machine learning", " ai ", "ai-", "ai agent", "algorithmic", "automation",
+    "chatgpt", "copilot", "generative model", "foundation model",
+]
+WORK_TERMS = [
+    "future of work", "workforce", "worker", "employee", "employer", "labor", "labour",
+    "job", "occupation", "employment", "hiring", "human capital", "workplace",
+    "productivity", "skill demand", "reskilling", "upskilling", "wage",
+    "task allocation", "knowledge work", "organization", "organisation",
 ]
 
 # --- Seed queries (derived from wiki open-questions + thin areas) ------------

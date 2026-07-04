@@ -193,9 +193,12 @@ def concept_match(text: str, concepts: dict[str, list[str]]) -> tuple[float, lis
     return score, matched
 
 
-def is_on_mission(text: str, terms: Iterable[str]) -> bool:
+def is_on_mission(text: str, ai_terms: Iterable[str], work_terms: Iterable[str]) -> bool:
+    """On-mission = touches an AI/tech term AND a work/labor term (the wiki is AI x work)."""
     hay = (text or "").lower()
-    return any(t.lower() in hay for t in terms)
+    has_ai = any(t.lower() in hay for t in ai_terms)
+    has_work = any(t.lower() in hay for t in work_terms)
+    return has_ai and has_work
 
 
 def recency_score(date_value: str | int | None, halflife_days: int) -> float:
