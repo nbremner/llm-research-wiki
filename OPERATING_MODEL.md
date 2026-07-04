@@ -103,8 +103,9 @@ failures to Discord #logs).
 | Graph-lint report | Periodic | report only | n/a |
 | Ingest | On demand / small scheduled | sources/ (auto), topics/ (owner-approved) | low per-run cap |
 
-(Scan-pipeline scheduling lands per `docs/research-scrape-plan.md` Phase 3; until then both scan jobs
-run manually.)
+(Scan-pipeline scheduling deployed 2026-07-04: `research-scan.timer` fires the harness daily at 08:00
+America/Los_Angeles with an `OnFailure` alert to #logs; hermes cron job "Daily research scan triage"
+runs the triage turn at 08:30 Pacific and delivers the digest to Discord #research-digest.)
 
 Expand autonomy only after manual runs produce clean artifacts. Topic synthesis stays approval-gated
 regardless of cadence.
