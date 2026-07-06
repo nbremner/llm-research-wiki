@@ -1,7 +1,7 @@
 ---
 name: research-scan-triage
-description: Use when triaging surfaced candidates from the daily research scan (the _triage store manifest) into dispositions — wiki-candidate, read-once, or discard — with hybrid autonomy: auto-queue clear wiki candidates into the Drive _inbox, auto-discard duplicates and off-mission noise, and surface the ambiguous middle plus a read-once digest to Nicholas.
-version: 1.0.0
+description: "Use when triaging surfaced candidates from the daily research scan (the _triage store manifest) into dispositions — wiki-candidate, read-once, or discard — with hybrid autonomy: auto-queue clear wiki candidates into the Drive _inbox, auto-discard duplicates and off-mission noise, and surface the ambiguous middle plus a read-once digest to Nicholas."
+version: 1.0.1
 author: Hermes Agent
 license: MIT
 metadata:
@@ -99,11 +99,18 @@ Verify it is a real PDF (`file` says PDF, has text). If it works, put the local 
 applier lists it under "needs manual acquisition". Do not fight hard paywalls or CAPTCHAs; do not log in
 anywhere; never buy access.
 
+If the landing page presents a bot check, CAPTCHA, login wall, or purchase flow, stop that acquisition
+attempt immediately. Keep the disposition judgment, omit `acquired_path`, and let the applier surface it
+as manual acquisition. The useful lesson is the bounded stop rule, not repeated browser probing.
+
 ## Workflow
 
-1. **Find the manifest**: newest local `manifest-*.json` with un-triaged records —
-   `uv run /root/research-wiki-tools/scan_triage_apply.py --latest --dispositions /dev/null` will name
-   it (or glob `/root/research-wiki-runs/*/manifest-*.json` yourself).
+1. **Find the manifest**: newest local `manifest-*.json` with un-triaged records. The intended helper is
+   `uv run /root/research-wiki-tools/scan_triage_apply.py --latest --dispositions <valid-json-file>`, but
+   if you only need discovery, it is safe to glob `/root/research-wiki-runs/*/manifest-*.json` and choose
+   the newest manifest where any record has `disposition: null`. Do not rely on `/dev/null` as the
+   dispositions file unless the applier has been changed to tolerate empty JSON; older/current versions
+   parse it and fail before printing the manifest.
 2. **Judge every record** with `disposition: null` against the rubric. Read title + abstract +
    matched_topics; check the acquired artifact if the abstract is thin. One line of `reason` each,
    citing the rubric category.
@@ -111,8 +118,10 @@ anywhere; never buy access.
 4. **Write the dispositions JSON** (schema in the applier's docstring) to the run dir.
 5. **Dry-run the applier**, review its plan, then run with `--execute`:
    `uv run /root/research-wiki-tools/scan_triage_apply.py --manifest <path> --dispositions <path> --execute`
-6. **Deliver the digest** (the applier prints it) as your response — the cron job's delivery target
-   posts it to Discord. Do not editorialize beyond the digest; append at most 2 lines of run notes.
+6. **Deliver only the digest** (the applier prints it) as your response — the cron job's delivery target
+   posts it to Discord. If execution logs print mechanical lines such as `moved -> _inbox:` before the
+   digest, omit those from the final response. Do not editorialize beyond the digest; append at most 2
+   lines of run notes.
 
 ## Boundaries
 
