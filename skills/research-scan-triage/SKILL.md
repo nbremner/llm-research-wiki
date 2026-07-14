@@ -113,6 +113,16 @@ See `references/osf-rung4-direct-download.md` for the compact OSF direct-downloa
 
 ## Workflow
 
+### Upstream service health first
+
+If the user reports `research-scan.service` or `research-scan.timer` failed, debug the deterministic
+harness before doing triage. The triage job can honestly say "no new scan" while the upstream scanner is
+broken. Use `systemctl status research-scan --no-pager -l` and `journalctl -u research-scan --no-pager -n
+160 -o short-iso` as the tight loop. A common root cause is revoked Google Drive OAuth (`invalid_grant:
+Token has been expired or revoked`) at the first Drive ledger call; repair Drive auth with the
+`google-workspace` Drive-only headless OAuth flow, then restart and verify the service. See
+`references/upstream-service-troubleshooting.md`.
+
 1. **Find the manifest**: newest local `manifest-*.json` with un-triaged records. The intended helper is
    `uv run /root/research-wiki-tools/scan_triage_apply.py --latest --dispositions <valid-json-file>`, but
    if you only need discovery, it is safe to glob `/root/research-wiki-runs/*/manifest-*.json` and choose
