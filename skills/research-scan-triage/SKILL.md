@@ -105,11 +105,17 @@ OSF preprints often do not require browser probing: for DOI paths like `10.31234
 use Python `pypdf.PdfReader` to confirm page count and extract a small text sample. Keep these direct
 OSF attempts within the rung-4 cap.
 
+For SSRN DOI candidates (`10.2139/ssrn.<id>`), use a single bounded public probe for an obvious download
+link. If SSRN returns 403, bot-check/CAPTCHA, login wall, or no obvious public download, stop immediately:
+leave `acquired_path` unset and let the applier surface manual acquisition. Do not retry with access
+workarounds or login flows.
+
 If the landing page presents a bot check, CAPTCHA, login wall, or purchase flow, stop that acquisition
 attempt immediately. Keep the disposition judgment, omit `acquired_path`, and let the applier surface it
 as manual acquisition. The useful lesson is the bounded stop rule, not repeated browser probing.
 
 See `references/osf-rung4-direct-download.md` for the compact OSF direct-download pattern and verification checks.
+See `references/ssrn-rung4-bounded.md` for the compact SSRN stop pattern.
 
 ## Workflow
 
