@@ -116,6 +116,7 @@ as manual acquisition. The useful lesson is the bounded stop rule, not repeated 
 
 See `references/osf-rung4-direct-download.md` for the compact OSF direct-download pattern and verification checks.
 See `references/ssrn-rung4-bounded.md` for the compact SSRN stop pattern.
+See `references/drive-artifact-inspection.md` for the Drive artifact sanity-check pattern when abstracts are thin or acquired "full-text" may be a bot-check page.
 
 ## Workflow
 
@@ -137,8 +138,17 @@ Token has been expired or revoked`) at the first Drive ledger call; repair Drive
    parse it and fail before printing the manifest.
 2. **Judge every record** with `disposition: null` against the rubric. Read title + abstract +
    matched_topics; check the acquired artifact if the abstract is thin. One line of `reason` each,
-   citing the rubric category.
-3. **Rung-4 attempts** for up to 3 clear wiki-candidates lacking artifacts (optional, skip freely).
+   citing the rubric category. When a record has `artifact_drive_id` but little/no abstract, inspect the
+   Drive artifact before judging: acquired "full-text" can be a Jina Markdown landing page, paywall, or
+   bot-check page rather than usable paper text. If the artifact is only a bot/CAPTCHA/security page and
+   the title alone is not enough for a clear rubric call, mark the proposed disposition `confidence:
+   ambiguous` so it surfaces.
+3. **Rung-4 attempts** for up to 3 clear wiki-candidates lacking artifacts (optional, skip freely). For
+   DOI landing pages with obvious public article pages, a fast pattern is: open the DOI in the browser,
+   extract anchors whose text looks like "Download PDF" with `browser_console`, download that href with
+   `curl -L --fail -A 'Mozilla/5.0'`, then verify with `file` plus a small text-layer/page-count check.
+   Stop immediately on bot verification, CAPTCHA, login, or purchase pages; record the judgment without
+   `acquired_path`.
 4. **Write the dispositions JSON** (schema in the applier's docstring) to the run dir.
 5. **Dry-run the applier**, review its plan, then run with `--execute`:
    `uv run /root/research-wiki-tools/scan_triage_apply.py --manifest <path> --dispositions <path> --execute`
