@@ -130,6 +130,17 @@ Token has been expired or revoked`) at the first Drive ledger call; repair Drive
 `google-workspace` Drive-only headless OAuth flow, then restart and verify the service. See
 `references/upstream-service-troubleshooting.md`.
 
+After exchanging a refreshed Drive-only OAuth callback, verify the token with both `$GSETUP --check` and
+a targeted Drive read/search. `AUTHENTICATED (partial)` is expected for Drive-only scope; do not treat
+missing Gmail/Calendar/Docs/Sheets scopes as a blocker for the scanner. Then run
+`systemctl reset-failed research-scan.service || true; systemctl start research-scan.service` and wait for
+the oneshot to finish. If the terminal command is interrupted while `systemctl start` is blocking, do not
+report failure: immediately check `systemctl status research-scan --no-pager -l`, `systemctl is-active`,
+and the recent journal. A running scan will show `Active: activating (start)` and continue under systemd;
+wait/poll until it becomes `inactive (dead)` with `status=0/SUCCESS` or `failed`. Non-fatal source warnings
+such as arXiv HTTP 429s can appear during discovery; judge success by final manifest write plus
+`Uploaded manifest + ledger + files to Drive _triage`.
+
 1. **Find the manifest**: newest local `manifest-*.json` with un-triaged records. The intended helper is
    `uv run /root/research-wiki-tools/scan_triage_apply.py --latest --dispositions <valid-json-file>`, but
    if you only need discovery, it is safe to glob `/root/research-wiki-runs/*/manifest-*.json` and choose
