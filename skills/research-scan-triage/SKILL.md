@@ -117,6 +117,7 @@ as manual acquisition. The useful lesson is the bounded stop rule, not repeated 
 See `references/osf-rung4-direct-download.md` for the compact OSF direct-download pattern and verification checks.
 See `references/ssrn-rung4-bounded.md` for the compact SSRN stop pattern.
 See `references/drive-artifact-inspection.md` for the Drive artifact sanity-check pattern when abstracts are thin or acquired "full-text" may be a bot-check page.
+See `references/2026-07-22-triage-edge-cases.md` for concrete examples of OSF DOI download normalization, landing-page artifacts that should surface as ambiguous, and disposition boundary cases.
 
 ## Workflow
 
