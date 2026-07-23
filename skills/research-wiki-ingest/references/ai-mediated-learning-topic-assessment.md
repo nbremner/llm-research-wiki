@@ -26,6 +26,14 @@ The core distinction to preserve is:
 
 > AI can help produce the artifact while weakening, preserving, or strengthening the learning episode that determines future oversight capacity.
 
+When the user explicitly asks for **cognitive debt + learning transfer + individual differences**, do not treat individual differences as a generic moderator paragraph. Map the source across:
+
+- `ai-mediated-learning` for transfer, comprehension, effort-preserving scaffolding, and whether AI use builds durable capability.
+- `cognitive-load-in-ai-assisted-work` for the productive-effort vs extraneous-burden distinction, especially pacing, notifications, context switching, interface burden, and load-sensitive scaffolds.
+- `ai-induced-skill-erosion` only as a longer-run accumulation risk or precursor; avoid implying longitudinal erosion unless measured.
+- `digital-work-strain` when cognitive debt includes recovery failure, burnout, attentional fragmentation, silent overload, or output metrics hiding sustainability costs.
+- `inclusive-hr-systems` when the paper argues that AI workflow assumptions encode neurotypical pacing, sensory tolerance, interaction norms, or availability expectations. Frame neurodivergent workers as design SMEs / evidence about the work system when the source supports that move, not merely as a vulnerable subgroup.
+
 When threading into existing topics, keep the specific role clear:
 
 - In `ai-induced-skill-erosion`, frame AI-mediated learning failures as possible immediate precursors to longer-run capability loss, not proof of longitudinal erosion unless the design actually measures it.
