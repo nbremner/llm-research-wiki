@@ -20,6 +20,8 @@ The paper also makes cognitive load observable in human-AI traces. Lepine et al.
 
 [[2026-ruttenberg-neurodivergent-expertise-ai-work]] adds an individual-differences boundary condition. For autistic and neurodivergent knowledge workers, the same AI notification stream, context-switching demand, or passive offloading pattern may consume capacity sooner because sensory filtering, social inferencing, and executive-function demands are already part of the work ecology. The paper's reflective-scaffolding proposal is a useful design distinction for this page: reduce extraneous load through pacing control and sensory-aware interfaces, but do not remove the productive effort needed for comprehension, synthesis, and transfer.
 
+[[2026-ruttenberg-cognitive-debt-ai-research]] sharpens the productive-effort boundary. In its model, cognitive debt grows when AI use reduces active engagement through attentional erosion, effort displacement, and affective depletion; reflective scaffolding is protective only if it lowers unnecessary burden while keeping the user in contact with the hard parts of the work. That makes load reduction a construct-validity problem: a low-effort interface may either remove extraneous friction or remove the cognitive struggle that produces transfer and judgment.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because collaboration quality depends on whether model initiative reduces burden or creates coordination work the human must absorb.
 - Relates to [[automation-complacency]] because low effort and high load are different failure modes: some AI systems suppress scrutiny, while others overwhelm the user with extraneous coordination demands.
@@ -28,6 +30,7 @@ The paper also makes cognitive load observable in human-AI traces. Lepine et al.
 - Relates to [[work-redesign]] because task sequencing, escalation rules, and interface defaults can either suppress extraneous load or push it onto workers.
 - Relates to [[human-ai-task-allocation]] because workload and fatigue can change which actor should handle the next task instance.
 - Relates to [[digital-work-strain]] because cumulative digital demands can become cognitive fatigue, overload, recovery failure, and occupational-health risk.
+- Relates to [[cognitive-debt]] because load design determines whether AI assistance preserves productive effort or silently displaces the cognitive work needed for later transfer and judgment.
 - Relates to [[inclusive-hr-systems]] because cognitive-load assumptions built into AI tools can encode neurotypical work rhythms and make some workers' sustainability costs invisible.
 
 ## Contradictions & open questions
@@ -37,4 +40,4 @@ The paper also makes cognitive load observable in human-AI traces. Lepine et al.
 - The framework depends on domain-specific task decompositions and knowledge graphs, so portability to software engineering, healthcare, HR, or strategy work remains an empirical problem rather than an assumption.
 - [[2026-zhang-fatigue-aware-learning-defer]] uses simulated fatigue curves and image-classification benchmarks, so the open measurement question is whether live workplace fatigue or cognitive-load signals can be measured validly enough to drive allocation without creating surveillance, fairness, or agency problems.
 - [[2026-mansuroglu-technostress-employee-well-being]] synthesizes recurring overload and fatigue patterns but does not validate AI-interaction-level cognitive-load measures; the bridge from technostress surveys to trace-based AI workflow diagnostics remains open.
-- [[2026-ruttenberg-neurodivergent-expertise-ai-work]] proposes neurotype-specific thresholds but does not yet validate them; the open measurement problem is how to detect harmful threshold crossing without turning accommodation-sensitive load signals into surveillance or deficit labeling.
+- [[2026-ruttenberg-cognitive-debt-ai-research]] and [[2026-ruttenberg-neurodivergent-expertise-ai-work]] propose cognitive-debt and neurotype-specific thresholds but do not yet validate them; the open measurement problem is how to detect harmful threshold crossing without turning accommodation-sensitive load signals into surveillance or deficit labeling.

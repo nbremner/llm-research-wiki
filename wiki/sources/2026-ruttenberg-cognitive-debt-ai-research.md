@@ -33,6 +33,7 @@ file_hash: 6459f30853da930faa6d5dbd4a3f4c9b02d5aa5844fd552af947fed3ddbf6e2f
 - The manuscript overlaps conceptually with [[2026-ruttenberg-neurodivergent-expertise-ai-work]], but this source centers the general cognitive-debt model for AI-augmented research and knowledge production rather than the later neurodivergent-expertise/redesign imperative.
 
 ## Feeds
+- [[cognitive-debt]]
 - [[ai-mediated-learning]]
 - [[cognitive-load-in-ai-assisted-work]]
 - [[digital-work-strain]]

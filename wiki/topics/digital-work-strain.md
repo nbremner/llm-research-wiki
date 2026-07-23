@@ -18,6 +18,8 @@ The review also prevents a flat “technology causes stress” story. Some digit
 
 [[2026-ruttenberg-neurodivergent-expertise-ai-work]] adds a cognitive-sustainability mechanism for why strain can remain hidden under apparently normal productivity. In the paper's threshold model, AI-supported work can accumulate attentional erosion, effort displacement, and affective depletion until recovery costs, shutdowns, narrowing task tolerance, or burnout risk appear outside ordinary performance metrics. For this topic, the useful point is that AI strain may be distributed unevenly by sensory tolerance, executive-function load, and recovery capacity; a system can look productivity-enhancing at the aggregate level while becoming unsustainable for workers whose cognitive ecology is closer to threshold.
 
+[[2026-ruttenberg-cognitive-debt-ai-research]] generalizes that cognitive-sustainability warning beyond neurodivergent work design into research and knowledge production. Its useful contribution here is the distinction between apparent productivity and cumulative occupational cost: passive AI offloading can make work feel smoother while attention, effort tolerance, and recovery capacity degrade beneath the metric surface. The proposed Cognitive Debt Observatory would make digital strain more temporally sensitive by tracking AI-use patterns, attention, cognitive failures, and burnout indicators over repeated work episodes rather than relying only on cross-sectional stress reports.
+
 ## Connections
 - Relates to [[ai-mediated-work-experience]] because stress, recovery, burnout, and well-being are central channels through which AI changes felt job quality.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because techno-overload, digital fatigue, information sprawl, and repair work can become extraneous load in AI-supported workflows.
@@ -25,10 +27,11 @@ The review also prevents a flat “technology causes stress” story. Some digit
 - Relates to [[responsible-ai-deployment]] because worker-facing AI systems that increase stress, surveillance pressure, overload, or boundary invasion create occupational-health and dignity risks even when they improve efficiency.
 - Relates to [[ai-mediated-teamwork]] because team processes can buffer stress created by AI control and digital work demands.
 - Relates to [[inclusive-hr-systems]] because strain metrics and AI-workflow designs can miss subgroup-specific sustainability costs if they assume neurotypical interaction rhythms, sensory tolerances, and recovery needs.
+- Relates to [[cognitive-debt]] because some digital strain becomes visible only as delayed attention, transfer, recovery, or burnout costs after AI-supported output has looked efficient.
 
 ## Contradictions & open questions
 - [[2026-mansuroglu-technostress-employee-well-being]] synthesizes a large empirical corpus but not through meta-analysis, so it maps recurring patterns rather than estimating pooled effect sizes.
 - The evidence base is uneven: Mansuroğlu and Smith find heavy representation from Germany, Italy, India, the UK, and the United States, with education and healthcare dominant among single-sector studies, and only 18 longitudinal studies across the corpus.
 - Some technostressors may also operate as challenge demands or techno-eustress under high competence, autonomy, or support. The open question is when digital difficulty builds mastery versus when it becomes chronic strain.
 - The wiki still needs AI-specific longitudinal and field-intervention evidence on whether redesigned AI control rights, digital-boundary practices, platform simplification, and support routines actually reduce stress without suppressing useful assistance.
-- [[2026-ruttenberg-neurodivergent-expertise-ai-work]] directly names the missing empirical intersection: longitudinal work tracking AI use patterns, transfer, cognitive load, burnout, recovery, and neurodivergent expertise rather than treating individual differences as a post-hoc moderator.
+- [[2026-ruttenberg-cognitive-debt-ai-research]] and [[2026-ruttenberg-neurodivergent-expertise-ai-work]] directly name the missing empirical intersection: longitudinal work tracking AI use patterns, transfer, cognitive load, burnout, recovery, and neurodivergent expertise rather than treating individual differences as a post-hoc moderator.
