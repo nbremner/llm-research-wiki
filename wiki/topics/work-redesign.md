@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-07-03
+updated: 2026-07-23
 ---
 
 # Work redesign
@@ -59,6 +59,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2026-wang-agent-development-real-world-work]] adds a benchmark-validity constraint to redesign. If agent evaluations are concentrated in programming-heavy, easily verified domains, then benchmark progress should not be treated as evidence that agents are ready for management, legal, interpersonal, or other work where objectives, verification, and accountability are less clean. Redesign has to ask whether the evaluation sample resembles the work node being delegated.
 
+[[2025-wang-ai-agents-human-work]] adds direct workflow-comparison evidence that similar task sequences can conceal different execution architectures. Across 16 computer-use tasks, human and agent workflows shared 83.0% of steps and preserved aligned-step order 99.8% of the time, yet agents used programming tools in 93.8% of workflow steps while humans relied more on interfaces and perceptual judgment. Redesign therefore has to specify not only which steps remain, but how each step is executed, what representations and tools it depends on, and where the resulting strategy creates new verification or translation work.
+
 [[2026-vuong-genai-job-performance]] adds a bottom-up redesign mechanism: employees may use GenAI as a job resource for job crafting before formal role architecture changes. In Vietnamese SMEs, GenAI usage was associated with job crafting and work engagement, which partially mediated job performance. For redesign, the important signal is that local worker-led restructuring can be part of the value pathway, but it also means redesigned work may be happening informally before governance, measurement, or role expectations catch up.
 
 [[2007-serenko-organizational-size-knowledge-flow]] adds a pre-AI unit-design constraint: knowledge flow can degrade as organizational units grow because formal structure, weaker trust, reduced connective efficacy, and less frequent communication make it harder for knowledge to reach the right people. For AI-era redesign, that baseline matters because AI knowledge tools may change the effective scale of a unit or the cost of cross-unit exchange, but they do not automatically solve the trust, routing, overload, and communication problems that made size consequential in the first place.
@@ -111,6 +113,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2025-kellogg-novice-risk-work]] is interview-based and compares novice recommendations to expert literature, not implemented redesign interventions. It is strongest as a warning about misplaced mitigation levels, not as direct evidence that any specific deployer-level control improves outcomes.
 - [[2009-sanchez-levine-competency-modeling-job-analysis]] predates AI and should not be treated as evidence about agentic workflows. Its value is conceptual: it warns that redesign grounded only in current task description may miss the strategic and behavioral signals needed for role enactment.
 - [[2026-wang-agent-development-real-world-work]] is benchmark evidence, not implementation evidence. It can say where evaluations are misaligned with work, but not whether a redesigned workflow will produce better performance, motivation, learning, or accountability.
+- [[2025-wang-ai-agents-human-work]] reports that selective AI augmentation improved efficiency by 24.3% with limited workflow disruption while end-to-end automation slowed human work by 17.7% through verification and debugging. That contrast is useful but comes from 16 bounded computer-use tasks; it should not be generalized into a universal augmentation advantage or treated as field evidence of durable organizational redesign.
 - [[2026-vuong-genai-job-performance]] treats job crafting as a positive mediator, but informal AI-enabled crafting can also create unmanaged variance in process quality, compliance, and performance criteria if it remains invisible to the organization.
 - [[2026-buechsenschuss-genai-organizational-networks]] is strong field-experimental evidence that grounded GenAI can shift network centrality, but the self-reported network measures and single-firm design mean it should not yet be treated as proof that AI generally improves organizational coordination.
 - [[2025-dellacqua-super-mario-ai]] shows why redesign should not equate individual AI capability with system improvement. The automated agent was individually strong, but the redesigned human-AI team initially performed worse because coordination routines and motivation changed.

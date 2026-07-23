@@ -25,10 +25,13 @@ file_hash: 13dd9a9de40547e91654706692f6855ef3fe9ed44aa156601dbbafdd6a80d3e4
 - The article recommends assigning programmable components to agents while preserving human quality assurance, contextual judgment, and workflow-level accountability.
 
 ## Evidence & limitations
-- This is a secondary synthesis, not the original empirical report. Its quantitative claims come from Wang et al., *How Do AI Agents Do Human Work?* (arXiv:2510.22780).
+- This is a secondary synthesis, not the original empirical report. Its quantitative claims come from [[2025-wang-ai-agents-human-work]], the primary Wang et al. preprint *How Do AI Agents Do Human Work?* (arXiv:2510.22780); the two records are one evidence lineage, not independent corroboration.
 - It provides no independent dataset, methods, or analysis through which those claims could be evaluated separately.
 - Crossref identifies the canonical record as a March 2026 article. The PDF contains an older, nonresolving 2025 DOI string and early-access date.
 - The official publisher PDF exactly matches the Drive copy by SHA-256.
 - The journal record is verified, but the dry-run did not independently establish peer review; `publication_status` therefore remains conservatively `other`.
 
 ## Feeds
+- [[work-redesign]]
+- [[human-ai-collaboration]]
+- [[human-ai-task-allocation]]

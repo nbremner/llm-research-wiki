@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-07-04
+updated: 2026-07-23
 ---
 
 # Overview
@@ -146,6 +146,7 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **ai-coaching-and-feedback** — appears in the Coach condition in [[2026-zhu-choose-your-agent]] and may connect to critique, learning, and cognitive-forcing designs; defer until there is another clean source beyond Zhu.
 - **ai-proactivity** — appears in [[2026-lepine-precision-proactivity]] and the proactive Advisor design in [[2026-zhu-choose-your-agent]]; promote if future sources distinguish initiative timing from execution authority.
 - **ai-oversight-incentives / human-AI contracting** — appears in [[2025-bastani-human-ai-contracting-paradox]] as the economic problem of paying for human vigilance when AI failures are rare and effort is hard to observe; promote if future sources add empirical or governance evidence on compensation, monitoring, liability, or incentive design for oversight.
+- **human–agent workflow strategy divergence** — appears directly in [[2025-wang-ai-agents-human-work]] and secondarily in [[2026-westover-ai-agents-professional-work]] from the same evidence lineage: agents can follow similar ordered workflow steps while using markedly more programmatic strategies than humans, with consequences for quality, verification, and task allocation. Promote when an independent workflow-comparison source establishes that this is reusable beyond Wang et al.'s 16 computer-use tasks.
 - **digital-competence-as-ai-resource** — appears in [[2026-vuong-genai-job-performance]] as a moderator of GenAI usage → job crafting and GenAI usage → work engagement; promote if future sources distinguish digital competence from AI literacy, readiness, or general self-efficacy.
 - **skills architecture / evergreen capability taxonomies** — appears in [[2025-tona-deployment-ai-infer-employee-skills]] as a large-firm implementation of AI-inferred employee skills for digital-transformation workforce planning and in [[2025-teyssier-roberge-21st-century-skills-overlap]] as a construct-validity warning about semantic and psychometric overlap among 21st-century-skills labels; promote if future sources add validation, fairness, employee-experience, outcome evidence, or stronger taxonomic evidence for AI-era workforce planning.
 - **ai-control-as-work-stressor** — appears in [[2025-klonek-ai-work-stress]] as a separable work-design dimension from human–AI team processes; promote if future sources add field, longitudinal, experimental, or governance evidence on control rights, autonomy need thwarting, stress, and mental-health outcomes.
