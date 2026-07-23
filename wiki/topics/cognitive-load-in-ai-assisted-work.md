@@ -18,6 +18,8 @@ The paper also makes cognitive load observable in human-AI traces. Lepine et al.
 
 [[2026-mansuroglu-technostress-employee-well-being]] gives cognitive load a broader occupational-health frame. In its systematic review, techno-overload appeared in 122 studies, techno-complexity in 105, and emerging constructs such as digital fatigue, information anxiety, communication platform strain, and ICT hassles were associated with sleep problems, concentration loss, impaired cognitive skills, and reduced well-being. That expands the page beyond local model-interaction load: AI systems can create extraneous burden through the whole digital work environment, including platform proliferation, always-on communication, unreliable tools, and boundary invasion.
 
+[[2026-ruttenberg-neurodivergent-expertise-ai-work]] adds an individual-differences boundary condition. For autistic and neurodivergent knowledge workers, the same AI notification stream, context-switching demand, or passive offloading pattern may consume capacity sooner because sensory filtering, social inferencing, and executive-function demands are already part of the work ecology. The paper's reflective-scaffolding proposal is a useful design distinction for this page: reduce extraneous load through pacing control and sensory-aware interfaces, but do not remove the productive effort needed for comprehension, synthesis, and transfer.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because collaboration quality depends on whether model initiative reduces burden or creates coordination work the human must absorb.
 - Relates to [[automation-complacency]] because low effort and high load are different failure modes: some AI systems suppress scrutiny, while others overwhelm the user with extraneous coordination demands.
@@ -26,6 +28,7 @@ The paper also makes cognitive load observable in human-AI traces. Lepine et al.
 - Relates to [[work-redesign]] because task sequencing, escalation rules, and interface defaults can either suppress extraneous load or push it onto workers.
 - Relates to [[human-ai-task-allocation]] because workload and fatigue can change which actor should handle the next task instance.
 - Relates to [[digital-work-strain]] because cumulative digital demands can become cognitive fatigue, overload, recovery failure, and occupational-health risk.
+- Relates to [[inclusive-hr-systems]] because cognitive-load assumptions built into AI tools can encode neurotypical work rhythms and make some workers' sustainability costs invisible.
 
 ## Contradictions & open questions
 - [[2026-lepine-precision-proactivity]] is observational and domain-specific. Its framework is promising because it uses real transcripts from professionals, but its load measures are computational proxies that still need validation against established cognitive-load assessments.
@@ -34,3 +37,4 @@ The paper also makes cognitive load observable in human-AI traces. Lepine et al.
 - The framework depends on domain-specific task decompositions and knowledge graphs, so portability to software engineering, healthcare, HR, or strategy work remains an empirical problem rather than an assumption.
 - [[2026-zhang-fatigue-aware-learning-defer]] uses simulated fatigue curves and image-classification benchmarks, so the open measurement question is whether live workplace fatigue or cognitive-load signals can be measured validly enough to drive allocation without creating surveillance, fairness, or agency problems.
 - [[2026-mansuroglu-technostress-employee-well-being]] synthesizes recurring overload and fatigue patterns but does not validate AI-interaction-level cognitive-load measures; the bridge from technostress surveys to trace-based AI workflow diagnostics remains open.
+- [[2026-ruttenberg-neurodivergent-expertise-ai-work]] proposes neurotype-specific thresholds but does not yet validate them; the open measurement problem is how to detect harmful threshold crossing without turning accommodation-sensitive load signals into surveillance or deficit labeling.

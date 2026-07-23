@@ -16,6 +16,8 @@ AI-induced skill erosion is the slow loss of practiced judgment, craft, confiden
 
 [[2025-randazzo-cyborgs-centaurs-self-automators]] adds a workflow-mode precursor to skill erosion. Abdicated/Self-Automator consultants produced fast, polished work by handing over much of the problem-solving and evaluative work to GenAI, but they did not develop either task/domain expertise or GenAI-related expertise during the episode. The warning is not that delegation is always bad; it is that output quality can hide whether the human side of the workflow is still practicing the capabilities future oversight depends on.
 
+[[2026-ruttenberg-neurodivergent-expertise-ai-work]] extends the cognitive-debt mechanism into a threshold model. Skill erosion risk is not only a slow average decline in capability; it may remain invisible while outputs stay high, then surface when attentional erosion, effort displacement, and affective depletion cross a worker-specific capacity threshold. The individual-differences contribution is important: autistic and neurodivergent professionals may detect unsustainable AI offloading earlier because they already monitor sensory, attentional, and recovery constraints that neurotypical work systems often ignore.
+
 The paper's response frame is also useful. “Dignified Human-AI interaction” treats agency, expertise, and self-worth as design requirements, not soft afterthoughts. “Sociotechnical immunity” names the protective system: early-warning signals, containment actions, and recovery routines that help workers detect, interrupt, and recover from AI-induced erosion while still serving quality goals.
 
 ## Connections
@@ -26,6 +28,7 @@ The paper's response frame is also useful. “Dignified Human-AI interaction” 
 - Relates to [[critical-thinking]] because stewardship and verification are not just output-quality behaviors; they are also ways workers continue to exercise judgment.
 - Relates to [[human-ai-co-creation-modes]] because some co-creation modes preserve practice and skill-building while others let the human bypass both.
 - Relates to [[automation-complacency]] because cognitive debt may begin as reduced effort or ownership in the immediate task before it becomes measurable skill erosion.
+- Relates to [[digital-work-strain]] because capability loss can be entangled with overload, recovery failure, silent burnout, and productivity systems that keep outputs visible while cognitive sustainability declines.
 
 ## Contradictions & open questions
 - [[2026-ehsan-future-workers]] is strong qualitative longitudinal evidence from a high-stakes expert domain, but it does not estimate the causal rate of skill decay or show how broadly the mechanism generalizes across jobs.
@@ -34,3 +37,4 @@ The paper's response frame is also useful. “Dignified Human-AI interaction” 
 - [[2025-kosmyna-brain-chatgpt-cognitive-debt]] uses an educational writing task and a small fourth-session crossover sample, so its strongest contribution is mechanism generation rather than direct evidence about AI-mediated professional skill decay.
 - [[2026-shen-ai-impacts-skill-formation]] is causal but short-horizon and task-specific; it shows impaired skill formation after one AI-supported programming task, not yet durable workplace skill erosion over months or years.
 - [[2025-randazzo-cyborgs-centaurs-self-automators]] does not show long-term erosion; it shows that one mode of GenAI use can fail to build expertise during the task, which is a plausible but not sufficient precursor to erosion.
+- [[2026-ruttenberg-neurodivergent-expertise-ai-work]] is theoretical and adjacent-evidence-based; its threshold model is useful for measurement design, but it should not be treated as demonstrated AI-induced erosion among neurodivergent knowledge workers until the proposed longitudinal studies exist.

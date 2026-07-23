@@ -14,15 +14,20 @@ The paper's practical contribution is to move inclusion upstream into system des
 
 This topic should stay anchored in HR system architecture, not generic DEI discourse. The question is how personnel systems define work, gather evidence, make decisions, and monitor whether those decisions preserve or reduce inequity.
 
+[[2026-ruttenberg-neurodivergent-expertise-ai-work]] extends that upstream-design logic into AI-augmented knowledge work. If AI tools, productivity metrics, and workflow expectations are designed around neurotypical assumptions about sensory tolerance, context switching, pacing, and uninterrupted availability, then inclusion has already failed before any downstream accommodation process begins. The paper's stronger move is to treat autistic and neurodivergent professionals as design SMEs for cognitive sustainability: their earlier detection of cognitive debt is evidence about the work system, not simply an individual limitation to manage.
+
 ## Connections
 
 - Relates to [[job-analysis]] because job analysis is one of the main upstream mechanisms through which HR systems define what counts as relevant work and successful performance.
 - Relates to [[construct-validity]] because inclusion failures can be construct failures: the criterion domain may omit valid ways of performing the job or undervalue tasks disproportionately assigned to some groups.
 - Relates to [[algorithmic-assessment]] because algorithmic tools can reproduce exclusion even when audited if the target criterion or job definition is already narrow or biased.
 - Relates to [[evidence-based-management]] because claims about fair HR practices require evidence about both outcomes and the design process that produced the underlying criteria.
+- Relates to [[cognitive-load-in-ai-assisted-work]] because inclusive AI work design must ask whose cognitive load, pacing, sensory constraints, and recovery needs are built into the workflow assumptions.
+- Relates to [[digital-work-strain]] because exclusion can appear as hidden overload, recovery failure, or burnout while formal productivity metrics remain intact.
 
 ## Contradictions & open questions
 
 - A formally standardized HR system can still be exclusionary if the standard reflects majority-group norms. Standardization and inclusion are not the same thing.
 - [[2022-strah-diversity-issues-job-analysis]] offers practice recommendations for inclusive job analysis, but many have not yet been directly tested in job-analysis settings. The next evidence question is which interventions improve inclusion without creating new validity or implementation problems.
 - Inclusive HR systems may need to recognize subgroup differences in work experience without creating different standards by demographic group. The design problem is expanding the performance domain without essentializing workers.
+- [[2026-ruttenberg-neurodivergent-expertise-ai-work]] is conceptual and explicitly agenda-setting, so it should not be overread as validated subgroup evidence; its value is to make neurodivergent expertise a source of design hypotheses and participation requirements for AI-mediated work systems.
