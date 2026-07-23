@@ -37,6 +37,7 @@ The default execution model for this workflow is `gpt-5.6-terra` using the `open
 
 - If the current session already uses the configured ingest model, execute the workflow directly.
 - Otherwise hand off the complete ingest to one fresh Hermes worker launched from `/root/work/llm-research-wiki` with `hermes chat --provider openai-codex --model <configured-model> --skills research-wiki-ingest --source tool --quiet --query '<self-contained ingest request>'`. The request must include the exact Drive URL/file ID or selection rule, dry-run versus apply intent, and the source/topic commit-governance boundary.
+- If that worker stops for an approval and must be resumed, pass `--provider openai-codex --model <configured-model>` again alongside `--resume <session-id>`; do not assume resume preserves the explicit model override. Require the resumed worker to report its actual model before any side effect, and stop on a mismatch.
 - Do not recursively hand off once the worker is running on the configured ingest model.
 - The parent session must inspect the worker's actual output and verify Drive state, git state, lint, push, and any uncommitted topic proposal before reporting success. For attended runs, the parent presents the exact topic proposal and handles the owner's approval turn.
 - If the configured model cannot be started, report the blocker. Do not silently fall back to another model.
