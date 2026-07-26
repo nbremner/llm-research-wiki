@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-07-23
+updated: 2026-07-26
 ---
 
 # Overview
@@ -19,6 +19,7 @@ The central question:
 
 ## Topics
 
+- [[ai-workforce-transformation-implementation]] — an evidence-informed sequence for moving from a specific transformation purpose through work analysis, workflow experimentation, organizational learning, and selective scaling
 - [[ai-adoption]] — what binds AI adoption once tools are available (the "mapping problem")
 - [[behavioral-human-centered-ai]] — how AI implementation has to account for boundedly rational designers, adopters, and leaders rather than assuming technically better systems will be accepted
 - [[employee-change-support]] — when employees minimally comply with change versus actively champion it, and how appraisal, trust, and management support shape that difference
