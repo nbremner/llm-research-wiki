@@ -1,7 +1,7 @@
 ---
 title: AI workforce impact measurement
 status: active
-updated: 2026-07-03
+updated: 2026-07-28
 ---
 
 # AI workforce impact measurement
@@ -28,6 +28,8 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 
 [[2026-richmond-ai-jobs-transition-framework]] adds a policy-facing measurement framework that separates technical exposure from human necessity, demand elasticity, and observed ChatGPT usage. Its contribution is a composite transition map rather than a realized-outcomes estimate: the Drive version classifies 921 occupations into high automation risk, reorganizing, AI-growth, and less-immediate-change archetypes, but it explicitly treats those categories as near-term pressure signals rather than job-loss forecasts.
 
+[[2026-putka-indexing-ai-impact-onet]] offers a design-level alternative to one-number exposure measures: a proposed O*NET suite of 16 indices that separates AI capability from observed use, automation from augmentation, and knowledge, skill, task, contextual-performance, vacancy, and whole-occupation units. Its central measurement claim is that an occupational AI-impact score inherits its meaning from the performance domain, unit of analysis, aggregation rule, and AI operationalization behind it; a task-level score aggregated to an occupation is not interchangeable with a direct occupation-level judgment or a vacancy-based indicator.
+
 ## Connections
 - Connects to [[task-level-ai-adoption]] because observed use is one input to workforce impact measurement, especially when the data preserve task or work-activity grain rather than only tool-level adoption.
 - Connects to [[human-ai-task-taxonomy]] because measurement depends on correctly distinguishing user goals, AI actions, authority, scope, auditability, and output definition.
@@ -50,6 +52,7 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 - Social acceptability measures are not outcome evidence. [[2025-friis-performance-principle]] tells us where the public draws moral lines around AI automation, but the wiki still needs evidence linking those attitudes to customer behavior, firm adoption, labor demand, professional governance, and regulation.
 - [[2026-johnston-shift-agentic-ai-codex]] shows why richer process measures are necessary but also why they are not enough. Output tokens, concurrency, runtime, and skill use can show that work is being reorganized around agents; they still need links to quality, productivity, wages, hiring, learning, accountability, and worker experience before they become workforce-impact evidence.
 - [[2026-massenkoff-labor-market-impacts-ai]] improves exposure measurement by using observed usage and automation weighting, but it remains platform-bounded and early. A null unemployment result does not prove no displacement; it may mean the effect is small, delayed, absorbed through hiring changes, hidden in other AI tools, or occurring through job recomposition rather than unemployment.
+- [[2026-putka-indexing-ai-impact-onet]] proposes an unusually explicit validity program—multiple models and runs for reliability plus a nomological network for convergent and discriminant evidence—but that is still a proposal. The unresolved question is whether a transparent multi-index architecture predicts realized work change, or simply produces more differentiated theoretical exposure scores.
 
 - [[2026-hitzig-agentic-coding-expertise]] improves the process measurement of agentic coding, but its success labels remain transcript- and telemetry-based; workforce-impact claims still need downstream evidence about maintained artifacts, quality, productivity, wages, hiring, and skill development.
 

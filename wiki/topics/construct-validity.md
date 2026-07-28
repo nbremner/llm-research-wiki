@@ -1,7 +1,7 @@
 ---
 title: Construct validity
 status: active
-updated: 2026-06-22
+updated: 2026-07-28
 ---
 
 # Construct validity
@@ -32,6 +32,8 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 
 [[2025-teyssier-roberge-21st-century-skills-overlap]] turns the broader 21st-century-skills field into a direct construct-validity caution. Across 40 identified skills, 446 definitions, and 457 assessment measures, the authors find enough semantic and psychometric overlap to make label proliferation itself the measurement problem: different skill names can create an appearance of precision while the definitions and instruments are still tapping shared higher-order competencies.
 
+[[2026-putka-indexing-ai-impact-onet]] turns AI-impact measurement into an explicit construct-design problem. The proposed O*NET suite distinguishes AI capability from AI usage, automation from augmentation, and task, KSAO, contextual-performance, vacancy, and occupation targets; it recommends a nomological network in advance so convergence and discrimination patterns are evidence about the intended indices rather than post-hoc stories about correlated scores.
+
 ## Connections
 
 - Relates to [[employee-engagement]] as a cautionary case of loose construct boundaries.
@@ -60,3 +62,4 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - [[2015-neubert-assessment-21st-century-skills]] improves on generic 21st-century-skills rhetoric by narrowing the construct, but it raises the familiar simulation-validity question: when does performance in a controlled microworld become valid evidence about workplace problem solving rather than only evidence about the microworld?
 - [[2025-teyssier-roberge-21st-century-skills-overlap]] strengthens the jangle-fallacy concern but leaves the positive taxonomy problem unfinished: if many skills are overlapping manifestations of broader competencies, the field still needs evidence about where to draw the higher-order boundaries and which behavior-based assessments support selection, training, or workforce-planning inferences.
 - [[1997-goh-benchmarking-learning-capability]] shows the value and limit of bounding a broad organizational construct: the OLS may diagnose learning-enabling conditions, but the next validation question is whether those scores predict actual knowledge transfer, behavior change, and AI-related work redesign over time.
+- [[2026-putka-indexing-ai-impact-onet]] proposes reliability estimates across LLMs and repeated runs plus multitrait-multimethod-style validity tests, but reliability and expected correlation patterns would not establish that an index predicts real work redesign, labor demand, quality, learning, or worker experience. The index may be coherent without being decision-useful.

@@ -1,7 +1,7 @@
 ---
 title: Job analysis
 status: active
-updated: 2026-06-24
+updated: 2026-07-28
 ---
 
 # Job analysis
@@ -23,6 +23,8 @@ For AI workforce transformation, job analysis matters because claims about autom
 [[2015-neubert-assessment-21st-century-skills]] adds another boundary: job and work analysis can define current tasks and occupational requirements, but it may under-serve skills that matter precisely because work is becoming more nonroutine, dynamic, and collaborative. CPS and ColPS do not replace job analysis; they point to the kind of problem features, interaction demands, and adaptive knowledge use that job analysis has to represent before assessment can be job-relevant for changing work.
 
 [[2025-teyssier-roberge-21st-century-skills-overlap]] adds a warning for AI-era job analysis and skills taxonomies: evergreen skill labels are attractive when work is changing quickly, but broad labels such as adaptability, collaboration, critical thinking, and self-management can overlap semantically and psychometrically unless the analysis specifies the work behaviors, problem contexts, and assessment evidence that make each skill job-relevant.
+
+[[2026-putka-indexing-ai-impact-onet]] makes the job-analysis consequence concrete for AI-impact measurement. Its proposed O*NET index suite separates declarative knowledge, procedural knowledge and skill, task performance, contextual performance, and whole-job performance instead of treating a task list as the entire criterion domain; it also preserves a distinction between direct occupation-level judgments and occupation scores aggregated from lower-level elements.
 
 ## Connections
 
@@ -46,3 +48,4 @@ For AI workforce transformation, job analysis matters because claims about autom
 - [[2009-sanchez-levine-competency-modeling-job-analysis]] complicates the incumbent-data default: if future role enactment is the target, incumbents may not be the right primary source, but leader-defined strategic competencies still need work-analysis methods before they become assessment or selection criteria.
 - [[2015-neubert-assessment-21st-century-skills]] complicates the current-task default: CPS and ColPS are attractive because they model dynamic problem interaction, but workplace use still needs evidence that the simulated problem features match the focal job, role, or redesigned workflow.
 - [[2025-teyssier-roberge-21st-century-skills-overlap]] complicates the evergreen-skills impulse: future-oriented skill taxonomies can become more durable than current task lists, but only if job analysis keeps them tied to observable behavior and avoids treating overlapping labels as distinct job requirements.
+- [[2026-putka-indexing-ai-impact-onet]] argues that contextual performance is systematically missing from task-centric AI-impact measures, while also proposing LLM-generated contextual behaviors where O*NET has no occupation-specific list. That creates a new upstream question: can generated behaviors represent the social and organizational performance domain without importing model stereotypes or flattening local work context?
