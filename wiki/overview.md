@@ -9,7 +9,7 @@ The single living orientation page for this wiki. What it's about, what exists, 
 
 ## What this wiki is
 
-A queryable, cross-linked knowledge base at the intersection of **AI workforce transformation** and **industrial–organizational psychology**. It exists to feed the owner's writing and thinking and to support synthesis across sources — *not* as a public resource for others.
+A public research wiki: a queryable, cross-linked knowledge base at the intersection of **AI workforce transformation** and **industrial–organizational psychology**. It exists to feed the owner's writing and thinking and to support synthesis across sources, and is published openly for anyone who finds that synthesis useful.
 
 The product is **synthesis**: topic pages that connect and contradict sources in the owner's own framing. Sources are the evidence layer beneath them. See `schema.md` for conventions and the one hard rule (public-only sources).
 
