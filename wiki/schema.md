@@ -14,7 +14,7 @@ This is plain cross-linked markdown in git, visualized/edited in **Obsidian** (w
 wiki/
   overview.md        # short public-facing orientation page; links to the map pages
   topic-map.md       # every topic with a one-line summary (living index)
-  open-questions.md  # the questions the wiki is working to answer (living)
+  open-questions.md  # cross-topic research agenda; single-topic questions live on topic pages (living)
   research-gaps.md   # thin/missing areas of the evidence base (living)
   watchlist.md       # candidate topics accumulating evidence before promotion (living)
   schema.md          # this file

@@ -23,6 +23,6 @@ Two kinds of pages:
 ## Where to start
 
 - [[topic-map]] — every topic, one line each
-- [[open-questions]] — the questions the wiki is working to answer
+- [[open-questions]] — the cross-topic questions driving the research
 - [[research-gaps]] — where the evidence base is still thin
 - [[watchlist]] — candidate topics accumulating evidence before earning their own page

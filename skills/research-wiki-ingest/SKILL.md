@@ -279,7 +279,12 @@ feeds complete after the new topic is approved.
 
 Keep the map pages living, not static: as part of each synthesis, update `wiki/research-gaps.md`
 (thin/missing areas), `wiki/open-questions.md`, and `wiki/watchlist.md` so the map
-reflects the current corpus and the next ingest has accurate signals for where new topics are actually
+reflects the current corpus. `open-questions.md` has an altitude rule: it holds only
+**cross-topic, program-level questions** (each annotated with the topics it spans). A question scoped to
+a single topic belongs on that topic page under "Contradictions & open questions" — do not append it
+centrally. Add a central question only when synthesis reveals a genuine question spanning multiple
+topics; when a central question narrows into one construct and that construct is promoted to a topic,
+remove or merge the central entry rather than leaving it to accrete and the next ingest has accurate signals for where new topics are actually
 needed. When a new source directly supplies evidence for a listed research gap, treat that as a strong signal to propose promoting the thin area into a real topic page rather than merely appending to nearby broad topics; update the research-gap line to say it was promoted and what evidence gap remains. A decayed map (e.g. research gaps that no longer match the corpus) silently re-creates topic
 fixation, because the agent loses the map that tells it where coverage is missing.
 
