@@ -17,7 +17,7 @@ metadata:
 Answer questions against the markdown research wiki (`wiki/`, plain markdown in git), and stop useful
 synthesis from evaporating into chat — while preventing casual answers from bloating the wiki. There
 is no Notion: the wiki is topic and source pages read in full context (Karpathy regime), with
-`wiki/overview.md` as orientation and `wiki/schema.md` as the contract.
+`wiki/overview.md` (with its map pages `topic-map.md`, `open-questions.md`, `research-gaps.md`, `watchlist.md`) as orientation and `wiki/schema.md` as the contract.
 
 Default posture: **answer from existing wiki material first**, then decide whether the answer deserves
 durable capture. Topic synthesis becomes canonical only with owner approval (the one governance gate).
@@ -25,7 +25,7 @@ durable capture. Topic synthesis becomes canonical only with owner approval (the
 ## Locations
 
 - Repo (VPS): `/root/work/llm-research-wiki`; vault is `wiki/`.
-- `wiki/overview.md` — what topics exist, open questions, thin areas (read first for durable queries).
+- `wiki/overview.md` — orientation; `wiki/topic-map.md` (what topics exist), `wiki/open-questions.md`, `wiki/research-gaps.md`, `wiki/watchlist.md` (read the relevant ones first for durable queries).
 - `wiki/schema.md` — conventions + the one hard rule (public-only sources).
 - `wiki/topics/` — synthesis pages. `wiki/sources/` — per-source evidence records.
 
@@ -107,12 +107,12 @@ For casual answers, skip the structure and answer directly.
 - Public-only boundary stays active; if an answer leans on weak or non-public material, say so.
 - Query answers do not make topic synthesis canonical without owner approval.
 - Evidence gaps become source-discovery (ingest) tasks or open questions, not confident prose.
-- Keep `overview.md` lean — don't append every query to it.
+- Keep `overview.md` and its map pages lean — don't append every query to them.
 - If confidence is low, say so visibly.
 
 ## Verification checklist
 
-- [ ] `overview.md` + relevant topics read for durable queries.
+- [ ] `overview.md`/`topic-map.md` + relevant topics read for durable queries.
 - [ ] Wiki searched before external search.
 - [ ] Source-backed claims separated from agent synthesis.
 - [ ] Durability route explicit for substantive answers.

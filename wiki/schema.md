@@ -12,15 +12,20 @@ This is plain cross-linked markdown in git, visualized/edited in **Obsidian** (w
 
 ```
 wiki/
-  overview.md      # the single living orientation page
-  schema.md        # this file
-  topics/          # cross-linked synthesis — the compounding core
-  sources/         # one record per public source (paper, report, article)
+  overview.md        # short public-facing orientation page; links to the map pages
+  topic-map.md       # every topic with a one-line summary (living index)
+  open-questions.md  # the questions the wiki is working to answer (living)
+  research-gaps.md   # thin/missing areas of the evidence base (living)
+  watchlist.md       # candidate topics accumulating evidence before promotion (living)
+  schema.md          # this file
+  topics/            # cross-linked synthesis — the compounding core
+  sources/           # one record per public source (paper, report, article)
 ```
 
 - **topics/** is the product. Each topic page is synthesis *in the owner's own framing*, surfacing connections and contradictions across sources in prose.
 - **sources/** is the evidence layer beneath the syntheses: one file per source.
-- **overview.md** is the orientation layer: what topics exist, open questions, thin areas.
+- **overview.md** is the front door: a concise end-user description of the wiki, linking out to the map pages. Keep it short and stable; the map pages absorb the churn.
+- **The map pages** (`topic-map.md`, `open-questions.md`, `research-gaps.md`, `watchlist.md`) are the living orientation layer, maintained on every ingest: new topics land on the topic map, deferred candidates on the watchlist, and gaps/questions are updated so the map keeps matching the corpus.
 
 ## Linking
 
