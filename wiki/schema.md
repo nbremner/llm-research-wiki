@@ -81,6 +81,9 @@ retrieved: 2026-06-14
 - [Claim 1 — each should be defensible from the source.]
 - [Claim 2]
 
+## Evidence & limitations
+- [Design, data, sample; what to trust and caveats; note if working paper / not peer-reviewed.]
+
 ## Feeds
 - [[human-ai-collaboration]]
 - [[productivity-measurement]]

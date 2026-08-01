@@ -1,18 +1,16 @@
 ---
 title: AI adoption
 status: active
-updated: 2026-07-02
+updated: 2026-08-01
 ---
 
 # AI adoption
 
 The question this topic tracks: **what actually binds AI adoption inside organizations once the tools are available?** The early evidence points away from access and toward *discovery* — knowing where and how AI creates value in a specific production process. A second layer is [[ai-readiness]]: whether the organization has the strategic alignment, resources, knowledge, culture, and data conditions needed for the specific AI adoption purpose it is pursuing.
 
-## The mapping problem
+[[2026-kim-mapping-ai-into-production]] names the discovery constraint directly. In a preregistered field experiment across 515 startups that all received identical AI tools, credits, and training, the only firms that pulled ahead were those given case studies of how other firms had reorganized production around AI. That single informational nudge produced 44% more discovered use cases and, downstream, more completed tasks, more paying customers, and ~1.9× revenue. The authors frame the binding constraint as a **managerial/cognitive search problem** — discovering *where* to deploy AI — not access to the technology and not general managerial or technical skill.
 
-[[2026-kim-mapping-ai-into-production]] names this directly. In a preregistered field experiment across 515 startups that all received identical AI tools, credits, and training, the only firms that pulled ahead were those given case studies of how other firms had reorganized production around AI. That single informational nudge produced 44% more discovered use cases and, downstream, more completed tasks, more paying customers, and ~1.9× revenue. The authors frame the binding constraint as a **managerial/cognitive search problem** — discovering *where* to deploy AI — not access to the technology and not general managerial or technical skill.
-
-This reframes "adoption" away from a tooling/provisioning event and toward an ongoing organizational *search* over the production process. It connects adoption to [[work-redesign]] (the gains showed up as reorganized internal work) and to [[automation-and-substitution]] (output rose while labor demand held flat and capital demand fell).
+This reframes "adoption" away from a tooling/provisioning event and toward an ongoing organizational *search* over the production process — the **mapping problem**: locating where AI creates value in a specific firm's workflows. It connects adoption to [[work-redesign]] (the gains showed up as reorganized internal work) and to [[automation-and-substitution]] (output rose while labor demand held flat and capital demand fell).
 
 [[2026-ermakov-designing-post-role-enterprise]] pushes the adoption constraint from discovery into architecture. Where [[2026-kim-mapping-ai-into-production]] shows that firms need help discovering where AI creates value, Ermakov argues that discovery is still insufficient if work remains bundled into static job descriptions. The failure mode is "pilot purgatory": broad experimentation with AI tools but little durable operating-model change because workflows, accountability, skills intelligence, and governance remain organized around pre-agentic roles.
 
