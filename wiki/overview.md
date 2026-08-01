@@ -26,3 +26,7 @@ Two kinds of pages:
 - [[open-questions]] — the cross-topic questions driving the research
 - [[research-gaps]] — where the evidence base is still thin
 - [[watchlist]] — candidate topics accumulating evidence before earning their own page
+
+## A note on method
+
+Topic and source pages are drafted with the help of a large language model and reviewed before they become part of the wiki. Even so, summaries can contain errors or lose nuance. Treat this wiki as a map of the literature, not a substitute for it — verify claims against the original sources before citing them.
