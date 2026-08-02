@@ -1,6 +1,6 @@
 ---
 title: Candidate topics (watchlist)
-updated: 2026-08-01
+updated: 2026-08-02
 ---
 
 # Candidate topics (watchlist)
@@ -21,3 +21,4 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **ai-managerial-capabilities / AI exploitation management** — appears in [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] as sales managers' data-based human capital, social capital for knowledge-sharing culture, and transformative AI-positive mindset; promote if future sources show managerial capabilities as a recurring adoption/readiness mechanism beyond B2B sales.
 - **threshold-based-human-learning / convention learning** — appears in [[2026-guilbeault-simple-threshold]] as evidence that people may learn noisy social conventions through sparse, categorical threshold processes rather than LLM-like predictive optimization; promote if future sources connect threshold learning to workplace skill acquisition, AI training design, norm formation, or organizational change adoption.
 - **neurodivergent-ai-work-design / cognitive sustainability** — cognitive debt has been promoted into [[cognitive-debt]] through [[2026-ruttenberg-cognitive-debt-ai-research]] and [[2026-ruttenberg-neurodivergent-expertise-ai-work]], but a more specific neurodivergent AI work-design topic should wait for empirical or participatory-design sources testing AI workflows, learning transfer, sensory load, recovery, or burnout among neurodivergent workers.
+- **AI-mediated developer work and productivity** — appears in [[2026-edwards-developer-productivity]] as a qualitative account of coder-to-conductor role change, AI-enabled psychological safety, output-to-impact productivity reframing, and autonomy–competence tension; it connects to observed software-use concentration in [[2025-handa-economic-tasks-ai]], agentic coding in [[2026-hitzig-agentic-coding-expertise]], and short-horizon programming learning loss in [[2026-shen-ai-impacts-skill-formation]]. Defer rather than create a developer-specific topic until independent field or longitudinal evidence can distinguish durable work-design, career, measurement, and skill-maintenance mechanisms from this one senior-user narrative.

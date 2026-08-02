@@ -1,7 +1,7 @@
 ---
 title: AI-mediated work experience
 status: active
-updated: 2026-07-02
+updated: 2026-08-02
 ---
 
 # AI-mediated work experience
@@ -20,6 +20,8 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 [[2025-dellacqua-cybernetic-teammate]] adds causal short-run evidence that AI can change workers' emotional experience during knowledge work. In a P&G product-innovation experiment, AI-supported individuals and teams reported higher positive emotions and lower negative emotions after the task. The result matters because AI-mediated work may supply some social or motivational cues normally associated with teammates, but it should not be mistaken for durable relatedness, trust, or team climate.
 
 [[2026-ehsan-future-workers]] supplies the longitudinal worker-experience evidence this page was missing. In radiation oncology, AI-supported efficiency gains coexisted with “intuition rust,” reduced manual practice, and anxiety about becoming a bystander in one's own professional work. That makes competence and identity observable design outcomes, not downstream sentiment.
+
+[[2026-edwards-developer-productivity]] gives a senior-developer account of the same autonomy–competence tension. In interviews with 12 active AI users, developers described AI as a nonjudgmental mentor, rehearsal partner, and cognitive collaborator that could make learning and strategic work feel more autonomous; they also reported raised productivity baselines, uncertainty about authorship and professional value, and anxiety about losing foundational implementation skill. The useful work-experience claim is not that AI improves developer motivation generally, but that the same workflow can change autonomy, competence, identity, and performance pressure in opposing directions.
 
 [[2025-shao-future-work-ai-agents]] adds a preference-map for agency as a work-experience variable. Workers often wanted automation for low-value repetitive tasks, but many occupations preferred equal partnership or higher human involvement on the Human Agency Scale. That matters because AI-mediated work experience depends not only on whether a task is automated, but whether the worker sees the remaining human role as meaningful, controlled, and worth preserving.
 
@@ -52,6 +54,7 @@ AI-mediated work experience tracks how AI changes the felt and motivational stru
 - Relates to [[digital-work-strain]] because AI-mediated work experience includes stress, recovery, overload, boundary invasion, and occupational-health risk.
 
 ## Contradictions & open questions
+- [[2026-edwards-developer-productivity]] identifies AI-mediated psychological safety and strategic elevation in a small senior-developer sample, while its accounts of raised output expectations and lost foundational fluency point in the opposite direction. The study does not establish which workflow, management, or career designs turn that tension into durable autonomy and competence rather than pressure or erosion.
 - [[2026-reich-work-design-multidimensional-ai-threat]] is cross-sectional and self-reported. It is useful for construct mapping, but it cannot show whether autonomy and skill variety cause AI adoption or whether AI adopters perceive their jobs differently.
 - Deeper AI use is ambiguous. It may mean productive integration, work intensification, pressure to keep up, or loss of status depending on the threat dimension and job context.
 - The wiki now has stronger qualitative longitudinal evidence through [[2026-ehsan-future-workers]] and causal short-run evidence through [[2025-dellacqua-super-mario-ai]], but still needs workplace evidence on whether AI-mediated work improves or erodes autonomy, competence, relatedness, identity, workload, and learning over time.

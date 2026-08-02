@@ -1,7 +1,7 @@
 ---
 title: AI-induced skill erosion
 status: active
-updated: 2026-06-22
+updated: 2026-08-02
 ---
 
 # AI-induced skill erosion
@@ -13,6 +13,8 @@ AI-induced skill erosion is the slow loss of practiced judgment, craft, confiden
 [[2025-kosmyna-brain-chatgpt-cognitive-debt]] adds adjacent early evidence from educational writing rather than workplace expertise. In repeated essay-writing sessions, LLM users showed weaker EEG connectivity, more homogeneous language, lower ownership, and poorer recall of text they had just written than brain-only writers. That does not prove professional skill erosion, but it sharpens the possible accumulation mechanism: repeated offloading may reduce task engagement and memory before any durable capability loss is visible.
 
 [[2026-shen-ai-impacts-skill-formation]] supplies a more direct short-horizon causal test of skill formation. In a randomized programming task, AI assistance reduced post-task skill evaluation scores by 17% without significantly improving completion time; the largest gaps appeared in debugging, which is exactly the capability workers need if they are expected to supervise AI-written code. This does not show long-run erosion by itself, but it gives the topic a plausible immediate precursor: AI-mediated work can produce the artifact while weakening the learning episode that would otherwise maintain future oversight capacity.
+
+[[2026-edwards-developer-productivity]] gives a qualitatively distinct senior-practitioner account of that precursor. Some interviewed developers reported forgetting basic syntax and worried that AI's leverage could reduce the foundational practice needed to direct, evaluate, and recover from generated code; other accounts described AI as a learning partner that supported reflection and higher-level architectural thinking. The source therefore reinforces that offloading is not itself erosion: the risk depends on what practice disappears and whether the redesigned role retains active specification, verification, and learning.
 
 [[2025-randazzo-cyborgs-centaurs-self-automators]] adds a workflow-mode precursor to skill erosion. Abdicated/Self-Automator consultants produced fast, polished work by handing over much of the problem-solving and evaluative work to GenAI, but they did not develop either task/domain expertise or GenAI-related expertise during the episode. The warning is not that delegation is always bad; it is that output quality can hide whether the human side of the workflow is still practicing the capabilities future oversight depends on.
 
@@ -32,6 +34,7 @@ The paper's response frame is also useful. “Dignified Human-AI interaction” 
 - Relates to [[digital-work-strain]] because capability loss can be entangled with overload, recovery failure, silent burnout, and productivity systems that keep outputs visible while cognitive sustainability declines.
 
 ## Contradictions & open questions
+- [[2026-edwards-developer-productivity]] makes both sides visible in a small senior-developer sample: AI can support reflective learning and architectural thinking while reducing practice with foundational implementation. It cannot establish whether these reports become measurable long-run capability loss or whether specific workflows preserve both leverage and fluency.
 - [[2026-ehsan-future-workers]] is strong qualitative longitudinal evidence from a high-stakes expert domain, but it does not estimate the causal rate of skill decay or show how broadly the mechanism generalizes across jobs.
 - Skill erosion and productive offloading can look similar in the short run. The open measurement problem is how to distinguish healthy delegation from loss of capability before failure becomes visible.
 - The wiki needs evidence on which design interventions actually preserve expertise without imposing wasteful friction or romanticizing manual work that can safely be automated.

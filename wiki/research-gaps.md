@@ -1,6 +1,6 @@
 ---
 title: Research gaps
-updated: 2026-08-01
+updated: 2026-08-02
 ---
 
 # Research gaps
@@ -8,7 +8,7 @@ updated: 2026-08-01
 Where the evidence base is still thin or missing. Each entry names what exists so far and what kind of evidence is still needed.
 
 - **Equilibrium labor demand.** [[2025-marguerit-augmenting-automating-labor]] now gives the wiki outcome evidence on new work, employment, and wages by automation versus augmentation exposure, but the wiki is still thin on firm-level mechanisms showing how organizations translate exposure into hiring, role redesign, skill demand, and substitution decisions.
-- **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], and [[digital-work-strain]] now separates overload, boundary invasion, cognitive fatigue, stress, recovery failure, and occupational-health risk from broader felt job quality, but the wiki still needs longitudinal and field-intervention evidence on whether redesigned AI control rights, support routines, and digital-boundary practices actually improve autonomy, stress, identity, and learning.
+- **Worker experience & motivation under AI-mediated work** has been promoted into [[ai-mediated-work-experience]], and [[digital-work-strain]] now separates overload, boundary invasion, cognitive fatigue, stress, recovery failure, and occupational-health risk from broader felt job quality. [[2026-edwards-developer-productivity]] adds a senior-developer interview account of autonomy–competence tension and raised productivity expectations, but the wiki still needs longitudinal and field-intervention evidence on whether redesigned AI control rights, support routines, career paths, and digital-boundary practices actually improve autonomy, stress, identity, and learning.
 - **Foundational I-O constructs** remain mostly deferred to the triage-index shelf ("AI-relevant first, foundation later"), but [[competency-modeling]] and [[complex-collaborative-problem-solving]] have been promoted because they are directly adjacent to job analysis, skills architecture, AI-era work redesign, and the boundary between describing current work and assessing future-relevant capability.
 - **Human capital resource measurement** has been promoted into [[human-capital-resource-measurement]] through [[2023-zhang-human-capital-resources]], but the wiki still needs evidence on how organizations should measure human capability, AI capability, and combined workflow capability as domain coverage converges.
 - **AI-enabled skills inference and skills architecture** now has a first implementation case in [[2025-tona-deployment-ai-infer-employee-skills]], and [[2025-teyssier-roberge-21st-century-skills-overlap]] adds a construct-validity warning about building evergreen skill architectures from overlapping 21st-century-skills labels. The wiki still needs independent validation evidence on inferred skills, employee reactions, fairness, downstream reskilling and mobility outcomes, and whether these systems improve workforce planning beyond making skills data more visible.

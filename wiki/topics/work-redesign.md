@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-07-23
+updated: 2026-08-02
 ---
 
 # Work redesign
@@ -73,6 +73,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2026-hitzig-agentic-coding-expertise]] complements the Codex evidence by showing the internal work split in Claude Code sessions: humans typically decide what to do, while Claude decides how to execute it. The redesign implication is that agentic coding may weaken the boundary around who can produce technical artifacts, but it does not eliminate the need for domain expertise; work may shift toward problem framing, acceptance criteria, verification, and recovery when the agent runs into trouble.
 
+[[2026-edwards-developer-productivity]] adds an interview-based developer view of that reallocation. Senior engineers described moving from implementation toward architecture, planning, and system integrity as AI handled more low-level work, while redefining productivity around durable impact rather than code volume. The source sharpens a redesign requirement: if implementation is delegated, roles, career progression, and performance criteria need to recognize architectural judgment, metacognitive specification, verification, and long-run product quality rather than simply ratcheting up output expectations.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -93,7 +95,7 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - Connects to [[domain-expertise-in-agentic-work]] because redesign around agents changes which human capabilities matter: less direct execution in some cases, more problem framing, review, and contextual judgment.
 
 ## Contradictions & open questions
-
+- [[2026-edwards-developer-productivity]] supports a shift from implementation toward architectural work, but its senior-user interviews cannot show whether organizations actually redesign roles, promotion systems, performance measures, or staffing around that shift—or whether it is a durable benefit rather than a rationalization for higher output demands.
 - [[2026-ermakov-designing-post-role-enterprise]] is a conceptual framework, not empirical evidence. It should not be treated as proof that fluid skill clusters outperform role-based structures.
 - The source is strongly post-role; the wiki still needs counterevidence on where fixed roles, professional boundaries, or regulated accountability structures remain necessary.
 - [[2026-lee-making-invisible-visible]] complicates simple automation logic: workers were not opposed to AI taking work, but they cared which work. Some wanted AI to absorb tedious, repetitive, or lower-stakes work while preserving human control over expert, meaningful, accountable, or relationship-facing tasks.
