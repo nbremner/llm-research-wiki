@@ -10,6 +10,7 @@ Every topic in the wiki, one line each. Topics are synthesis pages: each one con
 - [[ai-workforce-transformation-implementation]] — an evidence-informed sequence for moving from a specific transformation purpose through work analysis, workflow experimentation, organizational learning, and selective scaling
 - [[ai-adoption]] — what binds AI adoption once tools are available (the "mapping problem")
 - [[behavioral-human-centered-ai]] — how AI implementation has to account for boundedly rational designers, adopters, and leaders rather than assuming technically better systems will be accepted
+- [[ai-mediated-knowledge-behavior]] — how AI changes workers' discretionary knowledge sharing and hiding through competing empowerment and threat appraisals
 - [[employee-change-support]] — when employees minimally comply with change versus actively champion it, and how appraisal, trust, and management support shape that difference
 - [[task-level-ai-adoption]] — where workers actually bring AI into tasks, before roles or organizations have necessarily redesigned around it
 - [[ai-readiness]] — whether organizational capabilities, data, culture, and strategic fit are ready for a specific AI adoption purpose

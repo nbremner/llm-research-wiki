@@ -31,3 +31,4 @@ file_hash: 2d94803190d550262c3e69a89104dad9d8dfa9555a19e365ce426398d8a156f6
 
 ## Feeds
 - [[behavioral-human-centered-ai]]
+- [[ai-mediated-knowledge-behavior]]
