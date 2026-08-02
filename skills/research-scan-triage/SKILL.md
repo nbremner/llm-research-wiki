@@ -1,7 +1,7 @@
 ---
 name: research-scan-triage
-description: "Use when triaging surfaced candidates from the daily research scan (the _triage store manifest) into dispositions — wiki-candidate, read-once, or discard — with hybrid autonomy: auto-queue clear wiki candidates into the Drive _inbox, auto-discard duplicates and off-mission noise, and surface the ambiguous middle plus a read-once digest to Nicholas."
-version: 1.0.1
+description: "Use when triaging surfaced candidates from the daily research scan into visible Drive state folders — wiki, read-once, or discarded — while preserving manifest/ledger audit state."
+version: 1.1.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -21,9 +21,9 @@ a **manifest** of surfaced records plus acquired artifacts to the Drive `_triage
 is the judgment half**: read the manifest, assign each record a disposition, let the deterministic
 applier (`scan_triage_apply.py`) do every mechanical action, and deliver the owner digest.
 
-Trust model: this skill routes *candidates*. Nothing becomes wiki canon here — wiki-bound PDFs go to
-the Drive `_inbox`, where `research-wiki-ingest` processes them **one at a time** with owner-approved
-synthesis, unchanged.
+Trust model: this skill routes *candidates*. Nothing becomes wiki canon here — wiki-bound artifacts go
+to Drive `_triage/wiki`, where `research-wiki-ingest` processes them **one at a time** with
+owner-approved synthesis.
 
 ## Locations
 
@@ -32,9 +32,11 @@ synthesis, unchanged.
 | Harness + applier | `/root/research-wiki-tools/research_scan.py`, `scan_triage_apply.py` |
 | Local run dirs (manifests) | `/root/research-wiki-runs/scan-*/manifest-*.json` |
 | Drive `_triage` store | folder `1tXLfXs2z8LkbAurlrw8G7IYfQu1mCXh8` (under `public-literature-wiki`) |
-| `_triage/files` (acquired artifacts) | `1_9TRp4H1Qqm0M4QI8hGiMkWNs9hc_GXg` |
+| `_triage/pending` (unresolved artifacts) | `1_9TRp4H1Qqm0M4QI8hGiMkWNs9hc_GXg` |
+| `_triage/wiki` (approved; awaiting ingest) | `1qVcWuLSudOtjN4J_r8ILEA8-zGJrE6o1` |
+| `_triage/read-once` (reviewed; not canonical) | `1RQdnNN1d_iWegTWSqr4jZ7lYV86vtL8o` |
+| `_triage/discarded` (reviewed; rejected) | `1fNRrNYxwxB87lQeXtfiZ7Fc6S5FMcwNx` |
 | `_triage/ledger` (seen-index, failures, search log) | `1Fw7J30oerCSCYSLcEB5k0mbbdfOGwyx1` |
-| Wiki `_inbox` (promotion target) | `1qVcWuLSudOtjN4J_r8ILEA8-zGJrE6o1` |
 | Rubric config (edit to retune the scan) | `/root/research-wiki-tools/scan_config.py` |
 
 ## The disposition rubric (owner-calibrated 2026-07-04, batch 1)
@@ -83,11 +85,11 @@ Auto-actions happen only on `clear`.
 
 | Judgment | Action (by the applier, not by you) |
 |---|---|
-| `wiki` + clear + artifact in `_triage/files` | auto-move → `_inbox` (cap: `MAX_AUTO_WIKI_PER_RUN` = 10/run; overflow surfaces) |
+| `wiki` + clear + artifact in `_triage/pending` | auto-move → `_triage/wiki` (cap: `MAX_AUTO_WIKI_PER_RUN` = 10/run; overflow surfaces) |
 | `wiki` + clear + no artifact | bounded rung-4 acquisition attempt (below); else "needs manual acquisition" in digest |
-| `read-once` + clear | digest summary only (1–2 sentences, yours) |
-| `discard` + clear | logged + counted in digest; file (if any) stays in `_triage/files` — never deleted |
-| anything `ambiguous` | surfaced as "needs your call" with your proposed disposition |
+| `read-once` + clear | move artifact → `_triage/read-once`; include a 1–2 sentence digest summary |
+| `discard` + clear | move artifact → `_triage/discarded`; log and count it in the digest |
+| anything `ambiguous` | keep in `_triage/pending` and surface as "needs your call"; a later clear judgment may resolve it |
 
 ## Rung-4 acquisition (bounded)
 
@@ -95,7 +97,7 @@ For at most `MAX_RUNG4_BROWSER_PER_RUN` (3) clear wiki-candidates with `acq_stat
 use the **browser** toolset to open the landing page and locate the real PDF link (SSRN "Download This
 Paper", journal OA button), then download it with `curl` in terminal to the manifest's run `files/` dir.
 Verify it is a real PDF (`file` says PDF, has text). If it works, put the local path in the entry's
-`acquired_path` — the applier uploads it to `_inbox`. If it fails, just record the disposition; the
+`acquired_path` — the applier uploads it to `_triage/wiki`. If it fails, just record the disposition; the
 applier lists it under "needs manual acquisition". Do not fight hard paywalls or CAPTCHAs; do not log in
 anywhere; never buy access.
 
@@ -142,13 +144,13 @@ wait/poll until it becomes `inactive (dead)` with `status=0/SUCCESS` or `failed`
 such as arXiv HTTP 429s can appear during discovery; judge success by final manifest write plus
 `Uploaded manifest + ledger + files to Drive _triage`.
 
-1. **Find the manifest**: newest local `manifest-*.json` with un-triaged records. The intended helper is
+1. **Find the manifest**: newest local `manifest-*.json` with unresolved records (`disposition: null` or legacy `disposition_confidence: ambiguous`). The intended helper is
    `uv run /root/research-wiki-tools/scan_triage_apply.py --latest --dispositions <valid-json-file>`, but
    if you only need discovery, it is safe to glob `/root/research-wiki-runs/*/manifest-*.json` and choose
-   the newest manifest where any record has `disposition: null`. Do not rely on `/dev/null` as the
+   the newest manifest where any record is null or ambiguous. Do not rely on `/dev/null` as the
    dispositions file unless the applier has been changed to tolerate empty JSON; older/current versions
    parse it and fail before printing the manifest.
-2. **Judge every record** with `disposition: null` against the rubric. Read title + abstract +
+2. **Judge every unresolved record** against the rubric. Read title + abstract +
    matched_topics; check the acquired artifact if the abstract is thin. One line of `reason` each,
    citing the rubric category. When a record has `artifact_drive_id` but little/no abstract, inspect the
    Drive artifact before judging: acquired "full-text" can be a Jina Markdown landing page, paywall, or
@@ -165,14 +167,15 @@ such as arXiv HTTP 429s can appear during discovery; judge success by final mani
 5. **Dry-run the applier**, review its plan, then run with `--execute`:
    `uv run /root/research-wiki-tools/scan_triage_apply.py --manifest <path> --dispositions <path> --execute`
 6. **Deliver only the digest** (the applier prints it) as your response — the cron job's delivery target
-   posts it to Discord. If execution logs print mechanical lines such as `moved -> _inbox:` before the
+   posts it to Discord. If execution logs print mechanical lines such as `moved -> _triage/wiki:` before the
    digest, omit those from the final response. Do not editorialize beyond the digest; append at most 2
    lines of run notes.
 
 ## Boundaries
 
 - **Never write wiki pages** — ingest skills own that, with owner-approved synthesis.
-- **Never delete Drive files**; discards keep their artifacts in `_triage/files`.
+- **Never delete Drive files**; clear dispositions move artifacts out of `_triage/pending` into the matching visible state folder.
+- When renaming a state folder in place, update only its name. Do not remove its current `_triage` parent without re-adding it; Drive can relocate an unparented folder to the shared-drive root. Verify `parents` after every folder update.
 - **Public-only sources** — the one hard rule (`wiki/schema.md`). Anything smelling non-public
   (confidential, internal-use, NDA) gets flagged in the digest, never queued.
 - Respect the caps; when a cap binds, surface rather than act.

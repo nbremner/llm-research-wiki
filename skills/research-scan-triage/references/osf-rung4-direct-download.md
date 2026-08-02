@@ -47,7 +47,7 @@ print((r.pages[0].extract_text() or '')[:300].replace('\n', ' '))
 PY
 ```
 
-If page count and text look real, include the local path as `acquired_path` in the dispositions JSON so the applier uploads it to the wiki inbox.
+If page count and text look real, include the local path as `acquired_path` in the dispositions JSON so the applier uploads it to `_triage/wiki`.
 
 ## Stop rule
 

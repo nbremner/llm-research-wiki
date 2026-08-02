@@ -22,8 +22,8 @@ python scripts/research-wiki-tools/graph_lint.py --fail-on High  # non-zero exit
 ## research_scan.py — deterministic scan harness
 
 Discovery (OpenAlex / arXiv / Crossref, seeded from `scan_config.py`) → dedup vs the coverage ledger →
-acquisition ladder (OA-resolve → direct PDF → Jina reader) → pre-rank → ranked manifest + acquired
-files to the Drive `_triage` store. No LLM anywhere in this path. Runs daily on the VPS via
+pre-rank → acquisition ladder for surfaced records only (OA-resolve → direct PDF → Jina reader) →
+ranked manifest + acquired files to Drive `_triage/pending`. No LLM anywhere in this path. Runs daily on the VPS via
 `research-scan.timer` (08:00 America/Los_Angeles, failure alert to #logs).
 
 ```bash
@@ -34,8 +34,9 @@ uv run scripts/research-wiki-tools/research_scan.py --drive                   # 
 ## scan_triage_apply.py — triage disposition applier
 
 Deterministic applier for the `research-scan-triage` skill's judgments: validates the dispositions
-JSON (fails loud on unknown/already-disposed ids), enforces caps, moves auto-queued artifacts
-`_triage/files` → `_inbox`, stamps the manifest (local + Drive), and renders the owner digest.
+JSON (fails loud on unknown/already-disposed ids, while allowing clear resolution of ambiguous calls),
+enforces caps, moves artifacts from `_triage/pending` into `wiki`, `read-once`, or `discarded`, stamps
+the manifest (local + Drive), and renders the owner digest.
 Dry-run by default; `--execute` performs the Drive changes.
 
 ```bash
@@ -49,8 +50,8 @@ weights, caps). Edit `scan_config.py` to retune the scan — no code change need
 
 ## Operating boundary
 
-`graph_lint.py` is read-only. `research_scan.py` writes only to the Drive `_triage` store and its
-ledger. `scan_triage_apply.py` moves files into the wiki `_inbox` only when executing clear
-dispositions, within caps, and never deletes. Writing the wiki itself (`sources/`, `topics/`,
+`graph_lint.py` is read-only. `research_scan.py` writes only to Drive `_triage/pending` and its
+ledger. `scan_triage_apply.py` moves files among visible `_triage` state folders only when executing
+clear dispositions, within caps, and never deletes. Writing the wiki itself (`sources/`, `topics/`,
 commits, Drive refiling) is done solely by the `research-wiki-ingest` skill, one source at a time,
 with topic synthesis owner-approved before commit.

@@ -16,4 +16,4 @@ A short Python probe can use `scan_common.build_drive_service(...)` plus `google
 - PDF: use PyMuPDF (`fitz`) to sample the first 1–3 pages.
 - Text/Markdown: decode UTF-8 and inspect the first ~1,500 characters.
 
-Do not turn this into an acquisition battle. The purpose is judgment quality: distinguish usable full text from bot-check artifacts before auto-queueing into the wiki inbox.
+Do not turn this into an acquisition battle. The purpose is judgment quality: distinguish usable full text from bot-check artifacts before auto-queueing into `_triage/wiki`.

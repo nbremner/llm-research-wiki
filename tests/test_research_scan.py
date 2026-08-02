@@ -137,6 +137,20 @@ def test_pick_latest_dated():
     assert c.pick_latest_dated(names, "failure_catalog") == "failure_catalog-20260705T150000Z.json"
     assert c.pick_latest_dated(["seen_index.json"], "seen_index") is None  # undated ignored
     assert c.pick_latest_dated([], "seen_index") is None
+    assert c.pick_latest_dated([], "failure_catalog") is None
+
+
+def test_acquisition_is_limited_to_surfaced_records():
+    records = [object() for _ in range(25)]
+    surfaced, to_acquire = rs.select_surfaced_and_acquired(
+        records, surface_limit=12, acquire_limit=25)
+    assert surfaced == records[:12]
+    assert to_acquire == records[:12]
+
+    surfaced, to_acquire = rs.select_surfaced_and_acquired(
+        records, surface_limit=12, acquire_limit=5)
+    assert surfaced == records[:12]
+    assert to_acquire == records[:5]
 
 
 def test_orchestrator_dedup_rank_manifest():

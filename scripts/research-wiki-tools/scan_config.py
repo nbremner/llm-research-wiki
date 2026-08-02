@@ -14,12 +14,13 @@ A future applied project = a new profile here, not a rebuild.
 from __future__ import annotations
 
 # --- Google Drive layout (folder IDs are pointers, not secrets) -------------
-# Triage store = the general inbox, upstream of and distinct from the wiki _inbox.
+# One stateful triage area. Folder location is the owner-facing workflow state.
 TRIAGE_FOLDER_ID = "1tXLfXs2z8LkbAurlrw8G7IYfQu1mCXh8"
-TRIAGE_FILES_FOLDER_ID = "1_9TRp4H1Qqm0M4QI8hGiMkWNs9hc_GXg"
+TRIAGE_PENDING_FOLDER_ID = "1_9TRp4H1Qqm0M4QI8hGiMkWNs9hc_GXg"
+TRIAGE_WIKI_FOLDER_ID = "1qVcWuLSudOtjN4J_r8ILEA8-zGJrE6o1"
+TRIAGE_READ_ONCE_FOLDER_ID = "1RQdnNN1d_iWegTWSqr4jZ7lYV86vtL8o"
+TRIAGE_DISCARDED_FOLDER_ID = "1fNRrNYxwxB87lQeXtfiZ7Fc6S5FMcwNx"
 TRIAGE_LEDGER_FOLDER_ID = "1Fw7J30oerCSCYSLcEB5k0mbbdfOGwyx1"
-# Promotion target: the wiki's existing PDF front door (unchanged).
-WIKI_INBOX_FOLDER_ID = "1qVcWuLSudOtjN4J_r8ILEA8-zGJrE6o1"
 
 # Drive OAuth token used by NJ's research tooling (authorized-user JSON).
 DEFAULT_TOKEN_PATH = "/root/.hermes/google_token.json"
@@ -175,11 +176,11 @@ RECENCY_HALFLIFE_DAYS = 365
 
 # --- Run caps (daily trickle: comprehensive in, small out) ------------------
 MAX_DISCOVERY_PER_QUERY = 40  # results pulled per seed query per source, pre-dedup
-MAX_ACQUIRE_PER_RUN = 25      # cap on full (rung 1-3) acquisitions per run
+MAX_ACQUIRE_PER_RUN = 25      # upper cap; acquisition is also bounded by surfaced count
 MAX_SURFACED_PER_RUN = 12     # top-N pre-ranked records handed to triage per day
 
 # Triage-stage caps (enforced by scan_triage_apply.py / the triage skill).
-MAX_AUTO_WIKI_PER_RUN = 10    # auto-moves _triage/files -> wiki _inbox per run; overflow surfaces
+MAX_AUTO_WIKI_PER_RUN = 10    # auto-moves _triage/pending -> _triage/wiki per run; overflow surfaces
 MAX_RUNG4_BROWSER_PER_RUN = 3 # bounded browser-acquisition attempts per triage run
 
 # --- Feeds for later phases (RSS/Atom, polled by feedparser) ----------------

@@ -29,9 +29,9 @@ llm-research-wiki/
 | Store | Role | Mirrors |
 | --- | --- | --- |
 | **GitHub origin/main** (`llm-research-wiki`) | canonical — machinery **and** content | LC local clone, NicholasJunior VPS clone — synced by git, never independent truths |
-| **Google Drive** (`public-literature-wiki` + `_inbox`) | the one external store: immutable raw-PDF capture | none — accessed live |
+| **Google Drive** (`public-literature-wiki` + `_triage`) | the one external store: visible staging state + immutable canonical artifacts | none — accessed live |
 
-Google Drive holds only raw public source PDFs and the `_inbox` staging subfolder. No agent
+Google Drive holds only raw public source artifacts and the `_triage` state folders. No agent
 instructions, private notes, or synthesis live there. Everything else is in git.
 
 ## Single-source-per-fact discipline
@@ -60,7 +60,7 @@ Trust model: source records are low-judgment and auto-committed; **topic synthes
 
 ## The loop — three operations
 
-1. **Ingest** — a public PDF from Drive `_inbox` → a `sources/` record (auto-commit) + integrated
+1. **Ingest** — a public artifact from Drive `_triage/wiki` → a `sources/` record (auto-commit) + integrated
    `topics/` synthesis (owner-approved) + refile the raw PDF into `public-literature-wiki`.
 2. **Query** — answer from `topics/` + `sources/`; file durable answers back into pages. Deeper
    cross-topic reviews (literature review, gap map, construct bridge, …) are on-demand synthesis here,
@@ -77,8 +77,9 @@ PDF-backlog triage workflow were retired 2026-07-04 (backlog cleared manually by
 are ingested one at a time).
 
 Upstream of ingest sits the **research-scan front end** (`docs/research-scrape-plan.md`): the
-deterministic harness `research_scan.py` (discovery → dedup → acquisition ladder → pre-rank) fills the
-Drive `_triage` store; `research-scan-triage` routes candidates; only wiki-candidates reach `_inbox`.
+deterministic harness `research_scan.py` (discovery → dedup → pre-rank → surface → acquisition) fills the
+Drive `_triage/pending` store; `research-scan-triage` routes candidates into visible state folders;
+only `_triage/wiki` is eligible for ingest.
 
 ## Deployment to NicholasJunior
 
@@ -99,7 +100,7 @@ failures to Discord #logs).
 | Job | Cadence | Writes | Cap |
 |---|---|---|---|
 | Research scan (deterministic harness, systemd timer) | Daily | Drive `_triage` only | ≤12 surfaced/run |
-| Scan triage (`research-scan-triage`, hermes cron) | Daily | `_triage` → `_inbox` moves + digest | ≤10 auto-moves/run; ambiguous → owner |
+| Scan triage (`research-scan-triage`, hermes cron) | Daily | `_triage/pending` → disposition folders + digest | ≤10 wiki auto-moves/run; ambiguous remains pending → owner |
 | Graph-lint report | Periodic | report only | n/a |
 | Ingest | On demand / small scheduled | sources/ (auto), topics/ (owner-approved) | low per-run cap |
 

@@ -13,9 +13,10 @@
 """
 research_scan.py -- the deterministic research-scan harness (Phase 1).
 
-Discovery (API/feed-first) -> dedup vs the coverage ledger -> acquisition ladder
-(OA-resolve -> direct PDF -> Jina reader) -> pre-rank -> write a ranked manifest +
-acquired files to the Drive _triage store, updating the ledger. No LLM: this is
+Discovery (API/feed-first) -> dedup vs the coverage ledger -> pre-rank -> surface
+the daily top-N -> acquisition ladder (OA-resolve -> direct PDF -> Jina reader)
+for those surfaced records -> write the ranked manifest + acquired files to the
+Drive _triage/pending store, updating the ledger. No LLM: this is
 the deterministic half. The judgment half (disposition {wiki|read-once|discard})
 is the separate research-scan-triage skill run by NicholasJunior.
 
@@ -178,6 +179,13 @@ DISCOVERY = {
     "arxiv": discover_arxiv,
     "crossref": discover_crossref,
 }
+
+
+def select_surfaced_and_acquired(records: list, surface_limit: int,
+                                  acquire_limit: int) -> tuple[list, list]:
+    """Keep every acquired artifact represented in the surfaced manifest."""
+    surfaced = records[:surface_limit]
+    return surfaced, surfaced[:acquire_limit]
 
 
 # ---------------------------------------------------------------------------
@@ -353,20 +361,20 @@ def main(argv: list[str]) -> int:
     records.sort(key=lambda r: r.rank_score, reverse=True)
     print(f"\nDiscovered {len(records)} new on-mission candidates.", flush=True)
 
-    # --- Acquisition (top-ranked, capped) -----------------------------------
-    to_acquire = records[: args.acquire]
+    # --- Acquisition (surfaced records only, capped) -------------------------
+    surfaced, to_acquire = select_surfaced_and_acquired(
+        records, surface_limit=args.surface, acquire_limit=args.acquire)
     if not args.no_acquire:
         for i, rec in enumerate(to_acquire, 1):
             try:
                 acquire(rec, ledger, files_dir=files_dir, drive=drive,
-                        files_folder=cfg.TRIAGE_FILES_FOLDER_ID if args.drive else None)
+                        files_folder=cfg.TRIAGE_PENDING_FOLDER_ID if args.drive else None)
             except Exception as e:  # noqa: BLE001
                 ledger.record_failure(rec.id, rec.url or rec.id, f"acquire:{type(e).__name__}")
                 rec.acq_state = "link-only"
             print(f"  [{i}/{len(to_acquire)}] {rec.acq_state:13s} {rec.title[:60]}", flush=True)
 
     # Every candidate we surface is marked seen so it never re-surfaces.
-    surfaced = records[: args.surface]
     for rec in surfaced:
         ledger.mark_seen(rec.id, {"title": rec.title, "source": rec.source,
                                   "acq_state": rec.acq_state, "rank": rec.rank_score})

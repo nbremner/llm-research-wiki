@@ -58,8 +58,10 @@ one), cite sources with `[[source-slug]]`, and **surface contradictions in prose
 diff before commit (synthesis becomes canonical). Add new topics to `overview.md`.
 
 ### Add a source (missing-source task)
-The query reveals a public source the wiki should hold. Route to `research-wiki-ingest` (drop the PDF
-in the Drive `_inbox`, or note the candidate with its public provenance). Don't fabricate a record.
+The query reveals a public source the wiki should hold. If the owner explicitly asks to ingest/add it,
+that intent is the `wiki` disposition: place the artifact in Drive `_triage/wiki` and route it to
+`research-wiki-ingest`. Otherwise surface it as a candidate with public provenance; do not leave an
+unmanifested artifact silently stranded in `_triage/pending`. Don't fabricate a record.
 
 ### Open question in overview
 The query clarifies a frontier/gap question but isn't yet answerable. Add a concise line to

@@ -16,7 +16,7 @@ Decided 2026-06-14 after a requirements review anchored on Karpathy's LLM-wiki p
 - **Synthesis is the product:** heavy cross-source synthesis in his own framings, especially for
   writing; what he reaches for is *synthesized topic views + connections/contradictions*.
 - **Flagged as over-engineered:** the 5-database Notion split and the governance stack.
-- **Capture:** PDFs into Google Drive `_inbox` (unchanged).
+- **Capture:** artifacts into Google Drive `_triage/pending`.
 - **DC/work handoff:** wants a synthesized brief; mechanism not yet established.
 
 **Verdict:** migrate the wiki from the Notion 5-database stack to plain cross-linked markdown in
@@ -42,7 +42,7 @@ wiki/
   sources/       # per-paper evidence records
 ```
 
-- Raw PDFs stay in Google Drive `_inbox` (immutable capture front door).
+- Pending artifacts enter Google Drive `_triage/pending`; ingested raw artifacts move from `_triage/wiki` to the canonical root.
 - **Obsidian** vault = the `wiki/` dir (or repo root); gives wikilinks/backlinks/graph/search/mobile.
 - **NJ maintains the repo** — it's already cloned at `/root/work/llm-research-wiki`, bind-mounted, and
   auto-synced on the VPS, so the maintenance loop already exists; the `wiki/` dir rides along.
@@ -53,7 +53,7 @@ wiki/
 
 - **Reviews database** → a review is on-demand synthesis across topic pages when a project needs one.
 - **Log database** → git history is the log.
-- **Inbox database** → capture is Drive `_inbox`; the agent writes pages directly.
+- **Inbox database** → capture and disposition are visible Drive `_triage` folders; the agent writes pages directly.
 - **Index / public front door** → not building for others.
 - **Research Map machinery** (8 lenses, frontier map, evidence map, deep-dive queue) → lean `overview.md`.
 - **Governance fields** (confidence/contested/boundary-flags, candidate-update bundles, layered role rules).
@@ -65,7 +65,7 @@ Contradictions are **surfaced in prose, never auto-resolved** (Karpathy: disagre
 
 ## Operations (the few that matter)
 
-- **Ingest:** Drive `_inbox` PDF → a `sources/` record → integrate its claims into the relevant
+- **Ingest:** Drive `_triage/wiki` artifact → a `sources/` record → integrate its claims into the relevant
   `topics/` pages (update, strengthen links, flag contradictions).
 - **Query:** answer from topic/source pages; file durable answers back as/into pages (don't let
   good synthesis evaporate into chat).

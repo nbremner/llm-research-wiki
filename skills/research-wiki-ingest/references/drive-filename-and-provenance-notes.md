@@ -1,6 +1,6 @@
 # Drive filename and provenance notes from manual PDF summary runs
 
-Use these notes when processing public research PDFs from the research-wiki Drive `_inbox`.
+Use these notes when processing public research PDFs from the research-wiki Drive `_triage/wiki` folder.
 
 ## Filename convention pitfall
 

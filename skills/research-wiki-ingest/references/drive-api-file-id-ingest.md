@@ -4,12 +4,12 @@ Use this when the user gives a Google Drive share URL or raw file ID for a PDF t
 
 ## Selection rule
 
-If the user provides a Drive URL like `https://drive.google.com/file/d/<file_id>/view?...`, extract `<file_id>` and fetch that exact file. Do not enumerate `_inbox` unless the file lookup fails or the user asked for a non-specific selection such as "latest".
+If the user provides a Drive URL like `https://drive.google.com/file/d/<file_id>/view?...`, extract `<file_id>` and fetch that exact file. Do not enumerate `_triage/wiki` unless the file lookup fails or the user asked for a non-specific selection such as "latest".
 
 Still verify:
 
 - `mimeType == application/pdf`
-- parent includes the `_inbox` folder before ingest/apply
+- parent includes the `_triage/wiki` folder before ingest/apply
 - file is public-research plausible
 - no duplicate in `wiki/sources/` by DOI/arXiv URL/hash/title/slug
 
@@ -57,7 +57,7 @@ updated = service.files().update(
     fileId=file_id,
     body={"name": canonical_pdf_name},
     addParents=PUBLIC_LITERATURE_WIKI_ROOT_ID,
-    removeParents=INBOX_ID,
+    removeParents=TRIAGE_WIKI_ID,
     fields="id,name,parents,mimeType,webViewLink,modifiedTime,size",
     supportsAllDrives=True,
 ).execute()
@@ -74,7 +74,7 @@ Report success only after verifying:
 - returned `id` equals original file ID
 - canonical filename is set
 - public root parent is present
-- `_inbox` parent is absent
+- `_triage/wiki` parent is absent
 - file is not trashed
 
 ## Governance reminder

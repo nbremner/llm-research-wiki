@@ -12,9 +12,9 @@ scan_triage_apply.py -- deterministic applier for research-scan triage dispositi
 
 The research-scan-triage skill (NicholasJunior) JUDGES each surfaced record and
 writes a dispositions JSON; this script does everything mechanical: validates the
-judgments, enforces caps, moves auto-queued artifacts from Drive _triage/files to
-the wiki _inbox, stamps dispositions into the manifest (local + Drive copy), and
-renders the owner digest. The LLM never touches Drive mechanics directly.
+judgments, enforces caps, moves artifacts among Drive _triage state folders,
+stamps dispositions into the manifest (local + Drive copy), and renders the owner
+digest. The LLM never touches Drive mechanics directly.
 
 Dispositions file schema (written by the triage skill):
   {
@@ -70,7 +70,8 @@ def apply_dispositions(manifest: dict[str, Any], dispositions: dict[str, Any],
     """
     manifest = json.loads(json.dumps(manifest))  # deep copy; never mutate caller's dict
     records = {r["id"]: r for r in manifest.get("records", [])}
-    pending = {rid for rid, r in records.items() if not r.get("disposition")}
+    pending = {rid for rid, r in records.items()
+               if not r.get("disposition") or r.get("disposition_confidence") == "ambiguous"}
 
     entries = {e["id"]: e for e in dispositions.get("entries", [])}
     unknown = sorted(set(entries) - set(records))
@@ -96,6 +97,8 @@ def apply_dispositions(manifest: dict[str, Any], dispositions: dict[str, Any],
         rec = records[rid]
         item = {"id": rid, "title": rec.get("title", ""), "url": rec.get("url"),
                 "acq_state": rec.get("acq_state"), "rank": rec.get("rank_score")}
+        if rec.get("artifact_drive_id"):
+            item["drive_file_id"] = rec["artifact_drive_id"]
         e = entries.get(rid)
         if e is None:
             plan["needs_call"].append({**item, "reason": "no judgment provided"})
@@ -104,28 +107,35 @@ def apply_dispositions(manifest: dict[str, Any], dispositions: dict[str, Any],
         disp = e["disposition"]
         conf = e.get("confidence", "ambiguous")
         reason = e.get("reason", "")
-        rec.update({"disposition": disp, "disposition_confidence": conf,
-                    "disposition_reason": reason, "triaged_by": judged_by,
-                    "triaged_at": c.utc_now_iso()})
         item["reason"] = reason
 
         if conf == "ambiguous":
             plan["needs_call"].append({**item, "proposed": disp})
-        elif disp == "discard":
+            continue
+
+        stamp = {"disposition": disp, "disposition_confidence": conf,
+                 "disposition_reason": reason, "triaged_by": judged_by,
+                 "triaged_at": c.utc_now_iso()}
+        if disp == "discard":
+            rec.update(stamp)
             plan["discard"].append(item)
         elif disp == "read-once":
+            rec.update(stamp)
             plan["read_once"].append({**item, "summary": e.get("summary")
                                       or (rec.get("abstract") or "")[:280]})
         elif e.get("acquired_path"):
+            rec.update(stamp)
             plan["uploads"].append({**item, "path": e["acquired_path"]})
         elif rec.get("artifact_drive_id"):
             if auto_wiki < max_auto_wiki:
                 auto_wiki += 1
-                plan["moves"].append({**item, "drive_file_id": rec["artifact_drive_id"]})
+                rec.update(stamp)
+                plan["moves"].append(item)
             else:
                 plan["needs_call"].append({**item, "proposed": "wiki",
-                                           "reason": f"over auto-move cap ({max_auto_wiki})"})
+                                           "reason": f"over auto-move cap ({max_auto_wiki}); remains pending"})
         else:
+            rec.update(stamp)
             plan["needs_acquisition"].append(item)
 
     return manifest, plan
@@ -142,7 +152,7 @@ def render_digest(manifest: dict[str, Any], plan: dict[str, list[dict[str, Any]]
     mode = "executed" if executed else "DRY RUN — no Drive changes made"
     lines = [
         f"**Research scan triage — {manifest.get('generated', '')[:10]}** ({mode})",
-        f"{n_records} surfaced · {len(plan['moves']) + len(plan['uploads'])} → wiki inbox · "
+        f"{n_records} surfaced · {len(plan['moves']) + len(plan['uploads'])} → triage/wiki · "
         f"{len(plan['needs_call'])} need your call · {len(plan['read_once'])} read-once · "
         f"{len(plan['discard'])} discarded",
     ]
@@ -155,7 +165,7 @@ def render_digest(manifest: dict[str, Any], plan: dict[str, list[dict[str, Any]]
     section("Needs your call", plan["needs_call"],
             lambda i: f"- {i['title'][:90]} — {i.get('proposed', '?')}: "
                       f"{i.get('reason', '')} — {i.get('url', '')}")
-    section("Queued to wiki inbox (auto)", plan["moves"] + plan["uploads"],
+    section("Queued to triage/wiki (auto)", plan["moves"] + plan["uploads"],
             lambda i: f"- {i['title'][:90]} — {i.get('reason', '')}")
     section("Wiki candidates — no OA copy, needs manual acquisition", plan["needs_acquisition"],
             lambda i: f"- {i['title'][:90]} — {i.get('url', '')}")
@@ -176,18 +186,29 @@ def execute_plan(manifest: dict[str, Any], plan: dict[str, list[dict[str, Any]]]
     service = c.build_drive_service(token_path)
     records = {r["id"]: r for r in manifest.get("records", [])}
     for mv in plan["moves"]:
-        c.drive_move(service, mv["drive_file_id"], cfg.WIKI_INBOX_FOLDER_ID,
-                     cfg.TRIAGE_FILES_FOLDER_ID)
+        c.drive_move(service, mv["drive_file_id"], cfg.TRIAGE_WIKI_FOLDER_ID,
+                     cfg.TRIAGE_PENDING_FOLDER_ID)
         records[mv["id"]]["executed_at"] = c.utc_now_iso()
-        print(f"moved -> _inbox: {mv['title'][:70]}", flush=True)
+        print(f"moved -> _triage/wiki: {mv['title'][:70]}", flush=True)
     for up in plan["uploads"]:
         data = Path(up["path"]).read_bytes()
         name = Path(up["path"]).name
-        fid = c.drive_upload_bytes(service, cfg.WIKI_INBOX_FOLDER_ID, name, data,
+        fid = c.drive_upload_bytes(service, cfg.TRIAGE_WIKI_FOLDER_ID, name, data,
                                    "application/pdf")
         records[up["id"]].update({"artifact_drive_id": fid, "acq_state": "full-pdf",
                                   "executed_at": c.utc_now_iso()})
-        print(f"uploaded -> _inbox: {name}", flush=True)
+        print(f"uploaded -> _triage/wiki: {name}", flush=True)
+    for bucket, folder_id, label in (
+        ("read_once", cfg.TRIAGE_READ_ONCE_FOLDER_ID, "read-once"),
+        ("discard", cfg.TRIAGE_DISCARDED_FOLDER_ID, "discarded"),
+    ):
+        for mv in plan[bucket]:
+            if not mv.get("drive_file_id"):
+                continue
+            c.drive_move(service, mv["drive_file_id"], folder_id,
+                         cfg.TRIAGE_PENDING_FOLDER_ID)
+            records[mv["id"]]["executed_at"] = c.utc_now_iso()
+            print(f"moved -> _triage/{label}: {mv['title'][:70]}", flush=True)
 
     text = json.dumps(manifest, indent=2, ensure_ascii=False)
     manifest_path.write_text(text, encoding="utf-8")
@@ -211,7 +232,8 @@ def find_latest_manifest(out_root: str) -> Path | None:
             m = json.loads(p.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
             continue
-        if any(not r.get("disposition") for r in m.get("records", [])):
+        if any(not r.get("disposition") or r.get("disposition_confidence") == "ambiguous"
+               for r in m.get("records", [])):
             return p
     return None
 
@@ -220,7 +242,7 @@ def main(argv: list[str]) -> int:
     p = argparse.ArgumentParser(description="Apply triage dispositions to a scan manifest")
     p.add_argument("--manifest", default=None, help="Path to a manifest JSON")
     p.add_argument("--latest", action="store_true",
-                   help=f"Use the newest un-triaged manifest under {cfg.DEFAULT_OUT_ROOT}")
+                   help=f"Use the newest unresolved manifest under {cfg.DEFAULT_OUT_ROOT}")
     p.add_argument("--dispositions", required=True)
     p.add_argument("--execute", action="store_true", help="Perform Drive moves/updates (default: dry run)")
     p.add_argument("--digest-out", default=None)

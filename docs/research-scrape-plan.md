@@ -31,7 +31,7 @@ on the wiki's own mission rather than the (now-wrapped-up) applied research ques
 
 The prior job mushed four jobs an LLM handles unevenly. We split them:
 
-- **Deterministic (Python, no LLM):** discovery via APIs/feeds, dedup, acquisition, pre-rank. These
+- **Deterministic (Python, no LLM):** discovery via APIs/feeds, dedup, pre-rank, surface, acquisition. These
   want durable state and reproducibility — not model judgment. An LLM asked to "remember what it
   searched" or "fetch a URL" is where the prior quality problems lived.
 - **Judgment (NicholasJunior / GPT-5.5):** relevance classification, disposition routing, synthesis —
@@ -51,16 +51,16 @@ DISCOVERY  (deterministic, API/feed-first — no LLM)
 DEDUP vs LEDGER ── seen? ──► drop (logged)
       │ new
       ▼
-ACQUISITION LADDER  → record {id, meta, acq_state, artifact_ptr?, provenance}   (rung 4 → failure-catalog)
-      │
-      ▼
 PRE-RANK  (deterministic): recency × source-authority × concept-match × citation-proximity
       │ top-N / day  ← the throttle: comprehensive capture in, daily trickle out
       ▼
+ACQUISITION LADDER  → surfaced record {id, meta, acq_state, artifact_ptr?, provenance}   (rung 4 → failure-catalog)
+      │
+      ▼
 TRIAGE  (NicholasJunior / GPT-5.5 — classify clean text vs the wiki rubric) ── hybrid autonomy:
-   ├─ wiki-candidate → promote file to wiki Drive _inbox → existing INGEST (owner-approval-gated)
-   ├─ read-once      → daily digest (summarized); record stays in the triage store
-   └─ discard        → logged in ledger (reversible)
+   ├─ wiki-candidate → move file to _triage/wiki → INGEST (owner-approval-gated)
+   ├─ read-once      → move file to _triage/read-once + summarize in digest
+   └─ discard        → move file to _triage/discarded + log in manifest (reversible)
 ```
 
 Everything above TRIAGE is deterministic Python; the parts GPT-5.5 is weak at run before it is ever
@@ -71,9 +71,9 @@ invoked.
 | Layer | Holds | Lives in |
 |---|---|---|
 | **Git repo** | harness scripts, the triage skill, the rubric + seed-query config, wiki content | git (origin ↔ LC ↔ NJ, already synced) |
-| **Triage store** (general inbox) | acquired **files** + **link/abstract records** + the manifest | Google Drive `_triage/` |
+| **Triage store** | visible state folders (`pending`, `wiki`, `read-once`, `discarded`) + manifests | Google Drive `_triage/` |
 | **Coverage ledger** | seen-index · search-log · failure-catalog | Google Drive (state-of-record, JSON) |
-| **Wiki `_inbox`** | wiki-bound PDFs only | Google Drive `_inbox` (unchanged) |
+| **Canonical raw store** | successfully ingested source artifacts | Google Drive `public-literature-wiki/` root |
 | **Discord** | the daily digest — a *view*, not the record | Discord via `hermes send` |
 
 Generated artifacts (candidate lists, the ledger, acquired PDFs) never enter git — they are corpus/state
@@ -115,17 +115,18 @@ wrapped-up applied "U4B/B2B-sales" research questions. The relevance rubric and 
 Dispositions (hybrid autonomy — auto-discard obvious noise, auto-queue obvious wiki-candidates into the
 approval gate, surface the ambiguous middle + read-once for the owner):
 
-- **wiki-candidate** ≈ primary research with real evidence on a wiki gap → Drive `_inbox` → existing
-  ingest (owner-approval-gated for synthesis; unchanged).
-- **read-once** ≈ on-topic but secondary/practitioner/context → daily digest, record kept, not ingested.
-- **discard** ≈ off-topic/noise → logged in the ledger (reversible), never silently dropped.
+- **wiki-candidate** ≈ primary research with real evidence on a wiki gap → Drive `_triage/wiki` →
+  ingest (owner-approval-gated for synthesis).
+- **read-once** ≈ on-topic but secondary/practitioner/context → `_triage/read-once` + daily digest,
+  record kept, not ingested.
+- **discard** ≈ off-topic/noise → `_triage/discarded` + manifest audit state (reversible), never silently dropped.
 
 ## Build phases
 
 - **Phase 0 — Grounding (LC).** Mine the 31 scans → failure-mode note + optional seed list; create Drive
   `_triage/`; finalize the JSON ledger format. No system yet.
 - **Phase 1 — Deterministic harness (LC; Python on the VM).** Discovery (API-first, seeded by wiki gaps +
-  citation-chase) → dedup vs fresh seen-index → acquisition ladder rungs 1–3 → pre-rank → write candidates
+  citation-chase) → dedup vs fresh seen-index → pre-rank → surface top-N → acquisition ladder rungs 1–3 → write candidates
   + acquired files to Drive `_triage/` + ledger. Set up the venv + free API keys. Guardrail tests.
 - **Phase 2 — Triage skill (NJ/GPT-5.5).** Build `research-scan-triage`; **retire
   `research-wiki-pdf-backlog-triage`** (no proliferation). Reads pre-ranked candidates, hybrid-routes,
