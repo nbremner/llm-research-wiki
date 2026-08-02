@@ -34,7 +34,6 @@ file_hash: 1bc4cd974e8c63c1ab9a69a543c86e7e4f640630db08612be6e66db8cad4ad06
 
 ## Feeds
 - [[cognitive-load-in-ai-assisted-work]]
-- [[ai-mediated-work-experience]]
 - [[automation-complacency]]
 - [[human-ai-collaboration]]
 - [[critical-thinking]]

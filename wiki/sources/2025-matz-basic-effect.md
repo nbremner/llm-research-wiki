@@ -33,4 +33,3 @@ file_hash: 1247f7f7e8c09de264f354c50e5ee73257a76146c8cf99b7086b67b3c14ada8f
 ## Feeds
 - [[agentic-delegation]]
 - [[ai-mediated-choice-and-identity]]
-- [[ai-mediated-work-experience]]

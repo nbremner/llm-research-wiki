@@ -30,6 +30,7 @@ file_hash: 2121eda8e4d10405bbd2948bdae7848831162559e3fe7304b8cd075b7c7a0f63
 - Public provenance is verified: the Drive PDF exactly matches the Frontiers public PDF by SHA-256 (2121eda8e4d10405bbd2948bdae7848831162559e3fe7304b8cd075b7c7a0f63).
 
 ## Feeds
+- [[ai-mediated-job-resources]]
 - [[human-ai-collaboration]]
 - [[digital-work-strain]]
 - [[responsible-ai-deployment]]
