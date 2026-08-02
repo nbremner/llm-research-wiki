@@ -39,7 +39,7 @@ Every topic in the wiki, one line each. Topics are synthesis pages: each one con
 - [[cognitive-surrender]] — when people adopt AI-generated answers as their own judgment with minimal scrutiny, bypassing intuition and deliberation
 - [[cognitive-load-in-ai-assisted-work]] — how AI assistance creates or reduces intrinsic and extraneous mental burden during real work
 - [[ai-mediated-work-experience]] — integrative parent domain for how AI changes resources, demands, agency, capability, identity, sociality, and felt job quality
-- [[ai-mediated-job-resources]] — mechanism-level child tracking when AI’s enacted cognitive, strategic, or psychosocial support reduces demands versus shifts them into verification, correction, and traceability work
+- [[ai-as-a-job-resource]] — when AI functions as a cognitive, strategic, or psychosocial job resource rather than shifting demands into verification, correction, and accountability work
 - [[digital-work-strain]] — how technology-mediated and AI-enabled work creates overload, boundary invasion, cognitive fatigue, stress, recovery failure, and occupational-health risk
 - [[ai-mediated-choice-and-identity]] — how AI recommendation or delegation changes preference distinctiveness, exploration, self-expression, and identity-relevant choice
 - [[ai-enabled-job-crafting]] — when workers use AI as a job resource to reshape tasks, effort, and work meaning from the bottom up

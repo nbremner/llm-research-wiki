@@ -12,7 +12,7 @@ The focal question is configurational: when AI enters a workflow, which parts of
 
 ## Analytic dimensions
 
-- **Resources and demands.** [[ai-mediated-job-resources]] asks when AI performs cognitive, strategic, or psychosocial resource functions; [[digital-work-strain]] and [[cognitive-load-in-ai-assisted-work]] track demand, recovery, and mental-burden channels.
+- **Resources and demands.** [[ai-as-a-job-resource]] asks when AI performs cognitive, strategic, or psychosocial resource functions; [[digital-work-strain]] and [[cognitive-load-in-ai-assisted-work]] track demand, recovery, and mental-burden channels.
 - **Agency, autonomy, and identity.** [[ai-mediated-choice-and-identity]] and [[ai-use-image-concerns]] examine whether AI preserves meaningful control, authorship, exploration, standing, and felt ownership.
 - **Learning and capability.** [[ai-mediated-learning]], [[ai-induced-skill-erosion]], and [[cognitive-debt]] separate immediate task support from durable competence, transfer, and expertise maintenance.
 - **Proactive adaptation.** [[ai-enabled-job-crafting]] tracks how workers use AI to reshape tasks, effort, and meaning before formal redesign catches up.

@@ -1,16 +1,16 @@
 ---
-title: AI-mediated job resources
+title: AI as a job resource
 status: stub
 updated: 2026-08-02
 ---
 
-# AI-mediated job resources
+# AI as a job resource
 
-AI-mediated job resources are the enacted functions through which AI can help workers pursue goals, reduce the costs of demands, or preserve capacity for learning and development. This is a mechanism-level child of the integrative [[ai-mediated-work-experience]] domain, not a synonym for positive experience or a bundle of worker outcomes. The construct is deliberately conditional: AI is not a resource merely because it is available or produces fluent output. Its resource value depends on the task, the human's role, and the oversight, correction, and traceability work required to make the output usable.
+AI can function as a job resource when its cognitive, structural, strategic, or psychosocial support helps workers pursue goals, reduce the costs of demands, or preserve capacity for learning and development. This is a mechanism-level child of the integrative [[ai-mediated-work-experience]] domain, not a synonym for positive experience or a bundle of worker outcomes. The construct is deliberately conditional: AI is not a resource merely because it is available or produces fluent output. Its resource value depends on the task, the human's role, and the oversight, correction, and traceability work required to make the output usable.
 
 [[2026-cogenli-generative-ai-conditional-job-resource]] offers a function-first JD-R typology from 15 de-identified Gemini interaction episodes in academic knowledge work. It identifies cognitive resources (clarification, explanation, and complexity reduction), structural/strategic resources (sequencing, roadmaps, prioritization, and work organization), and emotional/psychosocial resources (explicit efficacy-reinforcing and action-oriented cues). The important limit is that these are candidate resource functions, not measured worker outcomes.
 
-[[2026-vuong-genai-job-performance]] supplies a distinct, outcome-oriented complement. In a cross-sectional survey of 758 Vietnamese SME employees, GenAI usage was positively associated with job crafting, work engagement, and job performance, with job crafting and engagement partially mediating the performance relationship. Together, the two sources distinguish an AI's enacted support functions from the broader JD-R nomological network through which workers may convert use into motivation, proactive work reshaping, and performance.
+[[2026-vuong-genai-job-performance]] supplies a distinct, outcome-oriented complement. In a cross-sectional survey of 758 Vietnamese SME employees, GenAI usage was positively associated with job crafting, work engagement, and job performance, with job crafting and engagement partially mediating the performance relationship. Together, the two sources distinguish AI support functions from the broader JD-R nomological network through which workers may convert use into motivation, proactive work reshaping, and performance.
 
 The boundary condition is central rather than administrative. Çögenli finds that verification, correction, accountability, and data-integrity/traceability routines can shift demands onto the worker. A workflow can therefore look resource-enhancing at the point of answer generation while imposing more invisible work downstream. The design question is whether the full human–AI workflow yields net support after its verification and governance requirements are counted.
 
