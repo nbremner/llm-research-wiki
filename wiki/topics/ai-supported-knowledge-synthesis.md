@@ -1,7 +1,7 @@
 ---
 title: AI-supported knowledge synthesis
 status: active
-updated: 2026-07-01
+updated: 2026-08-02
 ---
 
 # AI-supported knowledge synthesis
@@ -16,6 +16,8 @@ The page should not collapse into “AI search” or “AI summarization.” Yun
 
 [[2026-ruttenberg-cognitive-debt-ai-research]] adds a cognitive-sustainability warning specific to research and knowledge production. AI can make synthesis faster by compressing reading, clustering, and drafting, but the same compression can create [[cognitive-debt]] if it reduces direct contact with sources, uncertainty, contradiction, and effortful sensemaking. The design implication is not anti-summarization; it is that synthesis systems should preserve inspectable evidence paths, deliberate friction around key claims, and reflective scaffolds that keep the worker actively engaged in interpretation.
 
+[[2026-nguyen-trung-methodologically-congruent-genai]] narrows that design problem in nonpositivist qualitative research. It argues that asking an LLM to reproduce coding procedures can be methodologically incongruent even when the resulting outputs look plausible: GenAI can retrieve, compare, summarize, and propose provisional patterns, but the researcher must retain the contextual, reflexive work of deciding what patterns mean and why they matter. Its proposed human-designed-and-managed loop makes synthesis a continuing dialogue with source data, research questions, and methodological commitments rather than a handoff followed by an after-the-fact check.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because synthesis quality depends on how humans control, inspect, share, and revise AI-mediated interpretations.
 - Relates to [[critical-thinking]] because synthesis shifts effort toward verification, source comparison, bias detection, and deciding when AI-generated structure is useful versus misleading.
@@ -27,3 +29,4 @@ The page should not collapse into “AI search” or “AI summarization.” Yun
 - [[2025-yun-generative-ai-knowledge-work]] is qualitative and prototype-centered; it shows design requirements and user reactions, not whether AI-supported synthesis improves decision quality, learning, or organizational outcomes over time.
 - There is a standing design tension between automation that reduces the cost of sensemaking and friction that preserves enough contact with raw evidence for competent judgment. [[2026-ruttenberg-cognitive-debt-ai-research]] makes that tension temporal: a system can improve immediate synthesis throughput while accumulating attention, transfer, or ownership costs that only show up later.
 - The topic needs evidence from domains beyond software product management, especially settings where knowledge synthesis is regulated, safety-critical, or tied to formal accountability.
+- [[2026-nguyen-trung-methodologically-congruent-genai]] supplies a normative framework for qualitative research rather than an outcome evaluation. The unresolved question is whether researcher-led dialogic workflows improve interpretive quality, transparency, and participant representation relative to automated coding or conventional qualitative analysis, and under what data-governance conditions.

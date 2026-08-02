@@ -1,7 +1,7 @@
 ---
 title: Critical thinking in AI-assisted work
 status: active
-updated: 2026-07-02
+updated: 2026-08-02
 ---
 
 # Critical thinking in AI-assisted work
@@ -32,6 +32,8 @@ The useful framing is not simply “AI reduces thinking.” The paper suggests t
 
 [[2026-shaw-thinking-fast-slow-artificial]] gives the wiki direct behavioral evidence for [[cognitive-surrender]]: people often consult an AI assistant on reasoning problems and then adopt its answer even when it is confidently wrong. In Study 1, AI access improved accuracy when the AI was accurate but pushed accuracy below the Brain-Only baseline when the AI was faulty, while also increasing confidence. That makes critical thinking partly a routing problem: does the person use AI as input to judgment, or does the AI output become the judgment?
 
+[[2026-nguyen-trung-methodologically-congruent-genai]] adds a methodological version of stewardship for qualitative research. It argues that checking an AI output after delegating interpretation is too weak a control: the researcher should define the analytic purpose and boundaries, interrogate candidate patterns, return to original data, and continuously revise prompts and workflow decisions. The contribution is not evidence that this loop works, but a sharper account of why verification must be embedded in the work process when the task requires contextual and reflexive meaning-making.
+
 This page differs from [[complex-collaborative-problem-solving]] in topic type. CPS and ColPS are transversal skills and assessment targets; this page tracks how GenAI changes the exercise of judgment inside work. Critical thinking may be one process inside complex problem solving, but the focal question here is not how to assess CPS/ColPS generally. It is how AI shifts critical thinking from generation to verification, from solving to stewardship, and from independent cognition to human-AI coordination.
 
 ## Connections
@@ -58,3 +60,4 @@ This page differs from [[complex-collaborative-problem-solving]] in topic type. 
 - [[2026-shen-ai-impacts-skill-formation]] implies that explanation and checking can preserve learning, but it also shows why current-artifact correctness is too narrow as a verification target; users can get a working answer while losing the comprehension needed for future critical thinking.
 - [[2025-randazzo-genai-power-persuader]] shows a different failure mode from complacency: professionals may scrutinize the output, but the conversational validation process itself can become persuasive. The unresolved question is which verification designs give users independent traction rather than simply more fluent model self-defense.
 - [[2026-shaw-thinking-fast-slow-artificial]] is strong causal evidence for surrender on CRT-style reasoning tasks, but it leaves open whether workplace experts surrender in the same way when tasks carry accountability, domain context, and opportunities for external verification.
+- [[2026-nguyen-trung-methodologically-congruent-genai]] specifies a researcher-led verification loop for nonpositivist qualitative analysis but does not test whether its dialogic prompts, source returns, or workflow adaptations improve interpretive quality or reduce error relative to coding automation.
