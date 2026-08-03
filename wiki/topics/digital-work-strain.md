@@ -1,7 +1,7 @@
 ---
 title: Digital work strain
 status: active
-updated: 2026-07-02
+updated: 2026-08-03
 ---
 
 # Digital work strain
@@ -13,6 +13,8 @@ Digital work strain tracks how technology-mediated work creates demands on atten
 The strongest recurring stressor signals are overload and invasion. Mansuroğlu and Smith report techno-overload in 122 studies and techno-invasion in 110 studies, with both repeatedly linked to emotional exhaustion, burnout, lower job satisfaction, impaired detachment, work-home conflict, and reduced psychological well-being. That matters for AI-era work because many AI deployments add more channels, faster expectations, always-on availability, and more monitoring or repair work before they become clean productivity infrastructure.
 
 The review also prevents a flat “technology causes stress” story. Some digital demands can become motivating when workers have competence, autonomy, support, or control, and support effects vary by stressor: empowering leadership can buffer techno-invasion while intensifying techno-overload. The design implication is differentiated diagnosis. Organizations need to know whether the problem is overload, invasion, complexity, insecurity, uncertainty, unreliable tools, communication pressure, or poor recovery boundaries before prescribing training, autonomy, platform simplification, leadership behavior, or mental-health support.
+
+[[2026-cogenli-generative-ai-conditional-job-resource]] sharpens the point at which an apparent AI resource can turn back into a demand. In a JD-R-guided analysis of 15 academic knowledge-work episodes, GenAI offered candidate cognitive, structural/strategic, and psychosocial resources, but its value depended on interaction sequence, oversight, and data-integrity routines. Where verification, correction, documentation, and traceability work became substantial, the tool shifted demands rather than simply reducing them. This does not establish strain outcomes, but it identifies a plausible work-design mechanism: AI assistance can lower first-order task effort while creating second-order accountability and repair load.
 
 [[2025-klonek-ai-work-stress]] adds direct AI-specific evidence. In ChatGPT teamwork tweets, higher AI control was associated with higher stress, while human–AI transition and action processes were associated with lower stress and some team-process resources buffered the AI-control/stress relationship. Together with Mansuroğlu and Smith, this suggests AI-era digital work strain should be treated as a work-system property: control rights, teamwork processes, digital demands, recovery boundaries, and support resources all matter.
 
@@ -28,10 +30,12 @@ The review also prevents a flat “technology causes stress” story. Some digit
 - Relates to [[ai-mediated-teamwork]] because team processes can buffer stress created by AI control and digital work demands.
 - Relates to [[inclusive-hr-systems]] because strain metrics and AI-workflow designs can miss subgroup-specific sustainability costs if they assume neurotypical interaction rhythms, sensory tolerances, and recovery needs.
 - Relates to [[cognitive-debt]] because some digital strain becomes visible only as delayed attention, transfer, recovery, or burnout costs after AI-supported output has looked efficient.
+- Relates to [[ai-as-a-job-resource]] because the same AI function can operate as support or as added verification, correction, traceability, and accountability demand depending on the surrounding workflow.
 
 ## Contradictions & open questions
 - [[2026-mansuroglu-technostress-employee-well-being]] synthesizes a large empirical corpus but not through meta-analysis, so it maps recurring patterns rather than estimating pooled effect sizes.
 - The evidence base is uneven: Mansuroğlu and Smith find heavy representation from Germany, Italy, India, the UK, and the United States, with education and healthcare dominant among single-sector studies, and only 18 longitudinal studies across the corpus.
 - Some technostressors may also operate as challenge demands or techno-eustress under high competence, autonomy, or support. The open question is when digital difficulty builds mastery versus when it becomes chronic strain.
+- [[2026-cogenli-generative-ai-conditional-job-resource]] identifies candidate resource-to-demand shifts but analyzes one author's selected interaction episodes and does not measure strain, health, or recovery. Whether second-order AI accountability load produces occupational strain remains an empirical question.
 - The wiki still needs AI-specific longitudinal and field-intervention evidence on whether redesigned AI control rights, digital-boundary practices, platform simplification, and support routines actually reduce stress without suppressing useful assistance.
 - [[2026-ruttenberg-cognitive-debt-ai-research]] and [[2026-ruttenberg-neurodivergent-expertise-ai-work]] directly name the missing empirical intersection: longitudinal work tracking AI use patterns, transfer, cognitive load, burnout, recovery, and neurodivergent expertise rather than treating individual differences as a post-hoc moderator.
