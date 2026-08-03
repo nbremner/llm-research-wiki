@@ -20,20 +20,28 @@ When changing any workflow file mirrored here, update this repo in the same work
 
 - `skills/research-wiki-ingest/`
 - `skills/research-scan-triage/`
+- `skills/research-wiki-graph-lint/`
+- `skills/research-wiki-query/`
 - local source copies under `/root/.hermes/skills/research/...`
 - local workflow tooling under `/root/research-wiki-tools/`
 - repo docs, config examples, tests, and guardrails
 
-After changing mirrored files: copy the updated version into this repo, run tests, commit, push, and verify `origin/main` matches local `HEAD`.
+After changing mirrored files: get the change into this repo, run tests, commit, push, and verify
+`origin/main` matches local `HEAD`. On the VPS, `/root/research-wiki-tools` and the skill mounts are
+symlinks/bind mounts into the repo clone — edits there already sit in the clone's working tree, so
+commit from the clone rather than copying; copy only for any genuinely separate local file.
 
-When renaming or retiring a mirrored skill, update `skills.allowlist`, this file, and
-NicholasJunior's live Hermes skill store in the same session so the mirror stays consistent.
+When renaming or retiring a mirrored skill, update `skills.allowlist`, this file,
+`OPERATING_MODEL.md`, NicholasJunior's live Hermes skill store, **and** the per-skill mount units +
+the gateway drop-in's required-mount list — rewrite that list *before* unmounting, or the running
+gateway stops (see `OPERATING_MODEL.md` § Deployment).
 
 ## Wiki frontmatter discipline
 
-`updated:` on wiki pages means last **synthesis** edit. Mechanical passes (style, link fixes,
-typo sweeps) must not bump it — the graph lint's evidence-staleness check depends on this.
-Full rule in `wiki/schema.md` § Formatting.
+`updated:` on wiki pages means last **synthesis** edit. Set it to the synthesis date whenever a
+page's claims, evidence, or connections change; mechanical passes (style, link fixes, typo sweeps)
+must not bump it — the graph lint's evidence-staleness check depends on this. Rule adopted
+2026-08-03, prospective. Full rule in `wiki/schema.md` § Formatting.
 
 ## Before committing
 

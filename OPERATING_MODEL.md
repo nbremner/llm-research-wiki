@@ -1,7 +1,7 @@
 # Operating Model — llm-research-wiki
 
 Status: canonical **architecture** for the research wiki. Read this to change the system.
-Last updated: 2026-06-14.
+Last updated: 2026-08-03.
 
 This is the architecture doc — the substrate, roles, the operating loop, deployment, and cron
 design. The **live contract** agents read at action time is `wiki/schema.md` (conventions, templates,
@@ -19,7 +19,8 @@ collapses the former two-plane build-time/run-time split — **Notion is retired
 llm-research-wiki/
   wiki/                  # the wiki itself (content + contract)
     schema.md            # the live contract — read first
-    overview.md          # orientation: topics, open questions, thin areas
+    overview.md          # public front door (short, stable)
+    topic-map.md  open-questions.md  research-gaps.md  watchlist.md   # orientation map pages
     topics/              # cross-linked synthesis (the compounding core)
     sources/             # one evidence record per public source
   skills/  scripts/  tests/  docs/   # the machinery
@@ -39,7 +40,9 @@ instructions, private notes, or synthesis live there. Everything else is in git.
 Each fact lives in exactly one place; the others **link**, never restate (this is what prevents drift).
 
 - Conventions, templates, the hard rule, the workflows → **`wiki/schema.md`** (canonical contract).
-- Orientation (what topics exist, open questions, thin areas) → **`wiki/overview.md`**.
+- Orientation → **`wiki/overview.md`** (front door) plus the map pages **`topic-map.md`** (what
+  topics exist), **`open-questions.md`**, **`research-gaps.md`**, **`watchlist.md`** — the map pages
+  absorb the churn; overview stays short and stable.
 - Synthesis → **`wiki/topics/`**; evidence → **`wiki/sources/`**.
 - Architecture, roles, cron, parsimony → **this doc**.
 - Skills / scripts / tests → **the repo** (NJ runs them from its synced clone).
@@ -101,8 +104,9 @@ failures to Discord #logs).
 |---|---|---|---|
 | Research scan (deterministic harness, systemd timer) | Daily | Drive `_triage` only | ≤12 surfaced/run |
 | Scan triage (`research-scan-triage`, hermes cron) | Daily | `_triage/pending` → disposition folders + digest | ≤10 wiki auto-moves/run; ambiguous remains pending → owner |
-| Semantic lint (`research-wiki-graph-lint`, hermes cron) | Monthly | report only (contradiction pairs + evidence-stale topics) | ≤15 pairs/run |
-| Graph-lint report (structural) | Periodic | report only | n/a |
+| Semantic lint (`research-wiki-graph-lint`, hermes cron) | Monthly | report only (contradiction pairs + evidence-stale + structural findings, one digest) | ≤15 pairs/run (35 on the one-time bootstrap sweep) |
+| Graph-lint report (structural, ad hoc — e.g. after an ingest) | As needed | report only | n/a |
+| RSS research digest (`rss_research_digest.py`, hermes cron, no-agent; VPS-local script, not in this repo) | Daily | report only | n/a |
 | Ingest | On demand / small scheduled | sources/ (auto), topics/ (owner-approved) | low per-run cap |
 
 (Scan-pipeline scheduling deployed 2026-07-04: `research-scan.timer` fires the harness daily at 08:00
@@ -110,8 +114,8 @@ America/Los_Angeles with an `OnFailure` alert to #logs; hermes cron job "Daily r
 runs the triage turn at 08:30 Pacific and delivers the digest to Discord #research-digest. The daily
 triage turn also carries the **rubric-friction loop** (2026-08-03): the applier's `--friction` report
 surfaces 14 days of ambiguous proposals, and NJ may append at most one rubric proposal per digest;
-ratification is owner→LC→git, prospective only. Monthly semantic lint runs the 1st at 09:00 Pacific,
-digest to #research-digest.)
+ratification is owner→LC→git, prospective only, with declined proposals logged in the triage skill so
+they don't re-trip. Monthly semantic lint runs the 1st at 09:00 Pacific, digest to #research-digest.)
 
 Expand autonomy only after manual runs produce clean artifacts. Topic synthesis stays approval-gated
 regardless of cadence.

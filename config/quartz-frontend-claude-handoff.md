@@ -13,6 +13,7 @@ The frontend must remain a replaceable presentation adapter. The canonical resea
 1. The product is a **public research wiki** hosted on GitHub Pages.
 2. The publication boundary is exactly:
    - `wiki/overview.md`, rendered as the site homepage;
+   - the map pages `wiki/topic-map.md`, `wiki/open-questions.md`, `wiki/research-gaps.md`, `wiki/watchlist.md` (split out of `overview.md` on 2026-08-01; the homepage links them);
    - `wiki/topics/*.md`;
    - `wiki/sources/*.md`.
 3. Do not publish `wiki/schema.md`, workflow docs, skills, scripts, tests, config, runtime state, raw PDFs, or other repository files.
@@ -42,7 +43,7 @@ The frontend must remain a replaceable presentation adapter. The canonical resea
   ```
 
 - Topic and source links use Obsidian shortest-path wikilinks such as `[[construct-validity]]` and `[[2026-putka-indexing-ai-impact-onet]]`.
-- `wiki/overview.md` currently says the wiki is “not a public resource for others.” That statement conflicts with the confirmed product decision and must be revised in the canonical source repository before launch.
+- `wiki/overview.md` was revised pre-launch (commit `e088c4a`, 2026-07-29) to describe the wiki plainly as public; no conflicting statement remains.
 
 ## Target architecture
 
@@ -152,9 +153,9 @@ This task is performed in `nbremner/llm-research-wiki`, not the frontend reposit
 
 ### Requirements
 
-1. Revise the sentence saying the wiki is “not a public resource for others.”
+1. ~~Revise the sentence saying the wiki is “not a public resource for others.”~~ Done (commit `e088c4a`, 2026-07-29).
 2. Describe it plainly as a public research wiki at the intersection of AI workforce transformation and I-O psychology.
-3. Preserve the central question, topic map, open questions, thin areas, watchlist, and synthesis/evidence distinction.
+3. Preserve the central question and the synthesis/evidence distinction; the topic map, open questions, thin areas (research gaps), and watchlist now live on their own published map pages.
 4. Do not rewrite the page into marketing copy.
 5. Do not alter `wiki/schema.md` or the topic/source schema solely for Quartz.
 
@@ -209,6 +210,7 @@ The adapter must:
 1. Delete and recreate the destination directory on each run.
 2. Copy only:
    - `<source>/overview.md` to `<dest>/index.md`;
+   - `<source>/topic-map.md`, `<source>/open-questions.md`, `<source>/research-gaps.md`, `<source>/watchlist.md` to `<dest>/`;
    - `<source>/topics/*.md` to `<dest>/topics/*.md`;
    - `<source>/sources/*.md` to `<dest>/sources/*.md`.
 3. Ignore all other files and directories, even if later added under `wiki/`.

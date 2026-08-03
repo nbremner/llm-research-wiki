@@ -22,9 +22,11 @@ python scripts/research-wiki-tools/graph_lint.py --pairs         # contradiction
 
 `--pairs` selects candidate topic pairs for the monthly semantic contradiction lint: ≥2 shared cited
 sources or a direct topic↔topic link, change-gated to recently edited pairs (`--window-days`, 35),
-ranked by shared-source count, capped (`--max-pairs`, 15) with rotating tail slots for cold pairs.
-`--bootstrap` skips the gate for the first full sweep. The LLM skill judges the shortlist; selection
-is deterministic. `--wiki-dir` defaults to the repo's `wiki/`. See `skills/research-wiki-graph-lint/`.
+ranked by shared-source count, capped (`--max-pairs`, 15) with month-keyed rotating tail slots for
+cold pairs (each calendar month advances the tail by `--tail-slots`). `--bootstrap` skips the gate
+for the first full sweep. The LLM skill judges the shortlist; selection is deterministic. Runs
+monthly on the VPS via hermes cron (1st, 09:00 America/Los_Angeles → #research-digest).
+`--wiki-dir` defaults to the repo's `wiki/`. See `skills/research-wiki-graph-lint/`.
 
 ## research_scan.py — deterministic scan harness
 
@@ -45,9 +47,9 @@ JSON (fails loud on unknown/already-disposed ids, while allowing clear resolutio
 enforces caps, moves artifacts from `_triage/pending` into `wiki`, `read-once`, or `discarded`, stamps
 the manifest (local + Drive), and renders the owner digest.
 Dry-run by default; `--execute` performs the Drive changes. `--friction` appends the rubric-friction
-report — ambiguous proposals recorded in local manifests over the last 14 days (`--friction-days`) —
-which the triage skill reads to decide whether to propose a rubric amendment (≤1 per digest;
-ratification is owner-side, via git).
+report — every ambiguous proposal dated within the last 14 days (`--friction-days`), across all
+local manifests regardless of manifest age — which the triage skill reads to decide whether to
+propose a rubric amendment (≤1 per digest; ratification is owner-side, via git).
 
 ```bash
 uv run scripts/research-wiki-tools/scan_triage_apply.py --latest --dispositions d.json            # dry run

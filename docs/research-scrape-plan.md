@@ -4,8 +4,8 @@ Status: **deployed 2026-07-04** — Phases 0–3 live (harness on `research-scan
 via hermes cron 08:30 PT → Discord #research-digest); Phase 4 calibration ongoing. Created 2026-07-03.
 Read `OPERATING_MODEL.md` first for the operating context, and `docs/wiki-redesign-plan.md` for the
 wiki this feeds. This plan builds the *front end* that fills the pipeline; the synthesis engine
-(`skills/research-wiki-ingest`, `research-wiki-batch-ingest`, the `sources/`→`topics/` split) is
-unchanged.
+(`skills/research-wiki-ingest`, the `sources/`→`topics/` split) is unchanged.
+(`research-wiki-batch-ingest`, named in the original text here, was retired 2026-07-04.)
 
 ## Why (decision record)
 

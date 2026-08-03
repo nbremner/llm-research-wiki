@@ -7,7 +7,8 @@ scan looks for and how it ranks -- no code change needed. See
 docs/research-scrape-plan.md for the architecture.
 
 Anchored on the wiki's mission (AI workforce transformation x I-O psychology, per
-wiki/overview.md), NOT the wrapped-up applied "U4B / B2B-sales" research questions.
+wiki/overview.md; the live topic list is wiki/topic-map.md), NOT the wrapped-up
+applied "U4B / B2B-sales" research questions.
 A future applied project = a new profile here, not a rebuild.
 """
 
@@ -73,7 +74,7 @@ HOST_SOURCE_TYPE = {
 }
 
 # --- Wiki concept vocabulary (topic slug -> keywords) -----------------------
-# Drives concept-match scoring. Derived from wiki/overview.md topics. Keep roughly
+# Drives concept-match scoring. Derived from wiki/topic-map.md topics. Keep roughly
 # in sync as topics are added; extra or stale keys are harmless.
 WIKI_CONCEPTS = {
     "automation-and-substitution": ["automation", "substitution", "displacement", "augmentation", "labor demand", "task exposure"],
