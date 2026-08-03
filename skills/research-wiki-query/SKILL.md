@@ -1,13 +1,13 @@
 ---
 name: research-wiki-query
-description: Use when answering a question against the markdown research wiki, and deciding whether the answer should become durable synthesis — an updated topic page, a new source, an open question in overview.md, an on-demand cross-topic review, or no logged artifact at all.
-version: 2.0.0
+description: Use when answering a question against the markdown research wiki, and deciding whether the answer should become durable synthesis — an updated topic page, a new source, an open question on the map pages, an on-demand cross-topic review, or no logged artifact at all.
+version: 2.1.0
 author: Hermes Agent
 license: MIT
 metadata:
   hermes:
     tags: [research-wiki, query, durable-synthesis, markdown, knowledge-graph]
-    related_skills: [research-wiki-ingest, research-wiki-graph-lint]
+    related_skills: [research-wiki-ingest, research-wiki-graph-lint, research-scan-triage]
 ---
 
 # Research Wiki Query Workflow
@@ -54,8 +54,9 @@ only; commit nothing.
 
 ### Update / add a topic page
 The answer is durable synthesis that belongs in a topic. Edit the relevant `topics/*.md` (or create
-one), cite sources with `[[source-slug]]`, and **surface contradictions in prose**. Owner approves the
-diff before commit (synthesis becomes canonical). Add new topics to `overview.md`.
+one), cite sources with `[[source-slug]]`, set the topic's `updated:` to the synthesis date, and
+**surface contradictions in prose**. Owner approves the diff before commit (synthesis becomes
+canonical). Add new topics to `wiki/topic-map.md` (keep `overview.md` stable and public-facing).
 
 ### Add a source (missing-source task)
 The query reveals a public source the wiki should hold. If the owner explicitly asks to ingest/add it,
@@ -63,9 +64,11 @@ that intent is the `wiki` disposition: place the artifact in Drive `_triage/wiki
 `research-wiki-ingest`. Otherwise surface it as a candidate with public provenance; do not leave an
 unmanifested artifact silently stranded in `_triage/pending`. Don't fabricate a record.
 
-### Open question in overview
-The query clarifies a frontier/gap question but isn't yet answerable. Add a concise line to
-`overview.md`'s open-questions or thin-areas section. Keep it short.
+### Open question on the map pages
+The query clarifies a frontier/gap question but isn't yet answerable. A **cross-topic, program-level**
+question goes as a concise line in `wiki/open-questions.md` (annotated with the topics it spans); a
+question scoped to one topic belongs on that topic page under "Contradictions & open questions"; a
+thin/missing evidence area goes in `wiki/research-gaps.md`. Never append these to `overview.md`.
 
 ### On-demand review (deeper cross-topic synthesis)
 When a project needs a deeper pass across several topics/sources, produce a structured review. This

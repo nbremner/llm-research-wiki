@@ -1,7 +1,7 @@
 ---
 name: research-wiki-graph-lint
-description: Use when auditing the markdown research wiki for graph coherence — broken wikilinks, orphan pages, claims without a source, sources that feed no topic, provenance gaps, and stale topics — or when running the monthly semantic lint (contradiction check over the --pairs shortlist + evidence-staleness review). Read-only by default.
-version: 2.1.0
+description: Use when auditing the markdown research wiki for graph coherence — broken wikilinks, orphan pages, claims without a source, sources that feed no topic, provenance gaps, and stale topics — or when running the monthly semantic lint (contradiction check over the --pairs shortlist + evidence-staleness review). Report-only; fixes route through the normal write paths.
+version: 2.2.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -59,9 +59,9 @@ monthly. The script selects *what to read*; you judge *whether it contradicts*.
 
 1. Get the shortlist: `python scripts/research-wiki-tools/graph_lint.py --pairs` (first ever run:
    `--pairs --bootstrap --max-pairs 35`). Pairs share ≥2 cited sources or link directly; normal runs
-   are change-gated to recently edited pairs, ranked by shared-source count, plus a rotating tail of
-   cold pairs. The JSON reports `eligible_total` vs `selected` — quote both in your report so coverage
-   limits are never silent.
+   are change-gated to recently edited pairs, ranked by shared-source count, plus a month-keyed
+   rotating tail of cold pairs. The JSON reports `eligible_total` vs `selected` (normal runs also
+   carry `gated_total`) — quote the counts in your report so coverage limits are never silent.
 2. For each pair, read both topic pages in full. Flag only **wiki-voice contradictions**: topic A
    asserting as settled what topic B contradicts, one page citing a finding the other treats as
    refuted, or the same shared source summarized with incompatible claims. **Documented disagreement
@@ -80,14 +80,19 @@ monthly. The script selects *what to read*; you judge *whether it contradicts*.
 - Before relying on the wiki for a synthesis or query run.
 - Monthly semantic lint (cron): the contradiction-pair procedure above.
 
-## How to act on findings
+## How findings get fixed (not by this skill)
 
-- **Fix structural issues directly** (broken link → fix the slug; orphan → link it or remove it;
-  source feeds no topic → integrate it via `research-wiki-ingest` step 9).
+The lint run itself is **report-only** — it never edits the wiki (this matches the lint row in
+`OPERATING_MODEL.md`). Fixes are separate actions under the normal write rules: mechanical repairs
+(a broken slug, a missing link) go through whoever owns the affected page class and must not bump
+`updated:` (schema.md); anything touching topic claims goes through owner-approved synthesis.
+
+- **Structural issues** (broken link, orphan, source feeds no topic) → name the concrete fix in the
+  report; an unused source is integrated via `research-wiki-ingest` step 9.
 - **Provenance gaps** (missing url/doi) → find the canonical public landing page, or flag the source
   for review; do not invent a citation.
-- **Topic cites no source** → either add the evidence link or mark the page `status: stub` until it
-  has one. Don't let agent synthesis stand as canon with no source under it.
+- **Topic cites no source** → propose adding the evidence link or marking the page `status: stub`
+  until it has one. Don't let agent synthesis stand as canon with no source under it.
 - **Stale topics** → revisit when newer sources exist; staleness is a watchlist signal, not an error.
 
 Canonical edits (topic synthesis) still follow the governance rule: owner approves before synthesis
@@ -97,5 +102,5 @@ becomes canonical. Lint proposes; it does not rewrite topics on its own.
 
 - [ ] Lint run against the current `wiki/` (note pages checked).
 - [ ] Findings grouped by severity.
-- [ ] Broken links and provenance gaps triaged (fix / flag).
-- [ ] Any fixes committed; lint re-run clean (or remaining findings explained).
+- [ ] Each finding carries a proposed route (mechanical fix via the owning workflow / flag / synthesis queue).
+- [ ] No wiki edits made by the lint run itself.

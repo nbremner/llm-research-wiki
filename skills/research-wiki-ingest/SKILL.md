@@ -268,7 +268,10 @@ catch-all page. Prefer deferring when the candidate is only a submechanism, meth
 example. Owner approval is required before new topics (and splits) become canonical.
 
 For each approved topic the source feeds: create or update `wiki/topics/<topic>.md` (schema.md topic
-template). Write synthesis in the owner's framing — state what the evidence says, cite sources inline with
+template). **Set the topic's `updated:` frontmatter to the synthesis date** on every topic page you
+synthesize into — `updated:` means last *synthesis* edit (schema.md § Formatting), and the graph
+lint's evidence-staleness queue goes blind for any topic where it lags or is missing.
+Write synthesis in the owner's framing — state what the evidence says, cite sources inline with
 `[[source-slug]]`, strengthen links, and **surface contradictions in prose** under a
 "Contradictions & open questions" heading. Write each paragraph and bullet as a single unwrapped line
 (no hard-wrapping at a fixed column; see schema.md **Formatting**). Make sure every `[[link]]` the
@@ -380,6 +383,7 @@ Apply:
 - [ ] `wiki/sources/<slug>.md` written from the template with provenance frontmatter.
 - [ ] Source record committed.
 - [ ] Topic synthesis written, contradictions surfaced in prose, all wikilinks resolve.
+- [ ] `updated:` set to the synthesis date on every synthesized topic page.
 - [ ] Topic diff approved by owner before commit (attended) OR left as flagged proposal (unattended).
 - [ ] Lint clean after the final committed state (and rerun after any rebase).
 - [ ] Intended wiki commits pushed; `origin/main` verified against local `HEAD`.

@@ -1,7 +1,7 @@
 ---
 name: research-scan-triage
 description: "Use when triaging surfaced candidates from the daily research scan into visible Drive state folders — wiki, read-once, or discarded — while preserving manifest/ledger audit state."
-version: 1.2.0
+version: 1.2.1
 author: Hermes Agent
 license: MIT
 metadata:
@@ -42,7 +42,7 @@ owner-approved synthesis.
 ## The disposition rubric (owner-calibrated 2026-07-04, batch 1)
 
 The wiki's mission: **AI workforce transformation × I-O psychology** — how AI changes work, workers,
-jobs, organizations, and measurement (`wiki/overview.md` is the live topic list).
+jobs, organizations, and measurement (`wiki/topic-map.md` is the live topic list).
 
 - **wiki** — contributes evidence *or* a framework to an AI×work topic the wiki tracks. **Inclusive**:
   empirical studies and RCTs, evidence syntheses / meta-analyses, theory papers, benchmark/measurement
@@ -148,8 +148,8 @@ such as arXiv HTTP 429s can appear during discovery; judge success by final mani
    `uv run /root/research-wiki-tools/scan_triage_apply.py --latest --dispositions <valid-json-file>`, but
    if you only need discovery, it is safe to glob `/root/research-wiki-runs/*/manifest-*.json` and choose
    the newest manifest where any record is null or ambiguous. `--dispositions` is optional as of
-   applier v1.2, but omitting it skips triage entirely (`--friction`-only mode) — it is not a
-   manifest-discovery mode, so glob for discovery.
+   the 2026-08-03 applier, but omitting it skips triage entirely (`--friction`-only mode) — it is
+   not a manifest-discovery mode, so glob for discovery.
 2. **Judge every unresolved record** against the rubric. Read title + abstract +
    matched_topics; check the acquired artifact if the abstract is thin. One line of `reason` each,
    citing the rubric category. When a record has `artifact_drive_id` but little/no abstract, inspect the
