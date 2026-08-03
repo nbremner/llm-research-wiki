@@ -1,6 +1,6 @@
 ---
 title: Overview
-updated: 2026-08-01
+updated: 2026-08-03
 ---
 
 # Overview
@@ -19,6 +19,15 @@ Two kinds of pages:
 
 - **Topics** — synthesis pages, each built around one question: what the evidence says, where studies agree or contradict, and what remains unresolved.
 - **Sources** — one page per paper or report: citation, summary, key claims, and limitations. Every claim on a topic page links back to the sources behind it.
+
+## How it runs
+
+The wiki maintains itself on a daily loop: deterministic code discovers and fetches new literature, a language-model agent triages candidates and drafts synthesis, and a human reviews everything before it becomes part of the wiki. A report-only audit checks for contradictions and stale synthesis, and the wiki's own open questions seed the next day's search.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nbremner/llm-research-wiki/main/docs/assets/wiki-architecture-dark.svg">
+  <img alt="Architecture: Discover, Acquire, Triage, Synthesize, The wiki, Publish — with a report-only Maintain stage inside a flywheel loop that feeds the wiki's open questions back into discovery. Deterministic code selects and moves, the LLM agent judges, and the human owner is the only gate to canon." src="https://raw.githubusercontent.com/nbremner/llm-research-wiki/main/docs/assets/wiki-architecture-light.svg" width="100%">
+</picture>
 
 ## Where to start
 
