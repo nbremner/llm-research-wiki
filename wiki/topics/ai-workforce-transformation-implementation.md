@@ -1,7 +1,7 @@
 ---
 title: AI workforce transformation implementation
 status: active
-updated: 2026-07-26
+updated: 2026-08-03
 ---
 
 # AI workforce transformation implementation
@@ -11,6 +11,8 @@ AI workforce transformation is not the rollout of an AI tool. It is the re-archi
 > **Purpose → work analysis → use-case mapping → workflow design → bounded experimentation → organizational learning → selective scaling.**
 
 The sequence is recursive: pilots reveal missing readiness, redesigned workflows change skill requirements, and worker experience changes adoption. Keep the unit of analysis at the accountable work system—not the tool, prompt, occupation, or isolated task.
+
+[[2026-westover-automation-wont-save-you]] supplies a practitioner articulation of the translation gap: individual AI speed gains can be absorbed by unchanged handoffs, review capacity, decision cadence, and role boundaries rather than becoming enterprise value. It is not independent empirical evidence for the sequence below, but it usefully keeps capability expansion, apprenticeship redesign, and distributed governance inside the transformation question rather than treating them as optional post-adoption initiatives.
 
 ## 1. Define the transformation purpose
 
