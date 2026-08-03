@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 348" role="img" aria-labelledby="waTitle waDesc">
+  <title id="waTitle">How the research wiki runs itself</title>
+  <desc id="waDesc">Pipeline: Discover, Acquire, Triage, Synthesize, The wiki, Publish. A report-only Maintain stage audits the wiki inside a flywheel loop that feeds the wiki's open questions back into discovery.</desc>
+
+  <rect x="0" y="0" width="1080" height="348" rx="10" fill="#F6F6F1"/>
+
+  <!-- legend -->
+  <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="8.5" letter-spacing="0.8">
+    <rect x="130" y="26" width="38" height="15" rx="3" fill="#E7EFEB" stroke="#33685A"/>
+    <text x="149" y="36.5" text-anchor="middle" fill="#33685A">CODE</text>
+    <rect x="390" y="26" width="44" height="15" rx="3" fill="#EAEAF4" stroke="#54588F"/>
+    <text x="412" y="36.5" text-anchor="middle" fill="#54588F">AGENT</text>
+    <rect x="680" y="26" width="44" height="15" rx="3" fill="#F5EDDD" stroke="#996818"/>
+    <text x="702" y="36.5" text-anchor="middle" fill="#996818">OWNER</text>
+  </g>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#6A6F62">
+    <text x="176" y="37">deterministic — selects &amp; moves</text>
+    <text x="442" y="37">LLM — judges, never self-approves</text>
+    <text x="732" y="37">human — the only gate to canon</text>
+  </g>
+
+  <!-- stage cards -->
+  <g>
+    <rect x="20"  y="64" width="150" height="126" rx="6" fill="#FFFFFF" stroke="#DFE0D5"/>
+    <rect x="198" y="64" width="150" height="126" rx="6" fill="#FFFFFF" stroke="#DFE0D5"/>
+    <rect x="376" y="64" width="150" height="126" rx="6" fill="#FFFFFF" stroke="#DFE0D5"/>
+    <rect x="554" y="64" width="150" height="126" rx="6" fill="#FFFFFF" stroke="#DFE0D5"/>
+    <rect x="732" y="64" width="150" height="126" rx="6" fill="#E7EFEB" stroke="#33685A"/>
+    <rect x="910" y="64" width="150" height="126" rx="6" fill="#FFFFFF" stroke="#DFE0D5"/>
+  </g>
+
+  <!-- flow arrows -->
+  <g stroke="#33685A" stroke-width="1.5">
+    <line x1="174" y1="127" x2="188" y2="127"/>
+    <line x1="352" y1="127" x2="366" y2="127"/>
+    <line x1="530" y1="127" x2="544" y2="127"/>
+    <line x1="708" y1="127" x2="722" y2="127"/>
+    <line x1="886" y1="127" x2="900" y2="127"/>
+  </g>
+  <g fill="#33685A">
+    <polygon points="188,123 188,131 195,127"/>
+    <polygon points="366,123 366,131 373,127"/>
+    <polygon points="544,123 544,131 551,127"/>
+    <polygon points="722,123 722,131 729,127"/>
+    <polygon points="900,123 900,131 907,127"/>
+  </g>
+
+  <!-- titles -->
+  <g font-family="'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif" font-size="14" font-weight="600" fill="#22261F">
+    <text x="30"  y="88">Discover</text>
+    <text x="208" y="88">Acquire</text>
+    <text x="386" y="88">Triage</text>
+    <text x="564" y="88">Synthesize</text>
+    <text x="742" y="88">The wiki</text>
+    <text x="920" y="88">Publish</text>
+  </g>
+
+  <!-- chips + cadences -->
+  <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="8.5" letter-spacing="0.8">
+    <rect x="30" y="96" width="38" height="15" rx="3" fill="#E7EFEB" stroke="#33685A"/>
+    <text x="49" y="106.5" text-anchor="middle" fill="#33685A">CODE</text>
+    <text x="76" y="106.5" fill="#6A6F62">DAILY</text>
+
+    <rect x="208" y="96" width="38" height="15" rx="3" fill="#E7EFEB" stroke="#33685A"/>
+    <text x="227" y="106.5" text-anchor="middle" fill="#33685A">CODE</text>
+
+    <rect x="386" y="96" width="44" height="15" rx="3" fill="#EAEAF4" stroke="#54588F"/>
+    <text x="408" y="106.5" text-anchor="middle" fill="#54588F">AGENT</text>
+    <text x="438" y="106.5" fill="#6A6F62">DAILY</text>
+
+    <rect x="564" y="96" width="44" height="15" rx="3" fill="#EAEAF4" stroke="#54588F"/>
+    <text x="586" y="106.5" text-anchor="middle" fill="#54588F">AGENT</text>
+    <rect x="612" y="96" width="44" height="15" rx="3" fill="#F5EDDD" stroke="#996818"/>
+    <text x="634" y="106.5" text-anchor="middle" fill="#996818">OWNER</text>
+
+    <text x="742" y="106.5" fill="#6A6F62">MARKDOWN · GIT</text>
+
+    <rect x="920" y="96" width="38" height="15" rx="3" fill="#E7EFEB" stroke="#33685A"/>
+    <text x="939" y="106.5" text-anchor="middle" fill="#33685A">CODE</text>
+    <text x="966" y="106.5" fill="#6A6F62">EVERY 6H</text>
+  </g>
+
+  <!-- body copy -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#6A6F62">
+    <text x="30" y="128">Scholarly APIs, queried</text>
+    <text x="30" y="143">with seeds drawn from</text>
+    <text x="30" y="158">the wiki's own open</text>
+    <text x="30" y="173">questions.</text>
+
+    <text x="208" y="128">An acquisition ladder</text>
+    <text x="208" y="143">fetches each candidate</text>
+    <text x="208" y="158">into a visible, auditable</text>
+    <text x="208" y="173">inbox.</text>
+
+    <text x="386" y="128">Rubric judgment: wiki,</text>
+    <text x="386" y="143">read-once, or discard.</text>
+    <text x="386" y="158">Ambiguity stays pending</text>
+    <text x="386" y="173">for the owner.</text>
+
+    <text x="564" y="128">Evidence auto-commits;</text>
+    <text x="564" y="143">topic synthesis needs</text>
+    <text x="564" y="158">an owner-approved diff.</text>
+
+    <text x="742" y="128">Cross-linked topics and</text>
+    <text x="742" y="143">sources. Git history is</text>
+    <text x="742" y="158">the audit log; no</text>
+    <text x="742" y="173">database.</text>
+
+    <text x="920" y="128">The public site rebuilds</text>
+    <text x="920" y="143">from the repo. Machinery</text>
+    <text x="920" y="158">stays home.</text>
+  </g>
+
+  <!-- flywheel return path: wiki -> down -> left -> up into Discover -->
+  <path d="M 807 192 L 807 308 Q 807 318 797 318 L 105 318 Q 95 318 95 308 L 95 200"
+        fill="none" stroke="#33685A" stroke-width="2"/>
+  <polygon points="89,202 101,202 95,191" fill="#33685A"/>
+
+  <!-- maintain card (inside the flywheel) -->
+  <rect x="271" y="210" width="360" height="92" rx="6" fill="#FFFFFF" stroke="#33685A" stroke-dasharray="4 3"/>
+  <text x="287" y="228" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="8.5" letter-spacing="0.8" fill="#33685A">AUDITS THE WIKI · DAILY + MONTHLY</text>
+  <text x="287" y="247" font-family="'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif" font-size="13" font-weight="600" fill="#22261F">Maintain</text>
+  <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="8.5" letter-spacing="0.8">
+    <rect x="360" y="236" width="44" height="15" rx="3" fill="#EAEAF4" stroke="#54588F"/>
+    <text x="382" y="246.5" text-anchor="middle" fill="#54588F">AGENT</text>
+    <rect x="410" y="236" width="38" height="15" rx="3" fill="#E7EFEB" stroke="#33685A"/>
+    <text x="429" y="246.5" text-anchor="middle" fill="#33685A">CODE</text>
+  </g>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#6A6F62">
+    <text x="287" y="266">Report-only. Lint flags contradictions and stale synthesis;</text>
+    <text x="287" y="280">ambiguous triage calls surface as rubric proposals. Every</text>
+    <text x="287" y="294">fix routes back through the owner.</text>
+  </g>
+
+  <!-- loop label -->
+  <rect x="306" y="311" width="290" height="14" fill="#F6F6F1"/>
+  <text x="451" y="322" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="9" letter-spacing="1" fill="#33685A">OPEN QUESTIONS SEED TOMORROW'S QUERIES</text>
+</svg>

@@ -1,0 +1,291 @@
+<title>How the Research Wiki Runs Itself</title>
+
+<div class="wa">
+<style>
+  .wa {
+    --wa-ground: #F6F6F1;
+    --wa-card: #FFFFFF;
+    --wa-ink: #22261F;
+    --wa-muted: #6A6F62;
+    --wa-hairline: #DFE0D5;
+    --wa-code: #33685A;      /* deterministic code */
+    --wa-code-soft: #E7EFEB;
+    --wa-agent: #54588F;     /* LLM judgment */
+    --wa-agent-soft: #EAEAF4;
+    --wa-human: #996818;     /* owner approval */
+    --wa-human-soft: #F5EDDD;
+    --wa-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --wa-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --wa-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+    font-family: var(--wa-sans);
+    color: var(--wa-ink);
+    background: var(--wa-ground);
+    line-height: 1.45;
+    padding: 1.5rem 1rem 1.75rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .wa {
+      --wa-ground: #141715;
+      --wa-card: #1C201D;
+      --wa-ink: #E7E5DC;
+      --wa-muted: #9AA093;
+      --wa-hairline: #31362F;
+      --wa-code: #82BCA7;
+      --wa-code-soft: #21322C;
+      --wa-agent: #A3A7DC;
+      --wa-agent-soft: #272A3E;
+      --wa-human: #D8A65C;
+      --wa-human-soft: #372C1B;
+    }
+  }
+  :root[data-theme="dark"] .wa {
+    --wa-ground: #141715;
+    --wa-card: #1C201D;
+    --wa-ink: #E7E5DC;
+    --wa-muted: #9AA093;
+    --wa-hairline: #31362F;
+    --wa-code: #82BCA7;
+    --wa-code-soft: #21322C;
+    --wa-agent: #A3A7DC;
+    --wa-agent-soft: #272A3E;
+    --wa-human: #D8A65C;
+    --wa-human-soft: #372C1B;
+  }
+  :root[data-theme="light"] .wa {
+    --wa-ground: #F6F6F1;
+    --wa-card: #FFFFFF;
+    --wa-ink: #22261F;
+    --wa-muted: #6A6F62;
+    --wa-hairline: #DFE0D5;
+    --wa-code: #33685A;
+    --wa-code-soft: #E7EFEB;
+    --wa-agent: #54588F;
+    --wa-agent-soft: #EAEAF4;
+    --wa-human: #996818;
+    --wa-human-soft: #F5EDDD;
+  }
+
+  .wa * { box-sizing: border-box; margin: 0; }
+
+  .wa-chip {
+    font-family: var(--wa-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .wa-chip.code  { color: var(--wa-code);  background: var(--wa-code-soft);  border: 1px solid var(--wa-code); }
+  .wa-chip.agent { color: var(--wa-agent); background: var(--wa-agent-soft); border: 1px solid var(--wa-agent); }
+  .wa-chip.human { color: var(--wa-human); background: var(--wa-human-soft); border: 1px solid var(--wa-human); }
+
+  .wa-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 1.5rem;
+    font-size: 0.76rem;
+    color: var(--wa-muted);
+    margin-bottom: 1.25rem;
+  }
+  .wa-legend-item { display: flex; align-items: baseline; gap: 0.45rem; }
+
+  /* diagram scrolls in its own container; the page never scrolls sideways */
+  .wa-scroll { overflow-x: auto; }
+  .wa-diagram {
+    min-width: 780px;
+    max-width: 1040px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns:
+      minmax(118px, 1fr) 20px
+      minmax(118px, 1fr) 20px
+      minmax(118px, 1fr) 20px
+      minmax(118px, 1fr) 20px
+      minmax(122px, 1fr) 20px
+      minmax(118px, 1fr);
+    row-gap: 0;
+  }
+
+  .wa-card-box {
+    grid-row: 1;
+    background: var(--wa-card);
+    border: 1px solid var(--wa-hairline);
+    border-radius: 6px;
+    padding: 0.65rem 0.7rem 0.7rem;
+  }
+  .wa-card-box h3 {
+    font-family: var(--wa-serif);
+    font-weight: 600;
+    font-size: 0.98rem;
+    margin-bottom: 0.2rem;
+  }
+  .wa-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 0.35rem;
+  }
+  .wa-cadence {
+    font-family: var(--wa-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--wa-muted);
+  }
+  .wa-card-box p { font-size: 0.76rem; color: var(--wa-muted); }
+  .wa-card-box p em { color: var(--wa-ink); font-style: normal; }
+
+  .wa-flow {
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+    font-family: var(--wa-mono);
+    color: var(--wa-code);
+    font-size: 0.95rem;
+    user-select: none;
+  }
+
+  .wa-hub {
+    background: var(--wa-code-soft);
+    border: 1px solid var(--wa-code);
+  }
+  .wa-hub h3 { color: var(--wa-ink); }
+
+  /* ---- flywheel return path: wiki -> down -> left -> up into Discover ---- */
+  .wa-return {
+    grid-row: 2;
+    grid-column: 1 / 10;   /* Discover through The wiki */
+    position: relative;
+    margin: 0 56px;
+    border-left: 2px solid var(--wa-code);
+    border-right: 2px solid var(--wa-code);
+    border-bottom: 2px solid var(--wa-code);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 0.85rem 1.4rem 1.5rem;
+  }
+  .wa-return-head {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -7px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 9px solid var(--wa-code);
+  }
+  .wa-return-label {
+    position: absolute;
+    left: 50%;
+    bottom: -0.62em;
+    transform: translateX(-50%);
+    background: var(--wa-ground);
+    padding: 0 0.7rem;
+    font-family: var(--wa-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--wa-code);
+    white-space: nowrap;
+  }
+
+  /* maintain sits inside the flywheel */
+  .wa-maintain {
+    max-width: 460px;
+    margin: 0 auto;
+    background: var(--wa-card);
+    border: 1px dashed var(--wa-code);
+    border-radius: 6px;
+    padding: 0.6rem 0.8rem 0.65rem;
+  }
+  .wa-maintain .wa-route {
+    font-family: var(--wa-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--wa-code);
+    margin-bottom: 0.15rem;
+  }
+  .wa-maintain h3 {
+    font-family: var(--wa-serif);
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline;
+    margin-right: 0.4rem;
+  }
+  .wa-maintain p {
+    font-size: 0.76rem;
+    color: var(--wa-muted);
+    margin-top: 0.25rem;
+  }
+  .wa-maintain p em { color: var(--wa-ink); font-style: normal; }
+</style>
+
+<div class="wa-legend">
+  <span class="wa-legend-item"><span class="wa-chip code">Code</span> deterministic — selects &amp; moves</span>
+  <span class="wa-legend-item"><span class="wa-chip agent">Agent</span> LLM — judges, never self-approves</span>
+  <span class="wa-legend-item"><span class="wa-chip human">Owner</span> human — the only gate to canon</span>
+</div>
+
+<div class="wa-scroll">
+<div class="wa-diagram">
+
+  <div class="wa-card-box" style="grid-column: 1;">
+    <h3>Discover</h3>
+    <div class="wa-meta"><span class="wa-chip code">Code</span> <span class="wa-cadence">daily</span></div>
+    <p>Scholarly APIs, queried with seeds drawn from the wiki's own open questions.</p>
+  </div>
+  <span class="wa-flow" style="grid-column: 2;">→</span>
+
+  <div class="wa-card-box" style="grid-column: 3;">
+    <h3>Acquire</h3>
+    <div class="wa-meta"><span class="wa-chip code">Code</span></div>
+    <p>An acquisition ladder fetches each candidate into a visible, auditable inbox.</p>
+  </div>
+  <span class="wa-flow" style="grid-column: 4;">→</span>
+
+  <div class="wa-card-box" style="grid-column: 5;">
+    <h3>Triage</h3>
+    <div class="wa-meta"><span class="wa-chip agent">Agent</span> <span class="wa-cadence">daily</span></div>
+    <p>Rubric judgment: <em>wiki</em>, <em>read-once</em>, or <em>discard</em>. Ambiguity stays pending for the owner.</p>
+  </div>
+  <span class="wa-flow" style="grid-column: 6;">→</span>
+
+  <div class="wa-card-box" style="grid-column: 7;">
+    <h3>Synthesize</h3>
+    <div class="wa-meta"><span class="wa-chip agent">Agent</span> <span class="wa-chip human">Owner</span></div>
+    <p>Evidence auto-commits; topic synthesis becomes canon only via an owner-approved diff.</p>
+  </div>
+  <span class="wa-flow" style="grid-column: 8;">→</span>
+
+  <div class="wa-card-box wa-hub" style="grid-column: 9;">
+    <h3>The wiki</h3>
+    <div class="wa-meta"><span class="wa-cadence">markdown · git</span></div>
+    <p>Cross-linked topics and sources. Git history is the audit log; no database.</p>
+  </div>
+  <span class="wa-flow" style="grid-column: 10;">→</span>
+
+  <div class="wa-card-box" style="grid-column: 11;">
+    <h3>Publish</h3>
+    <div class="wa-meta"><span class="wa-chip code">Code</span> <span class="wa-cadence">every 6h</span></div>
+    <p>The public site rebuilds from the repo. Machinery stays home.</p>
+  </div>
+
+  <div class="wa-return">
+    <span class="wa-return-head"></span>
+    <div class="wa-maintain">
+      <p class="wa-route">audits the wiki · daily + monthly</p>
+      <h3>Maintain</h3><span class="wa-chip agent">Agent</span> <span class="wa-chip code">Code</span>
+      <p><em>Report-only.</em> Lint pairs topics that share evidence and flags contradictions and stale synthesis; ambiguous triage calls surface as rubric proposals. Every fix routes back through the owner.</p>
+    </div>
+    <span class="wa-return-label">open questions seed tomorrow's queries</span>
+  </div>
+
+</div>
+</div>
+</div>

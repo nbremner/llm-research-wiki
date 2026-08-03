@@ -1,0 +1,421 @@
+<title>How the Research Wiki Runs Itself</title>
+
+<div class="wa">
+<style>
+  .wa {
+    --wa-ground: #F6F6F1;
+    --wa-card: #FFFFFF;
+    --wa-ink: #22261F;
+    --wa-muted: #6A6F62;
+    --wa-hairline: #DFE0D5;
+    --wa-code: #33685A;      /* deterministic code */
+    --wa-code-soft: #E7EFEB;
+    --wa-agent: #54588F;     /* LLM judgment */
+    --wa-agent-soft: #EAEAF4;
+    --wa-human: #996818;     /* owner approval */
+    --wa-human-soft: #F5EDDD;
+    --wa-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --wa-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --wa-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+
+    font-family: var(--wa-sans);
+    color: var(--wa-ink);
+    background: var(--wa-ground);
+    line-height: 1.55;
+    padding: 3rem 1.25rem 3.5rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .wa {
+      --wa-ground: #141715;
+      --wa-card: #1C201D;
+      --wa-ink: #E7E5DC;
+      --wa-muted: #9AA093;
+      --wa-hairline: #31362F;
+      --wa-code: #82BCA7;
+      --wa-code-soft: #21322C;
+      --wa-agent: #A3A7DC;
+      --wa-agent-soft: #272A3E;
+      --wa-human: #D8A65C;
+      --wa-human-soft: #372C1B;
+    }
+  }
+  :root[data-theme="dark"] .wa {
+    --wa-ground: #141715;
+    --wa-card: #1C201D;
+    --wa-ink: #E7E5DC;
+    --wa-muted: #9AA093;
+    --wa-hairline: #31362F;
+    --wa-code: #82BCA7;
+    --wa-code-soft: #21322C;
+    --wa-agent: #A3A7DC;
+    --wa-agent-soft: #272A3E;
+    --wa-human: #D8A65C;
+    --wa-human-soft: #372C1B;
+  }
+  :root[data-theme="light"] .wa {
+    --wa-ground: #F6F6F1;
+    --wa-card: #FFFFFF;
+    --wa-ink: #22261F;
+    --wa-muted: #6A6F62;
+    --wa-hairline: #DFE0D5;
+    --wa-code: #33685A;
+    --wa-code-soft: #E7EFEB;
+    --wa-agent: #54588F;
+    --wa-agent-soft: #EAEAF4;
+    --wa-human: #996818;
+    --wa-human-soft: #F5EDDD;
+  }
+
+  .wa * { box-sizing: border-box; margin: 0; }
+  .wa-inner { max-width: 720px; margin: 0 auto; }
+
+  .wa-eyebrow {
+    font-family: var(--wa-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--wa-code);
+  }
+  .wa h1 {
+    font-family: var(--wa-serif);
+    font-weight: 600;
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    line-height: 1.15;
+    text-wrap: balance;
+    margin: 0.5rem 0 1rem;
+  }
+  .wa-lede {
+    font-size: 1.05rem;
+    color: var(--wa-muted);
+    max-width: 60ch;
+    margin-bottom: 1.75rem;
+  }
+  .wa-lede strong { color: var(--wa-ink); font-weight: 600; }
+
+  .wa-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.4rem;
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--wa-hairline);
+    border-bottom: 1px solid var(--wa-hairline);
+    margin-bottom: 1.1rem;
+  }
+  .wa-legend-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--wa-muted);
+  }
+  .wa-chip {
+    font-family: var(--wa-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.14rem 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .wa-chip.code  { color: var(--wa-code);  background: var(--wa-code-soft);  border: 1px solid var(--wa-code); }
+  .wa-chip.agent { color: var(--wa-agent); background: var(--wa-agent-soft); border: 1px solid var(--wa-agent); }
+  .wa-chip.human { color: var(--wa-human); background: var(--wa-human-soft); border: 1px solid var(--wa-human); }
+
+  .wa-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.6rem;
+    font-family: var(--wa-mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.78rem;
+    color: var(--wa-muted);
+    margin-bottom: 2.5rem;
+  }
+  .wa-stats b { color: var(--wa-ink); font-weight: 600; }
+
+  .wa h2 {
+    font-family: var(--wa-serif);
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin: 2.75rem 0 1.25rem;
+    text-wrap: balance;
+  }
+
+  /* ---- pipeline rail ---- */
+  .wa-stages { position: relative; display: grid; gap: 0.9rem; }
+  .wa-stages::before {
+    content: "";
+    position: absolute;
+    left: 21px;
+    top: 14px;
+    bottom: 14px;
+    width: 2px;
+    background: var(--wa-hairline);
+  }
+  .wa-stage {
+    position: relative;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    align-items: start;
+  }
+  .wa-node {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    margin-left: 7px;
+    margin-top: 0.55rem;
+    border-radius: 50%;
+    background: var(--wa-ground);
+    border: 2px solid var(--wa-code);
+    color: var(--wa-code);
+    font-family: var(--wa-serif);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wa-card {
+    background: var(--wa-card);
+    border: 1px solid var(--wa-hairline);
+    border-radius: 6px;
+    padding: 0.95rem 1.1rem 1rem;
+  }
+  .wa-card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.75rem;
+    margin-bottom: 0.35rem;
+  }
+  .wa-card-head h3 {
+    font-family: var(--wa-serif);
+    font-weight: 600;
+    font-size: 1.12rem;
+  }
+  .wa-cadence {
+    font-family: var(--wa-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--wa-muted);
+    margin-left: auto;
+  }
+  .wa-card p { font-size: 0.92rem; }
+  .wa-card p + p { margin-top: 0.45rem; }
+  .wa-card .wa-chip { vertical-align: 1px; }
+  .wa-ladder {
+    font-family: var(--wa-mono);
+    font-size: 0.78rem;
+    color: var(--wa-muted);
+    margin-top: 0.55rem;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* the wiki substrate interrupts the rail */
+  .wa-substrate {
+    position: relative;
+    z-index: 1;
+    background: var(--wa-code-soft);
+    border: 1px solid var(--wa-code);
+    border-radius: 6px;
+    padding: 1.1rem 1.2rem;
+  }
+  .wa-substrate h3 {
+    font-family: var(--wa-serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+  }
+  .wa-substrate p { font-size: 0.92rem; }
+
+  /* ---- loops ---- */
+  .wa-loops { display: grid; gap: 0.9rem; }
+  .wa-loop {
+    background: var(--wa-card);
+    border: 1px dashed var(--wa-hairline);
+    border-left: 3px solid var(--wa-loop, var(--wa-code));
+    border-radius: 6px;
+    padding: 0.85rem 1.1rem 0.95rem;
+  }
+  .wa-loop.agent { --wa-loop: var(--wa-agent); }
+  .wa-loop.human { --wa-loop: var(--wa-human); }
+  .wa-route {
+    font-family: var(--wa-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--wa-loop, var(--wa-code));
+    margin-bottom: 0.25rem;
+  }
+  .wa-loop h3 {
+    font-family: var(--wa-serif);
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .wa-loop p { font-size: 0.9rem; }
+
+  /* ---- principles ---- */
+  .wa-principles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1px;
+    background: var(--wa-hairline);
+    border: 1px solid var(--wa-hairline);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .wa-principle { background: var(--wa-card); padding: 0.9rem 1rem; }
+  .wa-principle h3 {
+    font-family: var(--wa-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--wa-code);
+    margin-bottom: 0.35rem;
+  }
+  .wa-principle p { font-size: 0.85rem; color: var(--wa-muted); }
+
+  .wa-foot {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--wa-hairline);
+    font-size: 0.8rem;
+    color: var(--wa-muted);
+    max-width: 65ch;
+  }
+</style>
+
+<div class="wa-inner">
+  <p class="wa-eyebrow">System architecture · August 2026</p>
+  <h1>How the research wiki runs itself</h1>
+  <p class="wa-lede">A public research wiki on <strong>AI workforce transformation × I-O psychology</strong> that finds its own literature, triages it, and drafts synthesis — with a hard rule about who gets to decide what becomes canon. The design splits every step by a single question: <strong>is this mechanics, or is this judgment?</strong></p>
+
+  <div class="wa-legend">
+    <span class="wa-legend-item"><span class="wa-chip code">Code</span> deterministic Python — selects, moves, never judges</span>
+    <span class="wa-legend-item"><span class="wa-chip agent">Agent</span> LLM judgment — proposes, never self-approves</span>
+    <span class="wa-legend-item"><span class="wa-chip human">Owner</span> human approval — the only gate to canon</span>
+  </div>
+  <div class="wa-stats">
+    <span><b>130</b> pages</span>
+    <span><b>49</b> topics</span>
+    <span><b>75</b> sources</span>
+    <span><b>3</b> scheduled jobs</span>
+    <span><b>0</b> databases</span>
+  </div>
+
+  <h2>The pipeline</h2>
+  <div class="wa-stages">
+
+    <div class="wa-stage">
+      <div class="wa-node">1</div>
+      <div class="wa-card">
+        <div class="wa-card-head"><h3>Discover</h3> <span class="wa-chip code">Code</span> <span class="wa-cadence">Daily · 08:00</span></div>
+        <p>A Python harness queries OpenAlex, arXiv, and Crossref with ~30 seed queries derived from the wiki's own open questions, dedupes against a ledger of everything already seen, and ranks candidates against the wiki's concept vocabulary. No LLM anywhere in this step.</p>
+      </div>
+    </div>
+
+    <div class="wa-stage">
+      <div class="wa-node">2</div>
+      <div class="wa-card">
+        <div class="wa-card-head"><h3>Acquire</h3> <span class="wa-chip code">Code</span></div>
+        <p>Each surfaced candidate walks an acquisition ladder until something works. What can't be fetched is flagged for manual pickup — never silently dropped.</p>
+        <p class="wa-ladder">open-access resolve → direct PDF → reader snapshot → agent browser (last resort)</p>
+      </div>
+    </div>
+
+    <div class="wa-stage">
+      <div class="wa-node">3</div>
+      <div class="wa-card">
+        <div class="wa-card-head"><h3>Stage</h3> <span class="wa-chip code">Code</span></div>
+        <p>Candidates and their PDFs land in a visible Drive inbox with a machine-readable manifest. Every later decision is a folder move you can watch: <em>pending → wiki / read-once / discarded</em>.</p>
+      </div>
+    </div>
+
+    <div class="wa-stage">
+      <div class="wa-node">4</div>
+      <div class="wa-card">
+        <div class="wa-card-head"><h3>Triage</h3> <span class="wa-chip agent">Agent</span> <span class="wa-chip code">Code</span> <span class="wa-cadence">Daily · 08:30</span></div>
+        <p>The agent judges every candidate against an owner-calibrated rubric: <em>wiki</em>, <em>read-once</em>, or <em>discard</em> — and anything ambiguous stamps no decision at all; it stays pending and surfaces to the owner instead. A deterministic applier performs every file move, so the model never touches mechanics. The day's calls arrive as a Discord digest.</p>
+      </div>
+    </div>
+
+    <div class="wa-stage">
+      <div class="wa-node">5</div>
+      <div class="wa-card">
+        <div class="wa-card-head"><h3>Synthesize</h3> <span class="wa-chip agent">Agent</span> <span class="wa-chip human">Owner</span> <span class="wa-cadence">On demand</span></div>
+        <p>One source at a time. Evidence records — what a paper says, with public provenance — auto-commit, because they're low-judgment. Topic synthesis is drafted by the agent but becomes canon only when the owner approves the exact diff.</p>
+      </div>
+    </div>
+
+    <div class="wa-substrate">
+      <h3>The wiki itself</h3>
+      <p>Plain markdown in a git repository: a short public front door, four orientation map pages, 49 cross-linked topic pages of synthesis, and 75 source records. Contradictions are surfaced in prose, never auto-resolved — disagreement between studies carries meaning. Git history is the audit log; there is no database to drift out of sync.</p>
+    </div>
+
+    <div class="wa-stage">
+      <div class="wa-node">6</div>
+      <div class="wa-card">
+        <div class="wa-card-head"><h3>Publish</h3> <span class="wa-chip code">Code</span> <span class="wa-cadence">Every 6 hours</span></div>
+        <p>A GitHub Action rebuilds the public site from the repo — only the wiki content ships; the machinery stays home.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <h2>Three loops keep it honest</h2>
+  <div class="wa-loops">
+
+    <div class="wa-loop agent">
+      <p class="wa-route">Stage 4 ↩ its own rubric</p>
+      <h3>Rubric friction</h3>
+      <p>Ambiguous triage calls accumulate into a rolling 14-day friction report. When several share a cause, the agent may propose <em>one</em> rubric amendment per day — and that's all it can do. The owner ratifies by editing the rubric in git, prospectively; the agent never edits its own rules.</p>
+    </div>
+
+    <div class="wa-loop human">
+      <p class="wa-route">Wiki ↩ Stage 5 · Monthly</p>
+      <h3>Semantic lint</h3>
+      <p>A deterministic shortlist pairs topics that cite the same evidence — the mechanism by which contradictions creep in. The agent reads each pair and flags only <em>wiki-voice</em> contradictions, plus any topic whose sources are newer than its last synthesis. Findings are report-only: fixes go back through the owner-approved synthesis queue, and a finding clears itself the moment the wiki changes.</p>
+    </div>
+
+    <div class="wa-loop">
+      <p class="wa-route">Wiki ↩ Stage 1 · Compounding</p>
+      <h3>The flywheel</h3>
+      <p>The wiki's open questions and research gaps seed tomorrow's discovery queries. The better the synthesis gets, the sharper the scan — the system hunts for exactly what it doesn't yet know.</p>
+    </div>
+
+  </div>
+
+  <h2>Rules of the game</h2>
+  <div class="wa-principles">
+    <div class="wa-principle">
+      <h3>Determinism split</h3>
+      <p>Code selects, collects, and moves; the model judges. Neither crosses over.</p>
+    </div>
+    <div class="wa-principle">
+      <h3>Owner-gated canon</h3>
+      <p>Nothing becomes synthesis without a human-approved diff. One gate, always closed by default.</p>
+    </div>
+    <div class="wa-principle">
+      <h3>Report-only audits</h3>
+      <p>Lint proposes and routes; it never rewrites. Findings clear when the wiki does.</p>
+    </div>
+    <div class="wa-principle">
+      <h3>Caps on every loop</h3>
+      <p>Every scheduled job is volume-capped, deduped, and logged. No loop becomes a backlog sink.</p>
+    </div>
+    <div class="wa-principle">
+      <h3>One source of truth</h3>
+      <p>Git holds machinery and content. Each fact lives in one place; everything else links to it.</p>
+    </div>
+    <div class="wa-principle">
+      <h3>Ambiguity surfaces</h3>
+      <p>When the agent isn't sure, it doesn't guess — the record stays pending and a human decides.</p>
+    </div>
+  </div>
+
+  <p class="wa-foot">Stack: Python + systemd timers on a small VPS · a Hermes-based agent for judgment · Google Drive for artifacts and staging · Discord for digests and approvals · GitHub Pages (Quartz) for the public site.</p>
+</div>
+</div>

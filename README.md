@@ -7,6 +7,13 @@ This repo holds **both** the wiki content (`wiki/`: synthesis topics, source rec
 **and** the machinery (skills, scripts, tests, operating docs). It is the single source of truth. The
 only thing kept outside git is the raw-PDF corpus in Google Drive. See `OPERATING_MODEL.md`.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/wiki-architecture-dark.svg">
+  <img alt="Architecture: Discover, Acquire, Triage, Synthesize, The wiki, Publish — with a report-only Maintain stage inside a flywheel loop that feeds the wiki's open questions back into discovery. Deterministic code selects and moves, the LLM agent judges, and the human owner is the only gate to canon." src="docs/assets/wiki-architecture-light.svg" width="100%">
+</picture>
+
+<sub>Diagram source lives in `docs/assets/`; interactive HTML versions in `docs/`.</sub>
+
 ## What belongs here
 
 - The wiki itself under `wiki/` (`schema.md`, `overview.md`, `topics/`, `sources/`)
@@ -48,6 +55,9 @@ scripts/
 docs/
   wiki-redesign-plan.md        # the build plan for the markdown-in-git wiki
   research-scrape-plan.md      # the build plan for the research-scan front end
+  wiki-architecture-visual.html       # architecture diagram (horizontal strip, embeddable)
+  wiki-architecture-visual-full.html  # architecture explainer (long form)
+  assets/                      # README diagram SVGs (light + dark)
 
 config/
   example.env
