@@ -1,11 +1,25 @@
 # llm-research-wiki
 
-The research wiki for Nicholas Bremner's LLM-assisted research — plain cross-linked markdown in git,
-plus the machinery that operates it.
+A public research wiki about how AI is changing work — jobs, tasks, skills, teams, organizations,
+and how any of those changes can actually be measured — through the lens of
+**industrial–organizational (I-O) psychology**, the science of people at work.
 
-This repo holds **both** the wiki content (`wiki/`: synthesis topics, source records, the contract)
-**and** the machinery (skills, scripts, tests, operating docs). It is the single source of truth. The
-only thing kept outside git is the raw-PDF corpus in Google Drive. See `OPERATING_MODEL.md`.
+The central question:
+
+> How does AI change work, workers, jobs, organizations, and measurement — and what does I-O
+> psychology help us understand, evaluate, and design better?
+
+The wiki holds two kinds of pages: **topics** (synthesis pages, each built around one question —
+what the evidence says, where studies agree or contradict, and what remains unresolved) and
+**sources** (one page per paper or report: citation, summary, key claims, and limitations). Every
+claim on a topic page links back to the sources behind it. Read it live at
+**[nbremner.github.io/ai-workforce-transformation-wiki](https://nbremner.github.io/ai-workforce-transformation-wiki/)**.
+
+Pages are drafted with the help of a large language model and reviewed before they become part of
+the wiki. Treat it as a map of the literature, not a substitute for it — verify claims against the
+original sources before citing them.
+
+## How it runs
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/assets/wiki-architecture-dark.svg">
@@ -13,6 +27,15 @@ only thing kept outside git is the raw-PDF corpus in Google Drive. See `OPERATIN
 </picture>
 
 <sub>Diagram source lives in `docs/assets/`; interactive HTML versions in `docs/`.</sub>
+
+## The repo
+
+This repo is the **single source of truth**: it holds both the wiki content (`wiki/`: topics,
+sources, and the `schema.md` contract) and the machinery that operates it (skills, scripts, tests,
+operating docs). The only thing kept outside git is the raw-PDF corpus in Google Drive.
+
+For agents working in this repo: read `OPERATING_MODEL.md` for the architecture and `AGENTS.md` for
+the contribution rules and hard boundary. The live contract read at action time is `wiki/schema.md`.
 
 ## What belongs here
 
@@ -78,20 +101,7 @@ python scripts/research-wiki-tools/graph_lint.py                       # lint th
 uv run scripts/research-wiki-tools/research_scan.py --queries 3 --no-acquire   # scan smoke (local)
 uv run scripts/research-wiki-tools/research_scan.py --drive                    # full scan to Drive _triage
 uv run scripts/research-wiki-tools/scan_triage_apply.py --latest --dispositions d.json  # triage dry run
-```
-
-## Agent migration notes
-
-To move this spine to another agent:
-
-1. Clone this repo.
-2. Install/import the skills under `skills/` into that agent's skill mechanism.
-3. Configure credentials locally using `config/example.env` as a guide. Do not commit real credentials.
-4. Read `OPERATING_MODEL.md` and `AGENTS.md` before running workflows. The live contract agents read at action time is `wiki/schema.md`.
-5. Run the guardrail tests before committing any changes.
-
-```bash
-python -m pytest tests/ -q
+python -m pytest tests/ -q                                             # run the test suite before committing
 ```
 
 ## Boundary
