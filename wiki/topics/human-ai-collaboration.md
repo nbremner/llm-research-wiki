@@ -1,12 +1,14 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-07-23
+updated: 2026-08-03
 ---
 
 # Human-AI collaboration
 
 Human-AI collaboration is the working relationship between human judgment and AI capability in actual tasks. The question is not whether humans and AI are “teammates” in the warm metaphorical sense; it is how responsibility, confidence, delegation, review, and accountability are arranged in practice.
+
+[[2026-rocca-psychological-coupling]] adds a relational and temporal mechanism that this task-allocation framing can otherwise miss. The paper proposes that users' cognitive and affective states and an LLM's simulated states become mutually shaped across turns; symmetric convergence, asymmetric reinforcement, and divergence can each be adaptive or maladaptive depending on the trajectory. Collaboration design therefore has to examine not only who has formal authority or performs which task, but also whether the interaction loop amplifies, stabilizes, or constructively interrupts a user's evolving state.
 
 [[2025-lee-generative-ai-critical-thinking]] gives a useful caution about the collaboration metaphor. The study finds that, in GenAI-assisted knowledge work, humans often shift from producing material outputs to verifying, integrating, and stewarding AI outputs. The authors explicitly argue that “stewardship” is a better metaphor than teammate, collaborator, or supervisor because responsibility and accountability remain with the human user even when material production is delegated to the GenAI tool.
 
@@ -100,3 +102,4 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 - [[2025-randazzo-cyborgs-centaurs-self-automators]] adds a richer co-creation typology, but it is still a single-session consultant task. The categories should be treated as promising workflow modes, not stable worker types.
 - [[2025-wang-ai-agents-human-work]] compares 48 professionals with agent configurations on 16 curated computer-use tasks, not live organizational teams. Its speed, cost, and correction-burden results identify collaboration design variables but do not establish which human-agent arrangement produces durable quality, learning, trust, or accountability at work.
 - [[2026-shaw-thinking-fast-slow-artificial]] is deliberately artificial in its task and AI-error manipulation, but that is also why it usefully isolates the collaboration failure: control rights alone do not guarantee judgment if the human predictably accepts fluent AI answers.
+- [[2026-rocca-psychological-coupling]] is a conceptual PsyArXiv preprint oriented primarily to social and psychosocial interaction rather than workplace workflows. It proposes a potentially important temporal mechanism, but does not yet establish that inferred human and model states validly measure coupling, that coupling causes downstream outcomes, or that its topologies generalize to accountable work settings.
