@@ -38,7 +38,8 @@ Ambiguous judgments are never stamped as dispositions (the record stays pending
 for a later clear call) but each one is appended to the record's
 `proposal_history`, so the friction signal persists across re-judgments.
 --friction prints a recent-ambiguity report after the digest: every ambiguous
-proposal recorded in the local manifests of the last N days (default 14). The
+proposal dated within the last N days (default 14), across all local manifests
+regardless of manifest age. The
 triage skill reads it to decide whether to append a rubric proposal to the
 digest; this script only collects and counts — clustering reasons is judgment.
 
@@ -54,6 +55,7 @@ import argparse
 import datetime as dt
 import json
 import sys
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -83,7 +85,14 @@ def apply_dispositions(manifest: dict[str, Any], dispositions: dict[str, Any],
     pending = {rid for rid, r in records.items()
                if not r.get("disposition") or r.get("disposition_confidence") == "ambiguous"}
 
-    entries = {e["id"]: e for e in dispositions.get("entries", [])}
+    entry_list = dispositions.get("entries", [])
+    no_id = [i for i, e in enumerate(entry_list) if not e.get("id")]
+    if no_id:
+        raise ValueError(f"dispositions entries missing an id at positions: {no_id}")
+    dupes = sorted(rid for rid, n in Counter(e["id"] for e in entry_list).items() if n > 1)
+    if dupes:
+        raise ValueError(f"duplicate ids in dispositions: {dupes}")
+    entries = {e["id"]: e for e in entry_list}
     unknown = sorted(set(entries) - set(records))
     if unknown:
         raise ValueError(f"dispositions reference ids not in manifest: {unknown}")
@@ -103,7 +112,7 @@ def apply_dispositions(manifest: dict[str, Any], dispositions: dict[str, Any],
     judged_by = dispositions.get("judged_by", "research-scan-triage")
     auto_wiki = 0
 
-    for rid in sorted(pending, key=lambda i: -records[i].get("rank_score", 0)):
+    for rid in sorted(pending, key=lambda i: -(records[i].get("rank_score") or 0)):
         rec = records[rid]
         item = {"id": rid, "title": rec.get("title", ""), "url": rec.get("url"),
                 "acq_state": rec.get("acq_state"), "rank": rec.get("rank_score")}
@@ -121,10 +130,16 @@ def apply_dispositions(manifest: dict[str, Any], dispositions: dict[str, Any],
 
         if conf == "ambiguous":
             # Not a disposition — the record stays pending — but the friction
-            # signal must survive the eventual clear re-judgment.
-            rec.setdefault("proposal_history", []).append(
-                {"at": c.utc_now_iso(), "proposed": disp, "reason": reason,
-                 "by": judged_by})
+            # signal must survive the eventual clear re-judgment. An identical
+            # judgment (same proposal/reason/judge) appends nothing, so a
+            # replayed dispositions file can't inflate the friction count.
+            history = rec.setdefault("proposal_history", [])
+            if not any(isinstance(h, dict)
+                       and (h.get("proposed"), h.get("reason"), h.get("by"))
+                       == (disp, reason, judged_by)
+                       for h in history):
+                history.append({"at": c.utc_now_iso(), "proposed": disp,
+                                "reason": reason, "by": judged_by})
             plan["needs_call"].append({**item, "proposed": disp})
             continue
 
@@ -208,7 +223,12 @@ def collect_friction(manifests: list[dict[str, Any]], today: dt.date,
     items = []
     for m in manifests:
         for r in m.get("records", []):
-            for h in r.get("proposal_history", []):
+            rid = r.get("id")
+            if not rid:
+                continue
+            for h in r.get("proposal_history") or []:
+                if not isinstance(h, dict):
+                    continue
                 day_str = (h.get("at") or "")[:10]
                 try:
                     day = dt.date.fromisoformat(day_str)
@@ -216,7 +236,7 @@ def collect_friction(manifests: list[dict[str, Any]], today: dt.date,
                     continue
                 if day < cutoff:
                     continue
-                items.append({"date": day_str, "id": r["id"],
+                items.append({"date": day_str, "id": rid,
                               "title": r.get("title", ""),
                               "proposed": h.get("proposed"),
                               "reason": h.get("reason", ""),

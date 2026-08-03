@@ -171,6 +171,9 @@ def build_findings(
                 add("High", "Source missing public url/doi", slug, "no canonical public link in frontmatter")
             if not fm.get("file_hash"):
                 add("Low", "Source missing file_hash", slug, "no provenance hash for dedup")
+            if retrieved_dates.get(slug) is None:
+                add("Low", "Source missing retrieved date", slug,
+                    "no parseable `retrieved:` frontmatter — never counts toward evidence-staleness")
             # A source should feed at least one real topic.
             fed = [t for t in p["links"] if t in slugs]
             if not fed:
@@ -186,7 +189,7 @@ def build_findings(
             updated = _parse_date(fm.get("updated", ""))
             # Evidence-staleness: sources retrieved after the topic's last
             # synthesis. `updated` means "last synthesis edit" — mechanical
-            # passes must not bump it (AGENTS.md), or this check goes blind.
+            # passes must not bump it (wiki/schema.md), or this check goes blind.
             if updated:
                 newer = sorted(s for s in cites_map.get(slug, set())
                                if (rd := retrieved_dates.get(s)) and rd > updated)
@@ -194,6 +197,11 @@ def build_findings(
                     shown = ", ".join(newer[:4]) + (", …" if len(newer) > 4 else "")
                     add("Medium", "Topic evidence-stale", slug,
                         f"{len(newer)} sources retrieved since updated {updated.isoformat()}: {shown}")
+            else:
+                # Without `updated:` this topic silently escapes evidence-stale,
+                # calendar-stale, and the pair change-gate — surface the hole.
+                add("Low", "Topic missing updated date", slug,
+                    "no parseable `updated:` frontmatter — staleness checks and the pair change-gate skip this topic")
             # Calendar staleness (fallback signal; evidence-staleness is the sharper one).
             if updated and (today - updated).days > stale_days:
                 add("Low", f"Topic stale > {stale_days} days", slug, f"updated {updated.isoformat()}")
@@ -221,10 +229,13 @@ def contradiction_pairs(
     synthesised twice — the contradiction mechanism) OR a direct topic<->topic
     link. Ranked by shared-source count. Normal mode change-gates to pairs where
     at least one member's `updated` is inside the window, then fills tail_slots
-    from the remaining eligible pairs on a date-keyed rotation so cold pairs
-    cycle through over successive runs. Bootstrap ignores the gate (first sweep).
+    from the remaining eligible pairs on a month-keyed rotation so cold pairs
+    cycle through over successive monthly runs. Bootstrap ignores the gate
+    (first sweep).
     """
     today = today or dt.date.today()
+    if window_days < 1:
+        raise ValueError("window_days must be >= 1")
     topics = {p["slug"]: p for p in pages
               if p["kind"] == "topic" and p["slug"] not in SKIP_SLUGS}
     cites = topic_source_graph(pages)
@@ -269,7 +280,10 @@ def contradiction_pairs(
     rest = [e for e in eligible if tuple(e["pair"]) not in head_keys]
     tail: list[dict[str, Any]] = []
     if rest and tail_slots:
-        offset = (today.toordinal() // window_days * tail_slots) % len(rest)
+        # Month-keyed: the cron is monthly, so each calendar month advances the
+        # tail by exactly tail_slots (a window_days-keyed bucket collides with
+        # the ~30-day cadence and repeats tails).
+        offset = ((today.year * 12 + today.month) * tail_slots) % len(rest)
         tail = (rest + rest)[offset:offset + min(tail_slots, len(rest))]
     selected = head + tail
     return {"mode": "gated", "window_days": window_days,

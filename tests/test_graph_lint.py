@@ -10,7 +10,7 @@ graph_lint = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(graph_lint)
 
 
-def source(slug, links=None, url="https://example.org/x", doi="null", file_hash="abc123", retrieved=None):
+def source(slug, links=None, url="https://example.org/x", doi="null", file_hash="abc123", retrieved="2026-06-01"):
     fm = {"source_type": "paper", "url": url, "doi": doi, "file_hash": file_hash}
     if retrieved:
         fm["retrieved"] = retrieved
@@ -123,6 +123,31 @@ def test_evidence_stale_needs_two_and_skips_stubs():
     assert not any(f["check"] == "Topic evidence-stale" for f in findings)
 
 
+def test_topic_missing_updated_flagged_stub_exempt():
+    pages = [
+        topic("undated-topic", links=["2026-kim"], updated=None),
+        source("2026-kim", links=["undated-topic"]),
+        doc("overview", links=["undated-topic"]),
+    ]
+    findings = graph_lint.build_findings(pages, today=dt.date(2026, 6, 15))
+    assert any(f["check"] == "Topic missing updated date" and f["page"] == "undated-topic"
+               for f in findings)
+    pages[0] = topic("undated-topic", links=["2026-kim"], status="stub", updated=None)
+    findings = graph_lint.build_findings(pages, today=dt.date(2026, 6, 15))
+    assert not any(f["check"] == "Topic missing updated date" for f in findings)
+
+
+def test_source_missing_retrieved_flagged():
+    pages = [
+        topic("ai-adoption", links=["2026-kim"]),
+        source("2026-kim", links=["ai-adoption"], retrieved=None),
+        doc("overview", links=["ai-adoption"]),
+    ]
+    findings = graph_lint.build_findings(pages, today=dt.date(2026, 6, 15))
+    assert any(f["check"] == "Source missing retrieved date" and f["page"] == "2026-kim"
+               for f in findings)
+
+
 def _pair_fixture():
     """Four topics: a<->b share 2 sources; b->c direct link; d isolated."""
     return [
@@ -167,6 +192,30 @@ def test_pair_selection_is_deterministic():
     a = graph_lint.contradiction_pairs(_pair_fixture(), today=dt.date(2026, 6, 15))
     b = graph_lint.contradiction_pairs(_pair_fixture(), today=dt.date(2026, 6, 15))
     assert a == b
+
+
+def test_tail_rotation_advances_monthly():
+    # max_pairs=1, tail_slots=1 -> head is empty, the single slot is pure tail
+    # over rest = both eligible pairs; the offset must advance across months and
+    # hold within a month (the cron is monthly).
+    def tail_on(day):
+        out = graph_lint.contradiction_pairs(_pair_fixture(), today=day,
+                                             max_pairs=1, tail_slots=1)
+        return [tuple(e["pair"]) for e in out["pairs"]]
+
+    june = tail_on(dt.date(2026, 6, 15))
+    july = tail_on(dt.date(2026, 7, 15))
+    assert june != july                       # consecutive months rotate
+    assert tail_on(dt.date(2026, 6, 1)) == tail_on(dt.date(2026, 6, 28)) == june
+
+
+def test_window_days_zero_raises():
+    try:
+        graph_lint.contradiction_pairs(_pair_fixture(), today=dt.date(2026, 6, 15),
+                                       window_days=0)
+        raise AssertionError("expected ValueError for window_days=0")
+    except ValueError as e:
+        assert "window_days" in str(e)
 
 
 def test_render_markdown_has_required_sections():

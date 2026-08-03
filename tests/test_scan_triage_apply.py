@@ -109,6 +109,42 @@ def test_validation_fails_loud():
             assert msg in str(e), (msg, str(e))
 
 
+def test_duplicate_and_missing_ids_fail_loud():
+    for entries, msg in [
+        ([{"id": "doi:10.1/a", "disposition": "wiki", "confidence": "clear"},
+          {"id": "doi:10.1/a", "disposition": "discard", "confidence": "clear"}], "duplicate ids"),
+        ([{"disposition": "wiki", "confidence": "clear"}], "missing an id"),
+    ]:
+        try:
+            sta.apply_dispositions(_manifest(), {"entries": entries})
+            raise AssertionError(f"expected ValueError containing {msg!r}")
+        except ValueError as e:
+            assert msg in str(e), (msg, str(e))
+
+
+def test_ambiguous_replay_does_not_duplicate_history():
+    manifest, _ = sta.apply_dispositions(_manifest(), _dispositions())
+    replay = {"judged_by": "test", "entries": [
+        {"id": "doi:10.1/d", "disposition": "wiki", "confidence": "ambiguous",
+         "reason": "unsure fit"}]}
+    manifest2, _ = sta.apply_dispositions(manifest, replay)
+    rec = next(r for r in manifest2["records"] if r["id"] == "doi:10.1/d")
+    assert len(rec["proposal_history"]) == 1  # identical judgment appends nothing
+    # A different reason is genuine new signal and still appends.
+    manifest3, _ = sta.apply_dispositions(manifest2, {"judged_by": "test", "entries": [
+        {"id": "doi:10.1/d", "disposition": "wiki", "confidence": "ambiguous",
+         "reason": "second look, still unsure"}]})
+    rec3 = next(r for r in manifest3["records"] if r["id"] == "doi:10.1/d")
+    assert len(rec3["proposal_history"]) == 2
+
+
+def test_null_rank_score_tolerated():
+    manifest = _manifest()
+    manifest["records"][0]["rank_score"] = None
+    _, plan = sta.apply_dispositions(manifest, _dispositions())
+    assert [m["id"] for m in plan["moves"]] == ["doi:10.1/a"]
+
+
 def test_clear_judgment_can_resolve_legacy_ambiguous_record():
     manifest = _manifest()
     prior = next(r for r in manifest["records"] if r["id"] == "doi:10.1/z")
@@ -201,6 +237,9 @@ def test_collect_friction_window_and_resolution():
              "proposal_history": [
                  {"at": "2026-07-01T08:35:00+00:00", "proposed": "discard", "reason": "old"}]},
             {"id": "doi:10.1/bad", "proposal_history": [{"proposed": "wiki"}]},  # no date -> skipped
+            {"title": "Record without id", "proposal_history": [
+                {"at": "2026-07-18T08:35:00+00:00", "proposed": "wiki"}]},  # no id -> skipped
+            {"id": "doi:10.1/mangled", "proposal_history": ["not-a-dict"]},  # -> skipped
         ]},
     ]
     items = sta.collect_friction(manifests, today, window_days=14)

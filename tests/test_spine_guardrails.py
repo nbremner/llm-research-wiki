@@ -61,3 +61,21 @@ def test_allowlist_matches_skill_dirs():
     # the allowlist must not name a retired skill that still has a dir
     on_disk = {p.name for p in (ROOT / "skills").iterdir() if p.is_dir()}
     assert allowlist == on_disk, f"allowlist vs skills/ dirs mismatch: {allowlist} != {on_disk}"
+
+
+def _run_standalone() -> int:
+    fns = [v for k, v in sorted(globals().items()) if k.startswith("test_") and callable(v)]
+    failed = 0
+    for fn in fns:
+        try:
+            fn()
+            print(f"ok   {fn.__name__}")
+        except Exception as e:  # noqa: BLE001
+            failed += 1
+            print(f"FAIL {fn.__name__}: {type(e).__name__}: {e}")
+    print(f"\n{len(fns) - failed}/{len(fns)} passed")
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(_run_standalone())
