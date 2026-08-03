@@ -109,7 +109,7 @@ failures to Discord #logs).
 America/Los_Angeles with an `OnFailure` alert to #logs; hermes cron job "Daily research scan triage"
 runs the triage turn at 08:30 Pacific and delivers the digest to Discord #research-digest. The daily
 triage turn also carries the **rubric-friction loop** (2026-08-03): the applier's `--friction` report
-surfaces 14 days of ambiguous dispositions, and NJ may append at most one rubric proposal per digest;
+surfaces 14 days of ambiguous proposals, and NJ may append at most one rubric proposal per digest;
 ratification is owner→LC→git, prospective only. Monthly semantic lint runs the 1st at 09:00 Pacific,
 digest to #research-digest.)
 

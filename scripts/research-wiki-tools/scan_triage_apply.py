@@ -34,14 +34,24 @@ Default is a DRY RUN (prints plan + digest, changes nothing). --execute performs
 the Drive moves/uploads and persists the updated manifest. See
 docs/research-scrape-plan.md and skills/research-scan-triage/SKILL.md.
 
+Ambiguous judgments are never stamped as dispositions (the record stays pending
+for a later clear call) but each one is appended to the record's
+`proposal_history`, so the friction signal persists across re-judgments.
+--friction prints a recent-ambiguity report after the digest: every ambiguous
+proposal recorded in the local manifests of the last N days (default 14). The
+triage skill reads it to decide whether to append a rubric proposal to the
+digest; this script only collects and counts — clustering reasons is judgment.
+
 Examples:
   uv run scan_triage_apply.py --latest --dispositions /tmp/disp.json            # dry run
-  uv run scan_triage_apply.py --manifest <path> --dispositions <path> --execute
+  uv run scan_triage_apply.py --manifest <path> --dispositions <path> --execute --friction
+  uv run scan_triage_apply.py --friction                                        # report only
 """
 
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import json
 import sys
 from pathlib import Path
@@ -110,6 +120,11 @@ def apply_dispositions(manifest: dict[str, Any], dispositions: dict[str, Any],
         item["reason"] = reason
 
         if conf == "ambiguous":
+            # Not a disposition — the record stays pending — but the friction
+            # signal must survive the eventual clear re-judgment.
+            rec.setdefault("proposal_history", []).append(
+                {"at": c.utc_now_iso(), "proposed": disp, "reason": reason,
+                 "by": judged_by})
             plan["needs_call"].append({**item, "proposed": disp})
             continue
 
@@ -178,6 +193,65 @@ def render_digest(manifest: dict[str, Any], plan: dict[str, list[dict[str, Any]]
 
 
 # ---------------------------------------------------------------------------
+# Pure core: rubric friction (recent-ambiguity report)
+# ---------------------------------------------------------------------------
+
+def collect_friction(manifests: list[dict[str, Any]], today: dt.date,
+                     window_days: int = 14) -> list[dict[str, Any]]:
+    """Ambiguous proposals from records' `proposal_history` — the rubric-friction
+    signal. Each history entry carries its own timestamp (a manifest can span
+    several judgment days now that ambiguous records stay pending), and history
+    survives a later clear call — `resolved` shows what it became. Newest first;
+    the skill clusters causes, this just collects.
+    """
+    cutoff = today - dt.timedelta(days=window_days)
+    items = []
+    for m in manifests:
+        for r in m.get("records", []):
+            for h in r.get("proposal_history", []):
+                day_str = (h.get("at") or "")[:10]
+                try:
+                    day = dt.date.fromisoformat(day_str)
+                except ValueError:
+                    continue
+                if day < cutoff:
+                    continue
+                items.append({"date": day_str, "id": r["id"],
+                              "title": r.get("title", ""),
+                              "proposed": h.get("proposed"),
+                              "reason": h.get("reason", ""),
+                              "url": r.get("url"),
+                              "resolved": r.get("disposition")})
+    items.sort(key=lambda i: (i["date"], i["id"]), reverse=True)
+    return items
+
+
+def render_friction(items: list[dict[str, Any]], window_days: int) -> str:
+    if not items:
+        return f"Rubric friction: no ambiguous proposals in the last {window_days} days.\n"
+    lines = [f"**Rubric friction — {len(items)} ambiguous in the last {window_days} days**"]
+    for i in items:
+        line = (f"- {i['date']} · {i['title'][:80]} — proposed {i.get('proposed') or '?'}: "
+                f"{(i.get('reason') or '')[:160]}")
+        if i.get("resolved"):
+            line += f" [later resolved: {i['resolved']}]"
+        lines.append(line)
+    return "\n".join(lines) + "\n"
+
+
+def load_local_manifests(out_root: str, exclude: Path | None = None) -> list[dict[str, Any]]:
+    manifests = []
+    for mp in sorted(Path(out_root).glob("*/manifest-*.json")):
+        if exclude and mp.resolve() == exclude.resolve():
+            continue
+        try:
+            manifests.append(json.loads(mp.read_text(encoding="utf-8")))
+        except (OSError, json.JSONDecodeError):
+            continue
+    return manifests
+
+
+# ---------------------------------------------------------------------------
 # Execution (Drive side effects)
 # ---------------------------------------------------------------------------
 
@@ -243,36 +317,53 @@ def main(argv: list[str]) -> int:
     p.add_argument("--manifest", default=None, help="Path to a manifest JSON")
     p.add_argument("--latest", action="store_true",
                    help=f"Use the newest unresolved manifest under {cfg.DEFAULT_OUT_ROOT}")
-    p.add_argument("--dispositions", required=True)
+    p.add_argument("--dispositions", default=None,
+                   help="Dispositions JSON from the triage skill (omit for --friction-only)")
     p.add_argument("--execute", action="store_true", help="Perform Drive moves/updates (default: dry run)")
+    p.add_argument("--friction", action="store_true",
+                   help="Print the recent-ambiguity report after the digest")
+    p.add_argument("--friction-days", type=int, default=14)
     p.add_argument("--digest-out", default=None)
     p.add_argument("--token-path", default=cfg.DEFAULT_TOKEN_PATH)
     p.add_argument("--out-root", default=cfg.DEFAULT_OUT_ROOT)
     args = p.parse_args(argv)
 
-    if args.manifest:
-        manifest_path = Path(args.manifest)
-    elif args.latest:
-        found = find_latest_manifest(args.out_root)
-        if not found:
-            print("No un-triaged manifest found.", file=sys.stderr)
-            return 1
-        manifest_path = found
-    else:
-        print("Provide --manifest or --latest.", file=sys.stderr)
+    manifest = None
+    manifest_path: Path | None = None
+    if args.dispositions:
+        if args.manifest:
+            manifest_path = Path(args.manifest)
+        elif args.latest:
+            found = find_latest_manifest(args.out_root)
+            if not found:
+                print("No un-triaged manifest found.", file=sys.stderr)
+                return 1
+            manifest_path = found
+        else:
+            print("Provide --manifest or --latest.", file=sys.stderr)
+            return 2
+
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        dispositions = json.loads(Path(args.dispositions).read_text(encoding="utf-8"))
+
+        manifest, plan = apply_dispositions(manifest, dispositions)
+        if args.execute:
+            execute_plan(manifest, plan, manifest_path, args.token_path)
+
+        digest = render_digest(manifest, plan, executed=args.execute)
+        if args.digest_out:
+            Path(args.digest_out).write_text(digest, encoding="utf-8")
+        print(digest)
+    elif not args.friction:
+        print("Provide --dispositions (triage) and/or --friction.", file=sys.stderr)
         return 2
 
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    dispositions = json.loads(Path(args.dispositions).read_text(encoding="utf-8"))
-
-    manifest, plan = apply_dispositions(manifest, dispositions)
-    if args.execute:
-        execute_plan(manifest, plan, manifest_path, args.token_path)
-
-    digest = render_digest(manifest, plan, executed=args.execute)
-    if args.digest_out:
-        Path(args.digest_out).write_text(digest, encoding="utf-8")
-    print(digest)
+    if args.friction:
+        manifests = load_local_manifests(args.out_root, exclude=manifest_path)
+        if manifest is not None:
+            manifests.append(manifest)  # current run's history, even on dry runs
+        items = collect_friction(manifests, c.utc_now().date(), args.friction_days)
+        print(render_friction(items, args.friction_days))
     return 0
 
 

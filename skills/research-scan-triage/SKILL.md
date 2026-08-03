@@ -1,7 +1,7 @@
 ---
 name: research-scan-triage
 description: "Use when triaging surfaced candidates from the daily research scan into visible Drive state folders — wiki, read-once, or discarded — while preserving manifest/ledger audit state."
-version: 1.1.0
+version: 1.2.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -147,9 +147,9 @@ such as arXiv HTTP 429s can appear during discovery; judge success by final mani
 1. **Find the manifest**: newest local `manifest-*.json` with unresolved records (`disposition: null` or legacy `disposition_confidence: ambiguous`). The intended helper is
    `uv run /root/research-wiki-tools/scan_triage_apply.py --latest --dispositions <valid-json-file>`, but
    if you only need discovery, it is safe to glob `/root/research-wiki-runs/*/manifest-*.json` and choose
-   the newest manifest where any record is null or ambiguous. Do not rely on `/dev/null` as the
-   dispositions file unless the applier has been changed to tolerate empty JSON; older/current versions
-   parse it and fail before printing the manifest.
+   the newest manifest where any record is null or ambiguous. `--dispositions` is optional as of
+   applier v1.2, but omitting it skips triage entirely (`--friction`-only mode) — it is not a
+   manifest-discovery mode, so glob for discovery.
 2. **Judge every unresolved record** against the rubric. Read title + abstract +
    matched_topics; check the acquired artifact if the abstract is thin. One line of `reason` each,
    citing the rubric category. When a record has `artifact_drive_id` but little/no abstract, inspect the
@@ -164,16 +164,46 @@ such as arXiv HTTP 429s can appear during discovery; judge success by final mani
    Stop immediately on bot verification, CAPTCHA, login, or purchase pages; record the judgment without
    `acquired_path`.
 4. **Write the dispositions JSON** (schema in the applier's docstring) to the run dir.
-5. **Dry-run the applier**, review its plan, then run with `--execute`:
-   `uv run /root/research-wiki-tools/scan_triage_apply.py --manifest <path> --dispositions <path> --execute`
-6. **Deliver only the digest** (the applier prints it) as your response — the cron job's delivery target
+5. **Dry-run the applier**, review its plan, then run with `--execute --friction`:
+   `uv run /root/research-wiki-tools/scan_triage_apply.py --manifest <path> --dispositions <path> --execute --friction`
+6. **Rubric-friction check**: `--friction` prints every ambiguous proposal from the last 14 days
+   after the digest (from records' `proposal_history`; entries marked `[later resolved: …]` show what
+   an owner follow-up or re-judgment settled on). Read it and decide whether the recent ambiguity
+   clusters: **if 3 or more items share the same underlying cause** — the same rubric boundary being
+   hit, not merely the same topic — append exactly one `## Rubric proposal` block to your digest
+   response:
+   - the observed pattern, citing the item titles and dates as evidence;
+   - proposed rubric wording (a bullet edit or addition, in the rubric's own style);
+   - a proposed worked-example row for the table;
+   - which of the cited items the change would have made `clear` instead of ambiguous.
+   Resolved entries are your ground truth: if the owner's resolutions contradict your proposed
+   wording, follow the resolutions. Hard cap: **one proposal per digest**, and only when the
+   ≥3-shared-cause threshold trips. If the pattern matches a **Declined proposals** entry below,
+   do not re-propose it.
+7. **Deliver only the digest** (the applier prints it) as your response — the cron job's delivery target
    posts it to Discord. If execution logs print mechanical lines such as `moved -> _triage/wiki:` before the
    digest, omit those from the final response. Do not editorialize beyond the digest; append at most 2
-   lines of run notes.
+   lines of run notes. The single `## Rubric proposal` block from step 6, when warranted, is the one
+   exception to that 2-line limit — the friction *report itself* is working data and stays out of the
+   digest.
+
+## Rubric governance
+
+Rubric changes are **proposal-only** from this skill. The owner ratifies or declines in the digest
+thread; ratified changes are encoded into this file by the local Claude via git (prospective from the
+next run, never retroactive). **Never edit this SKILL.md yourself**, even though the clone is writable
+— an unratified rubric edit would silently change future dispositions.
+
+### Declined proposals
+
+*(none yet — entries are added here by the local Claude when the owner declines, so the same pattern
+is not re-proposed)*
 
 ## Boundaries
 
 - **Never write wiki pages** — ingest skills own that, with owner-approved synthesis.
+- **Never edit this skill's rubric** — rubric proposals go in the digest (workflow step 6); encoding
+  happens owner-side.
 - **Never delete Drive files**; clear dispositions move artifacts out of `_triage/pending` into the matching visible state folder.
 - When renaming a state folder in place, update only its name. Do not remove its current `_triage` parent without re-adding it; Drive can relocate an unparented folder to the shared-drive root. Verify `parents` after every folder update.
 - **Public-only sources** — the one hard rule (`wiki/schema.md`). Anything smelling non-public

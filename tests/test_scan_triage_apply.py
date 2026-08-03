@@ -8,6 +8,7 @@ No network, no Drive. Runs under pytest and standalone.
 
 from __future__ import annotations
 
+import datetime as dt
 import json
 import sys
 import tempfile
@@ -166,6 +167,73 @@ def test_execute_routes_artifacts_to_visible_state_folders():
                         "application/json")]
     executed = sta.render_digest(manifest, plan, executed=True)
     assert "executed" in executed and "DRY RUN" not in executed
+
+
+def test_ambiguous_appends_proposal_history_and_stays_pending():
+    manifest, _ = sta.apply_dispositions(_manifest(), _dispositions())
+    rec = next(r for r in manifest["records"] if r["id"] == "doi:10.1/d")
+    assert rec["disposition"] is None
+    assert len(rec["proposal_history"]) == 1
+    h = rec["proposal_history"][0]
+    assert h["proposed"] == "wiki" and h["reason"] == "unsure fit" and h["at"]
+    # A second ambiguous judgment on the still-pending record appends, not replaces.
+    manifest2, _ = sta.apply_dispositions(manifest, {"entries": [
+        {"id": "doi:10.1/d", "disposition": "read-once", "confidence": "ambiguous",
+         "reason": "still unsure"}]})
+    rec2 = next(r for r in manifest2["records"] if r["id"] == "doi:10.1/d")
+    assert [x["proposed"] for x in rec2["proposal_history"]] == ["wiki", "read-once"]
+
+
+def test_collect_friction_window_and_resolution():
+    today = dt.date(2026, 7, 20)
+    manifests = [
+        {"records": [
+            {"id": "doi:10.1/hot", "title": "Recent ambiguous", "url": "https://x/h",
+             "disposition": None, "proposal_history": [
+                 {"at": "2026-07-18T08:35:00+00:00", "proposed": "wiki", "reason": "practitioner survey"}]},
+            {"id": "doi:10.1/settled", "title": "Later resolved", "url": "https://x/s",
+             "disposition": "read-once", "proposal_history": [
+                 {"at": "2026-07-10T08:35:00+00:00", "proposed": "wiki", "reason": "adjacent domain?"}]},
+            {"id": "doi:10.1/clear", "title": "Never ambiguous", "disposition": "wiki"},
+        ]},
+        {"records": [
+            {"id": "doi:10.1/old", "title": "Outside window", "disposition": None,
+             "proposal_history": [
+                 {"at": "2026-07-01T08:35:00+00:00", "proposed": "discard", "reason": "old"}]},
+            {"id": "doi:10.1/bad", "proposal_history": [{"proposed": "wiki"}]},  # no date -> skipped
+        ]},
+    ]
+    items = sta.collect_friction(manifests, today, window_days=14)
+    assert [i["id"] for i in items] == ["doi:10.1/hot", "doi:10.1/settled"]  # newest first
+    assert items[0]["resolved"] is None
+    assert items[1]["resolved"] == "read-once"
+
+
+def test_render_friction_empty_and_populated():
+    empty = sta.render_friction([], 14)
+    assert "no ambiguous proposals" in empty
+    report = sta.render_friction([
+        {"date": "2026-07-18", "id": "doi:10.1/hot", "title": "Recent ambiguous",
+         "proposed": "wiki", "reason": "practitioner survey", "resolved": None},
+        {"date": "2026-07-10", "id": "doi:10.1/settled", "title": "Later resolved",
+         "proposed": "wiki", "reason": "adjacent domain?", "resolved": "read-once"},
+    ], 14)
+    assert "Rubric friction — 2 ambiguous" in report
+    assert "Recent ambiguous — proposed wiki: practitioner survey" in report
+    assert "[later resolved: read-once]" in report
+
+
+def test_load_local_manifests_excludes_current_and_bad_json():
+    root = Path(tempfile.mkdtemp())
+    a = root / "scan-a"; a.mkdir()
+    (a / "manifest-1.json").write_text(json.dumps(
+        {"generated": "2026-07-10", "records": []}), encoding="utf-8")
+    b = root / "scan-b"; b.mkdir()
+    current = b / "manifest-2.json"
+    current.write_text(json.dumps({"generated": "2026-07-18", "records": []}), encoding="utf-8")
+    (b / "manifest-3.json").write_text("{not json", encoding="utf-8")
+    loaded = sta.load_local_manifests(str(root), exclude=current)
+    assert [m["generated"] for m in loaded] == ["2026-07-10"]
 
 
 def test_find_latest_manifest_skips_fully_triaged():
