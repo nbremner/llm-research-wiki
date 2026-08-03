@@ -24,10 +24,16 @@ Two kinds of pages:
 
 The wiki maintains itself on a daily loop: deterministic code discovers and fetches new literature, a language-model agent triages candidates and drafts synthesis, and a human reviews everything before it becomes part of the wiki. A report-only audit checks for contradictions and stale synthesis, and the wiki's own open questions seed the next day's search.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nbremner/llm-research-wiki/main/docs/assets/wiki-architecture-dark.svg">
-  <img alt="Architecture: Discover, Acquire, Triage, Synthesize, The wiki, Publish — with a report-only Maintain stage inside a flywheel loop that feeds the wiki's open questions back into discovery. Deterministic code selects and moves, the LLM agent judges, and the human owner is the only gate to canon." src="https://raw.githubusercontent.com/nbremner/llm-research-wiki/main/docs/assets/wiki-architecture-light.svg" width="100%">
-</picture>
+<div style="overflow-x:auto">
+  <a href="https://raw.githubusercontent.com/nbremner/llm-research-wiki/main/docs/assets/wiki-architecture-light.svg">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nbremner/llm-research-wiki/main/docs/assets/wiki-architecture-dark.svg">
+      <img alt="Architecture: Discover, Acquire, Triage, Synthesize, The wiki, Publish — with a report-only Maintain stage inside a flywheel loop that feeds the wiki's open questions back into discovery. Deterministic code selects and moves, the LLM agent judges, and the human owner is the only gate to canon." src="https://raw.githubusercontent.com/nbremner/llm-research-wiki/main/docs/assets/wiki-architecture-light.svg" width="100%" style="min-width:940px">
+    </picture>
+  </a>
+</div>
+
+<sub>Scroll sideways on small screens, or click the diagram to open it full size.</sub>
 
 ## Where to start
 
