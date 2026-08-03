@@ -1,7 +1,7 @@
 ---
 name: research-wiki-graph-lint
-description: Use when auditing the markdown research wiki for graph coherence — broken wikilinks, orphan pages, claims without a source, sources that feed no topic, provenance gaps, and stale topics. Read-only by default.
-version: 2.0.0
+description: Use when auditing the markdown research wiki for graph coherence — broken wikilinks, orphan pages, claims without a source, sources that feed no topic, provenance gaps, and stale topics — or when running the monthly semantic lint (contradiction check over the --pairs shortlist + evidence-staleness review). Read-only by default.
+version: 2.1.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -30,7 +30,11 @@ across `wiki/` and reports, by severity:
 - **Medium — Orphan source / Orphan topic:** a page nothing links to.
 - **Medium — Source feeds no topic:** evidence sitting unused — no resolvable `[[topic]]` link.
 - **Medium — Topic cites no source:** an active topic making claims with no `[[source]]` behind them.
-- **Low — Topic stale:** `updated` older than the threshold (default 180 days).
+- **Medium — Topic evidence-stale:** ≥2 linked sources with `retrieved` dates *after* the topic's
+  `updated` — the synthesis is behind the evidence. (Depends on the `updated:`-discipline rule in
+  `wiki/schema.md`: mechanical passes must not bump `updated`, or this check goes blind.)
+- **Low — Topic stale:** `updated` older than the threshold (default 180 days) — calendar fallback;
+  evidence-stale is the sharper signal.
 - **Low — Source missing file_hash:** provenance hash absent (dedup weaker).
 
 It skips `schema.md` (documentation full of illustrative template links) and `README.md` placeholders,
@@ -48,11 +52,33 @@ python scripts/research-wiki-tools/graph_lint.py --fail-on High  # non-zero exit
 
 No arguments needed in-repo; `--wiki-dir` defaults to the repo's `wiki/`.
 
+## Semantic lint (monthly cron)
+
+The structural checks above are deterministic; the **contradiction check is judgment work** and runs
+monthly. The script selects *what to read*; you judge *whether it contradicts*.
+
+1. Get the shortlist: `python scripts/research-wiki-tools/graph_lint.py --pairs` (first ever run:
+   `--pairs --bootstrap --max-pairs 35`). Pairs share ≥2 cited sources or link directly; normal runs
+   are change-gated to recently edited pairs, ranked by shared-source count, plus a rotating tail of
+   cold pairs. The JSON reports `eligible_total` vs `selected` — quote both in your report so coverage
+   limits are never silent.
+2. For each pair, read both topic pages in full. Flag only **wiki-voice contradictions**: topic A
+   asserting as settled what topic B contradicts, one page citing a finding the other treats as
+   refuted, or the same shared source summarized with incompatible claims. **Documented disagreement
+   between studies is content, not a defect** — topic pages have a "Contradictions & open questions"
+   section precisely for that; never flag it.
+3. Also run the structural lint (`--json`) and pull any **Topic evidence-stale** findings into your
+   report — they are the "synthesis behind the evidence" queue.
+4. Deliver one digest: contradictions found (quote the two conflicting passages, name the shared
+   sources), evidence-stale topics, pairs-checked/eligible counts. **Report-only** — fixes are
+   synthesis edits and go through the owner-approved path; never edit topic pages from this skill.
+
 ## When to use
 
 - After an ingest, to confirm no broken links / orphans / unsupported claims were introduced.
 - Periodically, as a wiki health check.
 - Before relying on the wiki for a synthesis or query run.
+- Monthly semantic lint (cron): the contradiction-pair procedure above.
 
 ## How to act on findings
 

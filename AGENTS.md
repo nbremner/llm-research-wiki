@@ -29,6 +29,12 @@ After changing mirrored files: copy the updated version into this repo, run test
 When renaming or retiring a mirrored skill, update `skills.allowlist`, this file, and
 NicholasJunior's live Hermes skill store in the same session so the mirror stays consistent.
 
+## Wiki frontmatter discipline
+
+`updated:` on wiki pages means last **synthesis** edit. Mechanical passes (style, link fixes,
+typo sweeps) must not bump it — the graph lint's evidence-staleness check depends on this.
+Full rule in `wiki/schema.md` § Formatting.
+
 ## Before committing
 
 Run:

@@ -8,16 +8,23 @@ is no Notion.
 
 Read-only lint over `wiki/`. Parses frontmatter + `[[wikilinks]]` and reports broken links, orphan
 pages, sources that feed no topic, active topics citing no source, provenance gaps (missing
-url/doi/hash), and stale topics. Skips `schema.md` (template docs), `README.md`, and code fences, so
-examples don't produce false positives. Performs no edits.
+url/doi/hash), evidence-stale topics (≥2 sources `retrieved` after the topic's `updated` — depends
+on the `updated:`-discipline rule in `wiki/schema.md`), and calendar-stale topics. Skips `schema.md`
+(template docs), `README.md`, and code fences, so examples don't produce false positives. Performs
+no edits.
 
 ```bash
 python scripts/research-wiki-tools/graph_lint.py                 # markdown report to stdout
 python scripts/research-wiki-tools/graph_lint.py --json          # JSON findings
 python scripts/research-wiki-tools/graph_lint.py --fail-on High  # non-zero exit on any High+ finding
+python scripts/research-wiki-tools/graph_lint.py --pairs         # contradiction-pair shortlist (JSON)
 ```
 
-`--wiki-dir` defaults to the repo's `wiki/`. See `skills/research-wiki-graph-lint/`.
+`--pairs` selects candidate topic pairs for the monthly semantic contradiction lint: ≥2 shared cited
+sources or a direct topic↔topic link, change-gated to recently edited pairs (`--window-days`, 35),
+ranked by shared-source count, capped (`--max-pairs`, 15) with rotating tail slots for cold pairs.
+`--bootstrap` skips the gate for the first full sweep. The LLM skill judges the shortlist; selection
+is deterministic. `--wiki-dir` defaults to the repo's `wiki/`. See `skills/research-wiki-graph-lint/`.
 
 ## research_scan.py — deterministic scan harness
 
@@ -37,11 +44,15 @@ Deterministic applier for the `research-scan-triage` skill's judgments: validate
 JSON (fails loud on unknown/already-disposed ids, while allowing clear resolution of ambiguous calls),
 enforces caps, moves artifacts from `_triage/pending` into `wiki`, `read-once`, or `discarded`, stamps
 the manifest (local + Drive), and renders the owner digest.
-Dry-run by default; `--execute` performs the Drive changes.
+Dry-run by default; `--execute` performs the Drive changes. `--friction` appends the rubric-friction
+report — ambiguous proposals recorded in local manifests over the last 14 days (`--friction-days`) —
+which the triage skill reads to decide whether to propose a rubric amendment (≤1 per digest;
+ratification is owner-side, via git).
 
 ```bash
 uv run scripts/research-wiki-tools/scan_triage_apply.py --latest --dispositions d.json            # dry run
-uv run scripts/research-wiki-tools/scan_triage_apply.py --manifest m.json --dispositions d.json --execute
+uv run scripts/research-wiki-tools/scan_triage_apply.py --manifest m.json --dispositions d.json --execute --friction
+uv run scripts/research-wiki-tools/scan_triage_apply.py --friction                                # report only
 ```
 
 `scan_common.py` holds the shared machinery (id/dedup, ranking, OA-URL selection, ledger, Drive

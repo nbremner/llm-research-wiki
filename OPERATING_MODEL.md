@@ -101,12 +101,17 @@ failures to Discord #logs).
 |---|---|---|---|
 | Research scan (deterministic harness, systemd timer) | Daily | Drive `_triage` only | ≤12 surfaced/run |
 | Scan triage (`research-scan-triage`, hermes cron) | Daily | `_triage/pending` → disposition folders + digest | ≤10 wiki auto-moves/run; ambiguous remains pending → owner |
-| Graph-lint report | Periodic | report only | n/a |
+| Semantic lint (`research-wiki-graph-lint`, hermes cron) | Monthly | report only (contradiction pairs + evidence-stale topics) | ≤15 pairs/run |
+| Graph-lint report (structural) | Periodic | report only | n/a |
 | Ingest | On demand / small scheduled | sources/ (auto), topics/ (owner-approved) | low per-run cap |
 
 (Scan-pipeline scheduling deployed 2026-07-04: `research-scan.timer` fires the harness daily at 08:00
 America/Los_Angeles with an `OnFailure` alert to #logs; hermes cron job "Daily research scan triage"
-runs the triage turn at 08:30 Pacific and delivers the digest to Discord #research-digest.)
+runs the triage turn at 08:30 Pacific and delivers the digest to Discord #research-digest. The daily
+triage turn also carries the **rubric-friction loop** (2026-08-03): the applier's `--friction` report
+surfaces 14 days of ambiguous dispositions, and NJ may append at most one rubric proposal per digest;
+ratification is owner→LC→git, prospective only. Monthly semantic lint runs the 1st at 09:00 Pacific,
+digest to #research-digest.)
 
 Expand autonomy only after manual runs produce clean artifacts. Topic synthesis stays approval-gated
 regardless of cadence.

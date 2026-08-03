@@ -38,6 +38,8 @@ wiki/
 
 Write each paragraph, list item, and blockquote as a **single logical line** — do not hard-wrap prose at a fixed column. Let the editor/reader soft-wrap. Manual line breaks inside a paragraph or bullet render as awkward mid-sentence breaks in markdown readers that treat a single newline as a line break. Separate blocks with blank lines; reserve actual newlines for new paragraphs, list items, and headings.
 
+**`updated:` means last *synthesis* edit, not last touch.** Bump it when a page's claims, evidence, or connections change; do **not** bump it on mechanical passes (style normalization, link fixes, typo sweeps). The graph lint's evidence-staleness check compares source `retrieved:` dates against topic `updated:` dates — a mechanical bump makes a topic look freshly synthesized and blinds the check. (Rule adopted 2026-08-03, prospective.)
+
 ## Topic page template
 
 ```markdown
