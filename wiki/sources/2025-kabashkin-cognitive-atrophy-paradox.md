@@ -29,6 +29,7 @@ file_hash: 6df4273797af016cabf5409eef5ccdb8c6d2503e4d321dd9f6764916c6a74f30
 - Broad claims span education, professional work, software development, health care, and policy, so workplace generalization and intervention effectiveness require longitudinal, domain-specific, and independently replicated evidence.
 
 ## Feeds
+- [[cognitive-sustainability]]
 - [[cognitive-debt]]
 - [[ai-induced-skill-erosion]]
 - [[automation-complacency]]

@@ -44,6 +44,7 @@ Every topic in the wiki, one line each. Topics are synthesis pages: each one con
 - [[ai-mediated-choice-and-identity]] — how AI recommendation or delegation changes preference distinctiveness, exploration, self-expression, and identity-relevant choice
 - [[ai-enabled-job-crafting]] — when workers use AI as a job resource to reshape tasks, effort, and work meaning from the bottom up
 - [[cognitive-debt]] — when repeated AI offloading, overload, or bypass creates delayed costs to attention, learning transfer, ownership, recovery, and judgment
+- [[cognitive-sustainability]] — whether AI-enabled work preserves the autonomy, reflection, creativity, judgment, and accountable practice needed for human capability to grow rather than atrophy
 - [[ai-induced-skill-erosion]] — when AI-enabled productivity hides slower erosion of expertise, judgment, and professional identity
 - [[ai-mediated-learning]] — when AI assistance builds durable competence versus bypassing the practice, error resolution, and comprehension work that learning requires
 - [[ai-supported-knowledge-synthesis]] — how AI helps or distorts evidence navigation, sensemaking, verification, and context-preserving decision work
