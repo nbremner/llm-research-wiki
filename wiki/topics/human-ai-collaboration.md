@@ -1,7 +1,7 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-08-03
+updated: 2026-08-04
 ---
 
 # Human-AI collaboration
@@ -24,6 +24,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 [[2025-bastani-human-ai-contracting-paradox]] gives the economic version of the same problem. In a principal-agent model, human-AI collaboration can be system-optimal while still unattractive to the principal because rare, unpredictable AI failures make human vigilance expensive to incentivize; as AI reliability rises, the wage needed to keep a human inspecting and correcting low-probability errors can rise rather than fall. Collaboration design therefore has to solve incentive compatibility for oversight, not only capability complementarity or interface fit.
 
 [[2026-lee-making-invisible-visible]] shifts the collaboration question from metaphor to work setting. Workers using decision-support AI did not simply want the AI to decide or recommend; they wanted control points where they could verify outputs, adjust sensitivity or assumptions, simulate alternatives, and incorporate contextual expertise before accountable decisions. Collaboration here is a design of control rights, explanation, feedback, and final authority.
+
+[[2025-passlack-great-power-responsibility]] adds a capability constraint to that design. In interviews across roles, participants described responsibility gaps when workers were held accountable for AI outcomes without a fit between their assigned responsibilities and their technical, domain, ethical, and organizational capacity to act. Collaboration therefore needs more than final human authority: it needs roles whose actual abilities and support match the verification and judgment burden the workflow leaves to people.
 
 [[2026-dellacqua-jagged-technological-frontier]] gives a behavioral pattern for collaboration under task uncertainty. Successful consultants either acted as "Centaurs," dividing and delegating work between themselves and AI, or as "Cyborgs," tightly integrating AI through the task flow. The important point is not the labels; it is that collaboration quality depends on calibration to the task frontier. When the task is outside current AI capability, close collaboration can amplify wrong output rather than improve human performance.
 

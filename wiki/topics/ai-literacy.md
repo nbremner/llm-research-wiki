@@ -1,7 +1,7 @@
 ---
 title: AI literacy
 status: stub
-updated: 2026-06-22
+updated: 2026-08-04
 ---
 
 # AI literacy
@@ -13,6 +13,8 @@ AI literacy is the knowledge and skill side of AI use: what people understand ab
 For work and training, the construct implication is sharp: raising AI literacy may improve calibration, verification, and stewardship even if it reduces some awe-driven willingness to use AI. That makes AI literacy closer to a capability and judgment construct than a persuasion or adoption metric.
 
 [[2025-kellogg-novice-risk-work]] adds an organizational-learning boundary: novice users can be willing to teach seniors about GenAI while still lacking enough understanding to diagnose where risk mitigation belongs. AI literacy here is not generic familiarity or use confidence; it includes knowing when a risk is caused by model capability, interface design, deployer governance, ecosystem behavior, or local human routines.
+
+[[2025-passlack-great-power-responsibility]] extends this boundary from individual knowledge to role-appropriate responsible practice. In 28 interviews across five knowledge-worker groups, participants described AI literacy as a context-sensitive toolbox of technical, domain, communication, ethical, and learning-related capacities, with personal dispositions such as healthy skepticism and continual learning doing work that generic skills training cannot. Its role-ability-fit claim is useful: organizations should not assign AI accountability to a role unless that role has the authority, capability, and support to exercise it.
 
 ## Connections
 - Relates to [[critical-thinking]] because literacy should support verification, boundary-setting, and skepticism toward AI outputs.

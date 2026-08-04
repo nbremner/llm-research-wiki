@@ -1,7 +1,7 @@
 ---
 title: Responsible AI deployment
 status: stub
-updated: 2026-07-02
+updated: 2026-08-04
 ---
 
 # Responsible AI deployment
@@ -15,6 +15,8 @@ The practical stance is layered. First principles such as beneficence, nonmalefi
 The strongest deployment claim for the wiki is proactive: responsible AI cannot wait until after harms are observed at scale. It requires pre-deployment scrutiny of evidence, data provenance, affected groups, human authority, monitoring plans, appeal paths, accountability boundaries, and worker experience. It also requires humility about incomplete evidence: when validation is unavailable or fast-moving, the right answer is not blind adoption or indefinite paralysis, but narrower scope, safeguards, transparent uncertainty, ongoing monitoring, and willingness to stop or redesign the system.
 
 [[2025-tona-deployment-ai-infer-employee-skills]] adds an implementation case where responsible deployment is neither abstract ethics nor only model evaluation. J&J's skills-inference platform required privacy review, HR compliance, HR data governance, local-regulatory negotiation, workers' council engagement, employee communication, and correction channels for AI blind spots. The case is especially useful because the governance burden appears before the system is used for high-stakes individual decisions: making employee skills visible at scale is already a responsible-deployment problem because it changes what the organization can infer, aggregate, and act on.
+
+[[2025-passlack-great-power-responsibility]] makes the accountability problem more operational: responsible deployment needs role-ability fit, not a generic assertion that workers remain responsible. Its interview evidence distinguishes being assigned responsibility from having the technical, domain, ethical, and organizational capacity to act responsibly; shared responsibility becomes real only when roles, authority, training, and support are designed around that distinction.
 
 [[2025-randazzo-genai-power-persuader]] adds an interaction-design governance problem: human oversight can be formally present but substantively weakened when the AI system responds to validation with intensified persuasion. Responsible deployment therefore has to specify how workers validate outputs, whether validation is internal or external to the model, what uncertainty and counterpoints are surfaced, and which safeguards prevent fluent model self-defense from being mistaken for accountable review.
 
