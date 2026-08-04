@@ -248,6 +248,8 @@ git commit -m "wiki: ingest source <slug>"   # + Co-Authored-By trailer per repo
 
 ### 9. Integrate into topics (owner-approved)
 
+If the owner rejects the source itself during topic review (for example, because its evidence is not rigorous enough), treat that as a source-level rejection rather than merely discarding the topic proposal: restore/remove all uncommitted topic edits, delete the committed source record in a dedicated follow-up commit, push and verify it, and move the raw PDF into the existing Drive `discarded` folder. Do **not** trash the PDF or return it to `_triage/wiki`; `discarded` preserves the rejection without re-queuing the source. Verify the file is not trashed, has `discarded` as its sole intended parent, the wiki working tree is clean, `origin/main` matches local `HEAD`, and graph lint is clean. If no `discarded` folder can be found unambiguously, stop and ask rather than inventing a folder or deleting the file.
+
 Before editing topic pages, perform a **topic-map assessment**. Do not assume the source must fit the
 current topic list. Identify:
 
