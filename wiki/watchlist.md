@@ -1,6 +1,6 @@
 ---
 title: Candidate topics (watchlist)
-updated: 2026-08-03
+updated: 2026-08-04
 ---
 
 # Candidate topics (watchlist)
@@ -24,3 +24,4 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **AI-mediated developer work and productivity** — appears in [[2026-edwards-developer-productivity]] as a qualitative account of coder-to-conductor role change, AI-enabled psychological safety, output-to-impact productivity reframing, and autonomy–competence tension; it connects to observed software-use concentration in [[2025-handa-economic-tasks-ai]], agentic coding in [[2026-hitzig-agentic-coding-expertise]], and short-horizon programming learning loss in [[2026-shen-ai-impacts-skill-formation]]. Defer rather than create a developer-specific topic until independent field or longitudinal evidence can distinguish durable work-design, career, measurement, and skill-maintenance mechanisms from this one senior-user narrative.
 - **methodological congruence in AI-assisted qualitative research** — appears in [[2026-nguyen-trung-methodologically-congruent-genai]] as the alignment of AI workflow, qualitative epistemology, researcher authority, and ethical data practice; defer until independent comparative or empirical work shows that this is a reusable work-design and evidence-quality construct rather than a framework limited to one methodological tradition.
 - **psychological coupling / human–AI relational dynamics** — appears in [[2026-rocca-psychological-coupling]] as a proposed turn-by-turn mechanism linking user and LLM states to adaptive or maladaptive psychosocial outcomes. Defer because this is one conceptual preprint oriented mainly to social and clinical interaction; promote when independent empirical sources establish measurable relational dynamics in workplace or other accountable human-AI settings.
+- **cognitive commons / professional-expertise regeneration** — appears in [[2026-lovett-tragedy-cognitive-commons]] as a conceptual account of profession-level deep expertise as a shared resource that firms can deplete by removing developmental work, even while maintaining short-run AI-enabled output. Defer because this is one conceptual article; promote when independent longitudinal, comparative, or governance evidence establishes a reusable profession-level construct beyond individual skill erosion, cognitive debt, or organizational learning.

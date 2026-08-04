@@ -1,7 +1,7 @@
 ---
 title: AI-induced skill erosion
 status: active
-updated: 2026-08-02
+updated: 2026-08-04
 ---
 
 # AI-induced skill erosion
@@ -17,6 +17,8 @@ AI-induced skill erosion is the slow loss of practiced judgment, craft, confiden
 [[2026-edwards-developer-productivity]] gives a qualitatively distinct senior-practitioner account of that precursor. Some interviewed developers reported forgetting basic syntax and worried that AI's leverage could reduce the foundational practice needed to direct, evaluate, and recover from generated code; other accounts described AI as a learning partner that supported reflection and higher-level architectural thinking. The source therefore reinforces that offloading is not itself erosion: the risk depends on what practice disappears and whether the redesigned role retains active specification, verification, and learning.
 
 [[2025-randazzo-cyborgs-centaurs-self-automators]] adds a workflow-mode precursor to skill erosion. Abdicated/Self-Automator consultants produced fast, polished work by handing over much of the problem-solving and evaluative work to GenAI, but they did not develop either task/domain expertise or GenAI-related expertise during the episode. The warning is not that delegation is always bad; it is that output quality can hide whether the human side of the workflow is still practicing the capabilities future oversight depends on.
+
+[[2026-lovett-tragedy-cognitive-commons]] shifts the unit of analysis from an individual worker's capability loss to the profession's capacity to regenerate expertise. Its Cognitive Commons framework proposes that independently rational firms can remove entry-level developmental work and thereby deplete the shared reservoir of Internalized Mastery on which later AI validation, crisis response, and succession depend. The article's Validation Tether makes the bridge explicit: Distributed Mastery in orchestrating AI can produce plausible output, but substantive review still rests on the deep domain knowledge that developmental pipelines are meant to build. This is a conceptual prediction, not evidence that profession-level depletion has occurred.
 
 [[2026-ruttenberg-cognitive-debt-ai-research]] extends the cognitive-debt mechanism into a threshold model. Skill erosion risk is not only a slow average decline in capability; it may remain invisible while outputs stay high, then surface when attentional erosion, effort displacement, and affective depletion cross a capacity threshold. [[2026-ruttenberg-neurodivergent-expertise-ai-work]] adds the individual-differences contribution: autistic and neurodivergent professionals may detect unsustainable AI offloading earlier because they already monitor sensory, attentional, and recovery constraints that neurotypical work systems often ignore.
 

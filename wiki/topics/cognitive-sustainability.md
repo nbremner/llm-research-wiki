@@ -14,6 +14,8 @@ The page therefore makes a distinction the adjacent topics need. [[automation-co
 
 The practical implication is not generic “human-in-the-loop” rhetoric. A sustainable workflow would preserve meaningful opportunities to frame the problem, inspect and challenge outputs, encounter feedback, and practice the capabilities that escalation and recovery require. [[2025-kabashkin-cognitive-atrophy-paradox]] proposes reflective prompts, explainable outputs, intentional slow-downs, and adaptive task design as candidate mechanisms, but their effectiveness has not yet been tested as a coherent intervention package.
 
+[[2026-lovett-tragedy-cognitive-commons]] adds a profession-level boundary to this work-system criterion. Its Cognitive Commons framework argues that AI-enabled efficiency can weaken the entry-level practice and supervised progression through which a profession replenishes the Internalized Mastery needed for substantive validation. This broadens cognitive sustainability beyond whether an individual workflow preserves present capability: a locally sustainable-looking arrangement may still be collectively unsustainable if organizations free-ride on a shrinking external pool of experts. The proposed governance remedies remain conceptual and require comparative, longitudinal tests.
+
 ## Connections
 - Relates to [[cognitive-debt]] because cognitive debt can be the delayed liability that signals a work system has preserved immediate output while weakening attention, learning, ownership, or recovery.
 - Relates to [[ai-induced-skill-erosion]] because repeated unsustainable delegation can plausibly lead to durable loss of practiced judgment and professional capability, although the temporal pathway requires longitudinal evidence.
