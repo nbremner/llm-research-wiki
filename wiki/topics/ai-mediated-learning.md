@@ -1,7 +1,7 @@
 ---
 title: AI-mediated learning
 status: stub
-updated: 2026-07-03
+updated: 2026-08-04
 ---
 
 # AI-mediated learning
@@ -22,6 +22,8 @@ AI-mediated learning asks when AI assistance helps workers acquire durable compe
 
 [[2026-ruttenberg-cognitive-debt-ai-research]] gives that mechanism a more general research-and-knowledge-work formulation. It separates passive offloading from guided co-construction and reflective scaffolding, which helps this page avoid a flat “AI assistance harms learning” claim: the learning risk is highest when AI replaces active reading, synthesis, and problem solving, and lower when the tool preserves effortful engagement while reducing extraneous burden. Its proposed Cognitive Debt Observatory also gives the page a measurement agenda: transfer tasks, sustained-attention measures, AI-use log coding, psychophysiological indicators, and burnout/cognitive-failure measures can test whether learning loss accumulates before visible output quality declines.
 
+[[2026-alenezi-educating-agentic-engineer]] turns this scattered learning evidence into a curricular design hypothesis for agentic work. Its conceptual ACCEL framework argues that institutions should grant AI autonomy progressively rather than treat access as an all-or-nothing accommodation: foundational practice precedes bounded assistance, supervised delegation, and multi-agent orchestration only after learners demonstrate verification competence. The useful contribution is the proposed assessment shift from final artifacts toward specification quality, delegation rationale, acceptance gates, defect detection, and reflective records. That makes the central educational question observable: whether a learner can direct and audit an agentic workflow, not merely obtain a plausible result from one.
+
 ## Connections
 - Relates to [[cognitive-debt]] because repeated AI-supported episodes may accumulate hidden learning, attention, ownership, and recovery costs before durable capability loss is visible.
 - Relates to [[ai-induced-skill-erosion]] because repeated poor learning episodes can become durable capability loss.
@@ -39,3 +41,4 @@ AI-mediated learning asks when AI assistance helps workers acquire durable compe
 - Productive offloading and harmful bypass can look similar from output quality alone. The open design problem is how to instrument interaction patterns, comprehension checks, and transfer tasks so organizations can tell whether AI assistance is building or hollowing out competence.
 - [[2025-randazzo-cyborgs-centaurs-self-automators]] is short-horizon and consultant-specific, so it shows immediate skilling differences inside one problem-solving task rather than durable expertise development across repeated work.
 - [[2026-ruttenberg-cognitive-debt-ai-research]] and [[2026-ruttenberg-neurodivergent-expertise-ai-work]] are agenda-setting rather than direct workplace evidence: they propose longitudinal transfer and threshold tests, but the empirical intersection of AI-mediated knowledge work, neurodivergence, and cognitive debt remains largely unmeasured.
+- [[2026-alenezi-educating-agentic-engineer]] is a conceptual educational architecture, not evidence that staged autonomy, orchestration records, or verification-gated progression improves transfer, calibration, or professional performance. The next test is comparative implementation evidence: do these designs preserve foundational competence while enabling learners to develop credible agent-direction capability?

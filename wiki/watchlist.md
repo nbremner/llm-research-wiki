@@ -7,6 +7,8 @@ updated: 2026-08-04
 
 Constructs that have surfaced across sources but don't yet warrant their own page. Ingests append here (with the source slug); promote a candidate once enough sources accumulate rather than deferring it again. Edit freely.
 
+- **agentic-engineering education / verification-gated AI autonomy** — appears in [[2026-alenezi-educating-agentic-engineer]] as the ACCEL framework: a curricular progression from foundational unassisted practice through bounded assistance and supervised delegation to multi-agent orchestration, contingent on demonstrated verification competence. Defer because this is one integrative conceptual preprint; promote when implementation or comparative learning evidence establishes it as a reusable education and workforce-development construct rather than a single framework.
+
 - **applicant reactions & perceived fairness** of algorithmic assessment — appears under [[algorithmic-assessment]]; candidate for its own page.
 - **human-agency-scale / worker-desired agency** — appears in [[2025-shao-future-work-ai-agents]]; candidate if more sources use agency levels as an audit or design construct rather than only a preference measure.
 - **ai-advice-taking / recommendation-following** — appears across decision-support and adoption sources, including [[2022-dellacqua-falling-asleep-at-wheel]], [[2025-brynjolfsson-generative-ai-at-work]], [[2026-almog-barriers-ai-adoption]], and the Advisor condition in [[2026-zhu-choose-your-agent]]; promote if the wiki needs a peer topic for recommendation acceptance, revision, rejection, and reliance.
