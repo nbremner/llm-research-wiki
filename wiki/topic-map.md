@@ -13,6 +13,7 @@ Every topic in the wiki, one line each. Topics are synthesis pages: each one con
 - [[ai-mediated-knowledge-behavior]] — how AI changes workers' discretionary knowledge sharing and hiding through competing empowerment and threat appraisals
 - [[employee-change-support]] — when employees minimally comply with change versus actively champion it, and how appraisal, trust, and management support shape that difference
 - [[task-level-ai-adoption]] — where workers actually bring AI into tasks, before roles or organizations have necessarily redesigned around it
+- [[occupational-boundary-recomposition]] — how AI-aided task crossover can broaden the work workers attempt across historical occupational boundaries before formal role architecture, authorization, capability, and accountability catch up
 - [[ai-readiness]] — whether organizational capabilities, data, culture, and strategic fit are ready for a specific AI adoption purpose
 - [[organizational-learning-capability]] — whether organizations can turn experimentation, failures, external knowledge, and local problem solving into changed routines
 - [[responsible-ai-deployment]] — how workforce-facing AI systems are governed, evidenced, scoped, monitored, and held accountable so deployment protects worker dignity, fairness, privacy, autonomy, and well-being

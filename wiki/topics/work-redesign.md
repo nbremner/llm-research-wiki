@@ -77,6 +77,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2026-rodriguez-when-not-to-automate]] makes preservation itself a proposed redesign outcome. Its PHP-AIO protocol treats the choice among automate, augment, hybrid, and preserve as a role-level decision made before implementation, using risks to tacit knowledge, resilience, future regulatory constraint, and institutional trust. The implication is not that every consequential role should remain manually executed; it is that redesign should preserve enough human capability, redundancy, authority, and recovery capacity for the workflow to remain governable when automation fails or conditions change. The framework is conceptual and its financial-services parameters are not yet validated outside stylized cases.
 
+[[2026-chin-work-at-frontier]] supplies an early behavioral signal that redesign pressure can cross occupational boundaries before an organization formally redraws roles. In a large sample of work-related ChatGPT messages linked to self-reported role information, 16.8% of all messages and 43.5% of occupation-specific non-generic messages concerned tasks historically associated with another occupation. That is not evidence that firms have successfully redesigned roles; it shows that AI can make workers attempt task bundles outside their historical occupational boundary, creating a governance and capability question about who is permitted, prepared, and accountable to do the newly reachable work.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.

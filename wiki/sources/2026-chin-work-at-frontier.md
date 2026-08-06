@@ -36,3 +36,4 @@ file_hash: 3ffb4cc2bb97aaac8dc0f5bf715ee17f6f4b4629097b89558aa9d8ab199d4781
 - [[work-redesign]]
 - [[ai-workforce-impact-measurement]]
 - [[human-ai-task-taxonomy]]
+- [[occupational-boundary-recomposition]]
