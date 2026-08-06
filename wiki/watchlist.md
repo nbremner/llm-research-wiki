@@ -1,6 +1,6 @@
 ---
 title: Candidate topics (watchlist)
-updated: 2026-08-04
+updated: 2026-08-06
 ---
 
 # Candidate topics (watchlist)
@@ -31,3 +31,5 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **pre-decision automation governance / human-preservation protocols** — appears in [[2026-rodriguez-when-not-to-automate]] as PHP-AIO: a role-level gate sequence intended to decide among automate, augment, hybrid, and preserve before a deployment commitment, based on tacit knowledge, resilience, regulatory exposure, and socio-institutional capital. Defer because this is one financial-services-oriented conceptual preprint with expert-elicited parameters; promote only if independent empirical, comparative, or participatory governance evidence shows that pre-decision preservation criteria add value beyond existing responsible-deployment, work-redesign, and task-allocation frameworks.
 
 - **delegation legitimacy boundary / cognitive assay** — appears in [[2026-tomita-philosophy-cognitive-assay]] as a conceptual distinction between AI's ability to reduce externalization cost and its lack of standing to warrant value-laden specification judgments. Defer because this is one philosophical, case-derived preprint and its Sein/Sollen scoring protocol has not been calibrated or tested for reliability, design quality, or participatory legitimacy; promote if independent implementation, governance, or work-design evidence shows this boundary improves how organizations allocate authority and preserve evaluative capacity.
+
+- **AI interaction competence / interactional fluency** — appears in [[2026-idan-generative-ai-productivity-divide]] as the ability to elicit, filter, verify, and apply model outputs, reported as a moderator of short-horizon LLM-assisted learning gains. Defer rather than create a peer topic because it currently has one student working-paper source and overlaps materially with [[ai-literacy]], domain expertise, verification, and general learning strategy; promote if independent workplace or measurement evidence establishes that it is a distinct, valid capability predicting accepted output quality, learning transfer, or calibrated use.

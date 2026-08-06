@@ -1,7 +1,7 @@
 ---
 title: AI-mediated learning
 status: stub
-updated: 2026-08-04
+updated: 2026-08-06
 ---
 
 # AI-mediated learning
@@ -24,6 +24,8 @@ AI-mediated learning asks when AI assistance helps workers acquire durable compe
 
 [[2026-alenezi-educating-agentic-engineer]] turns this scattered learning evidence into a curricular design hypothesis for agentic work. Its conceptual ACCEL framework argues that institutions should grant AI autonomy progressively rather than treat access as an all-or-nothing accommodation: foundational practice precedes bounded assistance, supervised delegation, and multi-agent orchestration only after learners demonstrate verification competence. The useful contribution is the proposed assessment shift from final artifacts toward specification quality, delegation rationale, acceptance gates, defect detection, and reflective records. That makes the central educational question observable: whether a learner can direct and audit an agentic workflow, not merely obtain a plausible result from one.
 
+[[2026-idan-generative-ai-productivity-divide]] supplies a second, shorter-horizon learning experiment focused on who benefits from LLM-assisted self-study. Across 179 Texas A&M students learning LLM concepts for three days, LLM access improved post-test scores on average, but the benefit was moderated by the authors' AI Interaction Competence (AIC): eliciting, filtering, verifying, and applying model output. A conceptual roadmap modestly improved novice scores and reduced dispersion relative to unguided LLM use, while more required time did not. The contribution is not evidence of workplace learning or durable transfer; it is a testable design proposition that structured navigation and verification can matter more than access or exposure alone.
+
 ## Connections
 - Relates to [[cognitive-debt]] because repeated AI-supported episodes may accumulate hidden learning, attention, ownership, and recovery costs before durable capability loss is visible.
 - Relates to [[ai-induced-skill-erosion]] because repeated poor learning episodes can become durable capability loss.
@@ -34,6 +36,7 @@ AI-mediated learning asks when AI assistance helps workers acquire durable compe
 - Relates to [[human-ai-co-creation-modes]] because workflow-level interaction patterns determine whether AI-supported work functions as newskilling, upskilling, or bypass.
 - Relates to [[responsible-ai-deployment]] because workplace learning agents need explicit scope, evidence, worker-training, and accountability boundaries before errors are blamed on workers or hidden inside vendor claims.
 - Relates to [[inclusive-hr-systems]] because AI-mediated learning designs built around neurotypical pacing, sensory tolerance, or interaction norms can exclude workers whose expertise would reveal cognitive-sustainability risks earlier.
+- Relates to [[ai-literacy]] because the ability to elicit, filter, verify, and apply AI outputs may be a behavioral interaction component of literacy, but its construct boundary is not yet established.
 
 ## Contradictions & open questions
 - [[2026-shen-ai-impacts-skill-formation]] is causal but short-horizon: it measures learning from a one-hour software task, not longitudinal professional development or transfer to live work.
@@ -42,3 +45,4 @@ AI-mediated learning asks when AI assistance helps workers acquire durable compe
 - [[2025-randazzo-cyborgs-centaurs-self-automators]] is short-horizon and consultant-specific, so it shows immediate skilling differences inside one problem-solving task rather than durable expertise development across repeated work.
 - [[2026-ruttenberg-cognitive-debt-ai-research]] and [[2026-ruttenberg-neurodivergent-expertise-ai-work]] are agenda-setting rather than direct workplace evidence: they propose longitudinal transfer and threshold tests, but the empirical intersection of AI-mediated knowledge work, neurodivergence, and cognitive debt remains largely unmeasured.
 - [[2026-alenezi-educating-agentic-engineer]] is a conceptual educational architecture, not evidence that staged autonomy, orchestration records, or verification-gated progression improves transfer, calibration, or professional performance. The next test is comparative implementation evidence: do these designs preserve foundational competence while enabling learners to develop credible agent-direction capability?
+- [[2026-idan-generative-ai-productivity-divide]] measures a three-day LLM-knowledge learning episode with students rather than work performance or later transfer. Its conceptual-roadmap effect is only weakly significant, and AIC needs independent measurement validation before organizations infer that an apparent interaction-skill gap is the mechanism behind uneven workforce outcomes.
