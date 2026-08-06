@@ -6,7 +6,7 @@ url: https://doi.org/10.2139/ssrn.7169260
 doi: 10.2139/ssrn.7169260
 source_type: paper
 publication_status: working-paper
-retrieved: 2026-08-05
+retrieved: 2026-08-06
 drive_file_id: 1_4Blib9REDk3WWqOsENb6qcnkPJPluHK
 file_hash: f2bde2b8092a81e94a4dc3f5c00c03dd28346139d43cf689f751182cd2f8002e
 ---
