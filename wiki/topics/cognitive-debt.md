@@ -1,7 +1,7 @@
 ---
 title: Cognitive debt
 status: active
-updated: 2026-07-23
+updated: 2026-08-06
 ---
 
 # Cognitive debt
@@ -11,6 +11,8 @@ Cognitive debt is the delayed cost to attention, learning, transfer, ownership, 
 [[2025-kosmyna-brain-chatgpt-cognitive-debt]] gives the wiki its first direct empirical warning, though in an education-domain preprint rather than workplace field evidence. Repeated LLM-assisted essay writing was associated with weaker neural connectivity, lower text ownership, more homogeneous language, and poorer recall of produced text. The point is not that every AI-assisted writing episode creates debt; it is that repeated fluent assistance can reduce the cognitive operations through which people form, select, and remember ideas.
 
 [[2026-ruttenberg-cognitive-debt-ai-research]] turns that warning into a broader theoretical and measurement agenda for AI-augmented research and knowledge production. Ruttenberg defines cognitive debt as a cumulative cost produced by attentional erosion, effort displacement, and affective depletion, with harms predicted to accelerate when those mechanisms exceed individual capacity thresholds. The paper distinguishes passive offloading, guided co-construction, and reflective scaffolding, making the design claim sharper: reducing extraneous burden is not enough if the workflow also removes the effortful engagement needed for comprehension, synthesis, and epistemic responsibility.
+
+[[2026-ruttenberg-cognitive-debt-cumulative-cost]] makes this general account more falsifiable without supplying confirmation: it specifies a cumulative three-mechanism model, proposes an operational threshold combining sustained-attention decline and emotional-exhaustion elevation while AI-assisted output remains intact, and predicts earlier threshold crossings under neurodivergent cognitive and sensory constraints. Its value is a sharper longitudinal measurement and work-design hypothesis, not a validated diagnostic threshold or evidence that any worker group is inherently deficient.
 
 [[2026-ruttenberg-neurodivergent-expertise-ai-work]] extends the construct into inclusive work design. Neurodivergent professionals are not only a potentially vulnerable subgroup; they may function as early-warning experts because sensory tolerance, executive-function load, pacing, and recovery constraints make unsustainable cognitive ecologies visible sooner. That moves cognitive debt out of an individual self-control frame and into [[work-redesign]], [[inclusive-hr-systems]], and [[digital-work-strain]]: the work system can create hidden debt while aggregate productivity metrics still look healthy.
 
@@ -26,7 +28,7 @@ For the wiki, cognitive debt is a bridge construct rather than a synonym for [[a
 - Relates to [[inclusive-hr-systems]] because cognitive-debt measurement and intervention have to account for neurodivergent pacing, sensory load, recovery needs, and design expertise without converting subgroup signals into deficit labels or surveillance.
 
 ## Contradictions & open questions
-- The empirical base is still early. [[2025-kosmyna-brain-chatgpt-cognitive-debt]] is suggestive but educational and preprint-based; [[2026-ruttenberg-cognitive-debt-ai-research]] and [[2026-ruttenberg-neurodivergent-expertise-ai-work]] are conceptual and agenda-setting rather than direct workplace tests.
+- The empirical base is still early. [[2025-kosmyna-brain-chatgpt-cognitive-debt]] is suggestive but educational and preprint-based; [[2026-ruttenberg-cognitive-debt-ai-research]], [[2026-ruttenberg-cognitive-debt-cumulative-cost]], and [[2026-ruttenberg-neurodivergent-expertise-ai-work]] are conceptual and agenda-setting rather than direct workplace tests. The newer proposed threshold is a measurement hypothesis, not a diagnostic cutoff.
 - Productive offloading and harmful debt can look identical in short-run productivity metrics. The measurement problem is how to observe transfer, recall, comprehension, recovery, and verification quality without forcing workers through wasteful friction.
 - Cognitive debt is likely task-, person-, and design-contingent. The same AI assistance may protect capacity when it removes extraneous burden, but create debt when it displaces the practice, uncertainty tolerance, or source contact needed for later judgment.
 - Neurodivergent early-warning signals are ethically delicate: they may reveal design failures sooner, but using those signals responsibly requires participation, accommodation, privacy, and non-punitive governance rather than monitoring workers for fragility.
