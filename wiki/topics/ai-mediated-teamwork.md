@@ -1,7 +1,7 @@
 ---
 title: AI-mediated teamwork
 status: stub
-updated: 2026-06-28
+updated: 2026-08-06
 ---
 
 # AI-mediated teamwork
@@ -11,6 +11,8 @@ AI-mediated teamwork tracks how AI changes the reasons teams are formed and the 
 [[2026-dellacqua-cybernetic-teammate]] gives the wiki its first direct field-experimental evidence on this question. In a preregistered P&G product-innovation experiment, teams without AI outperformed solo workers by about 0.24 standard deviations, but solo workers with AI improved by about 0.37 standard deviations and statistically matched non-AI teams. That makes AI-mediated teamwork a redesign question: in bounded ideation work, AI may supply enough perspective and language support that one worker can reproduce some benefits of a cross-functional pair.
 
 The source also separates teamwork's expertise-integration function from its headcount structure. Without AI, R&D participants produced more technical ideas and Commercial participants produced more market-oriented ideas; with AI, both groups produced more balanced solutions. AI did not merely make the same worker faster. It helped workers reason across functional boundaries that human teams normally bridge.
+
+The published analysis further localizes that contribution inside innovation work. [[2026-dellacqua-cybernetic-teammate]] finds that AI mainly improves the quality of ideas generated rather than selection accuracy, so the useful redesign is not “replace the team with a solo worker and AI.” It is to distinguish generative breadth and quality, where AI may supply part of a team’s contribution, from evaluative selection, where human judgment remains a separate work function.
 
 
 [[2025-dellacqua-super-mario-ai]] gives the counterweight: AI can weaken teamwork when it enters an interdependent coordination routine as a replacement coworker rather than as an ideation aid. In a laboratory experiment where four-person firms played a team-based game, high-performing automated agents individually outperformed humans but reduced firm performance, increased coordination failures, and lowered trust and effort among directly affected human teammates. This makes team performance a system property, not a sum of member capability.
