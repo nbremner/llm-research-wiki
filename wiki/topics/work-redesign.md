@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-08-02
+updated: 2026-08-06
 ---
 
 # Work redesign
@@ -75,6 +75,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 
 [[2026-edwards-developer-productivity]] adds an interview-based developer view of that reallocation. Senior engineers described moving from implementation toward architecture, planning, and system integrity as AI handled more low-level work, while redefining productivity around durable impact rather than code volume. The source sharpens a redesign requirement: if implementation is delegated, roles, career progression, and performance criteria need to recognize architectural judgment, metacognitive specification, verification, and long-run product quality rather than simply ratcheting up output expectations.
 
+[[2026-rodriguez-when-not-to-automate]] makes preservation itself a proposed redesign outcome. Its PHP-AIO protocol treats the choice among automate, augment, hybrid, and preserve as a role-level decision made before implementation, using risks to tacit knowledge, resilience, future regulatory constraint, and institutional trust. The implication is not that every consequential role should remain manually executed; it is that redesign should preserve enough human capability, redundancy, authority, and recovery capacity for the workflow to remain governable when automation fails or conditions change. The framework is conceptual and its financial-services parameters are not yet validated outside stylized cases.
+
 ## Connections
 
 - Connects to [[ai-adoption]] because adoption becomes a work-architecture problem, not just tool provisioning or training.
@@ -123,4 +125,5 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 - [[2026-johnston-shift-agentic-ai-codex]] is strong process evidence for frontier agentic work practices, but it is not a field experiment showing that those practices improve productivity, quality, coordination, learning, or worker well-being. OpenAI-internal results are best read as a low-friction frontier case, not as the current baseline for ordinary organizations.
 
 - [[2026-hitzig-agentic-coding-expertise]] suggests coding occupation may matter less than task-specific expertise for agentic coding success, but it does not show how organizations should redesign roles, training, review rights, or accountability when non-coders can direct technical work.
+- **Preservation criterion vs. preservation instrument.** [[2026-rodriguez-when-not-to-automate]] usefully makes capability regeneration and organizational redundancy redesign criteria, but its five-gate protocol has not yet shown that scored preservation decisions avert later failure or outperform other participatory, qualitative, or regulatory governance approaches.
 

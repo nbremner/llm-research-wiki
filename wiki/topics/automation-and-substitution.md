@@ -1,7 +1,7 @@
 ---
 title: Automation and substitution
 status: active
-updated: 2026-08-01
+updated: 2026-08-06
 ---
 
 # Automation and substitution
@@ -60,6 +60,8 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 
 [[2025-landers-ethical-use-ai-iop]] adds an ethical deployment boundary to replacement claims. Worker replacement is not settled by technical feasibility, cost, or owner rights under capitalism: deployment decisions still need to consider worker dignity, rights, reskilling, reactions, and the organizational duty to monitor harms when AI changes or eliminates roles. This makes [[responsible-ai-deployment]] a governance layer for substitution decisions rather than an after-the-fact sentiment check.
 
+[[2026-rodriguez-when-not-to-automate]] turns that governance boundary into a proposed pre-decision protocol. Its PHP-AIO framework asks decision makers to score tacit-knowledge erosion, resilience reduction, regulatory exposure, and socio-institutional capital degradation before committing to automate, then returns automate, augment, hybrid, or preserve. The useful contribution is the decision timing: capability, cost, exposure, and even post-hoc compliance are incomplete if the organization has not asked which human capability, redundancy, and recovery capacity a workflow would remove. The formal scores are a conceptual proposal, not validated evidence that these gates predict better automation outcomes.
+
 ## Connections
 
 - Relates to [[human-ai-task-allocation]] because substitution is often decided at the routing level — which task, which turn, which human state — rather than at the job level, and allocation policies can move the boundary within a single work episode.
@@ -95,3 +97,4 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 - **Benchmark success vs. real-work substitution.** [[2026-wang-agent-development-real-world-work]] implies that substitution claims need a validity check: the benchmark may measure convenient agent tasks rather than the job domains, interpersonal work, ambiguity, and end-to-end accountability that determine whether labor can actually be replaced.
 - **Contracting failure vs. technical failure.** [[2025-bastani-human-ai-contracting-paradox]] implies that organizations may substitute toward AI-only systems or away from AI not because humans add no value, but because the value of human vigilance is hard to contract for. That creates an adoption/substitution mechanism the wiki should keep separate from capability, worker preference, and complacency.
 - **Performance resistance vs. principle resistance.** [[2025-friis-performance-principle]] cuts against the assumption that better AI eventually dissolves all resistance: much public opposition is performance-contingent, but a smaller moral floor remains for care, therapy, spiritual leadership, and other human-presence roles.
+- **Protocol determinism vs. judgment validity.** [[2026-rodriguez-when-not-to-automate]] makes a protocol reproducible once structured inputs are set, but its input judgments, weights, thresholds, and financial-services calibration are expert-elicited and not yet validated against realized knowledge loss, resilience failure, regulatory action, or trust outcomes. A repeatable automate/preserve recommendation is not yet an empirically warranted one.
