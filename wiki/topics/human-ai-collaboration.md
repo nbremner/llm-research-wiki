@@ -1,7 +1,7 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-08-04
+updated: 2026-08-06
 ---
 
 # Human-AI collaboration
@@ -53,6 +53,8 @@ This connects collaboration to confidence calibration. Higher confidence in AI w
 
 [[2026-zhu-choose-your-agent]] moves collaboration from advice-following into authority allocation. In three-person bargaining games, participants preferred the Advisor interface because it preserved control, but groups achieved the strongest welfare gains under Delegate access, where the AI autonomously executed actions. Collaboration quality therefore depends not only on explanation, review, or final human authority; in interdependent settings, letting an agent act can change the whole offer environment and create spillovers for non-users.
 
+[[2026-paimann-ux-principles-human-ai-agent-interaction]] makes that authority arrangement actionable at the interaction layer. Its enterprise-oriented framework prioritizes human control, reliable and transparent output, context awareness, data governance, and workflow integration, with concrete mechanisms such as pause and override controls, critical-decision confirmation, visible intended actions and agent status, audit trails, uncertainty signals, and visibility into specialized agents. The synthesis point is not that any checklist proves collaboration is safe; it is that human authority remains rhetorical unless the workflow makes intervention, comprehension, and verification practically possible. [[human-ai-agent-interaction-design]] carries that design problem as a distinct topic.
+
 [[2026-zhang-fatigue-aware-learning-defer]] adds a dynamic allocation case: collaboration quality can depend on the human expert's changing workload state, not only on static expertise or model confidence. In FALCON, the same hard task may appropriately route to a fresh human expert early in a sequence and to AI later if accumulated fatigue makes human error more likely, which means collaboration needs stateful routing rules rather than one-time role assignments.
 
 [[2026-shen-ai-impacts-skill-formation]] adds a learning constraint to collaboration design. In a software-learning task, human-AI collaboration that looked efficient through delegation produced weak post-task understanding, while conceptual inquiry and explanation-oriented interaction preserved more skill. A collaboration design is therefore not adequate just because the human remains nominally accountable; it also has to decide whether the episode is meant to produce a deliverable, build competence, or both.
@@ -77,6 +79,7 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 - Relates to [[employee-engagement]] because workers in decision-support settings described autonomy, motivation, learning, and valued task ownership as part of whether AI-supported work remained worth engaging in.
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis work makes collaboration visible as source navigation, verification, auditability, and stakeholder translation rather than only answer generation.
 - Relates to [[critical-thinking]] and [[responsible-ai-deployment]] because internal validation can fail when the AI system being checked is also the actor persuading the human to accept its answer.
+- Relates to [[human-ai-agent-interaction-design]] because human authority is real only when the workflow makes intervention, comprehension, and verification practicable.
 - Relates to [[human-ai-task-taxonomy]] because collaboration claims need dimensional task detail: authority, auditability, output definition, AI structure, and the relevant human persona.
 - Relates to [[human-ai-task-allocation]] because collaboration must sometimes be decided at the task-instance level as human workload, fatigue, capability, and accountability conditions change.
 - Relates to [[human-ai-co-creation-modes]] because collaboration quality depends on the enacted workflow pattern, not only the presence of AI assistance.

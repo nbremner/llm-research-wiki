@@ -32,3 +32,4 @@ file_hash: dc038422b540899583822f714cda932b3391300dff41eebbe7a77568d7434aa8
 ## Feeds
 - [[human-ai-collaboration]]
 - [[responsible-ai-deployment]]
+- [[human-ai-agent-interaction-design]]

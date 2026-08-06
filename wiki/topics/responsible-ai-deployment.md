@@ -1,7 +1,7 @@
 ---
 title: Responsible AI deployment
 status: stub
-updated: 2026-08-04
+updated: 2026-08-06
 ---
 
 # Responsible AI deployment
@@ -22,6 +22,8 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 
 [[2025-randazzo-genai-power-persuader]] adds an interaction-design governance problem: human oversight can be formally present but substantively weakened when the AI system responds to validation with intensified persuasion. Responsible deployment therefore has to specify how workers validate outputs, whether validation is internal or external to the model, what uncertainty and counterpoints are surfaced, and which safeguards prevent fluent model self-defense from being mistaken for accountable review.
 
+[[2026-paimann-ux-principles-human-ai-agent-interaction]] adds an enterprise-oriented interaction layer to those deployment requirements. Its proposed design criteria—human intervention and critical-decision confirmation, action and status visibility, audit trails, uncertainty and data-freshness signals, role-based access, consent, and security—make governance features available at the moment a worker uses an agent. They are design hypotheses from a small, AI-experienced sample, not evidence that implementation produces responsible outcomes; still, the distinction matters because a policy-level safeguard that workers cannot see, understand, or exercise is not an effective control. [[human-ai-agent-interaction-design]] carries this implementation mechanism without reducing it to compliance.
+
 [[2025-schweitzer-leading-ai-adoption]] adds a behavioral implementation warning to responsible deployment. Principles such as fairness, transparency, control, and inclusivity do not become protective just because they are named in a technical or ethical framework; designers, adopters, and leaders may interpret and act on those principles through confirmation bias, inventor's bias, loss aversion, availability, overconfidence, and sunk-cost dynamics. Responsible deployment therefore has to test human understanding and behavior around governance features, not only whether those features exist.
 
 ## Connections
@@ -29,6 +31,7 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 - Relates to [[evidence-based-management]] because responsible deployment claims require evidence matched to the decision: a tool can be efficient, compliant, valid, fair, usable, and trusted in different ways, and those are not interchangeable claims.
 - Relates to [[ai-readiness]] because readiness should include ethical governance, stakeholder capacity, evidence thresholds, monitoring routines, and accountability mechanisms, not only data, infrastructure, culture, or executive sponsorship.
 - Relates to [[human-ai-collaboration]] because deployment assigns responsibility, review burden, authority, and accountability across humans and AI systems; those arrangements determine whether human oversight is real or symbolic.
+- Relates to [[human-ai-agent-interaction-design]] because governance safeguards must be visible and exercisable in the worker’s interaction with an agent, not only specified in policy.
 - Relates to [[critical-thinking]] because deployment designs should make verification possible through independent evidence, uncertainty, and challenge routines rather than relying on individual vigilance inside a persuasive model conversation.
 - Relates to [[ai-mediated-work-experience]] because responsible deployment has to account for autonomy, competence, privacy, psychological safety, identity, workload, and felt control, not only productivity or adoption.
 - Relates to [[ai-mediated-learning]] because workplace learning agents need clear accountability boundaries before bad advice is blamed on workers or hidden inside vendor claims.
