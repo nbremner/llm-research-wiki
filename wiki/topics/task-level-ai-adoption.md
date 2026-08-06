@@ -1,7 +1,7 @@
 ---
 title: Task-level AI adoption
 status: active
-updated: 2026-07-02
+updated: 2026-08-06
 ---
 
 # Task-level AI adoption
@@ -24,6 +24,8 @@ The useful design implication is that adoption is not simply moving from routine
 
 [[2026-massenkoff-labor-market-impacts-ai]] uses Claude task traces differently: not only to map where AI is used, but to decide which theoretically exposed O*NET tasks are observed often enough in work-related contexts to count toward occupational exposure. Its key adoption contribution is the red-area/blue-area gap: observed Claude coverage is still far below theoretical LLM capability, even in occupational groups where capability scores imply large feasible scope.
 
+[[2026-iscenko-google-ai-economy-atlas]] replicates the broad-but-shallow pattern on a different set of conversational AI surfaces: Gemini use appears across occupations covering 88% of US employment, but the median occupation with observed use shows AI use on only 21% of constituent tasks. Its task-intent classifier also separates partial drafting, review, ideation, and information retrieval/learning from end-to-end automation, which constitutes less than 10% of observed non-routine cognitive-work conversations. The finding expands the observed-use map beyond Claude, but it does not show the whole task performed outside Gemini, whether an interaction succeeded, or whether the trace represents organization-sanctioned use.
+
 [[2026-richmond-ai-jobs-transition-framework]] adds a second observed-use bridge from tasks to occupations, using consumer ChatGPT usage to test whether occupations classified as more automation-pressured show more realized AI use. The important adoption signal is the same gap in another form: ChatGPT use is about 3x higher in jobs labeled high automation risk than in jobs with less immediate pressure, but realized use remains far below theoretical exposure.
 
 ## Connections
@@ -42,4 +44,5 @@ The useful design implication is that adoption is not simply moving from routine
 - Visibility changes the adoption map. [[2026-almog-barriers-ai-adoption]] suggests the same AI-assisted task can show different use rates depending on whether reliance is private or attached to evaluation, so observed-use data may understate latent usefulness where workers expect reputational penalties.
 - [[2026-johnston-shift-agentic-ai-codex]] improves task-level measurement for agentic tools, but its strongest adoption evidence comes from a product and company context with unusually low frictions. The gap between OpenAI-internal usage and external organizational usage is itself part of the finding: task fit does not automatically become broad organizational adoption.
 - [[2026-massenkoff-labor-market-impacts-ai]] shows why theoretical exposure cannot be read as realized adoption. Tasks may be feasible for LLMs but absent from observed work use because of model limits, legal constraints, missing software integration, verification burden, risk, policy, or diffusion friction.
+- [[2026-iscenko-google-ai-economy-atlas]] finds broad Gemini diffusion alongside shallow within-occupation task use, reinforcing the exposure-versus-use gap across platforms. But all platform traces share a boundary: they observe prompts or interactions, not the full task, surrounding workflow, organizational authorization, or whether the worker accepted and used the output.
 - [[2026-richmond-ai-jobs-transition-framework]] reinforces that observed-use traces are adoption evidence, not job-impact evidence. Even when usage is higher in high-risk archetypes, the trace does not show quality, employer policy, worker occupation, workflow integration, or whether the same task use displaces labor.

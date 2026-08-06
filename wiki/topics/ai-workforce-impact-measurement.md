@@ -1,7 +1,7 @@
 ---
 title: AI workforce impact measurement
 status: active
-updated: 2026-07-28
+updated: 2026-08-06
 ---
 
 # AI workforce impact measurement
@@ -30,6 +30,8 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 
 [[2026-putka-indexing-ai-impact-onet]] offers a design-level alternative to one-number exposure measures: a proposed O*NET suite of 16 indices that separates AI capability from observed use, automation from augmentation, and knowledge, skill, task, contextual-performance, vacancy, and whole-occupation units. Its central measurement claim is that an occupational AI-impact score inherits its meaning from the performance domain, unit of analysis, aggregation rule, and AI operationalization behind it; a task-level score aggregated to an occupation is not interchangeable with a direct occupation-level judgment or a vacancy-based indicator.
 
+[[2026-iscenko-google-ai-economy-atlas]] broadens the observed-use layer with 14.65 million de-identified Gemini interactions across app, search, and unpaid API surfaces, mapped to occupations, O*NET tasks, household activities, geography, language, task characteristics, and interaction intent. Its core contribution is a diffusion-versus-depth distinction: observed use reaches occupations covering 88% of US employment, yet the median observed occupation uses AI on only 21% of its tasks and fewer than 10% of observed non-routine cognitive-work conversations are classified as end-to-end automation. This is stronger evidence about where one platform's users bring conversational AI than a capability score, but it remains a platform-bounded behavioral trace rather than evidence of productivity, substitution, or realized job change.
+
 ## Connections
 - Connects to [[task-level-ai-adoption]] because observed use is one input to workforce impact measurement, especially when the data preserve task or work-activity grain rather than only tool-level adoption.
 - Connects to [[human-ai-task-taxonomy]] because measurement depends on correctly distinguishing user goals, AI actions, authority, scope, auditability, and output definition.
@@ -53,6 +55,7 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 - [[2026-johnston-shift-agentic-ai-codex]] shows why richer process measures are necessary but also why they are not enough. Output tokens, concurrency, runtime, and skill use can show that work is being reorganized around agents; they still need links to quality, productivity, wages, hiring, learning, accountability, and worker experience before they become workforce-impact evidence.
 - [[2026-massenkoff-labor-market-impacts-ai]] improves exposure measurement by using observed usage and automation weighting, but it remains platform-bounded and early. A null unemployment result does not prove no displacement; it may mean the effect is small, delayed, absorbed through hiring changes, hidden in other AI tools, or occurring through job recomposition rather than unemployment.
 - [[2026-putka-indexing-ai-impact-onet]] proposes an unusually explicit validity program—multiple models and runs for reliability plus a nomological network for convergent and discriminant evidence—but that is still a proposal. The unresolved question is whether a transparent multi-index architecture predicts realized work change, or simply produces more differentiated theoretical exposure scores.
+- [[2026-iscenko-google-ai-economy-atlas]] extends observed-use coverage to Gemini, but its breadth can invite an overclaim: diffuse platform use is not evidence that most tasks, organizations, or labor markets have changed. The 21%-median task-use estimate and platform exclusions make depth, enterprise integration, and outcome linkage the unresolved measurement problem.
 
 - [[2026-hitzig-agentic-coding-expertise]] improves the process measurement of agentic coding, but its success labels remain transcript- and telemetry-based; workforce-impact claims still need downstream evidence about maintained artifacts, quality, productivity, wages, hiring, and skill development.
 
