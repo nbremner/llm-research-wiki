@@ -1,7 +1,7 @@
 ---
 title: Human-AI task allocation
 status: active
-updated: 2026-07-23
+updated: 2026-08-06
 ---
 
 # Human-AI task allocation
@@ -15,6 +15,8 @@ Human-AI task allocation is the design problem of deciding, at the level of a sp
 [[2026-hitzig-agentic-coding-expertise]] adds observed agentic-coding evidence that allocation also happens inside an interactive session, not only before the task begins. In typical Claude Code sessions, humans retain most planning decisions while Claude takes most execution decisions, and more task-specific expertise lets users elicit longer agent action chains and higher success. Allocation therefore depends on whether the human has the expertise to define the goal and evaluate the artifact, not only whether the AI can execute the next step.
 
 [[2025-wang-ai-agents-human-work]] adds a workflow-level allocation heuristic: delegate steps that are readily programmable, but retain human execution or review where work depends on visual judgment, contextual interpretation, or representations that agents handle poorly. The evidence does not support routing whole tasks from speed or cost alone. Agents were substantially faster and cheaper across the sampled tasks, yet lower output quality and failures involving fabrication and tool misuse made verification burden part of the allocation decision.
+
+[[2026-tomita-philosophy-cognitive-assay]] adds a distinct allocation criterion: technical capability and delegation legitimacy are not the same variable. Its conceptual framework treats factual components of a task decision as progressively AI-assessable while locating the warrant for value-laden criteria—what should be prioritized, excluded, or treated as quality—in a contestable human domain-expert role. Allocation should therefore identify not only whether AI can generate or evaluate an output, but whose authority makes the evaluative standard legitimate and whether the workflow preserves that person's practical ability to exercise it.
 
 The important I-O bridge is that allocation quality depends on a human-state model, not only a model-capability estimate. Zhang et al. optimize accuracy under a human-AI cooperation budget, but the same architecture points toward richer work-design questions: what human states matter, how they are measured, when worker agency overrides algorithmic routing, and how organizations prevent allocation systems from treating fatigue as merely a resource constraint to optimize around.
 
@@ -33,4 +35,5 @@ The important I-O bridge is that allocation quality depends on a human-state mod
 
 - [[2026-hitzig-agentic-coding-expertise]] shows an apparently productive planning/execution split, but it leaves open when preserving human planning is enough and when domain experts also need to inspect implementation details directly.
 - [[2025-wang-ai-agents-human-work]] motivates programmability as an allocation signal, but programmability is not a validated routing construct and may be confounded with the tools, task representations, and rubrics available in the study. A step that is easy to script can still require human accountability, and a visually dependent step may become agent-suitable as interfaces change.
+- [[2026-tomita-philosophy-cognitive-assay]] makes a strong conceptual claim that value-laden judgments require human legitimacy, but it does not establish how organizations should identify legitimate experts where values are plural or contested, whether experts score such judgments reliably, or how the boundary changes across regulated, participatory, and ordinary knowledge-work settings.
 
