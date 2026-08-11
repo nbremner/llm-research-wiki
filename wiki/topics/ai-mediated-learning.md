@@ -1,7 +1,7 @@
 ---
 title: AI-mediated learning
 status: stub
-updated: 2026-08-06
+updated: 2026-08-11
 ---
 
 # AI-mediated learning
@@ -26,6 +26,8 @@ AI-mediated learning asks when AI assistance helps workers acquire durable compe
 
 [[2026-idan-generative-ai-productivity-divide]] supplies a second, shorter-horizon learning experiment focused on who benefits from LLM-assisted self-study. Across 179 Texas A&M students learning LLM concepts for three days, LLM access improved post-test scores on average, but the benefit was moderated by the authors' AI Interaction Competence (AIC): eliciting, filtering, verifying, and applying model output. A conceptual roadmap modestly improved novice scores and reduced dispersion relative to unguided LLM use, while more required time did not. The contribution is not evidence of workplace learning or durable transfer; it is a testable design proposition that structured navigation and verification can matter more than access or exposure alone.
 
+[[2026-nguyen-ai-accelerated-rapid-professional-upskilling]] contributes a program-design account of how AI-mediated learning might be built at certification scale rather than a comparison of AI-assisted versus unassisted learning episodes. Its five-stage pipeline combines AI drafting, verification, tutoring, and assessment with human control of blueprints, SME review, misconceptions, and item ratings; that division of labor makes verification and assessment part of the learning design rather than a post hoc safeguard. The reported external signals—a NASBA CPE approval and three NVIDIA certification passes—show that one implementation cleared external gates, but they do not establish that the pipeline accelerates learning, improves transfer, or outperforms conventional professional development.
+
 ## Connections
 - Relates to [[cognitive-debt]] because repeated AI-supported episodes may accumulate hidden learning, attention, ownership, and recovery costs before durable capability loss is visible.
 - Relates to [[ai-induced-skill-erosion]] because repeated poor learning episodes can become durable capability loss.
@@ -46,3 +48,4 @@ AI-mediated learning asks when AI assistance helps workers acquire durable compe
 - [[2026-ruttenberg-cognitive-debt-ai-research]] and [[2026-ruttenberg-neurodivergent-expertise-ai-work]] are agenda-setting rather than direct workplace evidence: they propose longitudinal transfer and threshold tests, but the empirical intersection of AI-mediated knowledge work, neurodivergence, and cognitive debt remains largely unmeasured.
 - [[2026-alenezi-educating-agentic-engineer]] is a conceptual educational architecture, not evidence that staged autonomy, orchestration records, or verification-gated progression improves transfer, calibration, or professional performance. The next test is comparative implementation evidence: do these designs preserve foundational competence while enabling learners to develop credible agent-direction capability?
 - [[2026-idan-generative-ai-productivity-divide]] measures a three-day LLM-knowledge learning episode with students rather than work performance or later transfer. Its conceptual-roadmap effect is only weakly significant, and AIC needs independent measurement validation before organizations infer that an apparent interaction-skill gap is the mechanism behind uneven workforce outcomes.
+- [[2026-nguyen-ai-accelerated-rapid-professional-upskilling]] is a single design-based preprint, not a controlled learning evaluation: its n=3 certification outcome, author-reported quality checks, and external approvals make it a feasibility signal for one program, not evidence that its five-stage pipeline causes faster or more durable professional competence.
