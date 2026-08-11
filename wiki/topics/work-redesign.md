@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-08-06
+updated: 2026-08-11
 ---
 
 # Work redesign
@@ -78,6 +78,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 [[2026-rodriguez-when-not-to-automate]] makes preservation itself a proposed redesign outcome. Its PHP-AIO protocol treats the choice among automate, augment, hybrid, and preserve as a role-level decision made before implementation, using risks to tacit knowledge, resilience, future regulatory constraint, and institutional trust. The implication is not that every consequential role should remain manually executed; it is that redesign should preserve enough human capability, redundancy, authority, and recovery capacity for the workflow to remain governable when automation fails or conditions change. The framework is conceptual and its financial-services parameters are not yet validated outside stylized cases.
 
 [[2026-tomita-philosophy-cognitive-assay]] adds a design-with-AI distinction that capability mapping alone misses. It argues that AI can compress the externalization cost of turning expertise into formal output without inheriting the legitimacy to decide what the output should optimize, exclude, or count as good. For redesign, the practical question is therefore not only which steps are technically delegable, but where a workflow still needs a contestable human source for its evaluative criteria. The paper's proposed Sein/Sollen assay is a conceptual way to make that distinction visible; its more durable contribution here is the design requirement to protect the socialization, practice, and deliberation through which those criteria are renewed when codification work accelerates.
+
+[[2026-sherson-hybrid-intelligence-manifesto]] moves this from a task-level design question to a multi-level coordination claim. It frames redesign around a prediction-judgment frontier and argues that interfaces, organizational incentives, market valuation, and education have to align if human judgment is to remain economically central rather than becoming symbolic oversight. The useful design implication is not that every workflow should preserve human involvement; it is that an automate-and-elevate redesign must visibly reinvest capacity freed by routine automation in accountable, context-rich work and make that human contribution part of the system's value logic. The manifesto is a public, consensus- and foresight-based preprint, not comparative evidence that this architecture outperforms automation-first alternatives.
 
 [[2026-chin-work-at-frontier]] supplies an early behavioral signal that redesign pressure can cross occupational boundaries before an organization formally redraws roles. In a large sample of work-related ChatGPT messages linked to self-reported role information, 16.8% of all messages and 43.5% of occupation-specific non-generic messages concerned tasks historically associated with another occupation. That is not evidence that firms have successfully redesigned roles; it shows that AI can make workers attempt task bundles outside their historical occupational boundary, creating a governance and capability question about who is permitted, prepared, and accountable to do the newly reachable work.
 
