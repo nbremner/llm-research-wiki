@@ -1,7 +1,7 @@
 ---
 title: Responsible AI deployment
 status: stub
-updated: 2026-08-06
+updated: 2026-08-11
 ---
 
 # Responsible AI deployment
@@ -29,6 +29,8 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 [[2026-rodriguez-when-not-to-automate]] adds an upstream governance claim: responsible deployment should sometimes decide not to proceed, rather than only specify controls after a system has become a deployment candidate. Its PHP-AIO protocol scores tacit-knowledge erosion, resilience reduction, regulatory exposure, and socio-institutional capital degradation to select automate, augment, hybrid, or preserve. This is a useful framing for pre-deployment deliberation, but its deterministic gates should not be treated as a validated governance instrument: the parameters are expert-elicited, its examples are stylized financial-services roles, and retrospective outcome validation is still underway.
 
 [[2026-tomita-philosophy-cognitive-assay]] sharpens why formal human oversight can still be inadequate: an AI may produce a plausible recommendation while lacking the standing to warrant the value-laden criteria that govern the decision. The paper's conceptual Sein/Sollen distinction makes governance a design question about where standards such as quality, exclusion, priority, and acceptable risk are set, challenged, and renewed—not merely who clicks final approval. A responsible workflow should therefore make the human source of evaluative authority identifiable and contestable, while preserving the deliberation and practice that keep that authority more than nominal.
+
+[[2026-ali-ai-adoption-multinational-workforce]] shows the operational risk of treating a workforce GenAI system as a self-contained model. In a live HR-search rollout, usefulness rose more than trust, reliance involved comparison and fallback, and some workers treated answers from an approved internal system as credible without consistent source checking. The authors therefore treat source visibility, uncertainty, maintained/localized content, guidance, human escalation, and clear accountability as deployment infrastructure. This is a single descriptive case, not proof that these controls work, but it makes a clean governance warning: assigning interpretive risk to workers is not a substitute for building reliable knowledge and support conditions around the system.
 
 ## Connections
 - Relates to [[algorithmic-assessment]] because hiring and assessment AI require disclosure, job-related validity evidence, fairness evaluation, auditability, applicant experience safeguards, and governance of how automated recommendations reshape human discretion.

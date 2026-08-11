@@ -1,7 +1,7 @@
 ---
 title: AI literacy
 status: stub
-updated: 2026-08-06
+updated: 2026-08-11
 ---
 
 # AI literacy
@@ -17,6 +17,8 @@ For work and training, the construct implication is sharp: raising AI literacy m
 [[2025-passlack-great-power-responsibility]] extends this boundary from individual knowledge to role-appropriate responsible practice. In 28 interviews across five knowledge-worker groups, participants described AI literacy as a context-sensitive toolbox of technical, domain, communication, ethical, and learning-related capacities, with personal dispositions such as healthy skepticism and continual learning doing work that generic skills training cannot. Its role-ability-fit claim is useful: organizations should not assign AI accountability to a role unless that role has the authority, capability, and support to exercise it.
 
 [[2026-idan-generative-ai-productivity-divide]] adds preliminary causal evidence that a narrower interactional capability may determine whether access becomes performance. In a three-day student self-study experiment, the authors' AI Interaction Competence (AIC)—eliciting, filtering, verifying, and applying model outputs—moderated the benefit of LLM access, whereas GPA and baseline LLM knowledge did not. The construct should not yet be treated as a settled subscale of AI literacy: its measurement needs validation and the setting is educational. But it sharpens the practical boundary between knowing about AI and being able to use its output with disciplined verification and synthesis.
+
+[[2026-ali-ai-adoption-multinational-workforce]] gives that boundary a workplace-HR form: effective use required employees to formulate and rephrase queries, interpret summaries, inspect sources, and know when to use an alternative route or human support. In its small descriptive survey, 76% said they would rephrase a poor GenAI answer, while 52% said they never or rarely clicked cited sources. This is not a validated literacy measure, but it shows why rollout training should develop situated search, verification, and escalation practices rather than treating system access as competence.
 
 ## Connections
 - Relates to [[critical-thinking]] because literacy should support verification, boundary-setting, and skepticism toward AI outputs.

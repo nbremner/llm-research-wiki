@@ -1,7 +1,7 @@
 ---
 title: Inclusive HR systems
 status: active
-updated: 2026-06-18
+updated: 2026-08-11
 ---
 
 # Inclusive HR systems
@@ -15,6 +15,8 @@ The paper's practical contribution is to move inclusion upstream into system des
 This topic should stay anchored in HR system architecture, not generic DEI discourse. The question is how personnel systems define work, gather evidence, make decisions, and monitor whether those decisions preserve or reduce inequity.
 
 [[2026-ruttenberg-neurodivergent-expertise-ai-work]] extends that upstream-design logic into AI-augmented knowledge work. If AI tools, productivity metrics, and workflow expectations are designed around neurotypical assumptions about sensory tolerance, context switching, pacing, and uninterrupted availability, then inclusion has already failed before any downstream accommodation process begins. The paper's stronger move is to treat autistic and neurodivergent professionals as design SMEs for cognitive sustainability: their earlier detection of cognitive debt is evidence about the work system, not simply an individual limitation to manage.
+
+[[2026-ali-ai-adoption-multinational-workforce]] provides a live HR-information-system case of the same upstream issue. Its GenAI search tool formally reached a multinational workforce, but practical benefit depended on laptop access, language and local terminology, role context, tenure, and familiarity with organizational processes. The authors warn that usage dashboards can overstate inclusion because workers who face the highest friction may leave no meaningful trace in the system. For inclusive HR systems, the relevant outcome is not access or query volume but whether different worker groups obtain useful, trustworthy, actionable support and can shape the redesign when they do not.
 
 ## Connections
 

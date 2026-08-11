@@ -1,7 +1,7 @@
 ---
 title: AI adoption
 status: active
-updated: 2026-08-01
+updated: 2026-08-11
 ---
 
 # AI adoption
@@ -47,6 +47,8 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 [[2018-fugate-change-compliance-championing]] adds a foundational change-support distinction behind AI adoption metrics. In a two-wave merger study, change management support predicted challenge appraisal, and challenge appraisal predicted both compliance and championing; threat appraisal predicted lower championing but not lower compliance. For AI adoption, this means usage, training completion, or policy compliance can overstate transformation if employees are following instructions while withholding discretionary problem solving, peer advocacy, and local repair work.
 
 [[1997-goh-benchmarking-learning-capability]] adds the organizational-learning version of the adoption problem. If AI adoption is partly a search over use cases and workflow changes, organizations need routines for experimentation, knowledge transfer, and team problem solving so local AI discoveries can become shared practice. Without that learning capability, adoption can remain a portfolio of disconnected pilots even when tools, training, and managerial interest are present.
+
+[[2026-ali-ai-adoption-multinational-workforce]] grounds the worker-centered fit problem in a live HR-system transition. Employees did not simply migrate from legacy to GenAI search: they selected among the GenAI system, legacy search, source documents, colleagues, and HR according to task and uncertainty. The case makes formal access a weak adoption indicator: device access, language, tenure, organizational terminology, and local work context determined whether workers could obtain useful support, while aggregate usage could hide excluded groups. It also makes adoption depend on the knowledge system around the model—current, localized content; tagging; guidance; and escalation routes—not the interface alone.
 
 ## Connections
 
