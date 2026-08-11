@@ -1,7 +1,7 @@
 ---
 title: AI-induced skill erosion
 status: active
-updated: 2026-08-04
+updated: 2026-08-11
 ---
 
 # AI-induced skill erosion
@@ -24,6 +24,8 @@ AI-induced skill erosion is the slow loss of practiced judgment, craft, confiden
 
 The paper's response frame is also useful. “Dignified Human-AI interaction” treats agency, expertise, and self-worth as design requirements, not soft afterthoughts. “Sociotechnical immunity” names the protective system: early-warning signals, containment actions, and recovery routines that help workers detect, interrupt, and recover from AI-induced erosion while still serving quality goals.
 
+[[2026-mehra-agents-that-teach]] supplies a developer-specific intervention hypothesis rather than erosion evidence. It calls the hidden gap between AI-executed code changes and a developer's understanding Knowledge Debt, then proposes preserving practice through contextual, selective, asynchronous learning prompts and closed-loop comprehension checks. This gives the topic a more operational countermeasure than generic exhortations to keep humans involved: retain the reasoning, alternatives, and learning feedback that make later debugging and recovery possible.
+
 ## Connections
 - Relates to [[ai-mediated-work-experience]] because skill erosion is one pathway through which AI changes competence, identity, autonomy, and meaning at work.
 - Relates to [[automation-complacency]] because reduced scrutiny can be the short-run behavior that accumulates into long-run skill loss.
@@ -44,3 +46,4 @@ The paper's response frame is also useful. “Dignified Human-AI interaction” 
 - [[2026-shen-ai-impacts-skill-formation]] is causal but short-horizon and task-specific; it shows impaired skill formation after one AI-supported programming task, not yet durable workplace skill erosion over months or years.
 - [[2025-randazzo-cyborgs-centaurs-self-automators]] does not show long-term erosion; it shows that one mode of GenAI use can fail to build expertise during the task, which is a plausible but not sufficient precursor to erosion.
 - [[2026-ruttenberg-cognitive-debt-ai-research]] and [[2026-ruttenberg-neurodivergent-expertise-ai-work]] are theoretical and adjacent-evidence-based; their threshold models are useful for measurement design, but they should not be treated as demonstrated AI-induced erosion among knowledge workers until the proposed longitudinal studies exist.
+- [[2026-mehra-agents-that-teach]] proposes a plausible software-development countermeasure but supplies neither a validation of Knowledge Debt nor evidence that its SHIELD prototype preserves expertise, reduces later recovery costs, or avoids surveillance and interruption burdens.

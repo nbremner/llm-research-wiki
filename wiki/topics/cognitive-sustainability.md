@@ -1,7 +1,7 @@
 ---
 title: Cognitive sustainability
 status: stub
-updated: 2026-08-04
+updated: 2026-08-11
 ---
 
 # Cognitive sustainability
@@ -16,6 +16,8 @@ The practical implication is not generic “human-in-the-loop” rhetoric. A sus
 
 [[2026-lovett-tragedy-cognitive-commons]] adds a profession-level boundary to this work-system criterion. Its Cognitive Commons framework argues that AI-enabled efficiency can weaken the entry-level practice and supervised progression through which a profession replenishes the Internalized Mastery needed for substantive validation. This broadens cognitive sustainability beyond whether an individual workflow preserves present capability: a locally sustainable-looking arrangement may still be collectively unsustainable if organizations free-ride on a shrinking external pool of experts. The proposed governance remedies remain conceptual and require comparative, longitudinal tests.
 
+[[2026-mehra-agents-that-teach]] offers an implementation-level hypothesis for software development: an AI coding workflow could preserve cognitive sustainability by returning contextual explanations, probes, and feedback to the human rather than treating a completed code change as the sole outcome. Its emphasis on selective, asynchronous intervention is important because a system that preserves learning by persistently interrupting flow or expanding worker monitoring would exchange one sustainability failure for another.
+
 ## Connections
 - Relates to [[cognitive-debt]] because cognitive debt can be the delayed liability that signals a work system has preserved immediate output while weakening attention, learning, ownership, or recovery.
 - Relates to [[ai-induced-skill-erosion]] because repeated unsustainable delegation can plausibly lead to durable loss of practiced judgment and professional capability, although the temporal pathway requires longitudinal evidence.
@@ -28,3 +30,4 @@ The practical implication is not generic “human-in-the-loop” rhetoric. A sus
 - [[2025-kabashkin-cognitive-atrophy-paradox]] is a peer-reviewed conceptual and simulation-based article, not validation evidence for the CSI. Its five parameters, weighting choices, balance thresholds, and proposed cognitive zones require reliability, construct-validity, predictive-validity, and intervention tests before they can support organizational diagnosis.
 - The framework treats delegation and reliance primarily as risk factors, but productive offloading can protect capacity when it removes extraneous burden or enables workers to concentrate on higher-order work. The empirical question is which tasks, users, and accountability conditions make delegation capability-preserving rather than capability-displacing.
 - A CSI-style monitoring system could itself become intrusive or punitive if employers treat autonomy, reflection, or reliance scores as worker surveillance rather than properties of a jointly designed system. Any implementation needs participatory governance, clear use boundaries, and evidence that measurement improves rather than merely intensifies work.
+- [[2026-mehra-agents-that-teach]] has not tested whether telemetry-derived concept maps and learning prompts protect long-run capability, preserve flow, or remain legitimate to developers; these design benefits cannot be inferred from the architecture alone.
