@@ -1,7 +1,7 @@
 ---
 title: Digital work strain
 status: active
-updated: 2026-08-03
+updated: 2026-08-11
 ---
 
 # Digital work strain
@@ -17,6 +17,8 @@ The review also prevents a flat “technology causes stress” story. Some digit
 [[2026-cogenli-generative-ai-conditional-job-resource]] sharpens the point at which an apparent AI resource can turn back into a demand. In a JD-R-guided analysis of 15 academic knowledge-work episodes, GenAI offered candidate cognitive, structural/strategic, and psychosocial resources, but its value depended on interaction sequence, oversight, and data-integrity routines. Where verification, correction, documentation, and traceability work became substantial, the tool shifted demands rather than simply reducing them. This does not establish strain outcomes, but it identifies a plausible work-design mechanism: AI assistance can lower first-order task effort while creating second-order accountability and repair load.
 
 [[2025-klonek-ai-work-stress]] adds direct AI-specific evidence. In ChatGPT teamwork tweets, higher AI control was associated with higher stress, while human–AI transition and action processes were associated with lower stress and some team-process resources buffered the AI-control/stress relationship. Together with Mansuroğlu and Smith, this suggests AI-era digital work strain should be treated as a work-system property: control rights, teamwork processes, digital demands, recovery boundaries, and support resources all matter.
+
+[[2023-arcot-cognitive-load-optimization-contact-center-agents]] reports the opposite possibility under a tightly designed monitoring system: physiological and voice signals were used to balance contact-center workload, with reported reductions in stress and turnover. The source does not establish that pervasive monitoring is net protective; it supplies a conditional design hypothesis. Monitoring may reduce strain when it gives workers real workload relief and enforceable data protections, but may intensify strain when biometric inference becomes a unilateral performance-control channel rather than a worker-governed support.
 
 [[2026-ruttenberg-neurodivergent-expertise-ai-work]] adds a cognitive-sustainability mechanism for why strain can remain hidden under apparently normal productivity. In the paper's threshold model, AI-supported work can accumulate attentional erosion, effort displacement, and affective depletion until recovery costs, shutdowns, narrowing task tolerance, or burnout risk appear outside ordinary performance metrics. For this topic, the useful point is that AI strain may be distributed unevenly by sensory tolerance, executive-function load, and recovery capacity; a system can look productivity-enhancing at the aggregate level while becoming unsustainable for workers whose cognitive ecology is closer to threshold.
 

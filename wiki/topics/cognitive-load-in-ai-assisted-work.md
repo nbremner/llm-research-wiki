@@ -1,7 +1,7 @@
 ---
 title: Cognitive load in AI-assisted work
 status: stub
-updated: 2026-07-02
+updated: 2026-08-11
 ---
 
 # Cognitive load in AI-assisted work
@@ -13,6 +13,8 @@ Cognitive load in AI-assisted work tracks the mental burden created by the task 
 The paper also makes cognitive load observable in human-AI traces. Lepine et al. estimate load from transcript features grounded in task decomposition, semantic coherence, dependency structure, and knowledge-graph representations. That gives the wiki a measurement bridge between broad claims about AI-mediated effort and concrete interaction diagnostics: when the model initiates task switches, spreads information across too many directions, or truncates needed structure, load becomes a design signal rather than a vague complaint.
 
 [[2026-zhang-fatigue-aware-learning-defer]] adds a sequential allocation mechanism. Its fatigue-aware learning-to-defer framework treats cumulative human workload as part of the system state, so the value of human involvement changes over time as prior deferrals accumulate. That makes cognitive load more than a subjective experience variable: in some human-AI systems, load becomes an input to task routing and cooperation-budget decisions.
+
+[[2023-arcot-cognitive-load-optimization-contact-center-agents]] reports a field-oriented version of that allocation logic: wearable physiological signals and voice features were used to infer contact-center agents’ stress and cognitive-load states, then route calls and balance workloads dynamically. Its reported 500-agent randomized trial makes the mechanism more concrete than a simulated cooperation budget, but it also makes the measurement and governance problem unavoidable. Inference from biometric and voice data is not merely a better workload signal; it creates a worker-monitoring system whose consent, validity, access, purpose limitation, and consequences for control must be designed before routing can be treated as supportive rather than extractive.
 
 [[2026-shen-ai-impacts-skill-formation]] adds a learning-effort distinction. Some AI interaction patterns looked cognitively light because users delegated code generation or debugging, but those patterns produced poor learning outcomes; other patterns required explanation-seeking, conceptual questioning, or comprehension checks and preserved more skill formation. For this page, the important distinction is productive cognitive effort versus extraneous burden: reducing all effort may improve immediate ease while removing the friction that builds competence.
 
@@ -38,6 +40,6 @@ The paper also makes cognitive load observable in human-AI traces. Lepine et al.
 - AI-generated content can improve quality while extraneous load harms it. That means “AI makes the task easier” is too coarse: assistance can reduce one burden while creating another.
 - The open design question is when proactivity should be suppressed, delayed, or transformed into repair. More initiative is not automatically better; proactivity needs to be state-dependent and load-sensitive.
 - The framework depends on domain-specific task decompositions and knowledge graphs, so portability to software engineering, healthcare, HR, or strategy work remains an empirical problem rather than an assumption.
-- [[2026-zhang-fatigue-aware-learning-defer]] uses simulated fatigue curves and image-classification benchmarks, so the open measurement question is whether live workplace fatigue or cognitive-load signals can be measured validly enough to drive allocation without creating surveillance, fairness, or agency problems.
+- [[2026-zhang-fatigue-aware-learning-defer]] uses simulated fatigue curves and image-classification benchmarks, while [[2023-arcot-cognitive-load-optimization-contact-center-agents]] reports live multimodal monitoring but does not provide independently verified validation of its stress and load measures. The open question is whether workplace fatigue or cognitive-load signals can be measured validly enough to drive allocation without creating surveillance, fairness, or agency problems.
 - [[2026-mansuroglu-technostress-employee-well-being]] synthesizes recurring overload and fatigue patterns but does not validate AI-interaction-level cognitive-load measures; the bridge from technostress surveys to trace-based AI workflow diagnostics remains open.
 - [[2026-ruttenberg-cognitive-debt-ai-research]] and [[2026-ruttenberg-neurodivergent-expertise-ai-work]] propose cognitive-debt and neurotype-specific thresholds but do not yet validate them; the open measurement problem is how to detect harmful threshold crossing without turning accommodation-sensitive load signals into surveillance or deficit labeling.
