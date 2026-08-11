@@ -1,7 +1,7 @@
 ---
 title: AI-use image concerns
 status: active
-updated: 2026-06-22
+updated: 2026-08-11
 ---
 
 # AI-use image concerns
@@ -11,6 +11,8 @@ AI-use image concerns are reputational or evaluative fears that visible AI relia
 [[2026-almog-barriers-ai-adoption]] gives the cleanest behavioral evidence so far. In a field experiment with 450 U.S.-based Upwork workers completing an AI-assisted image-categorization task, making AI reliance visible to an HR evaluator reduced workers' AI recommendation following by 4.3 percentage points overall and 8.0 percentage points on disagreement rounds, lowering final accuracy from 79.1% to 76.4%. The design is important: evaluators were explicitly instructed to assess expected accuracy on the same AI-assisted task, so the adoption penalty persisted even when the normative criterion should have favored effective AI use.
 
 The mechanism is not simply generic AI distrust. Almog's platform-feedback elicitation found that when feedback would disclose above- or below-average AI use, workers more than doubled their selection of confidence in judgment as the trait to emphasize. In a second-stage evaluator task, workers also penalized AI reliance in others' profiles: an additional percentage point of AI reliance reduced evaluation scores by 0.36 points, while an additional point of accuracy increased scores by about one point. This makes image concerns socially self-reinforcing: workers avoid visible AI use partly because they themselves read visible AI use as a negative signal.
+
+[[2026-ghosh-new-social-image]] broadens the mechanism upstream of visible use. In a small video-vignette experiment, a more competent or proactive AI coworker generally reduced favorable self- and peer-perceptions of ownership, meaningfulness, satisfaction, role dynamics, and affect. This is not evidence that workers will conceal actual AI use, but it suggests that the image problem can begin when a system's initiative or capability makes the worker's own contribution feel less socially legible.
 
 ## Connections
 - Relates to [[ai-adoption]] because adoption can be blocked by social meaning and evaluation risk, not only by tool access, skills, readiness, or use-case discovery.

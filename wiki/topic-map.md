@@ -55,6 +55,7 @@ Every topic in the wiki, one line each. Topics are synthesis pages: each one con
 - [[ai-literacy]] — what people understand about AI systems, their limits, and the conditions for calibrated use
 - [[ai-receptivity]] — willingness, preference, or readiness to use AI, separated from whether that willingness is well-calibrated
 - [[ai-use-image-concerns]] — when visible AI reliance changes how workers expect to be judged, suppressing useful adoption even when AI improves task performance
+- [[ai-proactivity]] — how the timing and scope of AI initiative changes cognitive load, worker control, ownership, social image, and the consequences of autonomous action
 - [[novice-risk-work]] — when novice AI users try to mitigate risks for senior/accountable actors without yet having enough technical or governance understanding
 - [[agentic-delegation]] — when people hand execution authority to AI agents rather than only receiving advice, and how that changes adoption, accountability, and interdependent outcomes
 - [[domain-expertise-in-agentic-work]] — how task-specific domain command lets humans frame, steer, verify, and recover agentic AI work even when AI executes technical steps

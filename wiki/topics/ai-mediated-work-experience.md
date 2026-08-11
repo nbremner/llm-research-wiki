@@ -1,7 +1,7 @@
 ---
 title: AI-mediated work experience
 status: active
-updated: 2026-08-02
+updated: 2026-08-11
 ---
 
 # AI-mediated work experience
@@ -30,6 +30,8 @@ Resource value cannot be inferred from fluent output or faster task completion. 
 AI can improve autonomy while simultaneously weakening competence or authorship. [[2026-ehsan-future-workers]] found that efficiency gains in radiation oncology coexisted with intuition rust, reduced manual practice, and anxiety about becoming a bystander in professional work. [[2026-edwards-developer-productivity]] reports the same tension among senior developers: AI could operate as a nonjudgmental mentor and strategic collaborator while raising productivity baselines and creating uncertainty about foundational skill, authorship, and professional value.
 
 Desired agency also depends on which work remains human. [[2025-shao-future-work-ai-agents]] found broad interest in automating low-value repetitive tasks but substantial occupational preference for equal partnership or greater human involvement. [[ai-mediated-choice-and-identity]] carries the adjacent transfer evidence that delegated AI choices can preserve apparent preference compatibility while narrowing distinctiveness and exploration. The work-design implication is that agency cannot be assessed only through whether workers accept an AI tool; it also depends on whether the remaining role preserves meaningful choice, practice, identity, and control.
+
+[[2026-ghosh-new-social-image]] makes the configuration more specific: in a small 2 × 2 × 2 video-vignette experiment, lower AI competence or proactivity generally produced more favorable perceived ownership, meaningfulness, satisfaction, role dynamics, and affect. This is early scenario-based evidence, not a verdict that better AI makes work worse. It does show why system performance and initiative should be treated as work-experience inputs: they can alter the perceived social value of the human contribution before any formal role redesign occurs.
 
 ## Social and relational experience
 
