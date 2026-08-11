@@ -1,7 +1,7 @@
 ---
 title: Automation complacency
 status: active
-updated: 2026-07-02
+updated: 2026-08-11
 ---
 
 # Automation complacency
@@ -27,6 +27,8 @@ Automation complacency is the failure mode where better machine advice reduces h
 [[2026-lepine-precision-proactivity]] complicates the complacency frame by showing the opposite burden can also matter. In AI-assisted financial valuation, AI-generated content use was associated with better quality, but extraneous cognitive load from task switching and information sprawl was strongly harmful. Some AI failures reduce human effort too much; others consume attention in repair work and leave too little capacity for judgment.
 
 [[2026-shaw-thinking-fast-slow-artificial]] gives complacency a sharper behavioral micro-mechanism: [[cognitive-surrender]], where the user adopts a System 3 answer with minimal scrutiny. In Study 1, participants followed faulty AI advice on 79.8% of chat-engaged trials and were more confident with AI access despite substantial AI error. The source matters here because it distinguishes reduced vigilance from direct answer adoption; the human contribution is not merely lighter, it can be displaced.
+
+[[2026-zhu-cognitive-offloading-modes]] adds an adjacent, nonexperimental account of how complacency may become a more durable work pattern. Dependent offloading—allowing AI to generate a complete answer—was associated with cognitive-agency transfer and lower intrinsic motivation over three survey waves, whereas autonomous offloading used AI as a scaffold while retaining ownership. Both modes were associated with the same perceived immediate benefit, sharpening the calibration problem: subjective efficiency is not evidence that the human contribution has been preserved.
 
 ## Connections
 - Relates to [[human-ai-collaboration]] because collaboration quality depends on preserving competent human review, not merely keeping a human nominally in the loop.

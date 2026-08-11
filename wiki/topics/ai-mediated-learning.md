@@ -30,6 +30,8 @@ AI-mediated learning asks when AI assistance helps workers acquire durable compe
 
 [[2026-mehra-agents-that-teach]] turns the learning-preservation problem into a developer-agent interaction design. Its proposed SHIELD architecture treats agent reasoning traces as a source of contextual teachable moments, then uses selective asynchronous probes, a developer concept map, calibrated microlearning, and comprehension checks to restore learning without blocking the coding workflow. The contribution is a concrete hypothesis about where learning scaffolds belong in agentic work: not as generic training after the task, but as voluntary, situated interventions tied to the rationale and alternatives behind an AI-executed change.
 
+[[2026-zhu-cognitive-offloading-modes]] gives the learning question a mode-based, temporally ordered correlational test across students and early-career knowledge workers. Dependent offloading was associated with lower subsequent self-reported deep processing, independent judgment, creativity, and autonomous capability through cognitive-agency transfer and lower intrinsic motivation; autonomous offloading showed the opposite motivational pathway. The evidence is not a performance-based learning test, and its new measures still need validation against adjacent constructs, but it reinforces that preserving engagement is more specific than merely reducing AI-use frequency.
+
 ## Connections
 - Relates to [[cognitive-debt]] because repeated AI-supported episodes may accumulate hidden learning, attention, ownership, and recovery costs before durable capability loss is visible.
 - Relates to [[ai-induced-skill-erosion]] because repeated poor learning episodes can become durable capability loss.

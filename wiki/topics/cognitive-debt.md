@@ -1,7 +1,7 @@
 ---
 title: Cognitive debt
 status: active
-updated: 2026-08-06
+updated: 2026-08-11
 ---
 
 # Cognitive debt
@@ -15,6 +15,8 @@ Cognitive debt is the delayed cost to attention, learning, transfer, ownership, 
 [[2026-ruttenberg-cognitive-debt-cumulative-cost]] makes this general account more falsifiable without supplying confirmation: it specifies a cumulative three-mechanism model, proposes an operational threshold combining sustained-attention decline and emotional-exhaustion elevation while AI-assisted output remains intact, and predicts earlier threshold crossings under neurodivergent cognitive and sensory constraints. Its value is a sharper longitudinal measurement and work-design hypothesis, not a validated diagnostic threshold or evidence that any worker group is inherently deficient.
 
 [[2026-ruttenberg-neurodivergent-expertise-ai-work]] extends the construct into inclusive work design. Neurodivergent professionals are not only a potentially vulnerable subgroup; they may function as early-warning experts because sensory tolerance, executive-function load, pacing, and recovery constraints make unsustainable cognitive ecologies visible sooner. That moves cognitive debt out of an individual self-control frame and into [[work-redesign]], [[inclusive-hr-systems]], and [[digital-work-strain]]: the work system can create hidden debt while aggregate productivity metrics still look healthy.
+
+[[2026-zhu-cognitive-offloading-modes]] supplies a useful empirical distinction inside the hypothesized debt pathway: dependent offloading delegates core thinking and was associated over three survey waves with more cognitive-agency transfer and less intrinsic motivation, while autonomous offloading treated AI output as a scaffold and was associated with higher motivation. Both modes had comparable perceived immediate benefits, so a worker's sense that AI is saving effort does not reveal whether the mode of engagement is associated with preserved cognitive ownership. This is correlational evidence about perceived outcomes, not evidence that either mode causes cumulative debt or durable capability loss.
 
 For the wiki, cognitive debt is a bridge construct rather than a synonym for [[automation-complacency]], [[cognitive-surrender]], or [[ai-induced-skill-erosion]]. Complacency is reduced vigilance in the moment; surrender is answer ownership without scrutiny; skill erosion is durable capability loss. Cognitive debt names the accumulating liability between those episodes and later outcomes: repeated bypass, offloading, overload, and recovery failure can silently weaken the human side of the system before anyone sees a performance collapse.
 

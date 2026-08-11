@@ -1,7 +1,7 @@
 ---
 title: Cognitive surrender
 status: active
-updated: 2026-07-02
+updated: 2026-08-11
 ---
 
 # Cognitive surrender
@@ -11,6 +11,8 @@ Cognitive surrender is a narrow mechanism within the broader [[automation-compla
 [[2026-shaw-thinking-fast-slow-artificial]] gives the wiki a clean experimental anchor for the construct. Across three preregistered CRT-style studies, the authors manipulated whether an embedded GPT-4o assistant returned correct or confidently wrong answers. Participants used the assistant on a majority of trials and, once they opened it, followed faulty AI advice at high rates; in Study 1, accuracy rose from 45.8% in the Brain-Only condition to 71.0% when AI was accurate, but fell to 31.5% when AI was faulty.
 
 The useful distinction is between AI as scaffold and AI as substitute. System 3 can help when it supplies a correct answer, generates candidate reasoning, or buffers time-pressure costs, but the same external cognition becomes surrender when the user treats fluency as judgment. That makes cognitive surrender a process-level construct inside [[critical-thinking]] and [[human-ai-collaboration]]: the question is whether the human still performs enough evaluative work to own the answer.
+
+[[2026-zhu-cognitive-offloading-modes]] extends that distinction beyond a discrete answer-adoption episode. In a three-wave survey, dependent offloading—letting AI generate the complete answer—was associated with later cognitive-agency transfer and lower intrinsic motivation, whereas autonomous offloading—using suggestions as a starting point for one's own thinking—was associated with higher intrinsic motivation and no significant agency-transfer association. The study does not establish cognitive surrender or causal downstream loss, but it makes the mode of engagement a plausible bridge between momentary answer adoption and a broader pattern of ceded cognitive authority.
 
 The paper also shows why simple confidence or motivation fixes are insufficient. AI access increased confidence even when many outputs were wrong; higher trust in AI predicted more use and more vulnerability to faulty advice, while higher need for cognition and fluid IQ buffered some harm. Incentives plus immediate feedback more than doubled faulty-advice override rates in Study 3, but the gap between AI-Accurate and AI-Faulty performance persisted, especially among AI-Users.
 
