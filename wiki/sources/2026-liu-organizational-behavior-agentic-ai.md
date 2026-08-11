@@ -31,3 +31,4 @@ file_hash: 5217136ba788d9467a079542292ceacccd6be8c298774ac5e7d37c8e2275abbf
 
 ## Feeds
 - [[human-ai-agent-interaction-design]]
+- [[agentic-organization-design]]

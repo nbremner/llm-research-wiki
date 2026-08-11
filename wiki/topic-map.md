@@ -1,6 +1,6 @@
 ---
 title: Topic map
-updated: 2026-08-06
+updated: 2026-08-11
 ---
 
 # Topic map
@@ -32,6 +32,7 @@ Every topic in the wiki, one line each. Topics are synthesis pages: each one con
 - [[critical-thinking]] — how GenAI changes the exercise of judgment, verification, and stewardship in knowledge work
 - [[human-ai-collaboration]] — how human accountability and AI capability are arranged in tasks
 - [[human-ai-agent-interaction-design]] — how controls, explanations, context, data governance, and workflow interfaces make human authority over agent behavior usable in practice
+- [[agentic-organization-design]] — how multi-agent topology, shared context, traces, validation, permissions, and accountability interfaces determine whether agent collectives create usable collective intelligence
 - [[human-ai-co-creation-modes]] — how people and GenAI jointly steer workflows over time, with different implications for output, agency, and skilling
 - [[ai-mediated-teamwork]] — how AI changes the performance, expertise-sharing, coordination, and social functions that human teams traditionally provide
 - [[ai-mediated-organizational-networks]] — how AI changes the human-human collaboration and knowledge-sharing networks through which organizations coordinate work

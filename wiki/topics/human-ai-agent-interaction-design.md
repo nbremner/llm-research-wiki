@@ -1,7 +1,7 @@
 ---
 title: User experience design for human-AI agents
 status: stub
-updated: 2026-08-10
+updated: 2026-08-11
 ---
 
 # User experience design for human-AI agents
@@ -14,14 +14,18 @@ User experience design for human-AI agents is the workflow-level design of how p
 
 The design unit is therefore the accountable workflow, not a generic agent persona. The appropriate level of human confirmation, explanation, autonomy, and friction should vary with task criticality, decision impact, role authority, data sensitivity, user expertise, and the agent’s actual integration across enterprise systems. This makes UX a mechanism through which human agency and governance become executable rather than a layer added after agent capability is decided.
 
+[[2026-liu-organizational-behavior-agentic-ai]] extends the unit of design behind the visible interface. An agent workflow can contain planners, solvers, reviewers, memory, tools, validators, and orchestrators whose handoffs create latency, compression loss, semantic drift, verification work, and governance burden. Its interface-organization concept specifies that accountable human use requires more than a dashboard: outputs must carry usable evidence and uncertainty, permissions must be legible, traces must be preserved, and mandatory human judgment points must be explicit. This connects interaction design to the topology and context architecture of the underlying agent collective rather than treating them as separable layers.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because control points, action visibility, verification, and clarification design determine whether collaboration preserves real human authority.
 - Relates to [[responsible-ai-deployment]] because role-based access, consent, audit trails, uncertainty communication, and intervention paths operationalize safeguards at the point of use.
 - Relates to [[agentic-delegation]] because delegation requires users to understand, constrain, stop, and recover from agent action rather than merely choose whether to invoke the system.
 - Relates to [[ai-mediated-work-experience]] because interface and workflow design change felt control, cognitive burden, trust, and the practical ability to exercise accountability.
+- Relates to [[agentic-organization-design]] because the human-facing controls must make the agent collective's context, evidence, permissions, trace, and escalation architecture usable in accountable work.
 
 ## Contradictions & open questions
 - [[2019-amershi-guidelines-human-ai-interaction]] establishes broad design relevance across conventional AI-infused products, but it does not establish that the same 18 guidelines are sufficient for agents that plan, execute across systems, or create extended accountability chains; agentic workflows may require additional controls for delegated authority, cross-tool state, and recovery.
 - [[2026-paimann-ux-principles-human-ai-agent-interaction]] treats human control as the highest-prioritized design principle, but “always” controlling or confirming agent action can conflict with the speed and low-friction value proposition of agentic execution; the empirical question is which controls preserve meaningful authority without simply relocating work into rote approval.
 - The framework’s principles overlap conceptually, and its participants were a small, self-selected group of AI-experienced software, data, and product professionals. It supplies actionable hypotheses for enterprise design, not proof that these criteria improve adoption, decision quality, accountability, or worker experience in deployed systems.
 - Transparency can enable verification, but explanation volume and detail should be calibrated to task and user expertise. The open design question is when explanation genuinely supports judgment rather than creating information burden or superficial assurance.
+- [[2026-liu-organizational-behavior-agentic-ai]] argues that agent topology and context-transfer costs condition whether traces and controls are meaningful, but its simulations and benchmark-like traces do not yet show which interface designs let practitioners recover from failures or exercise authority in field settings.
