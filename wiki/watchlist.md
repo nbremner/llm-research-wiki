@@ -1,6 +1,6 @@
 ---
 title: Candidate topics (watchlist)
-updated: 2026-08-06
+updated: 2026-08-11
 ---
 
 # Candidate topics (watchlist)
@@ -34,3 +34,5 @@ Constructs that have surfaced across sources but don't yet warrant their own pag
 - **AI interaction competence / interactional fluency** — appears in [[2026-idan-generative-ai-productivity-divide]] as the ability to elicit, filter, verify, and apply model outputs, reported as a moderator of short-horizon LLM-assisted learning gains. Defer rather than create a peer topic because it currently has one student working-paper source and overlaps materially with [[ai-literacy]], domain expertise, verification, and general learning strategy; promote if independent workplace or measurement evidence establishes that it is a distinct, valid capability predicting accepted output quality, learning transfer, or calibrated use.
 
 - **AI-accelerated professional upskilling systems** — appears in [[2026-nguyen-ai-accelerated-rapid-professional-upskilling]] as a five-stage program-production and learning pipeline spanning knowledge acquisition, content development, verification, AI tutoring, and assessment. Defer because this is one design-based preprint and early implementation, not comparative evidence that end-to-end AI acceleration improves time-to-competence, transfer, or workforce outcomes; promote when independent implementations or evaluations establish it as a reusable work-and-learning-system construct rather than one program architecture.
+
+- **AI complexity redistribution / abstraction burden** — appears in [[2025-hasan-model-design-organizational-design]] as the Generality-Accuracy-Simplicity account of how simple, generalist-AI interfaces relocate complexity to infrastructure, compliance, specialized personnel, and workflow design. Defer because this is one conceptual working paper; promote when independent field, comparative, or organizational-design evidence shows that the location and management of hidden complexity predicts reliability, cost, work quality, accountability, or organizational outcomes beyond existing work-redesign and readiness accounts.

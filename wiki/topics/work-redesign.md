@@ -8,6 +8,8 @@ updated: 2026-08-11
 
 How AI changes the way work is organized — which tasks get reallocated, recombined, or restructured inside a firm.
 
+[[2025-hasan-model-design-organizational-design]] adds a complexity-allocation mechanism. Its conceptual GAS framework argues that a simple generalist-AI interface does not eliminate complexity; abstraction shifts it to infrastructure, data and compliance systems, specialized personnel, and workflow design. Redesign therefore has to decide who carries the work of making outputs reliable, not only which visible task moves from a worker to AI. The framework is a design hypothesis rather than evidence that a particular allocation improves organizational outcomes.
+
 [[2026-kim-mapping-ai-into-production]] shows work redesign as an observed performance mechanism: when startups discovered more AI use cases, gains appeared mostly in internal tasks, suggesting that value came from reorganizing how work got done inside the firm.
 
 [[2026-ermakov-designing-post-role-enterprise]] gives the stronger architecture claim. It argues that static job descriptions are the wrong unit of design for agentic work because AI systems can now plan and execute multi-step cognitive workflows across role boundaries. The proposed alternative is to organize around outcome-based “Fluid Skill Clusters,” assembled from human capabilities and digital labor capabilities, with explicit governance for where human judgment and accountability must remain present.
