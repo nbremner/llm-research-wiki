@@ -29,6 +29,5 @@ file_hash: 2626fa8430e972898e4162bb791f6c64fc6103308aa06e4b895f36463c03d6f1
 - The article is a peer-reviewed, open-access MDPI journal article under CC BY. Its publisher DOI and metadata were verified through Crossref; the ingested Drive PDF is 16 pages and carries the source-file hash in frontmatter.
 
 ## Feeds
-- [[ai-proactivity]]
 - [[ai-as-a-job-resource]]
 - [[ai-literacy]]
