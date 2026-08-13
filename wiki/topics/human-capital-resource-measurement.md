@@ -1,7 +1,7 @@
 ---
 title: Human capital resource measurement
 status: active
-updated: 2026-06-28
+updated: 2026-08-13
 ---
 
 # Human capital resource measurement
@@ -17,6 +17,8 @@ For AI workforce transformation, HCR measurement is a foundation for later claim
 [[2025-tona-deployment-ai-infer-employee-skills]] shows how this measurement problem becomes operational in a large organization trying to build a digital-first workforce. J&J used AI to infer employee skills from HR data and aggregate those in leadership dashboards for capability-gap and workforce-planning conversations, but the case also makes the construct-validity boundary visible: inferred skills were treated as directionally accurate and subject to employee/manager correction, not as definitive measures of human capital.
 
 [[2025-teyssier-roberge-21st-century-skills-overlap]] adds the individual-skill analogue to the HCR contamination problem. If the skill inputs are already overlapping labels with shared measures, aggregating them into a unit-level capability index may look comprehensive while actually counting the same underlying competency several times or mixing behaviors, traits, and assessment artifacts.
+
+[[2026-shin-effective-cognitive-population]] shifts the unit of analysis from organizational HCR to a national planning ledger: its Effective Cognitive Population (ECP) combines population, HCI+-derived human productivity, AI opportunity, and a governance condition while explicitly excluding duplicated human-capital content from the AI-preparedness input. This is a useful design discipline rather than evidence that those components form a single causal capital stock. Its value for human-capital measurement is the insistence that a composite disclose its components, aggregation rule, compensability assumptions, and criterion checks rather than allowing an attractive prediction score to erase construct boundaries.
 
 ## Connections
 - Relates to [[construct-validity]] because HCR is a clean example of construct deficiency and contamination changing what a measure can validly support.
@@ -34,3 +36,4 @@ For AI workforce transformation, HCR measurement is a foundation for later claim
 - CPS and ColPS may be measurable inputs to human capital resources, but [[2015-neubert-assessment-21st-century-skills]] does not establish when individual microworld scores aggregate into collective capability or organizational advantage.
 - AI-inferred skills data may help leaders see capability gaps at scale, but [[2025-tona-deployment-ai-infer-employee-skills]] leaves open whether these inferred aggregates predict mobility, reskilling, role redesign, or digital-transformation outcomes better than existing HR data.
 - [[2025-teyssier-roberge-21st-century-skills-overlap]] makes the evergreen-skills ambition more disciplined but not easier: organizations need stable capability categories for AI-era planning, yet those categories should be empirically pruned for semantic overlap, discriminant validity, and job-relevant behavior before they are aggregated into human-capital dashboards.
+- [[2026-shin-effective-cognitive-population]] shows that a decomposed national capacity ledger can improve concurrent GDP fit, while this topic warns that performance-relevant composites can become construct-contaminated. The unresolved question is whether ECP's transparent components represent a planning accounting convention, a valid higher-order capacity construct, or a mix of antecedents and contextual conditions that should remain separate for explanation.
