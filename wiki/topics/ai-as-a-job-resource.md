@@ -1,7 +1,7 @@
 ---
 title: AI as a job resource
 status: stub
-updated: 2026-08-02
+updated: 2026-08-13
 ---
 
 # AI as a job resource
@@ -12,6 +12,8 @@ AI can function as a job resource when its cognitive, structural, strategic, or 
 
 [[2026-vuong-genai-job-performance]] supplies a distinct, outcome-oriented complement. In a cross-sectional survey of 758 Vietnamese SME employees, GenAI usage was positively associated with job crafting, work engagement, and job performance, with job crafting and engagement partially mediating the performance relationship. Together, the two sources distinguish AI support functions from the broader JD-R nomological network through which workers may convert use into motivation, proactive work reshaping, and performance.
 
+[[2025-sun-employee-ai-collaboration-proactive-behavior]] supplies a narrower COR-based pathway: in a two-wave survey of 412 employees across 30 Chinese firms, perceived employee–AI collaboration was associated with lower workload and greater proactive behavior, with a reported indirect workload path. This treats workload relief as a possible resource-conversion mechanism—capacity freed for discretionary initiative—not proof that AI is intrinsically a resource. The same broad collaboration measure cannot establish which task allocations, AI functions, or verification demands actually generate the relief.
+
 The boundary condition is central rather than administrative. Çögenli finds that verification, correction, accountability, and data-integrity/traceability routines can shift demands onto the worker. A workflow can therefore look resource-enhancing at the point of answer generation while imposing more invisible work downstream. The design question is whether the full human–AI workflow yields net support after its verification and governance requirements are counted.
 
 ## Connections
@@ -20,8 +22,10 @@ The boundary condition is central rather than administrative. Çögenli finds th
 - Relates to [[ai-enabled-job-crafting]] because workers may use AI resources to reshape tasks and effort allocation before formal work redesign catches up.
 - Relates to [[human-ai-collaboration]] because a resource depends on a workable human role in checking, correcting, and integrating AI output.
 - Relates to [[responsible-ai-deployment]] because traceability, oversight, and accountability routines determine whether AI support is reliable and responsible enough to use.
+- Relates to [[ai-literacy]] because the workload-relief pathway in [[2025-sun-employee-ai-collaboration-proactive-behavior]] differed by employees' reported AI literacy.
 
 ## Contradictions & open questions
 - [[2026-cogenli-generative-ai-conditional-job-resource]] specifies resource functions from one author's single-user academic interaction log, while [[2026-vuong-genai-job-performance]] models self-reported associations in Vietnamese SMEs. Neither establishes that a particular AI function causes better motivation, health, or performance across workers or occupations.
 - The same verification and traceability routines that make AI use more reliable can impose enough correction and documentation work to offset the resource benefit. The wiki lacks field studies that measure this net balance across tasks, risk levels, and organizational governance designs.
 - Emotional/psychosocial resource claims in Çögenli are limited to observable efficacy-reinforcing output cues, not measured changes in worker emotion, self-efficacy, or well-being. The construct should not absorb those outcomes without direct evidence.
+- [[2025-sun-employee-ai-collaboration-proactive-behavior]] uses a two-wave, self-report design and a broad collaboration measure. Its workload mediation is consistent with a resource account but cannot establish causal resource gain, identify the AI arrangement that caused it, or rule out other explanations for proactive behavior.
