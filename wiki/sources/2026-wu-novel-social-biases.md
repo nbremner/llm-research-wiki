@@ -31,3 +31,4 @@ file_hash: f0563ccb6057b6b3309558844731102bb251cd6366319214df6e347ccc28ca7c
 - The PDF was extracted successfully with pypdf (41 pages; 227,253 characters). The scan found scholarly discussion and examples of system prompts, not instructions directed at this ingesting agent; no prompt-injection risk was identified.
 
 ## Feeds
+- [[responsible-ai-deployment]]

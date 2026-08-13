@@ -1,7 +1,7 @@
 ---
 title: Responsible AI deployment
 status: stub
-updated: 2026-08-11
+updated: 2026-08-13
 ---
 
 # Responsible AI deployment
@@ -33,6 +33,8 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 [[2026-ali-ai-adoption-multinational-workforce]] shows the operational risk of treating a workforce GenAI system as a self-contained model. In a live HR-search rollout, usefulness rose more than trust, reliance involved comparison and fallback, and some workers treated answers from an approved internal system as credible without consistent source checking. The authors therefore treat source visibility, uncertainty, maintained/localized content, guidance, human escalation, and clear accountability as deployment infrastructure. This is a single descriptive case, not proof that these controls work, but it makes a clean governance warning: assigning interpretive risk to workers is not a substitute for building reliable knowledge and support conditions around the system.
 
 [[2023-arcot-cognitive-load-optimization-contact-center-agents]] adds an unusually high-intrusion deployment case: continuous wearable and voice signals were used to infer worker stress and capacity for call routing. The article reports consent, data minimization, purpose limitation, access controls, and high agent acceptance, but those claims remain internal to one study and do not establish that consent was freely given, that monitoring did not alter behavior, or that capacity data could not later be repurposed for performance control. Responsible deployment must therefore treat worker-state inference as a consequential workforce system, not a neutral optimization input.
+
+[[2026-wu-novel-social-biases]] adds a different failure mode for stateful AI agents: allocative bias can be created by an agent's own sequential feedback history even when groups begin with identical modeled success probabilities. In a stylized hiring paradigm, frontier models sorted fictional groups into job classes more strongly than human participants, and stronger models did not become safer simply because they performed better on a static bias benchmark. The deployment implication is narrow but important: fairness evidence for an agent that repeatedly allocates opportunities has to test feedback loops, exploration policy, and group-level outcomes over time; one-shot output or benchmark results cannot establish that the deployed workflow will remain fair. The result does not show real-world hiring discrimination, and objective-level diversity steering is a hypothesis to validate against the domain's actual success criteria and affected groups, not a control to deploy blindly.
 
 ## Connections
 - Relates to [[algorithmic-assessment]] because hiring and assessment AI require disclosure, job-related validity evidence, fairness evaluation, auditability, applicant experience safeguards, and governance of how automated recommendations reshape human discretion.
