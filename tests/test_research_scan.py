@@ -140,6 +140,122 @@ def test_pick_latest_dated():
     assert c.pick_latest_dated([], "failure_catalog") is None
 
 
+def test_journal_watchlist_contains_only_verified_high_and_medium_entries():
+    assert len(cfg.JOURNAL_WATCHLIST) == 55
+    assert {row["relevance"] for row in cfg.JOURNAL_WATCHLIST} == {"high", "medium"}
+    assert all(row["issn"] for row in cfg.JOURNAL_WATCHLIST)
+    assert all(c.ISSN_RE.fullmatch(row["issn"]) for row in cfg.JOURNAL_WATCHLIST)
+    assert not any(row["name"] == "Journal of International Business Studies"
+                   for row in cfg.JOURNAL_WATCHLIST)
+    joms = next(row for row in cfg.JOURNAL_WATCHLIST
+                if row["name"] == "Journal of Management Studies")
+    assert joms["issn"] == "1467-6486"
+    assert joms["relevance"] == "high"
+    assert cfg.MAX_DISCOVERY_PER_JOURNAL == 500
+    assert cfg.JOURNAL_MAX_WORKERS == 4
+
+
+def test_crossref_journal_discovery_paginates_bulk_index_updates():
+    calls = []
+    pages = [
+        {"message": {"items": [{
+            "DOI": "10.1111/joms.other", "title": ["Other article"],
+            "container-title": ["Journal of Management Studies"],
+            "type": "journal-article", "URL": "https://doi.org/10.1111/joms.other",
+        }], "next-cursor": "page-2"}},
+        {"message": {"items": [{
+            "DOI": "10.1111/joms.70022", "title": ["Let Me Explain"],
+            "container-title": ["Journal of Management Studies"],
+            "type": "journal-article", "URL": "https://doi.org/10.1111/joms.70022",
+        }], "next-cursor": "page-3"}},
+    ]
+    original = c.http_get_json
+
+    def fake(url, params=None, **kwargs):
+        calls.append(dict(params or {}))
+        return pages.pop(0)
+
+    c.http_get_json = fake
+    try:
+        records = rs.discover_crossref_journal(
+            {"name": "Journal of Management Studies", "issn": "1467-6486",
+             "relevance": "high", "field": "Management", "tab": "primary"},
+            per_journal=2, since_date="2026-08-19", until_date="2026-08-20")
+    finally:
+        c.http_get_json = original
+
+    assert [record.doi for record in records] == ["10.1111/joms.other", "10.1111/joms.70022"]
+    assert calls[0]["cursor"] == "*"
+    assert calls[1]["cursor"] == "page-2"
+
+
+def test_crossref_journal_discovery_keeps_prior_pages_when_later_page_fails():
+    calls = 0
+    original = c.http_get_json
+
+    def fake(url, params=None, **kwargs):
+        nonlocal calls
+        calls += 1
+        if calls == 1:
+            return {"message": {"items": [{
+                "DOI": "10.1111/joms.first", "title": ["First page article"],
+                "container-title": ["Journal of Management Studies"],
+                "type": "journal-article", "URL": "https://doi.org/10.1111/joms.first",
+            }], "next-cursor": "page-2"}}
+        raise RuntimeError("page two unavailable")
+
+    c.http_get_json = fake
+    try:
+        records = rs.discover_crossref_journal(
+            {"name": "Journal of Management Studies", "issn": "1467-6486",
+             "relevance": "high", "field": "Management", "tab": "primary"},
+            per_journal=2, since_date="2026-08-19")
+    finally:
+        c.http_get_json = original
+
+    assert [record.doi for record in records] == ["10.1111/joms.first"]
+    assert records[0].provenance["journal_pagination_partial"] is True
+    assert records[0].provenance["journal_pagination_error"] == "RuntimeError"
+
+
+def test_crossref_journal_discovery_uses_issn_and_preserves_lane_provenance():
+    captured = {}
+    response = {"message": {"items": [{
+        "DOI": "10.1111/joms.70022",
+        "title": ["Let Me Explain: Experts Facing AI Decisions"],
+        "author": [{"given": "Anne-Sophie", "family": "Mayer"}],
+        "issued": {"date-parts": [[2025, 11, 8]]},
+        "container-title": ["Journal of Management Studies"],
+        "type": "journal-article",
+        "URL": "https://doi.org/10.1111/joms.70022",
+        "abstract": "AI decisions in organizations change expert authority and work.",
+        "is-referenced-by-count": 5,
+    }]}}
+    original = c.http_get_json
+
+    def fake(url, params=None, **kwargs):
+        captured.update({"url": url, "params": params, "kwargs": kwargs})
+        return response
+
+    c.http_get_json = fake
+    try:
+        journal = {"name": "Journal of Management Studies", "issn": "1467-6486",
+                   "relevance": "high", "field": "Management", "tab": "primary"}
+        records = rs.discover_crossref_journal(
+            journal, per_journal=20, since_date="2026-08-01", until_date="2026-08-02")
+    finally:
+        c.http_get_json = original
+
+    assert captured["url"].endswith("/journals/1467-6486/works")
+    assert captured["params"]["filter"] == (
+        "from-index-date:2026-08-01,until-index-date:2026-08-02")
+    assert records[0].doi == "10.1111/joms.70022"
+    assert records[0].source == "crossref-journal"
+    assert records[0].query == "journal:Journal of Management Studies"
+    assert records[0].provenance["discovery_lane"] == "journal-watchlist"
+    assert records[0].provenance["journal_relevance"] == "high"
+
+
 def test_acquisition_is_limited_to_surfaced_records():
     records = [object() for _ in range(25)]
     surfaced, to_acquire = rs.select_surfaced_and_acquired(
@@ -151,6 +267,64 @@ def test_acquisition_is_limited_to_surfaced_records():
         records, surface_limit=12, acquire_limit=5)
     assert surfaced == records[:12]
     assert to_acquire == records[:5]
+
+
+def test_surface_selection_reserves_journal_lane_capacity():
+    query_records = [c.ScanRecord(id=f"doi:10.1/q{i}", rank_score=1 - i / 100)
+                     for i in range(10)]
+    journal_records = [
+        c.ScanRecord(id="doi:10.1/j1", source="crossref-journal", rank_score=0.20),
+        c.ScanRecord(id="doi:10.1/j2", source="crossref-journal", rank_score=0.10),
+    ]
+    records = query_records + journal_records
+    surfaced, _ = rs.select_surfaced_and_acquired(
+        records, surface_limit=6, acquire_limit=6, journal_minimum=2)
+    assert sum(record.source == "crossref-journal" for record in surfaced) == 2
+    assert len(surfaced) == 6
+
+
+def test_journal_reservation_never_exceeds_surface_cap():
+    records = [c.ScanRecord(id=f"doi:10.1/j{i}", source="crossref-journal", rank_score=.1)
+               for i in range(5)]
+    surfaced, acquired = rs.select_surfaced_and_acquired(
+        records, surface_limit=2, acquire_limit=5, journal_minimum=4)
+    assert len(surfaced) == 2
+    assert len(acquired) == 2
+
+
+def test_orchestrator_runs_journal_lane_and_records_coverage():
+    journal = {"name": "Journal of Management Studies", "issn": "1467-6486",
+               "relevance": "high", "field": "Management", "tab": "primary"}
+    original_watchlist = cfg.JOURNAL_WATCHLIST
+    original_discover = rs.discover_crossref_journal
+
+    def fake_discover(row, per_journal, since_date):
+        assert row == journal
+        assert since_date == "2025-01-01"
+        return [c.ScanRecord(
+            id="doi:10.1111/joms.70022", doi="10.1111/joms.70022",
+            title="Let Me Explain: Experts Facing AI Decisions",
+            abstract="Artificial intelligence decisions in organizations change expert authority and work.",
+            source="crossref-journal", query="journal:Journal of Management Studies",
+            url="https://doi.org/10.1111/joms.70022", year="2025",
+            venue="Journal of Management Studies", source_type="peer-reviewed",
+            provenance={"discovery_lane": "journal-watchlist"},
+        )]
+
+    cfg.JOURNAL_WATCHLIST = [journal]
+    rs.discover_crossref_journal = fake_discover
+    try:
+        wd = tempfile.mkdtemp()
+        assert rs.main(["--sources", "", "--queries", "1", "--journal-since", "2025-01-01",
+                        "--no-acquire", "--work-dir", wd]) == 0
+        manifest = json.loads(next(Path(wd).glob("manifest-*.json")).read_text())
+    finally:
+        cfg.JOURNAL_WATCHLIST = original_watchlist
+        rs.discover_crossref_journal = original_discover
+
+    assert manifest["journal_lane"]["enabled"] is True
+    assert manifest["journal_lane"]["journals_scanned"] == 1
+    assert manifest["records"][0]["doi"] == "10.1111/joms.70022"
 
 
 def test_orchestrator_dedup_rank_manifest():
@@ -172,13 +346,13 @@ def test_orchestrator_dedup_rank_manifest():
     rs.DISCOVERY["openalex"] = fake
     try:
         wd = tempfile.mkdtemp()
-        assert rs.main(["--sources", "openalex", "--queries", "1", "--no-acquire", "--work-dir", wd]) == 0
+        assert rs.main(["--no-journals", "--sources", "openalex", "--queries", "1", "--no-acquire", "--work-dir", wd]) == 0
         man = json.loads(next(Path(wd).glob("manifest-*.json")).read_text())
         # off-mission pottery dropped; two on-mission kept
         assert man["discovered"] == 2, man
         assert man["records"][0]["title"].startswith("Generative AI")  # recent+peer-reviewed first
         # re-run dedups to zero new
-        assert rs.main(["--sources", "openalex", "--queries", "1", "--no-acquire", "--work-dir", wd]) == 0
+        assert rs.main(["--no-journals", "--sources", "openalex", "--queries", "1", "--no-acquire", "--work-dir", wd]) == 0
         assert len(json.loads((Path(wd) / "ledger" / "seen_index.json").read_text())) == 2
     finally:
         if orig:
@@ -213,7 +387,7 @@ def test_orchestrator_title_dedup():
     rs.DISCOVERY["openalex"] = fake
     try:
         wd = tempfile.mkdtemp()
-        rs.main(["--sources", "openalex", "--queries", "1", "--no-acquire", "--work-dir", wd])
+        rs.main(["--no-journals", "--sources", "openalex", "--queries", "1", "--no-acquire", "--work-dir", wd])
         man = json.loads(next(Path(wd).glob("manifest-*.json")).read_text())
         assert man["discovered"] == 1, man  # near-duplicate title collapsed to one
     finally:

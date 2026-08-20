@@ -29,6 +29,7 @@ from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
 
 DOI_RE = re.compile(r"10\.\d{4,9}/[-._;()/:A-Z0-9]+", re.I)
 ARXIV_RE = re.compile(r"(\d{4}\.\d{4,5})(v\d+)?", re.I)
+ISSN_RE = re.compile(r"\d{4}-\d{3}[\dX]", re.IGNORECASE)
 YEAR_RE = re.compile(r"\b(?:19|20)\d{2}\b")
 
 _TRACKING_PARAMS = {

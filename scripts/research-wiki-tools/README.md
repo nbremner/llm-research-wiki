@@ -30,13 +30,20 @@ monthly on the VPS via hermes cron (1st, 09:00 America/Los_Angeles → #research
 
 ## research_scan.py — deterministic scan harness
 
-Discovery (OpenAlex / arXiv / Crossref, seeded from `scan_config.py`) → dedup vs the coverage ledger →
-pre-rank → acquisition ladder for surfaced records only (OA-resolve → direct PDF → Jina reader) →
-ranked manifest + acquired files to Drive `_triage/pending`. No LLM anywhere in this path. Runs daily on the VPS via
+Discovery has two deterministic lanes: (1) OpenAlex / arXiv / Crossref queries seeded from
+`scan_config.py`, and (2) a curated 55-journal Crossref watchlist keyed by verified ISSN and indexed-date
+watermarks. Both feed the same AI × work mission gate → dedup vs the coverage ledger → pre-rank →
+acquisition ladder for surfaced records only (OA-resolve → direct PDF → Jina reader) → ranked manifest +
+acquired files to Drive `_triage/pending`. The watchlist includes every High/Medium journal from the
+owner's primary and supplementary rosters; Low rows are excluded. Crossref cursor pagination absorbs
+publisher bulk re-index events, with four bounded concurrent requests processed in deterministic roster
+order; four of the twelve daily surface slots are reserved for journal-lane candidates when available. No LLM runs in this path. The harness runs daily on the VPS via
 `research-scan.timer` (08:00 America/Los_Angeles, failure alert to #logs).
 
 ```bash
-uv run scripts/research-wiki-tools/research_scan.py --queries 3 --no-acquire  # local discovery smoke
+uv run scripts/research-wiki-tools/research_scan.py --queries 3 --no-acquire  # both lanes, local smoke
+uv run scripts/research-wiki-tools/research_scan.py --no-journals --queries 3 --no-acquire  # query-only smoke
+uv run scripts/research-wiki-tools/research_scan.py --journal-since 2026-08-01 --sources '' --no-acquire  # journal backtest
 uv run scripts/research-wiki-tools/research_scan.py --drive                   # full run to Drive
 ```
 

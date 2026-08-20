@@ -98,7 +98,8 @@ The scripts run from a configured agent machine with Google Drive OAuth already 
 
 ```bash
 python scripts/research-wiki-tools/graph_lint.py                       # lint the wiki graph
-uv run scripts/research-wiki-tools/research_scan.py --queries 3 --no-acquire   # scan smoke (local)
+uv run scripts/research-wiki-tools/research_scan.py --queries 3 --no-acquire   # scan smoke (query + journal lanes, local)
+uv run scripts/research-wiki-tools/research_scan.py --no-journals --queries 3 --no-acquire  # query-only smoke
 uv run scripts/research-wiki-tools/research_scan.py --drive                    # full scan to Drive _triage
 uv run scripts/research-wiki-tools/scan_triage_apply.py --latest --dispositions d.json  # triage dry run
 python -m pytest tests/ -q                                             # run the test suite before committing

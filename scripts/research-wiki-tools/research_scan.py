@@ -34,6 +34,8 @@ See docs/research-scrape-plan.md.
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
+import datetime as dt
 import json
 import sys
 from pathlib import Path
@@ -141,36 +143,102 @@ def discover_arxiv(query: str, per_query: int) -> list[c.ScanRecord]:
     return out
 
 
+def _crossref_record(it: dict[str, Any], *, source: str, query: str) -> c.ScanRecord | None:
+    """Normalize one Crossref work for query and journal discovery lanes."""
+    title_list = it.get("title") or []
+    authors = []
+    for a in it.get("author", []) or []:
+        nm = " ".join(x for x in [a.get("given"), a.get("family")] if x)
+        if nm:
+            authors.append(nm)
+    issued = (it.get("issued", {}) or {}).get("date-parts", [[None]])
+    year = issued[0][0] if issued and issued[0] else None
+    cont = it.get("container-title") or []
+    return _record_from_parts(
+        source=source, query=query,
+        url=it.get("URL"), pdf_url=None,
+        doi=it.get("DOI"), arxiv_id=None,
+        title=title_list[0] if title_list else "",
+        authors=authors[:12], year=year,
+        venue=cont[0] if cont else None, api_type=it.get("type"),
+        abstract=(it.get("abstract") or "").replace("<jats:p>", " ").replace("</jats:p>", " "),
+        cited_by=it.get("is-referenced-by-count"),
+    )
+
+
 def discover_crossref(query: str, per_query: int) -> list[c.ScanRecord]:
     data = c.http_get_json(
         "https://api.crossref.org/works",
         params={"query": query, "rows": min(per_query, 40),
                 "mailto": cfg.CONTACT_MAILTO,
-                "select": "DOI,title,author,issued,container-title,type,URL,abstract"},
+                "select": "DOI,title,author,issued,container-title,type,URL,abstract,is-referenced-by-count"},
     )
     out: list[c.ScanRecord] = []
-    for it in (data.get("message", {}) or {}).get("items", []):
-        title_list = it.get("title") or []
-        authors = []
-        for a in it.get("author", []) or []:
-            nm = " ".join(x for x in [a.get("given"), a.get("family")] if x)
-            if nm:
-                authors.append(nm)
-        issued = (it.get("issued", {}) or {}).get("date-parts", [[None]])
-        year = issued[0][0] if issued and issued[0] else None
-        cont = it.get("container-title") or []
-        rec = _record_from_parts(
-            source="crossref", query=query,
-            url=it.get("URL"), pdf_url=None,
-            doi=it.get("DOI"), arxiv_id=None,
-            title=title_list[0] if title_list else "",
-            authors=authors[:12], year=year,
-            venue=cont[0] if cont else None, api_type=it.get("type"),
-            abstract=(it.get("abstract") or "").replace("<jats:p>", " ").replace("</jats:p>", " "),
-            cited_by=it.get("is-referenced-by-count"),
-        )
+    for item in (data.get("message", {}) or {}).get("items", []):
+        rec = _crossref_record(item, source="crossref", query=query)
         if rec:
             out.append(rec)
+    return out
+
+
+def discover_crossref_journal(journal: dict[str, str], per_journal: int,
+                              since_date: str,
+                              until_date: str | None = None) -> list[c.ScanRecord]:
+    """Fetch every recently indexed work for one verified-ISSN journal."""
+    issn = journal.get("issn", "")
+    if not c.ISSN_RE.fullmatch(issn):
+        raise ValueError(f"invalid ISSN for {journal.get('name', '<unknown>')}: {issn}")
+    query = f"journal:{journal['name']}"
+    date_filter = f"from-index-date:{since_date}"
+    if until_date:
+        date_filter += f",until-index-date:{until_date}"
+    endpoint = f"https://api.crossref.org/journals/{issn}/works"
+    out: list[c.ScanRecord] = []
+    cursor = "*"
+    used_cursors: set[str] = set()
+    while len(out) < per_journal and cursor not in used_cursors:
+        used_cursors.add(cursor)
+        try:
+            data = c.http_get_json(
+                endpoint,
+                params={
+                    "filter": date_filter,
+                    "sort": "indexed", "order": "desc",
+                    "rows": min(per_journal - len(out), 1000),
+                    "cursor": cursor,
+                    "mailto": cfg.CONTACT_MAILTO,
+                    "select": "DOI,title,author,issued,container-title,type,URL,abstract,is-referenced-by-count",
+                },
+            )
+        except Exception as e:  # noqa: BLE001
+            if not out:
+                raise
+            for rec in out:
+                rec.provenance.update({
+                    "journal_pagination_partial": True,
+                    "journal_pagination_error": type(e).__name__,
+                })
+            break
+        message = data.get("message", {}) or {}
+        items = message.get("items", [])
+        for item in items:
+            rec = _crossref_record(item, source="crossref-journal", query=query)
+            if rec:
+                rec.provenance.update({
+                    "discovery_lane": "journal-watchlist",
+                    "journal_name": journal["name"],
+                    "journal_issn": issn,
+                    "journal_relevance": journal["relevance"],
+                    "journal_field": journal["field"],
+                    "journal_tab": journal["tab"],
+                })
+                out.append(rec)
+                if len(out) >= per_journal:
+                    break
+        next_cursor = message.get("next-cursor")
+        if not items or not next_cursor:
+            break
+        cursor = next_cursor
     return out
 
 
@@ -182,9 +250,22 @@ DISCOVERY = {
 
 
 def select_surfaced_and_acquired(records: list, surface_limit: int,
-                                  acquire_limit: int) -> tuple[list, list]:
-    """Keep every acquired artifact represented in the surfaced manifest."""
-    surfaced = records[:surface_limit]
+                                  acquire_limit: int,
+                                  journal_minimum: int = 0) -> tuple[list, list]:
+    """Keep artifacts represented and reserve bounded journal-lane capacity."""
+    if journal_minimum <= 0:
+        surfaced = records[:surface_limit]
+        return surfaced, surfaced[:acquire_limit]
+    reserved = min(journal_minimum, surface_limit)
+    journal_records = [r for r in records if r.source == "crossref-journal"][:reserved]
+    selected_ids = {id(r) for r in journal_records}
+    surfaced = list(journal_records)
+    for record in records:
+        if len(surfaced) >= surface_limit:
+            break
+        if id(record) not in selected_ids:
+            surfaced.append(record)
+    surfaced.sort(key=lambda r: r.rank_score, reverse=True)
     return surfaced, surfaced[:acquire_limit]
 
 
@@ -284,6 +365,10 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     p.add_argument("--acquire", type=int, default=cfg.MAX_ACQUIRE_PER_RUN)
     p.add_argument("--surface", type=int, default=cfg.MAX_SURFACED_PER_RUN)
     p.add_argument("--sources", default="openalex,arxiv,crossref")
+    p.add_argument("--journals", action=argparse.BooleanOptionalAction, default=True,
+                   help="Enable the curated Crossref journal-watchlist lane")
+    p.add_argument("--journal-since", default=None,
+                   help="Override journal indexed-date floor (YYYY-MM-DD; default: lookback config)")
     p.add_argument("--no-acquire", action="store_true", help="Discovery + rank + manifest only")
     p.add_argument("--drive", action="store_true", help="Sync ledger + upload files/manifest to Drive")
     p.add_argument("--token-path", default=cfg.DEFAULT_TOKEN_PATH)
@@ -327,10 +412,52 @@ def main(argv: list[str]) -> int:
 
     queries = cfg.SEED_QUERIES[: args.queries] if args.queries else cfg.SEED_QUERIES
     sources = [s.strip() for s in args.sources.split(",") if s.strip() in DISCOVERY]
+    journal_since = args.journal_since or (
+        c.utc_now().date() - dt.timedelta(days=cfg.JOURNAL_LOOKBACK_DAYS)
+    ).isoformat()
+    dt.date.fromisoformat(journal_since)  # fail clearly before any API calls
 
     # --- Discovery + dedup ---------------------------------------------------
     fresh: dict[str, c.ScanRecord] = {}
     seen_titles: set[str] = set()  # run-local near-duplicate guard (same title, different id)
+    journals_scanned = 0
+    if args.journals:
+        with concurrent.futures.ThreadPoolExecutor(
+                max_workers=cfg.JOURNAL_MAX_WORKERS) as executor:
+            journal_jobs = [
+                (journal, executor.submit(
+                    discover_crossref_journal, journal,
+                    cfg.MAX_DISCOVERY_PER_JOURNAL, journal_since))
+                for journal in cfg.JOURNAL_WATCHLIST
+            ]
+            # Futures execute concurrently; consuming in roster order preserves
+            # deterministic dedup/provenance when the same article appears twice.
+            for journal, future in journal_jobs:
+                query = f"journal:{journal['name']}"
+                try:
+                    found = future.result()
+                    journals_scanned += 1
+                except Exception as e:  # noqa: BLE001
+                    print(f"WARN discovery journal '{journal['name'][:40]}': "
+                          f"{type(e).__name__}: {e}", file=sys.stderr)
+                    ledger.log_search(query, "crossref-journal", 0, 0)
+                    continue
+                new = 0
+                for rec in found:
+                    if ledger.is_seen(rec.id) or rec.id in fresh:
+                        continue
+                    if not c.is_on_mission(f"{rec.title}\n{rec.abstract}", cfg.AI_TERMS, cfg.WORK_TERMS):
+                        continue
+                    nt = c.normalize_title(rec.title)
+                    if ledger.is_title_seen(nt) or (len(nt) >= 20 and nt in seen_titles):
+                        continue
+                    if len(nt) >= 20:
+                        seen_titles.add(nt)
+                    fresh[rec.id] = rec
+                    new += 1
+                ledger.log_search(query, "crossref-journal", len(found), new)
+                print(f"  {'journal':9s} '{journal['name'][:44]}' -> "
+                      f"{len(found):3d} found, {new:3d} new", flush=True)
     for q in queries:
         for src in sources:
             try:
@@ -363,7 +490,8 @@ def main(argv: list[str]) -> int:
 
     # --- Acquisition (surfaced records only, capped) -------------------------
     surfaced, to_acquire = select_surfaced_and_acquired(
-        records, surface_limit=args.surface, acquire_limit=args.acquire)
+        records, surface_limit=args.surface, acquire_limit=args.acquire,
+        journal_minimum=cfg.MIN_JOURNAL_SURFACED_PER_RUN if args.journals else 0)
     if not args.no_acquire:
         for i, rec in enumerate(to_acquire, 1):
             try:
@@ -385,6 +513,13 @@ def main(argv: list[str]) -> int:
         "produced_by": cfg.PRODUCED_BY,
         "generated": c.utc_now_iso(),
         "queries": len(queries), "sources": sources,
+        "journal_lane": {
+            "enabled": args.journals,
+            "journals_configured": len(cfg.JOURNAL_WATCHLIST),
+            "journals_scanned": journals_scanned,
+            "since": journal_since,
+            "minimum_surface_slots": cfg.MIN_JOURNAL_SURFACED_PER_RUN if args.journals else 0,
+        },
         "discovered": len(records), "surfaced": len(surfaced),
         "acquired": sum(1 for r in to_acquire if r.acq_state in ("full-pdf", "full-text")),
         "records": [r.to_dict() for r in surfaced],

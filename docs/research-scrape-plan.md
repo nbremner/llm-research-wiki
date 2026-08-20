@@ -44,9 +44,10 @@ extended upstream into discovery.
 
 ```
 DISCOVERY  (deterministic, API/feed-first — no LLM)
-  OpenAlex · arXiv · Semantic Scholar · Crossref · NBER/SSRN · think-tank & gov feeds · newsletters→Gmail
+  Query lane: OpenAlex · arXiv · Crossref · NBER/SSRN · think-tank & gov feeds · newsletters→Gmail
+  Journal lane: 55 owner-curated High/Medium journals, polled by verified ISSN + Crossref indexed date
   seeded by: wiki thin-areas + open-questions + citation-chase of existing sources/
-      │ candidate {id, meta, url}
+      │ candidate {id, meta, url, discovery_lane}
       ▼
 DEDUP vs LEDGER ── seen? ──► drop (logged)
       │ new
@@ -109,8 +110,13 @@ not a reader replacement. **Jina** keeps acquisition deterministic and *out of t
 ## Scope & routing
 
 The **wiki mission is the anchor** (broad AI-workforce × I-O psychology, per `wiki/overview.md`), not the
-wrapped-up applied "U4B/B2B-sales" research questions. The relevance rubric and seed queries live as
-**config data in git**, so a future applied project is a config add, not a rebuild.
+wrapped-up applied "U4B/B2B-sales" research questions. The relevance rubric, seed queries, and verified-ISSN
+journal watchlist live as **config data in git**, so a future applied project is a config add, not a rebuild.
+The journal lane is comprehensive within a rolling 14-day Crossref indexed-date window: High and Medium
+venues use the same broad AI × work gate, while Low rows from the owner roster are excluded. Retrieval is
+cursor-paginated to a bounded 500 records per journal so publisher bulk re-index events do not silently
+truncate coverage. Four Crossref requests run concurrently but results are consumed in roster order to
+preserve deterministic dedup; four daily surface slots are reserved for journal-lane candidates when available.
 
 Dispositions (hybrid autonomy — auto-discard obvious noise, auto-queue obvious wiki-candidates into the
 approval gate, surface the ambiguous middle + read-once for the owner):
