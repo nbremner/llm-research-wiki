@@ -1,7 +1,7 @@
 ---
 name: research-scan-triage
 description: "Use when triaging surfaced candidates from the daily research scan into visible Drive state folders — wiki, read-once, or discarded — while preserving manifest/ledger audit state."
-version: 1.2.1
+version: 1.2.2
 author: Hermes Agent
 license: MIT
 metadata:
@@ -39,7 +39,7 @@ owner-approved synthesis.
 | `_triage/ledger` (seen-index, failures, search log) | `1Fw7J30oerCSCYSLcEB5k0mbbdfOGwyx1` |
 | Rubric config (edit to retune the scan) | `/root/research-wiki-tools/scan_config.py` |
 
-## The disposition rubric (owner-calibrated 2026-07-04, batch 1)
+## The disposition rubric (owner-calibrated through 2026-08-22)
 
 The wiki's mission: **AI workforce transformation × I-O psychology** — how AI changes work, workers,
 jobs, organizations, and measurement (`wiki/topic-map.md` is the live topic list).
@@ -48,6 +48,11 @@ jobs, organizations, and measurement (`wiki/topic-map.md` is the live topic list
   empirical studies and RCTs, evidence syntheses / meta-analyses, theory papers, benchmark/measurement
   proposals, AND practitioner frameworks or position papers that organize a tracked topic. The owner
   keeps frameworks (e.g. ORCHESTRA) and position papers (e.g. a time-saved benchmark) as wiki material.
+  **Metadata-limited direct match** (owner ruling 2026-08-22): when no abstract or usable artifact is
+  available, a scholarly title can still support `wiki / clear` if it explicitly identifies both AI
+  and a genuine work, workforce, HR, or organizational construct tracked by the wiki. Acquisition
+  remains separate from disposition. Use `ambiguous` when the work setting or substantive contribution
+  cannot be established from the title alone.
 - **read-once** — AI×work-*adjacent* but centered in a domain the wiki does not track: automation of a
   different profession's work product (e.g. financial audit / accounting IS), a different industrial
   context (e.g. manufacturing / Industry 5.0 human-machine collaboration), **student-sample
@@ -76,6 +81,7 @@ Auto-actions happen only on `clear`.
 | Time-Saved Benchmark position paper | wiki | benchmark-validity framework counts |
 | Context engineering principal-agent theory | wiki | theory on a tracked topic counts |
 | ORCHESTRA human-agent leadership framework | wiki | practitioner framework counts |
+| AI and organizational knowledge sharing, abstract unavailable | wiki | title explicitly identifies AI and a tracked organizational-work construct; acquisition remains separate |
 | Automated audit tools & audit quality (accounting IS) | read-once | other profession's domain |
 | Industry 5.0 human-machine collaboration review | read-once | manufacturing context |
 | University-student cognitive-offloading study, no work setting | read-once | student sample; construct match alone insufficient (owner-ratified 2026-07-04) |
