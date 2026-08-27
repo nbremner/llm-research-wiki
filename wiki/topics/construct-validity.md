@@ -1,7 +1,7 @@
 ---
 title: Construct validity
 status: active
-updated: 2026-07-28
+updated: 2026-08-27
 ---
 
 # Construct validity
@@ -17,6 +17,8 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 [[2026-tomei-what-jobs-can-ai-learn]] is a useful positive case of construct sharpening. Instead of treating "AI exposure" as generic overlap between occupational task descriptions and current LLM capabilities, the paper defines a narrower construct: feasibility of improving task performance through RL-based post-training. The distinction matters because occupations can rank high on LLM exposure but low on RL feasibility, or the reverse.
 
 [[2022-strah-diversity-issues-job-analysis]] moves construct validity upstream into job analysis itself. If the performance domain is built from majority-group norms, biased archival language, unequal SME voice, or averaged ratings that wash out subgroup differences, then later validation work may be anchored to an incomplete construct. The issue is not only whether a predictor measures the intended KSAO; it is whether the job and criterion domain were inclusively specified in the first place.
+
+[[2026-wang-whose-readiness-counts]] shows the same aggregation risk in perceived AI and robotics readiness. A sector-level average can combine different applications and people who do not share the same assessment, then be presented as if it describes one coherent preparedness object. The paper does not validate a readiness instrument, but it gives a practical construct-validity check: before treating a score as evidence about a sector, specify what is being combined, whose ratings are included, and whether the disagreement is too large for that summary to carry the intended claim.
 
 [[2008-icf-competency-modeling-job-analysis]] adds a label-boundary problem. “Competency” can mean job-level KSAO, observable behavior, personality-like attribute, motive, cultural value, or organization-level capability. That flexibility is part of why competency modeling travels well in HR practice, but it also creates construct-validity risk when competency labels are used for selection, assessment, or performance decisions without enough task evidence, rater reliability, and job-relevance logic.
 
@@ -55,6 +57,7 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - The wiki needs positive examples of strong construct validation in AI workforce transformation, not only cautionary cases from older I-O constructs.
 - [[2026-tomei-what-jobs-can-ai-learn]] improves the exposure construct but still relies on LLM-based annotations. The next validation question is whether RL feasibility predicts observed deployment and labor-market change better than existing exposure measures.
 - [[2022-strah-diversity-issues-job-analysis]] complicates the usual “job-relatedness” safeguard: a procedure can be tied to a documented job analysis and still be unfairly narrow if the job analysis failed to capture diverse ways of performing the work.
+- [[2026-wang-whose-readiness-counts]] raises an aggregation question that applies beyond readiness: when do differences among raters or items mean that an average no longer supports a claim about one construct, rather than simply indicating acceptable variation around a shared construct? The preprint identifies the problem but does not establish a general decision rule.
 - [[2008-icf-competency-modeling-job-analysis]] shows that competency modeling can improve strategic fit while weakening construct precision if broad organizational competencies are treated as if they were job-specific KSAOs.
 - [[2009-sanchez-levine-competency-modeling-job-analysis]] suggests a two-standard problem: the construct can be rhetorically useful for strategy communication while still inadequate for measurement-heavy HR decisions unless translated into observable, job-family-specific behavioral indicators.
 - [[2023-zhang-human-capital-resources]] adds a prediction-versus-explanation problem: contaminated HCR measures can correlate more strongly with performance, but that strength may come from mixing HCR with other constructs rather than from cleaner measurement of human capital resources.

@@ -1,7 +1,7 @@
 ---
 title: AI readiness
 status: active
-updated: 2026-08-13
+updated: 2026-08-27
 ---
 
 # AI readiness
@@ -25,6 +25,8 @@ The important move for this wiki is that readiness and adoption are mutually rei
 [[1997-goh-benchmarking-learning-capability]] adds a pre-AI organizational-learning layer to readiness. Its five learning-capability conditions — shared purpose, leadership commitment and empowerment, experimentation and rewards, knowledge transfer, and teamwork/group problem solving — name the infrastructure organizations need if AI pilots are going to become changed routines rather than isolated experiments. Readiness therefore includes whether the organization can learn from AI experimentation, failures, external examples, and local practice variation.
 
 [[2026-shin-effective-cognitive-population]] applies a narrower readiness logic at national scale. Its ECP planning ledger separates HCI+-based human productivity from AI opportunity (digital infrastructure plus innovation/economic integration) and conversion governance (regulation and ethics), then makes the combination and its trade-offs inspectable. It does not validate a generic readiness score or show that preparedness causes output; instead, it supports the more limited proposition that readiness claims should specify the capability, opportunity, and governance conditions they combine and avoid double-counting them.
+
+[[2026-wang-whose-readiness-counts]] adds a reporting rule for readiness assessments: a sector score can help scan a portfolio, but it should not stand in for agreement about any particular application. In the study, differences between broad challenge-family averages explained only about 2% of the observed variation in perceived preparedness. Reports therefore need to retain application-level results, show how much people disagreed, and disclose whose judgments produced the average. This is evidence about perceived community preparedness, not an audit of an organization's actual capability.
 
 ## Connections
 
@@ -50,3 +52,4 @@ The important move for this wiki is that readiness and adoption are mutually rei
 - [[2025-schweitzer-leading-ai-adoption]] raises a construct-boundary tension: behavioral change-management capability could be part of AI readiness, a method for producing readiness, or a post-adoption capability built through experience. [[2018-fugate-change-compliance-championing]] sharpens the issue by showing that change management support predicts appraisals and support behavior, but it still leaves open whether employee championing should be measured as a readiness antecedent, an implementation process, or an adoption outcome in AI transformation.
 - [[1997-goh-benchmarking-learning-capability]] raises a timing problem for readiness: learning capability may be an antecedent to AI adoption, an outcome of repeated AI experimentation, or both. Cross-sectional readiness surveys need to avoid treating learned implementation capacity as if it were purely pre-existing maturity.
 - [[2026-shin-effective-cognitive-population]] finds that its national opportunity-governance block improves concurrent output fit but does not support a direct opportunity × governance interaction. The unresolved issue is whether a conjunctive readiness rule is a useful precautionary planning constraint, a descriptive index choice, or a causal proposition that needs longitudinal and multilevel evidence before it can guide intervention.
+- [[2026-wang-whose-readiness-counts]] shows that broad readiness averages can conceal disagreement among people and applications, but its survey does not establish which level of disagreement should block, slow, or reshape a real deployment. The practical threshold for treating a readiness score as adequate evidence remains open.
