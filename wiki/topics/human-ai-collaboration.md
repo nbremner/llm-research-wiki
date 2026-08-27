@@ -1,12 +1,14 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-08-06
+updated: 2026-08-26
 ---
 
 # Human-AI collaboration
 
 Human-AI collaboration is the working relationship between human judgment and AI capability in actual tasks. The question is not whether humans and AI are “teammates” in the warm metaphorical sense; it is how responsibility, confidence, delegation, review, and accountability are arranged in practice.
+
+[[2026-farach-scaffolding-human-ai-collaboration]] adds a field-experiment warning against treating collaboration structure as inherently beneficial. At one retailer, a required process for pairs to use Copilot together was associated with lower AI-graded document quality and far fewer completed documents than unstructured use; extra coordination, technical friction, and less room for domain context appear to have imposed costs. Separate thought-partner training for individuals did not improve average quality on the study's main test, although a later, less conclusive analysis suggested that trainees may have been more likely to receive a perfect score. The practical implication is not “avoid scaffolding,” but specify what it is meant to support: a process that adds real-time coordination needs evidence that it helps more than the extra rules, delays, and reduced autonomy hurt.
 
 [[2026-rocca-psychological-coupling]] adds a relational and temporal mechanism that this task-allocation framing can otherwise miss. The paper proposes that users' cognitive and affective states and an LLM's simulated states become mutually shaped across turns; symmetric convergence, asymmetric reinforcement, and divergence can each be adaptive or maladaptive depending on the trajectory. Collaboration design therefore has to examine not only who has formal authority or performs which task, but also whether the interaction loop amplifies, stabilizes, or constructively interrupts a user's evolving state.
 
@@ -90,6 +92,7 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 
 ## Contradictions & open questions
 
+- [[2026-farach-scaffolding-human-ai-collaboration]] finds that required joint AI use can reduce output quality and completion, while [[2026-dellacqua-cybernetic-teammate]] finds AI can help a solo worker reproduce some team benefits in a defined ideation task. These are not opposite verdicts on collaboration: they differ in task, workflow constraint, and whether AI expands an individual's perspective or adds another coordination process. The unresolved question is when structured collaboration helps people do the work and when it simply gets in the way.
 - “Collaboration” may over-humanize the AI system. [[2025-lee-generative-ai-critical-thinking]] keeps accountability with the human user, while [[2025-dellacqua-super-mario-ai]] shows that even a capable automated partner may be a poor teammate when coordination, trust, and motivation are part of the work system. Both fit better with [[automation-and-substitution]] and work-design frames than with a simple teammate metaphor.
 - The wiki needs evidence beyond self-report on whether stewardship behaviors actually improve output quality, learning, or long-run capability. [[2022-dellacqua-falling-asleep-at-wheel]] is useful because it observes behavior, but it is still one HR-screening task rather than broad evidence across work systems.
 - [[2026-lee-making-invisible-visible]] uses worker expectations from decision-support settings; it supports the importance of control and verification, but not yet which collaboration designs produce better decisions, adoption, or worker outcomes.
