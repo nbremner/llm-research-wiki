@@ -1,7 +1,7 @@
 ---
 title: Algorithmic assessment
 status: active
-updated: 2026-06-25
+updated: 2026-08-27
 ---
 
 # Algorithmic assessment
@@ -15,6 +15,8 @@ The topic sits at the intersection of [[construct-validity]], [[evidence-based-m
 [[2022-strah-diversity-issues-job-analysis]] adds a deeper foundation problem for algorithmic assessment. Even before signals are modeled or audited, the job analysis that defines the criterion domain may miss underrepresented workers' tasks, constraints, voice, or successful performance strategies. That matters for algorithmic tools because a model can be technically validated against a criterion that already encodes an incomplete or majority-normed account of the job.
 
 [[2022-dellacqua-falling-asleep-at-wheel]] adds the human-oversight problem inside algorithmic hiring. In a field experiment with professional recruiters, algorithmic recommendations improved accuracy overall, but higher-stated AI quality made recruiters more likely to follow recommendations and lower-quality AI induced more effort and time spent reviewing resumes. For assessment, this means the validity of a human-AI selection system depends not only on model accuracy, but on how recommendations reshape human attention, discretion, and willingness to override.
+
+[[2025-matic-balancing-accuracy-acceptance-algorithmic-hiring]] focuses on a related design question: how a hiring system combines a decision maker's judgment with other applicant information. Across two experiments using predictions for real applicants, letting people make an intuitive overall judgment and then adding it to the model as a fixed, explicit input was more accurate than either intuitive judgment alone or freely editing the model's final recommendation. The study's practical implication is not that human input is automatically valuable. It is that a system can preserve a limited, visible human role without treating each exception as a reason to override the same evidence differently.
 
 [[2025-landers-ethical-use-ai-iop]] adds the professional-ethics frame around AI selection. AI-scored or AI-delivered interviews are not only technical prediction problems: they require disclosure, evidence about how new data formats are collected and interpreted, attention to avatar or delivery-system effects, consistency across applicants, and scrutiny of foundational models and customization processes. This links algorithmic assessment to [[responsible-ai-deployment]] because selection AI can satisfy an efficiency demand while still failing disclosure, job-relatedness, fairness, accountability, applicant-experience, or domain-specific validation standards.
 
@@ -33,4 +35,5 @@ The topic sits at the intersection of [[construct-validity]], [[evidence-based-m
 - [[2023-nyc-automated-employment-decision-tools-faq]] makes bias audits and notices central to compliance, but policy compliance does not by itself establish construct validity, job relatedness, or decision utility.
 - “Decision support” is not a safe category by default. A simplified score, classification, or ranking can substantially assist or replace discretion even when a human remains nominally accountable for the final decision.
 - [[2022-dellacqua-falling-asleep-at-wheel]] complicates the idea that better hiring AI straightforwardly improves human decisions. Higher-quality recommendations can increase reliance and reduce effort, so the assessment unit is the coupled human-AI decision process, not the model alone.
+- [[2025-matic-balancing-accuracy-acceptance-algorithmic-hiring]] finds that a structured way of retaining human input can improve prediction and participant acceptance, but its simulated selection task does not show whether the same arrangement changes recruiter behavior, applicant experience, fairness, or legal defensibility in live hiring.
 - Bias audits often focus on output disparities, but [[2022-strah-diversity-issues-job-analysis]] suggests another layer: whether the criterion and job requirements being predicted already excluded some groups' real work contributions.
