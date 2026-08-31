@@ -1,11 +1,13 @@
 ---
 title: Candidate topics (watchlist)
-updated: 2026-08-11
+updated: 2026-08-31
 ---
 
 # Candidate topics (watchlist)
 
 Constructs that have surfaced across sources but don't yet warrant their own page. Ingests append here (with the source slug); promote a candidate once enough sources accumulate rather than deferring it again. Edit freely.
+
+- **job demand substitution / AI demand redistribution** — appears in [[2026-bakker-artificial-intelligence-job-design]] as the proposition that AI can remove routine work while reallocating time and effort into more complex escalation, review, accountability, emotional, or creative work, including across roles. Defer because the term is currently anchored in one integrative review and overlaps with [[work-redesign]], [[digital-work-strain]], and [[ai-as-a-job-resource]]; promote when independent field or longitudinal evidence establishes a reusable, measurable redistribution mechanism with implications beyond those existing topics.
 
 - **agentic-engineering education / verification-gated AI autonomy** — appears in [[2026-alenezi-educating-agentic-engineer]] as the ACCEL framework: a curricular progression from foundational unassisted practice through bounded assistance and supervised delegation to multi-agent orchestration, contingent on demonstrated verification competence. Defer because this is one integrative conceptual preprint; promote when implementation or comparative learning evidence establishes it as a reusable education and workforce-development construct rather than a single framework.
 

@@ -1,7 +1,7 @@
 ---
 title: AI as a job resource
 status: stub
-updated: 2026-08-13
+updated: 2026-08-31
 ---
 
 # AI as a job resource
@@ -15,6 +15,8 @@ AI can function as a job resource when its cognitive, structural, strategic, or 
 [[2025-sun-employee-ai-collaboration-proactive-behavior]] supplies a narrower COR-based pathway: in a two-wave survey of 412 employees across 30 Chinese firms, perceived employee–AI collaboration was associated with lower workload and greater proactive behavior, with a reported indirect workload path. This treats workload relief as a possible resource-conversion mechanism—capacity freed for discretionary initiative—not proof that AI is intrinsically a resource. The same broad collaboration measure cannot establish which task allocations, AI functions, or verification demands actually generate the relief.
 
 The boundary condition is central rather than administrative. Çögenli finds that verification, correction, accountability, and data-integrity/traceability routines can shift demands onto the worker. A workflow can therefore look resource-enhancing at the point of answer generation while imposing more invisible work downstream. The design question is whether the full human–AI workflow yields net support after its verification and governance requirements are counted.
+
+[[2026-bakker-artificial-intelligence-job-design]] sharpens the JD-R boundary condition by separating AI-readiness job resources from personal resources. It places training, time and autonomy to experiment, supportive leadership, psychological safety, clear responsibility allocation, and organizational support on the job side; AI self-efficacy, digital literacy, metacognitive skill, domain expertise, and learning orientation sit on the personal side. The distinction matters because a worker-development intervention cannot substitute for a resource-poor implementation context, and organizational support cannot by itself make a worker capable of interpreting or checking consequential output. The review's categories are a theoretical synthesis and still need construct validation and tests of their incremental value.
 
 ## Connections
 - Relates to [[ai-mediated-work-experience]] because cognitive, strategic, and psychosocial support can change autonomy, competence, workload, and felt job quality, but the resource functions should not be mistaken for measured experience outcomes.

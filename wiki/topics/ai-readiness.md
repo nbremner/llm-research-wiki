@@ -1,7 +1,7 @@
 ---
 title: AI readiness
 status: active
-updated: 2026-08-27
+updated: 2026-08-31
 ---
 
 # AI readiness
@@ -11,6 +11,8 @@ AI readiness is the organizational capacity to make a specific AI adoption purpo
 Jöhnk, Weißert, and Wyrtki organize readiness into five categories: **strategic alignment**, **resources**, **knowledge**, **culture**, and **data**. The factors are concrete enough to be useful diagnostically — AI-business potentials, customer AI readiness, top-management support, AI-process fit, data-driven decision-making, financial budget, personnel, IT infrastructure, AI awareness, upskilling, AI ethics, innovativeness, collaborative work, change management, data availability, data quality, data accessibility, and data flow — but the paper treats the indicators as illustrative rather than validated measures.
 
 The important move for this wiki is that readiness and adoption are mutually reinforcing. Readiness makes successful adoption more likely, but successful smaller-scale adoption also builds readiness by producing experience, acceptance, and clearer understanding of where AI can create value. That makes readiness a dynamic design problem, not a static compliance checklist.
+
+[[2026-bakker-artificial-intelligence-job-design]] adds a JD-R distinction that keeps this topic from treating readiness as solely enterprise infrastructure. It separates AI-readiness job resources—training, support, time and autonomy to experiment, psychological safety, responsibility clarity, and supportive leadership—from AI-readiness personal resources such as self-efficacy, digital literacy, metacognitive skill, domain expertise, and learning orientation. The practical implication is a readiness-fit test: mandated AI in a low-resource job is more likely to produce strain, disengagement, resistance, or unsafe workarounds, while skill-building alone will not repair missing time, support, participation, or control. These are theory-led categories rather than validated readiness scales.
 
 [[2026-reich-work-design-multidimensional-ai-threat]] adds a job-design boundary to readiness. Even if organizational knowledge, culture, and resources are present, adoption may still vary by whether roles provide autonomy and skill variety for experimentation. Readiness therefore has a work-design layer below the organization-level checklist.
 
@@ -40,6 +42,7 @@ The important move for this wiki is that readiness and adoption are mutually rei
 - Connects to [[behavioral-human-centered-ai]] because readiness includes the capacity to design adoption around real human behavior rather than rational-user assumptions.
 - Connects to [[employee-change-support]] because readiness includes credible change management support: information, mutual expectation clarity, and trust in management competence during disruption.
 - Connects to [[organizational-learning-capability]] because AI readiness depends on whether experimentation, knowledge transfer, and team problem solving can turn local AI use into shared organizational practice.
+- Connects to [[ai-as-a-job-resource]] because AI becomes usable support only when the job and personal resources needed to interpret, verify, integrate, and learn from it are present.
 
 ## Contradictions & open questions
 
@@ -53,3 +56,4 @@ The important move for this wiki is that readiness and adoption are mutually rei
 - [[1997-goh-benchmarking-learning-capability]] raises a timing problem for readiness: learning capability may be an antecedent to AI adoption, an outcome of repeated AI experimentation, or both. Cross-sectional readiness surveys need to avoid treating learned implementation capacity as if it were purely pre-existing maturity.
 - [[2026-shin-effective-cognitive-population]] finds that its national opportunity-governance block improves concurrent output fit but does not support a direct opportunity × governance interaction. The unresolved issue is whether a conjunctive readiness rule is a useful precautionary planning constraint, a descriptive index choice, or a causal proposition that needs longitudinal and multilevel evidence before it can guide intervention.
 - [[2026-wang-whose-readiness-counts]] shows that broad readiness averages can conceal disagreement among people and applications, but its survey does not establish which level of disagreement should block, slow, or reshape a real deployment. The practical threshold for treating a readiness score as adequate evidence remains open.
+- [[2026-bakker-artificial-intelligence-job-design]] gives AI-readiness resources a coherent JD-R role, but its proposed job-resource and personal-resource categories overlap conceptually with existing organizational readiness, AI literacy, self-efficacy, learning orientation, and supportive-climate constructs. The wiki still needs discriminant-validity and intervention evidence showing whether the two-level distinction predicts adoption quality, well-being, or performance beyond those adjacent measures.

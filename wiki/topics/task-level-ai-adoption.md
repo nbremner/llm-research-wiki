@@ -1,7 +1,7 @@
 ---
 title: Task-level AI adoption
 status: active
-updated: 2026-08-06
+updated: 2026-08-31
 ---
 
 # Task-level AI adoption
@@ -30,6 +30,8 @@ The useful design implication is that adoption is not simply moving from routine
 
 [[2026-chin-work-at-frontier]] adds a different observed-use unit: task crossover between a worker's self-reported occupation and the occupation historically associated with the task they bring to ChatGPT. In its sample, 16.8% of all work-related messages and 43.5% of occupation-specific non-generic messages were cross-occupation. This makes task-level adoption a possible signal of occupational-boundary recomposition, but not evidence that the user completed, owned, or was organizationally authorized to perform the task.
 
+[[2026-bakker-artificial-intelligence-job-design]] adds a configuration warning to task-level maps. Observing that AI appears in a task does not establish whether adoption was bottom-up discretionary use, top-down mandated or embedded use, automation-oriented, or augmentation-oriented; these are separable dimensions with different likely implications for autonomy, workload, and resource access. The review's proposed 2 × 2 frame does not replace trace-based task mapping, but it identifies metadata future task-level studies need before treating observed use as a common adoption construct.
+
 ## Connections
 - Connects to [[ai-adoption]] because task-level usage is an input to the mapping problem: organizations need to know which task patterns actually invite AI use before they can turn experimentation into durable adoption.
 - Connects to [[work-redesign]] because observed use identifies pressure points, not finished designs. The redesign question is how those task clusters get reallocated, governed, verified, and recombined.
@@ -49,3 +51,4 @@ The useful design implication is that adoption is not simply moving from routine
 - [[2026-iscenko-google-ai-economy-atlas]] finds broad Gemini diffusion alongside shallow within-occupation task use, reinforcing the exposure-versus-use gap across platforms. But all platform traces share a boundary: they observe prompts or interactions, not the full task, surrounding workflow, organizational authorization, or whether the worker accepted and used the output.
 - [[2026-richmond-ai-jobs-transition-framework]] reinforces that observed-use traces are adoption evidence, not job-impact evidence. Even when usage is higher in high-risk archetypes, the trace does not show quality, employer policy, worker occupation, workflow integration, or whether the same task use displaces labor.
 - [[2026-chin-work-at-frontier]] observes message-task crossover against self-reported occupational categories, not completed work or changing job content. The task can be exploratory, partial, generic in context, reviewed by a specialist, or never used; crossover is an early behavioral trace rather than evidence of durable role expansion.
+- **Use occurrence versus adoption configuration.** Conversation and product traces can show where AI appeared, but generally cannot show whether workers chose the use, whether management mandated it, whether it augmented or automated the task, or how control and responsibility were allocated. [[2026-bakker-artificial-intelligence-job-design]] treats those distinctions as necessary for explaining divergent job-design outcomes; the field still needs measures and traces that capture them without collapsing distinct arrangements into “AI adoption.”

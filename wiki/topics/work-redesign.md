@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-08-11
+updated: 2026-08-31
 ---
 
 # Work redesign
@@ -84,6 +84,10 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 [[2026-sherson-hybrid-intelligence-manifesto]] moves this from a task-level design question to a multi-level coordination claim. It frames redesign around a prediction-judgment frontier and argues that interfaces, organizational incentives, market valuation, and education have to align if human judgment is to remain economically central rather than becoming symbolic oversight. The useful design implication is not that every workflow should preserve human involvement; it is that an automate-and-elevate redesign must visibly reinvest capacity freed by routine automation in accountable, context-rich work and make that human contribution part of the system's value logic. The manifesto is a public, consensus- and foresight-based preprint, not comparative evidence that this architecture outperforms automation-first alternatives.
 
 [[2026-chin-work-at-frontier]] supplies an early behavioral signal that redesign pressure can cross occupational boundaries before an organization formally redraws roles. In a large sample of work-related ChatGPT messages linked to self-reported role information, 16.8% of all messages and 43.5% of occupation-specific non-generic messages concerned tasks historically associated with another occupation. That is not evidence that firms have successfully redesigned roles; it shows that AI can make workers attempt task bundles outside their historical occupational boundary, creating a governance and capability question about who is permitted, prepared, and accountable to do the newly reachable work.
+
+[[2026-bakker-artificial-intelligence-job-design]] gives work redesign a JD-R architecture rather than a simple allocation vocabulary. Its central distinction is two-dimensional: who initiates adoption (bottom-up discretion versus top-down mandate or embedded system) is analytically separate from what the system does (augmentation versus automation). The review argues that the configuration, including whether top-down systems enable reciprocal interaction or impose unilateral algorithmic control, shapes whether redesign expands cognitive support and feedback or erodes autonomy, task completeness, learning opportunity, and social resources. It is an integrative theory review, not a causal test of the 2 × 2 framework.
+
+The review also names **job demand substitution** as a design risk: AI can remove routine work but refill the saved time with harder escalations, review, accountability, or emotionally demanding work. Its cited examples include senior developers spending 6.5% more time reviewing code after Copilot adoption while junior developers coded faster, and sales agents shifting from repetitive tasks toward creative persuasion. Redesign should therefore measure the whole demand distribution across workers and roles, not call a workflow better because one visible task becomes faster.
 
 ## Connections
 

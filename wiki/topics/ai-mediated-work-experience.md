@@ -1,7 +1,7 @@
 ---
 title: AI-mediated work experience
 status: active
-updated: 2026-08-11
+updated: 2026-08-31
 ---
 
 # AI-mediated work experience
@@ -42,6 +42,8 @@ AI can also reorganize human relationships around the work. [[2025-yun-generativ
 ## Motivation and proactive adaptation
 
 [[2026-vuong-genai-job-performance]] places job crafting and work engagement in a proposed JD-R pathway between GenAI usage and performance. The cross-sectional results cannot establish that GenAI caused better experience, but they clarify the nomological network: AI use, enacted resource functions, proactive work reshaping, motivational state, and performance are related but noninterchangeable. The parent page therefore integrates these channels without turning them into a single omnibus outcome.
+
+[[2026-bakker-artificial-intelligence-job-design]] supplies an explicit dynamic JD-R account for this parent domain. The review argues that AI adoption can increase or decrease both demands and resources, while AI-readiness resources determine whether a motivational or health-impairment pathway is more likely. Its more consequential claim is recursive: resource-rich jobs may let workers build AI self-efficacy, learning, and engagement through use, while constrained, monitored work may turn AI into a demand that lowers later readiness. This is a useful inequality hypothesis for AI-mediated work experience, not evidence that gain and loss spirals have already been established in workplace AI settings.
 
 ## Integrative design claim
 

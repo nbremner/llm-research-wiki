@@ -1,7 +1,7 @@
 ---
 title: AI-enabled job crafting
 status: stub
-updated: 2026-08-11
+updated: 2026-08-31
 ---
 
 # AI-enabled job crafting
@@ -12,6 +12,8 @@ AI-enabled job crafting tracks when workers use AI as a job resource to reshape 
 
 [[2025-mayer-generation-ai-job-crafting]] supplies a qualitative process account from entry-level consultants: GenAI supported task crafting (automating routine work and moving toward higher-order or client-facing work) and relational crafting (more independence and mentorship-like guidance). It also identifies **signal crafting**—making one's GenAI competence, diligence, and continued role value visible to managers and other stakeholders—as an emergent behavioral response when GenAI makes it harder to distinguish individual expertise. That extension matters because AI-enabled crafting changes not only what people do and whom they work with, but also how contribution becomes legible in the evaluation system.
 
+[[2026-bakker-artificial-intelligence-job-design]] places this worker-led mechanism inside a proposed dynamic JD-R model. It distinguishes bottom-up AI adoption—employees choosing how and when to use AI—from top-down implementation, and argues that AI-readiness resources may make bottom-up use more likely to support crafting, learning, and engagement. It further proposes that gain spirals can make resource-rich workers increasingly able to craft work with AI, while loss spirals leave constrained workers with less capacity to experiment. The account makes an inequality risk visible, but it remains a research agenda rather than longitudinal evidence that AI-driven crafting produces those diverging trajectories.
+
 The practical design implication is not simply “train workers to use GenAI.” If GenAI becomes a job resource, organizations need to notice the informal redesign workers are already doing: which repetitive tasks are being reduced, which challenging or higher-value tasks are being expanded, which collaboration patterns change, and whether this local crafting is supported by valid performance criteria and governance.
 
 ## Connections
@@ -19,9 +21,11 @@ The practical design implication is not simply “train workers to use GenAI.”
 - Connects to [[ai-mediated-work-experience]] because job crafting is one channel through which AI may change autonomy, competence, workload, engagement, and meaning.
 - Connects to [[employee-engagement]] because Vuong treats work engagement as a separate mediator alongside job crafting; the wiki should preserve that distinction rather than collapsing proactive redesign into affective motivation.
 - Connects to [[ai-readiness]] because digital competence may determine whether employees can turn GenAI access into useful job crafting rather than shallow or brittle use.
+- Connects to [[ai-as-a-job-resource]] because organizational support, time, autonomy, and personal AI readiness determine whether access can be converted into bottom-up work reshaping rather than added demand.
 
 ## Contradictions & open questions
 - [[2026-vuong-genai-job-performance]] is cross-sectional and self-reported, so it cannot show whether GenAI usage causes job crafting or whether proactive, high-performing employees are simply more likely to use GenAI and report crafting their work.
 - The source measures job crafting broadly, not detailed task-level changes. The wiki still needs field evidence that observes what workers actually change when they “craft” AI-mediated work.
 - [[2025-mayer-generation-ai-job-crafting]] provides those detailed mechanisms in one consulting case, but its signal-crafting account is interpretive and not yet a validated construct; replication is needed before treating it as a general dimension of job crafting.
 - Bottom-up crafting may improve fit and performance, but it may also create hidden process variance, uneven quality, security/compliance risk, or inequity when digitally competent employees can redesign their work and others cannot.
+- [[2026-bakker-artificial-intelligence-job-design]] makes the resource inequality mechanism explicit, but its gain/loss spiral is theoretical and its cited AI-adoption evidence is still thin. The wiki needs repeated-measure workplace studies testing whether job and personal AI-readiness resources predict who can craft work with AI, whether crafting changes demands and resources, and whether those changes compound over time.
