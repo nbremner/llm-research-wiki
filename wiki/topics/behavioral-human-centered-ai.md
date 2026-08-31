@@ -1,7 +1,7 @@
 ---
 title: Behavioral human-centered AI
 status: stub
-updated: 2026-08-26
+updated: 2026-08-31
 ---
 
 # Behavioral human-centered AI
@@ -17,6 +17,8 @@ For this wiki, behavioral human-centered AI sits between [[ai-adoption]], [[ai-r
 [[2018-fugate-change-compliance-championing]] gives this behavioral layer a field-tested change-management mechanism. In a merger context, leader support did not simply reduce resistance; it shaped whether employees appraised change as threat or challenge, and challenge appraisal predicted both compliance and championing. That matters for AI because implementation success often depends on whether employees become active interpreters and advocates of new work practices, not just whether they stop resisting.
 
 [[2026-liu-effects-generative-ai-knowledge-behavior]] supplies a direct AI-use case for the appraisal mechanism. In a three-wave survey of 428 knowledge workers, GenAI use was associated with both self-efficacy and job insecurity, which carried opposing indirect pathways to knowledge sharing minus hiding; competitive psychological climate strengthened both pathways. This is evidence that AI change can activate opportunity and replaceability appraisals together, not evidence that change management should simply suppress threat or amplify enthusiasm. The narrower behavioral outcome and its limits are developed in [[ai-mediated-knowledge-behavior]].
+
+[[2023-mkhize-examining-barriers-enablers-ai-adoption]] adds a small organizational case in which staff involvement was not merely rollout communication. Workers participated in early evaluation, gave domain-specific feedback, and could see that the system still required correction; the authors report cooperation and ownership alongside persistent job-security concerns. The case is weak evidence for a general intervention effect, but it sharpens a design requirement: participation can make the actual limits and repair work of AI visible, whereas an efficiency-only story may hide them.
 
 ## Connections
 - Relates to [[ai-adoption]] because adoption depends on behavioral mechanisms such as trust, resistance, loss aversion, availability, identity threat, and perceived autonomy, not only access, use-case discovery, or training.

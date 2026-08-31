@@ -1,7 +1,7 @@
 ---
 title: AI adoption
 status: active
-updated: 2026-08-27
+updated: 2026-08-31
 ---
 
 # AI adoption
@@ -51,6 +51,8 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 [[2026-ali-ai-adoption-multinational-workforce]] grounds the worker-centered fit problem in a live HR-system transition. Employees did not simply migrate from legacy to GenAI search: they selected among the GenAI system, legacy search, source documents, colleagues, and HR according to task and uncertainty. The case makes formal access a weak adoption indicator: device access, language, tenure, organizational terminology, and local work context determined whether workers could obtain useful support, while aggregate usage could hide excluded groups. It also makes adoption depend on the knowledge system around the model—current, localized content; tagging; guidance; and escalation routes—not the interface alone.
 
 [[2026-lunich-why-workers-use-ai-less-often]] adds a post-access question: why do some workers reduce use after AI is already available? In its 2026 German survey, reduced use was uncommon, but the workers who reported it most often pointed to low practical value, unreliable results, uncertainty about data protection, and unclear workplace rules. This does not show that those factors caused the change, but it does make a useful distinction: adoption is not complete when a worker tries a tool. It has to keep earning a place in the work through useful, reliable output and conditions that make appropriate use understandable.
+
+[[2023-mkhize-examining-barriers-enablers-ai-adoption]] adds a grounded, pre-GenAI implementation case: the adoption condition is not abstract acceptance but a chain of operational fit. AI-enabled subtitling and content work gained support where speed and throughput were visible, but short tasks could remain faster manually; accuracy, data quality, integration, and traceability constrained trust; contractual restrictions and approval gates set hard limits on autonomous use. This single case does not establish which condition is generally binding, but it makes the mapping problem concrete: a viable use case still has to fit the task, the surrounding systems, and the organization’s obligations.
 
 The report also raises an equity question without settling it. Higher-skill occupational groups were more likely to report increasing their AI use, while lower-skill groups were comparatively more likely to report decreasing it. That pattern could reflect unequal task fit, access to support, prior skill, or broader differences in work conditions; the survey cannot separate them. Still, adoption programs should not read stable or rising overall use as proof that the same conditions work for everyone.
 

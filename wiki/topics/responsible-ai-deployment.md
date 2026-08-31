@@ -1,7 +1,7 @@
 ---
 title: Responsible AI deployment
 status: stub
-updated: 2026-08-13
+updated: 2026-08-31
 ---
 
 # Responsible AI deployment
@@ -35,6 +35,8 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 [[2023-arcot-cognitive-load-optimization-contact-center-agents]] adds an unusually high-intrusion deployment case: continuous wearable and voice signals were used to infer worker stress and capacity for call routing. The article reports consent, data minimization, purpose limitation, access controls, and high agent acceptance, but those claims remain internal to one study and do not establish that consent was freely given, that monitoring did not alter behavior, or that capacity data could not later be repurposed for performance control. Responsible deployment must therefore treat worker-state inference as a consequential workforce system, not a neutral optimization input.
 
 [[2026-wu-novel-social-biases]] adds a different failure mode for stateful AI agents: allocative bias can be created by an agent's own sequential feedback history even when groups begin with identical modeled success probabilities. In a stylized hiring paradigm, frontier models sorted fictional groups into job classes more strongly than human participants, and stronger models did not become safer simply because they performed better on a static bias benchmark. The deployment implication is narrow but important: fairness evidence for an agent that repeatedly allocates opportunities has to test feedback loops, exploration policy, and group-level outcomes over time; one-shot output or benchmark results cannot establish that the deployed workflow will remain fair. The result does not show real-world hiring discrimination, and objective-level diversity steering is a hypothesis to validate against the domain's actual success criteria and affected groups, not a control to deploy blindly.
+
+[[2023-mkhize-examining-barriers-enablers-ai-adoption]] supplies a smaller but concrete accountability case. In a multimedia organization, contractual obligations constrained cloud processing and fully hands-off publication; participants described human vetting as necessary before customer-facing release and remained unclear about who operationally owned AI outputs when something went wrong. An emerging AI governance framework and executive sponsorship were described as responses, not validated safeguards. This grounds a basic deployment rule: human review and accountability have to be assigned to a role with authority and operational ownership, not left as a residual expectation that someone will correct the system.
 
 ## Connections
 - Relates to [[algorithmic-assessment]] because hiring and assessment AI require disclosure, job-related validity evidence, fairness evaluation, auditability, applicant experience safeguards, and governance of how automated recommendations reshape human discretion.
