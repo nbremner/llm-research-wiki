@@ -1,12 +1,14 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-08-26
+updated: 2026-08-31
 ---
 
 # Human-AI collaboration
 
 Human-AI collaboration is the working relationship between human judgment and AI capability in actual tasks. The question is not whether humans and AI are “teammates” in the warm metaphorical sense; it is how responsibility, confidence, delegation, review, and accountability are arranged in practice.
+
+[[2021-bansal-most-accurate-ai-best-teammate]] provides the formal objective-function version of that claim. In its accept-or-solve model, a human either accepts a classifier's recommendation or incurs effort to solve the task; because performance matters differently inside the region where advice is accepted, an accuracy-optimized classifier can deliver lower modeled team utility than one trained for expected team utility. The paper does not show that less accurate AI is generally a better collaborator. It establishes the narrower design constraint that collaboration cannot be evaluated from standalone accuracy when reliance, verification cost, and error consequences are part of the workflow.
 
 [[2026-farach-scaffolding-human-ai-collaboration]] adds a field-experiment warning against treating collaboration structure as inherently beneficial. At one retailer, a required process for pairs to use Copilot together was associated with lower AI-graded document quality and far fewer completed documents than unstructured use; extra coordination, technical friction, and less room for domain context appear to have imposed costs. Separate thought-partner training for individuals did not improve average quality on the study's main test, although a later, less conclusive analysis suggested that trainees may have been more likely to receive a perfect score. The practical implication is not “avoid scaffolding,” but specify what it is meant to support: a process that adds real-time coordination needs evidence that it helps more than the extra rules, delays, and reduced autonomy hurt.
 
@@ -94,6 +96,7 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 
 - [[2026-farach-scaffolding-human-ai-collaboration]] finds that required joint AI use can reduce output quality and completion, while [[2026-dellacqua-cybernetic-teammate]] finds AI can help a solo worker reproduce some team benefits in a defined ideation task. These are not opposite verdicts on collaboration: they differ in task, workflow constraint, and whether AI expands an individual's perspective or adds another coordination process. The unresolved question is when structured collaboration helps people do the work and when it simply gets in the way.
 - “Collaboration” may over-humanize the AI system. [[2025-lee-generative-ai-critical-thinking]] keeps accountability with the human user, while [[2025-dellacqua-super-mario-ai]] shows that even a capable automated partner may be a poor teammate when coordination, trust, and motivation are part of the work system. Both fit better with [[automation-and-substitution]] and work-design frames than with a simple teammate metaphor.
+- [[2021-bansal-most-accurate-ai-best-teammate]] demonstrates its objective-function claim in simulated accept-or-solve classification workflows, while [[2022-dellacqua-falling-asleep-at-wheel]] observes changing recruiter reliance in a field experiment. The former establishes why model accuracy can diverge from a specified team objective; the latter shows that human effort is behaviorally endogenous. The open question is whether real work systems can specify and validate team-utility objectives without oversimplifying verification, partial review, social incentives, and accountability.
 - The wiki needs evidence beyond self-report on whether stewardship behaviors actually improve output quality, learning, or long-run capability. [[2022-dellacqua-falling-asleep-at-wheel]] is useful because it observes behavior, but it is still one HR-screening task rather than broad evidence across work systems.
 - [[2026-lee-making-invisible-visible]] uses worker expectations from decision-support settings; it supports the importance of control and verification, but not yet which collaboration designs produce better decisions, adoption, or worker outcomes.
 - [[2026-dellacqua-jagged-technological-frontier]] suggests collaboration form is not enough. Centaur and Cyborg patterns can be productive inside the frontier, but the same broad AI access can harm accuracy outside it; the open question is how workers learn the boundary in real time.

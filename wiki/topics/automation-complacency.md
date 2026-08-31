@@ -1,12 +1,14 @@
 ---
 title: Automation complacency
 status: active
-updated: 2026-08-11
+updated: 2026-08-31
 ---
 
 # Automation complacency
 
 Automation complacency is the failure mode where better machine advice reduces human attention, effort, or learning enough that the combined human-AI system underperforms what the model's standalone accuracy would imply. It is not simply algorithm aversion's opposite. The problem is not that workers distrust the tool; it is that they trust or defer to it in a way that changes the work they still do.
+
+[[2021-bansal-most-accurate-ai-best-teammate]] supplies a formal precursor to this system-performance concern. In a model where people accept confident advice and otherwise solve the task themselves, optimizing classifier accuracy can reduce expected team utility because the model's confidence distribution, the human verification threshold, and the costs of effort and error determine what the combined system actually does. The paper does not measure complacency or learning; its value here is to show why the human response cannot be treated as fixed when evaluating a supposedly better AI.
 
 [[2022-dellacqua-falling-asleep-at-wheel]] makes this mechanism concrete in HR screening. In a field experiment with professional recruiters, AI assistance improved accuracy overall, but recruiters followed advice more often as stated AI quality rose and lower-quality AI induced more time and effort. The useful design lesson is uncomfortable: maximizing model accuracy is not the same as maximizing system performance when human effort is endogenous.
 
@@ -42,6 +44,7 @@ Automation complacency is the failure mode where better machine advice reduces h
 
 ## Contradictions & open questions
 - Better AI can still improve average performance, as [[2022-dellacqua-falling-asleep-at-wheel]] shows when pooling AI conditions and in the perfectly predictive benchmark. The claim is not "worse AI is better"; it is that human behavioral response can make the model-quality optimum differ from the system-performance optimum.
+- [[2021-bansal-most-accurate-ai-best-teammate]] derives a gap between individual accuracy and modeled team utility under a rational, confidence-sensitive accept-or-solve policy, whereas this topic tracks empirical reductions in attention, effort, learning, and oversight. The formal mechanism makes the systems point cleanly but does not establish that workers' real reliance follows the assumed threshold or that the loss of effort is complacency rather than an appropriate reallocation of work.
 - The strongest evidence here is short-run task behavior. The wiki still needs longitudinal evidence on whether complacency becomes skill atrophy, whether feedback restores calibration, and which design interventions preserve attention without wasting human effort.
 - There is a design tension between reducing unnecessary cognitive load and preserving enough friction for meaningful review. Removing all friction can be efficient when the model is right and dangerous when the model is wrong.
 - There is a parallel learning tension: reducing cognitive load can be the point of assistance, but [[2025-kosmyna-brain-chatgpt-cognitive-debt]] suggests that repeated reduction in effort may also reduce ownership, recall, or practice when the task is supposed to build capability.
