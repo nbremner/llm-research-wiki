@@ -1,6 +1,6 @@
 ---
 title: Topic map
-updated: 2026-08-11
+updated: 2026-08-31
 ---
 
 # Topic map
@@ -21,6 +21,7 @@ Every topic in the wiki, one line each. Topics are synthesis pages: each one con
 - [[automation-and-substitution]] — whether AI substitutes for or augments labor and capital: what scales, what shrinks, and at what time horizon
 - [[moral-boundaries-of-ai-automation]] — where AI replacement is socially or morally resisted even when capability and cost would otherwise support automation
 - [[algorithmic-assessment]] — algorithmic hiring/assessment as a measurement chain from signal to construct to decision
+- [[expert-authority-in-ai-decisions]] — how professionals retain, enact, or lose authority when AI-generated decisions still need to be explained and accepted by affected clients
 - [[job-analysis]] — how work, tasks, KSAOs, and performance domains are defined before HR systems are built
 - [[competency-modeling]] — how HR defines reusable KSAO/behavior/capability models across jobs, roles, and strategy
 - [[complex-collaborative-problem-solving]] — how nonroutine, dynamic, and collaborative problem-solving skills can be defined and assessed without dissolving into generic future-skills rhetoric

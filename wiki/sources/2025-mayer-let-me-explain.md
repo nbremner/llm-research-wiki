@@ -29,3 +29,4 @@ file_hash: 1985c5b300368a0dce8a20bf77679f04f5966b276d1e3e38a49e692571943825
 - The article was published online in 2025 and in the March 2026 journal issue; the Drive PDF is an open-access Wiley article with matching title-page DOI, and the stored binary hash identifies the ingested file.
 
 ## Feeds
+- [[expert-authority-in-ai-decisions]]

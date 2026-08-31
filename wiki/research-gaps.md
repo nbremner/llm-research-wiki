@@ -1,6 +1,6 @@
 ---
 title: Research gaps
-updated: 2026-08-02
+updated: 2026-08-31
 ---
 
 # Research gaps
@@ -29,6 +29,7 @@ Where the evidence base is still thin or missing. Each entry names what exists s
 - **Moral boundaries of AI automation** has been promoted into [[moral-boundaries-of-ai-automation]] through [[2025-friis-performance-principle]], but the wiki still needs field evidence on whether public moral repugnance translates into employer behavior, customer acceptance, professional norms, regulation, or durable protection from substitution.
 - **Human-AI task allocation** is proposed for promotion through [[2026-zhang-fatigue-aware-learning-defer]], but the wiki still needs field evidence on allocation policies that use real human-state signals such as fatigue, workload, skill, confidence, or accountability rather than simulated benchmark states.
 - **Responsible AI deployment** has been promoted into [[responsible-ai-deployment]] through [[2025-landers-ethical-use-ai-iop]], but the wiki still needs empirical evidence on governance arrangements, stakeholder participation, monitoring routines, and reversal mechanisms that prevent worker-facing AI from becoming unchecked efficiency infrastructure.
+- **Expert authority in AI-mediated decisions** has been promoted into [[expert-authority-in-ai-decisions]] through [[2025-mayer-let-me-explain]], which shows that experts may retain responsibility for client-facing explanation after predictive AI takes over core decisions. The wiki still needs comparative and outcome evidence on whether explanation access, discretionary authority, appeal routes, and client relationships affect understanding, procedural justice, substantive decision quality, professional identity, and the risk that experts become legitimacy buffers for opaque systems.
 - **Agent benchmark validity** has been promoted into [[ai-agent-benchmark-validity]] through [[2026-wang-agent-development-real-world-work]], but the wiki still needs field evidence that more representative benchmarks lead to better deployment, redesign, or governance decisions.
 - **AI-mediated teamwork** has been promoted into [[ai-mediated-teamwork]] through [[2026-dellacqua-cybernetic-teammate]], but the wiki still needs evidence on coordination, trust, conflict, mentoring, implementation, and whether organizations actually redesign team boundaries after AI can reproduce some bounded team benefits.
 - **AI-mediated organizational networks** has been promoted into [[ai-mediated-organizational-networks]] through [[2026-buechsenschuss-genai-organizational-networks]], [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] adds qualitative managerial mechanisms for cross-functional AI knowledge transfer, and [[2007-serenko-organizational-size-knowledge-flow]] now gives a pre-AI baseline for why size should degrade knowledge flow. The wiki still needs digital-trace, multi-organization, and longer-term evidence on whether GenAI weakens organizational-size penalties, whether centrality persists, and when improved reach becomes overload for key actors.
