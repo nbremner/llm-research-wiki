@@ -40,7 +40,7 @@ owner-approved synthesis.
 | `_triage/ledger` (seen-index, failures, search log) | `1Fw7J30oerCSCYSLcEB5k0mbbdfOGwyx1` |
 | Rubric config (edit to retune the scan) | `/root/research-wiki-tools/scan_config.py` |
 
-## The disposition rubric (owner-calibrated through 2026-08-22)
+## The disposition rubric (owner-calibrated through 2026-09-07)
 
 The wiki's mission: **AI workforce transformation × I-O psychology** — how AI changes work, workers,
 jobs, organizations, and measurement (`wiki/topic-map.md` is the live topic list).
@@ -54,6 +54,15 @@ jobs, organizations, and measurement (`wiki/topic-map.md` is the live topic list
   and a genuine work, workforce, HR, or organizational construct tracked by the wiki. Acquisition
   remains separate from disposition. Use `ambiguous` when the work setting or substantive contribution
   cannot be established from the title alone.
+  **Foundational papers without AI content** (owner ruling 2026-09-07): a seminal theory or framework
+  paper from work/organizational science that grounds or frames newer AI×work research belongs in the
+  wiki even though it has no AI component — e.g. the original job demands–resources papers, or the
+  SMART model of work design. `wiki / clear` when the paper is recognizably foundational in its
+  literature (canonical theory or framework, a field-defining review) and a tracked topic would cite it
+  as its theoretical base; `ambiguous` for a work-only paper that is merely relevant rather than
+  foundational. Do not mark a paper read-once *because* it lacks AI content. (The scan's discovery gate
+  requires an AI term, so foundational papers usually arrive by the owner dropping them into
+  `_triage/wiki` directly.)
 - **read-once** — AI×work-*adjacent* but centered in a domain the wiki does not track: automation of a
   different profession's work product (e.g. financial audit / accounting IS), a different industrial
   context (e.g. manufacturing / Industry 5.0 human-machine collaboration), **student-sample
@@ -87,6 +96,7 @@ Auto-actions happen only on `clear`.
 | Industry 5.0 human-machine collaboration review | read-once | manufacturing context |
 | University-student cognitive-offloading study, no work setting | read-once | student sample; construct match alone insufficient (owner-ratified 2026-07-04) |
 | Same paper under a second SSRN DOI | discard | duplicate |
+| SMART model of work design (Parker & Knight, *Human Resource Management*), no AI content | wiki | seminal work-design framework that frames AI work-redesign evidence; foundational papers need no AI component (owner ruling 2026-09-07) |
 
 ## Hybrid autonomy — what acts alone vs. surfaces
 
