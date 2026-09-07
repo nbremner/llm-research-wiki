@@ -63,6 +63,23 @@ def test_allowlist_matches_skill_dirs():
     assert allowlist == on_disk, f"allowlist vs skills/ dirs mismatch: {allowlist} != {on_disk}"
 
 
+def test_ingest_skill_drain_mode_guardrails():
+    """The scheduled drain is the only unattended writer of wiki pages; its
+    non-negotiables must stay written into the skill text."""
+    text = (ROOT / "skills" / "research-wiki-ingest" / "SKILL.md").read_text(encoding="utf-8")
+    assert "### Scheduled source drain" in text
+    for phrase in (
+        "up to **5 sources per run, oldest first**",
+        "step 9 is out of scope",
+        "no `updated:` bump anywhere",
+        "**existing topic slugs only**",
+        "--fail-on High",
+        "Orphan-source Medium findings are expected",
+        "never work around bot checks, CAPTCHAs, or logins",
+    ):
+        assert phrase in text, phrase
+
+
 def _run_standalone() -> int:
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_") and callable(v)]
     failed = 0

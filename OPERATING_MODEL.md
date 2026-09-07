@@ -64,7 +64,12 @@ Trust model: source records are low-judgment and auto-committed; **topic synthes
 ## The loop — three operations
 
 1. **Ingest** — a public artifact from Drive `_triage/wiki` → a `sources/` record (auto-commit) + integrated
-   `topics/` synthesis (owner-approved) + refile the raw PDF into `public-literature-wiki`.
+   `topics/` synthesis (owner-approved) + refile the raw PDF into `public-literature-wiki`. Since
+   2026-09-07 this is split in two along the trust line: a **daily source drain** (scheduled, unattended,
+   ≤5 sources/run, source records only — orphan-source lint findings are the visible pending-synthesis
+   queue) and a **weekly synthesis batch** (one owner-approved proposal per week, each topic page touched
+   once; `docs/wiki-redesign-plan.md` §4 — Phase 2, pending). The attended single-source ingest remains
+   the canonical path for owner-initiated one-offs.
 2. **Query** — answer from `topics/` + `sources/`; file durable answers back into pages. Deeper
    cross-topic reviews (literature review, gap map, construct bridge, …) are on-demand synthesis here,
    not a separate artifact class.
@@ -73,7 +78,8 @@ Trust model: source records are low-judgment and auto-committed; **topic synthes
 
 **Git history is the log.** There are no Reviews / Log / Inbox / Index databases — those were cut.
 
-Skills in the repo: `research-wiki-ingest` (one paper at a time — the only ingest path),
+Skills in the repo: `research-wiki-ingest` (the only path that writes wiki pages: attended
+single-source mode, plus the scheduled source-drain mode),
 `research-scan-triage` (dispositions surfaced scan candidates {wiki | read-once | discard} with
 hybrid autonomy), `research-wiki-graph-lint`, `research-wiki-query`. Batch/cluster ingest and the
 PDF-backlog triage workflow were retired 2026-07-04 (backlog cleared manually by the owner; sources
@@ -107,7 +113,9 @@ failures to Discord #logs).
 | Semantic lint (`research-wiki-graph-lint`, hermes cron) | Monthly | report only (contradiction pairs + evidence-stale + structural findings, one digest) | ≤15 pairs/run (35 on the one-time bootstrap sweep) |
 | Graph-lint report (structural, ad hoc — e.g. after an ingest) | As needed | report only | n/a |
 | RSS research digest (`rss_research_digest.py`, hermes cron, no-agent; VPS-local script, not in this repo) | Daily | report only | n/a |
-| Ingest | On demand / small scheduled | sources/ (auto), topics/ (owner-approved) | low per-run cap |
+| Attended ingest (`research-wiki-ingest`) | On demand | sources/ (auto), topics/ (owner-approved) | one source per run |
+| Source drain (`research-wiki-ingest`, drain mode, hermes cron) | Daily 09:30 PT | `wiki/sources/` on main (auto-commit + push); Drive refile | ≤5 ingested / ≤10 examined per run; no topic or map-page edits, no `updated:` bumps |
+| Synthesis batch (`research-wiki-ingest`, batch mode) — Phase 2, not yet deployed | Weekly Mon 09:00 PT | `synthesis/*` branch → PR → owner merge | ≤12 sources/batch; one open batch |
 
 (Scan-pipeline scheduling deployed 2026-07-04: `research-scan.timer` fires the harness daily at 08:00
 America/Los_Angeles with an `OnFailure` alert to #logs; hermes cron job "Daily research scan triage"

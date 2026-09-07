@@ -25,7 +25,8 @@ wiki/
 - **topics/** is the product. Each topic page is synthesis *in the owner's own framing*, surfacing connections and contradictions across sources in prose.
 - **sources/** is the evidence layer beneath the syntheses: one file per source. It includes seminal pre-AI work-science sources (the theory and framework papers newer AI×work research builds on): a source does not need AI content to belong when it grounds or frames a topic's synthesis (owner ruling 2026-09-07).
 - **overview.md** is the front door: a concise end-user description of the wiki, linking out to the map pages. Keep it short and stable; the map pages absorb the churn.
-- **The map pages** (`topic-map.md`, `open-questions.md`, `research-gaps.md`, `watchlist.md`) are the living orientation layer, maintained on every ingest: new topics land on the topic map, deferred candidates on the watchlist, and gaps/questions are updated so the map keeps matching the corpus.
+- **The map pages** (`topic-map.md`, `open-questions.md`, `research-gaps.md`, `watchlist.md`) are the living orientation layer, maintained on every synthesis (batch or single): new topics land on the topic map, deferred candidates on the watchlist, and gaps/questions are updated so the map keeps matching the corpus.
+- The scheduled source drain may commit `sources/` records ahead of their synthesis (source records are evidence and auto-commit; synthesis is owner-approved). A source whose `## Feeds` targets do not link back yet is therefore normal: the graph lint's orphan-source findings *are* the pending-synthesis queue, an expected state rather than a defect.
 
 ## Linking
 
