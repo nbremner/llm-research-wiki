@@ -289,13 +289,16 @@ def open_set(manifests: list[tuple[Path, dict[str, Any]]], today: dt.date,
     return result
 
 
-def merge_open_set(entries: list[dict[str, Any]]) -> tuple[dict[str, Any], dict[str, Path]]:
+def merge_open_set(entries: list[dict[str, Any]], today: dt.date | None = None,
+                   ) -> tuple[dict[str, Any], dict[str, Path]]:
     """One virtual manifest over EVERY record of every open manifest (disposed
     ones too, so the unknown-id / already-disposed validation keeps its
     meaning) plus id -> source manifest path. An id present in more than one
-    open manifest fails loud — the dup-id rule, extended across manifests."""
+    open manifest fails loud — the dup-id rule, extended across manifests.
+    `generated` is the run date (`today`) so the digest header reads as the
+    day it was judged, not the surface date of whichever manifest is open."""
     merged: dict[str, Any] = {
-        "generated": max((e["date"] or "" for e in entries), default=""),
+        "generated": today.isoformat() if today else max((e["date"] or "" for e in entries), default=""),
         "open_set": [e["path"].name for e in entries],
         "records": [],
     }
@@ -764,7 +767,7 @@ def main(argv: list[str]) -> int:
                 if note:
                     print("Stranded: " + note, file=sys.stderr)
                 return 1
-            merged, origin = merge_open_set(entries)
+            merged, origin = merge_open_set(entries, today=today)
         else:
             print("Provide --manifest or --latest.", file=sys.stderr)
             return 2

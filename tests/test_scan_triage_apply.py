@@ -375,7 +375,10 @@ def test_open_set_dispositions_span_manifests_and_stamp_back():
     merged0, origin = sta.merge_open_set(osr["open"])
     assert origin["doi:10.1/amb"] == p["amb"] and origin["doi:10.1/t1"] == p["today"]
     assert "doi:10.1/done" in origin  # disposed records travel too, so validation still sees them
-    assert merged0["generated"] == "2026-09-07"
+    assert merged0["generated"] == "2026-09-07"  # newest open manifest when no run date is given
+    only_old = [e for e in osr["open"] if e["path"] == p["amb"]]
+    assert sta.merge_open_set(only_old)[0]["generated"] == "2026-09-03"
+    assert sta.merge_open_set(only_old, today=dt.date(2026, 9, 7))[0]["generated"] == "2026-09-07"
     disp = {"judged_by": "test", "entries": [
         {"id": "doi:10.1/amb", "disposition": "read-once", "confidence": "clear", "reason": "owner resolved"},
         {"id": "doi:10.1/t1", "disposition": "wiki", "confidence": "clear", "reason": "evidence"},
