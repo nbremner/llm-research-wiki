@@ -22,7 +22,8 @@ llm-research-wiki/
     overview.md          # public front door (short, stable)
     topic-map.md  open-questions.md  research-gaps.md  watchlist.md   # orientation map pages
     topics/              # cross-linked synthesis (the compounding core)
-    sources/             # one evidence record per public source
+    sources/             # one evidence record per public source (human-reviewed)
+    sources/unreviewed/  # auto-written records awaiting owner review (human_reviewed: false)
   skills/  scripts/  tests/  docs/   # the machinery
   OPERATING_MODEL.md     # this doc
 ```

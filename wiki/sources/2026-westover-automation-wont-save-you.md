@@ -7,6 +7,7 @@ doi: 10.70175/hclreview.2020.33.3.1
 source_type: article
 publication_status: other
 retrieved: 2026-08-03
+human_reviewed: true
 drive_file_id: 1h3jvGHUX2YsYiKKvj9tIECXz3vJSO9Iy
 file_hash: 190822f3700ba91a8bc081933b31d275aed4485972f099e4d03c21b47b4898f9
 ---

@@ -57,7 +57,7 @@ The raw-PDF corpus lives in Google Drive; everything else — content and machin
 ## Current contents
 
 ```text
-wiki/                       # the wiki: schema.md (contract), overview.md, topics/, sources/
+wiki/                       # the wiki: schema.md (contract), overview.md, topics/, sources/ (+ sources/unreviewed/)
 OPERATING_MODEL.md          # canonical architecture — substrate, roles, loop, deployment, cron
 AGENTS.md                   # repo contribution rules + hard boundary
 

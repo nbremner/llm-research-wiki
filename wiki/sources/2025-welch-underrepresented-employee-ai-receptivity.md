@@ -7,6 +7,7 @@ doi: 10.61093/bel.9(2).108-119.2025
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-08-13
+human_reviewed: true
 drive_file_id: 16LtMJyh3NqlyWjRStda7Gv29sq7UlbFt
 file_hash: e168d75b1489204cfc906a9debc31d1ae9ea08afc9b2e2c1db2f23368e52c4ea
 ---

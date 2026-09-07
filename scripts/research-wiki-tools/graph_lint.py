@@ -44,6 +44,13 @@ SEVERITY_ORDER = ["Critical", "High", "Medium", "Low"]
 SKIP_SLUGS = {"schema"}
 SKIP_FILENAMES = {"README.md"}
 
+# Human-review split (2026-09-07): auto-written source records live in
+# sources/<UNREVIEWED_DIR>/ with `human_reviewed: false`; an owner-approved
+# synthesis moves the file up to sources/ and flips the flag. Folder and flag
+# must agree, and a topic page must never cite a source that is still unreviewed.
+UNREVIEWED_DIR = "unreviewed"
+REVIEW_FLAG = "human_reviewed"
+
 DEFAULT_STALE_DAYS = 180
 
 # Evidence-staleness: flag a topic when this many linked sources were retrieved
@@ -108,6 +115,8 @@ def load_pages(wiki_dir: Path) -> list[dict[str, Any]]:
         rel = path.relative_to(wiki_dir)
         kind = rel.parts[0] if len(rel.parts) > 1 else "doc"  # sources | topics | doc
         kind = {"sources": "source", "topics": "topic"}.get(kind, "doc")
+        # sources/unreviewed/ holds auto-written records awaiting owner approval.
+        unreviewed_dir = kind == "source" and len(rel.parts) > 2 and rel.parts[1] == UNREVIEWED_DIR
         pages.append(
             {
                 "slug": path.stem,
@@ -116,6 +125,7 @@ def load_pages(wiki_dir: Path) -> list[dict[str, Any]]:
                 "frontmatter": fm,
                 "links": extract_wikilinks(body),
                 "body": strip_code(body),
+                "unreviewed_dir": unreviewed_dir,
             }
         )
     return pages
@@ -161,6 +171,7 @@ def build_findings(
     today = today or dt.date.today()
     slugs = {p["slug"] for p in pages}
     source_slugs = {p["slug"] for p in pages if p["kind"] == "source"}
+    unreviewed_slugs = {p["slug"] for p in pages if p["kind"] == "source" and p.get("unreviewed_dir")}
     cites_map = topic_source_graph(pages)
     retrieved_dates = {p["slug"]: _parse_date(p["frontmatter"].get("retrieved", ""))
                        for p in pages if p["kind"] == "source"}
@@ -186,6 +197,17 @@ def build_findings(
                 add("High", "Broken wikilink", slug, f"[[{target}]] resolves to no page")
 
         if kind == "source":
+            # Human-review flag: present, boolean, and consistent with the folder.
+            flag = fm.get(REVIEW_FLAG, "").strip().lower()
+            in_unreviewed = bool(p.get("unreviewed_dir"))
+            if flag not in ("true", "false"):
+                add("Medium", "Source missing human_reviewed", slug,
+                    f"`{REVIEW_FLAG}:` must be true or false (folder says "
+                    f"{'unreviewed' if in_unreviewed else 'reviewed'})")
+            elif (flag == "false") != in_unreviewed:
+                add("High", "Source review flag mismatch", slug,
+                    f"`{REVIEW_FLAG}: {flag}` but the file is "
+                    f"{'in' if in_unreviewed else 'not in'} sources/{UNREVIEWED_DIR}/ — move the file or fix the flag")
             # Provenance: a public source needs a canonical url or doi.
             url = fm.get("url", "")
             doi = fm.get("doi", "")
@@ -206,6 +228,11 @@ def build_findings(
                 continue  # stubs are intentionally thin; don't flag them
             # Claims without source: an active topic that cites no source page.
             cites = [t for t in p["links"] if t in source_slugs]
+            # Synthesis must only cite reviewed sources: an approval commit moves
+            # the record out of unreviewed/ in the same change as the topic edit.
+            for t in sorted(set(cites) & unreviewed_slugs):
+                add("High", "Topic cites unreviewed source", slug,
+                    f"[[{t}]] is still in sources/{UNREVIEWED_DIR}/ — the approving commit must move it")
             if not cites:
                 add("Medium", "Topic cites no source", slug, "active topic makes claims with no [[source]] link")
             # Accretion: too many sources / too much prose on one page is a

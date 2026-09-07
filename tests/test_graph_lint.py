@@ -10,11 +10,16 @@ graph_lint = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(graph_lint)
 
 
-def source(slug, links=None, url="https://example.org/x", doi="null", file_hash="abc123", retrieved="2026-06-01"):
+def source(slug, links=None, url="https://example.org/x", doi="null", file_hash="abc123", retrieved="2026-06-01",
+           reviewed="true", unreviewed_dir=False):
     fm = {"source_type": "paper", "url": url, "doi": doi, "file_hash": file_hash}
     if retrieved:
         fm["retrieved"] = retrieved
-    return {"slug": slug, "kind": "source", "path": f"sources/{slug}.md", "frontmatter": fm, "links": links or [], "body": ""}
+    if reviewed is not None:
+        fm["human_reviewed"] = reviewed
+    sub = "unreviewed/" if unreviewed_dir else ""
+    return {"slug": slug, "kind": "source", "path": f"sources/{sub}{slug}.md", "frontmatter": fm,
+            "links": links or [], "body": "", "unreviewed_dir": unreviewed_dir}
 
 
 def topic(slug, links=None, status="active", updated="2026-06-14"):
@@ -230,6 +235,48 @@ def test_render_markdown_has_required_sections():
     assert "# Research Wiki Graph-Lint Report" in md
     assert "## Summary" in md
     assert "clean" in md
+
+
+def _checks(pages):
+    return {(f["severity"], f["check"], f["page"]) for f in graph_lint.build_findings(pages, today=dt.date(2026, 9, 7))}
+
+
+def test_review_flag_and_folder_must_agree():
+    base = [topic("ai-adoption", links=["2026-ok"]), doc("overview", links=["ai-adoption"]),
+            source("2026-ok", links=["ai-adoption"])]
+    # consistent unreviewed record: only the expected orphan / feeds-no-topic signals, nothing High
+    pending = source("2026-pending", links=["ai-adoption"], reviewed="false", unreviewed_dir=True)
+    found = _checks(base + [pending])
+    assert not any(sev == "High" for sev, _, _ in found)
+    assert ("Medium", "Orphan source", "2026-pending") in found
+    # missing flag -> Medium
+    assert ("Medium", "Source missing human_reviewed", "2026-noflag") in _checks(
+        base + [source("2026-noflag", links=["ai-adoption"], reviewed=None)])
+    # flag says reviewed but the file sits in unreviewed/ -> High, and vice versa
+    assert ("High", "Source review flag mismatch", "2026-a") in _checks(
+        base + [source("2026-a", links=["ai-adoption"], reviewed="true", unreviewed_dir=True)])
+    assert ("High", "Source review flag mismatch", "2026-b") in _checks(
+        base + [source("2026-b", links=["ai-adoption"], reviewed="false", unreviewed_dir=False)])
+
+
+def test_topic_must_not_cite_unreviewed_source():
+    pages = [topic("ai-adoption", links=["2026-pending"]), doc("overview", links=["ai-adoption"]),
+             source("2026-pending", links=["ai-adoption"], reviewed="false", unreviewed_dir=True)]
+    assert ("High", "Topic cites unreviewed source", "ai-adoption") in _checks(pages)
+    moved = [topic("ai-adoption", links=["2026-pending"]), doc("overview", links=["ai-adoption"]),
+             source("2026-pending", links=["ai-adoption"])]
+    assert not any(c == "Topic cites unreviewed source" for _, c, _ in _checks(moved))
+
+
+def test_load_pages_marks_unreviewed_folder():
+    import tempfile
+    d = Path(tempfile.mkdtemp())
+    (d / "sources" / "unreviewed").mkdir(parents=True); (d / "topics").mkdir()
+    (d / "sources" / "unreviewed" / "2026-x.md").write_text("---\ntitle: X\nhuman_reviewed: false\n---\n# X\n", encoding="utf-8")
+    (d / "sources" / "2026-y.md").write_text("---\ntitle: Y\nhuman_reviewed: true\n---\n# Y\n", encoding="utf-8")
+    pages = {p["slug"]: p for p in graph_lint.load_pages(d)}
+    assert pages["2026-x"]["kind"] == "source" and pages["2026-x"]["unreviewed_dir"] is True
+    assert pages["2026-y"]["kind"] == "source" and pages["2026-y"]["unreviewed_dir"] is False
 
 
 def _accreted(n_sources, words):

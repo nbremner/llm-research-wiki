@@ -7,6 +7,7 @@ doi: 10.1016/j.techsoc.2026.103533
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-08-31
+human_reviewed: true
 drive_file_id: 16SZoSWhCuGgNOgQW6vm2Y3UVAjavBjHu
 file_hash: fd1ab8b68a3372f134df9761dc884a7d935e4dc3a4d7a5ec64de37394027e8ce
 ---

@@ -7,6 +7,7 @@ doi: 10.2139/ssrn.5287538
 source_type: paper
 publication_status: working-paper
 retrieved: 2026-08-11
+human_reviewed: true
 drive_file_id: 1TRiyvy5OxOjuTWIX7nBvCvbE-_VRnROe
 file_hash: 5790db0b93bfe67bac20152effc6b1b9a3435b63f49612dde873d99914f42968
 ---

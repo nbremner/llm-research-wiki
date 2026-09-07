@@ -7,6 +7,7 @@ doi: 10.3389/fpsyg.2026.1878629
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-08-11
+human_reviewed: true
 drive_file_id: 1Tp68WA5NUjwaMnmm0KLHivtVj1jjhpWR
 file_hash: 3f68ba5abfcc1bc6ed0a1576312013d1ad850228086e3ca9484e6e5ff423ff29
 ---

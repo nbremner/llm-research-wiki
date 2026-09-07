@@ -7,6 +7,7 @@ doi: 10.1111/joms.70022
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-08-31
+human_reviewed: true
 drive_file_id: 1rjFoDg2rJR8oYhDLG57TbUikn8_qoaHm
 file_hash: 1985c5b300368a0dce8a20bf77679f04f5966b276d1e3e38a49e692571943825
 ---

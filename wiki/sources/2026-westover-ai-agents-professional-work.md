@@ -7,6 +7,7 @@ doi: 10.70175/aiatwork.2026.1.1.3
 source_type: article
 publication_status: other
 retrieved: 2026-07-23
+human_reviewed: true
 drive_file_id: 1UcUveBldDTv1NHAOkhPFNN5zam0bjaOK
 file_hash: 13dd9a9de40547e91654706692f6855ef3fe9ed44aa156601dbbafdd6a80d3e4
 ---

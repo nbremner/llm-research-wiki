@@ -7,6 +7,7 @@ doi: 10.1111/ijsa.70030
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-07-02
+human_reviewed: true
 drive_file_id: 1cso_LzmcCNBMBLf10RfSE4-_WNelKu-F
 file_hash: b63c9bfddc0c4686b5491260c491872494279bc5cf5cc6b7a639d7b556e82905
 ---

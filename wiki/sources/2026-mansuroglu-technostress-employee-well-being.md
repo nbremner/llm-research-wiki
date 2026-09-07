@@ -7,6 +7,7 @@ doi: 10.1016/j.chbr.2026.100941
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-07-02
+human_reviewed: true
 drive_file_id: 1EzjwJsFw1b_GfKSq7RQ_0ETw63lyfJp-
 file_hash: 96c928e989fb48ecc86b4ec8ffcb29b315fb875fa5242adfd28b19b5a744ba40
 ---

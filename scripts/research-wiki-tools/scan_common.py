@@ -429,7 +429,7 @@ def load_wiki_source_titles(sources_dir: str | Path) -> list[tuple[str, str]]:
     if not d.is_dir():
         return out
     title_re = re.compile(r"^title:\s*(.+)$", re.I | re.M)
-    for md in d.glob("*.md"):
+    for md in d.rglob("*.md"):  # recursive: sources/unreviewed/ counts too
         try:
             head = md.read_text(encoding="utf-8")[:1200]
         except OSError:
@@ -512,7 +512,7 @@ def load_wiki_source_ids(sources_dir: str | Path) -> set[str]:
     if not d.is_dir():
         return ids
     url_re = re.compile(r"^url:\s*(\S+)", re.I | re.M)
-    for md in d.glob("*.md"):
+    for md in d.rglob("*.md"):  # recursive: sources/unreviewed/ counts too
         try:
             head = md.read_text(encoding="utf-8")[:1200]
         except OSError:

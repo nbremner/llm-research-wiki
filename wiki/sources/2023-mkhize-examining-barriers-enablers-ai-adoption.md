@@ -6,6 +6,7 @@ url: https://doi.org/10.29007/mgdl
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-08-31
+human_reviewed: true
 drive_file_id: 14mGp5ncR6DVYlzBnvvnxLeGwroDOa-rm
 file_hash: 2a6ba8f46b5bcd05f7c284ae8639dcfe155dc72994b3d894616ab4aca369608c
 ---

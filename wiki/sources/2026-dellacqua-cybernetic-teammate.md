@@ -7,6 +7,7 @@ doi: 10.1287/orsc.2025.20702
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-08-06
+human_reviewed: true
 drive_file_id: 10baH3rGqcIpI9C9tsxCBnTKheAAkfRpp
 file_hash: b25b175a4d27d133fb385337616be8951d63f90121c9f119167f03fb47d79728
 ---

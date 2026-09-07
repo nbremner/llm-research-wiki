@@ -19,7 +19,8 @@ wiki/
   watchlist.md       # candidate topics accumulating evidence before promotion (living)
   schema.md          # this file
   topics/            # cross-linked synthesis — the compounding core
-  sources/           # one record per public source (paper, report, article)
+  sources/           # one record per public source (paper, report, article) — human-reviewed
+  sources/unreviewed/  # auto-written source records awaiting owner review (see Review status)
 ```
 
 - **topics/** is the product. Each topic page is synthesis *in the owner's own framing*, surfacing connections and contradictions across sources in prose.
@@ -27,6 +28,10 @@ wiki/
 - **overview.md** is the front door: a concise end-user description of the wiki, linking out to the map pages. Keep it short and stable; the map pages absorb the churn.
 - **The map pages** (`topic-map.md`, `open-questions.md`, `research-gaps.md`, `watchlist.md`) are the living orientation layer, maintained on every synthesis (batch or single): new topics land on the topic map, deferred candidates on the watchlist, and gaps/questions are updated so the map keeps matching the corpus.
 - The scheduled source drain may commit `sources/` records ahead of their synthesis (source records are evidence and auto-commit; synthesis is owner-approved). A source whose `## Feeds` targets do not link back yet is therefore normal: the graph lint's orphan-source findings *are* the pending-synthesis queue, an expected state rather than a defect.
+
+## Review status
+
+Every source record carries `human_reviewed: true | false`, and the folder says the same thing: auto-written records live in `sources/unreviewed/` with `human_reviewed: false`; a record becomes human-reviewed when the owner approves the synthesis that integrates it, and that approving commit moves the file up to `sources/` and flips the flag (the graph lint fails on any disagreement between flag and folder, and on a topic page that cites a still-unreviewed source). Topic pages need no flag: every topic edit is owner-approved by construction. The public site shows the split the same way — `sources/unreviewed/` pages carry a visible "not yet human-reviewed" notice. (Adopted 2026-09-07.)
 
 ## Linking
 
@@ -72,6 +77,7 @@ url: https://www.science.org/doi/10.1126/science.adh2586
 source_type: paper      # paper | report | article | book | book-chapter | dataset | policy | other
 publication_status: peer-reviewed   # peer-reviewed | preprint | working-paper | other
 retrieved: 2026-06-14
+human_reviewed: false   # false while the record sits in sources/unreviewed/; true once an approved synthesis integrates it
 ---
 
 # ChatGPT and the productivity of professional writers

@@ -7,6 +7,7 @@ doi: 10.1016/j.jbusres.2025.115396
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-07-01
+human_reviewed: true
 drive_file_id: 1TEgymlkLy-a18Ecj_D6p0hQo0tufgt0r
 file_hash: ed043b1dfc8728fa765d511474ff94d73f51ffe7ae26d09351ff9061b8fe60a5
 ---

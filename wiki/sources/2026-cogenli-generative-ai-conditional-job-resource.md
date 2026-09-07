@@ -7,6 +7,7 @@ doi: 10.3389/frai.2026.1774525
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-08-02
+human_reviewed: true
 drive_file_id: 1ak1SDrqsl0K8le8UwdK34TcYawiFOrG_
 file_hash: 2121eda8e4d10405bbd2948bdae7848831162559e3fe7304b8cd075b7c7a0f63
 ---

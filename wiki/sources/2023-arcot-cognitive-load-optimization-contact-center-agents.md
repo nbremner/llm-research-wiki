@@ -7,6 +7,7 @@ doi: 10.32628/cseit2342436
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-08-11
+human_reviewed: true
 drive_file_id: 1vbnvidQLGkQVm-ws1c_CukvyDaG9M2Z_
 file_hash: bbf5c4a9ab9f71fd9f12a2540eb1048ff7b24abdb996b9332556c0104beaf8d5
 ---
