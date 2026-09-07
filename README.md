@@ -104,6 +104,7 @@ uv run scripts/research-wiki-tools/research_scan.py --drive                    #
 uv run scripts/research-wiki-tools/scan_triage_apply.py --show-open                     # triage judging set (7-day carryover)
 uv run scripts/research-wiki-tools/scan_triage_apply.py --latest --dispositions d.json  # triage dry run over the open set
 uv run scripts/research-wiki-tools/scan_triage_apply.py --amend --drive-file-id <id> --to discard --reason "..."  # ingest-rejection writeback
+uv run scripts/research-wiki-tools/drive_review_sync.py [--execute]      # Drive artifact folders <- record review status
 python -m pytest tests/ -q                                             # run the test suite before committing
 ```
 

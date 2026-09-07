@@ -31,10 +31,13 @@ llm-research-wiki/
 | Store | Role | Mirrors |
 | --- | --- | --- |
 | **GitHub origin/main** (`llm-research-wiki`) | canonical — machinery **and** content | LC local clone, NicholasJunior VPS clone — synced by git, never independent truths |
-| **Google Drive** (`public-literature-wiki` + `_triage`) | the one external store: visible staging state + immutable canonical artifacts | none — accessed live |
+| **Google Drive** (`public-literature-wiki`: `_sources`, `_sources/_unreviewed`, `_triage`) | the one external store: visible staging state + canonical artifacts, filed by review status to mirror git | none — accessed live |
 
 Google Drive holds only raw public source artifacts and the `_triage` state folders. No agent
-instructions, private notes, or synthesis live there. Everything else is in git.
+instructions, private notes, or synthesis live there. Everything else is in git. Ingested artifacts
+mirror the git review split (2026-09-07): `_sources/_unreviewed/` holds the artifacts of
+`wiki/sources/unreviewed/` records and `_sources/` those of human-reviewed records;
+`drive_review_sync.py` keeps the two in step and the leading underscores are deliberate.
 
 ## Single-source-per-fact discipline
 
@@ -115,7 +118,7 @@ failures to Discord #logs).
 | Graph-lint report (structural, ad hoc — e.g. after an ingest) | As needed | report only | n/a |
 | RSS research digest (`rss_research_digest.py`, hermes cron, no-agent; VPS-local script, not in this repo) | Daily | report only | n/a |
 | Attended ingest (`research-wiki-ingest`) | On demand | sources/ (auto), topics/ (owner-approved) | one source per run |
-| Source drain (`research-wiki-ingest`, drain mode, hermes cron) | Daily 09:30 PT | `wiki/sources/` on main (auto-commit + push); Drive refile | ≤5 ingested / ≤10 examined per run; no topic or map-page edits, no `updated:` bumps |
+| Source drain (`research-wiki-ingest`, drain mode, hermes cron) | Daily 09:30 PT | `wiki/sources/unreviewed/` on main (auto-commit + push); Drive refile to `_sources/_unreviewed` | ≤5 ingested / ≤10 examined per run, one subagent per source (parent context stays small); no topic or map-page edits, no `updated:` bumps |
 | Synthesis batch (`research-wiki-ingest`, batch mode) — Phase 2, not yet deployed | Weekly Mon 09:00 PT | `synthesis/*` branch → PR → owner merge | ≤12 sources/batch; one open batch |
 
 (Scan-pipeline scheduling deployed 2026-07-04: `research-scan.timer` fires the harness daily at 08:00

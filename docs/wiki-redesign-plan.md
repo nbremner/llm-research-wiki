@@ -243,6 +243,18 @@ the approval loop and must keep growing under automation.
 
 ## 11. Build log
 
+- **2026-09-07 — Phase 1b: human-review split + subagent drain + Drive mirror.** Owner asked for
+  a user-visible line between human-reviewed and auto-written sources: every source record carries
+  `human_reviewed: true|false`; auto-written records live in `wiki/sources/unreviewed/` and are
+  promoted by the approving synthesis commit (`graph_lint`: Medium missing flag, High flag/folder
+  mismatch, High topic-cites-unreviewed). The public site publishes `/sources/unreviewed/` with a
+  "Not yet human-reviewed" callout and fails its build on any contradiction (site repo `34d4bf5`).
+  Drive mirrors the split: `public-literature-wiki/_sources` and `_sources/_unreviewed` (owner-created;
+  leading underscores deliberate), reconciled by `drive_review_sync.py`. The drain was rewritten
+  around `delegate_task` — one isolated subagent per source, parent validates/commits — after the
+  first run's transcript showed the single-context design reaching ~145k tokens and stalling on its
+  final model call; the cron also gets a hard codex request timeout. Skill 2.5.0.
+
 - **2026-09-07 — Phase 1 shipped:** `research-wiki-ingest` 2.4.0 gains the **Scheduled source
   drain** mode (§ Modes in the skill): ≤5 ingested / ≤10 examined per run, oldest first, steps 1–8
   only, Feeds over existing slugs with new-topic ideas as plain text, exact duplicates →

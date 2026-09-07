@@ -56,7 +56,7 @@ Apply mode can rename and move in one Drive API call while keeping the file ID s
 updated = service.files().update(
     fileId=file_id,
     body={"name": canonical_pdf_name},
-    addParents=PUBLIC_LITERATURE_WIKI_ROOT_ID,
+    addParents=PUBLIC_UNREVIEWED_FOLDER_ID,   # _sources/_unreviewed = 1xaYFRK0yBxhRfCVeCfLKXu84aW1-jhwS (never the flat root)
     removeParents=TRIAGE_WIKI_ID,
     fields="id,name,parents,mimeType,webViewLink,modifiedTime,size",
     supportsAllDrives=True,
@@ -73,7 +73,7 @@ Report success only after verifying:
 
 - returned `id` equals original file ID
 - canonical filename is set
-- public root parent is present
+- `_sources/_unreviewed` parent is present (the approving commit later promotes it to `_sources` via `drive_review_sync.py`)
 - `_triage/wiki` parent is absent
 - file is not trashed
 

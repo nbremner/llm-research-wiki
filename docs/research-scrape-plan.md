@@ -79,7 +79,7 @@ invoked.
 | **Git repo** | harness scripts, the triage skill, the rubric + seed-query config, wiki content | git (origin ↔ LC ↔ NJ, already synced) |
 | **Triage store** | visible state folders (`pending`, `wiki`, `read-once`, `discarded`) + manifests | Google Drive `_triage/` |
 | **Coverage ledger** | seen-index · search-log · failure-catalog | Google Drive (state-of-record, JSON) |
-| **Canonical raw store** | successfully ingested source artifacts | Google Drive `public-literature-wiki/` root |
+| **Canonical raw store** | successfully ingested source artifacts, filed by review status | Google Drive `public-literature-wiki/_sources/` (human-reviewed) and `_sources/_unreviewed/` (awaiting review) — mirrors `wiki/sources/` |
 | **Discord** | the daily digest — a *view*, not the record | Discord via `hermes send` |
 
 Generated artifacts (candidate lists, the ledger, acquired PDFs) never enter git — they are corpus/state

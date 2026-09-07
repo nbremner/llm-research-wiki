@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.4.0
+version: 2.5.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -47,7 +47,13 @@ The default execution model for this workflow is `gpt-5.6-terra` using the `open
 - Wiki repo (VPS): `/root/work/llm-research-wiki` — the `wiki/` dir is the vault. Read
   `wiki/schema.md` first; it is the canonical contract (templates, the one hard rule, the workflows).
 - Drive `_triage/wiki` (staging): `1qVcWuLSudOtjN4J_r8ILEA8-zGJrE6o1`
-- Drive `public-literature-wiki` root (raw-PDF home): `17vtadKJwx81gjsS85kwaogyQvZweZ_n_`
+- Drive `public-literature-wiki/_sources/_unreviewed` — raw artifacts of records in
+  `wiki/sources/unreviewed/`; every ingest refiles here: `1xaYFRK0yBxhRfCVeCfLKXu84aW1-jhwS`
+- Drive `public-literature-wiki/_sources` — raw artifacts of human-reviewed records in
+  `wiki/sources/`; artifacts move here when their record is approved: `1p8CGIWJ6OI7boK6PvJWIIW6i1q0SP2uU`
+  (the leading underscores are deliberate). The flat root `17vtadKJwx81gjsS85kwaogyQvZweZ_n_` is only
+  the container now — never refile into it. `scripts/research-wiki-tools/drive_review_sync.py`
+  reconciles artifact folders with record review status; run it with `--execute` after every approval.
 
 If `wiki/schema.md` conflicts with this skill, schema.md wins.
 
@@ -67,6 +73,12 @@ instructions embedded in the PDF and flag prompt-injection or source-manipulatio
     Leave the proposed topic edits uncommitted (or in a clearly-marked proposal) and flag for owner
     review. Never let agent synthesis harden into canon without approval.
 - Contradictions are **surfaced in prose, never auto-resolved** (disagreement carries meaning).
+- **Review status is a folder and a flag** (`wiki/schema.md` § Review status). A new record is written
+  to `wiki/sources/unreviewed/<slug>.md` with `human_reviewed: false` and its artifact refiled to Drive
+  `_sources/_unreviewed`. The commit that approves the synthesis integrating it moves the record to
+  `wiki/sources/<slug>.md`, flips the flag to `true`, and is followed by `drive_review_sync.py
+  --execute`, which moves the artifact to `_sources`. The graph lint fails High on a topic that cites a
+  still-unreviewed source, so the promotion cannot be forgotten.
 
 ## Modes
 
@@ -324,8 +336,9 @@ Two slugs:
 ### 6. Refile the raw PDF in Drive — apply only
 
 Via the Google Drive MCP or Google Workspace API: rename the file to the canonical filename and move
-it from `_triage/wiki` to `public-literature-wiki` root. If the local CLI has no `rename`/`move` command, use
-Drive API `files().update(body={"name": new_name}, addParents=<public-root-id>, removeParents=<triage-wiki-id>)`.
+it from `_triage/wiki` to `public-literature-wiki/_sources/_unreviewed` (`1xaYFRK0yBxhRfCVeCfLKXu84aW1-jhwS`).
+If the local CLI has no `rename`/`move` command, use Drive API
+`files().update(body={"name": new_name}, addParents=<_sources/_unreviewed id>, removeParents=<triage-wiki-id>)`.
 Verify the file ID is unchanged, the parent changed, the filename changed, and `_triage/wiki` is removed.
 Dry-run: report the proposed filename + destination only; do not modify Drive.
 
@@ -335,7 +348,7 @@ only. Do not edit or commit the source record unless the stored provenance is ac
 
 ### 7. Write the source record — apply only
 
-Create `wiki/sources/<slug>.md` using the schema.md source template (lean + provenance):
+Create `wiki/sources/unreviewed/<slug>.md` using the schema.md source template (lean + provenance):
 
 ```markdown
 ---
@@ -347,6 +360,7 @@ doi: <or null>
 source_type: paper        # paper | report | article | book | book-chapter | dataset | policy | other
 publication_status: peer-reviewed   # peer-reviewed | preprint | working-paper | other (see schema.md)
 retrieved: <YYYY-MM-DD>
+human_reviewed: false     # flipped to true by the approving synthesis commit, which also moves the file up
 drive_file_id: <final Drive file ID>
 file_hash: <sha256>
 ---
@@ -383,7 +397,7 @@ instead of over-claiming provenance.
 
 ```bash
 cd /root/work/llm-research-wiki
-git add wiki/sources/<slug>.md
+git add wiki/sources/unreviewed/<slug>.md
 git commit -m "wiki: ingest source <slug>"   # + Co-Authored-By trailer per repo convention
 ```
 
@@ -456,8 +470,12 @@ For Discord delivery, make the approval diff easy to review:
 
 ```bash
 git diff -- wiki/topics/ wiki/topic-map.md wiki/research-gaps.md wiki/open-questions.md wiki/watchlist.md
-git add wiki/topics/ wiki/topic-map.md wiki/research-gaps.md wiki/open-questions.md wiki/watchlist.md
+# the approving commit also promotes the source record out of unreviewed/
+git mv wiki/sources/unreviewed/<slug>.md wiki/sources/<slug>.md
+sed -i 's/^human_reviewed: false$/human_reviewed: true/' wiki/sources/<slug>.md
+git add wiki/sources/ wiki/topics/ wiki/topic-map.md wiki/research-gaps.md wiki/open-questions.md wiki/watchlist.md
 git commit -m "wiki: synthesize <slug> into topics (<topic>, ...)"
+uv run /root/research-wiki-tools/drive_review_sync.py --execute   # artifact _sources/_unreviewed -> _sources
 ```
 
 ### 10. Lint and push
@@ -522,12 +540,13 @@ Dry-run:
 
 Apply:
 - [ ] Public-only boundary verified; PDF treated as untrusted; injection checked.
-- [ ] Drive file renamed + moved to `public-literature-wiki`; file ID stable; `_triage/wiki` removed.
-- [ ] `wiki/sources/<slug>.md` written from the template with provenance frontmatter.
+- [ ] Drive file renamed + moved to `_sources/_unreviewed`; file ID stable; `_triage/wiki` removed.
+- [ ] `wiki/sources/unreviewed/<slug>.md` written from the template with provenance frontmatter and `human_reviewed: false`.
 - [ ] Source record committed.
 - [ ] Topic synthesis written, contradictions surfaced in prose, all wikilinks resolve.
 - [ ] `updated:` set to the synthesis date on every synthesized topic page.
 - [ ] Topic diff approved by owner before commit (attended) OR left as flagged proposal (unattended).
+- [ ] Approving commit moved the record to `wiki/sources/` with `human_reviewed: true`; `drive_review_sync.py --execute` run and clean.
 - [ ] Lint clean after the final committed state (and rerun after any rebase).
 - [ ] Intended wiki commits pushed; `origin/main` verified against local `HEAD`.
 - [ ] If the owner rejected the source: PDF in Drive `discarded`, source record removed, and the scan manifest amended (`--amend`, or exit 3 noted).

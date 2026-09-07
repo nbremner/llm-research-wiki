@@ -76,6 +76,10 @@ def test_ingest_skill_drain_mode_guardrails():
         "--fail-on High",
         "Orphan-source Medium findings are expected",
         "never work around bot checks, CAPTCHAs, or logins",
+        "Dispatch one subagent per file in a single `delegate_task` call",
+        "Children never run git",
+        "drive_review_sync.py --execute",
+        "`human_reviewed: false`",
     ):
         assert phrase in text, phrase
 

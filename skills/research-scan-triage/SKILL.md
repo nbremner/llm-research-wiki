@@ -38,6 +38,7 @@ owner-approved synthesis.
 | `_triage/read-once` (reviewed; not canonical) | `1RQdnNN1d_iWegTWSqr4jZ7lYV86vtL8o` |
 | `_triage/discarded` (reviewed; rejected) | `1fNRrNYxwxB87lQeXtfiZ7Fc6S5FMcwNx` |
 | `_triage/ledger` (seen-index, failures, search log) | `1Fw7J30oerCSCYSLcEB5k0mbbdfOGwyx1` |
+| `_sources/_unreviewed`, `_sources` (ingested artifacts, by review status — the ingest skill's concern, not this one's) | `1xaYFRK0yBxhRfCVeCfLKXu84aW1-jhwS`, `1p8CGIWJ6OI7boK6PvJWIIW6i1q0SP2uU` |
 | Rubric config (edit to retune the scan) | `/root/research-wiki-tools/scan_config.py` |
 
 ## The disposition rubric (owner-calibrated through 2026-09-07)
