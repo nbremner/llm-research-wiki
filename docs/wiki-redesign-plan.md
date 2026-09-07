@@ -255,10 +255,14 @@ the approval loop and must keep growing under automation.
   material** (rubric + `wiki/schema.md`); fine-grained PAT deferred (the classic token expires
   2026-09-16 — the drain's push fails after that until it is replaced). First drain run (manual
   trigger, attended): 5 of the 5 oldest queued artifacts ingested and pushed (`0526374..94944c6`),
-  lint High-clean with 5 expected orphan-source findings, ~55 minutes wall clock; its digest was lost
-  because LC stopped the process on a false alarm just after the push (an unpaginated Drive count
-  had suggested unexpected moves — there were none). `hermes cron run` executes the job inside the
-  CLI process and blocks until it finishes; trigger manual runs in the background.
+  lint High-clean with 5 expected orphan-source findings. The agent's actual work took **5.4
+  minutes** (30 model calls, 61 tool calls, context ~145k tokens by the end); the 31st model call —
+  the final digest turn — was sent at 20:47:43 UTC and never returned, and no watchdog fired in the
+  following 50 minutes, so the digest was never produced (LC then killed the process on a separate
+  false alarm). Root cause under investigation; mitigations: a hard per-request timeout for the codex
+  provider, and per-source subagents so the parent's context stays small (see Phase 1b).
+  `hermes cron run` executes the job inside the CLI process and blocks until it finishes; trigger
+  manual runs in the background.
 
 - **2026-09-07 — Phase 0 shipped** (a)–(d): open-set carryover in `scan_triage_apply.py`
   (`--latest` = every manifest in a `--carryover-days` window with unresolved records, merged;
