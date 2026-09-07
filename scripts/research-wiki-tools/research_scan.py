@@ -64,7 +64,7 @@ def _record_from_parts(*, source: str, query: str, url: str | None, pdf_url: str
     return c.ScanRecord(
         id=cid, source=source, query=query, url=url, pdf_url=pdf_url,
         doi=c.normalize_doi(doi), arxiv_id=c.arxiv_id_from(arxiv_id) or c.arxiv_id_from(url),
-        title=(title or "").strip(), authors=authors or [], year=str(year) if year else None,
+        title=c.clean_title(title), authors=authors or [], year=str(year) if year else None,
         venue=venue, source_type=source_type, abstract=(abstract or "").strip()[:4000],
         cited_by_count=cited_by, acq_state="abstract-only" if abstract else "link-only",
     )

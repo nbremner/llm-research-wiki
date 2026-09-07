@@ -31,6 +31,16 @@ def test_doi_and_arxiv_normalization():
     assert c.arxiv_id_from("https://example.com/not-arxiv") is None
 
 
+def test_clean_title_strips_markup_and_newlines():
+    raw = "The\n                    <scp>SMART</scp>\n                    model of <i>work</i>"
+    assert c.clean_title(raw) == "The SMART model of work"
+    assert c.clean_title(None) == "" and c.clean_title("  plain  ") == "plain"
+    rec = rs._record_from_parts(source="crossref", query="q", url="https://doi.org/10.1/x", pdf_url=None,
+                                doi="10.1000/x", arxiv_id=None, title=raw, authors=[], year=2026,
+                                venue=None, api_type="journal-article", abstract="", cited_by=None)
+    assert rec.title == "The SMART model of work"
+
+
 def test_candidate_id_priority():
     assert c.candidate_id(doi="10.1234/abc", arxiv_id="2503.16774", url="https://x") == "doi:10.1234/abc"
     assert c.candidate_id(arxiv_id="2503.16774", url="https://x") == "arxiv:2503.16774"

@@ -161,8 +161,11 @@ def test_clear_judgment_can_resolve_legacy_ambiguous_record():
 
 
 def test_digest_sections_and_counts():
-    manifest, plan = sta.apply_dispositions(_manifest(), _dispositions())
+    src = _manifest()
+    src["records"][3]["title"] = "Ambiguous\n   <scp>borderline</scp>\n   paper"  # Crossref JATS + newlines
+    manifest, plan = sta.apply_dispositions(src, _dispositions())
     digest = sta.render_digest(manifest, plan, executed=False)
+    assert "- Ambiguous borderline paper — wiki: unsure fit" in digest  # one clean line
     assert "DRY RUN" in digest
     assert "Needs your call" in digest and "Ambiguous borderline paper" in digest
     assert "Queued to triage/wiki (auto)" in digest and "Clear wiki paper with artifact" in digest

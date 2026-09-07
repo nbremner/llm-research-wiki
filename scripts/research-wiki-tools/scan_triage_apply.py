@@ -159,7 +159,7 @@ def apply_dispositions(manifest: dict[str, Any], dispositions: dict[str, Any],
 
     for rid in sorted(pending, key=lambda i: -(records[i].get("rank_score") or 0)):
         rec = records[rid]
-        item = {"id": rid, "title": rec.get("title", ""), "url": rec.get("url"),
+        item = {"id": rid, "title": c.clean_title(rec.get("title", "")), "url": rec.get("url"),
                 "acq_state": rec.get("acq_state"), "rank": rec.get("rank_score")}
         if rec.get("artifact_drive_id"):
             item["drive_file_id"] = rec["artifact_drive_id"]
@@ -350,7 +350,7 @@ def carryover_summary(entries: list[dict[str, Any]], stranded: list[dict[str, An
     aging: list[dict[str, Any]] = []
     for e in entries:
         age = e["age_days"]
-        titles = {r.get("id"): r.get("title", "") for r in e["manifest"].get("records", [])}
+        titles = {r.get("id"): c.clean_title(r.get("title", "")) for r in e["manifest"].get("records", [])}
         for rid in e["unresolved"]:
             if age is not None and age >= 1:
                 items.append({"id": rid, "title": titles.get(rid, ""), "age_days": age,
@@ -654,7 +654,8 @@ def run_show_open(args: argparse.Namespace, today: dt.date) -> int:
         wanted = set(e["unresolved"])
         for r in e["manifest"].get("records", []):
             if r.get("id") in wanted:
-                records.append({**r, "_manifest": str(e["path"]), "_age_days": e["age_days"]})
+                records.append({**r, "title": c.clean_title(r.get("title", "")),
+                                "_manifest": str(e["path"]), "_age_days": e["age_days"]})
     st = osr["stranded"]
     out = {
         "today": osr["today"], "window_days": osr["window_days"], "cutoff": osr["cutoff"],

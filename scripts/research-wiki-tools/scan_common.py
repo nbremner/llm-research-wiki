@@ -119,6 +119,16 @@ def slugify(s: str, max_len: int = 70) -> str:
     return s[:max_len].strip("-") or "untitled"
 
 
+_TAG_RE = re.compile(r"<[^>]+>")
+
+
+def clean_title(s: str | None) -> str:
+    """Display form of a title: strip markup tags (Crossref ships JATS such as
+    `<scp>`/`<i>`) and collapse embedded newlines/runs of whitespace, so a title
+    is always one line in manifests, the judging set, and digest bullets."""
+    return re.sub(r"\s+", " ", _TAG_RE.sub("", s or "")).strip()
+
+
 def normalize_title(s: str | None) -> str:
     if not s:
         return ""
