@@ -1,7 +1,7 @@
 ---
 name: research-scan-triage
 description: "Use when triaging surfaced candidates from the daily research scan into visible Drive state folders — wiki, read-once, or discarded — while preserving manifest/ledger audit state."
-version: 1.2.2
+version: 1.3.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -31,6 +31,7 @@ owner-approved synthesis.
 |---|---|
 | Harness + applier | `/root/research-wiki-tools/research_scan.py`, `scan_triage_apply.py` |
 | Local run dirs (manifests) | `/root/research-wiki-runs/scan-*/manifest-*.json` |
+| Judging set (open set: every manifest in the 7-day carryover window with unresolved records) | `uv run /root/research-wiki-tools/scan_triage_apply.py --show-open` |
 | Drive `_triage` store | folder `1tXLfXs2z8LkbAurlrw8G7IYfQu1mCXh8` (under `public-literature-wiki`) |
 | `_triage/pending` (unresolved artifacts) | `1_9TRp4H1Qqm0M4QI8hGiMkWNs9hc_GXg` |
 | `_triage/wiki` (approved; awaiting ingest) | `1qVcWuLSudOtjN4J_r8ILEA8-zGJrE6o1` |
@@ -95,7 +96,7 @@ Auto-actions happen only on `clear`.
 | `wiki` + clear + no artifact | bounded rung-4 acquisition attempt (below); else "needs manual acquisition" in digest |
 | `read-once` + clear | move artifact → `_triage/read-once`; include a 1–2 sentence digest summary |
 | `discard` + clear | move artifact → `_triage/discarded`; log and count it in the digest |
-| anything `ambiguous` | keep in `_triage/pending` and surface as "needs your call"; a later clear judgment may resolve it |
+| anything `ambiguous` | keep in `_triage/pending` and surface as "needs your call"; it stays in the judging set and is re-judged on each following day inside the 7-day carryover window (the digest lists it under **Carried over (age)** and warns on the day it would age out) |
 
 ## Rung-4 acquisition (bounded)
 
@@ -150,12 +151,14 @@ wait/poll until it becomes `inactive (dead)` with `status=0/SUCCESS` or `failed`
 such as arXiv HTTP 429s can appear during discovery; judge success by final manifest write plus
 `Uploaded manifest + ledger + files to Drive _triage`.
 
-1. **Find the manifest**: newest local `manifest-*.json` with unresolved records (`disposition: null` or legacy `disposition_confidence: ambiguous`). The intended helper is
-   `uv run /root/research-wiki-tools/scan_triage_apply.py --latest --dispositions <valid-json-file>`, but
-   if you only need discovery, it is safe to glob `/root/research-wiki-runs/*/manifest-*.json` and choose
-   the newest manifest where any record is null or ambiguous. `--dispositions` is optional as of
-   the 2026-08-03 applier, but omitting it skips triage entirely (`--friction`-only mode) — it is
-   not a manifest-discovery mode, so glob for discovery.
+1. **Get the judging set**: `uv run /root/research-wiki-tools/scan_triage_apply.py --show-open` prints
+   JSON with every unresolved record (`disposition: null` or legacy `disposition_confidence: ambiguous`)
+   from every manifest inside the 7-day carryover window — today's scan plus anything carried over from
+   earlier days. Each record carries `_manifest` and `_age_days`; `aging_out_after_this_run` names the
+   records that strand if they stay unresolved today; `stranded_outside_window` counts what is already
+   past the window. **Judge the whole set, not just today's manifest.** If `records` is empty, reply
+   only: `No new scan to triage today.` (add the stranded count if it is non-zero). Do not glob for
+   "the newest manifest" — that rule is what stranded ambiguous and unjudged records before 2026-09-07.
 2. **Judge every unresolved record** against the rubric. Read title + abstract +
    matched_topics; check the acquired artifact if the abstract is thin. One line of `reason` each,
    citing the rubric category. When a record has `artifact_drive_id` but little/no abstract, inspect the
@@ -169,9 +172,18 @@ such as arXiv HTTP 429s can appear during discovery; judge success by final mani
    `curl -L --fail -A 'Mozilla/5.0'`, then verify with `file` plus a small text-layer/page-count check.
    Stop immediately on bot verification, CAPTCHA, login, or purchase pages; record the judgment without
    `acquired_path`.
-4. **Write the dispositions JSON** (schema in the applier's docstring) to the run dir.
-5. **Dry-run the applier**, review its plan, then run with `--execute --friction`:
-   `uv run /root/research-wiki-tools/scan_triage_apply.py --manifest <path> --dispositions <path> --execute --friction`
+4. **Write the dispositions JSON** (schema in the applier's docstring) to today's run dir. Entries may
+   reference ids from any manifest in the judging set — the applier stamps each record back onto its own
+   manifest; the file's `manifest` field is informational.
+5. **Dry-run the applier** over the open set, review its plan, then run with `--execute --friction`:
+   `uv run /root/research-wiki-tools/scan_triage_apply.py --latest --dispositions <path>` then
+   `uv run /root/research-wiki-tools/scan_triage_apply.py --latest --dispositions <path> --execute --friction`.
+   `--latest` means the open set (not "the newest manifest"); use `--manifest <path>` only when the owner
+   points you at one specific manifest. The digest's **Carried over (age)** section and its ⚠ lines
+   (records that age out after this run; unresolved records already stranded outside the window) are part
+   of the digest — deliver them unchanged. The owner may ask for a one-off backfill
+   (`--carryover-days N`, N from the stranded warning) to recover older records; never widen the window
+   on your own.
 6. **Rubric-friction check**: `--friction` prints every ambiguous proposal from the last 14 days
    after the digest (from records' `proposal_history`; entries marked `[later resolved: …]` show what
    an owner follow-up or re-judgment settled on). Read it and decide whether the recent ambiguity
@@ -215,4 +227,6 @@ is not re-proposed)*
 - **Public-only sources** — the one hard rule (`wiki/schema.md`). Anything smelling non-public
   (confidential, internal-use, NDA) gets flagged in the digest, never queued.
 - Respect the caps; when a cap binds, surface rather than act.
+- **Never widen the carryover window on your own** (`--carryover-days`); a backfill run is an owner
+  instruction, because it re-opens records the owner may have deliberately let lapse.
 - The applier fails loudly on ids it does not recognize — fix the dispositions file, do not force.

@@ -430,6 +430,70 @@ def load_wiki_source_titles(sources_dir: str | Path) -> list[tuple[str, str]]:
     return out
 
 
+def load_wiki_topic_titles(topics_dir: str | Path) -> list[tuple[str, str]]:
+    """(slug, title) pairs from wiki/topics frontmatter, sorted by slug. Missing
+    or unparseable titles fall back to the slug so every topic file is represented."""
+    out: list[tuple[str, str]] = []
+    d = Path(topics_dir)
+    if not d.is_dir():
+        return out
+    title_re = re.compile(r"^title:\s*(.+)$", re.I | re.M)
+    for md in sorted(d.glob("*.md")):
+        try:
+            head = md.read_text(encoding="utf-8")[:1200]
+        except OSError:
+            continue
+        m = title_re.search(head)
+        title = m.group(1).strip().strip('"').strip("'") if m else md.stem
+        out.append((md.stem, title))
+    return out
+
+
+def _concept_phrases(slug: str, title: str) -> list[str]:
+    """Match phrases for one topic: the slug and title as lowercase phrases, in
+    both hyphenated and spaced forms ("human-ai collaboration" / "human ai
+    collaboration"), so either spelling in an abstract counts."""
+    raw = re.sub(r"[\u2013\u2014\u2011]", "-", title or "")  # en/em dash, nb-hyphen -> hyphen first
+    raw = unicodedata.normalize("NFKD", raw).encode("ascii", "ignore").decode("ascii").lower()
+    hyphenated = re.sub(r"[^a-z0-9-]+", " ", raw).strip()
+    hyphenated = re.sub(r"\s+", " ", hyphenated)
+    variants = {
+        slug.replace("-", " "),
+        hyphenated,
+        hyphenated.replace("-", " "),
+    }
+    return sorted(v for v in variants if len(v) >= 4)
+
+
+def derive_wiki_concepts(topics_dir: str | Path,
+                         enrichment: dict[str, list[str]] | None = None,
+                         ) -> tuple[dict[str, list[str]], list[str]]:
+    """Concept vocabulary derived from the live topic list, merged with the
+    hand-tuned enrichment keywords from scan_config.
+
+    Every `wiki/topics/*.md` becomes a key (its slug) with its slug + title as
+    match phrases, so a newly created topic is visible to pre-ranking the next
+    scan without anyone editing config (the 2026-09 drift: 36 hand-tuned keys vs
+    55 topics left the newest topics invisible — a self-reinforcing fixation
+    loop). Enrichment keywords are appended when present; enrichment keys with
+    no topic file are kept as-is (harmless, and they still surface candidates).
+    Returns (concepts, topic slugs that have no enrichment entry)."""
+    enrichment = enrichment or {}
+    concepts: dict[str, list[str]] = {}
+    unenriched: list[str] = []
+    for slug, title in load_wiki_topic_titles(topics_dir):
+        phrases = _concept_phrases(slug, title)
+        extra = [k.lower() for k in enrichment.get(slug, [])]
+        if not extra:
+            unenriched.append(slug)
+        merged = list(dict.fromkeys(phrases + extra))  # dedup, keep order
+        concepts[slug] = merged
+    for slug, kws in enrichment.items():
+        if slug not in concepts:
+            concepts[slug] = [k.lower() for k in kws]
+    return concepts, unenriched
+
+
 def load_wiki_source_ids(sources_dir: str | Path) -> set[str]:
     """Warm-start ids from existing wiki/sources/*.md frontmatter (url/doi) +
     filename-year. Lets the harness skip papers already in the wiki."""

@@ -6,6 +6,11 @@ Read `OPERATING_MODEL.md` first for the operating context, and `docs/wiki-redesi
 wiki this feeds. This plan builds the *front end* that fills the pipeline; the synthesis engine
 (`skills/research-wiki-ingest`, the `sources/`→`topics/` split) is unchanged.
 (`research-wiki-batch-ingest`, named in the original text here, was retired 2026-07-04.)
+**Consumer side:** what happens to `_triage/wiki` after triage — the daily source drain and the weekly
+synthesis batch — is specified in `docs/wiki-redesign-plan.md` (approved 2026-09-07). Its Phase 0
+shipped here on 2026-09-07: triage now judges an open set across manifests (7-day carryover, stranded
+warning), ingest rejections write back to the manifest (`--amend`), and the pre-rank concept vocabulary
+is derived from `wiki/topics/` instead of a hand-tuned map.
 
 ## Why (decision record)
 

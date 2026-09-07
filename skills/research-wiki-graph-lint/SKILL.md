@@ -1,7 +1,7 @@
 ---
 name: research-wiki-graph-lint
 description: Use when auditing the markdown research wiki for graph coherence — broken wikilinks, orphan pages, claims without a source, sources that feed no topic, provenance gaps, and stale topics — or when running the monthly semantic lint (contradiction check over the --pairs shortlist + evidence-staleness review). Report-only; fixes route through the normal write paths.
-version: 2.2.0
+version: 2.3.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -33,6 +33,10 @@ across `wiki/` and reports, by severity:
 - **Medium — Topic evidence-stale:** ≥2 linked sources with `retrieved` dates *after* the topic's
   `updated` — the synthesis is behind the evidence. (Depends on the `updated:`-discipline rule in
   `wiki/schema.md`: mechanical passes must not bump `updated`, or this check goes blind.)
+- **Medium / Low — Topic accretion:** a topic citing ≥35 distinct sources or running ≥3,500 words
+  (Medium), or ≥25 sources / ≥2,500 words (Low). This is the ingest skill's topic-openness **Split**
+  decision as a measured signal: a focal page that keeps absorbing sources is a split candidate, not a
+  default destination. Report-only like everything here — it is not an error to fix mechanically.
 - **Low — Topic stale:** `updated` older than the threshold (default 180 days) — calendar fallback;
   evidence-stale is the sharper signal.
 - **Low — Source missing file_hash:** provenance hash absent (dedup weaker).
@@ -48,6 +52,8 @@ cd /root/work/llm-research-wiki
 python scripts/research-wiki-tools/graph_lint.py                 # markdown report to stdout
 python scripts/research-wiki-tools/graph_lint.py --json          # JSON findings
 python scripts/research-wiki-tools/graph_lint.py --fail-on High  # non-zero exit if any High+ (for CI/hooks)
+python scripts/research-wiki-tools/graph_lint.py --fail-on Medium --allow-check "Orphan source" --allow-check "Topic accretion"
+    # gate on Medium+, but let named expected-state checks through (still reported; repeatable)
 ```
 
 No arguments needed in-repo; `--wiki-dir` defaults to the repo's `wiki/`.
@@ -94,6 +100,9 @@ The lint run itself is **report-only** — it never edits the wiki (this matches
 - **Topic cites no source** → propose adding the evidence link or marking the page `status: stub`
   until it has one. Don't let agent synthesis stand as canon with no source under it.
 - **Stale topics** → revisit when newer sources exist; staleness is a watchlist signal, not an error.
+- **Topic accretion** → a Split proposal for the next synthesis that touches the page (extract the
+  distinct construct into its own topic, per the ingest skill's topic-openness principle); never split
+  mechanically.
 
 Canonical edits (topic synthesis) still follow the governance rule: owner approves before synthesis
 becomes canonical. Lint proposes; it does not rewrite topics on its own.

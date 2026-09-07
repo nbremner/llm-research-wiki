@@ -21,6 +21,8 @@ import scan_common as c  # noqa: E402
 import scan_config as cfg  # noqa: E402
 import research_scan as rs  # noqa: E402
 
+_WIKI_TOPICS = Path(__file__).resolve().parents[1] / "wiki" / "topics"
+
 
 def test_doi_and_arxiv_normalization():
     assert c.normalize_doi("https://doi.org/10.1126/Science.ADH2586") == "10.1126/science.adh2586"
@@ -43,7 +45,8 @@ def test_url_normalization_strips_tracking_and_fragment():
 
 
 def test_concept_match_and_on_mission():
-    score, topics = c.concept_match("automation and augmentation reshape labor demand; deskilling", cfg.WIKI_CONCEPTS)
+    concepts, _ = c.derive_wiki_concepts(_WIKI_TOPICS, cfg.WIKI_CONCEPT_ENRICHMENT)
+    score, topics = c.concept_match("automation and augmentation reshape labor demand; deskilling", concepts)
     assert score > 0
     assert "automation-and-substitution" in topics
     assert c.is_on_mission("A study of generative AI in the workplace", cfg.AI_TERMS, cfg.WORK_TERMS)
@@ -393,6 +396,61 @@ def test_orchestrator_title_dedup():
     finally:
         if orig:
             rs.DISCOVERY["openalex"] = orig
+
+
+def test_concept_vocabulary_covers_every_topic():
+    # The 2026-09 drift: 36 hand-tuned keys vs 55 topics left the newest topics
+    # invisible to pre-ranking. Derivation from wiki/topics/ must cover them all.
+    concepts, unenriched = c.derive_wiki_concepts(_WIKI_TOPICS, cfg.WIKI_CONCEPT_ENRICHMENT)
+    slugs = {p.stem for p in _WIKI_TOPICS.glob("*.md")}
+    assert len(slugs) > 40
+    assert slugs <= set(concepts), sorted(slugs - set(concepts))
+    assert all(concepts[slug] for slug in slugs)  # every key has at least its own phrase
+    # Enrichment is optional per topic (the scan warns), but its keys must be
+    # real topic slugs -- a stale key means a topic was renamed/retired.
+    assert set(cfg.WIKI_CONCEPT_ENRICHMENT) <= slugs, sorted(set(cfg.WIKI_CONCEPT_ENRICHMENT) - slugs)
+    assert unenriched == []  # as of 2026-09-07 every topic is enriched; new topics may warn
+
+
+def test_derive_wiki_concepts_from_temp_topics():
+    d = Path(tempfile.mkdtemp())
+    (d / "human-ai-collaboration.md").write_text(
+        "---\ntitle: Human\u2013AI collaboration\nstatus: active\n---\n# x\n", encoding="utf-8")
+    (d / "brand-new-topic.md").write_text("no frontmatter at all\n", encoding="utf-8")
+    concepts, unenriched = c.derive_wiki_concepts(
+        d, {"human-ai-collaboration": ["Centaur"], "retired-key": ["old"]})
+    assert set(concepts) == {"human-ai-collaboration", "brand-new-topic", "retired-key"}
+    assert {"human-ai collaboration", "human ai collaboration", "centaur"} <= set(concepts["human-ai-collaboration"])
+    assert "brand new topic" in concepts["brand-new-topic"]  # slug phrase even with no title line
+    assert unenriched == ["brand-new-topic"]
+    _, matched = c.concept_match("A study of human-AI collaboration in a brand new topic area", concepts)
+    assert {"human-ai-collaboration", "brand-new-topic"} <= set(matched)
+    assert c.derive_wiki_concepts(d / "missing", {"k": ["v"]}) == ({"k": ["v"]}, [])
+
+
+def test_orchestrator_derives_concepts_from_topics_dir():
+    d = Path(tempfile.mkdtemp())
+    (d / "brand-new-topic.md").write_text("---\ntitle: Brand new topic\n---\n", encoding="utf-8")
+
+    def fake(q, n):
+        return [c.ScanRecord(id="doi:10.1234/bnt", title="Generative AI and the brand new topic at work",
+                             abstract="workers employees productivity brand new topic",
+                             source="openalex", url="https://ex.org/bnt", doi="10.1234/bnt",
+                             year=str(c.utc_now().year), source_type="peer-reviewed")]
+    orig = rs.DISCOVERY.get("openalex")
+    rs.DISCOVERY["openalex"] = fake
+    try:
+        wd = tempfile.mkdtemp()
+        assert rs.main(["--no-journals", "--sources", "openalex", "--queries", "1", "--no-acquire",
+                        "--work-dir", wd, "--wiki-topics", str(d)]) == 0
+        man = json.loads(next(Path(wd).glob("manifest-*.json")).read_text())
+    finally:
+        if orig:
+            rs.DISCOVERY["openalex"] = orig
+    assert man["concepts"]["topics_dir"] == str(d)
+    assert man["concepts"]["unenriched"] == ["brand-new-topic"]
+    assert "brand-new-topic" in man["records"][0]["matched_topics"]
+    assert set(man["concepts"]["stale_enrichment_keys"]) == set(cfg.WIKI_CONCEPT_ENRICHMENT)
 
 
 def _run_standalone() -> int:

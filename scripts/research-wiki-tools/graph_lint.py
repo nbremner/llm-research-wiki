@@ -3,14 +3,18 @@
 Graph-semantic lint for the markdown research wiki.
 
 Walks `wiki/`, parses frontmatter + `[[wikilinks]]`, and reports broken links,
-orphans, claims-without-source, provenance gaps, and stale topics. Read-only:
-it never edits the wiki. The old version linted the Notion layer; the wiki is
-now plain markdown in git, so this operates on files.
+orphans, claims-without-source, provenance gaps, stale topics, and topic
+accretion (a focal page that keeps absorbing sources — the ingest skill's
+Split candidate). Read-only: it never edits the wiki. The old version linted
+the Notion layer; the wiki is now plain markdown in git, so this operates on
+files.
 
 Run:
   python scripts/research-wiki-tools/graph_lint.py            # markdown report to stdout
   python scripts/research-wiki-tools/graph_lint.py --json     # JSON findings
   python scripts/research-wiki-tools/graph_lint.py --wiki-dir /root/work/llm-research-wiki/wiki
+  python scripts/research-wiki-tools/graph_lint.py --fail-on Medium --allow-check "Orphan source"
+      # gate on Medium+, but let a named expected-state check through (repeatable)
   python scripts/research-wiki-tools/graph_lint.py --pairs               # contradiction shortlist (JSON)
   python scripts/research-wiki-tools/graph_lint.py --pairs --bootstrap --max-pairs 35  # first sweep
 
@@ -45,6 +49,15 @@ DEFAULT_STALE_DAYS = 180
 # Evidence-staleness: flag a topic when this many linked sources were retrieved
 # after its last synthesis. One straggler is normal inbox lag; two+ is a queue.
 EVIDENCE_STALE_MIN_SOURCES = 2
+
+# Topic accretion: a topic page that keeps absorbing sources is the fixation
+# failure mode the ingest skill's topic-openness "Split" decision exists to
+# catch — this makes it a measured signal instead of a vibe. Either threshold
+# (distinct cited sources OR body words) trips the level. Report-only.
+ACCRETION_MEDIUM_SOURCES = 35
+ACCRETION_MEDIUM_WORDS = 3500
+ACCRETION_LOW_SOURCES = 25
+ACCRETION_LOW_WORDS = 2500
 
 # Contradiction-pair shortlist defaults (see module docstring).
 PAIR_MIN_SHARED_SOURCES = 2
@@ -130,6 +143,15 @@ def topic_source_graph(pages: list[dict[str, Any]]) -> dict[str, set[str]]:
     return cites
 
 
+def accretion_severity(cited_sources: int, words: int) -> str | None:
+    """Medium / Low / None for a topic's size (see the ACCRETION_* constants)."""
+    if cited_sources >= ACCRETION_MEDIUM_SOURCES or words >= ACCRETION_MEDIUM_WORDS:
+        return "Medium"
+    if cited_sources >= ACCRETION_LOW_SOURCES or words >= ACCRETION_LOW_WORDS:
+        return "Low"
+    return None
+
+
 def build_findings(
     pages: list[dict[str, Any]],
     stale_days: int = DEFAULT_STALE_DAYS,
@@ -186,6 +208,15 @@ def build_findings(
             cites = [t for t in p["links"] if t in source_slugs]
             if not cites:
                 add("Medium", "Topic cites no source", slug, "active topic makes claims with no [[source]] link")
+            # Accretion: too many sources / too much prose on one page is a
+            # Split candidate (report-only — the decision stays with synthesis).
+            n_cited, n_words = len(set(cites)), len(p["body"].split())
+            level = accretion_severity(n_cited, n_words)
+            if level:
+                add(level, "Topic accretion", slug,
+                    f"{n_cited} cited sources, {n_words} words — split candidate "
+                    f"(Medium at ≥{ACCRETION_MEDIUM_SOURCES} sources or ≥{ACCRETION_MEDIUM_WORDS} words; "
+                    f"Low at ≥{ACCRETION_LOW_SOURCES} / ≥{ACCRETION_LOW_WORDS})")
             updated = _parse_date(fm.get("updated", ""))
             # Evidence-staleness: sources retrieved after the topic's last
             # synthesis. `updated` means "last synthesis edit" — mechanical
@@ -293,6 +324,21 @@ def contradiction_pairs(
             "pairs": selected}
 
 
+def should_fail(findings: list[dict[str, str]], fail_on: str,
+                allow_checks: list[str] | None = None) -> bool:
+    """True when a finding at/above `fail_on` exists whose check is not allowed.
+    Allowed checks are still reported; they just never gate. This is how a
+    synthesis batch gates on Medium while the expected-state findings (orphan
+    sources awaiting synthesis, accretion, evidence-stale) pass through."""
+    if fail_on == "never":
+        return False
+    rank = {s: i for i, s in enumerate(SEVERITY_ORDER)}
+    threshold = rank[fail_on]
+    allowed = set(allow_checks or [])
+    return any(rank.get(f["severity"], 9) <= threshold and f["check"] not in allowed
+               for f in findings)
+
+
 def summarize_counts(findings: list[dict[str, str]]) -> dict[str, int]:
     counts = {s: 0 for s in SEVERITY_ORDER}
     for f in findings:
@@ -338,6 +384,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--json", action="store_true", help="emit JSON instead of markdown")
     ap.add_argument("--fail-on", choices=["never", *SEVERITY_ORDER], default="never",
                     help="exit non-zero if a finding at/above this severity exists")
+    ap.add_argument("--allow-check", action="append", default=[], metavar="CHECK",
+                    help="with --fail-on: still report this check but never fail on it "
+                         "(repeatable; e.g. --allow-check 'Orphan source' during a synthesis batch)")
     ap.add_argument("--pairs", action="store_true",
                     help="emit the contradiction-pair shortlist as JSON and exit")
     ap.add_argument("--bootstrap", action="store_true",
@@ -369,11 +418,8 @@ def main(argv: list[str] | None = None) -> int:
     }
     print(json.dumps(run, indent=2) if args.json else render_markdown(run))
 
-    if args.fail_on != "never":
-        rank = {s: i for i, s in enumerate(SEVERITY_ORDER)}
-        threshold = rank[args.fail_on]
-        if any(rank.get(f["severity"], 9) <= threshold for f in findings):
-            return 1
+    if should_fail(findings, args.fail_on, args.allow_check):
+        return 1
     return 0
 
 

@@ -1,6 +1,7 @@
 # Wiki Plan — Ingest Automation (current) + Redesign Record (archived)
 
-Status: **ACTIVE build plan — ingest automation, owner-approved 2026-09-07.**
+Status: **ACTIVE build plan — ingest automation, owner-approved 2026-09-07.** Phase 0 shipped
+2026-09-07 (see §11 Build log); Phases 1–4 pending.
 The original 2026-06 markdown-in-git redesign this file used to describe is **built and archived**
 in the appendix at the bottom; everything above the appendix is the current plan.
 
@@ -81,8 +82,8 @@ record, appends the change to that record's `proposal_history`, and moves nothin
 default (ingest already moved the PDF). Then add one step to the ingest SKILL's rejection path:
 run the amend after the unwind.
 
-**(c) `WIKI_CONCEPTS` drift.** `scan_config.py` has 36 concept keys vs 54 topic files — the 18
-newest topics are invisible to pre-ranking (a self-reinforcing fixation loop). Fix: derive the
+**(c) `WIKI_CONCEPTS` drift** (renamed `WIKI_CONCEPT_ENRICHMENT` on shipping)**.** `scan_config.py`
+has 36 concept keys vs 54 topic files — the 18 newest topics are invisible to pre-ranking (a self-reinforcing fixation loop). Fix: derive the
 concept key set from `wiki/topics/*.md` (slug + title) at scan time — the scan already warm-starts
 from `wiki/` — and demote the hand-tuned map in `scan_config.py` to keyword *enrichment* only.
 Scan output warns when a topic has no enrichment entry. Test: every topic slug is represented in
@@ -138,7 +139,9 @@ Add a **"Weekly synthesis batch" mode** to `skills/research-wiki-ingest/SKILL.md
 4. **Draft once per file**: each affected topic page edited exactly once for the whole batch;
    each map page (`topic-map.md`, `watchlist.md`, `open-questions.md`, `research-gaps.md`)
    edited at most once; `updated:` bumped only on genuinely synthesized pages.
-5. Lint the working tree: `graph_lint.py --fail-on Medium`.
+5. Lint the working tree: `graph_lint.py --fail-on Medium`, with `--allow-check` for the
+   expected-state checks (orphan sources rolling over to the next batch, topic accretion,
+   evidence-stale) — otherwise any backlog fails every batch (found in Phase 0; see §11).
 6. **Branch + PR**: branch `synthesis/YYYY-MM-DD`, commit *topic synthesis only* (source records
    are already on main; the branch is file-disjoint from the daily drain, so it essentially
    cannot conflict with main while open), message
@@ -237,6 +240,26 @@ the approval loop and must keep growing under automation.
   allowlist edits are needed. If that ever changes, follow `AGENTS.md` §renaming to the letter.
 - The **guardrail tests**: no `backlog/` paths, no `.jsonl`/`.csv` state in git; queue state stays
   computed (lint) or external (Drive manifests, GitHub PRs).
+
+## 11. Build log
+
+- **2026-09-07 — Phase 0 shipped** (a)–(d): open-set carryover in `scan_triage_apply.py`
+  (`--latest` = every manifest in a `--carryover-days` window with unresolved records, merged;
+  dispositions span manifests and stamp back; `--show-open` prints the judging set; digest gains
+  **Carried over (age)** + aging-out and stranded warnings); `--amend` writeback (by record id or
+  artifact Drive file id; appends to `proposal_history`; moves nothing in Drive) wired into the ingest
+  rejection path; concept vocabulary derived from `wiki/topics/` at scan time
+  (`scan_common.derive_wiki_concepts`; `WIKI_CONCEPTS` → `WIKI_CONCEPT_ENRICHMENT`, 19 missing topics
+  enriched, scan warns on unenriched topics and stale keys); `Topic accretion` lint (Medium ≥35 sources
+  or ≥3,500 words; Low ≥25 / ≥2,500 — trips on `work-redesign` day one, as predicted) plus
+  `--allow-check` so a gate can pass named expected-state checks. Suite 59 → 74 tests.
+  *Refinements found while implementing:* (1) the live queue had 81 unresolved records across 23
+  manifests back to 2026-07-04, far outside the 7-day window — the first carryover run needs an explicit
+  owner-approved backfill (`--carryover-days N`; the digest now states N); (2) the Phase-2 batch lint
+  gate cannot be a bare `--fail-on Medium` while any orphan sources roll over (§4 step 5 amended);
+  (3) a Hermes v0.21.0 regression (restart-safe cron workers need the user D-Bus env) had broken every
+  hermes cron job that morning — fixed fleet-side with a `user-bus.conf` gateway drop-in before
+  deployment.
 
 ---
 

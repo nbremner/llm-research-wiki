@@ -346,8 +346,50 @@ def acquire(rec: c.ScanRecord, ledger: c.Ledger, *, files_dir: Path,
 # Orchestration
 # ---------------------------------------------------------------------------
 
-def rank(rec: c.ScanRecord) -> None:
-    concept, topics = c.concept_match(f"{rec.title}\n{rec.abstract}", cfg.WIKI_CONCEPTS)
+def _resolve_topics_dir(explicit: str | None, wiki_sources: str | None) -> Path | None:
+    """Where the concept vocabulary comes from: --wiki-topics, else the `topics`
+    sibling of --wiki-sources, else this repo's own wiki/topics."""
+    if explicit:
+        d = Path(explicit)
+        if not d.is_dir():
+            raise SystemExit(f"error: --wiki-topics dir not found: {d}")
+        return d
+    candidates = []
+    if wiki_sources:
+        candidates.append(Path(wiki_sources).resolve().parent / "topics")
+    candidates.append(Path(__file__).resolve().parents[2] / "wiki" / "topics")
+    return next((d for d in candidates if d.is_dir()), None)
+
+
+def load_concepts(topics_dir: Path | None) -> tuple[dict[str, list[str]], dict[str, Any]]:
+    """Derived concept vocabulary + a provenance/warning summary for the manifest.
+    Warns (stderr) when a topic has no enrichment entry or an enrichment key has
+    no topic file, so the config never drifts silently again."""
+    if topics_dir is None:
+        print("WARN no wiki/topics dir found; concept vocabulary is the static enrichment map only",
+              file=sys.stderr)
+        return dict(cfg.WIKI_CONCEPT_ENRICHMENT), {
+            "keys": len(cfg.WIKI_CONCEPT_ENRICHMENT), "topics_dir": None,
+            "unenriched": [], "stale_enrichment_keys": []}
+    concepts, unenriched = c.derive_wiki_concepts(topics_dir, cfg.WIKI_CONCEPT_ENRICHMENT)
+    topic_slugs = {slug for slug, _ in c.load_wiki_topic_titles(topics_dir)}
+    stale = sorted(set(cfg.WIKI_CONCEPT_ENRICHMENT) - topic_slugs)
+    print(f"concept vocabulary: {len(concepts)} keys derived from {topics_dir} + enrichment", flush=True)
+    if unenriched:
+        print(f"WARN {len(unenriched)} topic(s) have no enrichment entry in "
+              f"scan_config.WIKI_CONCEPT_ENRICHMENT (matched on slug/title only): "
+              f"{', '.join(unenriched)}", file=sys.stderr)
+    if stale:
+        print(f"WARN enrichment keys with no topic file (retired or renamed topic?): "
+              f"{', '.join(stale)}", file=sys.stderr)
+    return concepts, {"keys": len(concepts), "topics_dir": str(topics_dir),
+                      "unenriched": unenriched, "stale_enrichment_keys": stale}
+
+
+def rank(rec: c.ScanRecord, concepts: dict[str, list[str]] | None = None) -> None:
+    concept, topics = c.concept_match(
+        f"{rec.title}\n{rec.abstract}",
+        concepts if concepts is not None else cfg.WIKI_CONCEPT_ENRICHMENT)
     recency = c.recency_score(rec.year, cfg.RECENCY_HALFLIFE_DAYS)
     authority = c.authority_score(rec.source_type, cfg.SOURCE_AUTHORITY)
     citation = float(rec.provenance.get("citation_proximity", 0.0))
@@ -374,6 +416,9 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     p.add_argument("--token-path", default=cfg.DEFAULT_TOKEN_PATH)
     p.add_argument("--work-dir", default=None, help="Local working dir (ledger, files, manifest)")
     p.add_argument("--wiki-sources", default=None, help="wiki/sources dir to warm-start seen-index")
+    p.add_argument("--wiki-topics", default=None,
+                   help="wiki/topics dir the concept vocabulary is derived from (default: the "
+                        "`topics` sibling of --wiki-sources, else this repo's wiki/topics)")
     return p.parse_args(argv)
 
 
@@ -409,6 +454,8 @@ def main(argv: list[str]) -> int:
                 ledger.mark_seen(cid, {"title": title, "origin": "wiki-source-title"})
                 t += 1
         print(f"warm-started seen-index with {n} wiki source ids + {t} titles", flush=True)
+
+    concepts, concept_info = load_concepts(_resolve_topics_dir(args.wiki_topics, args.wiki_sources))
 
     queries = cfg.SEED_QUERIES[: args.queries] if args.queries else cfg.SEED_QUERIES
     sources = [s.strip() for s in args.sources.split(",") if s.strip() in DISCOVERY]
@@ -484,7 +531,7 @@ def main(argv: list[str]) -> int:
 
     records = list(fresh.values())
     for rec in records:
-        rank(rec)
+        rank(rec, concepts)
     records.sort(key=lambda r: r.rank_score, reverse=True)
     print(f"\nDiscovered {len(records)} new on-mission candidates.", flush=True)
 
@@ -520,6 +567,7 @@ def main(argv: list[str]) -> int:
             "since": journal_since,
             "minimum_surface_slots": cfg.MIN_JOURNAL_SURFACED_PER_RUN if args.journals else 0,
         },
+        "concepts": concept_info,
         "discovered": len(records), "surfaced": len(surfaced),
         "acquired": sum(1 for r in to_acquire if r.acq_state in ("full-pdf", "full-text")),
         "records": [r.to_dict() for r in surfaced],

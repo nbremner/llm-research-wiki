@@ -232,6 +232,48 @@ def test_render_markdown_has_required_sections():
     assert "clean" in md
 
 
+def _accreted(n_sources, words):
+    srcs = [f"2026-s{i}" for i in range(n_sources)]
+    pages = [topic("big-topic", links=srcs)] + [source(s, links=["big-topic"]) for s in srcs]
+    pages.append(doc("overview", links=["big-topic"]))
+    pages[0]["body"] = "word " * words
+    return pages
+
+
+def _accretion_level(n_sources, words, status="active"):
+    pages = _accreted(n_sources, words)
+    pages[0]["frontmatter"]["status"] = status
+    found = [f for f in graph_lint.build_findings(pages, today=dt.date(2026, 9, 7))
+             if f["check"] == "Topic accretion"]
+    return found[0]["severity"] if found else None
+
+
+def test_topic_accretion_thresholds():
+    assert _accretion_level(24, 100) is None
+    assert _accretion_level(25, 100) == "Low" and _accretion_level(1, 2500) == "Low"
+    assert _accretion_level(34, 3499) == "Low"
+    assert _accretion_level(35, 100) == "Medium" and _accretion_level(1, 3500) == "Medium"
+    assert _accretion_level(40, 100, status="stub") is None  # stubs are exempt
+    assert graph_lint.accretion_severity(35, 0) == "Medium"
+    assert graph_lint.accretion_severity(0, 0) is None
+    detail = next(f["detail"] for f in graph_lint.build_findings(_accreted(36, 10), today=dt.date(2026, 9, 7))
+                  if f["check"] == "Topic accretion")
+    assert detail.startswith("36 cited sources, 10 words") and "split candidate" in detail
+
+
+def test_should_fail_honours_allow_check():
+    findings = [
+        {"severity": "Medium", "check": "Orphan source", "page": "s", "detail": ""},
+        {"severity": "Medium", "check": "Topic accretion", "page": "t", "detail": ""},
+    ]
+    assert graph_lint.should_fail(findings, "Medium")
+    assert graph_lint.should_fail(findings, "Medium", ["Orphan source"])
+    assert not graph_lint.should_fail(findings, "Medium", ["Orphan source", "Topic accretion"])
+    assert not graph_lint.should_fail(findings, "High")
+    assert not graph_lint.should_fail(findings, "never")
+    assert not graph_lint.should_fail([], "Low")
+
+
 def _run_standalone() -> int:
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_") and callable(v)]
     failed = 0

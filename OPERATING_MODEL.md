@@ -1,7 +1,7 @@
 # Operating Model — llm-research-wiki
 
 Status: canonical **architecture** for the research wiki. Read this to change the system.
-Last updated: 2026-08-03.
+Last updated: 2026-09-07.
 
 This is the architecture doc — the substrate, roles, the operating loop, deployment, and cron
 design. The **live contract** agents read at action time is `wiki/schema.md` (conventions, templates,
@@ -103,7 +103,7 @@ failures to Discord #logs).
 | Job | Cadence | Writes | Cap |
 |---|---|---|---|
 | Research scan (deterministic harness, systemd timer) | Daily | Drive `_triage` only | ≤12 surfaced/run |
-| Scan triage (`research-scan-triage`, hermes cron) | Daily | `_triage/pending` → disposition folders + digest | ≤10 wiki auto-moves/run; ambiguous remains pending → owner |
+| Scan triage (`research-scan-triage`, hermes cron) | Daily | `_triage/pending` → disposition folders + digest | ≤10 wiki auto-moves/run; ambiguous stays pending and is re-judged inside a 7-day carryover window across manifests (digest warns before anything strands) → owner |
 | Semantic lint (`research-wiki-graph-lint`, hermes cron) | Monthly | report only (contradiction pairs + evidence-stale + structural findings, one digest) | ≤15 pairs/run (35 on the one-time bootstrap sweep) |
 | Graph-lint report (structural, ad hoc — e.g. after an ingest) | As needed | report only | n/a |
 | RSS research digest (`rss_research_digest.py`, hermes cron, no-agent; VPS-local script, not in this repo) | Daily | report only | n/a |

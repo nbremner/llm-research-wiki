@@ -101,7 +101,9 @@ python scripts/research-wiki-tools/graph_lint.py                       # lint th
 uv run scripts/research-wiki-tools/research_scan.py --queries 3 --no-acquire   # scan smoke (query + journal lanes, local)
 uv run scripts/research-wiki-tools/research_scan.py --no-journals --queries 3 --no-acquire  # query-only smoke
 uv run scripts/research-wiki-tools/research_scan.py --drive                    # full scan to Drive _triage
-uv run scripts/research-wiki-tools/scan_triage_apply.py --latest --dispositions d.json  # triage dry run
+uv run scripts/research-wiki-tools/scan_triage_apply.py --show-open                     # triage judging set (7-day carryover)
+uv run scripts/research-wiki-tools/scan_triage_apply.py --latest --dispositions d.json  # triage dry run over the open set
+uv run scripts/research-wiki-tools/scan_triage_apply.py --amend --drive-file-id <id> --to discard --reason "..."  # ingest-rejection writeback
 python -m pytest tests/ -q                                             # run the test suite before committing
 ```
 

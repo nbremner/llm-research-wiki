@@ -7,8 +7,9 @@ scan looks for and how it ranks -- no code change needed. See
 docs/research-scrape-plan.md for the architecture.
 
 Anchored on the wiki's mission (AI workforce transformation x I-O psychology, per
-wiki/overview.md; the live topic list is wiki/topic-map.md), NOT the wrapped-up
-applied "U4B / B2B-sales" research questions.
+wiki/overview.md; the live topic list is wiki/topics/ -- the concept vocabulary is
+derived from it at scan time), NOT the wrapped-up applied "U4B / B2B-sales"
+research questions.
 A future applied project = a new profile here, not a rebuild.
 """
 
@@ -73,10 +74,18 @@ HOST_SOURCE_TYPE = {
     "www.mckinsey.com": "industry",
 }
 
-# --- Wiki concept vocabulary (topic slug -> keywords) -----------------------
-# Drives concept-match scoring. Derived from wiki/topic-map.md topics. Keep roughly
-# in sync as topics are added; extra or stale keys are harmless.
-WIKI_CONCEPTS = {
+# --- Wiki concept ENRICHMENT (topic slug -> extra keywords) -----------------
+# The concept vocabulary used for pre-ranking is DERIVED at scan time from the
+# live topic list (wiki/topics/*.md: slug + title become match phrases -- see
+# scan_common.derive_wiki_concepts), so a new topic is visible to ranking on the
+# next scan with no edit here. This map only ENRICHES those derived keys with
+# hand-tuned synonyms and adjacent terms. Keys are topic slugs. A topic with no
+# entry still matches on its slug/title and the scan warns, so add synonyms when
+# a topic keeps missing obvious candidates; a key with no topic file is kept but
+# warned about -- retire it with the topic. (2026-09-07: this map had drifted to
+# 36 keys vs 55 topics, leaving the 19 newest topics invisible to pre-ranking --
+# a self-reinforcing fixation loop. Derivation closes it; the 19 were enriched.)
+WIKI_CONCEPT_ENRICHMENT = {
     "automation-and-substitution": ["automation", "substitution", "displacement", "augmentation", "labor demand", "task exposure"],
     "task-level-ai-adoption": ["task", "occupation", "generative ai use", "task exposure", "o*net"],
     "ai-adoption": ["ai adoption", "diffusion", "technology acceptance", "adoption barrier"],
@@ -113,6 +122,26 @@ WIKI_CONCEPTS = {
     "inclusive-hr-systems": ["inclusion", "diversity", "fairness", "inclusive hr"],
     "evidence-based-management": ["evidence-based management", "evidence quality"],
     "complex-collaborative-problem-solving": ["collaborative problem solving", "complex problem", "21st century skills"],
+    # Enrichment for topics created after the original map (added 2026-09-07).
+    "agentic-organization-design": ["multi-agent", "agent collective", "agent orchestration", "agentic organization", "shared context", "collective intelligence"],
+    "ai-as-a-job-resource": ["job resource", "job demands-resources", "jd-r", "psychosocial resource"],
+    "ai-mediated-choice-and-identity": ["recommendation", "personalization", "preference distinctiveness", "self-expression", "identity", "delegated choice"],
+    "ai-mediated-knowledge-behavior": ["knowledge sharing", "knowledge hiding", "threat appraisal", "empowerment"],
+    "ai-output-diversity": ["output diversity", "homogeneity", "homogenization", "mode collapse", "pluralism"],
+    "ai-proactivity": ["proactive ai", "proactivity", "ai initiative", "autonomous action", "mixed-initiative"],
+    "ai-workforce-transformation-implementation": ["workforce transformation", "implementation", "scaling", "pilot", "transformation roadmap"],
+    "behavioral-human-centered-ai": ["human-centered ai", "bounded rationality", "behavioral", "change management", "user acceptance"],
+    "cognitive-debt": ["cognitive debt", "cognitive offloading", "delayed cost", "learning transfer"],
+    "cognitive-surrender": ["cognitive surrender", "uncritical acceptance", "answer adoption", "confidently wrong", "overtrust"],
+    "cognitive-sustainability": ["cognitive sustainability", "human capability", "atrophy", "reflection", "sustainable work"],
+    "digital-work-strain": ["technostress", "digital strain", "overload", "boundary invasion", "fatigue", "burnout", "well-being", "occupational health"],
+    "domain-expertise-in-agentic-work": ["domain expertise", "domain knowledge", "expert users", "verification", "steer"],
+    "employee-change-support": ["change support", "championing", "compliance", "resistance to change", "organizational change"],
+    "expert-authority-in-ai-decisions": ["expert authority", "professional authority", "explainability", "client acceptance", "professional judgment"],
+    "human-ai-agent-interaction-design": ["interaction design", "agent interface", "oversight controls", "explanation", "workflow interface", "usable control"],
+    "human-ai-co-creation-modes": ["co-creation", "cocreation", "centaur", "cyborg", "self-automator", "workflow modes"],
+    "occupational-boundary-recomposition": ["occupational boundaries", "task crossover", "boundary work", "role architecture", "jurisdiction"],
+    "organizational-learning-capability": ["organizational learning", "learning organization", "experimentation", "knowledge transfer", "absorptive capacity"],
 }
 
 # On-mission gate: a candidate must touch BOTH an AI/tech term AND a work/labor
@@ -238,7 +267,7 @@ SEED_QUERIES = [
 RANK_WEIGHTS = {
     "recency": 0.30,             # newer ranks higher, decayed by RECENCY_HALFLIFE_DAYS
     "authority": 0.25,           # SOURCE_AUTHORITY
-    "concept_match": 0.30,       # overlap with WIKI_CONCEPTS / thin areas
+    "concept_match": 0.30,       # overlap with the derived concept vocabulary (topics + enrichment)
     "citation_proximity": 0.15,  # cites / cited-by an existing wiki source
 }
 RECENCY_HALFLIFE_DAYS = 365

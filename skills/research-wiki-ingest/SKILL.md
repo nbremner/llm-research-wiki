@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.3.0
+version: 2.3.1
 author: Hermes Agent
 license: MIT
 metadata:
@@ -248,7 +248,7 @@ git commit -m "wiki: ingest source <slug>"   # + Co-Authored-By trailer per repo
 
 ### 9. Integrate into topics (owner-approved)
 
-If the owner rejects the source itself during topic review (for example, because its evidence is not rigorous enough), treat that as a source-level rejection rather than merely discarding the topic proposal: restore/remove all uncommitted topic edits, delete the committed source record in a dedicated follow-up commit, push and verify it, and move the raw PDF into the existing Drive `discarded` folder. Do **not** trash the PDF or return it to `_triage/wiki`; `discarded` preserves the rejection without re-queuing the source. Verify the file is not trashed, has `discarded` as its sole intended parent, the wiki working tree is clean, `origin/main` matches local `HEAD`, and graph lint is clean. If no `discarded` folder can be found unambiguously, stop and ask rather than inventing a folder or deleting the file.
+If the owner rejects the source itself during topic review (for example, because its evidence is not rigorous enough), treat that as a source-level rejection rather than merely discarding the topic proposal: restore/remove all uncommitted topic edits, delete the committed source record in a dedicated follow-up commit, push and verify it, and move the raw PDF into the existing Drive `discarded` folder. Do **not** trash the PDF or return it to `_triage/wiki`; `discarded` preserves the rejection without re-queuing the source. Verify the file is not trashed, has `discarded` as its sole intended parent, the wiki working tree is clean, `origin/main` matches local `HEAD`, and graph lint is clean. If no `discarded` folder can be found unambiguously, stop and ask rather than inventing a folder or deleting the file. Then write the rejection back to the scan pipeline so the triage record stops saying `wiki`: `uv run /root/research-wiki-tools/scan_triage_apply.py --amend --drive-file-id <Drive file id> --to discard --reason "owner rejected at ingest: <one line>" --execute` — the applier finds the record across local manifests by the artifact's Drive file id (stable across the rename/move), appends the ruling to its `proposal_history`, updates the local and Drive manifest copies, and moves nothing in Drive. Exit code 3 means no scan record matched: the PDF was dropped into `_triage/wiki` by hand, so there is nothing to amend — note it in the completion note and move on.
 
 Before editing topic pages, perform a **topic-map assessment**. Do not assume the source must fit the
 current topic list. Identify:
@@ -389,6 +389,7 @@ Apply:
 - [ ] Topic diff approved by owner before commit (attended) OR left as flagged proposal (unattended).
 - [ ] Lint clean after the final committed state (and rerun after any rebase).
 - [ ] Intended wiki commits pushed; `origin/main` verified against local `HEAD`.
+- [ ] If the owner rejected the source: PDF in Drive `discarded`, source record removed, and the scan manifest amended (`--amend`, or exit 3 noted).
 - [ ] Unrelated local changes were not staged and are noted if still present.
 - [ ] Completion note produced.
 
