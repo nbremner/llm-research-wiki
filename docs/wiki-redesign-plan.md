@@ -1,7 +1,7 @@
 # Wiki Plan — Ingest Automation (current) + Redesign Record (archived)
 
-Status: **ACTIVE build plan — ingest automation, owner-approved 2026-09-07.** Phase 0 shipped
-2026-09-07 (see §11 Build log); Phases 1–4 pending.
+Status: **ACTIVE build plan — ingest automation, owner-approved 2026-09-07.** Phases 0 and 1
+shipped 2026-09-07 (see §11 Build log); Phases 2–4 pending.
 The original 2026-06 markdown-in-git redesign this file used to describe is **built and archived**
 in the appendix at the bottom; everything above the appendix is the current plan.
 
@@ -242,6 +242,23 @@ the approval loop and must keep growing under automation.
   computed (lint) or external (Drive manifests, GitHub PRs).
 
 ## 11. Build log
+
+- **2026-09-07 — Phase 1 shipped:** `research-wiki-ingest` 2.4.0 gains the **Scheduled source
+  drain** mode (§ Modes in the skill): ≤5 ingested / ≤10 examined per run, oldest first, steps 1–8
+  only, Feeds over existing slugs with new-topic ideas as plain text, exact duplicates →
+  `_triage/discarded`, judgment cases skipped and listed under "Needs your call", `--fail-on High`
+  gate with orphan sources as the expected queue, push + verify, one digest. Full-text `.md` artifacts
+  (60 of 124 queued; 8 of them bot-check stubs) handled explicitly. Deployed as hermes cron
+  `2586a6d3525f` "Daily research-wiki source drain", 09:30 PT, model pinned to `gpt-5.6-terra`
+  (`openai-codex`), delivering to #research-digest. Owner decisions recorded the same day: keep the
+  plan's caps (drain the 124-file queue slowly); **foundational papers without AI content are wiki
+  material** (rubric + `wiki/schema.md`); fine-grained PAT deferred (the classic token expires
+  2026-09-16 — the drain's push fails after that until it is replaced). First drain run (manual
+  trigger, attended): 5 of the 5 oldest queued artifacts ingested and pushed (`0526374..94944c6`),
+  lint High-clean with 5 expected orphan-source findings, ~55 minutes wall clock; its digest was lost
+  because LC stopped the process on a false alarm just after the push (an unpaginated Drive count
+  had suggested unexpected moves — there were none). `hermes cron run` executes the job inside the
+  CLI process and blocks until it finishes; trigger manual runs in the background.
 
 - **2026-09-07 — Phase 0 shipped** (a)–(d): open-set carryover in `scan_triage_apply.py`
   (`--latest` = every manifest in a `--carryover-days` window with unresolved records, merged;
