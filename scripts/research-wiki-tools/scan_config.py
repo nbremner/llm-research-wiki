@@ -24,6 +24,17 @@ TRIAGE_READ_ONCE_FOLDER_ID = "1RQdnNN1d_iWegTWSqr4jZ7lYV86vtL8o"
 TRIAGE_DISCARDED_FOLDER_ID = "1fNRrNYxwxB87lQeXtfiZ7Fc6S5FMcwNx"
 TRIAGE_LEDGER_FOLDER_ID = "1Fw7J30oerCSCYSLcEB5k0mbbdfOGwyx1"
 
+# Canonical raw store for INGESTED artifacts (mirrors the git split, 2026-09-07):
+#   public-literature-wiki/_sources              <- wiki/sources/            (human-reviewed)
+#   public-literature-wiki/_sources/_unreviewed  <- wiki/sources/unreviewed/ (auto-written)
+# The leading underscores are deliberate (owner: sort to the top of the folder).
+# scripts/research-wiki-tools/drive_review_sync.py keeps artifacts in the folder
+# their record's review status says; the ingest skill refiles new artifacts into
+# _unreviewed and the approving commit promotes them.
+PUBLIC_ROOT_FOLDER_ID = "17vtadKJwx81gjsS85kwaogyQvZweZ_n_"       # public-literature-wiki (container)
+PUBLIC_SOURCES_FOLDER_ID = "1p8CGIWJ6OI7boK6PvJWIIW6i1q0SP2uU"    # _sources
+PUBLIC_UNREVIEWED_FOLDER_ID = "1xaYFRK0yBxhRfCVeCfLKXu84aW1-jhwS" # _sources/_unreviewed
+
 # Drive OAuth token used by NJ's research tooling (authorized-user JSON).
 DEFAULT_TOKEN_PATH = "/root/.hermes/google_token.json"
 DEFAULT_OUT_ROOT = "/root/research-wiki-runs"
