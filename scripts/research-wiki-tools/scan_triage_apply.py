@@ -199,6 +199,7 @@ def apply_dispositions(manifest: dict[str, Any], dispositions: dict[str, Any],
             plan["read_once"].append({**item, "summary": e.get("summary")
                                       or (rec.get("abstract") or "")[:280]})
         elif e.get("acquired_path"):
+            artifact_kind(e["acquired_path"])  # fail loud at plan time, not mid-execution
             rec.update(stamp)
             plan["uploads"].append({**item, "path": e["acquired_path"]})
         elif rec.get("artifact_drive_id"):
@@ -553,6 +554,26 @@ def load_local_manifests(out_root: str, exclude: Path | set[Path] | None = None,
 # Execution (Drive side effects)
 # ---------------------------------------------------------------------------
 
+# Acquired artifacts handed to the applier via `acquired_path`: a real PDF, or a
+# full-text markdown render (Jina reader / rung 3) — the same two artifact
+# classes the harness itself writes to _triage/pending.
+ARTIFACT_KINDS = {
+    ".pdf": ("application/pdf", "full-pdf"),
+    ".md": ("text/markdown", "full-text"),
+    ".txt": ("text/plain", "full-text"),
+}
+
+
+def artifact_kind(path: str | Path) -> tuple[str, str]:
+    """(mime type, acq_state) for an acquired artifact, by extension; unknown
+    extensions fail loud rather than being uploaded as a PDF."""
+    ext = Path(path).suffix.lower()
+    if ext not in ARTIFACT_KINDS:
+        raise ValueError(f"unsupported acquired artifact type {ext!r} for {path}; "
+                         f"expected one of {sorted(ARTIFACT_KINDS)}")
+    return ARTIFACT_KINDS[ext]
+
+
 def execute_drive_actions(service, manifest: dict[str, Any],
                           plan: dict[str, list[dict[str, Any]]]) -> None:
     """Perform the plan's Drive moves/uploads and stamp executed_at on records."""
@@ -563,11 +584,11 @@ def execute_drive_actions(service, manifest: dict[str, Any],
         records[mv["id"]]["executed_at"] = c.utc_now_iso()
         print(f"moved -> _triage/wiki: {mv['title'][:70]}", flush=True)
     for up in plan["uploads"]:
+        mime, acq_state = artifact_kind(up["path"])
         data = Path(up["path"]).read_bytes()
         name = Path(up["path"]).name
-        fid = c.drive_upload_bytes(service, cfg.TRIAGE_WIKI_FOLDER_ID, name, data,
-                                   "application/pdf")
-        records[up["id"]].update({"artifact_drive_id": fid, "acq_state": "full-pdf",
+        fid = c.drive_upload_bytes(service, cfg.TRIAGE_WIKI_FOLDER_ID, name, data, mime)
+        records[up["id"]].update({"artifact_drive_id": fid, "acq_state": acq_state,
                                   "executed_at": c.utc_now_iso()})
         print(f"uploaded -> _triage/wiki: {name}", flush=True)
     for bucket, folder_id, label in (

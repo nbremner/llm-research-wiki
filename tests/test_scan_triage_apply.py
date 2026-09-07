@@ -89,6 +89,39 @@ def test_acquired_path_becomes_upload():
     assert plan["needs_acquisition"] == []
 
 
+def test_acquired_markdown_uploads_as_full_text():
+    d = _dispositions()
+    d["entries"][1]["acquired_path"] = "/tmp/b.md"
+    manifest, plan = sta.apply_dispositions(_manifest(), d)
+    assert [u["id"] for u in plan["uploads"]] == ["doi:10.1/b"]
+    assert sta.artifact_kind("/tmp/b.md") == ("text/markdown", "full-text")
+    assert sta.artifact_kind("/tmp/b.PDF") == ("application/pdf", "full-pdf")
+    d["entries"][1]["acquired_path"] = "/tmp/b.docx"
+    try:
+        sta.apply_dispositions(_manifest(), d)
+        raise AssertionError("expected ValueError for an unsupported artifact type")
+    except ValueError as e:
+        assert "unsupported acquired artifact type" in str(e)
+    # execution uploads with the markdown mime and stamps full-text
+    uploads = []
+    saved = (sta.c.build_drive_service, sta.c.drive_move, sta.c.drive_find, sta.c.drive_upload_bytes)
+    with tempfile.TemporaryDirectory() as td:
+        art = Path(td) / "b.md"; art.write_text("Title: x\n\nMarkdown Content:\nbody", encoding="utf-8")
+        d["entries"][1]["acquired_path"] = str(art)
+        manifest, plan = sta.apply_dispositions(_manifest(), d)
+        try:
+            sta.c.build_drive_service = lambda _t: object()
+            sta.c.drive_move = lambda *_a: None
+            sta.c.drive_find = lambda *_a: None
+            sta.c.drive_upload_bytes = lambda _s, folder, name, data, mime: (uploads.append((folder, name, mime)) or "new-id")
+            sta.execute_plan(manifest, plan, Path(td) / "manifest-x.json", "/unused")
+        finally:
+            sta.c.build_drive_service, sta.c.drive_move, sta.c.drive_find, sta.c.drive_upload_bytes = saved
+    assert (sta.cfg.TRIAGE_WIKI_FOLDER_ID, "b.md", "text/markdown") in uploads
+    rec = next(r for r in manifest["records"] if r["id"] == "doi:10.1/b")
+    assert rec["acq_state"] == "full-text" and rec["artifact_drive_id"] == "new-id"
+
+
 def test_cap_is_enforced():
     manifest, plan = sta.apply_dispositions(_manifest(), _dispositions(), max_auto_wiki=0)
     assert plan["moves"] == []
