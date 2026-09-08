@@ -1,7 +1,7 @@
 ---
 title: Human-AI task allocation
 status: active
-updated: 2026-08-31
+updated: 2026-09-08
 ---
 
 # Human-AI task allocation
@@ -11,6 +11,8 @@ Human-AI task allocation is the design problem of deciding, at the level of a sp
 [[2021-bansal-most-accurate-ai-best-teammate]] gives the topic a foundational allocation model before dynamic routing enters the picture. A human accepts AI advice only when its confidence exceeds a threshold determined by human accuracy, the cost of solving, and the cost of mistakes; optimization should therefore prioritize system performance in the accept region rather than treat aggregate classifier accuracy as the allocation criterion. This is a deliberately narrow advice-and-override model, but it makes the allocation premise explicit: the relevant objective is the utility of a workflow with a human response, not the AI's score in isolation.
 
 [[2026-zhang-fatigue-aware-learning-defer]] gives the topic its first direct algorithmic source. In fatigue-aware learning to defer, each deferral to a human expert changes cumulative workload and therefore future human performance. The allocation policy should therefore be stateful: a difficult case may belong with a fresh expert, while a later difficult case may belong with AI if accumulated fatigue makes human error more likely.
+
+[[2025-mokashi-cognitive-aware-shift-scheduling]] extends the worker-state-sensitive allocation idea as a conceptual manufacturing-scheduling proposal: shift and task assignments should incorporate cognitive load, fatigue, and emotional well-being rather than treating workers as interchangeable capacity. It frames allocation as a balance between production objectives and burnout or fatigue risk and calls for data-use, fairness, transparency, and human-oversight safeguards when scheduling affects worker conditions. Because the article offers a framework and literature-based argument rather than a field evaluation, it does not establish that its proposed state measures improve scheduling, reduce burnout, or preserve production outcomes.
 
 [[2025-bastani-human-ai-contracting-paradox]] adds a contracting constraint to allocation. Even when a human-AI arrangement is first-best for total system value, a principal may route away from collaboration if the human's inspection and correction effort is too costly to incentivize under rare AI failures. Allocation therefore depends not only on who is more accurate on this case, but on whether the organization can economically sustain the human effort required for the hybrid mode.
 
@@ -30,7 +32,7 @@ The important I-O bridge is that allocation quality depends on a human-state mod
 
 ## Connections
 - Relates to [[human-ai-task-taxonomy]] because allocation policies need task dimensions such as decision authority, audit requirement, output definition, AI contribution, and human persona before routing decisions can be interpreted.
-- Relates to [[cognitive-load-in-ai-assisted-work]] because workload and fatigue change the value of human involvement across a sequence, not just within a single static task.
+- Relates to [[cognitive-load-in-ai-assisted-work]] because workload and fatigue change the value of human involvement across a sequence, not just within a single static task; [[2025-mokashi-cognitive-aware-shift-scheduling]] proposes extending that logic to cognitive and emotional worker-state inputs in manufacturing scheduling.
 - Relates to [[work-redesign]] because dynamic allocation changes where human judgment enters the workflow and which nodes require escalation, rest, verification, or protection.
 - Relates to [[automation-and-substitution]] because task-level routing can substitute for human action at some turns while preserving human involvement at others.
 - Relates to [[automation-complacency]] because allocation systems may reduce human burden appropriately or quietly remove the practice and attention needed for competent oversight.
@@ -40,7 +42,7 @@ The important I-O bridge is that allocation quality depends on a human-state mod
 - [[2026-zhang-fatigue-aware-learning-defer]] shows performance benefits in simulated benchmark settings, while [[2023-arcot-cognitive-load-optimization-contact-center-agents]] reports live dynamic routing from biometric and voice signals. Neither establishes whether workers accept routing that changes from inferred states, whether cognitive-load inference is valid for consequential allocation, or whether organizations can govern the resulting surveillance and fairness risks.
 - Optimizing allocation for accuracy and coverage can conflict with preserving worker agency, learning, task significance, and accountability. A system that routes around fatigue may improve immediate performance while leaving harder questions about staffing, recovery, and work design untouched.
 - [[2021-bansal-most-accurate-ai-best-teammate]] makes allocation depend on a fixed confidence threshold and modeled human accuracy, effort cost, and mistake cost; [[2026-zhang-fatigue-aware-learning-defer]] instead makes human capacity change over a sequence. Together they show why static AI accuracy is insufficient, but neither establishes which worker, organizational, legitimacy, or learning variables a deployed allocation policy should optimize or who should have authority to set those trade-offs.
-- The wiki needs field evidence on allocation policies that use real human-state signals — fatigue, skill, confidence, workload, motivation, or accountability — rather than assuming those states can be cleanly simulated or inferred.
+- The wiki needs field evidence on allocation policies that use real human-state signals — fatigue, skill, confidence, workload, motivation, or accountability — rather than assuming those states can be cleanly simulated or inferred; [[2025-mokashi-cognitive-aware-shift-scheduling]] supplies a conceptual scheduling framework, not that validation.
 
 - [[2026-hitzig-agentic-coding-expertise]] shows an apparently productive planning/execution split, but it leaves open when preserving human planning is enough and when domain experts also need to inspect implementation details directly.
 - [[2025-wang-ai-agents-human-work]] motivates programmability as an allocation signal, but programmability is not a validated routing construct and may be confounded with the tools, task representations, and rubrics available in the study. A step that is easy to script can still require human accountability, and a visually dependent step may become agent-suitable as interfaces change.

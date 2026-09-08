@@ -7,7 +7,7 @@ doi: 10.3389/fpsyg.2025.1690238
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-09-08
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1eyKGyDIJuLQUO0lrPpd6cyYrb79SMWwE
 file_hash: 1b8770ae93d8ed89b8def2d6f1fdde7eb9e2f82ea3d8474d901907a3e2585769
 ---
@@ -30,4 +30,3 @@ file_hash: 1b8770ae93d8ed89b8def2d6f1fdde7eb9e2f82ea3d8474d901907a3e2585769
 
 ## Feeds
 - [[ai-enabled-job-crafting]]
-- [[ai-adoption]]

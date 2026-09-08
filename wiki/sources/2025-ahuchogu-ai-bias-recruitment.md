@@ -7,7 +7,7 @@ doi: 10.52783/jier.v5i3.3262
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-09-07
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1iEGepkk2cAYn7xTZ0cpSXkB41-RuhjlE
 file_hash: 28601a24aedc30ed9739758195a811da7abca78526af7e3b7a14a3003b004cfd
 ---
@@ -29,4 +29,3 @@ file_hash: 28601a24aedc30ed9739758195a811da7abca78526af7e3b7a14a3003b004cfd
 
 ## Feeds
 - [[algorithmic-assessment]]
-- [[responsible-ai-deployment]]

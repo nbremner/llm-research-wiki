@@ -7,7 +7,7 @@ doi: 10.22178/pos.116-10
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-09-07
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1O9vAgbBPmI3dQEDnlidAMaCh99ZUdHTD
 file_hash: c2e2171c3989067ec6e0d28a15dd3cc40ca124705aef6ec9f06a338902a8866e
 ---
@@ -29,4 +29,3 @@ file_hash: c2e2171c3989067ec6e0d28a15dd3cc40ca124705aef6ec9f06a338902a8866e
 
 ## Feeds
 - [[algorithmic-assessment]]
-- [[inclusive-hr-systems]]
