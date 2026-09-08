@@ -1,7 +1,7 @@
 ---
 title: Responsible AI deployment
-status: stub
-updated: 2026-08-31
+status: active
+updated: 2026-09-08
 ---
 
 # Responsible AI deployment
@@ -13,6 +13,8 @@ Responsible AI deployment is the governance and design problem of putting AI int
 The practical stance is layered. First principles such as beneficence, nonmaleficence, integrity, justice, respect for rights and dignity, transparency, and accountability set the ethical floor. Domain-specific frameworks translate those principles into selection, training, monitoring, assessment, or automation requirements. Evidence standards then test whether the AI system actually does what deployment claims require. This layering matters because generic principles can be too abstract, while AI checklists and vendor assurances can age quickly or fail to fit the work context.
 
 The strongest deployment claim for the wiki is proactive: responsible AI cannot wait until after harms are observed at scale. It requires pre-deployment scrutiny of evidence, data provenance, affected groups, human authority, monitoring plans, appeal paths, accountability boundaries, and worker experience. It also requires humility about incomplete evidence: when validation is unavailable or fast-moving, the right answer is not blind adoption or indefinite paralysis, but narrower scope, safeguards, transparent uncertainty, ongoing monitoring, and willingness to stop or redesign the system.
+
+[[2026-westover-ai-washing-phantom-productivity]] adds a workforce-restructuring boundary: anticipated AI capability is not evidence that a system has functionally substituted for the work used to justify a layoff or role reduction. The article calls premature AI attribution “AI-washing” and recommends task-relevant performance benchmarks, human baselines, pilot evidence, stakeholder review, monitoring, and reversal conditions before replacement decisions. Its reported AI-attributed job-cut figures are public attributions rather than verified substitution, and its diagnosis is a practitioner framework rather than a prevalence estimate; the governance value is therefore the demand to make the claimed productivity mechanism and its workforce consequences independently inspectable, not a claim that every AI-linked reduction is illegitimate.
 
 [[2026-lovett-tragedy-cognitive-commons]] adds a longer-horizon governance problem: formal human review is not a sufficient safeguard if adoption removes the developmental work that produces reviewers with independent domain command. The article proposes that governance must sometimes protect professional regeneration infrastructure—through organizational developmental stages, professional-association standards, or policy—rather than treating competent human oversight as an indefinitely available input. These mechanisms are conceptual hypotheses, not established deployment practices.
 
@@ -48,7 +50,7 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 - Relates to [[ai-mediated-work-experience]] because responsible deployment has to account for autonomy, competence, privacy, psychological safety, identity, workload, and felt control, not only productivity or adoption.
 - Relates to [[ai-mediated-learning]] because workplace learning agents need clear accountability boundaries before bad advice is blamed on workers or hidden inside vendor claims.
 - Relates to [[behavioral-human-centered-ai]] because deployment safeguards have to work for boundedly rational humans under uncertainty, trust pressure, loss aversion, and organizational incentives.
-- Relates to [[automation-and-substitution]] because replacing or recomposing work raises ethical questions that are not answered by capability or cost alone; worker rights, dignity, reskilling, agency, and reactions matter.
+- Relates to [[automation-and-substitution]] because replacing or recomposing work raises ethical questions that are not answered by anticipated capability or cost alone; responsible deployment needs task-relevant evidence of functional substitution as well as attention to worker rights, dignity, reskilling, agency, and reactions.
 - Relates to [[competency-modeling]] because AI-enabled skills architectures turn competency definitions into data systems that require privacy, correction, governance, and evidence about appropriate use.
 
 ## Contradictions & open questions
@@ -59,5 +61,6 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 - [[2025-tona-deployment-ai-infer-employee-skills]] shows worker councils and employee correction loops affecting deployment pace and model calibration, but it is still a management-facing case; the wiki needs evidence from employee perspectives on whether such systems feel developmental, surveillant, fair, or useful.
 - [[2025-randazzo-genai-power-persuader]] makes human oversight less reassuring as a governance claim. If the oversight routine asks workers to challenge the same system that is producing persuasive justifications, deployment needs separate checks on validation quality, not just a nominal human reviewer.
 - [[2025-schweitzer-leading-ai-adoption]] creates a governance tension: behavioral insight can make responsible deployment more realistic, but it can also be used to overcome employee resistance without changing the underlying system. Responsible deployment needs evidence that behavioral interventions improve informed acceptance, contestability, and well-being rather than simply smoothing implementation.
+- **Anticipated productivity vs. demonstrated substitution.** [[2026-westover-ai-washing-phantom-productivity]] argues that organizations may use anticipated AI productivity to rationalize workforce reductions before the system demonstrably replaces the affected work. The evidence base does not yet establish how prevalent this pattern is or which independent benchmarks, pilots, and reversal conditions reliably distinguish justified reconfiguration from AI-washing.
 - **Pre-decision scoring vs. participatory governance.** [[2026-rodriguez-when-not-to-automate]] offers auditable role-level scores, but its structured inputs include judgments about expertise, trust, and morale on which reasonable assessors can disagree. The open question is whether a formal preservation protocol can make those disagreements visible and contestable rather than converting them into an apparently objective authorization for a cost-driven outcome.
 - **Human warrant vs. representative authority.** [[2026-tomita-philosophy-cognitive-assay]] correctly keeps the legitimacy of value-laden judgments separate from AI capability, but its proposed expert-scoring role does not itself answer who has standing when workers, managers, affected communities, professional bodies, and regulators disagree about the relevant values. The framework should not become a rationale for expert authority without participation, transparency, and appeal.

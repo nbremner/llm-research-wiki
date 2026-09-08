@@ -7,7 +7,7 @@ doi: 10.48550/arXiv.2607.15769
 source_type: paper
 publication_status: preprint
 retrieved: 2026-09-08
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1aauO017P8kucGr44Uix-a4jSlAT34OTE
 file_hash: 0d395390794519b370837d8a918c08691408504772a949ac77214a29c46e9c60
 ---
@@ -31,5 +31,3 @@ file_hash: 0d395390794519b370837d8a918c08691408504772a949ac77214a29c46e9c60
 
 ## Feeds
 - [[agentic-organization-design]]
-- [[human-ai-agent-interaction-design]]
-- *Proposed new topic:* agent-mediated-contribution-governance — project-level rules, evidence obligations, accountability states, and review gates for AI-mediated contributions are more specific than agent topology or user-facing controls.

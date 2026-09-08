@@ -7,7 +7,7 @@ doi: 10.70175/hclreview.2020.33.2.2
 source_type: article
 publication_status: other
 retrieved: 2026-09-08
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1o0JQ7eAoVKzkTVCOQ4Ifdhi7Gp4bW6zx
 file_hash: 645769e3a7a7aa2408522fe713ce592f9ed6655a62fe52788f2c873e9a35286d
 ---
@@ -31,6 +31,4 @@ file_hash: 645769e3a7a7aa2408522fe713ce592f9ed6655a62fe52788f2c873e9a35286d
 
 ## Feeds
 - [[automation-and-substitution]]
-- [[ai-workforce-impact-measurement]]
-- [[work-redesign]]
 - [[responsible-ai-deployment]]

@@ -1,7 +1,7 @@
 ---
 title: Automation and substitution
 status: active
-updated: 2026-08-06
+updated: 2026-09-08
 ---
 
 # Automation and substitution
@@ -56,6 +56,8 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 
 [[2026-wang-agent-development-real-world-work]] adds a benchmark-representativeness warning. If agent benchmarks overrepresent programming-heavy, easily specified, and easily verified tasks, then rising benchmark performance is weak evidence for broad labor substitution until the evaluated tasks resemble the domains, skills, complexity, and verification conditions of real work.
 
+[[2026-westover-ai-washing-phantom-productivity]] identifies a distinct anticipatory pathway: organizations can attribute workforce reductions to AI before the system functionally substitutes for the eliminated work. Its AI-washing framework treats temporal mismatch, capability gaps, and later shifts in attribution as diagnostic prompts rather than proof of prevalence, and argues that cuts made before validated replacement can remove tacit knowledge and trust needed for later implementation. The article therefore supports performance-based deployment gates—task-relevant human baselines, pilots, monitoring, stakeholder review, and reversal conditions—rather than treating an AI narrative or a stated layoff cause as substitution evidence.
+
 [[2025-friis-performance-principle]] adds a social-feasibility boundary to substitution claims. In a U.S. survey across 940 occupations, support for full automation nearly doubled when AI was described as outperforming humans at lower cost, but roughly 12% of occupations remained morally repugnant for AI use. Substitution forecasts therefore need [[moral-boundaries-of-ai-automation]] alongside capability, cost, worker desire, and realized adoption evidence.
 
 [[2025-landers-ethical-use-ai-iop]] adds an ethical deployment boundary to replacement claims. Worker replacement is not settled by technical feasibility, cost, or owner rights under capitalism: deployment decisions still need to consider worker dignity, rights, reskilling, reactions, and the organizational duty to monitor harms when AI changes or eliminates roles. This makes [[responsible-ai-deployment]] a governance layer for substitution decisions rather than an after-the-fact sentiment check.
@@ -69,7 +71,7 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 - Relates to [[moral-boundaries-of-ai-automation]] because a share of occupations remains morally off-limits for automation even when AI outperforms humans at lower cost, so social feasibility bounds technical substitution.
 - Relates to [[automation-complacency]] because substitution can happen behaviorally — through reliance and effort migration — while the human formally remains the decision-maker.
 - Relates to [[agentic-delegation]] because delegation modes determine whether autonomous execution substitutes for human action turn-by-turn, and users may refuse the mode that performs best.
-- Relates to [[ai-workforce-impact-measurement]] because the gap between theoretical exposure, observed use, and realized labor-market movement is a measurement problem before it is a substitution fact.
+- Relates to [[ai-workforce-impact-measurement]] because the gap between theoretical exposure, observed use, AI-attributed workforce reductions, and realized labor-market movement is a measurement problem before it is a substitution fact.
 - Relates to [[work-redesign]] because automating a task often recomposes the job — new monitoring, validation, and accountability work — rather than removing the worker.
 - Relates to [[responsible-ai-deployment]] because replacement decisions carry governance obligations — worker dignity, reskilling, harm monitoring — that are not settled by technical feasibility or cost.
 
@@ -95,6 +97,7 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 - **Observed exposure vs. realized displacement.** [[2026-massenkoff-labor-market-impacts-ai]] makes substitution evidence stronger by using observed work-related usage and automation weighting, but it still finds little labor-market movement so far. The plausible early channel may be slower hiring into exposed occupations, especially for young workers, rather than unemployment among incumbent workers.
 - **Exposure plus demand is still not displacement.** [[2026-richmond-ai-jobs-transition-framework]] improves on exposure-only substitution logic by adding human necessity and elasticity, but its archetypes remain pressure categories. They do not show whether firms reduce headcount, redesign roles, expand output, or move work into new occupations.
 - **Benchmark success vs. real-work substitution.** [[2026-wang-agent-development-real-world-work]] implies that substitution claims need a validity check: the benchmark may measure convenient agent tasks rather than the job domains, interpersonal work, ambiguity, and end-to-end accountability that determine whether labor can actually be replaced.
+- **AI-attributed cuts vs. functional substitution.** [[2026-westover-ai-washing-phantom-productivity]] argues that public AI narratives can precede or exceed demonstrated task replacement; its reported layoff-attribution figures are not prevalence evidence for AI-washing or verified displacement. The unresolved empirical question is how often organizations reduce headcount after task-relevant replacement has been validated, versus using anticipated automation to rationalize a restructuring decision already made.
 - **Contracting failure vs. technical failure.** [[2025-bastani-human-ai-contracting-paradox]] implies that organizations may substitute toward AI-only systems or away from AI not because humans add no value, but because the value of human vigilance is hard to contract for. That creates an adoption/substitution mechanism the wiki should keep separate from capability, worker preference, and complacency.
 - **Performance resistance vs. principle resistance.** [[2025-friis-performance-principle]] cuts against the assumption that better AI eventually dissolves all resistance: much public opposition is performance-contingent, but a smaller moral floor remains for care, therapy, spiritual leadership, and other human-presence roles.
 - **Protocol determinism vs. judgment validity.** [[2026-rodriguez-when-not-to-automate]] makes a protocol reproducible once structured inputs are set, but its input judgments, weights, thresholds, and financial-services calibration are expert-elicited and not yet validated against realized knowledge loss, resilience failure, regulatory action, or trust outcomes. A repeatable automate/preserve recommendation is not yet an empirically warranted one.

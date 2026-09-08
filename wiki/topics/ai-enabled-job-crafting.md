@@ -1,7 +1,7 @@
 ---
 title: AI-enabled job crafting
-status: stub
-updated: 2026-08-31
+status: active
+updated: 2026-09-08
 ---
 
 # AI-enabled job crafting
@@ -14,16 +14,19 @@ AI-enabled job crafting tracks when workers use AI as a job resource to reshape 
 
 [[2026-bakker-artificial-intelligence-job-design]] places this worker-led mechanism inside a proposed dynamic JD-R model. It distinguishes bottom-up AI adoption—employees choosing how and when to use AI—from top-down implementation, and argues that AI-readiness resources may make bottom-up use more likely to support crafting, learning, and engagement. It further proposes that gain spirals can make resource-rich workers increasingly able to craft work with AI, while loss spirals leave constrained workers with less capacity to experiment. The account makes an inequality risk visible, but it remains a research agenda rather than longitudinal evidence that AI-driven crafting produces those diverging trajectories.
 
-The practical design implication is not simply “train workers to use GenAI.” If GenAI becomes a job resource, organizations need to notice the informal redesign workers are already doing: which repetitive tasks are being reduced, which challenging or higher-value tasks are being expanded, which collaboration patterns change, and whether this local crafting is supported by valid performance criteria and governance.
+[[2026-liu-organizational-ai-adoption-job-crafting]] adds an organizational-adoption pathway that is not uniformly beneficial or harmful: in a three-wave survey of Chinese employees, organizational AI adoption was associated with approach job crafting through AI-supported autonomy and with avoidance job crafting through AI anxiety. AI knowledge sharing moderated the adoption-to-motivation relationships and their indirect links to both forms of crafting. The synthesis implication is that organizational AI adoption can change the motivational conditions under which workers reshape work, rather than simply supplying a resource for productive bottom-up crafting.
+
+The practical design implication is not simply “train workers to use GenAI.” If GenAI becomes a job resource, organizations need to notice the informal redesign workers are already doing: which repetitive tasks are being reduced, which challenging or higher-value tasks are being expanded, which collaboration patterns change, and whether this local crafting is supported by valid performance criteria, governance, and knowledge-sharing conditions.
 
 ## Connections
 - Connects to [[work-redesign]] because bottom-up job crafting can become a source of redesign evidence, but it can also drift away from formal accountability if organizations do not see it.
 - Connects to [[ai-mediated-work-experience]] because job crafting is one channel through which AI may change autonomy, competence, workload, engagement, and meaning.
 - Connects to [[employee-engagement]] because Vuong treats work engagement as a separate mediator alongside job crafting; the wiki should preserve that distinction rather than collapsing proactive redesign into affective motivation.
 - Connects to [[ai-readiness]] because digital competence may determine whether employees can turn GenAI access into useful job crafting rather than shallow or brittle use.
-- Connects to [[ai-as-a-job-resource]] because organizational support, time, autonomy, and personal AI readiness determine whether access can be converted into bottom-up work reshaping rather than added demand.
+- Connects to [[ai-as-a-job-resource]] because organizational support, time, autonomy, knowledge sharing, and personal AI readiness may determine whether access is converted into approach crafting rather than anxiety-linked avoidance or added demand.
 
 ## Contradictions & open questions
+- [[2026-liu-organizational-ai-adoption-job-crafting]] complicates the earlier worker-use-as-resource account: organizational AI adoption was associated with both autonomy-linked approach crafting and anxiety-linked avoidance crafting. The study does not establish whether adoption causes either motivational reaction, whether these pathways occur under voluntary bottom-up use, or how they relate to the broadly measured positive crafting-performance path in [[2026-vuong-genai-job-performance]].
 - [[2026-vuong-genai-job-performance]] is cross-sectional and self-reported, so it cannot show whether GenAI usage causes job crafting or whether proactive, high-performing employees are simply more likely to use GenAI and report crafting their work.
 - The source measures job crafting broadly, not detailed task-level changes. The wiki still needs field evidence that observes what workers actually change when they “craft” AI-mediated work.
 - [[2025-mayer-generation-ai-job-crafting]] provides those detailed mechanisms in one consulting case, but its signal-crafting account is interpretive and not yet a validated construct; replication is needed before treating it as a general dimension of job crafting.

@@ -1,7 +1,7 @@
 ---
 title: AI workforce transformation implementation
 status: active
-updated: 2026-08-03
+updated: 2026-09-08
 ---
 
 # AI workforce transformation implementation
@@ -13,6 +13,8 @@ AI workforce transformation is not the rollout of an AI tool. It is the re-archi
 The sequence is recursive: pilots reveal missing readiness, redesigned workflows change skill requirements, and worker experience changes adoption. Keep the unit of analysis at the accountable work system—not the tool, prompt, occupation, or isolated task.
 
 [[2026-westover-automation-wont-save-you]] supplies a practitioner articulation of the translation gap: individual AI speed gains can be absorbed by unchanged handoffs, review capacity, decision cadence, and role boundaries rather than becoming enterprise value. It is not independent empirical evidence for the sequence below, but it usefully keeps capability expansion, apprenticeship redesign, and distributed governance inside the transformation question rather than treating them as optional post-adoption initiatives.
+
+[[2026-sarkar-ai-hype-workflow-reality]] similarly frames transformation as a progression from decentralized exploration through codified practices and recurring-workflow integration to institutionalized learning and governance. Its proposed Explore–Codify–Integrate–Elevate framework sharpens the implementation implication that prompt fluency, evaluation criteria, workflow documentation, and telemetry must become shared organizational infrastructure rather than remain individual know-how; because the article synthesizes secondary evidence and vignettes rather than testing the framework comparatively, it supports this as a design proposition rather than a validated transformation sequence.
 
 ## 1. Define the transformation purpose
 
@@ -85,7 +87,7 @@ Keep scaling reversible where evidence is incomplete. Monitor capability drift, 
 
 ## Contradictions & open questions
 
-- The seven-stage sequence is synthesis across separate literatures; no longitudinal, multi-organization study validates it as an end-to-end method or shows how organizational learning reliably converts pilots into scaled workflows.
+- The seven-stage sequence is synthesis across separate literatures; [[2026-sarkar-ai-hype-workflow-reality]] offers a compatible four-phase framework, but neither it nor the broader evidence provides a longitudinal, multi-organization test of an end-to-end method or shows how organizational learning reliably converts pilots into scaled workflows.
 - Readiness, adoption, learning capability, and work redesign may be both causes and consequences of implementation. Cross-sectional assessments can therefore confuse preconditions with capabilities built through successful pilots.
 - AI capability frontiers move faster than most organizational evaluation cycles. The literature does not yet provide a stable rule for how often task-fit, audit, and allocation decisions should be revalidated after model or workflow changes.
 - Evidence for worker participation is normatively strong but empirically thin. The wiki lacks comparative field evidence showing which forms of participation materially improve performance, autonomy, fairness, trust, or implementation durability.
