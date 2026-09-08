@@ -137,6 +137,9 @@ regardless of cadence.
 - **Public-only sources** — the one hard rule (see `wiki/schema.md`).
 - **Owner approves** before topic synthesis becomes canonical — for the weekly batch, approval is
   merging its pull request; **one open batch at a time** (a stale one is regenerated, never rebased).
+- **Owner rejects** a paper by name from Discord (`reject <slug|file id> — <reason>`); NicholasJunior
+  runs the rejection path (record, artifact, manifest, rejection log) and never deletes a
+  human-reviewed record that way.
 - **Contradictions are surfaced in prose, never auto-resolved** (disagreement carries meaning).
 
 ## Parsimony guardrails

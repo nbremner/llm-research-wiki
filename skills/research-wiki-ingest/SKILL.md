@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.6.0
+version: 2.7.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -87,7 +87,8 @@ This skill runs in three modes. **Attended single-source ingest** — the number
 source drain** (daily, 2026-09-07; `docs/wiki-redesign-plan.md` §3) drains Drive `_triage/wiki` into
 `wiki/sources/unreviewed/` records only, so the queue never becomes a backlog sink. **Weekly synthesis
 batch** (Mondays, 2026-09-08; plan §4) turns that queue into one owner-approved pull request of topic
-synthesis. If a prompt names neither the drain nor the batch, you are in attended mode.
+synthesis. The **owner rejection command** (below) drops one paper on the owner's word from Discord.
+If a prompt names none of these, you are in attended mode.
 
 ### Scheduled source drain (unattended; hermes cron "Daily research-wiki source drain", 09:30 PT)
 
@@ -328,6 +329,43 @@ lint main, `drive_review_sync.py --execute` (promoted artifacts move to `_source
 or "request changes" → the next weekly run regenerates (the `regenerate` decision).
 
 **Rollback.** `hermes cron pause <job id>`; close any open synthesis PR with `synthesis_pr.py close`.
+
+### Owner rejection command (Discord; attended, one paper at a time)
+
+The owner can drop a paper from the wiki without a Claude Code session by replying in
+#research-digest, or messaging NicholasJunior directly, with
+`reject <source slug or Drive file id> — <reason>` (`drop …` means the same). This is the rejection
+path of step 9 executed on the owner's word: act only on a message from the owner, never on your
+own initiative, and never for anything but a single named paper.
+
+1. **Identify the record.** By Drive id: `grep -rl "^drive_file_id: <id>" wiki/sources/`; by slug:
+   `wiki/sources/unreviewed/<slug>.md` or `wiki/sources/<slug>.md`. Nothing found → say so. If the
+   file is still in Drive `_triage/wiki` (never ingested), move it to `_triage/discarded`, run the
+   `--amend` of step 5, and reply; there is no record to delete.
+2. **If the record is human-reviewed** (`wiki/sources/<slug>.md`, cited by topic pages): delete
+   nothing. Reply that removing it means editing every topic page that cites it — a synthesis
+   change that goes through the owner-approved path (the local Claude prepares it as a PR) — and stop.
+3. **If it is unreviewed** (`wiki/sources/unreviewed/<slug>.md`):
+   `cd /root/work/llm-research-wiki && git pull --ff-only origin main`, then
+   `git rm wiki/sources/unreviewed/<slug>.md` and commit
+   `wiki: reject source <slug> (owner ruling YYYY-MM-DD via Discord)` with the owner's reason in the
+   body; push; verify `origin/main` matches `HEAD`.
+4. **Artifact:** move it from `_sources/_unreviewed` (`1xaYFRK0yBxhRfCVeCfLKXu84aW1-jhwS`) to
+   `_triage/discarded` (`1fNRrNYxwxB87lQeXtfiZ7Fc6S5FMcwNx`) with one `files().update(addParents=…,
+   removeParents=…)`; verify the parent. Never trash a Drive file.
+5. **Manifest:** `uv run /root/research-wiki-tools/scan_triage_apply.py --amend --drive-file-id <id>
+   --to discard --reason "owner rejected via Discord YYYY-MM-DD: <reason>" --execute`. Exit code 3
+   means the paper never came through the scan (hand-dropped) — say so; that is fine.
+6. **Rejection memory:** append to `skills/research-wiki-ingest/references/declined-synthesis-log.md`
+   under a `## YYYY-MM-DD — Discord` heading:
+   `- **Source:** [[<slug>]] — **Proposed:** ingested by the drain (not yet synthesized) — **Ruling:** dropped: "<owner's words>" — **Generalizes to:** local Claude to decide`,
+   commit `skills: log owner rejection of <slug> (Discord)`, push.
+7. **Open synthesis PR?** `uv run /root/research-wiki-tools/synthesis_pr.py status --json`; if an
+   open PR's branch touches the record (`git diff --name-only origin/main..origin/<branch> | grep
+   <slug>`), run `synthesis_pr.py close --number N --delete-branch` and tell the owner the batch
+   regenerates next Monday (the local Claude can trigger it sooner).
+8. **Reply** with one line per step: commit hash, Drive move, manifest amended or "no scan record",
+   log entry, PR closed or "no open PR". Never edit topic pages in this command.
 
 ## Topic openness principle
 

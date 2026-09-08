@@ -70,6 +70,16 @@ Y", "split Y", "drop X from the wiki" and "this belongs on the watchlist" are al
 batch must honour. Dropping a source runs the rejection path: record deleted, artifact moved to Drive
 `_triage/discarded`, triage manifest amended.
 
+## Rejecting a paper outright
+
+Any time, from Discord: reply in #research-digest (or message NicholasJunior) with
+`reject <source slug or Drive file id> — <reason>`. NicholasJunior deletes the unreviewed record,
+moves the artifact to Drive `_triage/discarded`, amends the scan manifest so triage never re-proposes
+it, logs your reason in the declined-synthesis log, closes an open synthesis PR that contained it (the
+batch regenerates next Monday), and replies with what it did. A paper that is already human-reviewed
+is not deleted this way — removing it means editing the topic pages that cite it, which comes back to
+you as a small PR.
+
 ## After you merge
 
 Nothing to do. The next daily drain (09:30 PT) pulls `main`, lints it, and moves the promoted
