@@ -44,4 +44,4 @@ The wiki maintains itself on a daily loop: deterministic code discovers and fetc
 
 ## A note on method
 
-Topic and source pages are drafted with the help of a large language model and reviewed before they become part of the wiki. Even so, summaries can contain errors or lose nuance. Treat this wiki as a map of the literature, not a substitute for it — verify claims against the original sources before citing them.
+Topic and source pages are drafted with the help of a large language model. Every topic page is reviewed by the maintainer before it becomes part of the wiki; source records are published as soon as they are written, and those not yet reviewed sit under `sources/unreviewed/` with a visible notice until a reviewed synthesis integrates them. Even so, summaries can contain errors or lose nuance. Treat this wiki as a map of the literature, not a substitute for it — verify claims against the original sources before citing them.

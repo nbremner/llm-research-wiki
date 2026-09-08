@@ -22,8 +22,8 @@ is the judgment half**: read the manifest, assign each record a disposition, let
 applier (`scan_triage_apply.py`) do every mechanical action, and deliver the owner digest.
 
 Trust model: this skill routes *candidates*. Nothing becomes wiki canon here — wiki-bound artifacts go
-to Drive `_triage/wiki`, where `research-wiki-ingest` processes them **one at a time** with
-owner-approved synthesis.
+to Drive `_triage/wiki`, where the ingest skill's daily drain writes them as **unreviewed** source
+records and its weekly synthesis batch integrates them under owner approval.
 
 ## Locations
 

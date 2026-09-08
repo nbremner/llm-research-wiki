@@ -45,6 +45,16 @@ page's claims, evidence, or connections change; mechanical passes (style, link f
 must not bump it — the graph lint's evidence-staleness check depends on this. Rule adopted
 2026-08-03, prospective. Full rule in `wiki/schema.md` § Formatting.
 
+## Review status discipline
+
+Every source record carries `human_reviewed: true | false` and lives in the folder that says the same
+thing: auto-written records under `wiki/sources/unreviewed/`, reviewed ones directly under
+`wiki/sources/`. Only an owner-approving synthesis commit moves a record up and flips the flag (the
+weekly batch does this inside its PR; attended ingests do it at approval), and `drive_review_sync.py`
+then moves the raw artifact in Drive to match. The graph lint fails High on any flag/folder
+disagreement and on a topic page that cites a still-unreviewed source. Rule adopted 2026-09-08; full
+text in `wiki/schema.md` § Review status.
+
 ## Before committing
 
 Run:

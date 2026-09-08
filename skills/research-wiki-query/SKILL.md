@@ -1,7 +1,7 @@
 ---
 name: research-wiki-query
 description: Use when answering a question against the markdown research wiki, and deciding whether the answer should become durable synthesis — an updated topic page, a new source, an open question on the map pages, an on-demand cross-topic review, or no logged artifact at all.
-version: 2.1.0
+version: 2.2.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -27,7 +27,7 @@ durable capture. Topic synthesis becomes canonical only with owner approval (the
 - Repo (VPS): `/root/work/llm-research-wiki`; vault is `wiki/`.
 - `wiki/overview.md` — orientation; `wiki/topic-map.md` (what topics exist), `wiki/open-questions.md`, `wiki/research-gaps.md`, `wiki/watchlist.md` (read the relevant ones first for durable queries).
 - `wiki/schema.md` — conventions + the one hard rule (public-only sources).
-- `wiki/topics/` — synthesis pages. `wiki/sources/` — per-source evidence records.
+- `wiki/topics/` — synthesis pages. `wiki/sources/` — per-source evidence records, all human-reviewed. `wiki/sources/unreviewed/` — auto-written records (`human_reviewed: false`) awaiting the weekly synthesis batch: usable as leads, but say so when you cite one, and prefer reviewed records for any durable answer.
 
 ## When to use
 

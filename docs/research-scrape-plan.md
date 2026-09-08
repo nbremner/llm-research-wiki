@@ -39,7 +39,7 @@ The prior job mushed four jobs an LLM handles unevenly. We split them:
 - **Deterministic (Python, no LLM):** discovery via APIs/feeds, dedup, pre-rank, surface, acquisition. These
   want durable state and reproducibility — not model judgment. An LLM asked to "remember what it
   searched" or "fetch a URL" is where the prior quality problems lived.
-- **Judgment (NicholasJunior / GPT-5.5):** relevance classification, disposition routing, synthesis —
+- **Judgment (NicholasJunior, the Hermes agent; model per profile config):** relevance classification, disposition routing, synthesis —
   operating only on clean, already-acquired text against an explicit, **config-driven** rubric.
 
 This mirrors the wiki's existing trust split (evidence auto-commits; synthesis is approval-gated),
@@ -63,13 +63,13 @@ PRE-RANK  (deterministic): recency × source-authority × concept-match × citat
 ACQUISITION LADDER  → surfaced record {id, meta, acq_state, artifact_ptr?, provenance}   (rung 4 → failure-catalog)
       │
       ▼
-TRIAGE  (NicholasJunior / GPT-5.5 — classify clean text vs the wiki rubric) ── hybrid autonomy:
+TRIAGE  (NicholasJunior — classify clean text vs the wiki rubric) ── hybrid autonomy:
    ├─ wiki-candidate → move file to _triage/wiki → INGEST (owner-approval-gated)
    ├─ read-once      → move file to _triage/read-once + summarize in digest
    └─ discard        → move file to _triage/discarded + log in manifest (reversible)
 ```
 
-Everything above TRIAGE is deterministic Python; the parts GPT-5.5 is weak at run before it is ever
+Everything above TRIAGE is deterministic Python; the parts a language model is weak at run before it is ever
 invoked.
 
 ### Stores and where each lives (respecting the AGENTS.md hard boundary)
@@ -145,7 +145,7 @@ approval gate, surface the ambiguous middle + read-once for the owner):
 - **Phase 1 — Deterministic harness (LC; Python on the VM).** Discovery (API-first, seeded by wiki gaps +
   citation-chase) → dedup vs fresh seen-index → pre-rank → surface top-N → acquisition ladder rungs 1–3 → write candidates
   + acquired files to Drive `_triage/` + ledger. Set up the venv + free API keys. Guardrail tests.
-- **Phase 2 — Triage skill (NJ/GPT-5.5).** Build `research-scan-triage`; **retire
+- **Phase 2 — Triage skill (NJ).** Build `research-scan-triage`; **retire
   `research-wiki-pdf-backlog-triage`** (no proliferation). Reads pre-ranked candidates, hybrid-routes,
   invokes `browser` for rung-4 stragglers, drafts the digest. Retire carefully: rewrite the fail-closed
   gateway mount drop-in's required list *before* unmounting the old skill; update `skills.allowlist` +

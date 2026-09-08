@@ -15,8 +15,10 @@ what the evidence says, where studies agree or contradict, and what remains unre
 claim on a topic page links back to the sources behind it. Read it live at
 **[nbremner.github.io/ai-workforce-transformation-wiki](https://nbremner.github.io/ai-workforce-transformation-wiki/)**.
 
-Pages are drafted with the help of a large language model and reviewed before they become part of
-the wiki. Treat it as a map of the literature, not a substitute for it — verify claims against the
+Pages are drafted with the help of a large language model. Every topic page is reviewed by the
+maintainer before it becomes part of the wiki; source records are published as soon as they are
+written, and the ones not yet reviewed live under `sources/unreviewed/` and carry a visible notice.
+Treat the wiki as a map of the literature, not a substitute for it — verify claims against the
 original sources before citing them.
 
 ## How it runs
@@ -69,14 +71,19 @@ skills/
 
 scripts/
   research-wiki-tools/
-    graph_lint.py
-    research_scan.py           # deterministic scan harness (discovery -> acquisition -> rank)
-    scan_triage_apply.py       # applies triage dispositions (Drive moves, manifest, digest)
-    scan_common.py             # shared scan machinery
-    scan_config.py             # editable scan rubric/config
+    graph_lint.py              # graph lint + contradiction-pair shortlist (report-only)
+    research_scan.py           # deterministic scan harness (discovery -> acquisition -> rank -> venue tier)
+    scan_triage_apply.py       # applies triage dispositions over the open set (Drive moves, manifests, digest, --amend)
+    scan_common.py             # shared scan machinery (ids, ranking, venue tiers, Drive helpers)
+    scan_config.py             # editable scan rubric/config (queries, journal roster, concept enrichment, folder ids)
+    drain_queue.py             # daily drain order: owner-dropped files first
+    drive_review_sync.py       # keeps Drive artifact folders in step with record review status
+    synthesis_pr.py            # weekly batch: one-open-batch rule, PR open/close/prune (GitHub API)
+    claim_audit.py             # monthly claim-fidelity audit: sample + record
+    acquisition_queue.py       # wiki-judged-but-unacquired ledger (Drive _triage/needs-acquisition.md)
 
 docs/
-  wiki-redesign-plan.md        # the build plan for the markdown-in-git wiki
+  wiki-redesign-plan.md        # the active build plan (ingest automation) + build log; the 2026-06 redesign is its appendix
   research-scrape-plan.md      # the build plan for the research-scan front end
   synthesis-pr-review.md       # owner's checklist for reviewing/approving the weekly synthesis PR
   wiki-architecture-visual.html       # architecture diagram (horizontal strip, embeddable)
@@ -90,6 +97,11 @@ tests/
   test_graph_lint.py
   test_research_scan.py
   test_scan_triage_apply.py
+  test_drain_queue.py
+  test_drive_review_sync.py
+  test_synthesis_pr.py
+  test_claim_audit.py
+  test_acquisition_queue.py
   test_spine_guardrails.py
 ```
 

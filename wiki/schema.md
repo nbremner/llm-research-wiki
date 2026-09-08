@@ -104,10 +104,10 @@ Frontmatter is minimal on purpose. No confidence/contested/boundary fields — c
 
 ## The three workflows
 
-1. **Ingest.** A public source → write a `sources/` record → integrate its claims into the relevant `topics/` pages (update prose, strengthen links, flag contradictions in prose).
+1. **Ingest.** A public source → write a `sources/` record (auto-written records start in `sources/unreviewed/`) → integrate its claims into the relevant `topics/` pages (update prose, strengthen links, flag contradictions in prose), which promotes the record. Daily, the scheduled drain does the first half; weekly, one owner-approved synthesis batch does the second.
 2. **Query.** Answer from topic/source pages. File durable answers *back into* pages — don't let good synthesis evaporate into chat.
 3. **Lint.** Periodic health check: orphan pages, broken wikilinks, claims with no source, stale topics.
 
 ## Governance
 
-Minimal. The owner approves before a synthesis becomes canonical. Contradictions are **surfaced in prose, never auto-resolved.** Git history is the log; there is no separate log/review/inbox database.
+Minimal. The owner approves before a synthesis becomes canonical — for the weekly batch, approval is merging its pull request. Contradictions are **surfaced in prose, never auto-resolved.** Git history is the log; there is no separate log/review/inbox database.
