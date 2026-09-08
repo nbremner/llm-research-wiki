@@ -84,8 +84,9 @@ def test_ingest_skill_drain_mode_guardrails():
         assert phrase in text, phrase
     assert "### Weekly synthesis batch" in text
     assert "### Owner rejection command" in text
-    for phrase in ("act only on a message from the owner", "delete
-   nothing", "Never trash a Drive file"):
+    for phrase in ("act only on a message from the owner",
+                   "Reply that removing it means editing every topic page",
+                   "Never trash a Drive file"):
         assert phrase in text, phrase
     for phrase in (
         "up to **12 sources, oldest first**",
