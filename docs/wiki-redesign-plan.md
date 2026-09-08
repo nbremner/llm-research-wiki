@@ -200,6 +200,7 @@ the approval loop and must keep growing under automation.
 
 - **Batches 1–4 are attended**: the owner reviews every hunk of the PR (real diffs, no
   summaries-only review). Track per batch: sources, pages touched, owner edits/rejections.
+  The owner's step-by-step checklist is `docs/synthesis-pr-review.md`.
 - **Loosening criterion**: after 4 consecutive clean batches (no substantive corrections), the
   batch mode may auto-commit the two mechanical edit classes — `watchlist.md` deferral entries and
   Connections-bullet merges — directly to main, listed FYI in the weekly digest. **Prose topic

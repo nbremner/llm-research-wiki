@@ -78,6 +78,7 @@ scripts/
 docs/
   wiki-redesign-plan.md        # the build plan for the markdown-in-git wiki
   research-scrape-plan.md      # the build plan for the research-scan front end
+  synthesis-pr-review.md       # owner's checklist for reviewing/approving the weekly synthesis PR
   wiki-architecture-visual.html       # architecture diagram (horizontal strip, embeddable)
   wiki-architecture-visual-full.html  # architecture explainer (long form)
   assets/                      # README diagram SVGs (light + dark)
