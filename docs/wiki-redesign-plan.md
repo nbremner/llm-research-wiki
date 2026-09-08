@@ -117,6 +117,11 @@ Add a **"Scheduled source drain" mode** to `skills/research-wiki-ingest/SKILL.md
   triage), delivering to #research-digest, skill `research-wiki-ingest` (keeps its per-skill model
   override). Standard cron failure alerting applies. No mount/allowlist changes.
 
+*As built (see §11):* records are written to `wiki/sources/unreviewed/` with `human_reviewed: false`
+and artifacts to Drive `_sources/_unreviewed`; each source is ingested by its own subagent
+(`delegate_task`) so the parent's context stays small; owner-dropped files drain first
+(`drain_queue.py`); the run ends with `drive_review_sync.py --execute`. Cron `2586a6d3525f`.
+
 The owner's control point over *what enters* is unchanged: the triage rubric + daily digest
 upstream, and the existing rejection path (now with the Phase-0 amend) downstream.
 
@@ -171,6 +176,12 @@ Deployment: one new hermes cron job, weekly **Monday 09:00 PT**, #research-diges
 
 Expected load at current velocity: ~8–12 sources across ~10–15 pages per batch ≈ one 20–30 minute
 owner review session.
+
+*As built (see §11):* PR mode is primary (`synthesis_pr.py` over the GitHub API, token from the git
+credential store); each affected topic page is drafted by its own subagent; the branch also promotes
+the integrated records out of `unreviewed/` (`git mv` + flag) and lists **Proposed rejections**; the
+owner's checklist is `docs/synthesis-pr-review.md`; rejections come back via the Discord `reject`
+command. Cron `a720bdd07734`.
 
 ## 5. Phase 3 — quality-loop upgrades
 
@@ -227,10 +238,13 @@ the approval loop and must keep growing under automation.
 
 | Loop | Cadence | Cap | Writes |
 | --- | --- | --- | --- |
-| Source drain | daily 09:30 PT | ≤5 sources/run | `wiki/sources/` on main (auto) |
+| Source drain | daily 09:30 PT | ≤5 sources/run, one subagent per source | `wiki/sources/unreviewed/` on main (auto) + Drive `_sources/_unreviewed` |
 | Synthesis batch | weekly Mon 09:00 PT | ≤12 sources/batch; **1 open batch**; regenerate at 7 days stale | `synthesis/*` branch → PR → owner merge |
 | Triage carryover | daily (in applier) | 7-day window; stranded warning on age-out | manifests + digest |
-| Fidelity audit | monthly (in lint cron) | ~10 claims sampled | report only |
+| Drain order | daily (in drain) | owner-dropped files first, then oldest scan-promoted | — |
+| Acquisition ledger | daily (in applier) | computed from manifests; no auto-retry, no abstract-only records | Drive `_triage/needs-acquisition.md` |
+| Contradiction pairs | monthly (in lint cron) | ≤40 pairs, 10 of them a rotating cold tail; coverage warning when the gate drops ≥ the cap | report only |
+| Fidelity audit | monthly (in lint cron) | ~10 claims sampled, one subagent per claim; owner spot-checks ≥2 | report only; record in Drive `_triage/ledger` |
 
 ## 10. Don't break
 
@@ -241,6 +255,13 @@ the approval loop and must keep growing under automation.
   allowlist edits are needed. If that ever changes, follow `AGENTS.md` §renaming to the letter.
 - The **guardrail tests**: no `backlog/` paths, no `.jsonl`/`.csv` state in git; queue state stays
   computed (lint) or external (Drive manifests, GitHub PRs).
+- The **human-review split** (2026-09-08): a record leaves `sources/unreviewed/` only through an
+  owner-approving synthesis commit; the site notice, the Drive mirror and the lint's High findings all
+  hang off that one rule.
+- **Owner decisions of 2026-09-08 that are binding on new designs:** no automatic acquisition retries
+  and no abstract-only source records; foundational non-AI papers are wiki material; technical
+  implementation papers and hypothesis-only practitioner posts are not; unlisted venues are the
+  owner's call.
 
 ## 11. Build log
 
