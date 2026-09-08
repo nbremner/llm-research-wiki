@@ -193,6 +193,18 @@ def test_pair_change_gate_and_tail():
     assert [tuple(e["pair"]) for e in out["pairs"]] == [("topic-a", "topic-b")]
 
 
+def test_pair_coverage_warning_when_gate_overflows_cap():
+    # Many recently edited topics sharing sources -> far more gated pairs than the cap.
+    srcs = [f"2026-s{i}" for i in range(3)]
+    pages = [topic(f"t{i}", links=srcs, updated="2026-06-14") for i in range(8)]
+    pages += [source(s, links=["t0"]) for s in srcs] + [doc("overview", links=[f"t{i}" for i in range(8)])]
+    out = graph_lint.contradiction_pairs(pages, today=dt.date(2026, 6, 15), max_pairs=4, tail_slots=1)
+    assert out["gated_total"] == 28 and out["dropped_gated"] >= 4
+    assert "coverage degraded" in out["warning"]
+    calm = graph_lint.contradiction_pairs(_pair_fixture(), today=dt.date(2026, 6, 15))
+    assert "warning" not in calm
+
+
 def test_pair_selection_is_deterministic():
     a = graph_lint.contradiction_pairs(_pair_fixture(), today=dt.date(2026, 6, 15))
     b = graph_lint.contradiction_pairs(_pair_fixture(), today=dt.date(2026, 6, 15))

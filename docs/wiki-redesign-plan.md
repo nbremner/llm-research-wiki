@@ -1,7 +1,7 @@
 # Wiki Plan — Ingest Automation (current) + Redesign Record (archived)
 
-Status: **ACTIVE build plan — ingest automation, owner-approved 2026-09-07.** Phases 0, 1 and 2
-shipped 2026-09-07/08 (see §11 Build log); Phase 3 pending; Phase 4 (attended trial) in progress.
+Status: **ACTIVE build plan — ingest automation, owner-approved 2026-09-07.** Phases 0–3 shipped
+2026-09-07/08 (see §11 Build log); Phase 4 (attended trial) in progress.
 The original 2026-06 markdown-in-git redesign this file used to describe is **built and archived**
 in the appendix at the bottom; everything above the appendix is the current plan.
 
@@ -243,6 +243,15 @@ the approval loop and must keep growing under automation.
   computed (lint) or external (Drive manifests, GitHub PRs).
 
 ## 11. Build log
+
+- **2026-09-08 — Phase 3 shipped:** `claim_audit.py` (deterministic sampler/recorder: prose lines
+  added by synthesis commits in the last 35 days → month-keyed sample of ~10 → sheet with cited
+  records; grades validated against the fixed WikiCrow set, counts + supported rate + trend from
+  earlier audits, record stored in Drive `_triage/ledger`); graph-lint skill 2.4.0 adds the audit to
+  the monthly cron with **one subagent per claim**, the owner spot-check rule, the `--pairs`
+  coverage `warning` (emitted when `dropped_gated ≥ max_pairs`) quoted at the top of the digest, and
+  the "staleness is a signal" note. First sample on real history: 177 candidate claims from 34
+  commits.
 
 - **2026-09-08 — Phase 4 trial, batch 1.** First draft (PR #1: 6 sources → 9 topics, 4 deferred)
   drew two owner rejections *of sources* — an agents-engineering paper outside the behavioral-science

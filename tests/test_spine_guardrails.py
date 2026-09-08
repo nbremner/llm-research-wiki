@@ -93,6 +93,10 @@ def test_ingest_skill_drain_mode_guardrails():
         "`git checkout main` so the clone is back on a clean main",
     ):
         assert phrase in text, phrase
+    lint = (ROOT / "skills" / "research-wiki-graph-lint" / "SKILL.md").read_text(encoding="utf-8")
+    for phrase in ("## Claim-fidelity audit", "claim_audit.py --sample", "**one task per sampled claim**",
+                   "spot-checks at least two", "Staleness is a signal, not a defect", "quote it verbatim"):
+        assert phrase in lint, phrase
 
 
 def _run_standalone() -> int:

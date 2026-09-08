@@ -344,11 +344,18 @@ def contradiction_pairs(
         offset = ((today.year * 12 + today.month) * tail_slots) % len(rest)
         tail = (rest + rest)[offset:offset + min(tail_slots, len(rest))]
     selected = head + tail
-    return {"mode": "gated", "window_days": window_days,
-            "eligible_total": len(eligible), "gated_total": len(gated),
-            "selected": len(selected),
-            "dropped_gated": max(0, len(gated) - len(head)),
-            "pairs": selected}
+    dropped = max(0, len(gated) - len(head))
+    out = {"mode": "gated", "window_days": window_days,
+           "eligible_total": len(eligible), "gated_total": len(gated),
+           "selected": len(selected), "dropped_gated": dropped, "pairs": selected}
+    # Coverage warning (plan §5): when the change-gate yields far more pairs
+    # than the cap admits, the monthly check is sampling, not covering — say so
+    # in the digest rather than leaving it in a JSON field.
+    if dropped >= max_pairs:
+        out["warning"] = (f"contradiction-gate coverage degraded: {dropped} recently edited pairs dropped "
+                          f"beyond the {max_pairs}-pair cap ({len(gated)} gated, {len(head)} checked) — "
+                          f"raise --max-pairs/--tail-slots or expect multi-month coverage")
+    return out
 
 
 def should_fail(findings: list[dict[str, str]], fail_on: str,

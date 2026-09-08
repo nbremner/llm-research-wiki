@@ -1,7 +1,7 @@
 ---
 name: research-wiki-graph-lint
 description: Use when auditing the markdown research wiki for graph coherence — broken wikilinks, orphan pages, claims without a source, sources that feed no topic, provenance gaps, and stale topics — or when running the monthly semantic lint (contradiction check over the --pairs shortlist + evidence-staleness review). Report-only; fixes route through the normal write paths.
-version: 2.3.0
+version: 2.4.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -67,7 +67,10 @@ monthly. The script selects *what to read*; you judge *whether it contradicts*.
    `--pairs --bootstrap --max-pairs 35`). Pairs share ≥2 cited sources or link directly; normal runs
    are change-gated to recently edited pairs, ranked by shared-source count, plus a month-keyed
    rotating tail of cold pairs. The JSON reports `eligible_total` vs `selected` (normal runs also
-   carry `gated_total`) — quote the counts in your report so coverage limits are never silent.
+   carry `gated_total` and `dropped_gated`) — quote the counts in your report so coverage limits are
+   never silent. **If the JSON carries a `warning`** (recently edited pairs dropped beyond the cap by a
+   wide margin), quote it verbatim at the top of the digest: that month's check is a sample, not
+   coverage, and the owner decides whether to raise `--max-pairs` / `--tail-slots`.
 2. For each pair, read both topic pages in full. Flag only **wiki-voice contradictions**: topic A
    asserting as settled what topic B contradicts, one page citing a finding the other treats as
    refuted, or the same shared source summarized with incompatible claims. **Documented disagreement
@@ -75,9 +78,55 @@ monthly. The script selects *what to read*; you judge *whether it contradicts*.
    section precisely for that; never flag it.
 3. Also run the structural lint (`--json`) and pull any **Topic evidence-stale** findings into your
    report — they are the "synthesis behind the evidence" queue.
-4. Deliver one digest: contradictions found (quote the two conflicting passages, name the shared
-   sources), evidence-stale topics, pairs-checked/eligible counts. **Report-only** — fixes are
-   synthesis edits and go through the owner-approved path; never edit topic pages from this skill.
+4. Run the **claim-fidelity audit** (next section) and append its block.
+5. Deliver one digest: any coverage warning first, then contradictions found (quote the two
+   conflicting passages, name the shared sources), evidence-stale topics, pairs-checked/eligible
+   counts, then the fidelity-audit block. **Report-only** — fixes are synthesis edits and go through
+   the owner-approved path; never edit topic pages from this skill.
+
+**Staleness is a signal, not a defect.** The daily source drain never bumps `updated:`; only
+synthesis does. The lag between a source's `retrieved:` and a topic's `updated:` is exactly what the
+evidence-stale check measures. Do not propose "fixing" the lag, and do not report unreviewed sources
+waiting for the weekly batch as a problem — they are the pending-synthesis queue.
+
+## Claim-fidelity audit (monthly, same cron, report-only)
+
+The statement-level check (`docs/wiki-redesign-plan.md` §5; the FutureHouse WikiCrow rubric): does the
+prose the wiki added this month say what its cited sources say? Deterministic code samples and
+records; you grade — each claim in its own subagent, so ten papers never share one context.
+
+1. **Sample:** `uv run /root/research-wiki-tools/claim_audit.py --sample` writes
+   `/root/research-wiki-runs/audit-YYYYMM/sample.json` + `sheet.md` and prints the sheet: ~10 claims
+   drawn with a month-keyed seed from prose lines added by synthesis commits in the last 35 days, each
+   with its cited source records (title, URL, Drive file id under `_sources`). Read the sheet only —
+   not the topic pages, not the sources.
+2. **Grade in subagents:** `delegate_task`, **one task per sampled claim**, all in one group. Child
+   brief (self-contained): the claim text and its topic; the cited source(s) as slug, title, URL and
+   Drive file id (folder `public-literature-wiki/_sources`); the rubric below; the instruction to
+   download the artifact by file id (PDF → PyMuPDF or pypdf text; `.md` → the body after
+   `Markdown Content:`), find the passage(s) that bear on the claim, and return JSON
+   `{"id", "grade", "evidence": "<≤400 chars quoted from the source>", "note": "<one line why>"}`.
+   No git, no edits, no browser. If the artifact cannot be read, return `cited-unsupported` with
+   `note: "could not verify: <reason>"` so it lands in the owner's spot-check list.
+   **Rubric** —
+   - `cited-supported`: the cited source states or directly implies the claim as written — design,
+     direction, magnitude and caveats match. Also use it for a line that is the wiki's own framing and
+     makes no empirical assertion (note: "framing, no evidence claim").
+   - `cited-unsupported`: a source is cited but does not contain or support the claim (wrong number
+     or direction, claim absent from the source, a different source would be needed).
+   - `uncited`: the line asserts an empirical finding with no `[[source]]`, and the surrounding
+     paragraph does not carry the citation either.
+   - `reasoning-error`: the source is cited and relevant but the wiki's inference overreaches it — a
+     causal reading of a correlational design, a generalization beyond the sample, a dropped hedge.
+3. **Record:** write `{"grades": [...]}` to `/root/research-wiki-runs/audit-YYYYMM/grades.json` and
+   run `uv run /root/research-wiki-tools/claim_audit.py --record <that file> --execute`. It validates
+   (every sampled claim graded exactly once with a known grade), computes counts and the supported
+   rate, pulls earlier audits from the Drive ledger for the trend, stores this audit there, and prints
+   the digest block. Run without `--execute` first if anything looks off.
+4. **Digest:** include the printed block unchanged. It ends with "Needs a look" — the
+   non-supported claims with the children's quoted evidence. **The owner spot-checks at least two
+   graded claims per audit** (LLM graders are measurably biased toward LLM-written text; the human
+   stays in the sample), so keep the evidence snippets in.
 
 ## When to use
 

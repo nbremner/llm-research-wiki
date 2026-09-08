@@ -114,7 +114,7 @@ failures to Discord #logs).
 |---|---|---|---|
 | Research scan (deterministic harness, systemd timer) | Daily | Drive `_triage` only | ≤12 surfaced/run |
 | Scan triage (`research-scan-triage`, hermes cron) | Daily | `_triage/pending` → disposition folders + digest | ≤10 wiki auto-moves/run; ambiguous stays pending and is re-judged inside a 7-day carryover window across manifests (digest warns before anything strands) → owner |
-| Semantic lint (`research-wiki-graph-lint`, hermes cron) | Monthly | report only (contradiction pairs + evidence-stale + structural findings, one digest) | ≤15 pairs/run (35 on the one-time bootstrap sweep) |
+| Semantic lint (`research-wiki-graph-lint`, hermes cron) | Monthly | report only (contradiction pairs + evidence-stale + structural findings + **claim-fidelity audit**, one digest) | ≤15 pairs/run (coverage warning when the gate drops ≥ the cap); ~10 claims sampled by `claim_audit.py`, graded in per-claim subagents, owner spot-checks ≥2; audits stored in Drive `_triage/ledger` |
 | Graph-lint report (structural, ad hoc — e.g. after an ingest) | As needed | report only | n/a |
 | RSS research digest (`rss_research_digest.py`, hermes cron, no-agent; VPS-local script, not in this repo) | Daily | report only | n/a |
 | Attended ingest (`research-wiki-ingest`) | On demand | sources/ (auto), topics/ (owner-approved) | one source per run |
