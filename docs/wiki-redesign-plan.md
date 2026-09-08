@@ -244,6 +244,13 @@ the approval loop and must keep growing under automation.
 
 ## 11. Build log
 
+- **2026-09-08 — stranded backfill applied + drain order.** Owner labelled all 67 stranded triage
+  records (29 discard, 20 read-once, 18 wiki: 5 auto-moved, 13 to the acquisition ledger with copies
+  the owner dropped into `_triage/wiki`), applied deterministically with the new `--max-auto-wiki`
+  flag; one 66-day-old record surfaced separately and discarded on the owner's word. Open set now
+  empty. `drain_queue.py`: the drain takes **owner-dropped files first** (no scan manifest uploaded
+  them), then scan-promoted, oldest first within each — ingest skill 2.8.0.
+
 - **2026-09-08 — needs-acquisition ledger (owner decision: step 1 only, no auto-retry, no
   abstract-only records).** 182 candidates had been judged `wiki` without an obtainable copy and
   each appeared in one digest and never again. `acquisition_queue.py` computes the queue from the

@@ -77,6 +77,7 @@ def test_ingest_skill_drain_mode_guardrails():
         "Orphan-source Medium findings are expected",
         "never work around bot checks, CAPTCHAs, or logins",
         "Dispatch one subagent per file in a single `delegate_task` call",
+        "drain_queue.py --limit 5",
         "Children never run git",
         "drive_review_sync.py --execute",
         "`human_reviewed: false`",

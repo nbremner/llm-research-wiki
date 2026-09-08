@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.7.0
+version: 2.8.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -92,9 +92,11 @@ If a prompt names none of these, you are in attended mode.
 
 ### Scheduled source drain (unattended; hermes cron "Daily research-wiki source drain", 09:30 PT)
 
-**What it does.** Drains up to **5 sources per run, oldest first** (Drive `createdTime`) from
-`_triage/wiki` into `wiki/sources/unreviewed/` records, then lints, pushes, reconciles Drive, and
-posts one digest to #research-digest. Ingest steps 2–7 run **inside subagents, one per source**
+**What it does.** Drains up to **5 sources per run, oldest first** within each group — files the
+owner dropped by hand ahead of scan-promoted ones (owner decision 2026-09-08: a paper the owner
+fetched has already passed the strictest gate) — from `_triage/wiki` into
+`wiki/sources/unreviewed/` records, then lints, pushes, reconciles Drive, and posts one digest to
+#research-digest. Ingest steps 2–7 run **inside subagents, one per source**
 (`delegate_task`); the parent never reads an artifact and never summarizes a paper itself, so its
 context stays small however many sources run (the 2026-09-07 run that did everything in one
 context reached ~145k tokens and stalled on its final model call).
@@ -118,9 +120,10 @@ yet is the normal pending-synthesis state, not a defect.
 1. `cd /root/work/llm-research-wiki && git status --porcelain && git pull --ff-only origin main`.
    A dirty tree or a pull that is not a fast-forward → stop the run and report; never stash,
    rebase over, or commit someone else's changes.
-2. List `_triage/wiki` (Drive API, `orderBy=createdTime`; request only name, id, mimeType,
-   createdTime — do not download anything). Take the 5 oldest. Both `.pdf` and Jina full-text `.md`
-   artifacts are eligible.
+2. Get the drain order: `uv run /root/research-wiki-tools/drain_queue.py --limit 5` — JSON with
+   `next` (the files to take, owner-dropped first, then scan-promoted, oldest first within each) and
+   `counts`. Do not list or download anything else. Both `.pdf` and Jina full-text `.md` artifacts
+   are eligible; an owner-dropped file may have any name.
 3. **Dispatch one subagent per file in a single `delegate_task` call** — all tasks in one `group`
    so they return together; children run in parallel. Each task's `goal` must be self-contained
    (a child knows nothing about this session): use the child brief below verbatim with the ⟨⟩
@@ -141,8 +144,8 @@ yet is the normal pending-synthesis state, not a defect.
    `git commit -m "wiki: ingest source <slug>"` (+ Co-Authored-By trailer). Children never run git;
    the parent owns every commit.
 6. If fewer than 5 were ingested and fewer than **10 files** have been examined this run, dispatch
-   one more batch for the next-oldest files (same brief), then validate and commit as above. Never
-   more than two batches per run.
+   one more batch for the next files (`drain_queue.py --limit 10`, skipping the ones already
+   examined; same brief), then validate and commit as above. Never more than two batches per run.
 
 **Child brief** (one per file; fill the ⟨⟩ fields; keep the rules verbatim):
 
@@ -195,7 +198,8 @@ skipped or duplicate, or notes).
   artifact ends up in the folder its record's review status says; report anything it lists as
   missing or stray.
 - Digest (your reply *is* the digest; the cron delivers it to #research-digest):
-  `**Source drain — YYYY-MM-DD** · N ingested · M skipped · D duplicates discarded · K left in _triage/wiki · pending-synthesis queue: J orphan sources`
+  `**Source drain — YYYY-MM-DD** · N ingested · M skipped · D duplicates discarded · K left in _triage/wiki (O owner-dropped) · pending-synthesis queue: J orphan sources`
+  (`K`/`O` from `drain_queue.py --counts` after the run)
   then one line per ingested source —
   `- <slug> — <title> (<year>, <publication_status>) → feeds: [[a]], [[b]]; proposed new topic: <slug or none>; flags: <none | ...>`
   — then **Needs your call** (skipped files and failed validations, one line each with the reason)

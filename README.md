@@ -109,6 +109,7 @@ uv run scripts/research-wiki-tools/drive_review_sync.py [--execute]      # Drive
 uv run scripts/research-wiki-tools/synthesis_pr.py status               # weekly batch: one-open-batch decision, PR/branch state
 uv run scripts/research-wiki-tools/claim_audit.py --sample              # monthly fidelity audit: draw this month's claim sample
 uv run scripts/research-wiki-tools/acquisition_queue.py [--execute]     # wiki-judged-but-unacquired ledger (Drive _triage/needs-acquisition.md)
+uv run scripts/research-wiki-tools/drain_queue.py --limit 5             # daily drain order: owner-dropped files first, then oldest scan candidates
 uv run scripts/research-wiki-tools/claim_audit.py --record grades.json  # ... validate the judge's grades, trend, record
 python -m pytest tests/ -q                                             # run the test suite before committing
 ```
