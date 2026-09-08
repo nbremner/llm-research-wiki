@@ -510,6 +510,17 @@ def test_execute_open_set_persists_only_touched_manifests():
     assert json.loads(p["today"].read_text(encoding="utf-8"))["records"][0]["disposition"] is None
 
 
+def test_digest_tags_unlisted_venues():
+    src = _manifest()
+    src["records"][0]["venue_tier"] = "unlisted"     # clear wiki paper with artifact
+    src["records"][3]["venue_tier"] = "watchlist"    # ambiguous borderline paper
+    manifest, plan = sta.apply_dispositions(src, _dispositions())
+    digest = sta.render_digest(manifest, plan, executed=False)
+    assert "Clear wiki paper with artifact — rct evidence [venue: unlisted]" in digest
+    assert "[venue: watchlist]" not in digest
+    assert plan["moves"][0]["venue_tier"] == "unlisted"
+
+
 def test_disposition_aliases_are_normalized():
     manifest, plan = sta.apply_dispositions(_manifest(), {"entries": [
         {"id": "doi:10.1/e", "disposition": "discarded", "confidence": "clear", "reason": "dup"}]})

@@ -92,6 +92,7 @@ def discover_openalex(query: str, per_query: int) -> list[c.ScanRecord]:
     for w in data.get("results", []):
         loc = w.get("primary_location") or {}
         src = loc.get("source") or {}
+        venue = c.venue_info_from_openalex_source(src)  # free: DOAJ/core flags ride on the work
         rec = _record_from_parts(
             source="openalex", query=query,
             url=loc.get("landing_page_url") or w.get("id"),
@@ -107,6 +108,8 @@ def discover_openalex(query: str, per_query: int) -> list[c.ScanRecord]:
             cited_by=w.get("cited_by_count"),
         )
         if rec:
+            if venue:
+                rec.provenance["venue"] = venue
             out.append(rec)
     return out
 
@@ -154,7 +157,7 @@ def _crossref_record(it: dict[str, Any], *, source: str, query: str) -> c.ScanRe
     issued = (it.get("issued", {}) or {}).get("date-parts", [[None]])
     year = issued[0][0] if issued and issued[0] else None
     cont = it.get("container-title") or []
-    return _record_from_parts(
+    rec = _record_from_parts(
         source=source, query=query,
         url=it.get("URL"), pdf_url=None,
         doi=it.get("DOI"), arxiv_id=None,
@@ -164,6 +167,12 @@ def _crossref_record(it: dict[str, Any], *, source: str, query: str) -> c.ScanRe
         abstract=(it.get("abstract") or "").replace("<jats:p>", " ").replace("</jats:p>", " "),
         cited_by=it.get("is-referenced-by-count"),
     )
+    if rec and (cont or it.get("ISSN")):
+        # Crossref knows the venue name/ISSN but not DOAJ/core status; the
+        # surfaced-set lookup fills that in.
+        rec.provenance["venue"] = {"name": cont[0] if cont else None,
+                                   "issns": sorted({i.upper() for i in (it.get("ISSN") or [])})}
+    return rec
 
 
 def discover_crossref(query: str, per_query: int) -> list[c.ScanRecord]:
@@ -224,6 +233,7 @@ def discover_crossref_journal(journal: dict[str, str], per_journal: int,
         for item in items:
             rec = _crossref_record(item, source="crossref-journal", query=query)
             if rec:
+                rec.provenance.setdefault("venue", {})["watchlist"] = True  # by construction
                 rec.provenance.update({
                     "discovery_lane": "journal-watchlist",
                     "journal_name": journal["name"],
@@ -386,6 +396,33 @@ def load_concepts(topics_dir: Path | None) -> tuple[dict[str, list[str]], dict[s
                       "unenriched": unenriched, "stale_enrichment_keys": stale}
 
 
+def lookup_venue(doi: str) -> dict[str, Any] | None:
+    """Indirection so tests can stub the network call."""
+    return c.lookup_venue_openalex(doi, cfg.CONTACT_MAILTO)
+
+
+def tier_venues(records: list[c.ScanRecord], *, lookup: bool = True) -> dict[str, int]:
+    """Assign venue_tier to the surfaced records. Signals captured at discovery
+    are used as-is; a peer-reviewed record with a DOI but no DOAJ/core signal
+    gets one OpenAlex lookup (bounded by the surfaced count). Returns tier counts."""
+    wl_issns, wl_names = c.watchlist_index(cfg.JOURNAL_WATCHLIST)
+    counts: dict[str, int] = {}
+    for rec in records:
+        venue = rec.provenance.get("venue")
+        if (lookup and rec.source_type == "peer-reviewed" and rec.doi
+                and not (venue or {}).get("watchlist") and not (venue or {}).get("checked")):
+            try:
+                fetched = lookup_venue(rec.doi)
+                if fetched:
+                    venue = {**(venue or {}), **fetched}
+                    rec.provenance["venue"] = venue
+            except Exception as e:  # noqa: BLE001 - tier stays unknown; never blocks the scan
+                rec.provenance.setdefault("venue_lookup_error", type(e).__name__)
+        rec.venue_tier = c.venue_tier(rec.source_type, venue, wl_issns, wl_names)
+        counts[rec.venue_tier] = counts.get(rec.venue_tier, 0) + 1
+    return counts
+
+
 def rank(rec: c.ScanRecord, concepts: dict[str, list[str]] | None = None) -> None:
     concept, topics = c.concept_match(
         f"{rec.title}\n{rec.abstract}",
@@ -412,6 +449,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     p.add_argument("--journal-since", default=None,
                    help="Override journal indexed-date floor (YYYY-MM-DD; default: lookback config)")
     p.add_argument("--no-acquire", action="store_true", help="Discovery + rank + manifest only")
+    p.add_argument("--venue-lookup", action=argparse.BooleanOptionalAction, default=True,
+                   help="Look up venue signals (OpenAlex) for surfaced journal articles that lack them")
     p.add_argument("--drive", action="store_true", help="Sync ledger + upload files/manifest to Drive")
     p.add_argument("--token-path", default=cfg.DEFAULT_TOKEN_PATH)
     p.add_argument("--work-dir", default=None, help="Local working dir (ledger, files, manifest)")
@@ -549,6 +588,10 @@ def main(argv: list[str]) -> int:
                 rec.acq_state = "link-only"
             print(f"  [{i}/{len(to_acquire)}] {rec.acq_state:13s} {rec.title[:60]}", flush=True)
 
+    # Venue quality tier for the surfaced set (bounded lookups; owner request 2026-09-08).
+    venue_counts = tier_venues(surfaced, lookup=args.venue_lookup)
+    print(f"venue tiers among surfaced: {venue_counts}", flush=True)
+
     # Every candidate we surface is marked seen so it never re-surfaces.
     for rec in surfaced:
         ledger.mark_seen(rec.id, {"title": rec.title, "source": rec.source,
@@ -568,6 +611,7 @@ def main(argv: list[str]) -> int:
             "minimum_surface_slots": cfg.MIN_JOURNAL_SURFACED_PER_RUN if args.journals else 0,
         },
         "concepts": concept_info,
+        "venue_tiers": venue_counts,
         "discovered": len(records), "surfaced": len(surfaced),
         "acquired": sum(1 for r in to_acquire if r.acq_state in ("full-pdf", "full-text")),
         "records": [r.to_dict() for r in surfaced],

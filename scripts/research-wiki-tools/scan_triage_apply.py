@@ -160,7 +160,8 @@ def apply_dispositions(manifest: dict[str, Any], dispositions: dict[str, Any],
     for rid in sorted(pending, key=lambda i: -(records[i].get("rank_score") or 0)):
         rec = records[rid]
         item = {"id": rid, "title": c.clean_title(rec.get("title", "")), "url": rec.get("url"),
-                "acq_state": rec.get("acq_state"), "rank": rec.get("rank_score")}
+                "acq_state": rec.get("acq_state"), "rank": rec.get("rank_score"),
+                "venue_tier": rec.get("venue_tier")}
         if rec.get("artifact_drive_id"):
             item["drive_file_id"] = rec["artifact_drive_id"]
         e = entries.get(rid)
@@ -412,10 +413,14 @@ def render_digest(manifest: dict[str, Any], plan: dict[str, list[dict[str, Any]]
                          f"this judging set — rerun with --carryover-days "
                          f"{st.get('carryover_days_needed')} to recover them.")
 
+    def venue_tag(i: dict[str, Any]) -> str:
+        # Only the tiers that should change the reader's mind are shown.
+        return {"unlisted": " [venue: unlisted]", "unknown": " [venue: unknown]"}.get(i.get("venue_tier") or "", "")
+
     def section(title: str, items: list[dict[str, Any]], fmt) -> None:
         if items:
             lines.append(f"\n**{title}**")
-            lines.extend(fmt(i) for i in items)
+            lines.extend(fmt(i) + venue_tag(i) for i in items)
 
     section("Needs your call", plan["needs_call"],
             lambda i: f"- {i['title'][:90]} — {i.get('proposed', '?')}: "

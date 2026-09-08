@@ -177,6 +177,10 @@ WORK_TERMS = [
 # verified against the Scopus Source List; prefer electronic ISSN when present.
 # High/medium are provenance metadata, not different retrieval thresholds: every
 # journal is scanned comprehensively, then the same AI x work gate is applied.
+# The roster is also the "watchlist" tier of the venue-quality check (2026-09-08):
+# scan_common.venue_tier labels surfaced journal articles watchlist / indexed
+# (DOAJ or OpenAlex core) / unlisted, and the triage rubric makes unlisted
+# venues ambiguous by default.
 JOURNAL_WATCHLIST = [
     {"name": "Annual Review of Psychology", "issn": "1545-2085", "relevance": "medium", "field": "Psychology", "tab": "primary"},
     {"name": "Psychological Bulletin", "issn": "0033-2909", "relevance": "medium", "field": "Psychology", "tab": "primary"},

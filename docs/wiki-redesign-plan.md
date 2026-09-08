@@ -244,6 +244,14 @@ the approval loop and must keep growing under automation.
 
 ## 11. Build log
 
+- **2026-09-08 — cap + venue quality (owner decisions):** contradiction-pair cap 15/4 → **40/10**
+  (`graph_lint.py` defaults) after the first Phase-3 coverage warning. **Venue-quality tier** added to
+  the scan: `venue_tier` on every surfaced record (`watchlist` = the 55-journal roster; `indexed` = DOAJ
+  or OpenAlex/CWTS core; `unlisted`; `unknown`; `n/a` for non-journal sources), signals captured free
+  from OpenAlex at discovery and looked up once for surfaced journal articles that lack them; the triage
+  digest tags unlisted/unknown venues and rubric 1.5.0 makes `unlisted` ambiguous by default. Prompted
+  by three unlisted-venue articles merged in PR #2.
+
 - **2026-09-08 — Phase 3 shipped:** `claim_audit.py` (deterministic sampler/recorder: prose lines
   added by synthesis commits in the last 35 days → month-keyed sample of ~10 → sheet with cited
   records; grades validated against the fixed WikiCrow set, counts + supported rate + trend from

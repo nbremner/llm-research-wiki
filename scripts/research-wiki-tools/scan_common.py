@@ -269,6 +269,66 @@ def unpaywall_pdf_url(data: dict[str, Any]) -> str | None:
 
 
 # ---------------------------------------------------------------------------
+# Venue quality tier (pure) -- owner request 2026-09-08
+# ---------------------------------------------------------------------------
+
+# A Crossref "journal-article" gets the top authority weight whatever the
+# journal, and three low-tier venues reached the wiki in the first weekly batch.
+# The tier is a deterministic label from public signals, surfaced in the manifest
+# and the triage digest; the rubric makes "unlisted" ambiguous by default.
+VENUE_TIERS = ("watchlist", "indexed", "unlisted", "unknown", "n/a")
+
+
+def watchlist_index(watchlist: Iterable[dict[str, Any]]) -> tuple[set[str], set[str]]:
+    """(ISSNs, normalized names) of the owner's Scopus-verified journal roster."""
+    issns = {str(j.get("issn", "")).upper() for j in watchlist if j.get("issn")}
+    names = {normalize_title(j.get("name")) for j in watchlist if j.get("name")}
+    return issns, names
+
+
+def venue_info_from_openalex_source(src: dict[str, Any] | None) -> dict[str, Any] | None:
+    """The venue signals OpenAlex returns on a work's primary_location.source."""
+    if not src:
+        return None
+    issns = [i for i in ([src.get("issn_l")] + list(src.get("issn") or [])) if i]
+    return {"name": src.get("display_name"), "issns": sorted({i.upper() for i in issns}),
+            "in_doaj": bool(src.get("is_in_doaj")), "is_core": bool(src.get("is_core")),
+            "publisher": src.get("host_organization_name"), "checked": True}
+
+
+def venue_tier(source_type: str, venue: dict[str, Any] | None,
+               wl_issns: set[str], wl_names: set[str]) -> str:
+    """watchlist | indexed | unlisted | unknown | n/a.
+
+    Only journal articles are tiered (preprints, working papers, reports carry
+    their own authority weight). watchlist = on the owner's roster (ISSN, else
+    name); indexed = DOAJ-listed or an OpenAlex/CWTS core source; unlisted =
+    checked and none of the above; unknown = no venue signals could be obtained."""
+    if source_type != "peer-reviewed":
+        return "n/a"
+    if not venue:
+        return "unknown"
+    if venue.get("watchlist"):
+        return "watchlist"
+    issns = {str(i).upper() for i in (venue.get("issns") or [])}
+    if issns & wl_issns or (venue.get("name") and normalize_title(venue["name"]) in wl_names):
+        return "watchlist"
+    if venue.get("in_doaj") or venue.get("is_core"):
+        return "indexed"
+    if venue.get("checked"):
+        return "unlisted"
+    return "unknown"
+
+
+def lookup_venue_openalex(doi: str, mailto: str) -> dict[str, Any] | None:
+    """One OpenAlex works call for the venue signals (network; bounded by the
+    caller to the surfaced set)."""
+    data = http_get_json(f"https://api.openalex.org/works/https://doi.org/{doi}",
+                         params={"mailto": mailto, "select": "primary_location"}, timeout=25.0)
+    return venue_info_from_openalex_source((data.get("primary_location") or {}).get("source"))
+
+
+# ---------------------------------------------------------------------------
 # Boundary flags (pure)
 # ---------------------------------------------------------------------------
 
@@ -326,6 +386,7 @@ class ScanRecord:
     rank_components: dict[str, float] = field(default_factory=dict)
     matched_topics: list[str] = field(default_factory=list)
     flags: list[str] = field(default_factory=list)
+    venue_tier: str = "unknown"     # watchlist | indexed | unlisted | unknown | n/a (see venue_tier)
     disposition: str | None = None  # set by the triage skill: wiki | read-once | discard
     first_seen: str = field(default_factory=utc_now_iso)
     provenance: dict[str, Any] = field(default_factory=dict)

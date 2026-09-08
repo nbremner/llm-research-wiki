@@ -1,7 +1,7 @@
 ---
 name: research-scan-triage
 description: "Use when triaging surfaced candidates from the daily research scan into visible Drive state folders — wiki, read-once, or discarded — while preserving manifest/ledger audit state."
-version: 1.4.0
+version: 1.5.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -69,6 +69,15 @@ jobs, organizations, and measurement (`wiki/topic-map.md` is the live topic list
   engineering practice — is **read-once** even when it names a tracked topic such as agentic
   organization design. `wiki` needs a behavioral, organizational, or work-design contribution:
   evidence, theory, or a framework about people and organizations.
+  **Venue quality** (owner request 2026-09-08): every surfaced journal article carries a
+  `venue_tier` set by the harness from public signals — `watchlist` (on the owner's Scopus-verified
+  roster), `indexed` (DOAJ-listed or an OpenAlex/CWTS core source), `unlisted` (checked, none of the
+  above), `unknown` (no signals obtained), `n/a` (preprints, working papers, reports). The digest tags
+  `[venue: unlisted]` / `[venue: unknown]`. An **`unlisted` venue makes the judgment `ambiguous` by
+  default** — propose the disposition you would otherwise give, state in the reason that the venue is
+  unlisted, and let the owner decide; only mark it `clear` when the paper's evidence quality is
+  obviously high on its own terms. `unknown` is judged normally with the gap noted. Three unlisted-venue
+  articles reached the wiki on 2026-09-08 before this rule existed.
   **Evidence threshold for practitioner pieces** (owner ruling 2026-09-08): a brief practitioner blog
   or newsletter post that offers hypotheses without evidence and without a reusable framework is
   **read-once**, however well written. Practitioner *frameworks*, benchmark proposals, and position

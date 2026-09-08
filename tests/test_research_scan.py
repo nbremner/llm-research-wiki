@@ -41,6 +41,64 @@ def test_clean_title_strips_markup_and_newlines():
     assert rec.title == "The SMART model of work"
 
 
+def test_venue_tier_rules():
+    wl_issns, wl_names = c.watchlist_index(cfg.JOURNAL_WATCHLIST)
+    assert "0021-9010" in wl_issns and c.normalize_title("Journal of Applied Psychology") in wl_names
+    T = lambda st, v: c.venue_tier(st, v, wl_issns, wl_names)
+    assert T("preprint", None) == "n/a" and T("working-paper", {"checked": True}) == "n/a"
+    assert T("peer-reviewed", None) == "unknown"
+    assert T("peer-reviewed", {"name": "Some Journal", "issns": ["1234-5678"]}) == "unknown"   # not checked yet
+    assert T("peer-reviewed", {"watchlist": True}) == "watchlist"                               # journal lane
+    assert T("peer-reviewed", {"name": "x", "issns": ["0021-9010"], "checked": True}) == "watchlist"
+    assert T("peer-reviewed", {"name": "Journal of Applied Psychology", "issns": [], "checked": True}) == "watchlist"
+    assert T("peer-reviewed", {"name": "Open J", "issns": ["9999-9999"], "in_doaj": True, "checked": True}) == "indexed"
+    assert T("peer-reviewed", {"name": "Core J", "issns": [], "is_core": True, "checked": True}) == "indexed"
+    assert T("peer-reviewed", {"name": "Path of Science", "issns": ["2413-9009"], "in_doaj": False,
+                               "is_core": False, "checked": True}) == "unlisted"
+    info = c.venue_info_from_openalex_source({"display_name": "J", "issn_l": "1111-2222", "issn": ["1111-2222", "3333-4444"],
+                                              "is_in_doaj": True, "is_core": False, "host_organization_name": "Pub"})
+    assert info == {"name": "J", "issns": ["1111-2222", "3333-4444"], "in_doaj": True, "is_core": False,
+                    "publisher": "Pub", "checked": True}
+    assert c.venue_info_from_openalex_source(None) is None
+
+
+def test_orchestrator_tiers_surfaced_venues():
+    looked_up = []
+
+    def fake(q, n):
+        return [
+            c.ScanRecord(id="doi:10.1/core", title="Generative AI and worker productivity in firms",
+                         abstract="workers employees", source="openalex", url="https://x/core", doi="10.1/core",
+                         year=str(c.utc_now().year), source_type="peer-reviewed",
+                         provenance={"venue": {"name": "Core J", "issns": [], "is_core": True, "in_doaj": False, "checked": True}}),
+            c.ScanRecord(id="doi:10.1/unl", title="Organizational AI adoption and employee outcomes",
+                         abstract="workers employees", source="crossref", url="https://x/unl", doi="10.1/unl",
+                         year=str(c.utc_now().year), source_type="peer-reviewed",
+                         provenance={"venue": {"name": "Path of Science", "issns": ["2413-9009"]}}),
+            c.ScanRecord(id="arxiv:2609.00001", title="LLM agents for workforce tasks", abstract="workers employees",
+                         source="arxiv", url="https://arxiv.org/abs/2609.00001", arxiv_id="2609.00001",
+                         year=str(c.utc_now().year), source_type="preprint"),
+        ]
+
+    def fake_lookup(doi):
+        looked_up.append(doi)
+        return {"name": "Path of Science", "issns": ["2413-9009"], "in_doaj": False, "is_core": False,
+                "publisher": "Publishing Center Dialog", "checked": True}
+    orig, orig_lookup = rs.DISCOVERY.get("openalex"), rs.lookup_venue
+    rs.DISCOVERY["openalex"] = fake; rs.lookup_venue = fake_lookup
+    try:
+        wd = tempfile.mkdtemp()
+        assert rs.main(["--no-journals", "--sources", "openalex", "--queries", "1", "--no-acquire", "--work-dir", wd]) == 0
+        man = json.loads(next(Path(wd).glob("manifest-*.json")).read_text())
+    finally:
+        if orig: rs.DISCOVERY["openalex"] = orig
+        rs.lookup_venue = orig_lookup
+    tiers = {r["id"]: r["venue_tier"] for r in man["records"]}
+    assert tiers == {"doi:10.1/core": "indexed", "doi:10.1/unl": "unlisted", "arxiv:2609.00001": "n/a"}
+    assert looked_up == ["10.1/unl"]                     # only the record lacking signals was looked up
+    assert man["venue_tiers"] == {"indexed": 1, "unlisted": 1, "n/a": 1}
+
+
 def test_candidate_id_priority():
     assert c.candidate_id(doi="10.1234/abc", arxiv_id="2503.16774", url="https://x") == "doi:10.1234/abc"
     assert c.candidate_id(arxiv_id="2503.16774", url="https://x") == "arxiv:2503.16774"

@@ -69,8 +69,8 @@ ACCRETION_LOW_WORDS = 2500
 # Contradiction-pair shortlist defaults (see module docstring).
 PAIR_MIN_SHARED_SOURCES = 2
 DEFAULT_PAIR_WINDOW_DAYS = 35
-DEFAULT_MAX_PAIRS = 15
-DEFAULT_TAIL_SLOTS = 4
+DEFAULT_MAX_PAIRS = 40   # raised from 15 on 2026-09-08 (owner): 300 of 315 pairs pass the gate
+DEFAULT_TAIL_SLOTS = 10  # cold pairs cycle in ~2.5 years instead of ~6
 
 _FENCE_RE = re.compile(r"```.*?```", re.DOTALL)
 _INLINE_CODE_RE = re.compile(r"`[^`\n]*`")

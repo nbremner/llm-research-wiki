@@ -123,6 +123,12 @@ cursor-paginated to a bounded 500 records per journal so publisher bulk re-index
 truncate coverage. Four Crossref requests run concurrently but results are consumed in roster order to
 preserve deterministic dedup; four daily surface slots are reserved for journal-lane candidates when available.
 
+**Venue quality (2026-09-08):** surfaced journal articles carry a deterministic `venue_tier` —
+`watchlist` (the roster above), `indexed` (DOAJ-listed or OpenAlex/CWTS core), `unlisted`, `unknown`,
+`n/a` for non-journal sources — from signals captured at discovery (OpenAlex) plus one bounded lookup
+per surfaced record that lacks them. The triage digest tags unlisted/unknown venues and the rubric makes
+`unlisted` ambiguous by default, so venue judgment stays with the owner.
+
 Dispositions (hybrid autonomy — auto-discard obvious noise, auto-queue obvious wiki-candidates into the
 approval gate, surface the ambiguous middle + read-once for the owner):
 
