@@ -244,6 +244,16 @@ the approval loop and must keep growing under automation.
 
 ## 11. Build log
 
+- **2026-09-08 — Phase 4 trial, batch 1.** First draft (PR #1: 6 sources → 9 topics, 4 deferred)
+  drew two owner rejections *of sources* — an agents-engineering paper outside the behavioral-science
+  lens and a hypothesis-only practitioner post — encoded as prospective rules (triage rubric 1.4.0,
+  `agentic-organization-design-topic-assessment.md`, batch "Proposed rejections"). PR #1 closed,
+  batch regenerated from `main`: **PR #2 (8 sources → 8 topics, 0 deferred) reviewed and merged
+  clean** — trial tally: 1 clean batch of 4. Post-merge housekeeping ran as designed (prune, sync,
+  lint, `drive_review_sync.py` promoted 8 artifacts). Observation: the two drafts judged materiality
+  differently — sources deferred in PR #1 were integrated in PR #2 — so "Proposed rejections" and the
+  evidence-threshold rule now carry that judgment instead of run-to-run variance.
+
 - **2026-09-08 — Phase 2 shipped:** `research-wiki-ingest` 2.6.0 gains the **Weekly synthesis
   batch** mode: one-open-batch rule enforced by `synthesis_pr.py` (status/open/close/prune over the
   GitHub API; token from the git credential store, never in the repo); ≤12 oldest unreviewed sources,
