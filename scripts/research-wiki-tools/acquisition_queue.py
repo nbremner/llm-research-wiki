@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.10"
+# dependencies = [
+#   "google-api-python-client",
+#   "google-auth-oauthlib",
+#   "google-auth-httplib2",
+# ]
+# ///
 """
 acquisition_queue.py -- the "wiki-judged but no copy" ledger (owner request 2026-09-08).
 
