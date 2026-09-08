@@ -82,6 +82,17 @@ def test_ingest_skill_drain_mode_guardrails():
         "`human_reviewed: false`",
     ):
         assert phrase in text, phrase
+    assert "### Weekly synthesis batch" in text
+    for phrase in (
+        "up to **12 sources, oldest first**",
+        "synthesis_pr.py status --json",
+        "never rebase or merge the stale draft",
+        "one subagent per affected topic page",
+        "--allow-check \"Orphan source\"",
+        "git mv wiki/sources/unreviewed/<slug>.md wiki/sources/<slug>.md",
+        "`git checkout main` so the clone is back on a clean main",
+    ):
+        assert phrase in text, phrase
 
 
 def _run_standalone() -> int:

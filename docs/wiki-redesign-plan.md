@@ -1,7 +1,7 @@
 # Wiki Plan — Ingest Automation (current) + Redesign Record (archived)
 
-Status: **ACTIVE build plan — ingest automation, owner-approved 2026-09-07.** Phases 0 and 1
-shipped 2026-09-07 (see §11 Build log); Phases 2–4 pending.
+Status: **ACTIVE build plan — ingest automation, owner-approved 2026-09-07.** Phases 0, 1 and 2
+shipped 2026-09-07/08 (see §11 Build log); Phase 3 pending; Phase 4 (attended trial) in progress.
 The original 2026-06 markdown-in-git redesign this file used to describe is **built and archived**
 in the appendix at the bottom; everything above the appendix is the current plan.
 
@@ -242,6 +242,17 @@ the approval loop and must keep growing under automation.
   computed (lint) or external (Drive manifests, GitHub PRs).
 
 ## 11. Build log
+
+- **2026-09-08 — Phase 2 shipped:** `research-wiki-ingest` 2.6.0 gains the **Weekly synthesis
+  batch** mode: one-open-batch rule enforced by `synthesis_pr.py` (status/open/close/prune over the
+  GitHub API; token from the git credential store, never in the repo); ≤12 oldest unreviewed sources,
+  grouped by target topic, one subagent per affected page, each page drafted once, records promoted
+  out of `unreviewed/` in the same branch, lint gate `--fail-on Medium` with the expected-state
+  checks allowed, branch `synthesis/YYYY-MM-DD` → PR whose merge is the approval, digest with the PR
+  link. `references/declined-synthesis-log.md` created (§6). *Deviation from §4 as written:* PR mode
+  is primary from day one — the classic token already on the VPS can open PRs until it expires
+  2026-09-16, and the Discord-diff fallback is unsafe on the VPS because the daily sync auto-commits
+  any dirty working tree. Deployed as hermes cron "Weekly research-wiki synthesis batch", Mon 09:00 PT.
 
 - **2026-09-07 — Phase 1b: human-review split + subagent drain + Drive mirror.** Owner asked for
   a user-visible line between human-reviewed and auto-written sources: every source record carries

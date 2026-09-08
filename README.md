@@ -105,6 +105,7 @@ uv run scripts/research-wiki-tools/scan_triage_apply.py --show-open             
 uv run scripts/research-wiki-tools/scan_triage_apply.py --latest --dispositions d.json  # triage dry run over the open set
 uv run scripts/research-wiki-tools/scan_triage_apply.py --amend --drive-file-id <id> --to discard --reason "..."  # ingest-rejection writeback
 uv run scripts/research-wiki-tools/drive_review_sync.py [--execute]      # Drive artifact folders <- record review status
+uv run scripts/research-wiki-tools/synthesis_pr.py status               # weekly batch: one-open-batch decision, PR/branch state
 python -m pytest tests/ -q                                             # run the test suite before committing
 ```
 

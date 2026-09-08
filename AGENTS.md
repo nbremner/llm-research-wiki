@@ -27,7 +27,9 @@ When changing any workflow file mirrored here, update this repo in the same work
 - repo docs, config examples, tests, and guardrails
 
 After changing mirrored files: get the change into this repo, run tests, commit, push, and verify
-`origin/main` matches local `HEAD`. On the VPS, `/root/research-wiki-tools` and the skill mounts are
+`origin/main` matches local `HEAD`. (`synthesis/*` branches are the sanctioned exception: the weekly
+synthesis batch pushes one such branch and opens a PR while it awaits the owner's merge; the clone
+itself returns to a clean `main`.) On the VPS, `/root/research-wiki-tools` and the skill mounts are
 symlinks/bind mounts into the repo clone — edits there already sit in the clone's working tree, so
 commit from the clone rather than copying; copy only for any genuinely separate local file.
 
