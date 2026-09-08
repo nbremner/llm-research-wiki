@@ -1,12 +1,14 @@
 ---
 title: AI workforce impact measurement
 status: active
-updated: 2026-08-06
+updated: 2026-09-08
 ---
 
 # AI workforce impact measurement
 
 AI workforce impact measurement is the work of turning AI capability, use, task exposure, and organizational outcomes into defensible evidence about how work is changing. It sits between broad adoption anecdotes and strong labor-market claims: a useful measure has to say what unit is being measured, whether the evidence is predicted capability or observed use, and what inference is still missing before claims about productivity, job redesign, wages, or substitution are warranted.
+
+[[2025-westover-gdp-benchmark]] interprets GDPval as a task-level measure of frontier-model capability on economically valuable professional outputs, rather than a direct measure of occupational displacement or realized workforce change. Its practitioner interpretation makes the capability-to-workforce-inference boundary explicit: benchmark success, speed, and cost advantages remain conditional on task specification, human review, rework, quality assurance, accountability, and workflow integration, so they cannot by themselves establish productivity, job redesign, staffing, wage, or substitution effects.
 
 [[2025-tomlinson-working-with-ai]] gives this topic its first observed-use measurement spine. Using 200,000 Bing Copilot conversations, the authors map both user goals and AI actions to O*NET intermediate work activities, then combine frequency, completion, user feedback, and scope ratings into occupation-level AI applicability scores. The construct is deliberately narrower than productivity or labor displacement: it estimates where AI appears useful for work activities, not whether jobs have changed or whether firms will hire differently.
 
@@ -37,13 +39,13 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 ## Connections
 - Connects to [[task-level-ai-adoption]] because observed use is one input to workforce impact measurement, especially when the data preserve task or work-activity grain rather than only tool-level adoption.
 - Connects to [[human-ai-task-taxonomy]] because measurement depends on correctly distinguishing user goals, AI actions, authority, scope, auditability, and output definition.
-- Connects to [[automation-and-substitution]] because applicability scores can tempt premature substitution claims; the measurement boundary is exactly where usefulness must not be converted into labor-demand inference without evidence.
+- Connects to [[automation-and-substitution]] because applicability scores and observed automation-like exposure can tempt premature substitution claims, yet displacement inference still needs unemployment, hiring, wage, or staffing evidence.
 - Connects to [[job-analysis]] because occupational impact measures often inherit O*NET or other work-analysis taxonomies, with all the benefits and limits of those upstream definitions.
 - Connects to [[construct-validity]] because “AI impact,” “applicability,” “exposure,” “augmentation,” and “automation” are not the same construct and should not be treated as interchangeable dependent variables.
 - Connects to [[human-capital-resource-measurement]] because AI workforce impact measures will increasingly have to distinguish human capability, AI capability, and combined workflow capability rather than treating all performance-relevant capacity as one undifferentiated capital stock.
 - Connects to [[agentic-delegation]] because once AI acts on behalf of workers, impact measurement has to track delegated execution and review structures rather than only advice exposure or conversational use.
-- Connects to [[automation-and-substitution]] because observed exposure becomes more displacement-relevant when it distinguishes automation-like work use from augmentation-like assistance, but the outcome claim still depends on unemployment, hiring, wage, or staffing evidence.
 - Connects to [[domain-expertise-in-agentic-work]] because workforce-impact measures need to distinguish occupational title, coding skill, task-specific expertise, AI literacy, and combined human-agent workflow capability.
+- Connects to [[human-ai-task-allocation]] because interpreting capability benchmarks for work requires task decomposition and explicit decisions about review, quality assurance, and accountability in the resulting workflow.
 
 ## Contradictions & open questions
 - Observed conversational use improves on speculative exposure scores, but it still misses embedded automation, enterprise copilots, non-chat workflows, and tasks workers avoid asking AI to do because of risk, policy, visibility, or evaluation pressure.
@@ -59,6 +61,8 @@ For I-O use, the measurement lesson is that AI workforce impact evidence needs a
 - [[2026-putka-indexing-ai-impact-onet]] proposes an unusually explicit validity program—multiple models and runs for reliability plus a nomological network for convergent and discriminant evidence—but that is still a proposal. The unresolved question is whether a transparent multi-index architecture predicts realized work change, or simply produces more differentiated theoretical exposure scores.
 - [[2026-iscenko-google-ai-economy-atlas]] extends observed-use coverage to Gemini, but its breadth can invite an overclaim: diffuse platform use is not evidence that most tasks, organizations, or labor markets have changed. The 21%-median task-use estimate and platform exclusions make depth, enterprise integration, and outcome linkage the unresolved measurement problem.
 - [[2026-chin-work-at-frontier]] operationalizes occupational boundaries through self-reported roles and O*NET mappings, so its crossover estimate depends on a historical U.S. taxonomy and a primary-task classifier. It does not establish that work was completed, that specialists no longer did it, or that organizations changed staffing, job descriptions, pay, performance criteria, or accountability.
+
+- [[2025-westover-gdp-benchmark]] frames GDPval as a useful capability signal for professional tasks, but its practitioner interpretation does not supply field evidence that benchmark gains survive task specification, review, rework, quality assurance, accountability, and workflow integration; that capability-to-workforce inference remains open.
 
 - [[2026-hitzig-agentic-coding-expertise]] improves the process measurement of agentic coding, but its success labels remain transcript- and telemetry-based; workforce-impact claims still need downstream evidence about maintained artifacts, quality, productivity, wages, hiring, and skill development.
 

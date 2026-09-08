@@ -1,7 +1,7 @@
 ---
 title: AI adoption
 status: active
-updated: 2026-08-31
+updated: 2026-09-08
 ---
 
 # AI adoption
@@ -52,6 +52,8 @@ This reframes "adoption" away from a tooling/provisioning event and toward an on
 
 [[2026-lunich-why-workers-use-ai-less-often]] adds a post-access question: why do some workers reduce use after AI is already available? In its 2026 German survey, reduced use was uncommon, but the workers who reported it most often pointed to low practical value, unreliable results, uncertainty about data protection, and unclear workplace rules. This does not show that those factors caused the change, but it does make a useful distinction: adoption is not complete when a worker tries a tool. It has to keep earning a place in the work through useful, reliable output and conditions that make appropriate use understandable.
 
+[[2026-shoghli-persona-migration-expectation-recalibration]] adds longitudinal evidence that post-use experience can recalibrate adoption rather than simply confirm pre-use intent. In a matched two-wave sample of 124 employees during an eight-week Microsoft 365 Copilot pilot at a state transportation agency, perceived usefulness declined significantly after use while aggregate ease of use, behavioral intention, and trust changed little; beneath those averages, 40% of baseline Skeptics became Cautiously Positive and 68% of baseline Champions moved to less enthusiastic personas. This suggests that adoption support cannot treat initial enthusiasm or resistance as stable: task-relevant examples, verification routines, and trust calibration may need to adjust as workers encounter the tool in practice.
+
 [[2023-mkhize-examining-barriers-enablers-ai-adoption]] adds a grounded, pre-GenAI implementation case: the adoption condition is not abstract acceptance but a chain of operational fit. AI-enabled subtitling and content work gained support where speed and throughput were visible, but short tasks could remain faster manually; accuracy, data quality, integration, and traceability constrained trust; contractual restrictions and approval gates set hard limits on autonomous use. This single case does not establish which condition is generally binding, but it makes the mapping problem concrete: a viable use case still has to fit the task, the surrounding systems, and the organization’s obligations.
 
 The report also raises an equity question without settling it. Higher-skill occupational groups were more likely to report increasing their AI use, while lower-skill groups were comparatively more likely to report decreasing it. That pattern could reflect unequal task fit, access to support, prior skill, or broader differences in work conditions; the survey cannot separate them. Still, adoption programs should not read stable or rising overall use as proof that the same conditions work for everyone.
@@ -68,6 +70,7 @@ The report also raises an equity question without settling it. Higher-skill occu
 - If behavioral human-centeredness is the bottleneck, adoption programs need to diagnose predictable reactions to AI — distrust, loss aversion, image concerns, autonomy threat, overconfidence, and escalation — rather than assuming technically better systems will be accepted.
 - If employee change support is the bottleneck, adoption programs need to distinguish compliance from championing: workers can meet rollout expectations while still not doing the discretionary advocacy, experimentation, and problem solving that make AI use durable.
 - If organizational learning capability is the bottleneck, adoption programs need survey-feedback, knowledge-transfer, and remeasurement loops that convert experimentation into durable changes in routines, not just more tool trials.
+- [[ai-receptivity]] should be treated as a time-dependent adoption input rather than a fixed pre-rollout trait: post-use persona migration and usefulness decline can coexist within the same pilot, so support should be recalibrated after workers encounter the tool in practice [[2026-shoghli-persona-migration-expectation-recalibration]].
 - [[task-level-ai-adoption]] should stay analytically separate from organizational adoption: conversation traces reveal where AI is being tried, but not whether the work has been redesigned, governed, or connected to outcomes.
 
 ## Contradictions & open questions

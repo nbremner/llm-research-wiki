@@ -7,7 +7,7 @@ doi: 10.1016/j.orgdyn.2025.101202
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-09-08
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1fj9BekgmgrO3UtZtbGgHfSJR38gADWKi
 file_hash: c6cdd9cd6d7135b5611dd92b0dc77e7fda0214e9cb56dc8d8ff83dac6daec233
 ---
@@ -32,5 +32,3 @@ file_hash: c6cdd9cd6d7135b5611dd92b0dc77e7fda0214e9cb56dc8d8ff83dac6daec233
 
 ## Feeds
 - [[ai-workforce-transformation-implementation]]
-- [[organizational-learning-capability]]
-- [[responsible-ai-deployment]]

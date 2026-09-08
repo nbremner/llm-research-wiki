@@ -7,7 +7,7 @@ doi: 10.70175/hclreview.2020.26.2.2
 source_type: article
 publication_status: other
 retrieved: 2026-09-07
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1KH-tIuAuO7ifYQtROjblp1cVI8Y8Z7J_
 file_hash: 85d7c9db93c67764f56530d6b6faa83b3acb6bbdbd56ffea1226951ca9feb787
 ---
@@ -29,4 +29,3 @@ file_hash: 85d7c9db93c67764f56530d6b6faa83b3acb6bbdbd56ffea1226951ca9feb787
 
 ## Feeds
 - [[ai-workforce-impact-measurement]]
-- [[human-ai-task-allocation]]

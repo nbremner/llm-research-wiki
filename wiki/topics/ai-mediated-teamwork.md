@@ -1,7 +1,7 @@
 ---
 title: AI-mediated teamwork
-status: stub
-updated: 2026-08-06
+status: active
+updated: 2026-09-08
 ---
 
 # AI-mediated teamwork
@@ -25,16 +25,21 @@ The social result is more tentative but important for I-O framing. AI-supported 
 
 [[2025-klonek-ai-work-stress]] gives the page a work-design stress mechanism for human–AI team processes. In ChatGPT-related teamwork tweets, transition and action processes were linked to lower stress, and action plus interpersonal processes weakened the positive association between AI control and stress. That makes AI-mediated teamwork more than a metaphor for performance: planning, goal-progress, and socioemotional processes may operate as resources that protect workers when AI has more control.
 
+[[2026-shi-when-bots-join-the-team]] shifts the coordination question from replacing a teammate to adding a visible institutional participant to the team's shared interaction record. In 2,991 open-source projects around first adoption of rule-based bots, adoption coincided with more repeated human engagement and bot-directed social memory, fewer conflict cascades, and more distinctive project outputs; the evidence is consistent with bots reinforcing coordination functions that organize human collaboration rather than simply displacing it.
+
+The mechanism evidence is suggestive rather than causal. In joint models, repeated engagement, bot-to-human addressing, and role differentiation were associated with fewer conflict cascades, while role differentiation, bot-directed social memory, and inter-bot interaction were associated with greater output distinctiveness; because the event study has no untreated comparison group and bot adoption may be endogenous, [[2026-shi-when-bots-join-the-team]] does not establish that bots caused these changes or mediated them.
+
 ## Connections
 - Connects to [[human-ai-collaboration]] because the teammate metaphor can be empirically useful for performance, expertise, and affective functions, while accountability and stewardship still sit with humans.
 - Connects to [[work-redesign]] because AI can change whether organizations need a team, a solo worker with AI, an automated replacement inside a team, or a different coordination structure for a given problem.
 - Connects to [[automation-and-substitution]] because substitution can occur at the team-function level before it becomes job-level labor replacement.
 - Connects to [[ai-mediated-work-experience]] because teamwork is partly a motivational and social experience, and human–AI team processes can change stress, control, and social-resource perceptions rather than only team output.
 - Connects to [[human-ai-task-taxonomy]] because teamwork claims need task-level detail about output definition, authority, auditability, expertise mix, and whether the work requires coordination beyond idea generation.
-- Connects to [[ai-mediated-organizational-networks]] because AI may change bounded team functions and broader cross-team knowledge-flow patterns at the same time.
+- Connects to [[ai-mediated-organizational-networks]] because rule-based bots can reinforce coordination within a project's shared interaction record, while GenAI can change bounded team functions and broader cross-team knowledge-flow patterns at the same time [[2026-shi-when-bots-join-the-team]].
 
 ## Contradictions & open questions
 - [[2026-dellacqua-cybernetic-teammate]] supports AI as a partial substitute for some teamwork benefits in bounded product-innovation tasks, while [[2025-dellacqua-super-mario-ai]] shows that replacing a human teammate with a high-performing automated agent can reduce performance when the task depends on coordination routines, trust, and effort. The contradiction is productive: AI may substitute for some expertise-integration functions while disrupting interdependent teamwork functions.
+- [[2026-shi-when-bots-join-the-team]] instead associates the adoption of rule-based bots with fewer conflict cascades and more repeated human engagement in open-source projects, contrasting with the performance and trust disruption observed when an autonomous agent replaces a human teammate in [[2025-dellacqua-super-mario-ai]]. Whether this reflects bot role, task interdependence, team skill, or the difference between archival associations and experimental replacement remains open.
 - [[2026-buechsenschuss-genai-organizational-networks]] points in the opposite direction from simple team substitution: grounded GenAI increased human-human network ties rather than reducing them, though the evidence is self-reported and short-run.
 - The same source finds little evidence that teams with AI outperformed individuals with AI on solution quality, which raises a sharp redesign question: when does AI make teams more valuable, and when does it make team formation redundant for the immediate task?
 - The positive emotion finding should not be overread as relatedness. Enthusiasm after AI use may come from novelty, perceived fluency, reduced effort, or task success rather than genuine social connection or sustained team climate.

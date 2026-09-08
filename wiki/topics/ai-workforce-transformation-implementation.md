@@ -1,7 +1,7 @@
 ---
 title: AI workforce transformation implementation
 status: active
-updated: 2026-08-03
+updated: 2026-09-08
 ---
 
 # AI workforce transformation implementation
@@ -51,6 +51,8 @@ Build governance into the experiment. [[2025-landers-ethical-use-ai-iop]] argues
 ## 6. Convert experiments into organizational learning
 
 A local pilot is not yet transformation. Capture the workflow, mechanism, human contribution, outcomes, failures, workarounds, and new verification work—not merely prompts. Compare practices across teams and decide what should become standard workflows, reusable agent capabilities, role expectations, training, or governance controls.
+
+[[2026-sarkar-ai-hype-workflow-reality]] supplies an explicit institutionalization sequence: Explore low-stakes use cases, Codify effective prompts, evaluation criteria, and workflow knowledge, Integrate those practices into recurring work with telemetry and risk controls, then Elevate them into continuing learning and governance. As a strategic framework rather than a tested causal method, it specifies what must be made shared and durable between pilots and selective scaling, not evidence that the sequence will produce transformation in every setting.
 
 [[1997-goh-benchmarking-learning-capability]] identifies shared purpose, leadership commitment and empowerment, experimentation, knowledge transfer, and teamwork as conditions that support organizational learning. Its survey is not AI-specific and does not prove that those conditions cause successful transformation, but it provides a more disciplined diagnosis than invoking “learning culture.” [[2018-fugate-change-compliance-championing]] also distinguishes minimal compliance from discretionary championing: useful information, expectation clarity, and trust can shape whether employees treat change as a challenge and contribute problem solving beyond minimum use. Championing is not inherently evidence that a system is good, however; worker resistance and correction may carry valid information about workload, surveillance, autonomy, identity, or accountability.
 
