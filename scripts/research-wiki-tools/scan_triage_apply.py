@@ -760,6 +760,9 @@ def main(argv: list[str]) -> int:
     p.add_argument("--digest-out", default=None)
     p.add_argument("--token-path", default=cfg.DEFAULT_TOKEN_PATH)
     p.add_argument("--out-root", default=cfg.DEFAULT_OUT_ROOT)
+    p.add_argument("--max-auto-wiki", type=int, default=cfg.MAX_AUTO_WIKI_PER_RUN,
+                   help=f"Cap on automatic _triage/wiki moves per run (default {cfg.MAX_AUTO_WIKI_PER_RUN}); "
+                        "raise it only when applying the owner's own labels")
     p.add_argument("--no-acquisition-ledger", action="store_true",
                    help="Skip regenerating the needs-acquisition ledger after a triage run")
     amend = p.add_argument_group("amend", "re-dispose an already-disposed record (ingest rejection writeback)")
@@ -801,7 +804,7 @@ def main(argv: list[str]) -> int:
             return 2
 
         dispositions = json.loads(Path(args.dispositions).read_text(encoding="utf-8"))
-        merged, plan = apply_dispositions(merged, dispositions)
+        merged, plan = apply_dispositions(merged, dispositions, max_auto_wiki=args.max_auto_wiki)
         carry = None if manifest_path else carryover_summary(entries, stranded, plan, args.carryover_days)
         if args.execute:
             if manifest_path:
