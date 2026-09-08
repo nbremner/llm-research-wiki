@@ -760,6 +760,8 @@ def main(argv: list[str]) -> int:
     p.add_argument("--digest-out", default=None)
     p.add_argument("--token-path", default=cfg.DEFAULT_TOKEN_PATH)
     p.add_argument("--out-root", default=cfg.DEFAULT_OUT_ROOT)
+    p.add_argument("--no-acquisition-ledger", action="store_true",
+                   help="Skip regenerating the needs-acquisition ledger after a triage run")
     amend = p.add_argument_group("amend", "re-dispose an already-disposed record (ingest rejection writeback)")
     amend.add_argument("--amend", action="store_true")
     amend.add_argument("--id", default=None, help="record id, e.g. doi:10.1234/abc")
@@ -808,6 +810,16 @@ def main(argv: list[str]) -> int:
                 execute_open_set(merged, plan, entries, args.token_path, origin=origin)
 
         digest = render_digest(merged, plan, executed=args.execute, carryover=carry)
+        if not args.no_acquisition_ledger:
+            # The "wiki but no copy" queue is recomputed every run and its count
+            # rides on the digest, so it can never disappear silently again.
+            try:
+                import acquisition_queue
+                wiki_dir = Path(__file__).resolve().parents[2] / "wiki"
+                ledger = acquisition_queue.refresh(args.out_root, wiki_dir, args.token_path, execute=args.execute)
+                digest += "\n" + ledger["summary"] + "\n"
+            except Exception as e:  # noqa: BLE001 - the ledger must never break triage
+                digest += f"\nAcquisition backlog: ledger refresh failed ({type(e).__name__}: {str(e)[:80]}).\n"
         if args.digest_out:
             Path(args.digest_out).write_text(digest, encoding="utf-8")
         print(digest)

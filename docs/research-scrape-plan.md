@@ -77,7 +77,7 @@ invoked.
 | Layer | Holds | Lives in |
 |---|---|---|
 | **Git repo** | harness scripts, the triage skill, the rubric + seed-query config, wiki content | git (origin ↔ LC ↔ NJ, already synced) |
-| **Triage store** | visible state folders (`pending`, `wiki`, `read-once`, `discarded`) + manifests | Google Drive `_triage/` |
+| **Triage store** | visible state folders (`pending`, `wiki`, `read-once`, `discarded`) + manifests + the **needs-acquisition ledger** (`needs-acquisition.md`, computed from the manifests on every triage run: wiki-judged records with no copy, minus what the wiki already has) | Google Drive `_triage/` |
 | **Coverage ledger** | seen-index · search-log · failure-catalog | Google Drive (state-of-record, JSON) |
 | **Canonical raw store** | successfully ingested source artifacts, filed by review status | Google Drive `public-literature-wiki/_sources/` (human-reviewed) and `_sources/_unreviewed/` (awaiting review) — mirrors `wiki/sources/` |
 | **Discord** | the daily digest — a *view*, not the record | Discord via `hermes send` |

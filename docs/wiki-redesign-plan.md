@@ -244,6 +244,14 @@ the approval loop and must keep growing under automation.
 
 ## 11. Build log
 
+- **2026-09-08 — needs-acquisition ledger (owner decision: step 1 only, no auto-retry, no
+  abstract-only records).** 182 candidates had been judged `wiki` without an obtainable copy and
+  each appeared in one digest and never again. `acquisition_queue.py` computes the queue from the
+  manifests on every triage run (clear `wiki`, no artifact, not already in the wiki by DOI/URL/title,
+  not since re-disposed), renders `_triage/needs-acquisition.md` + a state JSON in Drive, and the
+  applier appends the `Acquisition backlog:` count line to every digest. Owner works it by dropping
+  copies into `_triage/wiki` or rejecting from Discord.
+
 - **2026-09-08 — cap + venue quality (owner decisions):** contradiction-pair cap 15/4 → **40/10**
   (`graph_lint.py` defaults) after the first Phase-3 coverage warning. **Venue-quality tier** added to
   the scan: `venue_tier` on every surfaced record (`watchlist` = the 55-journal roster; `indexed` = DOAJ
