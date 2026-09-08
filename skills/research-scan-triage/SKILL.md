@@ -1,7 +1,7 @@
 ---
 name: research-scan-triage
 description: "Use when triaging surfaced candidates from the daily research scan into visible Drive state folders — wiki, read-once, or discarded — while preserving manifest/ledger audit state."
-version: 1.3.0
+version: 1.4.0
 author: Hermes Agent
 license: MIT
 metadata:
@@ -41,7 +41,7 @@ owner-approved synthesis.
 | `_sources/_unreviewed`, `_sources` (ingested artifacts, by review status — the ingest skill's concern, not this one's) | `1xaYFRK0yBxhRfCVeCfLKXu84aW1-jhwS`, `1p8CGIWJ6OI7boK6PvJWIIW6i1q0SP2uU` |
 | Rubric config (edit to retune the scan) | `/root/research-wiki-tools/scan_config.py` |
 
-## The disposition rubric (owner-calibrated through 2026-09-07)
+## The disposition rubric (owner-calibrated through 2026-09-08)
 
 The wiki's mission: **AI workforce transformation × I-O psychology** — how AI changes work, workers,
 jobs, organizations, and measurement (`wiki/topic-map.md` is the live topic list).
@@ -64,6 +64,15 @@ jobs, organizations, and measurement (`wiki/topic-map.md` is the live topic list
   foundational. Do not mark a paper read-once *because* it lacks AI content. (The scan's discovery gate
   requires an AI term, so foundational papers usually arrive by the owner dropping them into
   `_triage/wiki` directly.)
+  **Behavioral-science lens** (owner ruling 2026-09-08): a paper whose contribution is exclusively
+  the technical implementation of AI agents or systems — architectures, protocols, governance-as-code,
+  engineering practice — is **read-once** even when it names a tracked topic such as agentic
+  organization design. `wiki` needs a behavioral, organizational, or work-design contribution:
+  evidence, theory, or a framework about people and organizations.
+  **Evidence threshold for practitioner pieces** (owner ruling 2026-09-08): a brief practitioner blog
+  or newsletter post that offers hypotheses without evidence and without a reusable framework is
+  **read-once**, however well written. Practitioner *frameworks*, benchmark proposals, and position
+  papers that organize a tracked topic remain `wiki` (the ORCHESTRA / time-saved-benchmark rule above).
 - **read-once** — AI×work-*adjacent* but centered in a domain the wiki does not track: automation of a
   different profession's work product (e.g. financial audit / accounting IS), a different industrial
   context (e.g. manufacturing / Industry 5.0 human-machine collaboration), **student-sample
@@ -98,6 +107,8 @@ Auto-actions happen only on `clear`.
 | University-student cognitive-offloading study, no work setting | read-once | student sample; construct match alone insufficient (owner-ratified 2026-07-04) |
 | Same paper under a second SSRN DOI | discard | duplicate |
 | SMART model of work design (Parker & Knight, *Human Resource Management*), no AI content | wiki | seminal work-design framework that frames AI work-redesign evidence; foundational papers need no AI component (owner ruling 2026-09-07) |
+| Project-level governance manifest for agent-mediated OSS contributions (arXiv) | read-once | exclusively technical implementation of AI agents; no behavioral/organizational contribution despite naming agentic org design (owner ruling 2026-09-08) |
+| "AI-washing and the phantom productivity paradox" (HCL Review blog post) | read-once | brief practitioner post: hypotheses only, no evidence, no reusable framework (owner ruling 2026-09-08) |
 
 ## Hybrid autonomy — what acts alone vs. surfaces
 
