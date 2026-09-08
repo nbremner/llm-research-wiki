@@ -251,7 +251,12 @@ the approval loop and must keep growing under automation.
   the monthly cron with **one subagent per claim**, the owner spot-check rule, the `--pairs`
   coverage `warning` (emitted when `dropped_gated ≥ max_pairs`) quoted at the top of the digest, and
   the "staleness is a signal" note. First sample on real history: 177 candidate claims from 34
-  commits.
+  commits. **First audit (manual run 2026-09-08, model gpt-6-astra):** 10 claims → 9 supported,
+  1 reasoning error (a Connections bullet on `ai-enabled-job-crafting` overreaching Liu 2026),
+  supported rate 90%, record `claim_audit-20260908T052536Z.json` in the Drive ledger; parent
+  context peaked at 54k with grading delegated. The coverage warning fired for real: 300 of 315
+  eligible pairs pass the 35-day change-gate and 289 are dropped beyond the 15-pair cap — the
+  monthly contradiction check is a rotating sample; raising the cap is an owner decision (§9).
 
 - **2026-09-08 — Phase 4 trial, batch 1.** First draft (PR #1: 6 sources → 9 topics, 4 deferred)
   drew two owner rejections *of sources* — an agents-engineering paper outside the behavioral-science

@@ -181,6 +181,8 @@ def render_digest(summary: dict[str, Any], history: list[dict[str, Any]], graded
         lines.append("\n**Needs a look** (owner: spot-check at least 2 graded claims, including these)")
         for r in flagged:
             lines.append(f"- [{r['grade']}] `{r['topic']}` — “{r['text'][:140]}…” — {r['note'][:160]}")
+            if r.get("evidence"):
+                lines.append(f"  source says: “{r['evidence'][:300]}”")
     lines.append("\n**All graded claims**")
     for r in graded:
         src = ", ".join(f"[[{s}]]" for s in r["cited_sources"]) or "(no citation)"

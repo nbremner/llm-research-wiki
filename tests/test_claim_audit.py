@@ -58,7 +58,8 @@ def test_grade_validation_and_summary():
     claims = ca.extract_added_claims(DIFF, "abc123def456", "2026-09-08", SOURCES, TOPICS)
     grades = [{"id": claims[0]["id"], "grade": "cited-supported", "note": "matches abstract"},
               {"id": claims[1]["id"], "grade": "uncited"},
-              {"id": claims[2]["id"], "grade": "reasoning-error", "note": "causal reading of a survey"}]
+              {"id": claims[2]["id"], "grade": "reasoning-error", "note": "causal reading of a survey",
+               "evidence": "the survey was cross-sectional; no causal claim is made"}]
     graded = ca.validate_grades(claims, grades)
     s = ca.summarize(graded)
     assert s["n"] == 3 and s["counts"]["cited-supported"] == 1 and s["counts"]["reasoning-error"] == 1
@@ -78,6 +79,7 @@ def test_grade_validation_and_summary():
     assert "3 claims sampled from 40" in digest and "supported rate 33%" in digest
     assert "Trend" in digest and "2026-09: 90%" in digest and "Needs a look" in digest
     assert "[reasoning-error] `work-redesign`" in digest and "spot-check at least 2" in digest
+    assert "source says: “the survey was cross-sectional" in digest   # evidence snippet for spot-checks
 
 
 def _run_standalone() -> int:
