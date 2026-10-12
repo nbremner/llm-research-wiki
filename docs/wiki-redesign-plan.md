@@ -265,6 +265,11 @@ the approval loop and must keep growing under automation.
 
 ## 11. Build log
 
+- **2026-10-12 — batch dispatch in groups of ≤10.** NicholasJunior's `delegation.max_concurrent_children`
+  is 10; the 09-21 batch's single 12-task `delegate_task` call was rejected ("Too many tasks") and the
+  agent split it on its own. Ingest skill 2.8.2 says so: dispatch in groups of at most 10, then the
+  rest, validating each group as it returns (owner decision: skill text, not a config/cap change).
+
 - **2026-10-12 — approval-free abandon path for the weekly batch.** The 09-14 → 10-05 batches tried
   to roll back with hard resets, forced cleans and forced branch deletes; Hermes's approval detector
   refuses those in an unattended cron run, so each run improvised a cleanup and left its `synthesis/*`

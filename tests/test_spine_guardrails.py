@@ -94,6 +94,7 @@ def test_ingest_skill_drain_mode_guardrails():
         "synthesis_pr.py status --json",
         "never rebase or merge the stale draft",
         "one subagent per affected topic page",
+        "Dispatch in groups of at most 10, then the rest",
         "--allow-check \"Orphan source\"",
         "git mv wiki/sources/unreviewed/<slug>.md wiki/sources/<slug>.md",
         "`git checkout main` so the clone is back on a clean main",

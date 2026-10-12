@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.8.1
+version: 2.8.2
 author: Hermes Agent
 license: MIT
 metadata:
@@ -276,8 +276,10 @@ and obey its `decision`:
    abandoned draft from earlier the same day), do not reuse or delete it: branch as
    `synthesis/YYYY-MM-DD-2` (same title and digest date). `synthesis_pr.py prune` deletes stale local
    branches on a later run.
-6. **Dispatch one subagent per affected topic page** (existing or new) with `delegate_task`, all
-   tasks in one `group`, using the child brief below; pass the output schema.
+6. **Dispatch one subagent per affected topic page** (existing or new) with `delegate_task`, using
+   the child brief below and the output schema. Dispatch in groups of at most 10, then the rest:
+   `delegation.max_concurrent_children` is 10 and a larger call is rejected outright ("Too many
+   tasks"), so a batch spanning 11–12 pages takes two calls. Validate each group as it returns.
 7. **Validate** every child result before anything else: `git status --porcelain` lists only the
    expected topic files; each edited/created page has frontmatter with `title`, `status`, and
    `updated: <today>`; every `[[source]]` it cites resolves to a record (batch source or already
