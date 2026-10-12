@@ -1,7 +1,7 @@
 ---
 name: research-wiki-graph-lint
 description: Use when auditing the markdown research wiki for graph coherence — broken wikilinks, orphan pages, claims without a source, sources that feed no topic, provenance gaps, and stale topics — or when running the monthly semantic lint (contradiction check over the --pairs shortlist + evidence-staleness review). Report-only; fixes route through the normal write paths.
-version: 2.4.0
+version: 2.4.1
 author: Hermes Agent
 license: MIT
 metadata:
@@ -29,6 +29,11 @@ across `wiki/` and reports, by severity:
   (the one hard rule: public provenance).
 - **Medium — Orphan source / Orphan topic:** a page nothing links to.
 - **Medium — Source feeds no topic:** evidence sitting unused — no resolvable `[[topic]]` link.
+  **Reviewed sources (`sources/`) only:** a record still in `sources/unreviewed/` is pending
+  synthesis, its `## Feeds` is a proposal (possibly just a plain-text *Proposed new topic* line) and
+  it is already reported as an orphan. Gating on it blocked every weekly batch 2026-09-14 → 10-05
+  (owner ruling 2026-10-12). The High *Topic cites unreviewed source* check is what keeps unreviewed
+  evidence off topic pages.
 - **Medium — Topic cites no source:** an active topic making claims with no `[[source]]` behind them.
 - **Medium — Topic evidence-stale:** ≥2 linked sources with `retrieved` dates *after* the topic's
   `updated` — the synthesis is behind the evidence. (Depends on the `updated:`-discipline rule in

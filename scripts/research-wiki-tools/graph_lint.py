@@ -218,9 +218,15 @@ def build_findings(
             if retrieved_dates.get(slug) is None:
                 add("Low", "Source missing retrieved date", slug,
                     "no parseable `retrieved:` frontmatter — never counts toward evidence-staleness")
-            # A source should feed at least one real topic.
+            # A reviewed source should feed at least one real topic. A record still in
+            # sources/unreviewed/ is awaiting synthesis by definition: its `## Feeds` is a
+            # proposal and may legitimately be only a plain-text "Proposed new topic" line,
+            # and it already surfaces as Orphan source meanwhile. Gating on it failed every
+            # weekly batch 2026-09-14 → 10-05 on records outside the batch (owner ruling
+            # 2026-10-12: proposals are fine; nothing reaches a topic page before review —
+            # that is the High "Topic cites unreviewed source" check below).
             fed = [t for t in p["links"] if t in slugs]
-            if not fed:
+            if not fed and not in_unreviewed:
                 add("Medium", "Source feeds no topic", slug, "no resolvable [[topic]] link — evidence not synthesised")
 
         if kind == "topic":

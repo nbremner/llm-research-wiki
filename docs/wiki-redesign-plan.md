@@ -265,6 +265,22 @@ the approval loop and must keep growing under automation.
 
 ## 11. Build log
 
+- **2026-10-12 — weekly batch unblocked: lint no longer gates on unreviewed records' proposed
+  feeds.** Every weekly batch from 09-14 to 10-05 drafted 12 sources into 9–10 topics (per-topic
+  subagents), promoted the records, then failed step 10's Medium gate on **Source feeds no topic**
+  for two `sources/unreviewed/` records *outside* the batch (`2025-isada-…`: only a plain-text
+  *Proposed new topic* line; `2026-sapkota-…`: empty `## Feeds`), rolled everything back and
+  reported "blocked" — four `ok` runs, no PR, `wiki/topics/` untouched since batch #2. The drain
+  gates at High, so such records pass the drain and poison the weekly gate at Medium. Fix
+  (`graph_lint.py`, owner-approved): the check fires for reviewed sources only; an unreviewed record
+  is pending synthesis by definition, its `## Feeds` is a proposal, and it already appears as Orphan
+  source meanwhile. The High **Topic cites unreviewed source** gate is unchanged — nothing reaches a
+  topic page before the owner's merge. Graph-lint skill 2.4.1. Seen, not yet fixed:
+  `delegation.max_concurrent_children: 10` rejects a 12-topic dispatch (09-21 recovered by
+  splitting); the batch's rollback commands (`git reset --hard`, `git branch -D`) need approval and
+  never run unattended (three stale local `synthesis/*` branches on the clone); a blocked batch ends
+  as a normal reply, so `hermes cron list` shows `ok`.
+
 - **2026-09-08 — stranded backfill applied + drain order.** Owner labelled all 67 stranded triage
   records (29 discard, 20 read-once, 18 wiki: 5 auto-moved, 13 to the acquisition ledger with copies
   the owner dropped into `_triage/wiki`), applied deterministically with the new `--max-auto-wiki`

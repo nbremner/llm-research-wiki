@@ -280,6 +280,29 @@ def test_topic_must_not_cite_unreviewed_source():
     assert not any(c == "Topic cites unreviewed source" for _, c, _ in _checks(moved))
 
 
+def test_feeds_no_topic_only_fires_for_reviewed_sources():
+    # An unreviewed record's `## Feeds` is a proposal and may be only a plain-text "Proposed new
+    # topic" line (no wikilink); it is pending synthesis, not a defect. Gating on it failed every
+    # weekly batch 2026-09-14 -> 10-05 on records outside the batch (owner ruling 2026-10-12).
+    base = [topic("ai-adoption", links=["2026-ok"]), doc("overview", links=["ai-adoption"]),
+            source("2026-ok", links=["ai-adoption"])]
+    pending = source("2026-proposal", links=[], reviewed="false", unreviewed_dir=True)
+    found = _checks(base + [pending])
+    assert not any(c == "Source feeds no topic" for _, c, _ in found)
+    assert ("Medium", "Orphan source", "2026-proposal") in found  # still visible as queue
+    assert not any(sev == "High" for sev, _, _ in found)
+    # Once reviewed (moved up to sources/), unused evidence is flagged again.
+    reviewed = source("2026-proposal", links=[])
+    assert ("Medium", "Source feeds no topic", "2026-proposal") in _checks(base + [reviewed])
+    # The owner gate is untouched: a topic still may not cite the unreviewed record.
+    citing = [topic("ai-adoption", links=["2026-ok", "2026-proposal"]), base[1], base[2], pending]
+    assert ("High", "Topic cites unreviewed source", "ai-adoption") in _checks(citing)
+    # And the batch gate command's allow-list now passes with such a record in the queue.
+    assert not graph_lint.should_fail(
+        graph_lint.build_findings(base + [pending], today=dt.date(2026, 10, 12)), "Medium",
+        ["Orphan source", "Topic accretion", "Topic evidence-stale"])
+
+
 def test_load_pages_marks_unreviewed_folder():
     import tempfile
     d = Path(tempfile.mkdtemp())
