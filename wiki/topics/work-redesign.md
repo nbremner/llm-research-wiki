@@ -1,7 +1,7 @@
 ---
 title: Work redesign
 status: active
-updated: 2026-08-31
+updated: 2026-10-12
 ---
 
 # Work redesign
@@ -86,6 +86,8 @@ How AI changes the way work is organized — which tasks get reallocated, recomb
 [[2026-chin-work-at-frontier]] supplies an early behavioral signal that redesign pressure can cross occupational boundaries before an organization formally redraws roles. In a large sample of work-related ChatGPT messages linked to self-reported role information, 16.8% of all messages and 43.5% of occupation-specific non-generic messages concerned tasks historically associated with another occupation. That is not evidence that firms have successfully redesigned roles; it shows that AI can make workers attempt task bundles outside their historical occupational boundary, creating a governance and capability question about who is permitted, prepared, and accountable to do the newly reachable work.
 
 [[2026-bakker-artificial-intelligence-job-design]] gives work redesign a JD-R architecture rather than a simple allocation vocabulary. Its central distinction is two-dimensional: who initiates adoption (bottom-up discretion versus top-down mandate or embedded system) is analytically separate from what the system does (augmentation versus automation). The review argues that the configuration, including whether top-down systems enable reciprocal interaction or impose unilateral algorithmic control, shapes whether redesign expands cognitive support and feedback or erodes autonomy, task completeness, learning opportunity, and social resources. It is an integrative theory review, not a causal test of the 2 × 2 framework.
+
+[[2023-parker-smart-work-design]] supplies a foundational evaluation framework for AI work redesign: beyond whether AI reallocates work, assess whether the redesigned job remains stimulating (variety, information processing, problem solving), builds mastery (feedback and role clarity), preserves autonomy (decision, timing, and method discretion), supports relational value (social support, task significance, beneficiary contact), and remains tolerable (without overload, work–home conflict, or role conflict). The validated five-factor structure and its expected associations with satisfaction and leader-rated performance make these dimensions a disciplined checklist for evaluating redesign outcomes, but the studies do not establish that an AI intervention will causally improve them.
 
 The review also names **job demand substitution** as a design risk: AI can remove routine work but refill the saved time with harder escalations, review, accountability, or emotionally demanding work. Its cited examples include senior developers spending 6.5% more time reviewing code after Copilot adoption while junior developers coded faster, and sales agents shifting from repetitive tasks toward creative persuasion. Redesign should therefore measure the whole demand distribution across workers and roles, not call a workflow better because one visible task becomes faster.
 

@@ -7,7 +7,7 @@ doi: 10.1002/hrm.22200
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-09-08
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1-G7xLvi3WkqzzbCPIrU-ycjMXlNdQje3
 file_hash: 8d9bb033d3c387f6f09554ac088ea3824eabf0b3332afd5656e5d3a954bd6ad5
 ---
@@ -30,4 +30,3 @@ file_hash: 8d9bb033d3c387f6f09554ac088ea3824eabf0b3332afd5656e5d3a954bd6ad5
 
 ## Feeds
 - [[work-redesign]]
-- [[ai-mediated-work-experience]]

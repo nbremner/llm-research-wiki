@@ -1,7 +1,7 @@
 ---
 title: Human-AI task allocation
 status: active
-updated: 2026-09-08
+updated: 2026-10-12
 ---
 
 # Human-AI task allocation
@@ -9,6 +9,8 @@ updated: 2026-09-08
 Human-AI task allocation is the design problem of deciding, at the level of a specific task instance or workflow turn, whether the human, the AI system, or some hybrid arrangement should act. It is narrower than broad [[human-ai-collaboration]] and more operational than [[automation-and-substitution]]: the question is not only whether AI can do a class of work, but when the system should route this case to the model, preserve human judgment, or change routing because the human's state, workload, expertise, or accountability conditions have changed.
 
 [[2021-bansal-most-accurate-ai-best-teammate]] gives the topic a foundational allocation model before dynamic routing enters the picture. A human accepts AI advice only when its confidence exceeds a threshold determined by human accuracy, the cost of solving, and the cost of mistakes; optimization should therefore prioritize system performance in the accept region rather than treat aggregate classifier accuracy as the allocation criterion. This is a deliberately narrow advice-and-override model, but it makes the allocation premise explicit: the relevant objective is the utility of a workflow with a human response, not the AI's score in isolation.
+
+[[2026-fuegener-roles-ai-collaboration]] adds an analytical and experimental distinction between two forms of complementarity. Higher between-task complementarity favors automation, whereas higher within-task complementarity favors augmentation; in its image-classification validation, the resulting differentiated pattern automates relatively easy tasks, augments people where human and AI performance are similar, and leaves relatively difficult tasks to unaided people. Allocation therefore considers not only the accuracy of the person and system on a task, but also whether automation releases human capacity for more difficult work. Its idealized judgment-task setting does not determine how that released capacity should be reallocated when task stakes, worker agency, accountability transfer, or heterogeneous organizational conditions limit otherwise efficient automation.
 
 [[2026-zhang-fatigue-aware-learning-defer]] gives the topic its first direct algorithmic source. In fatigue-aware learning to defer, each deferral to a human expert changes cumulative workload and therefore future human performance. The allocation policy should therefore be stateful: a difficult case may belong with a fresh expert, while a later difficult case may belong with AI if accumulated fatigue makes human error more likely.
 

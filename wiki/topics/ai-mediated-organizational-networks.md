@@ -1,7 +1,7 @@
 ---
 title: AI-mediated organizational networks
 status: active
-updated: 2026-09-08
+updated: 2026-10-12
 ---
 
 # AI-mediated organizational networks
@@ -20,6 +20,8 @@ Role differences matter. [[2026-buechsenschuss-genai-organizational-networks]] f
 
 [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] adds qualitative evidence on the managerial work behind AI-mediated knowledge flow. In B2B sales organizations, managers used social capital to make data a common language, frame AI as an analytical collaborator, surface use cases in team routines, and connect sales with IT, data, HR, finance, and subject-matter experts. That is not network measurement evidence, but it explains a plausible management mechanism by which AI changes who needs to collaborate with whom.
 
+[[2026-chen-ai-agents-reshape-consensus-formation]] adds a complementary composition mechanism: AI can reshape a human network’s shared meanings as well as its ties. In controlled mixed human–LLM groups, the effect of agent share on convergence was non-monotonic—12.5% agents strengthened consensus relative to all-human groups, intermediate shares weakened it, and 75% restored agreement—but increasing agent share also shifted final conceptual contribution from humans toward agents. Thus, consensus is not by itself evidence of healthy human-human meaning formation: a group can converge while its shared conventions become agent-led, more abstract, less information-dense, and less grounded in real-world analogies.
+
 ## Connections
 - Connects to [[ai-mediated-teamwork]] because team benefits and network benefits are adjacent but not identical: teams are bounded units, while organizational networks capture emergent ties across roles, groups, and expertise boundaries.
 - Connects to [[work-redesign]] because AI can reorganize collaboration and knowledge-flow architecture without formally changing job descriptions first, and because unit size and cross-unit exchange are design variables when organizations try to preserve knowledge flow at scale.
@@ -35,3 +37,4 @@ Role differences matter. [[2026-buechsenschuss-genai-organizational-networks]] f
 - The source’s role comparison is theoretically useful but not causal because employees were not randomly assigned to specialist versus generalist roles; role-based redesign claims should stay tentative until tested across organizations and task structures.
 - [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] gives manager-reported mechanisms for cross-functional AI knowledge transfer, but not observed network data. It should be read as a qualitative mechanism source, not as evidence that AI actually increased network centrality, tie strength, or collaboration volume.
 - [[2026-shi-when-bots-join-the-team]] supplies digital-trace evidence from thousands of open-source projects, but its before/after event-study design lacks an untreated comparison group and studies predictable rule-based bots in established repositories. Whether the associations with repeated engagement and bot-directed social memory persist as durable human-human network structure, generalize to other workplaces, or hold for more capable agents remains open.
+- [[2026-chen-ai-agents-reshape-consensus-formation]] complicates the intuition that more convergence signals better coordination: agent share can restore consensus while moving conceptual contribution and shared meanings toward agents and reducing their information density and real-world grounding. Its abstract, random-pairing laboratory game does not observe organizational ties or workplace coordination, so whether this quality–convergence trade-off appears in organizations remains open.

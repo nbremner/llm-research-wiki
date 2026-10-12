@@ -1,7 +1,7 @@
 ---
 title: Cognitive sustainability
-status: stub
-updated: 2026-08-11
+status: active
+updated: 2026-10-12
 ---
 
 # Cognitive sustainability
@@ -16,6 +16,8 @@ The practical implication is not generic “human-in-the-loop” rhetoric. A sus
 
 [[2026-lovett-tragedy-cognitive-commons]] adds a profession-level boundary to this work-system criterion. Its Cognitive Commons framework argues that AI-enabled efficiency can weaken the entry-level practice and supervised progression through which a profession replenishes the Internalized Mastery needed for substantive validation. This broadens cognitive sustainability beyond whether an individual workflow preserves present capability: a locally sustainable-looking arrangement may still be collectively unsustainable if organizations free-ride on a shrinking external pool of experts. The proposed governance remedies remain conceptual and require comparative, longitudinal tests.
 
+[[2026-sole-cognitive-virus]] adds a bounded population-level hypothesis: if substitutive LLM use is socially transmitted and reinforcing, cognitive coupling can shift nonlinearly from intermittent offloading to persistent dependency, with the path into dependence differing from the path out. On this account, preserving routes to unaided practice and active verification is a prevention and recovery design concern, not a prescription to minimize all AI use; after a modeled tipping point, restoring autonomy may require stronger change than maintaining it beforehand. Because this is a theoretical mean-field model rather than evidence that these dynamics occur in workplaces, the tipping and hysteresis mechanisms should be treated as testable design hypotheses.
+
 [[2026-mehra-agents-that-teach]] offers an implementation-level hypothesis for software development: an AI coding workflow could preserve cognitive sustainability by returning contextual explanations, probes, and feedback to the human rather than treating a completed code change as the sole outcome. Its emphasis on selective, asynchronous intervention is important because a system that preserves learning by persistently interrupting flow or expanding worker monitoring would exchange one sustainability failure for another.
 
 ## Connections
@@ -28,6 +30,7 @@ The practical implication is not generic “human-in-the-loop” rhetoric. A sus
 
 ## Contradictions & open questions
 - [[2025-kabashkin-cognitive-atrophy-paradox]] is a peer-reviewed conceptual and simulation-based article, not validation evidence for the CSI. Its five parameters, weighting choices, balance thresholds, and proposed cognitive zones require reliability, construct-validity, predictive-validity, and intervention tests before they can support organizational diagnosis.
+- [[2026-sole-cognitive-virus]] models bistability, tipping, and hysteresis rather than observing them. Whether coupled LLM use produces discontinuous dependency, which social or institutional conditions amplify it, and whether unaided practice and verification actually enable recovery remain empirical questions.
 - The framework treats delegation and reliance primarily as risk factors, but productive offloading can protect capacity when it removes extraneous burden or enables workers to concentrate on higher-order work. The empirical question is which tasks, users, and accountability conditions make delegation capability-preserving rather than capability-displacing.
 - A CSI-style monitoring system could itself become intrusive or punitive if employers treat autonomy, reflection, or reliance scores as worker surveillance rather than properties of a jointly designed system. Any implementation needs participatory governance, clear use boundaries, and evidence that measurement improves rather than merely intensifies work.
 - [[2026-mehra-agents-that-teach]] has not tested whether telemetry-derived concept maps and learning prompts protect long-run capability, preserve flow, or remain legitimate to developers; these design benefits cannot be inferred from the architecture alone.

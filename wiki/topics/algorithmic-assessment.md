@@ -1,7 +1,7 @@
 ---
 title: Algorithmic assessment
 status: active
-updated: 2026-09-08
+updated: 2026-10-12
 ---
 
 # Algorithmic assessment
@@ -19,6 +19,10 @@ The topic sits at the intersection of [[construct-validity]], [[evidence-based-m
 [[2025-matic-balancing-accuracy-acceptance-algorithmic-hiring]] focuses on a related design question: how a hiring system combines a decision maker's judgment with other applicant information. Across two experiments using predictions for real applicants, letting people make an intuitive overall judgment and then adding it to the model as a fixed, explicit input was more accurate than either intuitive judgment alone or freely editing the model's final recommendation. The study's practical implication is not that human input is automatically valuable. It is that a system can preserve a limited, visible human role without treating each exception as a reason to override the same evidence differently.
 
 [[2025-landers-ethical-use-ai-iop]] adds the professional-ethics frame around AI selection. AI-scored or AI-delivered interviews are not only technical prediction problems: they require disclosure, evidence about how new data formats are collected and interpreted, attention to avatar or delivery-system effects, consistency across applicants, and scrutiny of foundational models and customization processes. This links algorithmic assessment to [[responsible-ai-deployment]] because selection AI can satisfy an efficiency demand while still failing disclosure, job-relatedness, fairness, accountability, applicant-experience, or domain-specific validation standards.
+
+[[2026-sackett-hiring-people-organizations]] makes the evaluation standard more specific: new assessment systems need transparent accounts of their modular design and scoring choices, then evidence on reliability, validity, fairness, and applicant reactions rather than a generic claim that the technology improves selection. This treats selection quality as a chain-level question, because an opaque module can change what later validity or fairness evidence actually represents.
+
+[[2026-dunlop-from-forbid-to-reimagine]] identifies a further score-meaning problem when candidates use GenAI. Candidate access to and capability with GenAI can enter the score alongside the intended attribute, so the authors' FAIR choices—Forbid, Advise, Insulate, and Reimagine—frame responses more precisely than blanket prohibition; Reimagine instead asks whether the assessment should validly evaluate intended human–AI collaboration.
 
 Two narrative recruitment-fairness articles converge that governance limits must extend beyond the final decision rule: historical data, labels, feature choices, model design, and evaluation can each preserve inequity, and the proposed safeguards include representative data, audits, explainability, regulatory attention, and meaningful human oversight [[2025-agbasiere-algorithmic-fairness-recruitment]] [[2025-ahuchogu-ai-bias-recruitment]]. Their convergence identifies a governance agenda, not validation evidence: neither article reports a controlled validation of a hiring model or a mitigation intervention [[2025-agbasiere-algorithmic-fairness-recruitment]] [[2025-ahuchogu-ai-bias-recruitment]].
 
@@ -41,3 +45,4 @@ Two narrative recruitment-fairness articles converge that governance limits must
 - [[2025-matic-balancing-accuracy-acceptance-algorithmic-hiring]] finds that a structured way of retaining human input can improve prediction and participant acceptance, but its simulated selection task does not show whether the same arrangement changes recruiter behavior, applicant experience, fairness, or legal defensibility in live hiring.
 - Bias audits often focus on output disparities, but [[2022-strah-diversity-issues-job-analysis]] suggests another layer: whether the criterion and job requirements being predicted already excluded some groups' real work contributions.
 - [[2025-agbasiere-algorithmic-fairness-recruitment]] and [[2025-ahuchogu-ai-bias-recruitment]] converge on audits, explainability, representative data, and human oversight, but neither tests whether those safeguards reduce disparate impact, establish job-relatedness, or improve selection utility in a live hiring system.
+- [[2026-sackett-hiring-people-organizations]] is a peer-reviewed review that synthesizes heterogeneous prior evidence on selection quality, whereas [[2026-dunlop-from-forbid-to-reimagine]] is a peer-reviewed commentary that proposes FAIR rather than testing it. FAIR therefore surfaces a needed design choice about score meaning and human–AI collaboration, but its practical effects on validity, fairness, applicant reactions, and utility remain an empirical gap.

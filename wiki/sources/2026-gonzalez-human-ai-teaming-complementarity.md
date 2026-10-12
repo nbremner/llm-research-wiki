@@ -7,7 +7,7 @@ doi: 10.1093/pnasnexus/pgag030
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-09-09
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1TZTSfvNfFPcnzAwb0Y4kwxoHwIqqNzW_
 file_hash: b4aed871e357061e7b2da03936783d97ff319e56f0291715f968c94492d5c0ea
 ---
@@ -32,5 +32,3 @@ file_hash: b4aed871e357061e7b2da03936783d97ff319e56f0291715f968c94492d5c0ea
 ## Feeds
 - [[human-ai-collaboration]]
 - [[ai-mediated-teamwork]]
-- [[human-ai-agent-interaction-design]]
-- [[responsible-ai-deployment]]

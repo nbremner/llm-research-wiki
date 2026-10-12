@@ -7,7 +7,7 @@ doi: 10.1146/annurev-orgpsych-020924-072127
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-09-08
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 13odhGVh2j7vU6PjIJZl-JdCC673SSikz
 file_hash: 0ad1ffe7596126d811da1acb9cc738ed3e8d525c85b31ec87affcb39cee93d4b
 ---
@@ -30,5 +30,3 @@ file_hash: 0ad1ffe7596126d811da1acb9cc738ed3e8d525c85b31ec87affcb39cee93d4b
 
 ## Feeds
 - [[algorithmic-assessment]]
-- [[construct-validity]]
-- [[responsible-ai-deployment]]

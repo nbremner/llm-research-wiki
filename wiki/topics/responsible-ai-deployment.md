@@ -1,7 +1,7 @@
 ---
 title: Responsible AI deployment
-status: stub
-updated: 2026-08-31
+status: active
+updated: 2026-10-12
 ---
 
 # Responsible AI deployment
@@ -34,6 +34,8 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 
 [[2023-arcot-cognitive-load-optimization-contact-center-agents]] adds an unusually high-intrusion deployment case: continuous wearable and voice signals were used to infer worker stress and capacity for call routing. The article reports consent, data minimization, purpose limitation, access controls, and high agent acceptance, but those claims remain internal to one study and do not establish that consent was freely given, that monitoring did not alter behavior, or that capacity data could not later be repurposed for performance control. Responsible deployment must therefore treat worker-state inference as a consequential workforce system, not a neutral optimization input.
 
+[[2025-van-zoonen-algorithmic-surveillance-workers-compliance]] adds evidence that surveillance legitimacy is not a binary acceptance problem. In a three-wave study of European online crowdworkers, surveillance was associated with lower trust and perceived fairness and greater privacy concerns; trust and privacy concerns differentiated intentions to comply, alter, or avoid the surveillance, while fairness was associated only with alteration. Perceived decontextualization exacerbated the adverse trust and fairness pathways, making control legitimacy a design and worker-voice issue: deployment should give workers meaningful means to supply context, question inferences, and contest control rather than treating notice or nominal consent as sufficient. This is an inference for workforce-system design, not evidence that any particular participation mechanism works, and the study measures reported intentions in crowdwork rather than observed behavior or organizational employment outcomes.
+
 [[2026-wu-novel-social-biases]] adds a different failure mode for stateful AI agents: allocative bias can be created by an agent's own sequential feedback history even when groups begin with identical modeled success probabilities. In a stylized hiring paradigm, frontier models sorted fictional groups into job classes more strongly than human participants, and stronger models did not become safer simply because they performed better on a static bias benchmark. The deployment implication is narrow but important: fairness evidence for an agent that repeatedly allocates opportunities has to test feedback loops, exploration policy, and group-level outcomes over time; one-shot output or benchmark results cannot establish that the deployed workflow will remain fair. The result does not show real-world hiring discrimination, and objective-level diversity steering is a hypothesis to validate against the domain's actual success criteria and affected groups, not a control to deploy blindly.
 
 [[2023-mkhize-examining-barriers-enablers-ai-adoption]] supplies a smaller but concrete accountability case. In a multimedia organization, contractual obligations constrained cloud processing and fully hands-off publication; participants described human vetting as necessary before customer-facing release and remained unclear about who operationally owned AI outputs when something went wrong. An emerging AI governance framework and executive sponsorship were described as responses, not validated safeguards. This grounds a basic deployment rule: human review and accountability have to be assigned to a role with authority and operational ownership, not left as a residual expectation that someone will correct the system.
@@ -48,6 +50,7 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 - Relates to [[ai-mediated-work-experience]] because responsible deployment has to account for autonomy, competence, privacy, psychological safety, identity, workload, and felt control, not only productivity or adoption.
 - Relates to [[ai-mediated-learning]] because workplace learning agents need clear accountability boundaries before bad advice is blamed on workers or hidden inside vendor claims.
 - Relates to [[behavioral-human-centered-ai]] because deployment safeguards have to work for boundedly rational humans under uncertainty, trust pressure, loss aversion, and organizational incentives.
+- Relates to [[employee-change-support]] because surveillance can produce compliance, alteration, and avoidance through trust, privacy, fairness, and contextual-legitimacy pathways rather than a binary adoption-versus-resistance response.
 - Relates to [[automation-and-substitution]] because replacing or recomposing work raises ethical questions that are not answered by capability or cost alone; worker rights, dignity, reskilling, agency, and reactions matter.
 - Relates to [[competency-modeling]] because AI-enabled skills architectures turn competency definitions into data systems that require privacy, correction, governance, and evidence about appropriate use.
 

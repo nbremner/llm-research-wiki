@@ -1,7 +1,7 @@
 ---
 title: Automation complacency
 status: active
-updated: 2026-08-31
+updated: 2026-10-12
 ---
 
 # Automation complacency
@@ -30,6 +30,8 @@ Automation complacency is the failure mode where better machine advice reduces h
 
 [[2026-shaw-thinking-fast-slow-artificial]] gives complacency a sharper behavioral micro-mechanism: [[cognitive-surrender]], where the user adopts a System 3 answer with minimal scrutiny. In Study 1, participants followed faulty AI advice on 79.8% of chat-engaged trials and were more confident with AI access despite substantial AI error. The source matters here because it distinguishes reduced vigilance from direct answer adoption; the human contribution is not merely lighter, it can be displaced.
 
+[[2025-romeo-exploring-automation-bias]] broadens this account across 35 quantitative studies: explanation, transparency, and trust-calibration feedback did not reliably lead users to reject incorrect recommendations, and explanations could reinforce reliance when treated as trust heuristics. Greater verification was associated with better accuracy, but responsibility cues alone did not reliably increase verification; appropriate reliance also varied with AI literacy, domain expertise, cognitive conditions, workload, and calibration. The review therefore supports a conditional account of complacency rather than a universal design remedy.
+
 [[2026-zhu-cognitive-offloading-modes]] adds an adjacent, nonexperimental account of how complacency may become a more durable work pattern. Dependent offloading—allowing AI to generate a complete answer—was associated with cognitive-agency transfer and lower intrinsic motivation over three survey waves, whereas autonomous offloading used AI as a scaffold while retaining ownership. Both modes were associated with the same perceived immediate benefit, sharpening the calibration problem: subjective efficiency is not evidence that the human contribution has been preserved.
 
 ## Connections
@@ -51,3 +53,4 @@ Automation complacency is the failure mode where better machine advice reduces h
 - [[2025-yun-generative-ai-knowledge-work]] suggests design countermeasures — citations, audit trails, comparative outputs, and access to raw data — but it does not test which of these actually prevents complacency in live organizational decisions.
 - [[2026-lepine-precision-proactivity]] suggests that proactivity should be load-sensitive rather than maximal. The unresolved question is how systems detect when help should become repair, simplification, or silence.
 - [[2026-shaw-thinking-fast-slow-artificial]] shows that incentives and immediate feedback improve faulty-advice override behavior, but they do not eliminate surrender; the unresolved design question is how much friction, feedback, or independent evidence is needed before oversight becomes real rather than nominal.
+- [[2025-romeo-exploring-automation-bias]] synthesizes heterogeneous tasks, domains, and automation-bias measures rather than a pooled intervention effect. Its review supports verification and calibrated expertise as important conditions, but also shows that explanation and transparency are not universally protective and can strengthen reliance; which safeguards work therefore remains conditional on workload, cognitive demands, user literacy, and the calibration context.
