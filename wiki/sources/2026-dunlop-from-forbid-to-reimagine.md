@@ -7,7 +7,7 @@ doi: 10.1111/ijsa.70060
 source_type: article
 publication_status: peer-reviewed
 retrieved: 2026-09-09
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1oUnyR2sqUw_X1RUM6x54boIWPshYpiZz
 file_hash: 5cd3840acf22188df998904b50f143c13582a4d1c3358e1f8087ea9a5c148672
 ---
@@ -31,5 +31,3 @@ file_hash: 5cd3840acf22188df998904b50f143c13582a4d1c3358e1f8087ea9a5c148672
 
 ## Feeds
 - [[algorithmic-assessment]]
-- [[construct-validity]]
-- [[ai-literacy]]

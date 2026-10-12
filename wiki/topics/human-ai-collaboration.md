@@ -1,7 +1,7 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-08-31
+updated: 2026-10-12
 ---
 
 # Human-AI collaboration
@@ -9,6 +9,8 @@ updated: 2026-08-31
 Human-AI collaboration is the working relationship between human judgment and AI capability in actual tasks. The question is not whether humans and AI are “teammates” in the warm metaphorical sense; it is how responsibility, confidence, delegation, review, and accountability are arranged in practice.
 
 [[2021-bansal-most-accurate-ai-best-teammate]] provides the formal objective-function version of that claim. In its accept-or-solve model, a human either accepts a classifier's recommendation or incurs effort to solve the task; because performance matters differently inside the region where advice is accepted, an accuracy-optimized classifier can deliver lower modeled team utility than one trained for expected team utility. The paper does not show that less accurate AI is generally a better collaborator. It establishes the narrower design constraint that collaboration cannot be evaluated from standalone accuracy when reliance, verification cost, and error consequences are part of the workflow.
+
+[[2026-gonzalez-human-ai-teaming-complementarity]] makes the corresponding team-design claim: complementarity is not the aggregate capability of a human plus an AI, but context-dependent team performance that must exceed what either could achieve alone under the task's goals and constraints. Its framework treats that outcome as requiring deliberate role partitioning, attention and interrogation practices, shared knowledge infrastructure, and continuous training and evaluation of the joint system. The framework keeps human accountability central where ethical discretion and contextual judgment matter, rather than treating AI speed, consistency, scale, or pattern recognition as a transfer of responsibility.
 
 [[2026-farach-scaffolding-human-ai-collaboration]] adds a field-experiment warning against treating collaboration structure as inherently beneficial. At one retailer, a required process for pairs to use Copilot together was associated with lower AI-graded document quality and far fewer completed documents than unstructured use; extra coordination, technical friction, and less room for domain context appear to have imposed costs. Separate thought-partner training for individuals did not improve average quality on the study's main test, although a later, less conclusive analysis suggested that trainees may have been more likely to receive a perfect score. The practical implication is not “avoid scaffolding,” but specify what it is meant to support: a process that adds real-time coordination needs evidence that it helps more than the extra rules, delays, and reduced autonomy hurt.
 
@@ -93,6 +95,8 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 - Relates to [[cognitive-surrender]] because nominally collaborative workflows can still route reasoning authority to the AI when the human adopts outputs without scrutiny.
 
 ## Contradictions & open questions
+
+- [[2026-gonzalez-human-ai-teaming-complementarity]] is an interdisciplinary perspective/framework, not a new comparative experiment: it organizes mixed and often laboratory, prototype, or small-deployment evidence into design requirements, but does not establish which role partitions, interrogation practices, shared-knowledge arrangements, or training regimes cause complementarity in heterogeneous long-term work settings.
 
 - [[2026-farach-scaffolding-human-ai-collaboration]] finds that required joint AI use can reduce output quality and completion, while [[2026-dellacqua-cybernetic-teammate]] finds AI can help a solo worker reproduce some team benefits in a defined ideation task. These are not opposite verdicts on collaboration: they differ in task, workflow constraint, and whether AI expands an individual's perspective or adds another coordination process. The unresolved question is when structured collaboration helps people do the work and when it simply gets in the way.
 - “Collaboration” may over-humanize the AI system. [[2025-lee-generative-ai-critical-thinking]] keeps accountability with the human user, while [[2025-dellacqua-super-mario-ai]] shows that even a capable automated partner may be a poor teammate when coordination, trust, and motivation are part of the work system. Both fit better with [[automation-and-substitution]] and work-design frames than with a simple teammate metaphor.
