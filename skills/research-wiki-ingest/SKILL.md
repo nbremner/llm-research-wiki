@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.8.7
+version: 2.8.8
 author: Hermes Agent
 license: MIT
 metadata:
@@ -307,7 +307,8 @@ and obey its `decision`:
     file — per topic: sources integrated, claims added, contradictions surfaced, deferrals /
     watchlist entries; then lint status and a short "my read" on commit-readiness — and run
     `uv run /root/research-wiki-tools/synthesis_pr.py open --branch <the batch branch> --title
-    "wiki: synthesize batch YYYY-MM-DD (N sources, M topics)" --body-file <file>`. Then
+    "wiki: synthesize batch YYYY-MM-DD (N sources, M topics)" --body-file <file>` (if it fails, retry
+    once; a second failure is the post-commit path below). Then
     `git checkout main` so the clone is back on a clean main (the daily sync only handles main; an
     uncommitted draft on the VPS would be auto-committed by it — never leave one).
 12. **Digest** (your reply): the PR URL, then one line per topic

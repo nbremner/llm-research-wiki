@@ -119,6 +119,7 @@ def test_batch_abandon_path_is_approval_free():
     for phrase in ("**Abandoning a draft (unattended-safe).**", "git restore --staged .", "git checkout -- .",
                    "never run a git branch-deletion command yourself inside a cron run", "Synthesis batch — BLOCKED:",
                    "**After the commit (push or PR-open failure).**", "Synthesis batch — BLOCKED: PR not opened",
+                   "(if it fails, retry\n    once; a second failure is the post-commit path below)",
                    "synthesis/YYYY-MM-DD-2", "synthesis_pr.py prune"):
         assert phrase in batch, phrase
     import re

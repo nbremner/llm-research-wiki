@@ -293,7 +293,10 @@ the approval loop and must keep growing under automation.
   pass (session `20261012_064530_77a07c`), fixed in 2.8.7: the abandon block claimed "nothing is
   pushed" even for a failure after the push; it now applies only before the commit exists, and a new
   "After the commit (push or PR-open failure)" path keeps the pushed/local branch, checks out `main`,
-  and asks for the PR to be opened or the branch deleted before next Monday.
+  and asks for the PR to be opened or the branch deleted before next Monday. Sixth pass (session
+  `20261012_064816_09f3c9`), fixed in 2.8.8 + cron prompt: step 11 now says to retry `synthesis_pr.py
+  open` once before the post-commit path, and the cron prompt distinguishes pre-commit abandonment
+  from post-commit push/PR-open failure instead of sending every failure to "Abandoning a draft".
 
 - **2026-10-12 — approval-free abandon path for the weekly batch.** The 09-14 → 10-05 batches tried
   to roll back with hard resets, forced cleans and forced branch deletes; Hermes's approval detector
