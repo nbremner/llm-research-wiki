@@ -29,3 +29,6 @@ file_hash: 5080cd98e23a8f16e64df71750636abc268b009ac040ae68cd0b918b5b2e6619
 - Although the review discusses governance and applications, its contribution is predominantly technical systems architecture and implementation; its fit with this wiki's behavioral and organizational lens requires human review before synthesis.
 
 ## Feeds
+- [[agentic-organization-design]]
+- [[work-redesign]]
+- *Owner ruling 2026-10-12:* keep — "a helpful agentic work taxonomy that could be a potentially useful parallel to human work." Synthesize it as a taxonomy of agentic work forms read against human work design, not as systems architecture; do not re-propose rejection.
