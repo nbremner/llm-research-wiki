@@ -78,6 +78,7 @@ def test_ingest_skill_drain_mode_guardrails():
         "never work around bot checks, CAPTCHAs, or logins",
         "Dispatch one subagent per file in a single `delegate_task` call",
         "drain_queue.py --limit 5",
+        "The clone must be on `main` with a clean tree",
         "Children never run git",
         "drive_review_sync.py --execute",
         "`human_reviewed: false`",

@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.8.8
+version: 2.8.9
 author: Hermes Agent
 license: MIT
 metadata:
@@ -120,9 +120,11 @@ yet is the normal pending-synthesis state, not a defect.
 
 **Parent procedure (you, the cron session).**
 
-1. `cd /root/work/llm-research-wiki && git status --porcelain && git pull --ff-only origin main`.
-   A dirty tree or a pull that is not a fast-forward → stop the run and report; never stash,
-   rebase over, or commit someone else's changes.
+1. `cd /root/work/llm-research-wiki && git branch --show-current && git status --porcelain && git pull --ff-only origin main`.
+   The clone must be on `main` with a clean tree. Any other branch (a `synthesis/*` batch still
+   running or left mid-way), a dirty tree, or a pull that is not a fast-forward → stop the run and
+   report; never check out `main` over someone else's work, stash, rebase over, or commit their
+   changes (the daily sync script applies the same guard).
 2. Get the drain order: `uv run /root/research-wiki-tools/drain_queue.py --limit 5` — JSON with
    `next` (the files to take, owner-dropped first, then scan-promoted, oldest first within each) and
    `counts`. Do not list or download anything else. Both `.pdf` and Jina full-text `.md` artifacts

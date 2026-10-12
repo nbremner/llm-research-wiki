@@ -297,6 +297,10 @@ the approval loop and must keep growing under automation.
   `20261012_064816_09f3c9`), fixed in 2.8.8 + cron prompt: step 11 now says to retry `synthesis_pr.py
   open` once before the post-commit path, and the cron prompt distinguishes pre-commit abandonment
   from post-commit push/PR-open failure instead of sending every failure to "Abandoning a draft".
+  Seventh pass (session `20261012_065016_475c5e`), fixed in 2.8.9 + cron prompt: the PR-open retry
+  is conditional on a successful push (a failed push keeps the branch and opens nothing), and the
+  drain's step 1 now requires the clone to be on `main` with a clean tree before pulling — any other
+  branch (a batch still running) stops the run, the same guard the daily sync script applies.
 
 - **2026-10-12 — approval-free abandon path for the weekly batch.** The 09-14 → 10-05 batches tried
   to roll back with hard resets, forced cleans and forced branch deletes; Hermes's approval detector
