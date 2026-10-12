@@ -289,7 +289,11 @@ the approval loop and must keep growing under automation.
   `20261012_064234_8c7040`), fixed in 2.8.6: the abandon block's "never delete a branch in a cron run"
   clashed with the regenerate path's `synthesis_pr.py close --delete-branch` (now: never run a git
   branch-deletion command yourself; the deterministic script remains sanctioned), and the drain's
-  Model line called the cron's pin "the configured ingest model" (now: its job-defined model).
+  Model line called the cron's pin "the configured ingest model" (now: its job-defined model). Fifth
+  pass (session `20261012_064530_77a07c`), fixed in 2.8.7: the abandon block claimed "nothing is
+  pushed" even for a failure after the push; it now applies only before the commit exists, and a new
+  "After the commit (push or PR-open failure)" path keeps the pushed/local branch, checks out `main`,
+  and asks for the PR to be opened or the branch deleted before next Monday.
 
 - **2026-10-12 — approval-free abandon path for the weekly batch.** The 09-14 → 10-05 batches tried
   to roll back with hard resets, forced cleans and forced branch deletes; Hermes's approval detector

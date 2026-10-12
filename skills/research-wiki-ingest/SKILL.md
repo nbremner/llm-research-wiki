@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.8.6
+version: 2.8.7
 author: Hermes Agent
 license: MIT
 metadata:
@@ -315,9 +315,9 @@ and obey its `decision`:
     sources with the reason, **Proposed rejections** (slug, Drive file id, reason), and
     `rolled over: K`.
 
-**Abandoning a draft (unattended-safe).** Whenever the batch cannot ship — the gate fails on
-something outside the batch's control, a child violation cannot be isolated, or a stop condition is
-hit — put the clone back on a clean `main` using only commands that need no approval. A cron run has
+**Abandoning a draft (unattended-safe).** Whenever the batch cannot ship **before its commit exists**
+— the gate fails on something outside the batch's control, a child violation cannot be isolated, or a
+stop condition is hit — put the clone back on a clean `main` using only commands that need no approval. A cron run has
 nobody to approve one, and Hermes refuses hard resets, forced cleans, forced branch deletes and any
 force flag outright, so none of those may appear in this path:
 
@@ -337,6 +337,15 @@ prune` deletes it on a later run; never run a git branch-deletion command yourse
 remove a stale PR's remote branch). Then reply with the blocker as the
 digest, starting `Synthesis batch — BLOCKED:` (one line why, the failing findings or pages,
 `rolled over: K`). Nothing is pushed and no PR is opened.
+
+**After the commit (push or PR-open failure).** Once the batch commit exists, do not abandon or
+revert it. If `git push` fails (for example the GitHub token expired), or the push succeeded but
+`synthesis_pr.py open` fails after one retry: `git checkout main` — the draft is safe on the batch
+branch, local or pushed — and reply `Synthesis batch — BLOCKED: PR not opened` with the branch name,
+commit hash and the error, asking the owner or the local Claude to push / open the PR
+(`synthesis_pr.py open --branch <the batch branch> …`) or delete the branch before next Monday:
+`prune` leaves a branch with no PR alone, and the next run would otherwise draft the same sources
+again.
 
 **Child brief** (one per topic page; fill ⟨⟩; keep the rules verbatim):
 
