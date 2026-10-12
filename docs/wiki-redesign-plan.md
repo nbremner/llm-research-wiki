@@ -300,7 +300,9 @@ the approval loop and must keep growing under automation.
   Seventh pass (session `20261012_065016_475c5e`), fixed in 2.8.9 + cron prompt: the PR-open retry
   is conditional on a successful push (a failed push keeps the branch and opens nothing), and the
   drain's step 1 now requires the clone to be on `main` with a clean tree before pulling — any other
-  branch (a batch still running) stops the run, the same guard the daily sync script applies.
+  branch (a batch still running) stops the run, the same guard the daily sync script applies. Eighth
+  pass (session `20261012_065438_4ff83b`), fixed in 2.8.10: step 11 opens the PR only after a
+  successful push; a failed push goes straight to the post-commit path.
 
 - **2026-10-12 — approval-free abandon path for the weekly batch.** The 09-14 → 10-05 batches tried
   to roll back with hard resets, forced cleans and forced branch deletes; Hermes's approval detector

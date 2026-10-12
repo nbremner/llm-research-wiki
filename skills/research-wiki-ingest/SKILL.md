@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.8.9
+version: 2.8.10
 author: Hermes Agent
 license: MIT
 metadata:
@@ -305,7 +305,8 @@ and obey its `decision`:
     the batch (revert its promotion and the page edit that needed it). If the batch still cannot
     pass, **abandon the draft** (below) — never weaken the gate and never commit a failing tree.
 11. **Commit, push, PR:** one commit `wiki: synthesize batch YYYY-MM-DD (N sources, M topics)` (+
-    Co-Authored-By trailer); `git push -u origin <the batch branch>`; write the PR body to a temp
+    Co-Authored-By trailer); `git push -u origin <the batch branch>` — if the push fails, open no PR
+    and go straight to the post-commit path below; only after a successful push write the PR body to a temp
     file — per topic: sources integrated, claims added, contradictions surfaced, deferrals /
     watchlist entries; then lint status and a short "my read" on commit-readiness — and run
     `uv run /root/research-wiki-tools/synthesis_pr.py open --branch <the batch branch> --title

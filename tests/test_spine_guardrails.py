@@ -97,6 +97,7 @@ def test_ingest_skill_drain_mode_guardrails():
         "one subagent per affected topic page",
         "Dispatch in groups of at most 10, then the rest",
         "git push -u origin <the batch branch>",
+        "if the push fails, open no PR",
         "**Scheduled runs are exempt from routing.**",
         "**never commit topic synthesis to\n    `main`**",
         "Never hand off or re-route inside a cron run",
