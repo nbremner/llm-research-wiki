@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.8.3
+version: 2.8.4
 author: Hermes Agent
 license: MIT
 metadata:
@@ -34,6 +34,8 @@ do not move Drive files or commit. After approval (or explicit "ingest/add to th
 ## Model routing
 
 The default execution model for this workflow is `gpt-5.6-terra` using the `openai-codex` provider. Use the configured `research_wiki_ingest.model` value when Hermes injects one; otherwise use `gpt-5.6-terra`.
+
+**Scheduled runs are exempt from routing.** A hermes cron job (the daily drain, the weekly synthesis batch) runs on the model its job definition pins — currently `gpt-5.6-terra` / `openai-codex` — and executes directly, even when the injected `research_wiki_ingest.model` names a different model. Never hand off or re-route inside a cron run; changing a cron's model is an owner decision made with `hermes cron edit --model`. The routing rules below are for attended ingests started from chat.
 
 - If the current session already uses the configured ingest model, execute the workflow directly.
 - Otherwise hand off the complete ingest to one fresh Hermes worker launched from `/root/work/llm-research-wiki` with `hermes chat --provider openai-codex --model <configured-model> --skills research-wiki-ingest --source tool --quiet --query '<self-contained ingest request>'`. The request must include the exact Drive URL/file ID or selection rule, dry-run versus apply intent, and the source/topic commit-governance boundary.
@@ -357,8 +359,9 @@ Output schema (require only these): `topic`, `path`, `action`, `sources_integrat
 `claims_added` (array), `contradictions_surfaced` (array), `connections_changed` (array), `notes`.
 
 **After the owner merges:** the next weekly batch run does `synthesis_pr.py prune`, pull, lint main,
-`drive_review_sync.py --execute` (promoted artifacts move to `_sources`). The daily drain only pulls,
-lints and runs that Drive reconciliation — it never prunes branches. Owner comments or "request
+`drive_review_sync.py --execute` (promoted artifacts move to `_sources`). The daily drain pulls,
+commits and pushes source records, lints, and runs that Drive reconciliation — it never prunes
+branches. Owner comments or "request
 changes" → the next weekly run regenerates (the `regenerate` decision).
 
 **Switching the batch off.** `hermes cron pause <job id>`; close any open synthesis PR with `synthesis_pr.py close`.

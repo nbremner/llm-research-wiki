@@ -276,7 +276,12 @@ the approval loop and must keep growing under automation.
   opened the PR on the hard-coded date branch even when step 5 had fallen back to `-2` (now "the batch
   branch" throughout), the cron prompt lacked the `-2` fallback (added), and "After the owner merges"
   claimed the daily drain prunes branches (it only pulls, lints and reconciles Drive; the weekly batch
-  prunes).
+  prunes). Its second pass (session `20261012_063719_181db4`) caught two more, fixed in 2.8.4: the
+  post-merge paragraph understated the drain (it also commits and pushes records), and the Model
+  routing section told any session not on the *configured* `research_wiki_ingest.model` to hand off
+  to a fresh worker — while NicholasJunior's config says `gpt-6-astra` and both crons are pinned to
+  `gpt-5.6-terra`. The skill now exempts scheduled runs from routing (a cron runs on the model its
+  job pins, never hands off); whether the pins and the config should agree is an open owner call.
 
 - **2026-10-12 — approval-free abandon path for the weekly batch.** The 09-14 → 10-05 batches tried
   to roll back with hard resets, forced cleans and forced branch deletes; Hermes's approval detector
