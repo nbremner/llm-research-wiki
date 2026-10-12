@@ -78,7 +78,7 @@ scripts/
     scan_config.py             # editable scan rubric/config (queries, journal roster, concept enrichment, folder ids)
     drain_queue.py             # daily drain order: owner-dropped files first
     drive_review_sync.py       # keeps Drive artifact folders in step with record review status
-    synthesis_pr.py            # weekly batch: one-open-batch rule, PR open/close/prune (GitHub API)
+    synthesis_pr.py            # weekly batch: one-open-batch rule, PR open/close/prune (GitHub API; prune also drops stale local synthesis/* branches)
     claim_audit.py             # monthly claim-fidelity audit: sample + record
     acquisition_queue.py       # wiki-judged-but-unacquired ledger (Drive _triage/needs-acquisition.md)
 

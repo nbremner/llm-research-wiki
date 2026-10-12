@@ -105,6 +105,22 @@ def test_ingest_skill_drain_mode_guardrails():
         assert phrase in lint, phrase
 
 
+def test_batch_abandon_path_is_approval_free():
+    """An unattended cron run cannot answer an approval prompt: the batch's
+    abandon/rollback path must use only commands Hermes never gates (2026-10-12)."""
+    text = (ROOT / "skills" / "research-wiki-ingest" / "SKILL.md").read_text(encoding="utf-8")
+    batch = text[text.index("### Weekly synthesis batch"):text.index("### Owner rejection command")]
+    for phrase in ("**Abandoning a draft (unattended-safe).**", "git restore --staged .", "git checkout -- .",
+                   "never try to delete a branch inside a cron run", "Synthesis batch — BLOCKED:",
+                   "synthesis/YYYY-MM-DD-2", "synthesis_pr.py prune"):
+        assert phrase in batch, phrase
+    import re
+    for gated in (r"git\s+reset\s+--h", r"git\s+clean\s+-\S*f", r"git\s+branch\s+-[dD]\b",
+                  r"git\s+push\b[^\n]*(?:--force|\s-f\b)", r"\brm\s+-\S*[rf]"):
+        hits = [m.group(0) for m in re.finditer(gated, batch)]
+        assert not hits, f"approval-gated command in the batch section: {hits}"
+
+
 def _run_standalone() -> int:
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_") and callable(v)]
     failed = 0

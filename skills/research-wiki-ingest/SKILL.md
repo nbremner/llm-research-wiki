@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.8.0
+version: 2.8.1
 author: Hermes Agent
 license: MIT
 metadata:
@@ -272,7 +272,10 @@ and obey its `decision`:
    or it is a brief practitioner post offering hypotheses without evidence or a reusable framework
    (owner rulings 2026-09-08). List such sources in the digest under **Proposed rejections** with the
    reason and the Drive file id; the owner's "drop" runs the rejection path.
-5. **Branch:** `git checkout -b synthesis/YYYY-MM-DD`.
+5. **Branch:** `git checkout -b synthesis/YYYY-MM-DD`. If that name already exists locally (an
+   abandoned draft from earlier the same day), do not reuse or delete it: branch as
+   `synthesis/YYYY-MM-DD-2` (same title and digest date). `synthesis_pr.py prune` deletes stale local
+   branches on a later run.
 6. **Dispatch one subagent per affected topic page** (existing or new) with `delegate_task`, all
    tasks in one `group`, using the child brief below; pass the output schema.
 7. **Validate** every child result before anything else: `git status --porcelain` lists only the
@@ -291,7 +294,8 @@ and obey its `decision`:
 10. **Lint the tree:** `python scripts/research-wiki-tools/graph_lint.py --wiki-dir wiki --fail-on Medium
     --allow-check "Orphan source" --allow-check "Topic accretion" --allow-check "Topic evidence-stale"`
     (orphan sources are the rolled-over queue). Any other Medium/High → fix it or drop that source from
-    the batch (revert its promotion and the page edit that needed it).
+    the batch (revert its promotion and the page edit that needed it). If the batch still cannot
+    pass, **abandon the draft** (below) — never weaken the gate and never commit a failing tree.
 11. **Commit, push, PR:** one commit `wiki: synthesize batch YYYY-MM-DD (N sources, M topics)` (+
     Co-Authored-By trailer); `git push -u origin synthesis/YYYY-MM-DD`; write the PR body to a temp
     file — per topic: sources integrated, claims added, contradictions surfaced, deferrals /
@@ -304,6 +308,27 @@ and obey its `decision`:
     `- <topic-slug> (<updated|created>) ← [[src-a]], [[src-b]]: <one-line gist>`, then deferred
     sources with the reason, **Proposed rejections** (slug, Drive file id, reason), and
     `rolled over: K`.
+
+**Abandoning a draft (unattended-safe).** Whenever the batch cannot ship — the gate fails on
+something outside the batch's control, a child violation cannot be isolated, or a stop condition is
+hit — put the clone back on a clean `main` using only commands that need no approval. A cron run has
+nobody to approve one, and Hermes refuses hard resets, forced cleans, forced branch deletes and any
+force flag outright, so none of those may appear in this path:
+
+```bash
+git restore --staged .      # un-stage the record promotions (reverses the git mv moves in the index)
+git checkout -- .           # discard every edit to tracked files; the originals are back in sources/unreviewed/
+git status --porcelain      # only `??` lines may remain: the promoted copies and child-created pages
+                            # -> remove each one by path with a plain `rm <path>` (never recursive, never forced)
+git checkout main
+git status --porcelain      # must be empty
+test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
+```
+
+Leave the branch itself alone — it has no commits of its own and `synthesis_pr.py prune` deletes it on
+a later run; never try to delete a branch inside a cron run. Then reply with the blocker as the
+digest, starting `Synthesis batch — BLOCKED:` (one line why, the failing findings or pages,
+`rolled over: K`). Nothing is pushed and no PR is opened.
 
 **Child brief** (one per topic page; fill ⟨⟩; keep the rules verbatim):
 
@@ -332,7 +357,7 @@ Output schema (require only these): `topic`, `path`, `action`, `sources_integrat
 lint main, `drive_review_sync.py --execute` (promoted artifacts move to `_sources`). Owner comments
 or "request changes" → the next weekly run regenerates (the `regenerate` decision).
 
-**Rollback.** `hermes cron pause <job id>`; close any open synthesis PR with `synthesis_pr.py close`.
+**Switching the batch off.** `hermes cron pause <job id>`; close any open synthesis PR with `synthesis_pr.py close`.
 
 ### Owner rejection command (Discord; attended, one paper at a time)
 

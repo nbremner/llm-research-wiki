@@ -48,6 +48,20 @@ def test_prunable_only_when_every_pr_for_the_branch_is_closed():
     assert sp.prunable(["synthesis/a", "synthesis/b", "synthesis/c", "synthesis/orphan"], prs) == ["synthesis/a", "synthesis/c"]
 
 
+def test_local_prunable_drops_abandoned_drafts_and_done_branches_only():
+    """Local synthesis/* cleanup belongs to the script, not the LLM turn: a cron run
+    cannot approve `git branch -D`. Delete abandoned drafts (nothing beyond main) and
+    branches whose PR is done; keep the checked-out branch, open-PR branches, and any
+    branch with its own commits and no PR."""
+    prs = sp.synthesis_prs([_pr(2, "synthesis/merged", "2026-09-08", "closed", "2026-09-08T04:56:00Z"),
+                            _pr(5, "synthesis/open", "2026-10-12")])
+    local = ["synthesis/abandoned", "synthesis/current", "synthesis/merged", "synthesis/open", "synthesis/work"]
+    anc = {"synthesis/abandoned": True, "synthesis/current": True, "synthesis/merged": False,
+           "synthesis/open": False, "synthesis/work": False}
+    assert sp.local_prunable(local, "synthesis/current", anc, prs) == ["synthesis/abandoned", "synthesis/merged"]
+    assert sp.local_prunable([], "main", {}, prs) == []
+
+
 def _run_standalone() -> int:
     fns = [v for k, v in sorted(globals().items()) if k.startswith("test_") and callable(v)]
     failed = 0

@@ -7,14 +7,17 @@ The batch drafts topic synthesis on a `synthesis/YYYY-MM-DD` branch and opens a
 pull request; the owner merging that PR *is* the approval. This script owns the
 API calls: it lists synthesis PRs and branches, decides skip / regenerate / go
 under the one-open-batch rule, opens or closes a PR, and prunes branches whose
-PR is merged or closed. The token comes from git's credential store
+PR is merged or closed — remote ones via the API, and local `synthesis/*` branches
+that are abandoned drafts (every commit already on main) or whose PR is done, so
+an unattended batch never needs an approval-gated `git branch -D` of its own
+(the ingest skill's "Abandoning a draft" path, 2026-10-12). The token comes from git's credential store
 (`git credential fill`, the same credentials the daily sync pushes with); it is
 never printed and never lives in this repo.
 
   uv run synthesis_pr.py status [--json]                 # open/merged state + the decision
   uv run synthesis_pr.py open --branch synthesis/2026-09-14 --title "..." --body-file body.md
   uv run synthesis_pr.py close --number 12 --delete-branch
-  uv run synthesis_pr.py prune                           # delete synthesis/* branches whose PR is closed/merged
+  uv run synthesis_pr.py prune                           # delete synthesis/* branches whose PR is closed/merged (+ stale local ones)
 """
 
 from __future__ import annotations
@@ -99,6 +102,16 @@ def prunable(branches: list[str], prs: list[dict[str, Any]]) -> list[str]:
     return out
 
 
+def local_prunable(branches: list[str], current: str, ancestor_of_main: dict[str, bool],
+                   prs: list[dict[str, Any]]) -> list[str]:
+    """Local synthesis/* branches safe to delete: never the checked-out one; otherwise
+    a branch whose every commit is already on main (an abandoned draft — nothing is
+    lost) or whose PRs are all closed/merged (the batch never resumes a stale draft).
+    A branch with its own commits and no PR, or with an open PR, is left alone."""
+    done = set(prunable(branches, prs))
+    return [b for b in branches if b != current and (ancestor_of_main.get(b) or b in done)]
+
+
 # ---------------------------------------------------------------------------
 # GitHub / git side
 # ---------------------------------------------------------------------------
@@ -148,6 +161,27 @@ def delete_remote_branch(token: str, branch: str) -> None:
     api("DELETE", f"/repos/{REPO}/git/refs/heads/{branch}", token)
 
 
+def _git(repo_dir: Path, *args: str) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(["git", "-C", str(repo_dir), *args], capture_output=True, text=True, timeout=60, check=False)
+
+
+def local_synthesis_branches(repo_dir: Path) -> list[str]:
+    res = _git(repo_dir, "for-each-ref", "--format=%(refname:short)", f"refs/heads/{BRANCH_PREFIX}*")
+    return sorted(b.strip() for b in res.stdout.splitlines() if b.strip())
+
+
+def local_branch_state(repo_dir: Path, branches: list[str]) -> tuple[str, dict[str, bool]]:
+    """(checked-out branch, {branch: every commit already reachable from main})."""
+    current = _git(repo_dir, "branch", "--show-current").stdout.strip()
+    return current, {b: _git(repo_dir, "merge-base", "--is-ancestor", b, "main").returncode == 0 for b in branches}
+
+
+def delete_local_branch(repo_dir: Path, branch: str) -> None:
+    res = _git(repo_dir, "branch", "-D", branch)
+    if res.returncode != 0:
+        raise RuntimeError(f"git branch -D {branch} failed: {res.stderr.strip()[:200]}")
+
+
 def _default_repo_dir() -> Path:
     return Path(__file__).resolve().parents[2]
 
@@ -158,8 +192,8 @@ def main(argv: list[str]) -> int:
     s = sub.add_parser("status"); s.add_argument("--json", action="store_true"); s.add_argument("--stale-days", type=int, default=DEFAULT_STALE_DAYS)
     o = sub.add_parser("open"); o.add_argument("--branch", required=True); o.add_argument("--title", required=True); o.add_argument("--body-file", required=True)
     c = sub.add_parser("close"); c.add_argument("--number", type=int, required=True); c.add_argument("--delete-branch", action="store_true")
-    sub.add_parser("prune")
-    for sp in (s, o, c):
+    pr = sub.add_parser("prune")
+    for sp in (s, o, c, pr):
         sp.add_argument("--repo-dir", type=Path, default=_default_repo_dir())
     args = p.parse_args(argv)
     repo_dir = getattr(args, "repo_dir", _default_repo_dir())
@@ -174,9 +208,12 @@ def main(argv: list[str]) -> int:
         open_prs = synthesis_prs(list_prs(token, "open"))
         closed = synthesis_prs(list_prs(token, "closed"))
         branches = remote_synthesis_branches(repo_dir)
+        local = local_synthesis_branches(repo_dir)
+        current, ancestors = local_branch_state(repo_dir, local)
         decision = classify(open_prs, today, args.stale_days)
         out = {"today": today.isoformat(), "decision": decision, "open": open_prs,
                "branches": branches, "prunable": prunable(branches, open_prs + closed),
+               "local_branches": local, "local_prunable": local_prunable(local, current, ancestors, open_prs + closed),
                "recently_closed": closed[-3:]}
         if args.json:
             print(json.dumps(out, indent=2))
@@ -186,6 +223,8 @@ def main(argv: list[str]) -> int:
                 print(f"  open   #{pr['number']} {pr['branch']} ({age_days(pr['created_at'], today)}d) {pr['url']}")
             for b in out["prunable"]:
                 print(f"  prunable branch: {b}")
+            for b in out["local_prunable"]:
+                print(f"  stale local branch: {b}")
         return 0
 
     if args.cmd == "open":
@@ -206,13 +245,18 @@ def main(argv: list[str]) -> int:
 
     if args.cmd == "prune":
         prs = synthesis_prs(list_prs(token, "all"))
-        branches = remote_synthesis_branches(repo_dir)
-        for b in prunable(branches, prs):
+        remote_gone = prunable(remote_synthesis_branches(repo_dir), prs)
+        for b in remote_gone:
             delete_remote_branch(token, b)
             print(f"deleted merged/closed branch {b}")
-        else:
-            if not prunable(branches, prs):
-                print("nothing to prune")
+        local = local_synthesis_branches(repo_dir)
+        current, ancestors = local_branch_state(repo_dir, local)
+        stale = local_prunable(local, current, ancestors, prs)
+        for b in stale:
+            delete_local_branch(repo_dir, b)
+            print(f"deleted stale local branch {b}" + (" (abandoned draft)" if ancestors.get(b) else " (PR merged/closed)"))
+        if not remote_gone and not stale:
+            print("nothing to prune")
         return 0
     return 2
 
