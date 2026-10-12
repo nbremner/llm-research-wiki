@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.8.5
+version: 2.8.6
 author: Hermes Agent
 license: MIT
 metadata:
@@ -223,8 +223,8 @@ Unpaywall by DOI, then the arXiv PDF if there is an arXiv id — with `curl`; a 
 never work around bot checks, CAPTCHAs, or logins. Refile a usable `.md` artifact exactly like a PDF,
 keeping the `.md` extension.
 
-**Model.** The cron job pins the configured ingest model; children inherit it. A scheduled run never
-hands off to a worker, and children never spawn children.
+**Model.** The cron job pins its job-defined model (currently `gpt-5.6-terra` / `openai-codex`);
+children inherit it. A scheduled run never hands off to a worker, and children never spawn children.
 
 **Rollback.** `hermes cron pause <job id>` restores attended-only behaviour; there is no state to
 unwind.
@@ -331,8 +331,10 @@ git status --porcelain      # must be empty
 test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
 ```
 
-Leave the branch itself alone — it has no commits of its own and `synthesis_pr.py prune` deletes it on
-a later run; never try to delete a branch inside a cron run. Then reply with the blocker as the
+Leave the abandoned draft branch itself alone — it has no commits of its own and `synthesis_pr.py
+prune` deletes it on a later run; never run a git branch-deletion command yourself inside a cron run
+(the deterministic `synthesis_pr.py close --delete-branch` and `prune` remain the sanctioned way to
+remove a stale PR's remote branch). Then reply with the blocker as the
 digest, starting `Synthesis batch — BLOCKED:` (one line why, the failing findings or pages,
 `rolled over: K`). Nothing is pushed and no PR is opened.
 

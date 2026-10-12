@@ -117,7 +117,7 @@ def test_batch_abandon_path_is_approval_free():
     text = (ROOT / "skills" / "research-wiki-ingest" / "SKILL.md").read_text(encoding="utf-8")
     batch = text[text.index("### Weekly synthesis batch"):text.index("### Owner rejection command")]
     for phrase in ("**Abandoning a draft (unattended-safe).**", "git restore --staged .", "git checkout -- .",
-                   "never try to delete a branch inside a cron run", "Synthesis batch — BLOCKED:",
+                   "never run a git branch-deletion command yourself inside a cron run", "Synthesis batch — BLOCKED:",
                    "synthesis/YYYY-MM-DD-2", "synthesis_pr.py prune"):
         assert phrase in batch, phrase
     import re

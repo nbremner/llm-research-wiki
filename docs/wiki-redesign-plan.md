@@ -285,7 +285,11 @@ the approval loop and must keep growing under automation.
   Third pass (session `20261012_063959_4056cc`): the Governance section still said unattended runs
   "do not auto-commit topic synthesis", contradicting the batch's commit on its PR branch — 2.8.5
   restates the rule as "never commit topic synthesis to `main`" (drain: no topic edits; batch: commit
-  only on the owner-gated `synthesis/*` branch, noncanonical until merged).
+  only on the owner-gated `synthesis/*` branch, noncanonical until merged). Fourth pass (session
+  `20261012_064234_8c7040`), fixed in 2.8.6: the abandon block's "never delete a branch in a cron run"
+  clashed with the regenerate path's `synthesis_pr.py close --delete-branch` (now: never run a git
+  branch-deletion command yourself; the deterministic script remains sanctioned), and the drain's
+  Model line called the cron's pin "the configured ingest model" (now: its job-defined model).
 
 - **2026-10-12 — approval-free abandon path for the weekly batch.** The 09-14 → 10-05 batches tried
   to roll back with hard resets, forced cleans and forced branch deletes; Hermes's approval detector
