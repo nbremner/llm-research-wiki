@@ -282,6 +282,10 @@ the approval loop and must keep growing under automation.
   to a fresh worker — while NicholasJunior's config says `gpt-6-astra` and both crons are pinned to
   `gpt-5.6-terra`. The skill now exempts scheduled runs from routing (a cron runs on the model its
   job pins, never hands off); whether the pins and the config should agree is an open owner call.
+  Third pass (session `20261012_063959_4056cc`): the Governance section still said unattended runs
+  "do not auto-commit topic synthesis", contradicting the batch's commit on its PR branch — 2.8.5
+  restates the rule as "never commit topic synthesis to `main`" (drain: no topic edits; batch: commit
+  only on the owner-gated `synthesis/*` branch, noncanonical until merged).
 
 - **2026-10-12 — approval-free abandon path for the weekly batch.** The 09-14 → 10-05 batches tried
   to roll back with hard resets, forced cleans and forced branch deletes; Hermes's approval detector
