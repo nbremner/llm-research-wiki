@@ -1,7 +1,7 @@
 ---
 name: research-wiki-ingest
 description: Use when processing a public research artifact from Drive _triage/wiki into the markdown wiki, canonical raw store, and owner-approved topic synthesis.
-version: 2.8.2
+version: 2.8.3
 author: Hermes Agent
 license: MIT
 metadata:
@@ -274,7 +274,8 @@ and obey its `decision`:
    reason and the Drive file id; the owner's "drop" runs the rejection path.
 5. **Branch:** `git checkout -b synthesis/YYYY-MM-DD`. If that name already exists locally (an
    abandoned draft from earlier the same day), do not reuse or delete it: branch as
-   `synthesis/YYYY-MM-DD-2` (same title and digest date). `synthesis_pr.py prune` deletes stale local
+   `synthesis/YYYY-MM-DD-2` (same title and digest date). Whichever name you used is **the batch
+   branch** in every later step (push, PR, digest). `synthesis_pr.py prune` deletes stale local
    branches on a later run.
 6. **Dispatch one subagent per affected topic page** (existing or new) with `delegate_task`, using
    the child brief below and the output schema. Dispatch in groups of at most 10, then the rest:
@@ -299,10 +300,10 @@ and obey its `decision`:
     the batch (revert its promotion and the page edit that needed it). If the batch still cannot
     pass, **abandon the draft** (below) — never weaken the gate and never commit a failing tree.
 11. **Commit, push, PR:** one commit `wiki: synthesize batch YYYY-MM-DD (N sources, M topics)` (+
-    Co-Authored-By trailer); `git push -u origin synthesis/YYYY-MM-DD`; write the PR body to a temp
+    Co-Authored-By trailer); `git push -u origin <the batch branch>`; write the PR body to a temp
     file — per topic: sources integrated, claims added, contradictions surfaced, deferrals /
     watchlist entries; then lint status and a short "my read" on commit-readiness — and run
-    `uv run /root/research-wiki-tools/synthesis_pr.py open --branch synthesis/YYYY-MM-DD --title
+    `uv run /root/research-wiki-tools/synthesis_pr.py open --branch <the batch branch> --title
     "wiki: synthesize batch YYYY-MM-DD (N sources, M topics)" --body-file <file>`. Then
     `git checkout main` so the clone is back on a clean main (the daily sync only handles main; an
     uncommitted draft on the VPS would be auto-committed by it — never leave one).
@@ -355,9 +356,10 @@ digest, starting `Synthesis batch — BLOCKED:` (one line why, the failing findi
 Output schema (require only these): `topic`, `path`, `action`, `sources_integrated` (array),
 `claims_added` (array), `contradictions_surfaced` (array), `connections_changed` (array), `notes`.
 
-**After the owner merges** (checked by the next drain or batch run): `synthesis_pr.py prune`, pull,
-lint main, `drive_review_sync.py --execute` (promoted artifacts move to `_sources`). Owner comments
-or "request changes" → the next weekly run regenerates (the `regenerate` decision).
+**After the owner merges:** the next weekly batch run does `synthesis_pr.py prune`, pull, lint main,
+`drive_review_sync.py --execute` (promoted artifacts move to `_sources`). The daily drain only pulls,
+lints and runs that Drive reconciliation — it never prunes branches. Owner comments or "request
+changes" → the next weekly run regenerates (the `regenerate` decision).
 
 **Switching the batch off.** `hermes cron pause <job id>`; close any open synthesis PR with `synthesis_pr.py close`.
 

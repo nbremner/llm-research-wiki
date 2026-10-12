@@ -95,6 +95,8 @@ def test_ingest_skill_drain_mode_guardrails():
         "never rebase or merge the stale draft",
         "one subagent per affected topic page",
         "Dispatch in groups of at most 10, then the rest",
+        "git push -u origin <the batch branch>",
+        "--branch <the batch branch>",
         "--allow-check \"Orphan source\"",
         "git mv wiki/sources/unreviewed/<slug>.md wiki/sources/<slug>.md",
         "`git checkout main` so the clone is back on a clean main",
