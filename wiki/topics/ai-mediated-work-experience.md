@@ -1,7 +1,7 @@
 ---
 title: AI-mediated work experience
 status: active
-updated: 2026-08-31
+updated: 2026-10-19
 ---
 
 # AI-mediated work experience
@@ -18,6 +18,12 @@ The focal question is configurational: when AI enters a workflow, which parts of
 - **Proactive adaptation.** [[ai-enabled-job-crafting]] tracks how workers use AI to reshape tasks, effort, and meaning before formal redesign catches up.
 - **Social and relational experience.** [[ai-mediated-teamwork]] and [[ai-mediated-organizational-networks]] track how AI changes interaction, trust, emotion, collaboration, and social position.
 - **Integrative outcomes.** Engagement, meaning, trust, effort, affect, and felt job quality belong here when evidence crosses dimensions or cannot yet be assigned cleanly to one narrower mechanism.
+
+## SMART work-design lens
+
+The SMART model provides a higher-order lens for assessing AI-mediated job quality without reducing it to a single satisfaction, productivity, or adoption outcome. It organizes work characteristics as stimulating (task and skill variety, information processing, and problem solving), mastery (feedback and role clarity), autonomous (decision, timing, and method control), relational (support, task significance, and beneficiary contact), and tolerable (low role overload, work–home conflict, and role conflict) [[2023-parker-smart-work-design]].
+
+Applied analytically, the model makes trade-offs inspectable: an AI-enabled workflow may alter several SMART dimensions at once, so improvement in one dimension is not evidence of an overall better experience. This is a work-design inference rather than direct causal evidence about AI; Parker and Knight validate the higher-order structure and its expected associations with job satisfaction and leader-rated performance, but do not test AI-mediated redesign interventions [[2023-parker-smart-work-design]].
 
 ## Resources, demands, and workload
 
@@ -51,7 +57,7 @@ The appropriate unit of intervention is the complete sociotechnical workflow. Or
 
 ## Connections
 
-- Relates to [[work-redesign]] because task allocation, control rights, verification, performance criteria, and learning opportunities determine the resulting experience.
+- Relates to [[work-redesign]] because the SMART model turns task allocation, feedback and role clarity, control rights, social contact, workload, conflict, and learning opportunities into a structured set of job-quality consequences rather than a single redesign outcome [[2023-parker-smart-work-design]].
 - Relates to [[employee-engagement]] because engagement is one possible motivational outcome, not a substitute for measuring distinct experience dimensions.
 - Relates to [[ai-adoption]] and [[ai-readiness]] because sustained use depends partly on whether workers experience AI-enabled work as supportive, threatening, developmental, governable, and worth doing.
 - Relates to [[responsible-ai-deployment]] because autonomy, competence, privacy, psychological safety, identity, workload, and felt control are deployment outcomes rather than implementation side notes.
@@ -63,5 +69,6 @@ The appropriate unit of intervention is the complete sociotechnical workflow. Or
 - Short-run positive emotion can coexist with lower trust, effort, relatedness, or long-run learning. Evidence should preserve those distinctions rather than aggregate them into satisfaction.
 - Greater autonomy over task execution can coexist with raised performance expectations, verification burden, or reduced control over the pace and evaluation of work.
 - AI may operate as a resource at the point of generation while shifting demands into correction, traceability, documentation, and accountability downstream. Field studies need to estimate that net balance.
+- The SMART model is validated as a general work-design structure, not as a test of AI-mediated redesign; research still needs to establish which AI workflow changes improve or impair each SMART dimension and their net configuration [[2023-parker-smart-work-design]].
 - The strongest causal evidence remains short-horizon, while much of the workplace evidence is cross-sectional, qualitative, or indirect. Longitudinal and intervention research is still needed on autonomy, competence, relatedness, identity, workload, learning, and recovery.
 - Experience is unlikely to move uniformly across workers. Occupation, expertise, task risk, desired agency, accessibility needs, managerial expectations, and governance design are plausible boundary conditions that remain unevenly tested.

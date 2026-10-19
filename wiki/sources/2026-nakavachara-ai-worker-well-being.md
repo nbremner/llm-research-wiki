@@ -7,7 +7,7 @@ doi: 10.1016/j.ssaho.2026.102755
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-09-08
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1Knydk2oMypATBvBMtwTI8hF6KtoI2Qxe
 file_hash: f6383cc3d0bddb64c4f3e6fbe88a0876b5b7440c3b18dbfd4556ad17014ee311
 ---
@@ -28,5 +28,4 @@ file_hash: f6383cc3d0bddb64c4f3e6fbe88a0876b5b7440c3b18dbfd4556ad17014ee311
 - The outcomes are self-reported perceived improvements and the design estimates associations rather than causal effects; non-users answered company-level rather than personal AI-change questions.
 
 ## Feeds
-- [[ai-mediated-work-experience]]
 - [[ai-as-a-job-resource]]
