@@ -1,12 +1,20 @@
 ---
 title: Automation complacency
 status: active
-updated: 2026-08-31
+updated: 2026-10-19
 ---
 
 # Automation complacency
 
 Automation complacency is the failure mode where better machine advice reduces human attention, effort, or learning enough that the combined human-AI system underperforms what the model's standalone accuracy would imply. It is not simply algorithm aversion's opposite. The problem is not that workers distrust the tool; it is that they trust or defer to it in a way that changes the work they still do.
+
+[[2025-romeo-exploring-automation-bias]] synthesizes this as a cross-domain pattern rather than an isolated failure mode: its PRISMA-guided review of 35 quantitative studies finds automation bias across AI-assisted decisions in domains including healthcare, finance, national security, public administration, human resources, and mental healthcare.
+
+Verification is the actionable boundary in that synthesis. Higher verification intensity was associated with better decision accuracy, but responsibility cues alone did not significantly increase verification intensity in the reviewed HR-dashboard study, suggesting that formally assigning a human responsibility is not enough to ensure active oversight [[2025-romeo-exploring-automation-bias]].
+
+Expertise and AI literacy can support more appropriate reliance, but they are not a guarantee against complacency: experienced users can still defer inappropriately when cognitive load is high [[2025-romeo-exploring-automation-bias]]. Oversight design therefore has to preserve both the ability and the capacity to verify, rather than assuming that an expert nominally in the loop will reliably catch failures [[2025-romeo-exploring-automation-bias]].
+
+The review also weakens explanation-only remedies. Across the reviewed evidence, explanations, transparency cues, and trust-calibration feedback did not reliably help users identify incorrect recommendations; explanations that are overly technical, cognitively demanding, or simplistic can instead become trust heuristics that reinforce overreliance [[2025-romeo-exploring-automation-bias]]. Transparency can support verification, but it is not a substitute for a workflow that elicits and enables verification [[2025-romeo-exploring-automation-bias]].
 
 [[2021-bansal-most-accurate-ai-best-teammate]] supplies a formal precursor to this system-performance concern. In a model where people accept confident advice and otherwise solve the task themselves, optimizing classifier accuracy can reduce expected team utility because the model's confidence distribution, the human verification threshold, and the costs of effort and error determine what the combined system actually does. The paper does not measure complacency or learning; its value here is to show why the human response cannot be treated as fixed when evaluating a supposedly better AI.
 

@@ -1,7 +1,7 @@
 ---
 title: Cognitive sustainability
-status: stub
-updated: 2026-08-11
+status: active
+updated: 2026-10-19
 ---
 
 # Cognitive sustainability
@@ -14,12 +14,14 @@ The page therefore makes a distinction the adjacent topics need. [[automation-co
 
 The practical implication is not generic “human-in-the-loop” rhetoric. A sustainable workflow would preserve meaningful opportunities to frame the problem, inspect and challenge outputs, encounter feedback, and practice the capabilities that escalation and recovery require. [[2025-kabashkin-cognitive-atrophy-paradox]] proposes reflective prompts, explainable outputs, intentional slow-downs, and adaptive task design as candidate mechanisms, but their effectiveness has not yet been tested as a coherent intervention package.
 
+[[2026-sole-cognitive-virus]] adds a population-level mechanism hypothesis: socially transmitted and reinforced substitutive LLM use could move a population discontinuously from weak coupling to persistent cognitive offloading, with the resulting pattern depending on its prior path. On that account, capability preservation has a prevention and a recovery dimension: maintaining unaided practice and active verification may keep routes back to autonomous cognition open before dependency locks in, whereas restoring those capabilities after a tipping point may require stronger change. This is a theoretical mean-field model with illustrative parameters, not empirical evidence about adoption, dependence, or cognitive competence.
+
 [[2026-lovett-tragedy-cognitive-commons]] adds a profession-level boundary to this work-system criterion. Its Cognitive Commons framework argues that AI-enabled efficiency can weaken the entry-level practice and supervised progression through which a profession replenishes the Internalized Mastery needed for substantive validation. This broadens cognitive sustainability beyond whether an individual workflow preserves present capability: a locally sustainable-looking arrangement may still be collectively unsustainable if organizations free-ride on a shrinking external pool of experts. The proposed governance remedies remain conceptual and require comparative, longitudinal tests.
 
 [[2026-mehra-agents-that-teach]] offers an implementation-level hypothesis for software development: an AI coding workflow could preserve cognitive sustainability by returning contextual explanations, probes, and feedback to the human rather than treating a completed code change as the sole outcome. Its emphasis on selective, asynchronous intervention is important because a system that preserves learning by persistently interrupting flow or expanding worker monitoring would exchange one sustainability failure for another.
 
 ## Connections
-- Relates to [[cognitive-debt]] because cognitive debt can be the delayed liability that signals a work system has preserved immediate output while weakening attention, learning, ownership, or recovery.
+- Relates to [[cognitive-debt]] because cognitive debt can be the delayed liability that signals a work system has preserved immediate output while weakening attention, learning, ownership, or recovery; [[2026-sole-cognitive-virus]] hypothesizes that social reinforcement can make such dependence path-dependent, so recovery may demand stronger capability-restoring changes than prevention.
 - Relates to [[ai-induced-skill-erosion]] because repeated unsustainable delegation can plausibly lead to durable loss of practiced judgment and professional capability, although the temporal pathway requires longitudinal evidence.
 - Relates to [[automation-complacency]] because diminished scrutiny in the moment is one route by which AI-supported work can become cognitively unsustainable.
 - Relates to [[ai-mediated-learning]] because sustainable AI support must preserve the explanation, error-resolution, and transfer work through which people develop competence.

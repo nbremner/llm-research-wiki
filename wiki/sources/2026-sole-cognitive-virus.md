@@ -7,7 +7,7 @@ doi: 10.48550/arXiv.2609.03344
 source_type: paper
 publication_status: preprint
 retrieved: 2026-09-08
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1VZiGi8zrXoZ6GMomS2m5imXGKFQj1ZGm
 file_hash: e172efe1eee27418aa3bf847b2d8498335c9f4727f723e64219e97af0b161c22
 ---
@@ -27,5 +27,3 @@ file_hash: e172efe1eee27418aa3bf847b2d8498335c9f4727f723e64219e97af0b161c22
 
 ## Feeds
 - [[cognitive-sustainability]]
-- [[cognitive-debt]]
-- [[automation-complacency]]

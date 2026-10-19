@@ -7,7 +7,7 @@ doi: 10.1177/20413866261478644
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-09-09
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1hmuNW8gCTyVbJOZTEAkde9-RhUukVKzD
 file_hash: 53937aaff317a75fdd31a5b41b48267c233d34d1664588f9e7febdde08e2e382
 ---
@@ -29,4 +29,3 @@ file_hash: 53937aaff317a75fdd31a5b41b48267c233d34d1664588f9e7febdde08e2e382
 
 ## Feeds
 - [[ai-mediated-teamwork]]
-- [[human-ai-collaboration]]
