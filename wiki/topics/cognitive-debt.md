@@ -1,7 +1,7 @@
 ---
 title: Cognitive debt
 status: active
-updated: 2026-08-11
+updated: 2026-10-26
 ---
 
 # Cognitive debt
@@ -18,6 +18,8 @@ Cognitive debt is the delayed cost to attention, learning, transfer, ownership, 
 
 [[2026-zhu-cognitive-offloading-modes]] supplies a useful empirical distinction inside the hypothesized debt pathway: dependent offloading delegates core thinking and was associated over three survey waves with more cognitive-agency transfer and less intrinsic motivation, while autonomous offloading treated AI output as a scaffold and was associated with higher motivation. Both modes had comparable perceived immediate benefits, so a worker's sense that AI is saving effort does not reveal whether the mode of engagement is associated with preserved cognitive ownership. This is correlational evidence about perceived outcomes, not evidence that either mode causes cumulative debt or durable capability loss.
 
+[[2026-sole-cognitive-virus]] adds a population-level theoretical account of why cognitive offloading could persist and become costly to reverse even when individual use changes gradually. Its mean-field model predicts that social transmission and reinforcement of substitutive LLM use can create a bistable region, in which crossing a tipping point shifts a population discontinuously toward persistent dependence and recovery requires stronger intervention than prevention. The model treats preserved unaided practice and active verification as routes back to cognitive autonomy, but it is a mechanism hypothesis with illustrative parameters rather than evidence that real workers, organizations, or populations have crossed such a threshold.
+
 For the wiki, cognitive debt is a bridge construct rather than a synonym for [[automation-complacency]], [[cognitive-surrender]], or [[ai-induced-skill-erosion]]. Complacency is reduced vigilance in the moment; surrender is answer ownership without scrutiny; skill erosion is durable capability loss. Cognitive debt names the accumulating liability between those episodes and later outcomes: repeated bypass, offloading, overload, and recovery failure can silently weaken the human side of the system before anyone sees a performance collapse.
 
 ## Connections
@@ -28,9 +30,10 @@ For the wiki, cognitive debt is a bridge construct rather than a synonym for [[a
 - Relates to [[critical-thinking]] because verification and stewardship preserve epistemic contact with the work; when AI bypasses those operations, current output quality can hide future judgment loss.
 - Relates to [[ai-supported-knowledge-synthesis]] because AI synthesis tools can help organize evidence while also weakening direct engagement with sources, uncertainty, and alternative interpretations.
 - Relates to [[inclusive-hr-systems]] because cognitive-debt measurement and intervention have to account for neurodivergent pacing, sensory load, recovery needs, and design expertise without converting subgroup signals into deficit labels or surveillance.
+- Relates to [[cognitive-sustainability]] because [[2026-sole-cognitive-virus]] models offloading as a collective dynamic in which preserving unaided practice and verification before a tipping point can be less costly than restoring them afterward.
 
 ## Contradictions & open questions
-- The empirical base is still early. [[2025-kosmyna-brain-chatgpt-cognitive-debt]] is suggestive but educational and preprint-based; [[2026-ruttenberg-cognitive-debt-ai-research]], [[2026-ruttenberg-cognitive-debt-cumulative-cost]], and [[2026-ruttenberg-neurodivergent-expertise-ai-work]] are conceptual and agenda-setting rather than direct workplace tests. The newer proposed threshold is a measurement hypothesis, not a diagnostic cutoff.
+- The empirical base is still early. [[2025-kosmyna-brain-chatgpt-cognitive-debt]] is suggestive but educational and preprint-based; [[2026-ruttenberg-cognitive-debt-ai-research]], [[2026-ruttenberg-cognitive-debt-cumulative-cost]], [[2026-ruttenberg-neurodivergent-expertise-ai-work]], and [[2026-sole-cognitive-virus]] are conceptual or theoretical rather than direct workplace tests. The newer proposed individual threshold and the population-level tipping dynamics are measurement and mechanism hypotheses, not diagnostic cutoffs or estimates of real-world prevalence.
 - Productive offloading and harmful debt can look identical in short-run productivity metrics. The measurement problem is how to observe transfer, recall, comprehension, recovery, and verification quality without forcing workers through wasteful friction.
 - Cognitive debt is likely task-, person-, and design-contingent. The same AI assistance may protect capacity when it removes extraneous burden, but create debt when it displaces the practice, uncertainty tolerance, or source contact needed for later judgment.
 - Neurodivergent early-warning signals are ethically delicate: they may reveal design failures sooner, but using those signals responsibly requires participation, accommodation, privacy, and non-punitive governance rather than monitoring workers for fragility.

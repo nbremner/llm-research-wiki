@@ -7,7 +7,7 @@ doi: 10.1177/00187267251379698
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-09-09
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 19Gu-ozY2nQyZoTUOkjp473EqVgZIpKSu
 file_hash: a28ce4b550f7ffd690ae0c76431128a1a3987c97d58689ee389adcf7016154fe
 ---
@@ -31,5 +31,4 @@ file_hash: a28ce4b550f7ffd690ae0c76431128a1a3987c97d58689ee389adcf7016154fe
 - The article was published online on 2025-10-16 and in the July 2026 print issue; the source record uses the online-publication year while the citation identifies the final issue.
 
 ## Feeds
-- [[responsible-ai-deployment]]
 - [[employee-change-support]]

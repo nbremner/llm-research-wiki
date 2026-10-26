@@ -7,7 +7,7 @@ doi: 10.1007/s00146-025-02422-7
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-09-09
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1jeRG09TT9xcGCGeJnZB1csEX-GPQ-3YB
 file_hash: c43377926fce123c6ecdf73a21825de2524fabd6b6a5b9429bc5ec097de0a141
 ---
@@ -31,5 +31,3 @@ file_hash: c43377926fce123c6ecdf73a21825de2524fabd6b6a5b9429bc5ec097de0a141
 
 ## Feeds
 - [[automation-complacency]]
-- [[human-ai-collaboration]]
-- [[critical-thinking]]
