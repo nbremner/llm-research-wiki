@@ -1,7 +1,7 @@
 ---
 title: AI-mediated work experience
 status: active
-updated: 2026-08-31
+updated: 2026-10-26
 ---
 
 # AI-mediated work experience
@@ -9,6 +9,8 @@ updated: 2026-08-31
 AI-mediated work experience is the integrative domain covering how AI changes the lived and motivational quality of work. It is not a unitary construct or another broad engagement label. It connects distinct resources, demands, appraisals, behaviors, and outcomes—including autonomy, competence, identity, workload, learning, meaning, control, affect, and social texture—so the wiki can examine how they combine inside the same workflow.
 
 The focal question is configurational: when AI enters a workflow, which parts of work become more supportive, demanding, agentic, developmental, meaningful, or socially sustaining, and which become less so? A system can be a cognitive resource while increasing verification load, improve short-run affect while weakening human sociality, or raise performance while eroding competence and professional identity. Those effects should be separated analytically before they are synthesized as an overall change in work experience.
+
+[[2023-parker-smart-work-design]] supplies a validated higher-order frame for that configuration: stimulating, mastery, autonomous, relational, and tolerable work characteristics organize the task demands, feedback and clarity, control, social value, and strain conditions that AI may alter. Its longitudinal and performance-linked findings support using these dimensions to structure experience assessment, while not demonstrating that any particular AI redesign causes change in them.
 
 ## Analytic dimensions
 
@@ -22,6 +24,8 @@ The focal question is configurational: when AI enters a workflow, which parts of
 ## Resources, demands, and workload
 
 Work characteristics shape whether AI can become useful support. [[2026-reich-work-design-multidimensional-ai-threat]] found that skill variety and autonomy were the most consistent positive predictors of workplace AI adoption, while different threat appraisals related differently to depth of use. [[2026-lee-making-invisible-visible]] gives the corresponding workflow account: workers valued assistance that preserved meaningful control, learning, collaboration, and accountability, while AI that took the wrong work could leave them with tedious backstage tasks even when it technically improved efficiency.
+
+[[2026-nakavachara-ai-worker-well-being]] provides cross-sectional worker-outcome evidence at this integrative level: among 2,917 workers across seven OECD countries, workplace AI use was associated with reported improvements in mental health, job enjoyment, and physical health or safety. The associations varied by generation and gender, so positive average reports do not imply an even distribution of experiential benefit; because the outcomes are self-reported perceived improvements in a cross-sectional design, they do not show that AI caused those changes or identify which work-design dimensions produced them.
 
 Resource value cannot be inferred from fluent output or faster task completion. [[cognitive-load-in-ai-assisted-work]] shows how useful AI-generated content can coexist with extraneous interaction burden, while [[digital-work-strain]] distinguishes load, invasion, complexity, insecurity, uncertainty, support, autonomy, and recovery conditions. [[2025-klonek-ai-work-stress]] further associates greater AI control with higher stress while finding lower stress around human–AI transition and action processes. The child topics carry the construct-specific evidence; the parent-level claim is that net work experience depends on the full resource–demand configuration.
 
@@ -51,7 +55,7 @@ The appropriate unit of intervention is the complete sociotechnical workflow. Or
 
 ## Connections
 
-- Relates to [[work-redesign]] because task allocation, control rights, verification, performance criteria, and learning opportunities determine the resulting experience.
+- Relates to [[work-redesign]] because task allocation, control rights, verification, performance criteria, learning opportunities, and the stimulating, mastery, autonomous, relational, and tolerable conditions of work determine the resulting experience.
 - Relates to [[employee-engagement]] because engagement is one possible motivational outcome, not a substitute for measuring distinct experience dimensions.
 - Relates to [[ai-adoption]] and [[ai-readiness]] because sustained use depends partly on whether workers experience AI-enabled work as supportive, threatening, developmental, governable, and worth doing.
 - Relates to [[responsible-ai-deployment]] because autonomy, competence, privacy, psychological safety, identity, workload, and felt control are deployment outcomes rather than implementation side notes.
@@ -63,5 +67,6 @@ The appropriate unit of intervention is the complete sociotechnical workflow. Or
 - Short-run positive emotion can coexist with lower trust, effort, relatedness, or long-run learning. Evidence should preserve those distinctions rather than aggregate them into satisfaction.
 - Greater autonomy over task execution can coexist with raised performance expectations, verification burden, or reduced control over the pace and evaluation of work.
 - AI may operate as a resource at the point of generation while shifting demands into correction, traceability, documentation, and accountability downstream. Field studies need to estimate that net balance.
+- [[2026-nakavachara-ai-worker-well-being]] associates AI use with better self-reported well-being outcomes, but it does not show which stimulating, mastery, autonomous, relational, or tolerable work characteristics changed, whether the associations persist, or why they differ across worker groups; designs combining those measures are needed.
 - The strongest causal evidence remains short-horizon, while much of the workplace evidence is cross-sectional, qualitative, or indirect. Longitudinal and intervention research is still needed on autonomy, competence, relatedness, identity, workload, learning, and recovery.
 - Experience is unlikely to move uniformly across workers. Occupation, expertise, task risk, desired agency, accessibility needs, managerial expectations, and governance design are plausible boundary conditions that remain unevenly tested.

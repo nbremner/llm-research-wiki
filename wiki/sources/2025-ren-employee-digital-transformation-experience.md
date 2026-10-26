@@ -7,7 +7,7 @@ doi: 10.1002/hrm.22313
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-09-09
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1gWGOE_Bk73TY4pbIjsAPoPucpya-w0-N
 file_hash: c7aaf7838d021304a6e2a6c9e2de349508d144011d0d8d00adaefc259c4ddb2a
 ---
@@ -28,6 +28,4 @@ file_hash: c7aaf7838d021304a6e2a6c9e2de349508d144011d0d8d00adaefc259c4ddb2a
 - The article tests digital-transformation experiences and job attitudes rather than measured productivity, actual job loss, or longer-run organizational implementation outcomes.
 
 ## Feeds
-- [[automation-and-substitution]]
-- [[ai-mediated-work-experience]]
 - [[employee-change-support]]

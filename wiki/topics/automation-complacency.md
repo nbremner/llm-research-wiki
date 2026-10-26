@@ -1,12 +1,14 @@
 ---
 title: Automation complacency
 status: active
-updated: 2026-08-31
+updated: 2026-10-26
 ---
 
 # Automation complacency
 
 Automation complacency is the failure mode where better machine advice reduces human attention, effort, or learning enough that the combined human-AI system underperforms what the model's standalone accuracy would imply. It is not simply algorithm aversion's opposite. The problem is not that workers distrust the tool; it is that they trust or defer to it in a way that changes the work they still do.
+
+[[2025-romeo-exploring-automation-bias]] synthesizes 35 quantitative studies and situates this failure in overreliance on incorrect AI recommendations rather than in trust alone. Across the reviewed evidence, more intensive verification was associated with better decision accuracy, but responsibility cues by themselves did not reliably make users verify more. Explainability and transparency were likewise not dependable safeguards: technical, cognitively demanding, or overly simple explanations can become trust heuristics that reinforce reliance instead of helping users detect error. Domain expertise and AI literacy can support more appropriate reliance, yet even experienced users remain vulnerable under high cognitive load.
 
 [[2021-bansal-most-accurate-ai-best-teammate]] supplies a formal precursor to this system-performance concern. In a model where people accept confident advice and otherwise solve the task themselves, optimizing classifier accuracy can reduce expected team utility because the model's confidence distribution, the human verification threshold, and the costs of effort and error determine what the combined system actually does. The paper does not measure complacency or learning; its value here is to show why the human response cannot be treated as fixed when evaluating a supposedly better AI.
 
