@@ -1,7 +1,7 @@
 ---
 title: AI-mediated teamwork
 status: active
-updated: 2026-09-08
+updated: 2026-11-02
 ---
 
 # AI-mediated teamwork
@@ -14,10 +14,17 @@ The source also separates teamwork's expertise-integration function from its hea
 
 The published analysis further localizes that contribution inside innovation work. [[2026-dellacqua-cybernetic-teammate]] finds that AI mainly improves the quality of ideas generated rather than selection accuracy, so the useful redesign is not “replace the team with a solo worker and AI.” It is to distinguish generative breadth and quality, where AI may supply part of a team’s contribution, from evaluative selection, where human judgment remains a separate work function.
 
+[[2026-gonzalez-human-ai-teaming-complementarity]] supplies a broader criterion for interpreting such results: complementarity exists only when the human–AI team outperforms either humans or AI working alone, not when an AI-enabled arrangement merely appears capable. Its framework treats that outcome as contingent on explicit goals and constraints, role partitioning, attention and interrogation routines, shared knowledge infrastructure, training, and evaluation of workload, resilience, trust calibration, shared understanding, and ethical alignment alongside task accuracy.
+
+[[2026-nols-old-theories-new-teams]] explains why member capability alone is an insufficient account of team performance. Its Adaptation-enabling Conditions for Teams (ACT) framework treats human-autonomy-team adaptation as an emergent system property and foregrounds predictability, observability, plannability, and directability; conditions that may arise through human shared cognition and interaction can require deliberate technical, organizational, and interactional support when autonomous members join the team.
 
 [[2025-dellacqua-super-mario-ai]] gives the counterweight: AI can weaken teamwork when it enters an interdependent coordination routine as a replacement coworker rather than as an ideation aid. In a laboratory experiment where four-person firms played a team-based game, high-performing automated agents individually outperformed humans but reduced firm performance, increased coordination failures, and lowered trust and effort among directly affected human teammates. This makes team performance a system property, not a sum of member capability.
 
 The result sharpens the topic boundary. AI-mediated teamwork is not only whether AI can supply expertise or perspective; it is whether the team can preserve coordination routines, mutual predictability, motivation, and trust when one human role is replaced by an automated actor. The skill heterogeneity matters: low- and medium-skilled remaining teams struggled to integrate AI, while high-skilled teams did not show the same decline, suggesting that human team capability conditions whether automation becomes a complement or a disruption.
+
+[[2026-chen-ai-agents-reshape-consensus-formation]] shows that composition is itself a team-design variable, not a neutral scaling parameter. In 24-person mixed human–LLM groups completing a repeated description game, 12.5% agents increased consensus strength relative to all-human groups, 33.3% and 50% agents reduced it, and 75% agents restored aggregate consensus. The restored high-agent consensus was agent-led rather than human-led: humans increasingly adapted to agent expressions, and the shared conventions became more abstract, less information-dense, and less grounded in real-world analogies.
+
+That pattern distinguishes convergence from the quality and ownership of collective understanding. A team can reach agreement while changing whose concepts organize the group and what kinds of meanings survive; the intermediate-composition dip also suggests that adding agents can disrupt an existing human coordination regime before a different, agent-dominant regime stabilizes [[2026-chen-ai-agents-reshape-consensus-formation]].
 
 [[2026-buechsenschuss-genai-organizational-networks]] extends the teamwork question outward from bounded teams to the organizational network. In its field experiment, a grounded GenAI assistant increased collaboration and knowledge-sharing centrality across employees, suggesting that AI can change not only whether a team is needed for a task but also who becomes connected to whom as work and knowledge move through the firm.
 
@@ -30,11 +37,11 @@ The social result is more tentative but important for I-O framing. AI-supported 
 The mechanism evidence is suggestive rather than causal. In joint models, repeated engagement, bot-to-human addressing, and role differentiation were associated with fewer conflict cascades, while role differentiation, bot-directed social memory, and inter-bot interaction were associated with greater output distinctiveness; because the event study has no untreated comparison group and bot adoption may be endogenous, [[2026-shi-when-bots-join-the-team]] does not establish that bots caused these changes or mediated them.
 
 ## Connections
-- Connects to [[human-ai-collaboration]] because the teammate metaphor can be empirically useful for performance, expertise, and affective functions, while accountability and stewardship still sit with humans.
-- Connects to [[work-redesign]] because AI can change whether organizations need a team, a solo worker with AI, an automated replacement inside a team, or a different coordination structure for a given problem.
+- Connects to [[human-ai-collaboration]] because complementarity requires accountable human stewardship as well as explicit role partitioning, calibrated trust, shared understanding, and routines for interrogating AI contributions [[2026-gonzalez-human-ai-teaming-complementarity]].
+- Connects to [[work-redesign]] because AI can change whether organizations need a team, a solo worker with AI, an automated replacement inside a team, or a differently composed coordination structure; adaptation may require deliberate support for predictability, observability, plannability, and directability [[2026-nols-old-theories-new-teams]].
 - Connects to [[automation-and-substitution]] because substitution can occur at the team-function level before it becomes job-level labor replacement.
 - Connects to [[ai-mediated-work-experience]] because teamwork is partly a motivational and social experience, and human–AI team processes can change stress, control, and social-resource perceptions rather than only team output.
-- Connects to [[human-ai-task-taxonomy]] because teamwork claims need task-level detail about output definition, authority, auditability, expertise mix, and whether the work requires coordination beyond idea generation.
+- Connects to [[human-ai-task-taxonomy]] because teamwork claims need task-level detail about output definition, authority, auditability, expertise mix, whether the work requires coordination beyond idea generation, and how team composition changes the collective outcome [[2026-chen-ai-agents-reshape-consensus-formation]].
 - Connects to [[ai-mediated-organizational-networks]] because rule-based bots can reinforce coordination within a project's shared interaction record, while GenAI can change bounded team functions and broader cross-team knowledge-flow patterns at the same time [[2026-shi-when-bots-join-the-team]].
 
 ## Contradictions & open questions
@@ -42,5 +49,7 @@ The mechanism evidence is suggestive rather than causal. In joint models, repeat
 - [[2026-shi-when-bots-join-the-team]] instead associates the adoption of rule-based bots with fewer conflict cascades and more repeated human engagement in open-source projects, contrasting with the performance and trust disruption observed when an autonomous agent replaces a human teammate in [[2025-dellacqua-super-mario-ai]]. Whether this reflects bot role, task interdependence, team skill, or the difference between archival associations and experimental replacement remains open.
 - [[2026-buechsenschuss-genai-organizational-networks]] points in the opposite direction from simple team substitution: grounded GenAI increased human-human network ties rather than reducing them, though the evidence is self-reported and short-run.
 - The same source finds little evidence that teams with AI outperformed individuals with AI on solution quality, which raises a sharp redesign question: when does AI make teams more valuable, and when does it make team formation redundant for the immediate task?
+- [[2026-chen-ai-agents-reshape-consensus-formation]] complicates a performance-only interpretation of team benefit: low agent representation supported human-led consensus, intermediate representation impaired convergence, and high representation restored aggregate consensus while shifting conceptual contribution to agents and changing the content of agreement. Whether complementarity requires human ownership of the team's shared meanings, rather than agreement alone, remains open.
+- [[2026-gonzalez-human-ai-teaming-complementarity]] and [[2026-nols-old-theories-new-teams]] both make complementarity conditional on sociotechnical design, but they do not yet establish which combinations of role partitioning, trust calibration, shared knowledge, and ACT conditions are necessary for durable performance under changing task and environmental demands.
 - The positive emotion finding should not be overread as relatedness. Enthusiasm after AI use may come from novelty, perceived fluency, reduced effort, or task success rather than genuine social connection or sustained team climate.
 - [[2025-klonek-ai-work-stress]] treats team processes as text-coded features of public social-media posts, so it should not be read as evidence that durable human–AI teams reduce stress in organizations; it is better evidence that team-process constructs belong in the nomological network for AI work stress.

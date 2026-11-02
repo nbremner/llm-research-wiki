@@ -1,12 +1,14 @@
 ---
 title: Automation complacency
 status: active
-updated: 2026-08-31
+updated: 2026-11-02
 ---
 
 # Automation complacency
 
 Automation complacency is the failure mode where better machine advice reduces human attention, effort, or learning enough that the combined human-AI system underperforms what the model's standalone accuracy would imply. It is not simply algorithm aversion's opposite. The problem is not that workers distrust the tool; it is that they trust or defer to it in a way that changes the work they still do.
+
+[[2025-romeo-exploring-automation-bias]] situates that failure mode in a PRISMA-guided review of 35 quantitative, peer-reviewed studies across several decision domains. The underlying literature is heterogeneous rather than a pooled estimate, but its recurring context conditions are clear: higher verification intensity was associated with better decision accuracy, while responsibility cues alone did not raise verification intensity in the cited HR-dashboard study; transparency, explanations, and trust-calibration feedback did not reliably help users recognize bad recommendations; and domain expertise or AI literacy could support appropriate reliance without protecting experienced users under high cognitive load. The review therefore makes verification design, explanation design, and the user’s expertise-and-load conditions part of the complacency problem rather than generic safeguards that can be assumed to work.
 
 [[2021-bansal-most-accurate-ai-best-teammate]] supplies a formal precursor to this system-performance concern. In a model where people accept confident advice and otherwise solve the task themselves, optimizing classifier accuracy can reduce expected team utility because the model's confidence distribution, the human verification threshold, and the costs of effort and error determine what the combined system actually does. The paper does not measure complacency or learning; its value here is to show why the human response cannot be treated as fixed when evaluating a supposedly better AI.
 
@@ -34,7 +36,7 @@ Automation complacency is the failure mode where better machine advice reduces h
 
 ## Connections
 - Relates to [[human-ai-collaboration]] because collaboration quality depends on preserving competent human review, not merely keeping a human nominally in the loop.
-- Relates to [[critical-thinking]] because attention, verification, and stewardship are effortful behaviors that can decay when AI confidence is high.
+- Relates to [[critical-thinking]] because attention, verification, and stewardship are effortful behaviors that can decay when AI confidence is high, and explanations or transparency alone may not reliably restore them [[2025-romeo-exploring-automation-bias]].
 - Relates to [[algorithmic-assessment]] because hiring tools often frame humans as final decision-makers while simplified recommendations can still reshape discretion.
 - Relates to [[work-redesign]] because interface design, feedback, task sequencing, and escalation rules can either preserve or erode human oversight.
 - Relates to [[ai-induced-skill-erosion]] because repeated complacency can become capability loss when workers no longer practice the judgment they are expected to retain.
@@ -43,6 +45,7 @@ Automation complacency is the failure mode where better machine advice reduces h
 - Relates to [[cognitive-surrender]] because surrender is a specific acceptance-and-adoption pattern inside the broader complacency family.
 
 ## Contradictions & open questions
+- [[2025-romeo-exploring-automation-bias]] synthesizes heterogeneous evidence in which transparency, explanations, and trust-calibration feedback did not reliably improve recognition of incorrect recommendations, whereas [[2026-shaw-thinking-fast-slow-artificial]] finds that immediate feedback and incentives improved faulty-advice override behavior. These findings do not establish that feedback works or fails universally; they leave open which feedback designs, task stakes, cognitive demands, and user expertise turn feedback into calibration rather than another trust cue.
 - Better AI can still improve average performance, as [[2022-dellacqua-falling-asleep-at-wheel]] shows when pooling AI conditions and in the perfectly predictive benchmark. The claim is not "worse AI is better"; it is that human behavioral response can make the model-quality optimum differ from the system-performance optimum.
 - [[2021-bansal-most-accurate-ai-best-teammate]] derives a gap between individual accuracy and modeled team utility under a rational, confidence-sensitive accept-or-solve policy, whereas this topic tracks empirical reductions in attention, effort, learning, and oversight. The formal mechanism makes the systems point cleanly but does not establish that workers' real reliance follows the assumed threshold or that the loss of effort is complacency rather than an appropriate reallocation of work.
 - The strongest evidence here is short-run task behavior. The wiki still needs longitudinal evidence on whether complacency becomes skill atrophy, whether feedback restores calibration, and which design interventions preserve attention without wasting human effort.

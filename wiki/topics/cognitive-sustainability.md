@@ -1,7 +1,7 @@
 ---
 title: Cognitive sustainability
-status: stub
-updated: 2026-08-11
+status: active
+updated: 2026-11-02
 ---
 
 # Cognitive sustainability
@@ -17,6 +17,8 @@ The practical implication is not generic “human-in-the-loop” rhetoric. A sus
 [[2026-lovett-tragedy-cognitive-commons]] adds a profession-level boundary to this work-system criterion. Its Cognitive Commons framework argues that AI-enabled efficiency can weaken the entry-level practice and supervised progression through which a profession replenishes the Internalized Mastery needed for substantive validation. This broadens cognitive sustainability beyond whether an individual workflow preserves present capability: a locally sustainable-looking arrangement may still be collectively unsustainable if organizations free-ride on a shrinking external pool of experts. The proposed governance remedies remain conceptual and require comparative, longitudinal tests.
 
 [[2026-mehra-agents-that-teach]] offers an implementation-level hypothesis for software development: an AI coding workflow could preserve cognitive sustainability by returning contextual explanations, probes, and feedback to the human rather than treating a completed code change as the sole outcome. Its emphasis on selective, asynchronous intervention is important because a system that preserves learning by persistently interrupting flow or expanding worker monitoring would exchange one sustainability failure for another.
+
+[[2026-sole-cognitive-virus]] adds a theoretical account of why cognitive sustainability may be path-dependent rather than a smooth function of how much AI a system uses. Its mean-field model distinguishes weakly coupled, autonomously coupled, and persistently dependent users, and derives conditions in which social transmission and reinforcement of substitutive LLM use can produce a discontinuous shift toward persistent cognitive offloading. In the model, preserving unaided practice and active verification can prevent lock-in, while recovery after a transition requires a stronger change in conditions than prevention. These are model-derived mechanisms, not evidence about the prevalence of LLM dependence, actual user trajectories, or intervention effectiveness.
 
 ## Connections
 - Relates to [[cognitive-debt]] because cognitive debt can be the delayed liability that signals a work system has preserved immediate output while weakening attention, learning, ownership, or recovery.
