@@ -1,7 +1,7 @@
 ---
 title: Algorithmic assessment
 status: active
-updated: 2026-09-08
+updated: 2026-11-02
 ---
 
 # Algorithmic assessment
@@ -22,6 +22,10 @@ The topic sits at the intersection of [[construct-validity]], [[evidence-based-m
 
 Two narrative recruitment-fairness articles converge that governance limits must extend beyond the final decision rule: historical data, labels, feature choices, model design, and evaluation can each preserve inequity, and the proposed safeguards include representative data, audits, explainability, regulatory attention, and meaningful human oversight [[2025-agbasiere-algorithmic-fairness-recruitment]] [[2025-ahuchogu-ai-bias-recruitment]]. Their convergence identifies a governance agenda, not validation evidence: neither article reports a controlled validation of a hiring model or a mitigation intervention [[2025-agbasiere-algorithmic-fairness-recruitment]] [[2025-ahuchogu-ai-bias-recruitment]].
 
+The selection-science review argues that emerging formats such as asynchronous video interviews, social-media assessments, constructed responses, and AI-enabled tests cannot be evaluated as undifferentiated modalities: researchers and employers need transparent accounts of their modular design and scoring choices to accumulate evidence about reliability, validity, fairness, and candidate experience [[2026-sackett-hiring-people-organizations]]. AI scoring may improve the scalability of video assessment, but scalability does not settle the measurement or consequence questions that each scoring and delivery configuration raises [[2026-sackett-hiring-people-organizations]].
+
+Candidate GenAI use adds a prior measurement decision: whether unaided individual performance or effective human–AI collaboration is the intended construct. When the former is intended, candidate use can make scores partly reflect unequal access to, willingness to use, and ability to use GenAI rather than the targeted applicant attributes [[2026-dunlop-from-forbid-to-reimagine]]. The FAIR framework distinguishes responses that forbid, advise about, or insulate assessments from GenAI use from redesign that reimagines assessment around job-relevant human–AI collaboration; it treats blanket prohibition as only one response to a changing assessment environment [[2026-dunlop-from-forbid-to-reimagine]].
+
 ## Connections
 - Relates to [[construct-validity]] because algorithmic assessment only matters if the inferred construct is coherent, job-relevant, and defensible in a nomological network.
 - Relates to [[evidence-based-management]] because prediction, validity, adverse impact, compliance, and utility are different evidence claims and should not be collapsed into “the tool works.”
@@ -31,6 +35,7 @@ Two narrative recruitment-fairness articles converge that governance limits must
 - Relates to [[job-analysis]] because algorithmic assessment inherits its target definition from upstream work analysis; bad job analysis can make later model validation look cleaner than it is.
 - Relates to [[responsible-ai-deployment]] because selection AI turns deployment ethics into concrete questions about disclosure, validation, fairness, applicant experience, appealability, and accountability; the two narrative recruitment-fairness articles additionally frame audits, explainability, and human oversight as governance safeguards rather than substitutes for validation [[2025-agbasiere-algorithmic-fairness-recruitment]] [[2025-ahuchogu-ai-bias-recruitment]].
 - Relates to [[inclusive-hr-systems]] because recruitment fairness must address potential exclusion in historical data, labels, features, model design, evaluation, and human use of the system rather than treating the model as the only source of risk [[2025-agbasiere-algorithmic-fairness-recruitment]] [[2025-ahuchogu-ai-bias-recruitment]].
+- Relates to [[ai-literacy]] because GenAI competence can be either a job-relevant target or a source of construct contamination and unequal access, depending on what the assessment is intended to measure [[2026-dunlop-from-forbid-to-reimagine]].
 
 ## Contradictions & open questions
 - The cluster separates prediction from explanation. [[2016-chamorro-premuzic-new-talent-signals]] argues that understanding constructs matters, while some big-data assessment practices prioritize predictive relationships without enough theory.
@@ -41,3 +46,4 @@ Two narrative recruitment-fairness articles converge that governance limits must
 - [[2025-matic-balancing-accuracy-acceptance-algorithmic-hiring]] finds that a structured way of retaining human input can improve prediction and participant acceptance, but its simulated selection task does not show whether the same arrangement changes recruiter behavior, applicant experience, fairness, or legal defensibility in live hiring.
 - Bias audits often focus on output disparities, but [[2022-strah-diversity-issues-job-analysis]] suggests another layer: whether the criterion and job requirements being predicted already excluded some groups' real work contributions.
 - [[2025-agbasiere-algorithmic-fairness-recruitment]] and [[2025-ahuchogu-ai-bias-recruitment]] converge on audits, explainability, representative data, and human oversight, but neither tests whether those safeguards reduce disparate impact, establish job-relatedness, or improve selection utility in a live hiring system.
+- [[2026-sackett-hiring-people-organizations]] treats transparent modular design and scoring descriptions as a prerequisite for cumulative evaluation, while [[2026-dunlop-from-forbid-to-reimagine]] argues that agentic AI and AI-enabled wearables may erode the reliability of familiar anti-assistance countermeasures. It remains open which assessment components should be insulated from candidate AI, and which should be redesigned so human–AI collaboration is itself the job-relevant construct.

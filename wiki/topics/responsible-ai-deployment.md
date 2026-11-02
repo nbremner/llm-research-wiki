@@ -1,7 +1,7 @@
 ---
 title: Responsible AI deployment
-status: stub
-updated: 2026-08-31
+status: active
+updated: 2026-11-02
 ---
 
 # Responsible AI deployment
@@ -38,6 +38,8 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 
 [[2023-mkhize-examining-barriers-enablers-ai-adoption]] supplies a smaller but concrete accountability case. In a multimedia organization, contractual obligations constrained cloud processing and fully hands-off publication; participants described human vetting as necessary before customer-facing release and remained unclear about who operationally owned AI outputs when something went wrong. An emerging AI governance framework and executive sponsorship were described as responses, not validated safeguards. This grounds a basic deployment rule: human review and accountability have to be assigned to a role with authority and operational ownership, not left as a residual expectation that someone will correct the system.
 
+[[2025-van-zoonen-algorithmic-surveillance-workers-compliance]] adds worker-response evidence for surveillance deployment: among European online crowdworkers, perceived algorithmic surveillance was associated with lower trust and fairness and greater privacy concerns, and those perceptions differentiated intentions to comply with, alter, or avoid surveillance. Trust supported compliance and reduced alteration and avoidance intentions, whereas privacy concerns reduced compliance and increased both forms of resistance; perceived fairness predicted alteration intentions but not reported compliance or avoidance. Perceived decontextualization worsened surveillance's adverse associations with trust and fairness, so responsible monitoring cannot treat worker acceptance as a single outcome or assume that a technically uniform control will be experienced uniformly across work contexts.
+
 ## Connections
 - Relates to [[algorithmic-assessment]] because hiring and assessment AI require disclosure, job-related validity evidence, fairness evaluation, auditability, applicant experience safeguards, and governance of how automated recommendations reshape human discretion.
 - Relates to [[evidence-based-management]] because responsible deployment claims require evidence matched to the decision: a tool can be efficient, compliant, valid, fair, usable, and trusted in different ways, and those are not interchangeable claims.
@@ -50,13 +52,14 @@ The strongest deployment claim for the wiki is proactive: responsible AI cannot 
 - Relates to [[behavioral-human-centered-ai]] because deployment safeguards have to work for boundedly rational humans under uncertainty, trust pressure, loss aversion, and organizational incentives.
 - Relates to [[automation-and-substitution]] because replacing or recomposing work raises ethical questions that are not answered by capability or cost alone; worker rights, dignity, reskilling, agency, and reactions matter.
 - Relates to [[competency-modeling]] because AI-enabled skills architectures turn competency definitions into data systems that require privacy, correction, governance, and evidence about appropriate use.
+- Relates to [[employee-change-support]] because surveillance deployment produces differentiated compliance, alteration, and avoidance intentions through trust, privacy, fairness, and perceived contextual fit rather than a binary acceptance response.
 
 ## Contradictions & open questions
 - Responsible AI deployment can become a real constraint on harmful systems, but it can also become a legitimizing ritual once a framework, audit, or checklist has been completed. The wiki should keep first-principles judgment, worker consequences, and evidence quality visible rather than treating framework use as proof of ethics.
 - There is a speed mismatch: public research and regulation lag new AI systems, while organizations still make worker-facing decisions. The open practice question is what evidence threshold, scope limitation, monitoring plan, and reversal mechanism are defensible when complete validation is unavailable but deployment pressure is real.
 - Responsibility is distributed but can become diffuse. Vendors, HR, legal, technical teams, managers, executives, and domain experts may each control part of the system, so the wiki needs evidence on governance arrangements that keep accountability from evaporating across the deployment chain.
 - Worker voice is an unresolved design requirement. Many ethical frameworks mention affected stakeholders, but the wiki still needs evidence on when worker participation changes AI deployment decisions, not just communication or acceptance after the decision has already been made.
-- [[2025-tona-deployment-ai-infer-employee-skills]] shows worker councils and employee correction loops affecting deployment pace and model calibration, but it is still a management-facing case; the wiki needs evidence from employee perspectives on whether such systems feel developmental, surveillant, fair, or useful.
+- [[2025-tona-deployment-ai-infer-employee-skills]] shows worker councils and employee correction loops affecting deployment pace and model calibration, while [[2025-van-zoonen-algorithmic-surveillance-workers-compliance]] provides employee-side evidence that surveillance perceptions shape trust, privacy concerns, fairness, and differentiated compliance or resistance intentions. The remaining question is whether those associations generalize from reported intentions in online crowdwork to organizational employees' observed reactions to workplace systems presented as developmental, surveillant, fair, or useful.
 - [[2025-randazzo-genai-power-persuader]] makes human oversight less reassuring as a governance claim. If the oversight routine asks workers to challenge the same system that is producing persuasive justifications, deployment needs separate checks on validation quality, not just a nominal human reviewer.
 - [[2025-schweitzer-leading-ai-adoption]] creates a governance tension: behavioral insight can make responsible deployment more realistic, but it can also be used to overcome employee resistance without changing the underlying system. Responsible deployment needs evidence that behavioral interventions improve informed acceptance, contestability, and well-being rather than simply smoothing implementation.
 - **Pre-decision scoring vs. participatory governance.** [[2026-rodriguez-when-not-to-automate]] offers auditable role-level scores, but its structured inputs include judgments about expertise, trust, and morale on which reasonable assessors can disagree. The open question is whether a formal preservation protocol can make those disagreements visible and contestable rather than converting them into an apparently objective authorization for a cost-driven outcome.

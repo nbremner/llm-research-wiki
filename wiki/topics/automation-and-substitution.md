@@ -1,7 +1,7 @@
 ---
 title: Automation and substitution
 status: active
-updated: 2026-08-06
+updated: 2026-11-02
 ---
 
 # Automation and substitution
@@ -46,6 +46,8 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 
 [[2026-doshi-human-ai-task-tensor]] clarifies why augmentation/substitution is not a binary label. Its Task Augmentation/Automation Scale breaks decision-making authority into 20 levels, and the broader tensor asks whether output definition, audit needs, AI contribution, AI structure, and human persona differ across tasks. Substitution claims therefore need dimensional task evidence before they are converted into labor-demand or human-agency conclusions.
 
+[[2026-fuegener-roles-ai-collaboration]] adds a differentiated task-allocation account for judgment work: between-task complementarity increases the value of automation, while within-task complementarity increases the value of augmentation. In its model and image-classification validation, AI automates relatively easy tasks, augments humans on tasks where their performance is similar, and humans work unaided on relatively difficult tasks; automation releases human capacity that is then allocated to difficult work. This is evidence about task routing and capacity reallocation, not an organizational labor-market result.
+
 [[2026-zhu-choose-your-agent]] gives early behavioral evidence that autonomous execution can outperform advisory or coaching modes in a strategic group task, but only under a specific authority arrangement. The Delegate condition substituted for human proposal/action at each turn and improved group surplus more than Advisor or Coach access, yet participants still preferred Advisor control. This is substitution at the decision-turn level, not proof of job-level labor substitution.
 
 [[2026-zhang-fatigue-aware-learning-defer]] adds a fatigue-aware routing case. In learning-to-defer, substitution is not a fixed property of the task: a system may route a hard case to a human when the expert is fresh and to AI later when accumulated workload predicts degraded human performance. That makes substitution contingent on human state and task sequence, not just AI capability.
@@ -64,7 +66,7 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 
 ## Connections
 
-- Relates to [[human-ai-task-allocation]] because substitution is often decided at the routing level — which task, which turn, which human state — rather than at the job level, and allocation policies can move the boundary within a single work episode.
+- Relates to [[human-ai-task-allocation]] because substitution is often decided at the routing level — which task, which turn, which human state — rather than at the job level; between-task complementarity can favor automation, within-task complementarity can favor augmentation, and released human capacity still has to be reallocated.
 - Relates to [[human-ai-task-taxonomy]] because substitution claims need dimensional task evidence — decision authority, audit requirements, output definition — before they can be converted into labor-demand conclusions.
 - Relates to [[moral-boundaries-of-ai-automation]] because a share of occupations remains morally off-limits for automation even when AI outperforms humans at lower cost, so social feasibility bounds technical substitution.
 - Relates to [[automation-complacency]] because substitution can happen behaviorally — through reliance and effort migration — while the human formally remains the decision-maker.
@@ -91,6 +93,7 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 - **Applicability vs. substitution.** [[2025-tomlinson-working-with-ai]] strengthens the evidence that AI is useful across information-work activities, but usefulness is not the same as headcount substitution. The paper's own ATM example is the right caution: automating a task can lower costs, change service models, and recompose jobs rather than simply eliminate workers.
 - **Capability vs. consent-to-automate.** [[2025-shao-future-work-ai-agents]] separates tasks that AI experts believe agents can automate from tasks workers want agents to automate. The Automation Red Light zone matters because labor substitution can be technically plausible while still violating worker preferences, agency, trust, or the meaning of the task.
 - **Taxonomy vs. evidence.** [[2026-doshi-human-ai-task-tensor]] helps describe augmentation and automation arrangements, but classification is not outcome evidence. The wiki still needs studies showing when particular authority/audit/output configurations actually change performance, effort, learning, accountability, or labor demand.
+- **Task allocation vs. organizational substitution.** [[2026-fuegener-roles-ai-collaboration]] supports a complementarity-based routing account and shows that automation can release human capacity for harder tasks in an idealized judgment setting, but it does not establish how organizations reallocate that capacity or whether task-level allocation changes headcount, wages, or labor demand.
 - **Static vs. state-contingent substitution.** [[2026-zhang-fatigue-aware-learning-defer]] suggests the automation boundary may move within a single work episode as human fatigue accumulates. That is useful for system performance, but it also raises work-design questions about whether organizations should optimize around fatigue, redesign workload upstream, or preserve human agency over routing decisions.
 - **Observed exposure vs. realized displacement.** [[2026-massenkoff-labor-market-impacts-ai]] makes substitution evidence stronger by using observed work-related usage and automation weighting, but it still finds little labor-market movement so far. The plausible early channel may be slower hiring into exposed occupations, especially for young workers, rather than unemployment among incumbent workers.
 - **Exposure plus demand is still not displacement.** [[2026-richmond-ai-jobs-transition-framework]] improves on exposure-only substitution logic by adding human necessity and elasticity, but its archetypes remain pressure categories. They do not show whether firms reduce headcount, redesign roles, expand output, or move work into new occupations.
