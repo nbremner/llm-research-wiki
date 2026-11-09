@@ -1,7 +1,7 @@
 ---
 title: Cognitive sustainability
-status: stub
-updated: 2026-08-11
+status: active
+updated: 2026-11-09
 ---
 
 # Cognitive sustainability
@@ -18,8 +18,10 @@ The practical implication is not generic “human-in-the-loop” rhetoric. A sus
 
 [[2026-mehra-agents-that-teach]] offers an implementation-level hypothesis for software development: an AI coding workflow could preserve cognitive sustainability by returning contextual explanations, probes, and feedback to the human rather than treating a completed code change as the sole outcome. Its emphasis on selective, asynchronous intervention is important because a system that preserves learning by persistently interrupting flow or expanding worker monitoring would exchange one sustainability failure for another.
 
+[[2026-sole-cognitive-virus]] adds a population-level theoretical account of this risk. Its mean-field model distinguishes weakly coupled, autonomously coupled, and persistently dependent users, and predicts that social transmission of substitutive LLM use can cross a tipping point into a bistable, path-dependent regime of persistent cognitive offloading. In the model, recovery after a tipped state requires stronger intervention than prevention, while preserving unaided practice and active verification provides proposed routes away from dependence; these are model implications, not empirical estimates of real-world adoption, dependence, or competence. [[2026-sole-cognitive-virus]]
+
 ## Connections
-- Relates to [[cognitive-debt]] because cognitive debt can be the delayed liability that signals a work system has preserved immediate output while weakening attention, learning, ownership, or recovery.
+- Relates to [[cognitive-debt]] because cognitive debt can be the delayed liability that signals a work system has preserved immediate output while weakening attention, learning, ownership, or recovery; [[2026-sole-cognitive-virus]] models how substitutive LLM use could become socially reinforced and harder to reverse at population scale.
 - Relates to [[ai-induced-skill-erosion]] because repeated unsustainable delegation can plausibly lead to durable loss of practiced judgment and professional capability, although the temporal pathway requires longitudinal evidence.
 - Relates to [[automation-complacency]] because diminished scrutiny in the moment is one route by which AI-supported work can become cognitively unsustainable.
 - Relates to [[ai-mediated-learning]] because sustainable AI support must preserve the explanation, error-resolution, and transfer work through which people develop competence.
@@ -31,3 +33,4 @@ The practical implication is not generic “human-in-the-loop” rhetoric. A sus
 - The framework treats delegation and reliance primarily as risk factors, but productive offloading can protect capacity when it removes extraneous burden or enables workers to concentrate on higher-order work. The empirical question is which tasks, users, and accountability conditions make delegation capability-preserving rather than capability-displacing.
 - A CSI-style monitoring system could itself become intrusive or punitive if employers treat autonomy, reflection, or reliance scores as worker surveillance rather than properties of a jointly designed system. Any implementation needs participatory governance, clear use boundaries, and evidence that measurement improves rather than merely intensifies work.
 - [[2026-mehra-agents-that-teach]] has not tested whether telemetry-derived concept maps and learning prompts protect long-run capability, preserve flow, or remain legitimate to developers; these design benefits cannot be inferred from the architecture alone.
+- [[2026-sole-cognitive-virus]] is a theoretical mean-field model with illustrative parameters, not evidence that actual organizations or populations display its predicted tipping points, bistability, or recovery thresholds; longitudinal evidence must test whether those mechanisms generalize across users, tasks, and institutions.

@@ -1,7 +1,7 @@
 ---
 title: Construct validity
 status: active
-updated: 2026-08-27
+updated: 2026-11-09
 ---
 
 # Construct validity
@@ -13,6 +13,10 @@ Construct validity is the discipline of making sure a named thing in the wiki is
 For AI-mediated work, construct validity is not academic housekeeping. It determines whether measures like “AI adoption,” “AI readiness,” “human-AI collaboration,” or “trust in AI” can support decisions about work redesign, intervention, and evaluation.
 
 The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premuzic-new-talent-signals]] warns that new data sources and technology-mediated talent signals often move faster than theory and validation, especially when vendors emphasize novelty, speed, or proprietary prediction. [[2023-landers-machine-learning-psychometric-assessment]] shows why method choice and measurement design have to be separated: machine learning does not automatically improve prediction from validated scale composites, and the more interesting item-level or novel-signal uses are exactly where construct interpretation becomes harder. [[2023-nyc-automated-employment-decision-tools-faq]] adds a regulatory vocabulary for AEDTs and bias audits, but those categories do not replace the I-O question of what construct is being inferred and whether it is job-relevant.
+
+Personnel selection adds a specific validity-estimation caution: observed criterion-related validity and estimates corrected for measurement error or range restriction answer different questions, and correction factors without credible design-specific inputs can overstate operational validity. [[2026-sackett-hiring-people-organizations]] New modalities and AI-enabled scoring also need their modular design and scoring choices described clearly before reliability, validity, fairness, candidate experience, and evidence across studies can be meaningfully evaluated. [[2026-sackett-hiring-people-organizations]]
+
+Candidate GenAI use makes intended-score interpretation conditional on assessment design. When an assessment is meant to infer an unaided candidate attribute, the score can instead reflect a mixture of that attribute with GenAI access, willingness to use it, and ability to use it; unequal access and use can therefore create fairness and subgroup-difference concerns. [[2026-dunlop-from-forbid-to-reimagine]] If human–AI collaboration is itself the target capability, the FAIR framework instead argues for reimagining the assessment rather than treating every instance of GenAI use as invalid assistance. [[2026-dunlop-from-forbid-to-reimagine]]
 
 [[2026-tomei-what-jobs-can-ai-learn]] is a useful positive case of construct sharpening. Instead of treating "AI exposure" as generic overlap between occupational task descriptions and current LLM capabilities, the paper defines a narrower construct: feasibility of improving task performance through RL-based post-training. The distinction matters because occupations can rank high on LLM exposure but low on RL feasibility, or the reverse.
 
@@ -42,13 +46,15 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - Relates to [[evidence-based-management]] because poor construct validity weakens the evidence chain between an intervention, a measured mediator, and an organizational outcome.
 - Relates to [[ai-adoption]] because adoption should not become a catch-all label for attitudes, usage, capability, managerial search, and workflow redesign at once.
 - Relates to [[automation-and-substitution]] because exposure indices only guide decisions if the measured construct matches the mechanism of automation being claimed.
-- Relates to [[algorithmic-assessment]] because algorithmic hiring tools are only defensible when their signals, model outputs, and employment decisions are tied back to coherent job-relevant constructs.
+- Relates to [[algorithmic-assessment]] because algorithmic hiring tools are only defensible when their signals, model outputs, and employment decisions are tied back to coherent job-relevant constructs, and candidate GenAI use is explicitly designed for rather than silently changing what a score measures. [[2026-dunlop-from-forbid-to-reimagine]]
 - Relates to [[job-analysis]] because construct validity begins before measurement: the construct has to be defined from work as actually performed and experienced, including perspectives that are easy to miss.
 - Relates to [[competency-modeling]] because competency labels need boundaries before they can support assessment, training, succession, or strategic HR decisions, and 21st-century-skills labels show how competency language can proliferate faster than discriminant-validity evidence when organizations want evergreen skills for future work.
 - Relates to [[human-capital-resource-measurement]] because HCR shows how collective capability measures can be deficient, contaminated, or predictively useful for the wrong construct.
 - Relates to [[complex-collaborative-problem-solving]] because CPS and ColPS show how a broad capability label can become more construct-valid when problem features, process data, and assessment tasks are explicitly modeled.
 - Relates to [[ai-agent-benchmark-validity]] because benchmark validity is construct validity applied to agent evaluation: what exactly is being measured, and what claims does that measure license?
 - Relates to [[organizational-learning-capability]] because learning capability must be separated from adjacent constructs such as satisfaction, culture, formalization, innovation, and performance before it can support AI transformation claims.
+- Relates to [[ai-literacy]] because GenAI access, willingness, and ability can become unintended score components in selection unless human–AI collaboration is explicitly the assessment target. [[2026-dunlop-from-forbid-to-reimagine]]
+- Relates to [[work-design]] because reimagined selection can assess human–AI collaboration as a capability relevant to redesigned work rather than treating tool use only as invalid assistance. [[2026-dunlop-from-forbid-to-reimagine]]
 
 
 ## Contradictions & open questions
@@ -66,3 +72,5 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - [[2025-teyssier-roberge-21st-century-skills-overlap]] strengthens the jangle-fallacy concern but leaves the positive taxonomy problem unfinished: if many skills are overlapping manifestations of broader competencies, the field still needs evidence about where to draw the higher-order boundaries and which behavior-based assessments support selection, training, or workforce-planning inferences.
 - [[1997-goh-benchmarking-learning-capability]] shows the value and limit of bounding a broad organizational construct: the OLS may diagnose learning-enabling conditions, but the next validation question is whether those scores predict actual knowledge transfer, behavior change, and AI-related work redesign over time.
 - [[2026-putka-indexing-ai-impact-onet]] proposes reliability estimates across LLMs and repeated runs plus multitrait-multimethod-style validity tests, but reliability and expected correlation patterns would not establish that an index predicts real work redesign, labor demand, quality, learning, or worker experience. The index may be coherent without being decision-useful.
+- [[2026-sackett-hiring-people-organizations]] distinguishes observed selection validity from estimates corrected for measurement error and range restriction; what reporting and sensitivity standards are needed to keep weakly supported corrections from being treated as observed operational evidence?
+- [[2026-dunlop-from-forbid-to-reimagine]] makes the construct boundary in candidate GenAI use explicit: when does GenAI access or use contaminate an assessment of unaided attributes, and when does it become the behavior a redesigned assessment should validly sample? The commentary recommends a design response but does not provide empirical evidence that resolves the validity and fairness of the alternatives.
