@@ -1,7 +1,7 @@
 ---
 title: Automation complacency
 status: active
-updated: 2026-08-31
+updated: 2026-11-09
 ---
 
 # Automation complacency
@@ -32,6 +32,10 @@ Automation complacency is the failure mode where better machine advice reduces h
 
 [[2026-zhu-cognitive-offloading-modes]] adds an adjacent, nonexperimental account of how complacency may become a more durable work pattern. Dependent offloading—allowing AI to generate a complete answer—was associated with cognitive-agency transfer and lower intrinsic motivation over three survey waves, whereas autonomous offloading used AI as a scaffold while retaining ownership. Both modes were associated with the same perceived immediate benefit, sharpening the calibration problem: subjective efficiency is not evidence that the human contribution has been preserved.
 
+[[2025-romeo-exploring-automation-bias]] synthesizes 35 quantitative studies in which automation bias is commonly operationalized as agreement with erroneous AI recommendations. Across the reviewed evidence, higher verification intensity was associated with better decision accuracy, while responsibility cues alone did not significantly increase verification intensity in the cited HR-dashboard study; keeping a human formally accountable therefore does not by itself create meaningful oversight.
+
+[[2025-romeo-exploring-automation-bias]] also challenges explanation-first remedies: explanations, transparency cues, and trust-calibration feedback did not reliably help users identify wrong recommendations, and overly technical, cognitively demanding, or simplistic explanations could reinforce overreliance. Domain expertise and AI literacy can support more appropriate reliance, but experienced users can still exhibit automation bias under high cognitive load.
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because collaboration quality depends on preserving competent human review, not merely keeping a human nominally in the loop.
 - Relates to [[critical-thinking]] because attention, verification, and stewardship are effortful behaviors that can decay when AI confidence is high.
@@ -39,7 +43,7 @@ Automation complacency is the failure mode where better machine advice reduces h
 - Relates to [[work-redesign]] because interface design, feedback, task sequencing, and escalation rules can either preserve or erode human oversight.
 - Relates to [[ai-induced-skill-erosion]] because repeated complacency can become capability loss when workers no longer practice the judgment they are expected to retain.
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis tools are especially prone to making partial or contextual evidence look clean, ranked, and complete.
-- Relates to [[cognitive-load-in-ai-assisted-work]] because overload and complacency are distinct ways AI can weaken human contribution to system performance.
+- Relates to [[cognitive-load-in-ai-assisted-work]] because the review finds that high load can induce automation bias even among experienced users, while overload and complacency remain distinct ways AI can weaken human contribution to system performance [[2025-romeo-exploring-automation-bias]].
 - Relates to [[cognitive-surrender]] because surrender is a specific acceptance-and-adoption pattern inside the broader complacency family.
 
 ## Contradictions & open questions

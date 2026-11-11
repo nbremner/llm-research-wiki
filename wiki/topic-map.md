@@ -1,6 +1,6 @@
 ---
 title: Topic map
-updated: 2026-08-31
+updated: 2026-11-09
 ---
 
 # Topic map
@@ -18,6 +18,7 @@ Every topic in the wiki, one line each. Topics are synthesis pages: each one con
 - [[organizational-learning-capability]] — whether organizations can turn experimentation, failures, external knowledge, and local problem solving into changed routines
 - [[responsible-ai-deployment]] — how workforce-facing AI systems are governed, evidenced, scoped, monitored, and held accountable so deployment protects worker dignity, fairness, privacy, autonomy, and well-being
 - [[work-redesign]] — how AI shifts work architecture from fixed roles toward redesigned human-agent workflows
+- [[work-design]] — how task, knowledge, social, and contextual characteristics structure work and shape worker outcomes
 - [[automation-and-substitution]] — whether AI substitutes for or augments labor and capital: what scales, what shrinks, and at what time horizon
 - [[moral-boundaries-of-ai-automation]] — where AI replacement is socially or morally resisted even when capability and cost would otherwise support automation
 - [[algorithmic-assessment]] — algorithmic hiring/assessment as a measurement chain from signal to construct to decision

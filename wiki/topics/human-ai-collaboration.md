@@ -1,12 +1,16 @@
 ---
 title: Human-AI collaboration
 status: active
-updated: 2026-08-31
+updated: 2026-11-09
 ---
 
 # Human-AI collaboration
 
 Human-AI collaboration is the working relationship between human judgment and AI capability in actual tasks. The question is not whether humans and AI are “teammates” in the warm metaphorical sense; it is how responsibility, confidence, delegation, review, and accountability are arranged in practice.
+
+[[2026-gonzalez-human-ai-teaming-complementarity]] supplies a cross-disciplinary complementarity framework for decision making: a human–AI team is complementary only when it performs better than either humans or AI alone, and that outcome is contingent on the surrounding sociotechnical design rather than implied by the presence of both. The framework calls for teams to define goals and constraints, partition roles around distinct strengths, orchestrate attention and interrogation, maintain shared knowledge infrastructure, and train and evaluate the joint system over time.
+
+The framework also widens the evaluation target beyond task accuracy. [[2026-gonzalez-human-ai-teaming-complementarity]] argues that collaboration quality includes calibrated trust, shared understanding, workload balance, resilience, and ethical alignment; it preserves a necessary human role where contextual sensitivity, ethical discretion, and accountability matter, even when AI contributes speed, consistency, scale, and pattern recognition.
 
 [[2021-bansal-most-accurate-ai-best-teammate]] provides the formal objective-function version of that claim. In its accept-or-solve model, a human either accepts a classifier's recommendation or incurs effort to solve the task; because performance matters differently inside the region where advice is accepted, an accuracy-optimized classifier can deliver lower modeled team utility than one trained for expected team utility. The paper does not show that less accurate AI is generally a better collaborator. It establishes the narrower design constraint that collaboration cannot be evaluated from standalone accuracy when reliance, verification cost, and error consequences are part of the workflow.
 
@@ -75,19 +79,20 @@ A collaboration typology is starting to emerge across the corpus. The broad page
 
 ## Connections
 
-- Relates to [[critical-thinking]] because collaboration quality depends on whether users verify, integrate, and steward AI output rather than merely accept it.
+- Relates to [[critical-thinking]] and [[responsible-ai-deployment]] because collaboration quality depends on whether users verify, integrate, and steward AI output rather than merely accept it; calibrated trust and accountable oversight need independent checks when possible because internal validation can fail when the AI system being checked also persuades the human to accept its answer.
 - Relates to [[work-redesign]] because task allocation changes the cognitive, motivational, and coordination work humans still need to perform.
 - Relates to [[ai-adoption]] because adoption metrics that count tool use without stewardship quality can hide overreliance.
 - Relates to [[automation-complacency]] because high-confidence AI advice can reduce the very human effort that makes collaboration valuable.
 - Relates to [[ai-induced-skill-erosion]] because collaboration that removes practice while preserving nominal accountability can quietly weaken the human side of the system.
 - Relates to [[employee-engagement]] because workers in decision-support settings described autonomy, motivation, learning, and valued task ownership as part of whether AI-supported work remained worth engaging in.
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis work makes collaboration visible as source navigation, verification, auditability, and stakeholder translation rather than only answer generation.
-- Relates to [[critical-thinking]] and [[responsible-ai-deployment]] because internal validation can fail when the AI system being checked is also the actor persuading the human to accept its answer.
+
 - Relates to [[human-ai-agent-interaction-design]] because human authority is real only when the workflow makes intervention, comprehension, and verification practicable.
 - Relates to [[human-ai-task-taxonomy]] because collaboration claims need dimensional task detail: authority, auditability, output definition, AI structure, and the relevant human persona.
 - Relates to [[human-ai-task-allocation]] because collaboration must sometimes be decided at the task-instance level as human workload, fatigue, capability, and accountability conditions change.
 - Relates to [[human-ai-co-creation-modes]] because collaboration quality depends on the enacted workflow pattern, not only the presence of AI assistance.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because collaboration quality depends on the cognitive cost of keeping the human and AI aligned across turns.
+- Relates to [[ai-mediated-teamwork]] because complementarity depends on team-level role partitioning, shared knowledge infrastructure, workload balance, and resilience rather than on each member's standalone capability.
 - Relates to [[ai-use-image-concerns]] because useful delegation can be behaviorally suppressed when visible reliance on AI threatens professional image or evaluator judgments.
 - Relates to [[evidence-based-management]] because collaboration claims need to distinguish system-level value from the principal's incentive to fund the human effort that makes oversight real.
 - Relates to [[cognitive-surrender]] because nominally collaborative workflows can still route reasoning authority to the AI when the human adopts outputs without scrutiny.
