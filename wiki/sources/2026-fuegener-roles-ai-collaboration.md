@@ -7,7 +7,7 @@ doi: 10.1287/mnsc.2024.05684
 source_type: paper
 publication_status: peer-reviewed
 retrieved: 2026-09-09
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1FF_jt9CIjtKYCnjMinR-bnBVCB615kNu
 file_hash: a30ce30765d6ec28a71b627623027694027912ca5531b7fec70935234e2de8e4
 ---
@@ -29,4 +29,3 @@ file_hash: a30ce30765d6ec28a71b627623027694027912ca5531b7fec70935234e2de8e4
 
 ## Feeds
 - [[human-ai-task-allocation]]
-- [[automation-and-substitution]]

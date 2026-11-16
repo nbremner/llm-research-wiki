@@ -1,7 +1,7 @@
 ---
 title: Automation complacency
 status: active
-updated: 2026-08-31
+updated: 2026-11-16
 ---
 
 # Automation complacency
@@ -15,6 +15,8 @@ Automation complacency is the failure mode where better machine advice reduces h
 [[2025-bastani-human-ai-contracting-paradox]] sharpens that lesson into an incentive problem. In their principal-agent model, rarer AI errors make human vigilance harder to contract for because the human must be paid enough to inspect and correct failures that may almost never occur; a more reliable model can therefore increase the cost of preserving meaningful oversight. This is not complacency as laziness or trust alone — it is the economic difficulty of buying sustained attention to low-probability failures.
 
 [[2025-lee-generative-ai-critical-thinking]] gives the GenAI knowledge-work analogue. Higher confidence in GenAI was associated with less critical thinking, while higher self-confidence and confidence evaluating AI were associated with more critical thinking. That suggests complacency can arise through confidence calibration, not just through formal delegation.
+
+The systematic review in [[2025-romeo-exploring-automation-bias]] makes verification the clearest behavioral safeguard across heterogeneous decision studies: higher verification intensity was associated with better accuracy, but assigning responsibility alone did not reliably make people verify. Domain expertise and AI literacy can support more discriminating reliance, yet they are not immunity; experienced users can still defer inappropriately under high cognitive load. Explanations should therefore not be treated as a reliable calibration intervention: transparency cues, explanations, and trust-calibration feedback did not consistently help users identify incorrect recommendations, and explanations that are overly technical, cognitively demanding, or simplistic can become heuristics for unwarranted trust.
 
 [[2026-dellacqua-jagged-technological-frontier]] adds the task-boundary version. Fluent AI-supported work can improve performance inside the frontier while harming correctness outside it, especially if users cannot tell which kind of task they are in. Complacency is most dangerous when subjective coherence rises faster than actual correctness.
 
@@ -49,5 +51,6 @@ Automation complacency is the failure mode where better machine advice reduces h
 - There is a design tension between reducing unnecessary cognitive load and preserving enough friction for meaningful review. Removing all friction can be efficient when the model is right and dangerous when the model is wrong.
 - There is a parallel learning tension: reducing cognitive load can be the point of assistance, but [[2025-kosmyna-brain-chatgpt-cognitive-debt]] suggests that repeated reduction in effort may also reduce ownership, recall, or practice when the task is supposed to build capability.
 - [[2025-yun-generative-ai-knowledge-work]] suggests design countermeasures — citations, audit trails, comparative outputs, and access to raw data — but it does not test which of these actually prevents complacency in live organizational decisions.
+- [[2025-romeo-exploring-automation-bias]] cautions against an explanation-first response: across its reviewed studies, explanations and transparency did not reliably calibrate reliance and could reinforce overreliance. The open design question is which combinations of explanation, verification support, literacy, expertise, and workload management improve error detection without turning explanation into another trust cue.
 - [[2026-lepine-precision-proactivity]] suggests that proactivity should be load-sensitive rather than maximal. The unresolved question is how systems detect when help should become repair, simplification, or silence.
 - [[2026-shaw-thinking-fast-slow-artificial]] shows that incentives and immediate feedback improve faulty-advice override behavior, but they do not eliminate surrender; the unresolved design question is how much friction, feedback, or independent evidence is needed before oversight becomes real rather than nominal.

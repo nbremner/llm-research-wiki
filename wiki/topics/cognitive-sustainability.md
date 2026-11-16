@@ -1,7 +1,7 @@
 ---
 title: Cognitive sustainability
-status: stub
-updated: 2026-08-11
+status: active
+updated: 2026-11-16
 ---
 
 # Cognitive sustainability
@@ -13,6 +13,8 @@ Cognitive sustainability asks whether an AI-enabled work system preserves and de
 The page therefore makes a distinction the adjacent topics need. [[automation-complacency]] concerns reduced vigilance or effort inside an immediate task; [[cognitive-debt]] names the accumulating liability that can remain hidden while outputs still look acceptable; [[ai-induced-skill-erosion]] asks whether capability actually declines over time; and [[ai-mediated-learning]] asks whether an episode builds durable competence. Cognitive sustainability is the higher-level work-system criterion that connects those outcomes: whether the overall human–AI arrangement remains capable of growth, calibrated delegation, and accountable judgment.
 
 The practical implication is not generic “human-in-the-loop” rhetoric. A sustainable workflow would preserve meaningful opportunities to frame the problem, inspect and challenge outputs, encounter feedback, and practice the capabilities that escalation and recovery require. [[2025-kabashkin-cognitive-atrophy-paradox]] proposes reflective prompts, explainable outputs, intentional slow-downs, and adaptive task design as candidate mechanisms, but their effectiveness has not yet been tested as a coherent intervention package.
+
+[[2026-sole-cognitive-virus]] adds an explicitly theoretical tipping-point account: its mean-field model predicts that social transmission and reinforcement of substitutive LLM use could shift a population discontinuously from weak or autonomous coupling toward persistent cognitive dependency, with hysteresis making recovery require stronger change than prevention. This is not evidence that any population has crossed such a threshold or that LLM use has produced observed dependence at scale; it is a model-based hypothesis that requires longitudinal tests across heterogeneous users, organizations, and institutional conditions. Its proposed safeguards—preserving unaided practice and active verification—therefore identify candidate design levers rather than validated remedies.
 
 [[2026-lovett-tragedy-cognitive-commons]] adds a profession-level boundary to this work-system criterion. Its Cognitive Commons framework argues that AI-enabled efficiency can weaken the entry-level practice and supervised progression through which a profession replenishes the Internalized Mastery needed for substantive validation. This broadens cognitive sustainability beyond whether an individual workflow preserves present capability: a locally sustainable-looking arrangement may still be collectively unsustainable if organizations free-ride on a shrinking external pool of experts. The proposed governance remedies remain conceptual and require comparative, longitudinal tests.
 
@@ -31,3 +33,4 @@ The practical implication is not generic “human-in-the-loop” rhetoric. A sus
 - The framework treats delegation and reliance primarily as risk factors, but productive offloading can protect capacity when it removes extraneous burden or enables workers to concentrate on higher-order work. The empirical question is which tasks, users, and accountability conditions make delegation capability-preserving rather than capability-displacing.
 - A CSI-style monitoring system could itself become intrusive or punitive if employers treat autonomy, reflection, or reliance scores as worker surveillance rather than properties of a jointly designed system. Any implementation needs participatory governance, clear use boundaries, and evidence that measurement improves rather than merely intensifies work.
 - [[2026-mehra-agents-that-teach]] has not tested whether telemetry-derived concept maps and learning prompts protect long-run capability, preserve flow, or remain legitimate to developers; these design benefits cannot be inferred from the architecture alone.
+- [[2026-sole-cognitive-virus]] offers a theoretical tipping-point model rather than population evidence: whether substitutive LLM use is socially transmitted, whether cognitive dependency exhibits discrete thresholds or hysteresis, and whether reversing it is harder than prevention remain empirical questions.
