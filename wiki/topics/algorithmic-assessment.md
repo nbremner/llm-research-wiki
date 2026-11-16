@@ -1,7 +1,7 @@
 ---
 title: Algorithmic assessment
 status: active
-updated: 2026-09-08
+updated: 2026-11-16
 ---
 
 # Algorithmic assessment
@@ -22,11 +22,16 @@ The topic sits at the intersection of [[construct-validity]], [[evidence-based-m
 
 Two narrative recruitment-fairness articles converge that governance limits must extend beyond the final decision rule: historical data, labels, feature choices, model design, and evaluation can each preserve inequity, and the proposed safeguards include representative data, audits, explainability, regulatory attention, and meaningful human oversight [[2025-agbasiere-algorithmic-fairness-recruitment]] [[2025-ahuchogu-ai-bias-recruitment]]. Their convergence identifies a governance agenda, not validation evidence: neither article reports a controlled validation of a hiring model or a mitigation intervention [[2025-agbasiere-algorithmic-fairness-recruitment]] [[2025-ahuchogu-ai-bias-recruitment]].
 
+[[2026-sackett-hiring-people-organizations]] places this debate within contemporary selection science. New modalities—including asynchronous video interviews, social-media assessments, constructed responses, and AI-enabled testing—cannot be evaluated from the label “AI” alone: reviewers need a transparent account of the assessment's components, scoring choices, reliability, validity, fairness, candidate experience, and the consequences of its design. This extends the page's measurement-chain framing from the model to the modular assessment system that produces and uses the signal.
+
+Candidate GenAI use adds a different validity boundary. When an assessment is intended to measure an applicant's unaided knowledge, reasoning, or work sample, GenAI assistance can make the score partly reflect access to, willingness to use, and ability to use GenAI rather than the intended construct [[2026-dunlop-from-forbid-to-reimagine]]. [[2026-dunlop-from-forbid-to-reimagine]] therefore distinguishes Forbid, Advise, and Insulate responses from Reimagine: redesigning assessment when the job itself requires effective human–AI collaboration. The implication is not that candidate AI use is uniformly invalid; it is that employers must specify whether the criterion is independent human capability, AI-mediated performance, or both before choosing controls or interpreting scores.
+
 ## Connections
 - Relates to [[construct-validity]] because algorithmic assessment only matters if the inferred construct is coherent, job-relevant, and defensible in a nomological network.
 - Relates to [[evidence-based-management]] because prediction, validity, adverse impact, compliance, and utility are different evidence claims and should not be collapsed into “the tool works.”
 - Relates to [[automation-and-substitution]] because AEDTs can support, substantially assist, or replace discretionary judgment, including at the screening stage before any final employment decision.
-- Relates lightly to [[human-ai-collaboration]] when algorithmic outputs are used as decision support; the NYC AEDT language is a reminder that some “support” tools cross into substantial assistance or replacement.
+- Relates lightly to [[human-ai-collaboration]] when algorithmic outputs are used as decision support or when an assessment is deliberately redesigned to evaluate human–AI collaboration; the NYC AEDT language is a reminder that some “support” tools cross into substantial assistance or replacement [[2026-dunlop-from-forbid-to-reimagine]].
+- Relates to [[ai-literacy]] because differential access to and capability with GenAI can become an unintended component of a selection score, unless AI-mediated performance is the construct the assessment is designed to measure [[2026-dunlop-from-forbid-to-reimagine]].
 - Relates to [[automation-complacency]] because assessment systems can preserve formal human discretion while still making workers inattentive followers of model advice.
 - Relates to [[job-analysis]] because algorithmic assessment inherits its target definition from upstream work analysis; bad job analysis can make later model validation look cleaner than it is.
 - Relates to [[responsible-ai-deployment]] because selection AI turns deployment ethics into concrete questions about disclosure, validation, fairness, applicant experience, appealability, and accountability; the two narrative recruitment-fairness articles additionally frame audits, explainability, and human oversight as governance safeguards rather than substitutes for validation [[2025-agbasiere-algorithmic-fairness-recruitment]] [[2025-ahuchogu-ai-bias-recruitment]].
@@ -41,3 +46,5 @@ Two narrative recruitment-fairness articles converge that governance limits must
 - [[2025-matic-balancing-accuracy-acceptance-algorithmic-hiring]] finds that a structured way of retaining human input can improve prediction and participant acceptance, but its simulated selection task does not show whether the same arrangement changes recruiter behavior, applicant experience, fairness, or legal defensibility in live hiring.
 - Bias audits often focus on output disparities, but [[2022-strah-diversity-issues-job-analysis]] suggests another layer: whether the criterion and job requirements being predicted already excluded some groups' real work contributions.
 - [[2025-agbasiere-algorithmic-fairness-recruitment]] and [[2025-ahuchogu-ai-bias-recruitment]] converge on audits, explainability, representative data, and human oversight, but neither tests whether those safeguards reduce disparate impact, establish job-relatedness, or improve selection utility in a live hiring system.
+- [[2026-dunlop-from-forbid-to-reimagine]] identifies a construct boundary that cannot be settled by a universal ban or permission: GenAI use contaminates an assessment of unaided capability, but may be central to an assessment of job-relevant human–AI collaboration. The needed evidence is validation of the intended construct and consequences under each design, not an assumption that the same score means the same thing across assessment conditions.
+- [[2026-sackett-hiring-people-organizations]] calls for transparent evaluation of novel selection systems' design and scoring choices, while [[2026-dunlop-from-forbid-to-reimagine]] offers a conceptual response framework rather than comparative outcome evidence. It remains open which FAIR strategies preserve reliability, validity, fairness, candidate experience, and utility as agentic AI and AI-enabled wearables change what candidates can delegate.

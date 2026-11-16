@@ -1,12 +1,14 @@
 ---
 title: Human-AI task allocation
 status: active
-updated: 2026-09-08
+updated: 2026-11-16
 ---
 
 # Human-AI task allocation
 
 Human-AI task allocation is the design problem of deciding, at the level of a specific task instance or workflow turn, whether the human, the AI system, or some hybrid arrangement should act. It is narrower than broad [[human-ai-collaboration]] and more operational than [[automation-and-substitution]]: the question is not only whether AI can do a class of work, but when the system should route this case to the model, preserve human judgment, or change routing because the human's state, workload, expertise, or accountability conditions have changed.
+
+[[2026-fuegener-roles-ai-collaboration]] supplies an analytical and experimental complementarity framework for that task-level choice. Between-task complementarity—where a system's advantage carries across similar tasks—favors automating relatively easy task instances; within-task complementarity—where human and AI strengths combine within the same instance—favors augmenting people whose performance is similar to the AI's, while people work unaided on relatively difficult instances. The framework therefore treats automation, augmentation, and unaided human judgment as differentiated allocations within a task distribution, not as evidence that an entire job should be classified as substituted.
 
 [[2021-bansal-most-accurate-ai-best-teammate]] gives the topic a foundational allocation model before dynamic routing enters the picture. A human accepts AI advice only when its confidence exceeds a threshold determined by human accuracy, the cost of solving, and the cost of mistakes; optimization should therefore prioritize system performance in the accept region rather than treat aggregate classifier accuracy as the allocation criterion. This is a deliberately narrow advice-and-override model, but it makes the allocation premise explicit: the relevant objective is the utility of a workflow with a human response, not the AI's score in isolation.
 
@@ -34,7 +36,7 @@ The important I-O bridge is that allocation quality depends on a human-state mod
 - Relates to [[human-ai-task-taxonomy]] because allocation policies need task dimensions such as decision authority, audit requirement, output definition, AI contribution, and human persona before routing decisions can be interpreted.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because workload and fatigue change the value of human involvement across a sequence, not just within a single static task; [[2025-mokashi-cognitive-aware-shift-scheduling]] proposes extending that logic to cognitive and emotional worker-state inputs in manufacturing scheduling.
 - Relates to [[work-redesign]] because dynamic allocation changes where human judgment enters the workflow and which nodes require escalation, rest, verification, or protection.
-- Relates to [[automation-and-substitution]] because task-level routing can substitute for human action at some turns while preserving human involvement at others.
+- Relates to [[automation-and-substitution]] because task-level routing can automate some task instances while preserving or augmenting human judgment in others; this differentiated allocation does not by itself support a job-level substitution claim.
 - Relates to [[automation-complacency]] because allocation systems may reduce human burden appropriately or quietly remove the practice and attention needed for competent oversight.
 - Relates to [[domain-expertise-in-agentic-work]] because expertise changes which parts of the workflow a human can safely keep — planning, constraint-setting, review, escalation, or direct execution.
 

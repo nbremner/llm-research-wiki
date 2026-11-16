@@ -1,7 +1,7 @@
 ---
 title: AI as a job resource
-status: stub
-updated: 2026-08-31
+status: active
+updated: 2026-11-16
 ---
 
 # AI as a job resource
@@ -11,6 +11,8 @@ AI can function as a job resource when its cognitive, structural, strategic, or 
 [[2026-cogenli-generative-ai-conditional-job-resource]] offers a function-first JD-R typology from 15 de-identified Gemini interaction episodes in academic knowledge work. It identifies cognitive resources (clarification, explanation, and complexity reduction), structural/strategic resources (sequencing, roadmaps, prioritization, and work organization), and emotional/psychosocial resources (explicit efficacy-reinforcing and action-oriented cues). The important limit is that these are candidate resource functions, not measured worker outcomes.
 
 [[2026-vuong-genai-job-performance]] supplies a distinct, outcome-oriented complement. In a cross-sectional survey of 758 Vietnamese SME employees, GenAI usage was positively associated with job crafting, work engagement, and job performance, with job crafting and engagement partially mediating the performance relationship. Together, the two sources distinguish AI support functions from the broader JD-R nomological network through which workers may convert use into motivation, proactive work reshaping, and performance.
+
+[[2026-nakavachara-ai-worker-well-being]] adds heterogeneous worker well-being evidence rather than a causal test of AI as a net job resource. In a cross-sectional analysis of 2,917 workers across seven OECD countries, workplace AI use was positively associated with self-reported improvements in mental health, job enjoyment, and physical health/safety, but the associations varied by generation and gender. The study therefore indicates that workers' perceived benefits are uneven; it does not show that AI caused those improvements or that its benefits exceeded the verification, correction, and governance demands of the full workflow.
 
 [[2025-sun-employee-ai-collaboration-proactive-behavior]] supplies a narrower COR-based pathway: in a two-wave survey of 412 employees across 30 Chinese firms, perceived employee–AI collaboration was associated with lower workload and greater proactive behavior, with a reported indirect workload path. This treats workload relief as a possible resource-conversion mechanism—capacity freed for discretionary initiative—not proof that AI is intrinsically a resource. The same broad collaboration measure cannot establish which task allocations, AI functions, or verification demands actually generate the relief.
 
@@ -31,3 +33,4 @@ The boundary condition is central rather than administrative. Çögenli finds th
 - The same verification and traceability routines that make AI use more reliable can impose enough correction and documentation work to offset the resource benefit. The wiki lacks field studies that measure this net balance across tasks, risk levels, and organizational governance designs.
 - Emotional/psychosocial resource claims in Çögenli are limited to observable efficacy-reinforcing output cues, not measured changes in worker emotion, self-efficacy, or well-being. The construct should not absorb those outcomes without direct evidence.
 - [[2025-sun-employee-ai-collaboration-proactive-behavior]] uses a two-wave, self-report design and a broad collaboration measure. Its workload mediation is consistent with a resource account but cannot establish causal resource gain, identify the AI arrangement that caused it, or rule out other explanations for proactive behavior.
+- [[2026-nakavachara-ai-worker-well-being]] reports positive, subgroup-varying associations between AI use and perceived well-being improvements, but its cross-sectional self-report design cannot establish whether AI use caused the improvements or delivered net resource gains after hidden verification and governance work. The differing generational and gender patterns also leave open which job designs and worker conditions produce benefits, burdens, or both.

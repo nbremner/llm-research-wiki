@@ -1,7 +1,7 @@
 ---
 title: AI-mediated work experience
 status: active
-updated: 2026-08-31
+updated: 2026-11-16
 ---
 
 # AI-mediated work experience
@@ -12,6 +12,7 @@ The focal question is configurational: when AI enters a workflow, which parts of
 
 ## Analytic dimensions
 
+- **Work-design configuration.** [[2023-parker-smart-work-design]] supplies a non-AI higher-order baseline: stimulating, mastery, autonomous, relational, and tolerable work characteristics provide a way to assess whether AI redesign changes the full configuration of work rather than only output or adoption.
 - **Resources and demands.** [[ai-as-a-job-resource]] asks when AI performs cognitive, strategic, or psychosocial resource functions; [[digital-work-strain]] and [[cognitive-load-in-ai-assisted-work]] track demand, recovery, and mental-burden channels.
 - **Agency, autonomy, and identity.** [[ai-mediated-choice-and-identity]] and [[ai-use-image-concerns]] examine whether AI preserves meaningful control, authorship, exploration, standing, and felt ownership.
 - **Learning and capability.** [[ai-mediated-learning]], [[ai-induced-skill-erosion]], and [[cognitive-debt]] separate immediate task support from durable competence, transfer, and expertise maintenance.
@@ -23,6 +24,8 @@ The focal question is configurational: when AI enters a workflow, which parts of
 
 Work characteristics shape whether AI can become useful support. [[2026-reich-work-design-multidimensional-ai-threat]] found that skill variety and autonomy were the most consistent positive predictors of workplace AI adoption, while different threat appraisals related differently to depth of use. [[2026-lee-making-invisible-visible]] gives the corresponding workflow account: workers valued assistance that preserved meaningful control, learning, collaboration, and accountability, while AI that took the wrong work could leave them with tedious backstage tasks even when it technically improved efficiency.
 
+[[2023-parker-smart-work-design]] provides an integrative work-design baseline for this assessment: its three studies connect stimulating, mastery, autonomous, relational, and tolerable characteristics with job satisfaction through challenge appraisal, meaningfulness, relatedness-need fulfillment, and activated negative affect. This supports evaluating AI-mediated work as a configuration of pathways, not as a single resource or demand; it does not itself establish that AI improves any of those characteristics.
+
 Resource value cannot be inferred from fluent output or faster task completion. [[cognitive-load-in-ai-assisted-work]] shows how useful AI-generated content can coexist with extraneous interaction burden, while [[digital-work-strain]] distinguishes load, invasion, complexity, insecurity, uncertainty, support, autonomy, and recovery conditions. [[2025-klonek-ai-work-stress]] further associates greater AI control with higher stress while finding lower stress around human–AI transition and action processes. The child topics carry the construct-specific evidence; the parent-level claim is that net work experience depends on the full resource–demand configuration.
 
 ## Agency, competence, and identity
@@ -30,6 +33,8 @@ Resource value cannot be inferred from fluent output or faster task completion. 
 AI can improve autonomy while simultaneously weakening competence or authorship. [[2026-ehsan-future-workers]] found that efficiency gains in radiation oncology coexisted with intuition rust, reduced manual practice, and anxiety about becoming a bystander in professional work. [[2026-edwards-developer-productivity]] reports the same tension among senior developers: AI could operate as a nonjudgmental mentor and strategic collaborator while raising productivity baselines and creating uncertainty about foundational skill, authorship, and professional value.
 
 Desired agency also depends on which work remains human. [[2025-shao-future-work-ai-agents]] found broad interest in automating low-value repetitive tasks but substantial occupational preference for equal partnership or greater human involvement. [[ai-mediated-choice-and-identity]] carries the adjacent transfer evidence that delegated AI choices can preserve apparent preference compatibility while narrowing distinctiveness and exploration. The work-design implication is that agency cannot be assessed only through whether workers accept an AI tool; it also depends on whether the remaining role preserves meaningful choice, practice, identity, and control.
+
+The way digital transformation reallocates work also matters for job attitudes. Across a scenario experiment and a three-wave field survey, [[2025-ren-employee-digital-transformation-experience]] found that automation-driven, relative to augmentation-driven, transformation increased psychological reactance and was associated through that pathway with lower job satisfaction and employment security and higher turnover intention; employee voice weakened the automation-to-reactance relationship. The evidence concerns digital transformation more broadly than AI alone, but it makes control over the redesign process a plausible part of AI-mediated work experience rather than an implementation detail.
 
 [[2026-ghosh-new-social-image]] makes the configuration more specific: in a small 2 × 2 × 2 video-vignette experiment, lower AI competence or proactivity generally produced more favorable perceived ownership, meaningfulness, satisfaction, role dynamics, and affect. This is early scenario-based evidence, not a verdict that better AI makes work worse. It does show why system performance and initiative should be treated as work-experience inputs: they can alter the perceived social value of the human contribution before any formal role redesign occurs.
 
@@ -45,6 +50,8 @@ AI can also reorganize human relationships around the work. [[2025-yun-generativ
 
 [[2026-bakker-artificial-intelligence-job-design]] supplies an explicit dynamic JD-R account for this parent domain. The review argues that AI adoption can increase or decrease both demands and resources, while AI-readiness resources determine whether a motivational or health-impairment pathway is more likely. Its more consequential claim is recursive: resource-rich jobs may let workers build AI self-efficacy, learning, and engagement through use, while constrained, monitored work may turn AI into a demand that lowers later readiness. This is a useful inequality hypothesis for AI-mediated work experience, not evidence that gain and loss spirals have already been established in workplace AI settings.
 
+Direct worker reports also make well-being and job enjoyment legitimate integrative outcomes, while underscoring heterogeneity. In 2022 OECD survey data from seven countries, [[2026-nakavachara-ai-worker-well-being]] found that workplace AI users were more likely than non-users to report improved mental health, job enjoyment, and physical health or safety, with associations differing across generational cohorts and gender. Because these are cross-sectional self-reports of perceived improvement, they support neither a uniform effect nor a causal conclusion about AI use.
+
 ## Integrative design claim
 
 The appropriate unit of intervention is the complete sociotechnical workflow. Organizations should assess not only whether AI improves output, but how it reallocates control, cognitive effort, verification, learning opportunities, authorship, social contact, recovery burden, and accountability. An apparently positive result in one dimension does not settle the overall experience claim. The design task is to make the trade-offs visible and decide which configuration of resources, demands, agency, capability, and sociality the work should sustain.
@@ -54,6 +61,7 @@ The appropriate unit of intervention is the complete sociotechnical workflow. Or
 - Relates to [[work-redesign]] because task allocation, control rights, verification, performance criteria, and learning opportunities determine the resulting experience.
 - Relates to [[employee-engagement]] because engagement is one possible motivational outcome, not a substitute for measuring distinct experience dimensions.
 - Relates to [[ai-adoption]] and [[ai-readiness]] because sustained use depends partly on whether workers experience AI-enabled work as supportive, threatening, developmental, governable, and worth doing.
+- Relates to [[employee-change-support]] because employee voice can weaken automation-related reactance and adverse job-attitude associations during digital transformation [[2025-ren-employee-digital-transformation-experience]].
 - Relates to [[responsible-ai-deployment]] because autonomy, competence, privacy, psychological safety, identity, workload, and felt control are deployment outcomes rather than implementation side notes.
 - Relates to [[ai-supported-knowledge-synthesis]] because source contact, context, collaboration, and accountable judgment shape the experience of AI-assisted knowledge work.
 
@@ -63,5 +71,6 @@ The appropriate unit of intervention is the complete sociotechnical workflow. Or
 - Short-run positive emotion can coexist with lower trust, effort, relatedness, or long-run learning. Evidence should preserve those distinctions rather than aggregate them into satisfaction.
 - Greater autonomy over task execution can coexist with raised performance expectations, verification burden, or reduced control over the pace and evaluation of work.
 - AI may operate as a resource at the point of generation while shifting demands into correction, traceability, documentation, and accountability downstream. Field studies need to estimate that net balance.
+- [[2026-nakavachara-ai-worker-well-being]] associates workplace AI use with perceived gains in mental health, job enjoyment, and physical health or safety, whereas [[2025-ren-employee-digital-transformation-experience]] finds that automation-driven transformation can elicit reactance and worse job attitudes than augmentation-driven transformation. The studies differ in their comparisons, outcomes, and designs, so they do not establish a direct contradiction; the open question is which allocation and voice conditions make AI use supportive rather than threatening.
 - The strongest causal evidence remains short-horizon, while much of the workplace evidence is cross-sectional, qualitative, or indirect. Longitudinal and intervention research is still needed on autonomy, competence, relatedness, identity, workload, learning, and recovery.
-- Experience is unlikely to move uniformly across workers. Occupation, expertise, task risk, desired agency, accessibility needs, managerial expectations, and governance design are plausible boundary conditions that remain unevenly tested.
+- Experience is unlikely to move uniformly across workers. [[2026-nakavachara-ai-worker-well-being]] reports different perceived associations across generational cohorts and gender; occupation, expertise, task risk, desired agency, accessibility needs, managerial expectations, and governance design are additional plausible boundary conditions that remain unevenly tested.

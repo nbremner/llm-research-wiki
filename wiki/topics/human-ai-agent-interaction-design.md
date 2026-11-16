@@ -1,7 +1,7 @@
 ---
 title: User experience design for human-AI agents
-status: stub
-updated: 2026-08-11
+status: active
+updated: 2026-11-16
 ---
 
 # User experience design for human-AI agents
@@ -16,6 +16,8 @@ The design unit is therefore the accountable workflow, not a generic agent perso
 
 [[2026-liu-organizational-behavior-agentic-ai]] extends the unit of design behind the visible interface. An agent workflow can contain planners, solvers, reviewers, memory, tools, validators, and orchestrators whose handoffs create latency, compression loss, semantic drift, verification work, and governance burden. Its interface-organization concept specifies that accountable human use requires more than a dashboard: outputs must carry usable evidence and uncertainty, permissions must be legible, traces must be preserved, and mandatory human judgment points must be explicit. This connects interaction design to the topology and context architecture of the underlying agent collective rather than treating them as separable layers.
 
+[[2026-gonzalez-human-ai-teaming-complementarity]] frames those interaction requirements as properties of a human–AI team rather than of a user interface alone. Design should make goals and constraints explicit, partition roles around human and AI strengths, and orchestrate attention, questioning, and handoffs so that automation's speed, consistency, scalability, and pattern recognition support rather than displace human contextual sensitivity, ethical discretion, and accountability. The workflow also needs shared knowledge infrastructure that keeps relevant context and shared understanding available across people and AI, plus training and continuous evaluation of collaboration quality, workload balance, resilience, trust calibration, shared understanding, and ethical alignment—not task accuracy alone. For agent UX, this implies that controls, traces, explanations, and escalation points must make role boundaries, coordination state, shared knowledge, and retained human responsibility usable throughout the workflow, rather than surfacing only at an approval screen. [[2026-gonzalez-human-ai-teaming-complementarity]]
+
 ## Connections
 - Relates to [[human-ai-collaboration]] because control points, action visibility, verification, and clarification design determine whether collaboration preserves real human authority.
 - Relates to [[responsible-ai-deployment]] because role-based access, consent, audit trails, uncertainty communication, and intervention paths operationalize safeguards at the point of use.
@@ -29,3 +31,4 @@ The design unit is therefore the accountable workflow, not a generic agent perso
 - The framework’s principles overlap conceptually, and its participants were a small, self-selected group of AI-experienced software, data, and product professionals. It supplies actionable hypotheses for enterprise design, not proof that these criteria improve adoption, decision quality, accountability, or worker experience in deployed systems.
 - Transparency can enable verification, but explanation volume and detail should be calibrated to task and user expertise. The open design question is when explanation genuinely supports judgment rather than creating information burden or superficial assurance.
 - [[2026-liu-organizational-behavior-agentic-ai]] argues that agent topology and context-transfer costs condition whether traces and controls are meaningful, but its simulations and benchmark-like traces do not yet show which interface designs let practitioners recover from failures or exercise authority in field settings.
+- [[2026-gonzalez-human-ai-teaming-complementarity]] recommends role partitioning, shared knowledge infrastructure, training, and continuous multidimensional evaluation, but as a perspective framework it does not establish which interface patterns make those team-level requirements effective in long-running, high-stakes agent workflows.
