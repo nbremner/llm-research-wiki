@@ -1,7 +1,7 @@
 ---
 title: AI-mediated organizational networks
 status: active
-updated: 2026-09-08
+updated: 2026-11-23
 ---
 
 # AI-mediated organizational networks
@@ -15,6 +15,8 @@ AI-mediated organizational networks tracks how AI changes the human-human intera
 The source’s mechanism is useful for work design: grounded GenAI can act as a translator, lowering the cost of collaboration across expertise boundaries, and as a knowledge catalyst, making AI-augmented employees more valuable sources for others. That means AI can increase human-human ties rather than simply replacing them. It also means organizational value may appear as changed brokerage, centrality, and knowledge flow before it appears as a clean job-level automation or substitution outcome.
 
 Role differences matter. [[2026-buechsenschuss-genai-organizational-networks]] found specialists gained more in knowledge-network in-degree than generalists, while generalists gained more in satisfaction and project output. In I-O terms, the same AI resource may change different roles through different pathways: for specialists, by making deep expertise more accessible and sought after; for generalists, by improving coordination and throughput across a broader project portfolio.
+
+[[2026-chen-ai-agents-reshape-consensus-formation]] adds a distinct network-level risk: aggregate agreement can conceal a redistribution of who supplies the expressions and meanings that become group conventions. In 24-member mixed human–LLM description-game groups, low agent representation strengthened consensus, intermediate representation weakened it, and a 75% agent share restored consensus while agents supplied all measured conceptual contribution. The implication for organizational-network analysis is not that agreement itself is harmful, but that measures of convergence or connectivity alone can miss a shift from human-led mutual adaptation to agent-led convention formation; contribution share, adaptation direction, and the semantic character of the resulting conventions are separate outcomes that matter for work design.
 
 [[2026-shi-when-bots-join-the-team]] extends the network-rewiring question to open-source projects, where rule-based bots are visible participants in a shared interaction record rather than private individual tools. Across 2,991 projects and 12-month windows around first bot adoption, repeated human engagement rose from 0.224 to 0.400 and bot-directed social memory rose from 0.016 to 0.062, while conflict cascades fell; these are precisely timed associations, not causal estimates, because the study has no untreated comparison group. Its joint models further associate repeated engagement, bot-to-human addressing, and role differentiation with fewer conflict cascades, suggesting that bots may change organizational coordination partly by stabilizing recurrent human ties and making interaction history addressable through the bot.
 
@@ -35,3 +37,4 @@ Role differences matter. [[2026-buechsenschuss-genai-organizational-networks]] f
 - The source’s role comparison is theoretically useful but not causal because employees were not randomly assigned to specialist versus generalist roles; role-based redesign claims should stay tentative until tested across organizations and task structures.
 - [[2025-hautamaki-fully-leveraging-ai-b2b-sales]] gives manager-reported mechanisms for cross-functional AI knowledge transfer, but not observed network data. It should be read as a qualitative mechanism source, not as evidence that AI actually increased network centrality, tie strength, or collaboration volume.
 - [[2026-shi-when-bots-join-the-team]] supplies digital-trace evidence from thousands of open-source projects, but its before/after event-study design lacks an untreated comparison group and studies predictable rule-based bots in established repositories. Whether the associations with repeated engagement and bot-directed social memory persist as durable human-human network structure, generalize to other workplaces, or hold for more capable agents remains open.
+- [[2026-chen-ai-agents-reshape-consensus-formation]] shows that high agent shares can restore measured consensus while shifting conceptual contribution fully to agents, but it does not observe organizational ties or naturalistic work. Whether comparable convention shifts alter durable organizational-network structure, knowledge quality, voice, or coordination in workplaces remains open.

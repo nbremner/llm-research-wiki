@@ -1,7 +1,7 @@
 ---
 title: Human-AI task allocation
 status: active
-updated: 2026-09-08
+updated: 2026-11-23
 ---
 
 # Human-AI task allocation
@@ -9,6 +9,8 @@ updated: 2026-09-08
 Human-AI task allocation is the design problem of deciding, at the level of a specific task instance or workflow turn, whether the human, the AI system, or some hybrid arrangement should act. It is narrower than broad [[human-ai-collaboration]] and more operational than [[automation-and-substitution]]: the question is not only whether AI can do a class of work, but when the system should route this case to the model, preserve human judgment, or change routing because the human's state, workload, expertise, or accountability conditions have changed.
 
 [[2021-bansal-most-accurate-ai-best-teammate]] gives the topic a foundational allocation model before dynamic routing enters the picture. A human accepts AI advice only when its confidence exceeds a threshold determined by human accuracy, the cost of solving, and the cost of mistakes; optimization should therefore prioritize system performance in the accept region rather than treat aggregate classifier accuracy as the allocation criterion. This is a deliberately narrow advice-and-override model, but it makes the allocation premise explicit: the relevant objective is the utility of a workflow with a human response, not the AI's score in isolation.
+
+[[2026-fuegener-roles-ai-collaboration]] supplies an analytical and experimental account of when the allocation choice favors automation rather than augmentation in judgment work. Between-task complementarity—people and AI being relatively better at different tasks—favors automation, whereas within-task complementarity—combining human and AI judgment on the same task—favors augmentation. Its differentiated configuration automates relatively easy tasks, augments people where human and AI standalone performance is similar, and leaves relatively difficult tasks to unaided people; automation's value also includes reallocating the released human capacity toward that more difficult work.
 
 [[2026-zhang-fatigue-aware-learning-defer]] gives the topic its first direct algorithmic source. In fatigue-aware learning to defer, each deferral to a human expert changes cumulative workload and therefore future human performance. The allocation policy should therefore be stateful: a difficult case may belong with a fresh expert, while a later difficult case may belong with AI if accumulated fatigue makes human error more likely.
 
@@ -33,8 +35,8 @@ The important I-O bridge is that allocation quality depends on a human-state mod
 ## Connections
 - Relates to [[human-ai-task-taxonomy]] because allocation policies need task dimensions such as decision authority, audit requirement, output definition, AI contribution, and human persona before routing decisions can be interpreted.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because workload and fatigue change the value of human involvement across a sequence, not just within a single static task; [[2025-mokashi-cognitive-aware-shift-scheduling]] proposes extending that logic to cognitive and emotional worker-state inputs in manufacturing scheduling.
-- Relates to [[work-redesign]] because dynamic allocation changes where human judgment enters the workflow and which nodes require escalation, rest, verification, or protection.
-- Relates to [[automation-and-substitution]] because task-level routing can substitute for human action at some turns while preserving human involvement at others.
+- Relates to [[work-redesign]] and [[work-design]] because dynamic allocation changes where human judgment enters the workflow, which nodes require escalation, rest, verification, or protection, and how automation can reallocate human capacity toward more difficult work.
+- Relates to [[automation-and-substitution]] because task-level routing can substitute for human action at some turns while preserving human involvement at others; [[2026-fuegener-roles-ai-collaboration]] specifies that between-task complementarity can make automation valuable and that capacity reallocation is part of that value.
 - Relates to [[automation-complacency]] because allocation systems may reduce human burden appropriately or quietly remove the practice and attention needed for competent oversight.
 - Relates to [[domain-expertise-in-agentic-work]] because expertise changes which parts of the workflow a human can safely keep — planning, constraint-setting, review, escalation, or direct execution.
 
@@ -42,7 +44,7 @@ The important I-O bridge is that allocation quality depends on a human-state mod
 - [[2026-zhang-fatigue-aware-learning-defer]] shows performance benefits in simulated benchmark settings, while [[2023-arcot-cognitive-load-optimization-contact-center-agents]] reports live dynamic routing from biometric and voice signals. Neither establishes whether workers accept routing that changes from inferred states, whether cognitive-load inference is valid for consequential allocation, or whether organizations can govern the resulting surveillance and fairness risks.
 - Optimizing allocation for accuracy and coverage can conflict with preserving worker agency, learning, task significance, and accountability. A system that routes around fatigue may improve immediate performance while leaving harder questions about staffing, recovery, and work design untouched.
 - [[2021-bansal-most-accurate-ai-best-teammate]] makes allocation depend on a fixed confidence threshold and modeled human accuracy, effort cost, and mistake cost; [[2026-zhang-fatigue-aware-learning-defer]] instead makes human capacity change over a sequence. Together they show why static AI accuracy is insufficient, but neither establishes which worker, organizational, legitimacy, or learning variables a deployed allocation policy should optimize or who should have authority to set those trade-offs.
-- The wiki needs field evidence on allocation policies that use real human-state signals — fatigue, skill, confidence, workload, motivation, or accountability — rather than assuming those states can be cleanly simulated or inferred; [[2025-mokashi-cognitive-aware-shift-scheduling]] supplies a conceptual scheduling framework, not that validation.
+- The wiki needs field evidence on allocation policies that use real human-state signals — fatigue, skill, confidence, workload, motivation, or accountability — rather than assuming those states can be cleanly simulated or inferred. [[2026-fuegener-roles-ai-collaboration]] supports a complementarity-based allocation mechanism in an analytical model and image-classification experiment, but does not establish that task difficulty or within-task and between-task complementarity can be measured and governed reliably in organizational workflows; [[2025-mokashi-cognitive-aware-shift-scheduling]] likewise supplies a conceptual scheduling framework, not that validation.
 
 - [[2026-hitzig-agentic-coding-expertise]] shows an apparently productive planning/execution split, but it leaves open when preserving human planning is enough and when domain experts also need to inspect implementation details directly.
 - [[2025-wang-ai-agents-human-work]] motivates programmability as an allocation signal, but programmability is not a validated routing construct and may be confounded with the tools, task representations, and rubrics available in the study. A step that is easy to script can still require human accountability, and a visually dependent step may become agent-suitable as interfaces change.

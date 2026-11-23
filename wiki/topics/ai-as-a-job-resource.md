@@ -1,7 +1,7 @@
 ---
 title: AI as a job resource
-status: stub
-updated: 2026-08-31
+status: active
+updated: 2026-11-23
 ---
 
 # AI as a job resource
@@ -11,6 +11,8 @@ AI can function as a job resource when its cognitive, structural, strategic, or 
 [[2026-cogenli-generative-ai-conditional-job-resource]] offers a function-first JD-R typology from 15 de-identified Gemini interaction episodes in academic knowledge work. It identifies cognitive resources (clarification, explanation, and complexity reduction), structural/strategic resources (sequencing, roadmaps, prioritization, and work organization), and emotional/psychosocial resources (explicit efficacy-reinforcing and action-oriented cues). The important limit is that these are candidate resource functions, not measured worker outcomes.
 
 [[2026-vuong-genai-job-performance]] supplies a distinct, outcome-oriented complement. In a cross-sectional survey of 758 Vietnamese SME employees, GenAI usage was positively associated with job crafting, work engagement, and job performance, with job crafting and engagement partially mediating the performance relationship. Together, the two sources distinguish AI support functions from the broader JD-R nomological network through which workers may convert use into motivation, proactive work reshaping, and performance.
+
+[[2026-nakavachara-ai-worker-well-being]] extends the outcome evidence across seven OECD countries while keeping the resource claim conditional. In controlled cross-sectional models of 2,917 workers, workplace AI use was associated with reported improvements in mental health (10.9 percentage points), job enjoyment (18.3 points), and physical health/safety (7.85 points). These are perceived worker outcomes rather than evidence that any specific AI function caused the gains or that access alone constitutes a resource. The associations were uneven: Generation Y showed positive associations across all three outcomes, Generation Z consistently for enjoyment only, and Baby Boomers more limited associations; women reported stronger mental-health gains and men stronger physical-health gains. A job-resource account must therefore ask which workers receive usable support and which conditions distribute its benefits, rather than treating AI use as a uniform resource.
 
 [[2025-sun-employee-ai-collaboration-proactive-behavior]] supplies a narrower COR-based pathway: in a two-wave survey of 412 employees across 30 Chinese firms, perceived employee–AI collaboration was associated with lower workload and greater proactive behavior, with a reported indirect workload path. This treats workload relief as a possible resource-conversion mechanism—capacity freed for discretionary initiative—not proof that AI is intrinsically a resource. The same broad collaboration measure cannot establish which task allocations, AI functions, or verification demands actually generate the relief.
 
@@ -25,9 +27,11 @@ The boundary condition is central rather than administrative. Çögenli finds th
 - Relates to [[human-ai-collaboration]] because a resource depends on a workable human role in checking, correcting, and integrating AI output.
 - Relates to [[responsible-ai-deployment]] because traceability, oversight, and accountability routines determine whether AI support is reliable and responsible enough to use.
 - Relates to [[ai-literacy]] because the workload-relief pathway in [[2025-sun-employee-ai-collaboration-proactive-behavior]] differed by employees' reported AI literacy.
+- Relates to [[work-design]] because the cohort- and gender-stratified associations in [[2026-nakavachara-ai-worker-well-being]] make the distribution of usable AI support and residual demands a work-design issue rather than a uniform benefit of access.
 
 ## Contradictions & open questions
-- [[2026-cogenli-generative-ai-conditional-job-resource]] specifies resource functions from one author's single-user academic interaction log, while [[2026-vuong-genai-job-performance]] models self-reported associations in Vietnamese SMEs. Neither establishes that a particular AI function causes better motivation, health, or performance across workers or occupations.
+- [[2026-cogenli-generative-ai-conditional-job-resource]] specifies resource functions from one author's single-user academic interaction log, [[2026-vuong-genai-job-performance]] models self-reported associations in Vietnamese SMEs, and [[2026-nakavachara-ai-worker-well-being]] reports cross-country associations with perceived mental health, enjoyment, and health/safety. None establishes that a particular AI function causes better motivation, health, or performance across workers or occupations.
 - The same verification and traceability routines that make AI use more reliable can impose enough correction and documentation work to offset the resource benefit. The wiki lacks field studies that measure this net balance across tasks, risk levels, and organizational governance designs.
 - Emotional/psychosocial resource claims in Çögenli are limited to observable efficacy-reinforcing output cues, not measured changes in worker emotion, self-efficacy, or well-being. The construct should not absorb those outcomes without direct evidence.
 - [[2025-sun-employee-ai-collaboration-proactive-behavior]] uses a two-wave, self-report design and a broad collaboration measure. Its workload mediation is consistent with a resource account but cannot establish causal resource gain, identify the AI arrangement that caused it, or rule out other explanations for proactive behavior.
+- [[2026-nakavachara-ai-worker-well-being]] does not identify why reported mental-health gains were stronger for women while physical-health/safety gains were stronger for men, or why cohort patterns differed. Task allocation, job conditions, adoption selection, AI quality, and reporting differences remain competing explanations.

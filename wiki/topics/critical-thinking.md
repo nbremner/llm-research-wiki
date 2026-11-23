@@ -1,7 +1,7 @@
 ---
 title: Critical thinking in AI-assisted work
 status: active
-updated: 2026-08-02
+updated: 2026-11-23
 ---
 
 # Critical thinking in AI-assisted work
@@ -15,6 +15,8 @@ Critical thinking matters for the wiki because GenAI changes not only what knowl
 The useful framing is not simply “AI reduces thinking.” The paper suggests that GenAI shifts critical thinking: from information gathering to information verification, from problem-solving to response integration, and from task execution to task stewardship. That makes critical thinking a design problem inside [[human-ai-collaboration]], not just an individual trait or training module.
 
 [[2022-dellacqua-falling-asleep-at-wheel]] adds causal behavioral evidence for the effort channel. In an HR-recruiter field experiment, higher-quality AI advice increased reliance, while lower-quality AI induced more time and effort. This supports the concern that confidence in AI can suppress scrutiny, but it also keeps the claim precise: the issue is not less thinking in general, but less task-relevant verification when the system appears competent.
+
+[[2025-romeo-exploring-automation-bias]] adds a constraint on explanation-based safeguards. Its review finds that explanations and transparency cues do not reliably help users detect incorrect AI recommendations and can operate as trust heuristics that reinforce misplaced reliance; across the reviewed evidence, higher verification intensity was associated with better decision accuracy. For critical thinking, an explanation is therefore not a substitute for a work process that requires independent checking.
 
 [[2025-shukla-ai-assisted-design-ironies]] gives the design-practice version of the same shift. UX practitioners saw AI as useful for drafts, user flows, research scripts, and ideation, but they also emphasized the need to check hallucinations, detect bias, preserve design rationale, and defend choices. The paper's sharper warning is about cognitive offloading: if AI bypasses sketching, problem framing, incubation, and exploratory iteration, critical thinking may be displaced from creative formation into after-the-fact supervision.
 
@@ -40,6 +42,7 @@ This page differs from [[complex-collaborative-problem-solving]] in topic type. 
 
 - Relates to [[ai-adoption]] because adoption quality depends on whether users retain enough judgment to evaluate, adapt, and steward AI outputs rather than merely use the tool more often.
 - Relates to [[automation-complacency]] because reduced critical thinking can be a system-induced response to apparently reliable AI advice, not simply an individual deficit.
+- Relates to [[work-design]] because workflow requirements for independent checking can increase verification intensity, whereas explanations alone may raise trust without improving error detection.
 - Relates to [[ai-induced-skill-erosion]] because judgment exercised less often may become judgment held less securely.
 - Relates to [[evidence-based-management]] because self-reported reductions in cognitive effort should not be treated as direct evidence of long-term skill atrophy without stronger longitudinal or behavioral measures.
 - Relates to [[construct-validity]] because “critical thinking” is itself hard to observe; output diversity, self-report, and task performance capture different parts of the construct.

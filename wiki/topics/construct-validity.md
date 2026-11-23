@@ -1,7 +1,7 @@
 ---
 title: Construct validity
 status: active
-updated: 2026-08-27
+updated: 2026-11-23
 ---
 
 # Construct validity
@@ -36,6 +36,10 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 
 [[2026-putka-indexing-ai-impact-onet]] turns AI-impact measurement into an explicit construct-design problem. The proposed O*NET suite distinguishes AI capability from AI usage, automation from augmentation, and task, KSAO, contextual-performance, vacancy, and occupation targets; it recommends a nomological network in advance so convergence and discrimination patterns are evidence about the intended indices rather than post-hoc stories about correlated scores.
 
+Selection science makes the credibility of a validity estimate a construct-validity issue as well as a statistical one. [[2026-sackett-hiring-people-organizations]] distinguishes observed validity from corrections for measurement error and range restriction, warning that correction factors unsupported by credible, design-specific information can overstate operational validity; it also argues that novel selection systems need transparent accounts of their modules and scoring choices before evidence can accumulate across studies. A reported validity coefficient therefore supports a hiring inference only when the predictor, criterion, correction context, and intended employment decision are coherently specified.
+
+Candidate GenAI use creates a parallel contamination problem at the point of assessment. [[2026-dunlop-from-forbid-to-reimagine]] argues that unrestricted GenAI use can make a selection score reflect tool access, willingness to use AI, and AI-use capability alongside the intended candidate attributes, with resulting fairness concerns. Its Reimagine response makes the boundary explicit: where human–AI collaboration is genuinely part of the target work, an assessment should validate that collaboration directly rather than allowing it to enter a nominally human-only assessment as uncontrolled construct-irrelevant variance.
+
 ## Connections
 
 - Relates to [[employee-engagement]] as a cautionary case of loose construct boundaries.
@@ -48,6 +52,7 @@ The same discipline applies to [[algorithmic-assessment]]. [[2016-chamorro-premu
 - Relates to [[human-capital-resource-measurement]] because HCR shows how collective capability measures can be deficient, contaminated, or predictively useful for the wrong construct.
 - Relates to [[complex-collaborative-problem-solving]] because CPS and ColPS show how a broad capability label can become more construct-valid when problem features, process data, and assessment tasks are explicitly modeled.
 - Relates to [[ai-agent-benchmark-validity]] because benchmark validity is construct validity applied to agent evaluation: what exactly is being measured, and what claims does that measure license?
+- Relates to [[work-redesign]] because selection systems should distinguish an intended inference about unaided human attributes from a deliberately redesigned inference about human–AI collaboration in the work candidates will perform.
 - Relates to [[organizational-learning-capability]] because learning capability must be separated from adjacent constructs such as satisfaction, culture, formalization, innovation, and performance before it can support AI transformation claims.
 
 

@@ -1,7 +1,7 @@
 ---
 title: Automation and substitution
 status: active
-updated: 2026-08-06
+updated: 2026-11-23
 ---
 
 # Automation and substitution
@@ -9,6 +9,8 @@ updated: 2026-08-06
 Whether AI substitutes for inputs (labor, capital) or augments them — and what scales, what shrinks.
 
 [[2026-kim-mapping-ai-into-production]] finds that treated firms grew output (tasks, customers, revenue) while **labor demand stayed flat and capital demand fell ~39.5%** — a "do more with less" pattern where AI substituted for *external capital* rather than for headcount, at least in young firms over a short window. Founders described AI as doing the "analyst or intern version" of tasks.
+
+[[2026-fuegener-roles-ai-collaboration]] specifies an allocation mechanism behind the automation/augmentation distinction: between-task complementarity favors automation when AI can take relatively easier tasks and release human capacity for harder work, whereas within-task complementarity favors augmentation when human and AI inputs improve the same task jointly. Its analytical model and image-classification experiment predict a differentiated arrangement—automate easier tasks, augment tasks where human and AI performance are similar, and retain unaided human work on relatively difficult tasks—so substitution value depends on what the released human capacity can do next, not on AI task accuracy alone.
 
 [[2026-ermakov-designing-post-role-enterprise]] frames automation as a design-boundary problem, not simple task replacement. Some workflow nodes can be handed to agents, but others are "Human-Critical Nodes" where ethical judgment, relational trust, irreversible consequences, or visible accountability require human presence. The design problem is which workflow parts can be delegated to digital labor, which require human authority, and how accountability is assigned before failure.
 
@@ -64,13 +66,14 @@ Whether AI substitutes for inputs (labor, capital) or augments them — and what
 
 ## Connections
 
-- Relates to [[human-ai-task-allocation]] because substitution is often decided at the routing level — which task, which turn, which human state — rather than at the job level, and allocation policies can move the boundary within a single work episode.
+- Relates to [[human-ai-task-allocation]] because substitution is often decided at the routing level — which task, which turn, which human state — rather than at the job level; between-task complementarity can favor automation and human-capacity reallocation, while within-task complementarity can favor augmentation.
 - Relates to [[human-ai-task-taxonomy]] because substitution claims need dimensional task evidence — decision authority, audit requirements, output definition — before they can be converted into labor-demand conclusions.
 - Relates to [[moral-boundaries-of-ai-automation]] because a share of occupations remains morally off-limits for automation even when AI outperforms humans at lower cost, so social feasibility bounds technical substitution.
 - Relates to [[automation-complacency]] because substitution can happen behaviorally — through reliance and effort migration — while the human formally remains the decision-maker.
 - Relates to [[agentic-delegation]] because delegation modes determine whether autonomous execution substitutes for human action turn-by-turn, and users may refuse the mode that performs best.
 - Relates to [[ai-workforce-impact-measurement]] because the gap between theoretical exposure, observed use, and realized labor-market movement is a measurement problem before it is a substitution fact.
 - Relates to [[work-redesign]] because automating a task often recomposes the job — new monitoring, validation, and accountability work — rather than removing the worker.
+- Relates to [[work-design]] because an allocation policy changes which task difficulty remains human work and what higher-value work released human capacity can be reassigned to perform.
 - Relates to [[responsible-ai-deployment]] because replacement decisions carry governance obligations — worker dignity, reskilling, harm monitoring — that are not settled by technical feasibility or cost.
 
 ## Contradictions & open questions

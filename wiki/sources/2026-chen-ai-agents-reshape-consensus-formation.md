@@ -7,7 +7,7 @@ doi: 10.48550/arXiv.2609.02122
 source_type: paper
 publication_status: preprint
 retrieved: 2026-09-08
-human_reviewed: false
+human_reviewed: true
 drive_file_id: 1E-ZdomtczcEfN8sJ9G0jgTNRNlHxYZ6u
 file_hash: ef61733a8606dcd0d5a9037447e018749ac7abb37351ea761358c0288fc28ea6
 ---
@@ -28,5 +28,5 @@ file_hash: ef61733a8606dcd0d5a9037447e018749ac7abb37351ea761358c0288fc28ea6
 - This is an arXiv preprint, not peer-reviewed; the authors test one model family at two capability levels and note that quantitative phase boundaries may be model-dependent.
 
 ## Feeds
-- [[ai-mediated-teamwork]]
 - [[ai-mediated-organizational-networks]]
+- [[ai-mediated-teamwork]]
