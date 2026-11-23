@@ -1,7 +1,7 @@
 ---
 title: Automation complacency
 status: active
-updated: 2026-08-31
+updated: 2026-11-23
 ---
 
 # Automation complacency
@@ -9,6 +9,8 @@ updated: 2026-08-31
 Automation complacency is the failure mode where better machine advice reduces human attention, effort, or learning enough that the combined human-AI system underperforms what the model's standalone accuracy would imply. It is not simply algorithm aversion's opposite. The problem is not that workers distrust the tool; it is that they trust or defer to it in a way that changes the work they still do.
 
 [[2021-bansal-most-accurate-ai-best-teammate]] supplies a formal precursor to this system-performance concern. In a model where people accept confident advice and otherwise solve the task themselves, optimizing classifier accuracy can reduce expected team utility because the model's confidence distribution, the human verification threshold, and the costs of effort and error determine what the combined system actually does. The paper does not measure complacency or learning; its value here is to show why the human response cannot be treated as fixed when evaluating a supposedly better AI.
+
+[[2025-romeo-exploring-automation-bias]] integrates the empirical evidence behind those mechanisms across 35 quantitative studies: overreliance is jointly conditioned by verification demands, explanation design, domain expertise and AI literacy, trust dynamics, and cognitive or workload conditions, rather than by trust alone. Higher verification intensity tracked better decision accuracy, but responsibility cues alone did not reliably induce it; explanations, transparency cues, and trust-calibration feedback also did not reliably help users recognize bad recommendations and could become trust heuristics. Expertise and literacy can support calibrated reliance, yet high cognitive load can still produce automation bias among experienced users, making sustained oversight a work-system design problem rather than a trait workers either possess or lack.
 
 [[2022-dellacqua-falling-asleep-at-wheel]] makes this mechanism concrete in HR screening. In a field experiment with professional recruiters, AI assistance improved accuracy overall, but recruiters followed advice more often as stated AI quality rose and lower-quality AI induced more time and effort. The useful design lesson is uncomfortable: maximizing model accuracy is not the same as maximizing system performance when human effort is endogenous.
 
@@ -41,6 +43,7 @@ Automation complacency is the failure mode where better machine advice reduces h
 - Relates to [[ai-supported-knowledge-synthesis]] because synthesis tools are especially prone to making partial or contextual evidence look clean, ranked, and complete.
 - Relates to [[cognitive-load-in-ai-assisted-work]] because overload and complacency are distinct ways AI can weaken human contribution to system performance.
 - Relates to [[cognitive-surrender]] because surrender is a specific acceptance-and-adoption pattern inside the broader complacency family.
+- Relates to [[work-design]] because verification expectations, workload allocation, explanation placement, and feedback determine whether human oversight is feasible rather than merely nominal.
 
 ## Contradictions & open questions
 - Better AI can still improve average performance, as [[2022-dellacqua-falling-asleep-at-wheel]] shows when pooling AI conditions and in the perfectly predictive benchmark. The claim is not "worse AI is better"; it is that human behavioral response can make the model-quality optimum differ from the system-performance optimum.
@@ -48,6 +51,6 @@ Automation complacency is the failure mode where better machine advice reduces h
 - The strongest evidence here is short-run task behavior. The wiki still needs longitudinal evidence on whether complacency becomes skill atrophy, whether feedback restores calibration, and which design interventions preserve attention without wasting human effort.
 - There is a design tension between reducing unnecessary cognitive load and preserving enough friction for meaningful review. Removing all friction can be efficient when the model is right and dangerous when the model is wrong.
 - There is a parallel learning tension: reducing cognitive load can be the point of assistance, but [[2025-kosmyna-brain-chatgpt-cognitive-debt]] suggests that repeated reduction in effort may also reduce ownership, recall, or practice when the task is supposed to build capability.
-- [[2025-yun-generative-ai-knowledge-work]] suggests design countermeasures — citations, audit trails, comparative outputs, and access to raw data — but it does not test which of these actually prevents complacency in live organizational decisions.
+- [[2025-yun-generative-ai-knowledge-work]] suggests design countermeasures — citations, audit trails, comparative outputs, and access to raw data — but it does not test which of these actually prevents complacency in live organizational decisions; [[2025-romeo-exploring-automation-bias]] similarly finds that explanations, transparency cues, and trust-calibration feedback do not reliably help users recognize incorrect recommendations and can instead become trust heuristics. The unresolved design question is which verification workflows, explanation designs, literacy supports, and workload conditions create scrutiny rather than merely signaling legitimacy.
 - [[2026-lepine-precision-proactivity]] suggests that proactivity should be load-sensitive rather than maximal. The unresolved question is how systems detect when help should become repair, simplification, or silence.
 - [[2026-shaw-thinking-fast-slow-artificial]] shows that incentives and immediate feedback improve faulty-advice override behavior, but they do not eliminate surrender; the unresolved design question is how much friction, feedback, or independent evidence is needed before oversight becomes real rather than nominal.

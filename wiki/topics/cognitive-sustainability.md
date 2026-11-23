@@ -1,7 +1,7 @@
 ---
 title: Cognitive sustainability
-status: stub
-updated: 2026-08-11
+status: active
+updated: 2026-11-23
 ---
 
 # Cognitive sustainability
@@ -16,6 +16,8 @@ The practical implication is not generic “human-in-the-loop” rhetoric. A sus
 
 [[2026-lovett-tragedy-cognitive-commons]] adds a profession-level boundary to this work-system criterion. Its Cognitive Commons framework argues that AI-enabled efficiency can weaken the entry-level practice and supervised progression through which a profession replenishes the Internalized Mastery needed for substantive validation. This broadens cognitive sustainability beyond whether an individual workflow preserves present capability: a locally sustainable-looking arrangement may still be collectively unsustainable if organizations free-ride on a shrinking external pool of experts. The proposed governance remedies remain conceptual and require comparative, longitudinal tests.
 
+[[2026-sole-cognitive-virus]] supplies a formal warning about that collective failure mode. Its population-level model predicts that socially reinforced substitutive LLM use can cross a tipping point into persistent cognitive offloading, with hysteresis making recovery harder than prevention. It therefore frames preserved routes to unaided practice and active verification as design levers that can reduce dependency without requiring uniformly low AI use. The contribution is not an empirical estimate of workplace dependence, but a mechanism-level reason to treat individually convenient delegation as a possible collective lock-in problem rather than only an individual habit.
+
 [[2026-mehra-agents-that-teach]] offers an implementation-level hypothesis for software development: an AI coding workflow could preserve cognitive sustainability by returning contextual explanations, probes, and feedback to the human rather than treating a completed code change as the sole outcome. Its emphasis on selective, asynchronous intervention is important because a system that preserves learning by persistently interrupting flow or expanding worker monitoring would exchange one sustainability failure for another.
 
 ## Connections
@@ -24,6 +26,7 @@ The practical implication is not generic “human-in-the-loop” rhetoric. A sus
 - Relates to [[automation-complacency]] because diminished scrutiny in the moment is one route by which AI-supported work can become cognitively unsustainable.
 - Relates to [[ai-mediated-learning]] because sustainable AI support must preserve the explanation, error-resolution, and transfer work through which people develop competence.
 - Relates to [[work-redesign]] because cognitive sustainability is a property of workflow and role design, not merely of individual willpower or model quality.
+- Relates to [[work-design]] because access to unaided practice, active verification, and routes back to independent performance must be configured into roles and workflows rather than left solely to individual restraint.
 - Relates to [[human-ai-collaboration]] because nominal human accountability is not sufficient when the collaborative arrangement has removed the practice needed for competent review.
 
 ## Contradictions & open questions
@@ -31,3 +34,4 @@ The practical implication is not generic “human-in-the-loop” rhetoric. A sus
 - The framework treats delegation and reliance primarily as risk factors, but productive offloading can protect capacity when it removes extraneous burden or enables workers to concentrate on higher-order work. The empirical question is which tasks, users, and accountability conditions make delegation capability-preserving rather than capability-displacing.
 - A CSI-style monitoring system could itself become intrusive or punitive if employers treat autonomy, reflection, or reliance scores as worker surveillance rather than properties of a jointly designed system. Any implementation needs participatory governance, clear use boundaries, and evidence that measurement improves rather than merely intensifies work.
 - [[2026-mehra-agents-that-teach]] has not tested whether telemetry-derived concept maps and learning prompts protect long-run capability, preserve flow, or remain legitimate to developers; these design benefits cannot be inferred from the architecture alone.
+- [[2026-sole-cognitive-virus]] is a theoretical mean-field model with illustrative parameters, so its predicted tipping points, social-reinforcement dynamics, and reversibility thresholds require empirical tests across heterogeneous workers, occupations, and institutions.
